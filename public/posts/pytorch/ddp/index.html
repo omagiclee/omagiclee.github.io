@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>DDP - omagiclee</title><meta name="Description" content="MagicLee&#39;s Blog"><meta property="og:url" content="https://omagiclee.github.io/posts/pytorch/ddp/">
+  <meta property="og:site_name" content="omagiclee">
+  <meta property="og:title" content="DDP">
+  <meta property="og:description" content="名词解释 PCIe (Peripheral Component Interconnect Express，外设组件高速互连总线） 指的是 CPU、GPU、存储设备、网卡等硬件之间的数据传输通道标准。
+它的核心作用就是 提供 GPU ↔ CPU、GPU ↔ GPU、GPU ↔ 其他外设 的通信带宽。
+NVLink 是 NVIDIA 开发的 GPU 互联技术，用于 GPU 之间的直接通信。
+NVSwitch 是 NVIDIA 开发的交换芯片，用于 GPU 之间的通信。
+IB (InfiniBand) 是一种高带宽、低延迟的跨服务器间的网络互联架构，由 InfiniBand Trade Association (IBTA) 制定标准，广泛用于高性能计算（HPC）、人工智能训练等场景。
+高带宽 SDR (Single Data Rate): 10Gbps DDR (Double Data Rate): 20Gbps QDR (Quad Data Rate): 40Gbps FDR (Fourteen Data Rate): 56Gbps EDR (Enhanced Data Rate): 100Gbps HDR (High Data Rate, 主流): 200Gbps Lane: 单通道速率 Link(4X): 通常由4条 Lane 组成 NDR (Next Data Rate, 主流): 400Gbps XDR (eXtreme Data Rate): 800Gbps 低延迟：µs 级，甚至＜1 µs，远低于万兆以太网（1000Mbps） RDMA (Remote Direct Memory Access)：零拷贝通信 可扩展性：采用交换机架构，支持大规模集群的扩展。 无损网络：不会因为拥堵而丢弃数据包 备注：">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-08-23T13:36:45+08:00">
+    <meta property="article:modified_time" content="2025-08-23T13:36:45+08:00">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="DDP">
+  <meta name="twitter:description" content="名词解释 PCIe (Peripheral Component Interconnect Express，外设组件高速互连总线） 指的是 CPU、GPU、存储设备、网卡等硬件之间的数据传输通道标准。
+它的核心作用就是 提供 GPU ↔ CPU、GPU ↔ GPU、GPU ↔ 其他外设 的通信带宽。
+NVLink 是 NVIDIA 开发的 GPU 互联技术，用于 GPU 之间的直接通信。
+NVSwitch 是 NVIDIA 开发的交换芯片，用于 GPU 之间的通信。
+IB (InfiniBand) 是一种高带宽、低延迟的跨服务器间的网络互联架构，由 InfiniBand Trade Association (IBTA) 制定标准，广泛用于高性能计算（HPC）、人工智能训练等场景。
+高带宽 SDR (Single Data Rate): 10Gbps DDR (Double Data Rate): 20Gbps QDR (Quad Data Rate): 40Gbps FDR (Fourteen Data Rate): 56Gbps EDR (Enhanced Data Rate): 100Gbps HDR (High Data Rate, 主流): 200Gbps Lane: 单通道速率 Link(4X): 通常由4条 Lane 组成 NDR (Next Data Rate, 主流): 400Gbps XDR (eXtreme Data Rate): 800Gbps 低延迟：µs 级，甚至＜1 µs，远低于万兆以太网（1000Mbps） RDMA (Remote Direct Memory Access)：零拷贝通信 可扩展性：采用交换机架构，支持大规模集群的扩展。 无损网络：不会因为拥堵而丢弃数据包 备注：">
+<meta name="application-name" content="My cool site">
+<meta name="apple-mobile-web-app-title" content="My cool site"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://omagiclee.github.io/posts/pytorch/ddp/" /><link rel="prev" href="https://omagiclee.github.io/posts/e2e/diff-ad/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="/lib/fontawesome-free/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" href="/lib/animate/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "DDP",
+        "inLanguage": "en-us",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/omagiclee.github.io\/posts\/pytorch\/ddp\/"
+        },"genre": "posts","wordcount":  445 ,
+        "url": "https:\/\/omagiclee.github.io\/posts\/pytorch\/ddp\/","datePublished": "2025-08-23T13:36:45+08:00","dateModified": "2025-08-23T13:36:45+08:00","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "omagiclee"
+            },"description": ""
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="omagiclee">My cool site</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/categories/"> Categories </a><a class="menu-item" href="/tags/"> Tags </a><span class="menu-item delimiter"></span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a></div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="omagiclee">My cool site</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><a class="menu-item" href="/categories/" title="">Categories</a><a class="menu-item" href="/tags/" title="">Tags</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a></div>
+    </div>
+</header><main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">DDP</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>omagiclee</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2025-08-23">2025-08-23</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;445 words&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;3 minutes&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  data-kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#名词解释">名词解释</a>
+      <ul>
+        <li><a href="#gpudirect-rdma-技术">GPUDirect RDMA 技术</a></li>
+        <li><a href="#nvswitch-全互联架构">NVSwitch 全互联架构</a></li>
+      </ul>
+    </li>
+    <li><a href="#architecture">Architecture</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h2 id="名词解释">名词解释</h2>
+<p><strong>PCIe</strong> (Peripheral Component Interconnect Express，外设组件高速互连总线） 指的是 CPU、GPU、存储设备、网卡等硬件之间的数据传输通道标准。</p>
+<p>它的核心作用就是 提供 GPU ↔ CPU、GPU ↔ GPU、GPU ↔ 其他外设 的通信带宽。</p>
+<p><strong>NVLink</strong> 是 NVIDIA 开发的 GPU 互联技术，用于 GPU 之间的直接通信。</p>
+<p><strong>NVSwitch</strong> 是 NVIDIA 开发的交换芯片，用于 GPU 之间的通信。</p>
+<p><strong>IB (InfiniBand)</strong> 是一种高带宽、低延迟的跨服务器间的网络互联架构，由 InfiniBand Trade Association (IBTA) 制定标准，广泛用于高性能计算（HPC）、人工智能训练等场景。</p>
+<ul>
+<li>高带宽
+<ul>
+<li>SDR (Single Data Rate): 10Gbps</li>
+<li>DDR (Double Data Rate): 20Gbps</li>
+<li>QDR (Quad Data Rate): 40Gbps</li>
+<li>FDR (Fourteen Data Rate): 56Gbps</li>
+<li>EDR (Enhanced Data Rate): 100Gbps</li>
+<li><strong>HDR (High Data Rate, 主流): 200Gbps</strong>
+<ul>
+<li>Lane: 单通道速率</li>
+<li>Link(4X): 通常由4条 Lane 组成</li>
+</ul>
+</li>
+<li><strong>NDR (Next Data Rate, 主流): 400Gbps</strong></li>
+<li>XDR (eXtreme Data Rate): 800Gbps</li>
+</ul>
+</li>
+<li>低延迟：µs 级，甚至＜1 µs，远低于万兆以太网（1000Mbps）</li>
+<li>RDMA (Remote Direct Memory Access)：零拷贝通信</li>
+<li>可扩展性：采用交换机架构，支持大规模集群的扩展。</li>
+<li>无损网络：不会因为拥堵而丢弃数据包</li>
+</ul>
+<div class="mermaid" id="id-1"></div>
+<p>备注：</p>
+<ul>
+<li>HCA (Host Channel Adapter)：安装在 CPU 上，负责管理 IB 网络连接。</li>
+<li>IB Switch：用于连接多个 IB 节点，提供网络交换功能。
+无损网络：InfiniBand 是一种无损网络，这意味着它不会因为拥堵而丢弃数据包。这对于需要保证数据完整性和一致性的高性能计算任务非常关键。</li>
+</ul>
+<p><strong>RDMA (Remote Direct Memory Access)</strong> 是网络协议，用于跨机器通信。</p>
+<h3 id="gpudirect-rdma-技术">GPUDirect RDMA 技术</h3>
+<p><strong>GPUDirect RDMA</strong> 允许 GPU 显存与网络设备（如 IB 网卡）之间进行直接数据传输，无需经过 CPU 内存拷贝。</p>
+<p><strong>优势：</strong></p>
+<ul>
+<li><strong>零拷贝</strong>：数据直接从 GPU 显存传输到网络</li>
+<li><strong>低延迟</strong>：减少 CPU 参与，降低通信延迟</li>
+<li><strong>高带宽</strong>：充分利用 PCIe 带宽</li>
+<li><strong>CPU 卸载</strong>：减少 CPU 开销，提高整体性能</li>
+</ul>
+<p><strong>工作原理：</strong></p>
+<ul>
+<li>IB 网卡可以直接访问 GPU 显存</li>
+<li>通过 PCIe 进行直接 DMA 传输</li>
+<li>CPU 只负责控制和管理，不参与数据传输</li>
+</ul>
+<h3 id="nvswitch-全互联架构">NVSwitch 全互联架构</h3>
+<p><strong>NVSwitch</strong> 是 NVIDIA 的专用交换芯片，实现 GPU 间的全互联通信。</p>
+<p><strong>优势：</strong></p>
+<ul>
+<li><strong>全互联拓扑</strong>：任意两个 GPU 之间都有等带宽连接</li>
+<li><strong>高带宽</strong>：每个 GPU 到 NVSwitch 的带宽可达 600GB/s</li>
+<li><strong>低延迟</strong>：专用交换芯片，延迟极低</li>
+<li><strong>可扩展性</strong>：支持多 GPU 集群</li>
+</ul>
+<p><strong>工作原理：</strong></p>
+<ul>
+<li>所有 GPU 通过 NVLink 连接到 NVSwitch</li>
+<li>NVSwitch 作为中央交换机，实现任意 GPU 间的通信</li>
+<li>相比点对点连接，全互联拓扑提供更好的通信性能</li>
+</ul>
+<p><strong>DGX A100 实际配置：</strong></p>
+<ul>
+<li>8个 A100 GPU</li>
+<li>1个 NVSwitch 芯片</li>
+<li>每个 GPU 有 12-18 条 NVLink 连接到 NVSwitch</li>
+<li>总带宽：600-900 GB/s 每 GPU
+远程直接内存访问 (RDMA)：这是 InfiniBand 的核心技术。RDMA 允许一个服务器的应用程序直接访问另一个服务器的内存，而无需操作系统或CPU的干预。这极大地减少了数据传输的开销，并显著降低了延迟。</li>
+</ul>
+<p>Port</p>
+<p>IB 设备上的接口，每个 Port 可以支持 1X、2X、4X、8X、12X 链路宽度。</p>
+<p>常见是 4X (主流) 和 12X (用于大规模交换机内部互联)。
+例子：NVIDIA/Mellanox ConnectX 系列 (CX-5, CX-6, CX-7, CX-8)。‘
+’</p>
+<h2 id="architecture">Architecture</h2>
+<ol>
+<li>显存占用：如果使用 Adam 优化器，显存占用≈3倍参数大小</li>
+<li>DDP 通信：梯度，梯度大小和参数大小一致（混精度除外）</li>
+<li>IB + RDMA</li>
+</ol>
+<p>作用：跨机器高速通信，通常配合 RDMA (Remote Direct Memory Access)。</p>
+<p>HDR IB：200 Gbps ≈ 25 GB/s</p>
+<p>NDR IB：400 Gbps ≈ 50 GB/s</p>
+<p>远低于 NVLink 带宽，但远高于万兆以太网。</p>
+<p>DDP 的 跨节点 AllReduce 优先走 IB（比如使用 NCCL + IB/RDMA 后端）。</p>
+<ul>
+<li>带宽（常见配置）：200Gbps (≈25 GB/s)、400Gbps (≈50 GB/s)。</li>
+<li>常见于“非满互联”的服务器拓扑，比如 4 卡只有局部 NVLink 连接。</li>
+<li>梯度必须出机器 → 从 GPU 内存经 PCIe → CPU 内存 / NIC → IB / Ethernet。NVLink 只能在单机范围内加速，跨机还是要经过 PCIe。</li>
+<li>NVLink 3.0（A100）单链路带宽 50 GB/s，A100 有 12–18 条 NVLink，单卡总带宽最高 600–900 GB/s。NVSwitch 作为交换芯片，能实现 全互联拓扑（任意两卡直接等带宽通信）。</li>
+</ul>
+<p>PCIe 在跨节点通信中的作用</p>
+<p>GPU 内存的数据要先经由 PCIe DMA 传给 NIC (IB 网卡)。</p>
+<p>有 NVLink 的 GPU 不能直接“跳过 PCIe”写 IB，只能 GPU 内通信用 NVLink，出机器还是得走 PCIe→NIC。</p>
+<p>所以 PCIe 是 IB 的前置通道，这里 PCIe 可能成为瓶颈。</p>
+<p>RDMA + GPUDirect 可以让 IB NIC 直接访问 GPU 显存，减少 CPU 拷贝。</p>
+<p>NVLink vs. NVSwitch 有啥区别？</p>
+<p>定位</p>
+<p>NVLink：GPU↔GPU 的点对点高速直连链路（也可连到 NVSwitch）。相当于“线缆/通道”本身。</p>
+<p>NVSwitch：专用交换芯片，把多块 GPU 的 NVLink 统一“交换/转发”，形成**全互联（all-to-all）**的单机高带宽网络。相当于“交换机/背板”。</p>
+<p>“万兆以太网”带宽换算成 GB</p>
+<p>“万兆以太网”= 10 Gigabit Ethernet (10 GbE)</p>
+<p>理论线速（十进制）：</p>
+<h1 id="8">10
+ Gb/s
+÷
+8</h1>
+<p>1.25
+ GB/s
+10 Gb/s÷8=1.25 GB/s</p>
+<p>换成 GiB/s（2 进制）：</p>
+<p>10
+ Gb/s
+÷
+(
+8
+×
+1.073741824
+)
+≈
+1.16
+ GiB/s
+10 Gb/s÷(8×1.073741824)≈1.16 GiB/s</p>
+<p>实际应用层吞吐（考虑协议/编码开销）：常见在 ~9.4 Gb/s 左右
+≈ 1.175 GB/s（或 ~1.10 GiB/s）</p>
+<p>小结：10 GbE 理论 1.25 GB/s，实际到应用层通常 ~1.1–1.2 GB/s。</p>
+<p>路径必经之处：即便用了 GPUDirect RDMA，NIC 也仍然经由 PCIe 直接 DMA 访问 GPU 显存（绕过 CPU 内存，但不绕过 PCIe），所以 GPU→NIC 这段带宽上限仍受 PCIe 限制。</p>
+<p>分层 AllReduce</p>
+<ol>
+<li>5090</li>
+<li>标配系统，支持 nsight 和 ncompute</li>
+</ol>
+<!-- ## Mermaid 版本检测
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // 智能检测并升级 Mermaid 版本
+    console.log('=== 开始智能检测 Mermaid 版本 ===');
+    
+    // 等待页面完全加载后再检测
+    setTimeout(function() {
+        // 检查当前 Mermaid 版本
+        if (typeof mermaid !== 'undefined' && mermaid && mermaid.version) {
+            const currentVersion = mermaid.version;
+            console.log('当前 Mermaid 版本:', currentVersion);
+            
+            // 如果版本已经是 10.6.1 或更高，不需要升级
+            if (currentVersion === '10.6.1' || currentVersion === '11.10.1') {
+                console.log('Mermaid 版本已经是最新，无需升级');
+            } else {
+                console.log('检测到旧版本，开始升级到 10.6.1');
+                upgradeMermaid();
+            }
+        } else {
+            console.log('Mermaid 未加载，等待加载完成...');
+            // 等待 Mermaid 加载完成后再检测
+            setTimeout(checkAndUpgradeMermaid, 3000);
+        }
+    }, 1000);
+    
+    function checkAndUpgradeMermaid() {
+        if (typeof mermaid !== 'undefined' && mermaid && mermaid.version) {
+            const currentVersion = mermaid.version;
+            console.log('延迟检测到的 Mermaid 版本:', currentVersion);
+            
+            if (currentVersion !== '10.6.1' && currentVersion !== '11.10.1') {
+                console.log('开始升级到 10.6.1');
+                upgradeMermaid();
+            }
+        } else {
+            console.log('Mermaid 仍然未加载，尝试强制加载...');
+            forceLoadMermaid();
+        }
+    }
+    
+    function forceLoadMermaid() {
+        console.log('=== 强制加载 Mermaid 10.6.1 ===');
+        
+        // 创建新的 Mermaid 脚本标签
+        const mermaidScript = document.createElement('script');
+        mermaidScript.src = 'https://cdn.jsdelivr.net/npm/mermaid@10.6.1/dist/mermaid.min.js';
+        mermaidScript.onload = function() {
+            console.log('CDN 版本的 Mermaid 10.6.1 加载成功');
+            
+            // 等待新版本完全加载
+            setTimeout(() => {
+                if (typeof mermaid !== 'undefined') {
+                    // 初始化 Mermaid
+                    mermaid.initialize({
+                        startOnLoad: true,
+                        theme: 'default'
+                    });
+                    
+                    // 重新渲染所有 Mermaid 图表
+                    mermaid.init(undefined, '.mermaid');
+                    console.log('Mermaid 图表重新渲染完成');
+                }
+            }, 100);
+        };
+        
+        mermaidScript.onerror = function() {
+            console.error('CDN 版本的 Mermaid 加载失败');
+        };
+        
+        // 添加到页面头部
+        document.head.appendChild(mermaidScript);
+    }
+    
+    function upgradeMermaid() {
+        console.log('=== 开始升级 Mermaid 到 10.6.1 ===');
+        
+        // 保存当前的 Mermaid 配置
+        const currentConfig = mermaid ? mermaid.getConfig() : {};
+        
+        // 移除现有的 Mermaid 脚本
+        const existingMermaidScripts = document.querySelectorAll('script[src*="mermaid"]');
+        existingMermaidScripts.forEach(script => {
+            console.log('移除现有 Mermaid 脚本:', script.src);
+            script.remove();
+        });
+        
+        // 创建新的 Mermaid 脚本标签
+        const mermaidScript = document.createElement('script');
+        mermaidScript.src = 'https://cdn.jsdelivr.net/npm/mermaid@10.6.1/dist/mermaid.min.js';
+        mermaidScript.onload = function() {
+            console.log('CDN 版本的 Mermaid 10.6.1 加载成功');
+            
+            // 等待新版本完全加载
+            setTimeout(() => {
+                if (typeof mermaid !== 'undefined') {
+                    // 恢复配置
+                    mermaid.initialize({
+                        startOnLoad: true,
+                        theme: 'default',
+                        ...currentConfig
+                    });
+                    
+                    // 重新渲染所有 Mermaid 图表
+                    mermaid.init(undefined, '.mermaid');
+                    console.log('Mermaid 图表重新渲染完成');
+                }
+            }, 100);
+        };
+        
+        mermaidScript.onerror = function() {
+            console.error('CDN 版本的 Mermaid 加载失败');
+        };
+        
+        // 添加到页面头部
+        document.head.appendChild(mermaidScript);
+    }
+    
+    // 延迟检测版本
+    setTimeout(function() {
+        console.log('=== Mermaid 版本检测开始 ===');
+        console.log('mermaid 对象类型:', typeof mermaid);
+        console.log('window.mermaid 类型:', typeof window.mermaid);
+        
+        // 检查页面上的所有脚本
+        const allScripts = document.querySelectorAll('script[src]');
+        console.log('页面上的所有脚本:', allScripts.length);
+        allScripts.forEach((script, index) => {
+            console.log(`脚本 ${index + 1}:`, script.src);
+        });
+        
+        // 检查 Mermaid 相关脚本
+        const mermaidScripts = document.querySelectorAll('script[src*="mermaid"]');
+        console.log('Mermaid 相关脚本数量:', mermaidScripts.length);
+        mermaidScripts.forEach((script, index) => {
+            console.log(`Mermaid 脚本 ${index + 1}:`, script.src);
+        });
+        
+        let versionInfo = '';
+        
+        if (typeof mermaid !== 'undefined' && mermaid && mermaid.version) {
+            console.log('mermaid 对象存在，版本:', mermaid.version);
+            
+            let version = mermaid.version;
+            let versionSource = 'mermaid.version';
+            
+            // 检查页面上的脚本标签
+            const mermaidScriptsList = Array.from(mermaidScripts)
+                .map(script => script.src)
+                .join('<br>');
+            
+            versionInfo = `
+                <div style="background: #d4edda; padding: 15px; border-radius: 5px; margin: 10px 0; border: 1px solid #c3e6cb;">
+                    <h4>✅ Mermaid 版本信息</h4>
+                    <p><strong>版本：</strong> ${version} (来源: ${versionSource})</p>
+                    <p><strong>状态：</strong> 正常运行</p>
+                    <p><strong>配置：</strong> 强制加载 CDN 版本 10.6.1</p>
+                    <p><strong>期望版本：</strong> 10.6.1</p>
+                    <p><strong>页面中的 Mermaid 脚本：</strong></p>
+                    <div style="background: #f8f9fa; padding: 10px; border-radius: 3px; font-family: monospace; font-size: 12px;">
+                        ${mermaidScriptsList || '无'}
+                    </div>
+                    <p><strong>总脚本数量：</strong> ${allScripts.length}</p>
+                </div>
+            `;
+        } else {
+            console.log('mermaid 对象不存在');
+            
+            // 检查是否有 Mermaid 脚本但对象未定义
+            let mermaidScriptInfo = '';
+            if (mermaidScripts.length > 0) {
+                mermaidScriptInfo = `
+                    <p><strong>发现 Mermaid 脚本但对象未定义：</strong></p>
+                    <div style="background: #fff3cd; padding: 10px; border-radius: 3px; font-family: monospace; font-size: 12px;">
+                        ${Array.from(mermaidScripts).map(script => script.src).join('<br>')}
+                    </div>
+                `;
+            }
+            
+            versionInfo = `
+                <div style="background: #f8d7da; padding: 15px; border-radius: 5px; margin: 10px 0; border: 1px solid #f5c6cb;">
+                    <h4>❌ Mermaid 未加载</h4>
+                    <p><strong>配置：</strong> 强制加载 CDN 版本 10.6.1</p>
+                    <p><strong>期望版本：</strong> 10.6.1</p>
+                    <p><strong>可能的原因：</strong></p>
+                    <ul>
+                        <li>CDN 配置未生效</li>
+                        <li>网络连接问题</li>
+                        <li>版本号错误</li>
+                        <li>主题配置问题</li>
+                        <li>脚本加载失败</li>
+                    </ul>
+                    ${mermaidScriptInfo}
+                    <p><strong>总脚本数量：</strong> ${allScripts.length}</p>
+                    <p><strong>Mermaid 脚本数量：</strong> ${mermaidScripts.length}</p>
+                </div>
+            `;
+        }
+        
+        // 在页面中显示版本信息
+        const versionDiv = document.createElement('div');
+        versionDiv.innerHTML = versionInfo;
+        document.body.appendChild(versionDiv);
+        
+        console.log('=== Mermaid 版本检测结束 ===');
+    }, 5000); // 延迟 5 秒确保 Mermaid 完全加载和渲染完成
+});
+</script> --></div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on 2025-08-23</span>
+            </div></div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="https://omagiclee.github.io/posts/pytorch/ddp/" data-title="DDP"><i class="fab fa-twitter fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="https://omagiclee.github.io/posts/pytorch/ddp/"><i class="fab fa-facebook-square fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Hacker News" data-sharer="hackernews" data-url="https://omagiclee.github.io/posts/pytorch/ddp/" data-title="DDP"><i class="fab fa-hacker-news fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Line" data-sharer="line" data-url="https://omagiclee.github.io/posts/pytorch/ddp/" data-title="DDP"><i data-svg-src="/lib/simple-icons/icons/line.min.svg" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on 微博" data-sharer="weibo" data-url="https://omagiclee.github.io/posts/pytorch/ddp/" data-title="DDP"><i class="fab fa-weibo fa-fw" aria-hidden="true"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/posts/e2e/diff-ad/" class="prev" rel="prev" title="DiffAD: A Unified Diffusion Modeling Approach for Autonomous Driving"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>DiffAD: A Unified Diffusion Modeling Approach for Autonomous Driving</a></div>
+</div>
+</article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.148.2">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.3.0"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
+                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2022 - 2025</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">omagiclee</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
+            </a>
+        </div><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript" src="/lib/sharer/sharer.min.js"></script><script type="text/javascript" src="/lib/mermaid/mermaid.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":50},"comment":{},"data":{"id-1":"graph LR;\n    subgraph \"Node 0 (8x A100)\"\n        direction TB\n        GPU0_0[GPU 0\u003cbr/\u003eA100]\n        GPU0_1[GPU 1\u003cbr/\u003eA100]\n        GPU0_2[GPU 2\u003cbr/\u003eA100]\n        GPU0_ELLIPSIS[...]\n        \n        subgraph \"NVSwitch 0\"\n            NVS0[NVSwitch\u003cbr/\u003eA100]\n        end\n        \n        CPU0[CPU 0]\n        IB0[IB HCA 0\u003cbr/\u003e200Gbps]\n    end\n    \n    subgraph \"Node 1 (8x A100)\"\n        direction TB\n        GPU1_0[GPU 0\u003cbr/\u003eA100]\n        GPU1_1[GPU 1\u003cbr/\u003eA100]\n        GPU1_2[GPU 2\u003cbr/\u003eA100]\n        GPU1_ELLIPSIS[...]\n        \n        subgraph \"NVSwitch 1\"\n            NVS1[NVSwitch\u003cbr/\u003eA100]\n        end\n        \n        CPU1[CPU 1]\n        IB1[IB HCA 1\u003cbr/\u003e200Gbps]\n    end\n    \n    %% More nodes\n    ELLIPSIS[...]\n    \n    %% IB Switch\n    IBSW[IB Switch\u003cbr/\u003eHDR 200Gbps]\n    \n    %% NVSwitch connections - All-to-All topology\n    GPU0_0 -.-\u003e|NVLink 3.0\u003cbr/\u003e600GB/s| NVS0\n    GPU0_1 -.-\u003e|NVLink 3.0\u003cbr/\u003e600GB/s| NVS0\n    GPU0_2 -.-\u003e|NVLink 3.0\u003cbr/\u003e600GB/s| NVS0\n    GPU0_ELLIPSIS -.-\u003e|NVLink 3.0\u003cbr/\u003e600GB/s| NVS0\n    \n    GPU1_0 -.-\u003e|NVLink 3.0\u003cbr/\u003e600GB/s| NVS1\n    GPU1_1 -.-\u003e|NVLink 3.0\u003cbr/\u003e600GB/s| NVS1\n    GPU1_2 -.-\u003e|NVLink 3.0\u003cbr/\u003e600GB/s| NVS1\n    GPU1_ELLIPSIS -.-\u003e|NVLink 3.0\u003cbr/\u003e600GB/s| NVS1\n    \n    %% All GPUs connect to CPU (for control/management)\n    GPU0_0 --\u003e|PCIe 4.0\u003cbr/\u003eControl| CPU0\n    GPU0_1 --\u003e|PCIe 4.0\u003cbr/\u003eControl| CPU0\n    GPU0_2 --\u003e|PCIe 4.0\u003cbr/\u003eControl| CPU0\n    \n    GPU1_0 --\u003e|PCIe 4.0\u003cbr/\u003eControl| CPU1\n    GPU1_1 --\u003e|PCIe 4.0\u003cbr/\u003eControl| CPU1\n    GPU1_2 --\u003e|PCIe 4.0\u003cbr/\u003eControl| CPU1\n    \n    %% GPUDirect RDMA connections (GPU directly to IB HCA)\n    GPU0_0 -.-\u003e|GPUDirect RDMA\u003cbr/\u003ePCIe 4.0| IB0\n    GPU0_1 -.-\u003e|GPUDirect RDMA\u003cbr/\u003ePCIe 4.0| IB0\n    GPU0_2 -.-\u003e|GPUDirect RDMA\u003cbr/\u003ePCIe 4.0| IB0\n    \n    GPU1_0 -.-\u003e|GPUDirect RDMA\u003cbr/\u003ePCIe 4.0| IB1\n    GPU1_1 -.-\u003e|GPUDirect RDMA\u003cbr/\u003ePCIe 4.0| IB1\n    GPU1_2 -.-\u003e|GPUDirect RDMA\u003cbr/\u003ePCIe 4.0| IB1\n    \n    %% CPU to IB HCA connections (control path)\n    CPU0 --\u003e|PCIe 4.0\u003cbr/\u003eControl| IB0\n    CPU1 --\u003e|PCIe 4.0\u003cbr/\u003eControl| IB1\n    \n    %% IB Switch connections\n    IB0 --\u003e|IB HDR\u003cbr/\u003e200Gbps| IBSW\n    IB1 --\u003e|IB HDR\u003cbr/\u003e200Gbps| IBSW\n    ELLIPSIS --\u003e|IB HDR\u003cbr/\u003e200Gbps| IBSW\n    \n    %% Style definitions\n    classDef gpuClass fill:#e3f2fd,stroke:#1976d2,stroke-width:2px\n    classDef cpuClass fill:#fff3e0,stroke:#f57c00,stroke-width:2px\n    classDef ibClass fill:#e8f5e8,stroke:#388e3c,stroke-width:2px\n    classDef nvswitchClass fill:#f3e5f5,stroke:#7b1fa2,stroke-width:2px\n    classDef ellipsisClass fill:#f5f5f5,stroke:#9e9e9e,stroke-width:1px\n    \n    class GPU0_0,GPU0_1,GPU0_2,GPU1_0,GPU1_1,GPU1_2 gpuClass\n    class CPU0,CPU1 cpuClass\n    class IB0,IB1,IBSW ibClass\n    class NVS0,NVS1 nvswitchClass\n    class ELLIPSIS,GPU0_ELLIPSIS,GPU1_ELLIPSIS ellipsisClass"}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>

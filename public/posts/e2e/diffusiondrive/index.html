@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>DiffusionDrive: Truncated Diffusion Model for End-to-End Autonomous Driving - omagiclee</title><meta name="Description" content="MagicLee&#39;s Blog"><meta property="og:url" content="http://localhost:1313/posts/e2e/diffusiondrive/">
+  <meta property="og:site_name" content="omagiclee">
+  <meta property="og:title" content="DiffusionDrive: Truncated Diffusion Model for End-to-End Autonomous Driving">
+  <meta property="og:description" content="CVPR 2025 (Highlight) · Horizon Robotics · arXiv · Code
+Motivation The unimodal regression planner (Transfuser, UniAD, VAD, PPAD, GenAD) do not account for the multimodal nature of the driving behaviors. Existing multimodal planners (VADv2, Hydra-MDP, Hydra-MDP&#43;&#43;, SparseDrive) discretize the continuous action space, reformulate the planner in the continuous space as a classification problem, but fail in out-of-vocabulary scenarios and consume large computation cost. Diffusion model has proven to be a powerful generative technique for robotic policy learning, capable of modeling multimodal action distributions. =&gt; Replicate the success of the diffusion model in the robotics domain to end-to-end autonomous driving.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-05-19T17:29:15+08:00">
+    <meta property="article:modified_time" content="2025-05-19T17:29:15+08:00">
+    <meta property="article:tag" content="Diffusion-Based Planner">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="DiffusionDrive: Truncated Diffusion Model for End-to-End Autonomous Driving">
+  <meta name="twitter:description" content="CVPR 2025 (Highlight) · Horizon Robotics · arXiv · Code
+Motivation The unimodal regression planner (Transfuser, UniAD, VAD, PPAD, GenAD) do not account for the multimodal nature of the driving behaviors. Existing multimodal planners (VADv2, Hydra-MDP, Hydra-MDP&#43;&#43;, SparseDrive) discretize the continuous action space, reformulate the planner in the continuous space as a classification problem, but fail in out-of-vocabulary scenarios and consume large computation cost. Diffusion model has proven to be a powerful generative technique for robotic policy learning, capable of modeling multimodal action distributions. =&gt; Replicate the success of the diffusion model in the robotics domain to end-to-end autonomous driving.">
+<meta name="application-name" content="My cool site">
+<meta name="apple-mobile-web-app-title" content="My cool site"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="http://localhost:1313/posts/e2e/diffusiondrive/" /><link rel="prev" href="http://localhost:1313/posts/tailscale/" /><link rel="next" href="http://localhost:1313/posts/e2e/diffad/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="/lib/fontawesome-free/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" href="/lib/animate/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "DiffusionDrive: Truncated Diffusion Model for End-to-End Autonomous Driving",
+        "inLanguage": "en-us",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "http:\/\/localhost:1313\/posts\/e2e\/diffusiondrive\/"
+        },"genre": "posts","keywords": "Diffusion-based Planner","wordcount":  459 ,
+        "url": "http:\/\/localhost:1313\/posts\/e2e\/diffusiondrive\/","datePublished": "2025-05-19T17:29:15+08:00","dateModified": "2025-05-19T17:29:15+08:00","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "omagiclee"
+            },"description": ""
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="omagiclee">My cool site</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/categories/"> Categories </a><a class="menu-item" href="/tags/"> Tags </a><span class="menu-item delimiter"></span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a></div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="omagiclee">My cool site</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><a class="menu-item" href="/categories/" title="">Categories</a><a class="menu-item" href="/tags/" title="">Tags</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a></div>
+    </div>
+</header><main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">DiffusionDrive: Truncated Diffusion Model for End-to-End Autonomous Driving</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>omagiclee</a></span>&nbsp;<span class="post-category">included in <a href="/categories/e2e/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>E2E</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2025-05-19">2025-05-19</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;459 words&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;3 minutes&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  data-kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#motivation">Motivation</a></li>
+    <li><a href="#contributions">Contributions</a></li>
+    <li><a href="#method">Method</a>
+      <ul>
+        <li><a href="#architecture">Architecture</a></li>
+        <li><a href="#vanilla-diffusion-model">Vanilla Diffusion Model</a></li>
+        <li><a href="#truncated-diffusion-model">Truncated Diffusion Model</a></li>
+      </ul>
+    </li>
+    <li><a href="#experiment">Experiment</a></li>
+    <li><a href="#questions">Questions</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><p>CVPR 2025 (Highlight) · Horizon Robotics · <a href="https://arxiv.org/abs/2411.15139" target="_blank" rel="noopener noreffer ">arXiv</a> · <a href="https://github.com/hustvl/DiffusionDrive" target="_blank" rel="noopener noreffer ">Code</a></p>
+<h2 id="motivation">Motivation</h2>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/posts/e2e/diffusiondrive/comparison-of-e2e-decoder.png"
+        data-srcset="/posts/e2e/diffusiondrive/comparison-of-e2e-decoder.png, /posts/e2e/diffusiondrive/comparison-of-e2e-decoder.png 1.5x, /posts/e2e/diffusiondrive/comparison-of-e2e-decoder.png 2x"
+        data-sizes="auto"
+        alt="/posts/e2e/diffusiondrive/comparison-of-e2e-decoder.png"
+        title="comparison-of-e2e-decoder.png" width="1122" height="872" /></p>
+<ol>
+<li>The unimodal regression planner (Transfuser, UniAD, VAD, PPAD, GenAD) do not account for the multimodal nature of the driving behaviors.</li>
+<li>Existing multimodal planners (VADv2, Hydra-MDP, Hydra-MDP++, SparseDrive) discretize the continuous action space, reformulate the planner in the continuous space as a classification problem, but fail in out-of-vocabulary scenarios and consume large computation cost.</li>
+</ol>
+<p>Diffusion model has proven to be a powerful generative technique for robotic policy learning, capable of modeling multimodal action distributions.
+<strong>=&gt; Replicate the success of the diffusion model in the robotics domain to end-to-end autonomous driving.</strong></p>
+<h2 id="contributions">Contributions</h2>
+<ul>
+<li>We firstly introduce the diffusion model to end-to-end autonomous driving.</li>
+<li>We propose DiffusionDrive, a novel truncated diffusion policy that incorporates prior multi-mode anchors and truncates the diffusion schedule to address the issues of mode collapse and heavy computational overhead found in direct adaptation of vanilla diffusion policy.</li>
+<li>We design an efficient transformer-based diffusion decoder for enhanced interaction with conditional scene context in a cascaded manner.</li>
+<li>DiffuisonDrive demonstrates 10× reduction in denoising steps compared to vanilla diffusion policy, delivering superior diversity and quality in just 2 steps.</li>
+<li>DiffuisonDrive achieves a record-breaking 88.1 PDMS on the NAVSIM navtest split dataset while maintaining real-time performance at 45 FPS on an NVIDIA 4090.</li>
+</ul>
+<h2 id="method">Method</h2>
+<h3 id="architecture">Architecture</h3>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/posts/e2e/diffusiondrive/architecture-of-DiffusionDrive.png"
+        data-srcset="/posts/e2e/diffusiondrive/architecture-of-DiffusionDrive.png, /posts/e2e/diffusiondrive/architecture-of-DiffusionDrive.png 1.5x, /posts/e2e/diffusiondrive/architecture-of-DiffusionDrive.png 2x"
+        data-sizes="auto"
+        alt="/posts/e2e/diffusiondrive/architecture-of-DiffusionDrive.png"
+        title="architecture-of-DiffusionDrive.png" width="2336" height="808" /></p>
+<h3 id="vanilla-diffusion-model">Vanilla Diffusion Model</h3>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/posts/e2e/diffusiondrive/comparsion-of-roadmap.png"
+        data-srcset="/posts/e2e/diffusiondrive/comparsion-of-roadmap.png, /posts/e2e/diffusiondrive/comparsion-of-roadmap.png 1.5x, /posts/e2e/diffusiondrive/comparsion-of-roadmap.png 2x"
+        data-sizes="auto"
+        alt="/posts/e2e/diffusiondrive/comparsion-of-roadmap.png"
+        title="comparsion-of-roadmap.png" width="1934" height="1848" /></p>
+<p>We simply replace the regression MLP layers with the conditional diffusion model UNet following vanilla diffusion policy.</p>
+<ul>
+<li><strong>Mode collapse.</strong> The different random noises converge to similar trajectories after the denoising process.</li>
+<li><strong>Heavy denoising overhead.</strong> The DDIM diffusion policy requires 20 denoising steps to transform random noise into a feasible trajectory.</li>
+</ul>
+<h3 id="truncated-diffusion-model">Truncated Diffusion Model</h3>
+<p><strong>Anchored Gaussian distribution.</strong> We sample the noise from an anchored Gaussian distribution instead of a vanilla Gaussion distribution.</p>
+<p><strong>Diffusion decoder.</strong></p>
+<ol>
+<li>Interact with BEV or PV features based on the trajectory coordinates with deformable spatial cross-attention.</li>
+<li>Interact with the agent/map queries with cross attention, followed by a FFN.</li>
+<li>Encode the diffusion timestep information with a Timestep Modulation layer.</li>
+<li>Predict the confidence score and the offset relative to the initial noisy trajectory coordinates.</li>
+<li>The output from this diffusion decoder layer serves as the input for the subsequent cascade diffusion layer with parameters shared across the different denoising timesteps.</li>
+<li>The final trajectory with the highest confidence score is selected as the output.</li>
+</ol>
+<p><strong>Forward pass.</strong> The diffusion decoder takes N noisy trajectories as input and predicts classification scores and denoised trajectories based on the conditional scene context.</p>
+<p><strong>Label assignment.</strong> Assign the noisy trajectory around the closest anchor to the ground truth trajectory as positive sample and others as negative samples.</p>
+<p><strong>Training objectives.</strong> L1 regression loss and BCE classification loss.</p>
+<p><strong>Inference.</strong></p>
+<p><strong>Inference flexibility.</strong> While the model is trained with N trajectories, the inference process can accommodate an arbitrary number of trajectory samples.</p>
+<h2 id="experiment">Experiment</h2>
+<h2 id="questions">Questions</h2>
+<p>Dec 表示什么</p>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on 2025-05-19</span>
+            </div></div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="http://localhost:1313/posts/e2e/diffusiondrive/" data-title="DiffusionDrive: Truncated Diffusion Model for End-to-End Autonomous Driving" data-hashtags="Diffusion-based Planner"><i class="fab fa-twitter fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="http://localhost:1313/posts/e2e/diffusiondrive/" data-hashtag="Diffusion-based Planner"><i class="fab fa-facebook-square fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Hacker News" data-sharer="hackernews" data-url="http://localhost:1313/posts/e2e/diffusiondrive/" data-title="DiffusionDrive: Truncated Diffusion Model for End-to-End Autonomous Driving"><i class="fab fa-hacker-news fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Line" data-sharer="line" data-url="http://localhost:1313/posts/e2e/diffusiondrive/" data-title="DiffusionDrive: Truncated Diffusion Model for End-to-End Autonomous Driving"><i data-svg-src="/lib/simple-icons/icons/line.min.svg" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on 微博" data-sharer="weibo" data-url="http://localhost:1313/posts/e2e/diffusiondrive/" data-title="DiffusionDrive: Truncated Diffusion Model for End-to-End Autonomous Driving"><i class="fab fa-weibo fa-fw" aria-hidden="true"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/diffusion-based-planner/">Diffusion-Based Planner</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/posts/tailscale/" class="prev" rel="prev" title="Tailscale"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>Tailscale</a>
+            <a href="/posts/e2e/diffad/" class="next" rel="next" title="DiffAD: A Unified Diffusion Modeling Approach for Autonomous Driving">DiffAD: A Unified Diffusion Modeling Approach for Autonomous Driving<i class="fas fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+</div>
+</article></div>
+            </main></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
+            </a>
+        </div><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript" src="/lib/sharer/sharer.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":50},"comment":{}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>

@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=52327&amp;path=livereload" data-no-instant defer></script>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>Qwen3 - omagiclee</title><meta name="Description" content="MagicLee&#39;s Blog"><meta property="og:url" content="http://localhost:52327/posts/qwen/qwen3/">
+  <meta property="og:site_name" content="omagiclee">
+  <meta property="og:title" content="Qwen3">
+  <meta property="og:description" content="Chat · Blog · Hugging Face · GitHub · ModelScope · HF-Demo · Doc-en · Doc-zh
+Introduction post-trained models, such as Qwen3-30B-A3B, along with their pre-trained counterparts (e.g.-30B-A3B-Base), are now available on platforms like Hugging Face, ModelScope, and Kaggle.
+Key Features Hybrid Thinking Modes Thinking Mode: In this mode, the model takes time to reason step by step before delivering the final answer. This is ideal for complex problems that require deeper thought. Non-Thinking Mode: Here, the model provides quick, near-instant responses, suitable for simpler questions where speed is more important than depth. Multilingual Support support 119 languages and dialects Improved Agentic Capabilities We have optimized the Qwen3 models for coding and agentic capabilities, and also we have strengthened the support of MCP as well. Pre-training In terms of pretraining, the dataset for Qwen3 (approximately 36 trillion tokens) has been significantly expanded compared to Qwen2.5 (18 trillion tokens).">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-04-30T15:01:24+08:00">
+    <meta property="article:modified_time" content="2025-04-30T15:01:24+08:00">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Qwen3">
+  <meta name="twitter:description" content="Chat · Blog · Hugging Face · GitHub · ModelScope · HF-Demo · Doc-en · Doc-zh
+Introduction post-trained models, such as Qwen3-30B-A3B, along with their pre-trained counterparts (e.g.-30B-A3B-Base), are now available on platforms like Hugging Face, ModelScope, and Kaggle.
+Key Features Hybrid Thinking Modes Thinking Mode: In this mode, the model takes time to reason step by step before delivering the final answer. This is ideal for complex problems that require deeper thought. Non-Thinking Mode: Here, the model provides quick, near-instant responses, suitable for simpler questions where speed is more important than depth. Multilingual Support support 119 languages and dialects Improved Agentic Capabilities We have optimized the Qwen3 models for coding and agentic capabilities, and also we have strengthened the support of MCP as well. Pre-training In terms of pretraining, the dataset for Qwen3 (approximately 36 trillion tokens) has been significantly expanded compared to Qwen2.5 (18 trillion tokens).">
+<meta name="application-name" content="My cool site">
+<meta name="apple-mobile-web-app-title" content="My cool site"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="http://localhost:52327/posts/qwen/qwen3/" /><link rel="prev" href="http://localhost:52327/posts/nvidia-tensorrt-llm/" /><link rel="next" href="http://localhost:52327/posts/huggingface/transformers/transformers/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="/lib/fontawesome-free/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" href="/lib/animate/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Qwen3",
+        "inLanguage": "en-us",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "http:\/\/localhost:52327\/posts\/qwen\/qwen3\/"
+        },"genre": "posts","wordcount":  509 ,
+        "url": "http:\/\/localhost:52327\/posts\/qwen\/qwen3\/","datePublished": "2025-04-30T15:01:24+08:00","dateModified": "2025-04-30T15:01:24+08:00","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "omagiclee"
+            },"description": ""
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="omagiclee">My cool site</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/categories/"> Categories </a><a class="menu-item" href="/tags/"> Tags </a><span class="menu-item delimiter"></span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a></div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="omagiclee">My cool site</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><a class="menu-item" href="/categories/" title="">Categories</a><a class="menu-item" href="/tags/" title="">Tags</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a></div>
+    </div>
+</header><main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">Qwen3</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>omagiclee</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2025-04-30">2025-04-30</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;509 words&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;3 minutes&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  data-kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#dataset-source">Dataset source</a></li>
+    <li><a href="#training-process">Training process</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#training-process-1">Training process</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><p><a href="https://chat.qwen.ai/" target="_blank" rel="noopener noreffer ">Chat</a> · <a href="https://qwenlm.github.io/blog/qwen3/" target="_blank" rel="noopener noreffer ">Blog</a> · <a href="https://huggingface.co/collections/Qwen/qwen3-67dd247413f0e2e4f653967f" target="_blank" rel="noopener noreffer ">Hugging Face</a> · <a href="https://github.com/QwenLM/Qwen3" target="_blank" rel="noopener noreffer ">GitHub</a> · <a href="https://modelscope.cn/organization/qwen" target="_blank" rel="noopener noreffer ">ModelScope</a> · <a href="https://huggingface.co/spaces/Qwen/Qwen3-Demo" target="_blank" rel="noopener noreffer ">HF-Demo</a> · <a href="https://qwen.readthedocs.io/en/latest/" target="_blank" rel="noopener noreffer ">Doc-en</a> · <a href="https://qwen.readthedocs.io/zh-cn/latest/" target="_blank" rel="noopener noreffer ">Doc-zh</a></p>
+<h1 id="introduction">Introduction</h1>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/posts/qwen/qwen3/model_list.png"
+        data-srcset="/posts/qwen/qwen3/model_list.png, /posts/qwen/qwen3/model_list.png 1.5x, /posts/qwen/qwen3/model_list.png 2x"
+        data-sizes="auto"
+        alt="/posts/qwen/qwen3/model_list.png"
+        title="model_list.png" width="1554" height="1098" /></p>
+<p>post-trained models, such as Qwen3-30B-A3B, along with their pre-trained counterparts (e.g.-30B-A3B-Base), are now available on platforms like Hugging Face, ModelScope, and Kaggle.</p>
+<h1 id="key-features">Key Features</h1>
+<ul>
+<li><strong>Hybrid Thinking Modes</strong>
+<ul>
+<li>Thinking Mode: In this mode, the model takes time to reason step by step before delivering the final answer. This is ideal for complex problems that require deeper thought.</li>
+<li>Non-Thinking Mode: Here, the model provides quick, near-instant responses, suitable for simpler questions where speed is more important than depth.
+<img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/posts/qwen/qwen3/thinking_budget.png"
+        data-srcset="/posts/qwen/qwen3/thinking_budget.png, /posts/qwen/qwen3/thinking_budget.png 1.5x, /posts/qwen/qwen3/thinking_budget.png 2x"
+        data-sizes="auto"
+        alt="/posts/qwen/qwen3/thinking_budget.png"
+        title="thinking_budget.png" width="3180" height="1970" /></li>
+</ul>
+</li>
+<li><strong>Multilingual Support</strong>
+<ul>
+<li>support 119 languages and dialects</li>
+</ul>
+</li>
+<li><strong>Improved Agentic Capabilities</strong>
+<ul>
+<li>We have optimized the Qwen3 models for coding and agentic capabilities, and also we have strengthened the support of <strong>MCP</strong> as well.</li>
+</ul>
+</li>
+</ul>
+<h1 id="pre-training">Pre-training</h1>
+<p>In terms of pretraining, the dataset for Qwen3 (approximately 36 trillion tokens) has been significantly expanded compared to Qwen2.5 (18 trillion tokens).</p>
+<h2 id="dataset-source">Dataset source</h2>
+<ul>
+<li>web</li>
+<li>PDF-like documents
+<ul>
+<li>extract text from these documents with Qwen2.5-VL</li>
+<li>improve the quality of the extracted content with Qwen2.5</li>
+</ul>
+</li>
+<li>synthetic data
+<ul>
+<li>To increase the amount of math and code data, we used Qwen2.5-Math and Qwen2.5-Coder to generate synthetic data.</li>
+</ul>
+</li>
+</ul>
+<h2 id="training-process">Training process</h2>
+<ul>
+<li>Stage 1: 30 trillion tokens with a context length of 4K tokens. This stage provided the model with basic language skills and general knowledge.</li>
+<li>Stage 2: increasing the proportion of knowledge-intensive data, such as STEM, coding, and reasoning tasks. The model was then pretrained on an additional 5 trillion tokens.</li>
+<li>Stage 3: we used high-quality long-context data to extend the context length to 32K tokens. This ensures the model can handle longer inputs effectively.</li>
+</ul>
+<h1 id="post-training">Post-training</h1>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/posts/qwen/qwen3/post_training.png"
+        data-srcset="/posts/qwen/qwen3/post_training.png, /posts/qwen/qwen3/post_training.png 1.5x, /posts/qwen/qwen3/post_training.png 2x"
+        data-sizes="auto"
+        alt="/posts/qwen/qwen3/post_training.png"
+        title="post_training.png" width="4143" height="1640" /></p>
+<h2 id="training-process-1">Training process</h2>
+<ul>
+<li>Stage 1: long chain-of-thought (CoT) cold start
+<ul>
+<li>We fine-tuned the models using diverse long CoT data, covering various tasks and domains such as mathematics, coding, logical reasoning, and STEM problems. This process aimed to equip the model with fundamental reasoning abilities.</li>
+</ul>
+</li>
+<li>Stage 2: reasoning-based reinforcement learning (RL)
+<ul>
+<li>focused on scaling up computational resources for RL, utilizing rule-based rewards to enhance the model&rsquo;s exploration and exploitation capabilities.</li>
+</ul>
+</li>
+<li>Stage 3: thinking mode fusion
+<ul>
+<li>we integrated non-thinking capabilities into the thinking model by fine-tuning it on a combination of long CoT data and commonly used instruction-tuning data. This data was generated by the enhanced thinking model from the second stage, ensuring a seamless blend of reasoning and quick response capabilities.</li>
+</ul>
+</li>
+<li>Stage 4: general RL
+<ul>
+<li>we applied RL across more than 20 general-domain tasks to further strengthen the model&rsquo;s general capabilities and correct undesired behaviors. These tasks included instruction following, format following, and agent capabilities, etc.</li>
+</ul>
+</li>
+</ul>
+<h1 id="deployment">Deployment</h1>
+<p>For deployment, we recommend using frameworks like SGLang(&gt;=0.4.6.post1) and vLLM(&gt;=0.8.4) to create an OpenAI-compatible API endpoint:
+SGLang:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">sglang</span><span class="o">.</span><span class="n">launch_server</span> <span class="o">--</span><span class="n">model</span><span class="o">-</span><span class="n">path</span> <span class="n">Qwen</span><span class="o">/</span><span class="n">Qwen3</span><span class="o">-</span><span class="mi">30</span><span class="n">B</span><span class="o">-</span><span class="n">A3B</span> <span class="o">--</span><span class="n">reasoning</span><span class="o">-</span><span class="n">parser</span> <span class="n">qwen3</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>vLLM:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">vllm</span> <span class="n">serve</span> <span class="n">Qwen</span><span class="o">/</span><span class="n">Qwen3</span><span class="o">-</span><span class="mi">30</span><span class="n">B</span><span class="o">-</span><span class="n">A3B</span> <span class="o">--</span><span class="n">enable</span><span class="o">-</span><span class="n">reasoning</span> <span class="o">--</span><span class="n">reasoning</span><span class="o">-</span><span class="n">parser</span> <span class="n">deepseek_r1</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>For local usage, tools such as Ollama, LMStudio, MLX, llama.cpp, and KTransformers are highly recommended.</p>
+<h1 id="agentic-usages">Agentic Usages</h1>
+<p>We recommend using Qwen-Agent to make the best use of agentic ability of Qwen3.
+To define the available tools, you can use the MCP configuration file, use the integrated tool of Qwen-Agent, or integrate other tools by yourself.</p>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on 2025-04-30</span>
+            </div></div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="http://localhost:52327/posts/qwen/qwen3/" data-title="Qwen3"><i class="fab fa-twitter fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="http://localhost:52327/posts/qwen/qwen3/"><i class="fab fa-facebook-square fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Hacker News" data-sharer="hackernews" data-url="http://localhost:52327/posts/qwen/qwen3/" data-title="Qwen3"><i class="fab fa-hacker-news fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Line" data-sharer="line" data-url="http://localhost:52327/posts/qwen/qwen3/" data-title="Qwen3"><i data-svg-src="/lib/simple-icons/icons/line.min.svg" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on 微博" data-sharer="weibo" data-url="http://localhost:52327/posts/qwen/qwen3/" data-title="Qwen3"><i class="fab fa-weibo fa-fw" aria-hidden="true"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/posts/nvidia-tensorrt-llm/" class="prev" rel="prev" title="NVIDIA TensorRT-LLM"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>NVIDIA TensorRT-LLM</a>
+            <a href="/posts/huggingface/transformers/transformers/" class="next" rel="next" title="Transformers">Transformers<i class="fas fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+</div>
+</article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.148.2">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.3.0"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
+                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2022 - 2025</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">omagiclee</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
+            </a>
+        </div><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript" src="/lib/sharer/sharer.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":50},"comment":{}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>

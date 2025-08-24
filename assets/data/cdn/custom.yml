@@ -1,0 +1,5 @@
+prefix:
+  libFiles: https://cdn.jsdelivr.net/npm/
+libFiles:
+  # mermaid@10.6.1 https://github.com/mermaid-js/mermaid (自定义版本)
+  mermaidJS: mermaid@11.10.1/dist/mermaid.min.js

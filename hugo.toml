@@ -1,8 +1,55 @@
-baseURL = 'https://example.org/'
+baseURL = 'https://omagiclee.github.io/'
 languageCode = 'en-us'
-title = 'My New Hugo Site'
+title = 'omagiclee'
 theme = 'LoveIt'
+
+[params]
+  # Site description
+  description = "MagicLee's Blog"
+  # Keywords for SEO
+  keywords = ["AI", "Machine Learning", "Deep Learning"]
+  # Author info
+  [params.Author]
+    name = "omagiclee"
+  # Site subtitle
+  subtitle = "AI & Deep Learning Notes"
+  # Site slogan
+  slogan = "记录学习，分享知识"
+  
+  # CDN configuration
+  cdn = "custom"
+  
+  [params.cdn]
+    data = "custom"
+  
+  [params.markup]
+    [params.markup.mermaid]
+      enable = true
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+  [markup.highlight]
+    codeFences = true
+    guessSyntax = true
+    lineNos = true
+    lineNumbersInTable = true
+    noClasses = false
+    style = 'monokai'
+    tabWidth = 4
 
 [caches]
   [caches.images]
     dir = ':cacheDir/images'
+
+[menu]
+  [[menu.main]]
+    name = "Categories"
+    url = "/categories/"
+    weight = 1
+
+  [[menu.main]]
+    name = "Tags"
+    url = "/tags/"
+    weight = 2

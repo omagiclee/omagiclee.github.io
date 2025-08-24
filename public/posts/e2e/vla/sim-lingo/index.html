@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>SimLingo: Vision-Only Closed-Loop Autonomous Driving with  Language-Action Alignment - omagiclee</title><meta name="Description" content="MagicLee&#39;s Blog"><meta property="og:url" content="http://localhost:1313/posts/e2e/vla/sim-lingo/">
+  <meta property="og:site_name" content="omagiclee">
+  <meta property="og:title" content="SimLingo: Vision-Only Closed-Loop Autonomous Driving with  Language-Action Alignment">
+  <meta property="og:description" content="123 · arXiv · GitHub
+Motivation Contribution Method Task.
+Driving Vision-Language Understanding Commentary: describe the current decision and action in natural language. VQA: answer a question about the simulated driving scene. Action Dreaming (language-action alignment): a form of instruction following, to improve the alignment of language and action Input.
+image navigational information: ego’s speed a task prompt with information about the current task Driving without language predictions: “Predict the waypoints” Commentary &#43; Driving: “What should the ego do next?” VQA &#43; Driving: “Q: ?&gt;” Action Dreaming: “” Output.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-06-18T17:04:13+08:00">
+    <meta property="article:modified_time" content="2025-06-18T17:04:13+08:00">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="SimLingo: Vision-Only Closed-Loop Autonomous Driving with  Language-Action Alignment">
+  <meta name="twitter:description" content="123 · arXiv · GitHub
+Motivation Contribution Method Task.
+Driving Vision-Language Understanding Commentary: describe the current decision and action in natural language. VQA: answer a question about the simulated driving scene. Action Dreaming (language-action alignment): a form of instruction following, to improve the alignment of language and action Input.
+image navigational information: ego’s speed a task prompt with information about the current task Driving without language predictions: “Predict the waypoints” Commentary &#43; Driving: “What should the ego do next?” VQA &#43; Driving: “Q: ?&gt;” Action Dreaming: “” Output.">
+<meta name="application-name" content="My cool site">
+<meta name="apple-mobile-web-app-title" content="My cool site"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="http://localhost:1313/posts/e2e/vla/sim-lingo/" /><link rel="prev" href="http://localhost:1313/posts/infra/knowledge-distillation/" /><link rel="next" href="http://localhost:1313/posts/e2e/vla/rt-2/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="/lib/fontawesome-free/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" href="/lib/animate/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "SimLingo: Vision-Only Closed-Loop Autonomous Driving with  Language-Action Alignment",
+        "inLanguage": "en-us",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "http:\/\/localhost:1313\/posts\/e2e\/vla\/sim-lingo\/"
+        },"genre": "posts","wordcount":  359 ,
+        "url": "http:\/\/localhost:1313\/posts\/e2e\/vla\/sim-lingo\/","datePublished": "2025-06-18T17:04:13+08:00","dateModified": "2025-06-18T17:04:13+08:00","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "omagiclee"
+            },"description": ""
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="omagiclee">My cool site</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/categories/"> Categories </a><a class="menu-item" href="/tags/"> Tags </a><span class="menu-item delimiter"></span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a></div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="omagiclee">My cool site</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><a class="menu-item" href="/categories/" title="">Categories</a><a class="menu-item" href="/tags/" title="">Tags</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a></div>
+    </div>
+</header><main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">SimLingo: Vision-Only Closed-Loop Autonomous Driving with  Language-Action Alignment</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>omagiclee</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2025-06-18">2025-06-18</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;359 words&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;2 minutes&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  data-kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#motivation">Motivation</a></li>
+    <li><a href="#contribution">Contribution</a></li>
+    <li><a href="#method">Method</a></li>
+    <li><a href="#experiments">Experiments</a>
+      <ul>
+        <li><a href="#dataset">Dataset</a></li>
+        <li><a href="#benchmarks-and-metrics">Benchmarks and Metrics</a></li>
+      </ul>
+    </li>
+    <li><a href="#references">References</a></li>
+    <li><a href="#question">Question</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><p>123 · <a href="" rel="">arXiv</a> · <a href="" rel="">GitHub</a></p>
+<h2 id="motivation">Motivation</h2>
+<h2 id="contribution">Contribution</h2>
+<h2 id="method">Method</h2>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/posts/e2e/vla/sim-lingo/simlingo-architecture.png"
+        data-srcset="/posts/e2e/vla/sim-lingo/simlingo-architecture.png, /posts/e2e/vla/sim-lingo/simlingo-architecture.png 1.5x, /posts/e2e/vla/sim-lingo/simlingo-architecture.png 2x"
+        data-sizes="auto"
+        alt="/posts/e2e/vla/sim-lingo/simlingo-architecture.png"
+        title="simlingo-architecture" width="1968" height="982" /></p>
+<p><strong>Task.</strong></p>
+<ul>
+<li>Driving</li>
+<li>Vision-Language Understanding
+<ul>
+<li>Commentary: describe the current decision and action in natural language.</li>
+<li>VQA: answer a question about the simulated driving scene.</li>
+</ul>
+</li>
+<li>Action Dreaming (language-action alignment): a form of instruction following, to improve the alignment of language and action</li>
+</ul>
+<p><strong>Input.</strong></p>
+<ul>
+<li>image</li>
+<li>navigational information:</li>
+<li>ego&rsquo;s speed</li>
+<li>a task prompt with information about the current task
+<ul>
+<li>Driving without language predictions: &ldquo;Predict the waypoints&rdquo;</li>
+<li>Commentary + Driving: &ldquo;What should the ego do next?&rdquo;</li>
+<li>VQA + Driving: &ldquo;Q: <question>?&gt;&rdquo;</li>
+<li>Action Dreaming: &ldquo;<Dreamer flag><instruction>&rdquo;</li>
+</ul>
+</li>
+</ul>
+<p><strong>Output.</strong></p>
+<ul>
+<li>action represention: a disentangled representation
+<ul>
+<li>temporal speed waypoints -&gt; target speed</li>
+<li>geometric path waypoints -&gt; target angle</li>
+</ul>
+</li>
+<li>language: auto-regressive token prediction</li>
+</ul>
+<p>We noticed that:</p>
+<ol>
+<li>using only temporal waypoints for steering and speed led to steering problems, especially during turns or when swerving around obstacles.</li>
+<li>by using path waypoints, we achieve denser supervision.</li>
+<li>we also predict the path when the vehicle is stationary, leading to improved steering behavior.</li>
+</ol>
+<p><strong>Architecture.</strong>
+InternVL-2-1B.</p>
+<ul>
+<li>Vision Encoder (pretrained): InternViT-300M-448px (ViT)
+<ul>
+<li>To be able to encode dynamic and higher resolutions, we split the input image into 448x448 pixel tiles and extract features for each tile independently.</li>
+<li>To reduce computational overhead due to the quadratic complexity of the LLM, we uses the pixel unshuffle technique to downsample the number of tokens by a factor of 4.</li>
+</ul>
+</li>
+<li>LLM (pretrained): Qwen2-0.5B-Instruct
+<ul>
+<li>Navigational information
+<ul>
+<li>the next two GPS target points: encode with an MLP to obtain two navigational embeddings.</li>
+<li>or a high-level language command: use the standard LLM tokenizer to obtain the embeddings.</li>
+<li>during training, we randomly switch between the two input modalities.</li>
+</ul>
+</li>
+<li>Speed v: use the speed v in natural language as part of the global LLM prompt.</li>
+</ul>
+</li>
+<li>Token Interleaver: replace the placeholder tokens with the corresponding embeddings.</li>
+</ul>
+<p><strong>Training.</strong></p>
+<ol>
+<li>First, it auto-regressively generates the language predictions. (CE)</li>
+<li>Then in one additional forward pass, it generates the actions consisting of path and waypoints. (smooth-L1)</li>
+</ol>
+<p><strong>Inference.</strong>
+two PID controllers to get the steering angle and acceleration.</p>
+<h2 id="experiments">Experiments</h2>
+<h3 id="dataset">Dataset</h3>
+<h3 id="benchmarks-and-metrics">Benchmarks and Metrics</h3>
+<p>Leaderboard 2.0:</p>
+<ul>
+<li>Driving Score (DS)</li>
+<li>Route Completion (RC)</li>
+<li>Infraction Score (IS)</li>
+</ul>
+<p>Bench2Drive</p>
+<ul>
+<li>driving score</li>
+<li>success rate</li>
+<li>efficiency</li>
+<li>comfortness</li>
+</ul>
+<p>DriveLM-hard (VQA) and Commentary</p>
+<ul>
+<li>driving score</li>
+<li>success rate</li>
+<li>efficiency</li>
+<li>comfortness</li>
+</ul>
+<p>Action Dreaming</p>
+<h2 id="references">References</h2>
+<ul>
+<li></li>
+<li></li>
+<li></li>
+</ul>
+<h2 id="question">Question</h2>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on 2025-06-18</span>
+            </div></div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="http://localhost:1313/posts/e2e/vla/sim-lingo/" data-title="SimLingo: Vision-Only Closed-Loop Autonomous Driving with  Language-Action Alignment"><i class="fab fa-twitter fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="http://localhost:1313/posts/e2e/vla/sim-lingo/"><i class="fab fa-facebook-square fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Hacker News" data-sharer="hackernews" data-url="http://localhost:1313/posts/e2e/vla/sim-lingo/" data-title="SimLingo: Vision-Only Closed-Loop Autonomous Driving with  Language-Action Alignment"><i class="fab fa-hacker-news fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Line" data-sharer="line" data-url="http://localhost:1313/posts/e2e/vla/sim-lingo/" data-title="SimLingo: Vision-Only Closed-Loop Autonomous Driving with  Language-Action Alignment"><i data-svg-src="/lib/simple-icons/icons/line.min.svg" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on 微博" data-sharer="weibo" data-url="http://localhost:1313/posts/e2e/vla/sim-lingo/" data-title="SimLingo: Vision-Only Closed-Loop Autonomous Driving with  Language-Action Alignment"><i class="fab fa-weibo fa-fw" aria-hidden="true"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/posts/infra/knowledge-distillation/" class="prev" rel="prev" title="Knowledge Distillation"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>Knowledge Distillation</a>
+            <a href="/posts/e2e/vla/rt-2/" class="next" rel="next" title="RT 2">RT 2<i class="fas fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+</div>
+</article></div>
+            </main></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
+            </a>
+        </div><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript" src="/lib/sharer/sharer.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":50},"comment":{}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>

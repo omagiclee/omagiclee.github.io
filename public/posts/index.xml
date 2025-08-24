@@ -1,17 +1,177 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
-        <title>All Posts - My New Hugo Site</title>
-        <link>http://localhost:1313/posts/</link>
-        <description>All Posts | My New Hugo Site</description>
-        <generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Sat, 12 Apr 2025 23:39:40 &#43;0800</lastBuildDate><atom:link href="http://localhost:1313/posts/" rel="self" type="application/rss+xml" /><item>
-    <title>My First Post</title>
-    <link>http://localhost:1313/posts/my-first-post/</link>
-    <pubDate>Sat, 12 Apr 2025 23:39:40 &#43;0800</pubDate>
-    <author>xxxx</author>
-    <guid>http://localhost:1313/posts/my-first-post/</guid>
-    <description><![CDATA[<h1 id="introduction">Introduction</h1>
-<p>This is <strong>bold</strong> text, and this is <em>emphasized</em> text.</p>
-<p>Visit the <a href="https://gohugo.io" target="_blank" rel="noopener noreffer ">Hugo</a> website!</p>]]></description>
+        <title>All Posts - omagiclee</title>
+        <link>https://omagiclee.github.io/posts/</link>
+        <description>All Posts | omagiclee</description>
+        <generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Sat, 23 Aug 2025 13:36:45 &#43;0800</lastBuildDate><atom:link href="https://omagiclee.github.io/posts/" rel="self" type="application/rss+xml" /><item>
+    <title>DDP</title>
+    <link>https://omagiclee.github.io/posts/pytorch/ddp/</link>
+    <pubDate>Sat, 23 Aug 2025 13:36:45 &#43;0800</pubDate>
+    <author>omagiclee</author>
+    <guid>https://omagiclee.github.io/posts/pytorch/ddp/</guid>
+    <description><![CDATA[<h2 id="名词解释">名词解释</h2>
+<p><strong>PCIe</strong> (Peripheral Component Interconnect Express，外设组件高速互连总线） 指的是 CPU、GPU、存储设备、网卡等硬件之间的数据传输通道标准。</p>
+<p>它的核心作用就是 提供 GPU ↔ CPU、GPU ↔ GPU、GPU ↔ 其他外设 的通信带宽。</p>
+<p><strong>NVLink</strong> 是 NVIDIA 开发的 GPU 互联技术，用于 GPU 之间的直接通信。</p>
+<p><strong>NVSwitch</strong> 是 NVIDIA 开发的交换芯片，用于 GPU 之间的通信。</p>
+<p><strong>IB (InfiniBand)</strong> 是一种高带宽、低延迟的跨服务器间的网络互联架构，由 InfiniBand Trade Association (IBTA) 制定标准，广泛用于高性能计算（HPC）、人工智能训练等场景。</p>
+<ul>
+<li>高带宽
+<ul>
+<li>SDR (Single Data Rate): 10Gbps</li>
+<li>DDR (Double Data Rate): 20Gbps</li>
+<li>QDR (Quad Data Rate): 40Gbps</li>
+<li>FDR (Fourteen Data Rate): 56Gbps</li>
+<li>EDR (Enhanced Data Rate): 100Gbps</li>
+<li><strong>HDR (High Data Rate, 主流): 200Gbps</strong>
+<ul>
+<li>Lane: 单通道速率</li>
+<li>Link(4X): 通常由4条 Lane 组成</li>
+</ul>
+</li>
+<li><strong>NDR (Next Data Rate, 主流): 400Gbps</strong></li>
+<li>XDR (eXtreme Data Rate): 800Gbps</li>
+</ul>
+</li>
+<li>低延迟：µs 级，甚至＜1 µs，远低于万兆以太网（1000Mbps）</li>
+<li>RDMA (Remote Direct Memory Access)：零拷贝通信</li>
+<li>可扩展性：采用交换机架构，支持大规模集群的扩展。</li>
+<li>无损网络：不会因为拥堵而丢弃数据包</li>
+</ul>
+<div class="mermaid" id="id-1"></div>
+<p>备注：</p>]]></description>
+</item>
+<item>
+    <title>DiffAD: A Unified Diffusion Modeling Approach for Autonomous Driving</title>
+    <link>https://omagiclee.github.io/posts/e2e/diff-ad/</link>
+    <pubDate>Tue, 20 May 2025 23:01:01 &#43;0800</pubDate>
+    <author>omagiclee</author>
+    <guid>https://omagiclee.github.io/posts/e2e/diff-ad/</guid>
+    <description><![CDATA[<p>arXiv(2025-03-15) · <a href="" rel="">arXiv</a> · <a href="" rel="">GitHub</a></p>
+<h2 id="motivations">Motivations</h2>
+<p>This is a test article.</p>
+<h2 id="contributions">Contributions</h2>
+<p>Test content.</p>
+<h2 id="method">Method</h2>
+<p></p>
+<h2 id="experiments">Experiments</h2>
+<p>Test content.</p>
+<h2 id="references">References</h2>
+<ul>
+<li>Test reference 1</li>
+<li>Test reference 2</li>
+<li>Test reference 3</li>
+</ul>
+<h2 id="questions">Questions</h2>
+<p>Test questions.</p>]]></description>
+</item>
+<item>
+    <title>DiffusionDrive: Truncated Diffusion Model for End-to-End Autonomous Driving</title>
+    <link>https://omagiclee.github.io/posts/e2e/diffusion-drive/</link>
+    <pubDate>Mon, 19 May 2025 17:29:15 &#43;0800</pubDate>
+    <author>omagiclee</author>
+    <guid>https://omagiclee.github.io/posts/e2e/diffusion-drive/</guid>
+    <description><![CDATA[<p>CVPR 2025 (Highlight) · Horizon Robotics · <a href="https://arxiv.org/abs/2411.15139" target="_blank" rel="noopener noreffer ">arXiv</a> · <a href="https://github.com/hustvl/DiffusionDrive" target="_blank" rel="noopener noreffer ">Code</a></p>
+<h2 id="motivation">Motivation</h2>
+<p></p>
+<ol>
+<li>The unimodal regression planner (Transfuser, UniAD, VAD, PPAD, GenAD) do not account for the multimodal nature of the driving behaviors.</li>
+<li>Existing multimodal planners (VADv2, Hydra-MDP, Hydra-MDP++, SparseDrive) discretize the continuous action space, reformulate the planner in the continuous space as a classification problem, but fail in out-of-vocabulary scenarios and consume large computation cost.</li>
+</ol>
+<p>Diffusion model has proven to be a powerful generative technique for robotic policy learning, capable of modeling multimodal action distributions.
+<strong>=&gt; Replicate the success of the diffusion model in the robotics domain to end-to-end autonomous driving.</strong></p>]]></description>
+</item>
+<item>
+    <title>CDN 配置测试</title>
+    <link>https://omagiclee.github.io/posts/cdn-test/</link>
+    <pubDate>Mon, 27 Jan 2025 10:00:00 &#43;0800</pubDate>
+    <author>omagiclee</author>
+    <guid>https://omagiclee.github.io/posts/cdn-test/</guid>
+    <description><![CDATA[<h1 id="cdn-配置测试">CDN 配置测试</h1>
+<h2 id="环境信息">环境信息</h2>
+<ul>
+<li><strong>Hugo 环境</strong>：{{ hugo.Environment }}</li>
+<li><strong>配置的 CDN</strong>：{{ .Site.Params.cdn }}</li>
+<li><strong>CDN 数据源</strong>：{{ .Site.Params.cdn.data }}</li>
+</ul>
+<h2 id="强制加载-mermaid-11101">强制加载 Mermaid 11.10.1</h2>
+<script>
+(function() {
+    console.log('🔧 开始强制加载 Mermaid 11.10.1...');
+    
+    // 移除所有现有的 Mermaid 脚本
+    const existingScripts = document.querySelectorAll('script[src*="mermaid"]');
+    console.log('找到现有 Mermaid 脚本数量:', existingScripts.length);
+    existingScripts.forEach(script => {
+        console.log('移除脚本:', script.src);
+        script.remove();
+    });
+    
+    // 等待一下确保移除完成
+    setTimeout(function() {
+        // 加载指定版本的 Mermaid
+        const script = document.createElement('script');
+        script.src = 'https://cdn.jsdelivr.net/npm/mermaid@11.10.1/dist/mermaid.min.js';
+        script.onload = function() {
+            console.log('✅ Mermaid 11.10.1 加载成功');
+            if (typeof mermaid !== 'undefined') {
+                console.log('Mermaid 版本:', mermaid.version);
+                // 重新初始化所有 Mermaid 图表
+                mermaid.initialize({ 
+                    startOnLoad: true,
+                    theme: 'default'
+                });
+                
+                // 查找所有 Mermaid 图表并重新渲染
+                const mermaidElements = document.querySelectorAll('.mermaid');
+                console.log('找到 Mermaid 图表数量:', mermaidElements.length);
+                mermaidElements.forEach(element => {
+                    try {
+                        mermaid.init(undefined, element);
+                    } catch (error) {
+                        console.error('渲染图表失败:', error);
+                    }
+                });
+            }
+        };
+        script.onerror = function() {
+            console.error('❌ 加载 Mermaid 11.10.1 失败');
+        };
+        document.head.appendChild(script);
+    }, 100);
+})();
+</script>
+<h2 id="mermaid-测试">Mermaid 测试</h2>
+<div class="mermaid" id="id-1"></div>
+<h2 id="版本检测">版本检测</h2>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    setTimeout(function() {
+        const versionInfo = document.getElementById('version-info');
+        
+        if (typeof mermaid !== 'undefined') {
+            // 尝试多种方式获取版本
+            let version = '未知';
+            if (mermaid.version) {
+                version = mermaid.version;
+            } else if (mermaid.default && mermaid.default.version) {
+                version = mermaid.default.version;
+            } else if (window.mermaid && window.mermaid.version) {
+                version = window.mermaid.version;
+            }
+            
+            // 检查 mermaid 对象的属性
+            const mermaidProps = Object.keys(mermaid).join(', ');
+            
+            // 检查页面上的脚本标签
+            const mermaidScripts = Array.from(document.querySelectorAll('script[src*="mermaid"]'))
+                .map(script => script.src)
+                .join('<br>');
+            
+            versionInfo.innerHTML = `
+                <div style="background: #d4edda; padding: 15px; border-radius: 5px; margin: 10px 0;">
+                    <h3>✅ Mermaid 加载成功</h3>
+                    <p><strong>版本：</strong> ${version}</p>]]></description>
 </item>
 </channel>
 </rss>

@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=52327&amp;path=livereload" data-no-instant defer></script>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>AI-Powered Data-Centric Closed-Loop System - omagiclee</title><meta name="Description" content="MagicLee&#39;s Blog"><meta property="og:url" content="http://localhost:52327/posts/work/ai-data/">
+  <meta property="og:site_name" content="omagiclee">
+  <meta property="og:title" content="AI-Powered Data-Centric Closed-Loop System">
+  <meta property="og:description" content="研发策略
+需求出发, AI驱动 “专用小模型” -&gt; “通用大模型&#34;的范式进阶 Data Platform &amp; Toolchain 高效性，稳定性，易用性
+平台架构设计
+Data Mining Foundation Models Closed-Set Models 2D 大模型 &#43; 两阶段方案 (结合大模型) 4D 大模型 BEV-OD BEV-Map Open-Vocabulary Models 开集检测 开集分割 Contrastive Learning CLIPs VQA 数据质量评估体系 数据去重 数据蒸馏 Active Learning Applications 云端: Tag Retrieval System Close-Set Models Open-Vocabulary Models Contrastive Learning Multi-modal Retrieval System Image-level Patch-level Instance-level Close-Set Object BBox &#43; CLIP Open-Vocabulary Object BBox &#43; CLIP 车端: Shadow Mode【暂无需求】 Auto-GT 2D 后续研发方向 4D大模型
+- 离线BEV 大模型，接入 LiDAR, 接入未来帧，进一步大幅提升离线大模型性能。
+- 离线BEV Map 上线应用 数据质量评估体系：从场景挖掘 -&gt; 对模型有收益的数据挖掘 Auto-GT-2D: 利用闭集/开集Foundation Model，完善自动化标注 Image 检索 -&gt; Video 检索 NM 自己的数据集如何利用？ 平台链路重构">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-06-16T15:29:16+08:00">
+    <meta property="article:modified_time" content="2025-06-16T15:29:16+08:00">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="AI-Powered Data-Centric Closed-Loop System">
+  <meta name="twitter:description" content="研发策略
+需求出发, AI驱动 “专用小模型” -&gt; “通用大模型&#34;的范式进阶 Data Platform &amp; Toolchain 高效性，稳定性，易用性
+平台架构设计
+Data Mining Foundation Models Closed-Set Models 2D 大模型 &#43; 两阶段方案 (结合大模型) 4D 大模型 BEV-OD BEV-Map Open-Vocabulary Models 开集检测 开集分割 Contrastive Learning CLIPs VQA 数据质量评估体系 数据去重 数据蒸馏 Active Learning Applications 云端: Tag Retrieval System Close-Set Models Open-Vocabulary Models Contrastive Learning Multi-modal Retrieval System Image-level Patch-level Instance-level Close-Set Object BBox &#43; CLIP Open-Vocabulary Object BBox &#43; CLIP 车端: Shadow Mode【暂无需求】 Auto-GT 2D 后续研发方向 4D大模型
+- 离线BEV 大模型，接入 LiDAR, 接入未来帧，进一步大幅提升离线大模型性能。
+- 离线BEV Map 上线应用 数据质量评估体系：从场景挖掘 -&gt; 对模型有收益的数据挖掘 Auto-GT-2D: 利用闭集/开集Foundation Model，完善自动化标注 Image 检索 -&gt; Video 检索 NM 自己的数据集如何利用？ 平台链路重构">
+<meta name="application-name" content="My cool site">
+<meta name="apple-mobile-web-app-title" content="My cool site"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="http://localhost:52327/posts/work/ai-data/" /><link rel="prev" href="http://localhost:52327/posts/robot/diffusionpolicy/" /><link rel="next" href="http://localhost:52327/posts/work/e2e/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="/lib/fontawesome-free/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" href="/lib/animate/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "AI-Powered Data-Centric Closed-Loop System",
+        "inLanguage": "en-us",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "http:\/\/localhost:52327\/posts\/work\/ai-data\/"
+        },"genre": "posts","wordcount":  97 ,
+        "url": "http:\/\/localhost:52327\/posts\/work\/ai-data\/","datePublished": "2025-06-16T15:29:16+08:00","dateModified": "2025-06-16T15:29:16+08:00","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "omagiclee"
+            },"description": ""
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="omagiclee">My cool site</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/categories/"> Categories </a><a class="menu-item" href="/tags/"> Tags </a><span class="menu-item delimiter"></span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a></div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="omagiclee">My cool site</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><a class="menu-item" href="/categories/" title="">Categories</a><a class="menu-item" href="/tags/" title="">Tags</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a></div>
+    </div>
+</header><main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">AI-Powered Data-Centric Closed-Loop System</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>omagiclee</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2025-06-16">2025-06-16</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;97 words&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;One minute&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  data-kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#data-platform--toolchain">Data Platform &amp; Toolchain</a></li>
+    <li><a href="#data-mining">Data Mining</a></li>
+    <li><a href="#auto-gt"><span style="color: red; background-color: yellow;">Auto-GT</span></a></li>
+    <li><a href="#后续研发方向">后续研发方向</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><!-- ![data-centric-closed-loop-system](data-centric-closed-loop-system.png) -->
+<!-- <div class="mermaid" id="id-1"></div> -->
+<p><strong>研发策略</strong></p>
+<ul>
+<li>需求出发, AI驱动</li>
+<li>&ldquo;专用小模型&rdquo; -&gt; &ldquo;通用大模型&quot;的范式进阶</li>
+<li></li>
+</ul>
+<h2 id="data-platform--toolchain">Data Platform &amp; Toolchain</h2>
+<p>高效性，稳定性，易用性</p>
+<!-- - AgentAI -->
+<!-- - Airflow -->
+<!-- - Milvus -->
+<p><span style="color: red; background-color: yellow; font-weight: bold;">平台架构设计</span></p>
+<h2 id="data-mining">Data Mining</h2>
+<ul>
+<li>Foundation Models
+<ul>
+<li>Closed-Set Models
+<ul>
+<li>2D 大模型 + 两阶段方案 (结合大模型)</li>
+<li>4D 大模型
+<ul>
+<li><span style="background-color: #66cc66;">BEV-OD</span></li>
+<li><span style="background-color: #66cc66;">BEV-Map</span></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Open-Vocabulary Models
+<ul>
+<li>开集检测</li>
+<li>开集分割</li>
+</ul>
+</li>
+<li>Contrastive Learning
+<ul>
+<li>CLIPs</li>
+</ul>
+</li>
+<li>VQA</li>
+</ul>
+</li>
+<li><span style="color: red; background-color: yellow; font-weight: bold;">数据质量评估体系</span>
+<ul>
+<li><span style="color: red; background-color: yellow; font-weight: bold;">数据去重</span></li>
+<li><span style="color: red; background-color: yellow; font-weight: bold;">数据蒸馏</span></li>
+<li><span style="color: red; background-color: yellow; font-weight: bold;">Active Learning</span></li>
+</ul>
+</li>
+<li>Applications
+<ul>
+<li>云端:
+<ul>
+<li>Tag Retrieval System
+<ul>
+<li>Close-Set Models</li>
+<li>Open-Vocabulary Models</li>
+<li>Contrastive Learning</li>
+</ul>
+</li>
+<li>Multi-modal Retrieval System
+<ul>
+<li>Image-level</li>
+<li>Patch-level</li>
+<li>Instance-level
+<ul>
+<li>Close-Set Object BBox + CLIP</li>
+<li>Open-Vocabulary Object BBox + CLIP</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><span style="color: gray;">车端: Shadow Mode【暂无需求】</span></li>
+</ul>
+</li>
+</ul>
+<h2 id="auto-gt"><span style="color: red; background-color: yellow;">Auto-GT</span></h2>
+<ul>
+<li>2D</li>
+</ul>
+<!-- - 4D -->
+<h2 id="后续研发方向">后续研发方向</h2>
+<ol>
+<li><span style="color: red; background-color: yellow; font-weight: bold;">4D大模型</span><br>
+<span style="color: red; background-color: yellow; font-weight: bold;">- 离线BEV 大模型，接入 LiDAR, 接入未来帧，进一步大幅提升离线大模型性能。</span><br>
+<span style="color: red; background-color: yellow; font-weight: bold;">- 离线BEV Map 上线应用</span></li>
+<li><span style="color: red; background-color: yellow; font-weight: bold;">数据质量评估体系：从场景挖掘 -&gt; 对模型有收益的数据挖掘</span></li>
+<li><span style="color: red; background-color: yellow; font-weight: bold;">Auto-GT-2D: 利用闭集/开集Foundation Model，完善自动化标注</span></li>
+<li><span style="color: red; background-color: yellow; font-weight: bold;">Image 检索 -&gt; Video 检索</span></li>
+<li><span style="color: red; background-color: yellow; font-weight: bold;">NM 自己的数据集如何利用？</span></li>
+<li>平台链路重构</li>
+<li></li>
+</ol>
+<!-- ## Simulation
+- Generative AI
+    - 3D Gaussian Splatting (3DGS)
+    - NeRF
+    - GANs
+    - Diffusion Models
+- Applications
+    - 仿真数据
+        - 元素编辑
+        - 场景迁移
+        - 图像/视频生成
+    - 世界模型&闭环仿真 --></div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on 2025-06-16</span>
+            </div></div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="http://localhost:52327/posts/work/ai-data/" data-title="AI-Powered Data-Centric Closed-Loop System"><i class="fab fa-twitter fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="http://localhost:52327/posts/work/ai-data/"><i class="fab fa-facebook-square fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Hacker News" data-sharer="hackernews" data-url="http://localhost:52327/posts/work/ai-data/" data-title="AI-Powered Data-Centric Closed-Loop System"><i class="fab fa-hacker-news fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Line" data-sharer="line" data-url="http://localhost:52327/posts/work/ai-data/" data-title="AI-Powered Data-Centric Closed-Loop System"><i data-svg-src="/lib/simple-icons/icons/line.min.svg" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on 微博" data-sharer="weibo" data-url="http://localhost:52327/posts/work/ai-data/" data-title="AI-Powered Data-Centric Closed-Loop System"><i class="fab fa-weibo fa-fw" aria-hidden="true"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/posts/robot/diffusionpolicy/" class="prev" rel="prev" title="Diffusion Policy: Visuomotor Policy Learning via Action Diffusion"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>Diffusion Policy: Visuomotor Policy Learning via Action Diffusion</a>
+            <a href="/posts/work/e2e/" class="next" rel="next" title="E2E">E2E<i class="fas fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+</div>
+</article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.148.2">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.3.0"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
+                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2022 - 2025</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">omagiclee</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
+            </a>
+        </div><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript" src="/lib/sharer/sharer.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":50},"comment":{}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>

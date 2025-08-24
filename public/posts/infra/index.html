@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>Infra - omagiclee</title><meta name="Description" content="MagicLee&#39;s Blog"><meta property="og:url" content="http://localhost:1313/posts/infra/">
+  <meta property="og:site_name" content="omagiclee">
+  <meta property="og:title" content="Infra">
+  <meta property="og:description" content="确认PCIe 型号/通道数量/带宽 PCIe 版本 发布时间 传输速率 编码方式 单通道带宽 x16 带宽 PCIe 1.0 2003年 2.5 GT/s 8b/10b 250 MB/s 4 GB/s PCIe 2.0 2007年 5.0 GT/s 8b/10b 500 MB/s 8 GB/s PCIe 3.0 2010年 8.0 GT/s 128b/130b 984.6 MB/s 15.75 GB/s PCIe 4.0 2017年 16.0 GT/s 128b/130b 1.969 GB/s 31.5 GB/s PCIe 5.0 2019年 32.0 GT/s 128b/130b 3.938 GB/s 63 GB/s PCIe 6.0 2022年 64.0 GT/s PAM4 7.877 GB/s 126 GB/s GT/s (Giga Transfers per second) 表示每秒传输次数 实际带宽需要考虑编码开销 4090 vs L40S vs A100 PCIe 规格对比 显卡型号 PCIe 版本 通道数 理论带宽 实际带宽 RTX 4090 PCIe 4.0 x16 64 GB/s 63 GB/s L40S PCIe 4.0 x16 64 GB/s 63 GB/s A100 PCIe 4.0 x16 64 GB/s 63 GB/s 所有三款显卡都支持 PCIe 4.0 x16，理论带宽相同 实际使用中，带宽利用率受以下因素影响： 主板 PCIe 插槽版本 CPU 支持的 PCIe 版本 系统总线带宽 其他 PCIe 设备占用 查看实际 PCIe 配置： 1 2 3 4 # 查看 PCIe 链路状态 nvidia-smi -q | grep -A 10 &#34;PCI&#34; # 或使用 lspci -vv | grep -i &#34;LnkSta&#34; 1 2 3 4 # nvidia-smi: NVIDIA 显卡管理和监控工具，显示 GPU 状态信息 # -q: Query, 详细显示 NVIDIA GPU 的所有状态和配置信息 # grep -A 10 &#34;PCI&#34;: 查找包含&#34;PCI&#34;关键字的行，并显示该行及其后面10行内容 nvidia-smi -q | grep -A 10 &#34;PCI&#34; 1 2 3 watch -n 0.5 nvidia-smi dmon -s puctmvb nvitop NVIDIA Nsight Systems">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-05-27T16:15:09+08:00">
+    <meta property="article:modified_time" content="2025-05-27T16:15:09+08:00">
+    <meta property="article:tag" content="Infra">
+    <meta property="article:tag" content="PCIe">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Infra">
+  <meta name="twitter:description" content="确认PCIe 型号/通道数量/带宽 PCIe 版本 发布时间 传输速率 编码方式 单通道带宽 x16 带宽 PCIe 1.0 2003年 2.5 GT/s 8b/10b 250 MB/s 4 GB/s PCIe 2.0 2007年 5.0 GT/s 8b/10b 500 MB/s 8 GB/s PCIe 3.0 2010年 8.0 GT/s 128b/130b 984.6 MB/s 15.75 GB/s PCIe 4.0 2017年 16.0 GT/s 128b/130b 1.969 GB/s 31.5 GB/s PCIe 5.0 2019年 32.0 GT/s 128b/130b 3.938 GB/s 63 GB/s PCIe 6.0 2022年 64.0 GT/s PAM4 7.877 GB/s 126 GB/s GT/s (Giga Transfers per second) 表示每秒传输次数 实际带宽需要考虑编码开销 4090 vs L40S vs A100 PCIe 规格对比 显卡型号 PCIe 版本 通道数 理论带宽 实际带宽 RTX 4090 PCIe 4.0 x16 64 GB/s 63 GB/s L40S PCIe 4.0 x16 64 GB/s 63 GB/s A100 PCIe 4.0 x16 64 GB/s 63 GB/s 所有三款显卡都支持 PCIe 4.0 x16，理论带宽相同 实际使用中，带宽利用率受以下因素影响： 主板 PCIe 插槽版本 CPU 支持的 PCIe 版本 系统总线带宽 其他 PCIe 设备占用 查看实际 PCIe 配置： 1 2 3 4 # 查看 PCIe 链路状态 nvidia-smi -q | grep -A 10 &#34;PCI&#34; # 或使用 lspci -vv | grep -i &#34;LnkSta&#34; 1 2 3 4 # nvidia-smi: NVIDIA 显卡管理和监控工具，显示 GPU 状态信息 # -q: Query, 详细显示 NVIDIA GPU 的所有状态和配置信息 # grep -A 10 &#34;PCI&#34;: 查找包含&#34;PCI&#34;关键字的行，并显示该行及其后面10行内容 nvidia-smi -q | grep -A 10 &#34;PCI&#34; 1 2 3 watch -n 0.5 nvidia-smi dmon -s puctmvb nvitop NVIDIA Nsight Systems">
+<meta name="application-name" content="My cool site">
+<meta name="apple-mobile-web-app-title" content="My cool site"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="http://localhost:1313/posts/infra/" /><link rel="prev" href="http://localhost:1313/posts/tour/gz/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="/lib/fontawesome-free/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" href="/lib/animate/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Infra",
+        "inLanguage": "en-us",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "http:\/\/localhost:1313\/posts\/infra\/"
+        },"genre": "posts","keywords": "Infra, PCIe","wordcount":  201 ,
+        "url": "http:\/\/localhost:1313\/posts\/infra\/","datePublished": "2025-05-27T16:15:09+08:00","dateModified": "2025-05-27T16:15:09+08:00","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "omagiclee"
+            },"description": ""
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="omagiclee">My cool site</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/categories/"> Categories </a><a class="menu-item" href="/tags/"> Tags </a><span class="menu-item delimiter"></span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a></div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="omagiclee">My cool site</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><a class="menu-item" href="/categories/" title="">Categories</a><a class="menu-item" href="/tags/" title="">Tags</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a></div>
+    </div>
+</header><main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">Infra</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>omagiclee</a></span>&nbsp;<span class="post-category">included in <a href="/categories/infra/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Infra</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2025-05-27">2025-05-27</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;201 words&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;One minute&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  data-kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#确认pcie-型号通道数量带宽">确认PCIe 型号/通道数量/带宽</a></li>
+    <li><a href="#4090-vs-l40s-vs-a100-pcie-规格对比">4090 vs L40S vs A100 PCIe 规格对比</a></li>
+    <li><a href="#查看实际-pcie-配置">查看实际 PCIe 配置：</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h2 id="确认pcie-型号通道数量带宽">确认PCIe 型号/通道数量/带宽</h2>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">PCIe 版本</th>
+          <th style="text-align: left">发布时间</th>
+          <th style="text-align: left">传输速率</th>
+          <th style="text-align: left">编码方式</th>
+          <th style="text-align: left">单通道带宽</th>
+          <th style="text-align: left">x16 带宽</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">PCIe 1.0</td>
+          <td style="text-align: left">2003年</td>
+          <td style="text-align: left">2.5 GT/s</td>
+          <td style="text-align: left">8b/10b</td>
+          <td style="text-align: left">250 MB/s</td>
+          <td style="text-align: left">4 GB/s</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">PCIe 2.0</td>
+          <td style="text-align: left">2007年</td>
+          <td style="text-align: left">5.0 GT/s</td>
+          <td style="text-align: left">8b/10b</td>
+          <td style="text-align: left">500 MB/s</td>
+          <td style="text-align: left">8 GB/s</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">PCIe 3.0</td>
+          <td style="text-align: left">2010年</td>
+          <td style="text-align: left">8.0 GT/s</td>
+          <td style="text-align: left">128b/130b</td>
+          <td style="text-align: left">984.6 MB/s</td>
+          <td style="text-align: left">15.75 GB/s</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">PCIe 4.0</td>
+          <td style="text-align: left">2017年</td>
+          <td style="text-align: left">16.0 GT/s</td>
+          <td style="text-align: left">128b/130b</td>
+          <td style="text-align: left">1.969 GB/s</td>
+          <td style="text-align: left">31.5 GB/s</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">PCIe 5.0</td>
+          <td style="text-align: left">2019年</td>
+          <td style="text-align: left">32.0 GT/s</td>
+          <td style="text-align: left">128b/130b</td>
+          <td style="text-align: left">3.938 GB/s</td>
+          <td style="text-align: left">63 GB/s</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">PCIe 6.0</td>
+          <td style="text-align: left">2022年</td>
+          <td style="text-align: left">64.0 GT/s</td>
+          <td style="text-align: left">PAM4</td>
+          <td style="text-align: left">7.877 GB/s</td>
+          <td style="text-align: left">126 GB/s</td>
+      </tr>
+  </tbody>
+</table>
+<ul>
+<li>GT/s (Giga Transfers per second) 表示每秒传输次数</li>
+<li>实际带宽需要考虑编码开销</li>
+</ul>
+<h2 id="4090-vs-l40s-vs-a100-pcie-规格对比">4090 vs L40S vs A100 PCIe 规格对比</h2>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">显卡型号</th>
+          <th style="text-align: left">PCIe 版本</th>
+          <th style="text-align: left">通道数</th>
+          <th style="text-align: left">理论带宽</th>
+          <th style="text-align: left">实际带宽</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">RTX 4090</td>
+          <td style="text-align: left">PCIe 4.0</td>
+          <td style="text-align: left">x16</td>
+          <td style="text-align: left">64 GB/s</td>
+          <td style="text-align: left">63 GB/s</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">L40S</td>
+          <td style="text-align: left">PCIe 4.0</td>
+          <td style="text-align: left">x16</td>
+          <td style="text-align: left">64 GB/s</td>
+          <td style="text-align: left">63 GB/s</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">A100</td>
+          <td style="text-align: left">PCIe 4.0</td>
+          <td style="text-align: left">x16</td>
+          <td style="text-align: left">64 GB/s</td>
+          <td style="text-align: left">63 GB/s</td>
+      </tr>
+  </tbody>
+</table>
+<ul>
+<li>所有三款显卡都支持 PCIe 4.0 x16，理论带宽相同</li>
+<li>实际使用中，带宽利用率受以下因素影响：
+<ul>
+<li>主板 PCIe 插槽版本</li>
+<li>CPU 支持的 PCIe 版本</li>
+<li>系统总线带宽</li>
+<li>其他 PCIe 设备占用</li>
+</ul>
+</li>
+</ul>
+<h2 id="查看实际-pcie-配置">查看实际 PCIe 配置：</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># 查看 PCIe 链路状态</span>
+</span></span><span class="line"><span class="cl">nvidia-smi -q <span class="p">|</span> grep -A <span class="m">10</span> <span class="s2">&#34;PCI&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 或使用</span>
+</span></span><span class="line"><span class="cl">lspci -vv <span class="p">|</span> grep -i <span class="s2">&#34;LnkSta&#34;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1"># nvidia-smi: NVIDIA 显卡管理和监控工具，显示 GPU 状态信息</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># -q: Query, 详细显示 NVIDIA GPU 的所有状态和配置信息</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># grep -A 10 &#34;PCI&#34;: 查找包含&#34;PCI&#34;关键字的行，并显示该行及其后面10行内容</span>
+</span></span><span class="line"><span class="cl">nvidia-smi -q <span class="p">|</span> grep -A <span class="m">10</span> <span class="s2">&#34;PCI&#34;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">watch -n 0.5 nvidia-smi dmon -s puctmvb
+</span></span><span class="line"><span class="cl">nvitop
+</span></span><span class="line"><span class="cl">NVIDIA Nsight Systems
+</span></span></code></pre></td></tr></table>
+</div>
+</div></div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on 2025-05-27</span>
+            </div></div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="http://localhost:1313/posts/infra/" data-title="Infra" data-hashtags="Infra,PCIe"><i class="fab fa-twitter fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="http://localhost:1313/posts/infra/" data-hashtag="Infra"><i class="fab fa-facebook-square fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Hacker News" data-sharer="hackernews" data-url="http://localhost:1313/posts/infra/" data-title="Infra"><i class="fab fa-hacker-news fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Line" data-sharer="line" data-url="http://localhost:1313/posts/infra/" data-title="Infra"><i data-svg-src="/lib/simple-icons/icons/line.min.svg" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on 微博" data-sharer="weibo" data-url="http://localhost:1313/posts/infra/" data-title="Infra"><i class="fab fa-weibo fa-fw" aria-hidden="true"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/infra/">Infra</a>,&nbsp;<a href="/tags/pcie/">PCIe</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/posts/tour/gz/" class="prev" rel="prev" title="Gz"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>Gz</a></div>
+</div>
+</article></div>
+            </main></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
+            </a>
+        </div><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript" src="/lib/sharer/sharer.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":50},"comment":{}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>

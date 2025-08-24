@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Anchor-Based on omagiclee</title>
+    <link>http://localhost:1313/tags/anchor-based/</link>
+    <description>Recent content in Anchor-Based on omagiclee</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 19 May 2025 17:29:15 +0800</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/anchor-based/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>DiffusionDrive: Truncated Diffusion Model for End-to-End Autonomous Driving</title>
+      <link>http://localhost:1313/posts/e2e/diffusiondrive/</link>
+      <pubDate>Mon, 19 May 2025 17:29:15 +0800</pubDate>
+      <guid>http://localhost:1313/posts/e2e/diffusiondrive/</guid>
+      <description>&lt;p&gt;CVPR 2025 (Highlight) · Horizon Robotics · &lt;a href=&#34;https://arxiv.org/abs/2411.15139&#34; target=&#34;_blank&#34; rel=&#34;noopener noreffer &#34;&gt;arXiv&lt;/a&gt; · &lt;a href=&#34;https://github.com/hustvl/DiffusionDrive&#34; target=&#34;_blank&#34; rel=&#34;noopener noreffer &#34;&gt;Code&lt;/a&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;motivation&#34;&gt;Motivation&lt;/h2&gt;&#xA;&lt;p&gt;&lt;img&#xA;        class=&#34;lazyload&#34;&#xA;        src=&#34;http://localhost:1313/svg/loading.min.svg&#34;&#xA;        data-src=&#34;http://localhost:1313/posts/e2e/diffusiondrive/comparison-of-e2e-decoder.png&#34;&#xA;        data-srcset=&#34;http://localhost:1313/posts/e2e/diffusiondrive/comparison-of-e2e-decoder.png, http://localhost:1313/posts/e2e/diffusiondrive/comparison-of-e2e-decoder.png 1.5x, http://localhost:1313/posts/e2e/diffusiondrive/comparison-of-e2e-decoder.png 2x&#34;&#xA;        data-sizes=&#34;auto&#34;&#xA;        alt=&#34;/posts/e2e/diffusiondrive/comparison-of-e2e-decoder.png&#34;&#xA;        title=&#34;comparison-of-e2e-decoder.png&#34; width=&#34;1122&#34; height=&#34;872&#34; /&gt;&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Unimodal&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Regression&#xA;&lt;ul&gt;&#xA;&lt;li&gt;e.g. Transfuser, UniAD, VAD, PPAD,&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;Multimodal&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Discretization of the continuous action space&#xA;&lt;ul&gt;&#xA;&lt;li&gt;e.g. VADv2, Hydra-MDP, Hydra-MDP++, SparseDrive&lt;/li&gt;&#xA;&lt;li&gt;cons&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Fail in out-of-vocabulary scenarios&lt;/li&gt;&#xA;&lt;li&gt;Large computation cost&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;Anchor-based regression: HAOMO&lt;/li&gt;&#xA;&lt;li&gt;Diffusion&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Vanilla diffusion policy&#xA;&lt;ul&gt;&#xA;&lt;li&gt;cons&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;Heavy denoising overhead.&lt;/strong&gt; The numerous 20 denoising steps in the vanilla DDIM diffusion policy introduce heavy computational consumption during inference&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Mode collapse.&lt;/strong&gt; The different random noises converge to similar trajectories after the denoising process.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;Truncated diffusion policy&#xA;&lt;ul&gt;&#xA;&lt;li&gt;e.g. DiffusionDrive&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;Diffusion model has proven to be a powerful generative technique for robotic policy learning, capable of modeling multimodal action distributions.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

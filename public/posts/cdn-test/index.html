@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>CDN 配置测试 - omagiclee</title><meta name="Description" content="测试自定义 CDN 配置是否正确加载"><meta property="og:url" content="https://omagiclee.github.io/posts/cdn-test/">
+  <meta property="og:site_name" content="omagiclee">
+  <meta property="og:title" content="CDN 配置测试">
+  <meta property="og:description" content="测试自定义 CDN 配置是否正确加载">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-01-27T10:00:00+08:00">
+    <meta property="article:modified_time" content="2025-01-27T10:00:00+08:00">
+    <meta property="article:tag" content="Cdn">
+    <meta property="article:tag" content="Mermaid">
+    <meta property="article:tag" content="Test">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="CDN 配置测试">
+  <meta name="twitter:description" content="测试自定义 CDN 配置是否正确加载">
+<meta name="application-name" content="My cool site">
+<meta name="apple-mobile-web-app-title" content="My cool site"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://omagiclee.github.io/posts/cdn-test/" /><link rel="next" href="https://omagiclee.github.io/posts/e2e/diffusion-drive/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="/lib/fontawesome-free/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" href="/lib/animate/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "CDN 配置测试",
+        "inLanguage": "en-us",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/omagiclee.github.io\/posts\/cdn-test\/"
+        },"genre": "posts","keywords": "cdn, mermaid, test","wordcount":  64 ,
+        "url": "https:\/\/omagiclee.github.io\/posts\/cdn-test\/","datePublished": "2025-01-27T10:00:00+08:00","dateModified": "2025-01-27T10:00:00+08:00","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "omagiclee"
+            },"description": "测试自定义 CDN 配置是否正确加载"
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="omagiclee">My cool site</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/categories/"> Categories </a><a class="menu-item" href="/tags/"> Tags </a><span class="menu-item delimiter"></span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a></div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="omagiclee">My cool site</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><a class="menu-item" href="/categories/" title="">Categories</a><a class="menu-item" href="/tags/" title="">Tags</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a></div>
+    </div>
+</header><main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">CDN 配置测试</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>omagiclee</a></span>&nbsp;<span class="post-category">included in <a href="/categories/test/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Test</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2025-01-27">2025-01-27</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;64 words&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;One minute&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  data-kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#环境信息">环境信息</a></li>
+    <li><a href="#强制加载-mermaid-11101">强制加载 Mermaid 11.10.1</a></li>
+    <li><a href="#mermaid-测试">Mermaid 测试</a></li>
+    <li><a href="#版本检测">版本检测</a></li>
+    <li><a href="#网络请求检查">网络请求检查</a></li>
+    <li><a href="#配置详情">配置详情</a></li>
+    <li><a href="#控制台输出">控制台输出</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h1 id="cdn-配置测试">CDN 配置测试</h1>
+<h2 id="环境信息">环境信息</h2>
+<ul>
+<li><strong>Hugo 环境</strong>：{{ hugo.Environment }}</li>
+<li><strong>配置的 CDN</strong>：{{ .Site.Params.cdn }}</li>
+<li><strong>CDN 数据源</strong>：{{ .Site.Params.cdn.data }}</li>
+</ul>
+<h2 id="强制加载-mermaid-11101">强制加载 Mermaid 11.10.1</h2>
+<script>
+(function() {
+    console.log('🔧 开始强制加载 Mermaid 11.10.1...');
+    
+    // 移除所有现有的 Mermaid 脚本
+    const existingScripts = document.querySelectorAll('script[src*="mermaid"]');
+    console.log('找到现有 Mermaid 脚本数量:', existingScripts.length);
+    existingScripts.forEach(script => {
+        console.log('移除脚本:', script.src);
+        script.remove();
+    });
+    
+    // 等待一下确保移除完成
+    setTimeout(function() {
+        // 加载指定版本的 Mermaid
+        const script = document.createElement('script');
+        script.src = 'https://cdn.jsdelivr.net/npm/mermaid@11.10.1/dist/mermaid.min.js';
+        script.onload = function() {
+            console.log('✅ Mermaid 11.10.1 加载成功');
+            if (typeof mermaid !== 'undefined') {
+                console.log('Mermaid 版本:', mermaid.version);
+                // 重新初始化所有 Mermaid 图表
+                mermaid.initialize({ 
+                    startOnLoad: true,
+                    theme: 'default'
+                });
+                
+                // 查找所有 Mermaid 图表并重新渲染
+                const mermaidElements = document.querySelectorAll('.mermaid');
+                console.log('找到 Mermaid 图表数量:', mermaidElements.length);
+                mermaidElements.forEach(element => {
+                    try {
+                        mermaid.init(undefined, element);
+                    } catch (error) {
+                        console.error('渲染图表失败:', error);
+                    }
+                });
+            }
+        };
+        script.onerror = function() {
+            console.error('❌ 加载 Mermaid 11.10.1 失败');
+        };
+        document.head.appendChild(script);
+    }, 100);
+})();
+</script>
+<h2 id="mermaid-测试">Mermaid 测试</h2>
+<div class="mermaid" id="id-1"></div>
+<h2 id="版本检测">版本检测</h2>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    setTimeout(function() {
+        const versionInfo = document.getElementById('version-info');
+        
+        if (typeof mermaid !== 'undefined') {
+            // 尝试多种方式获取版本
+            let version = '未知';
+            if (mermaid.version) {
+                version = mermaid.version;
+            } else if (mermaid.default && mermaid.default.version) {
+                version = mermaid.default.version;
+            } else if (window.mermaid && window.mermaid.version) {
+                version = window.mermaid.version;
+            }
+            
+            // 检查 mermaid 对象的属性
+            const mermaidProps = Object.keys(mermaid).join(', ');
+            
+            // 检查页面上的脚本标签
+            const mermaidScripts = Array.from(document.querySelectorAll('script[src*="mermaid"]'))
+                .map(script => script.src)
+                .join('<br>');
+            
+            versionInfo.innerHTML = `
+                <div style="background: #d4edda; padding: 15px; border-radius: 5px; margin: 10px 0;">
+                    <h3>✅ Mermaid 加载成功</h3>
+                    <p><strong>版本：</strong> ${version}</p>
+                    <p><strong>状态：</strong> 正常运行</p>
+                    <p><strong>Mermaid 属性：</strong> ${mermaidProps}</p>
+                    <p><strong>类型：</strong> ${typeof mermaid}</p>
+                    <p><strong>页面中的 Mermaid 脚本：</strong></p>
+                    <div style="background: #f8f9fa; padding: 10px; border-radius: 3px; font-family: monospace; font-size: 12px;">
+                        ${mermaidScripts || '无'}
+                    </div>
+                </div>
+            `;
+        } else {
+            versionInfo.innerHTML = `
+                <div style="background: #f8d7da; padding: 15px; border-radius: 5px; margin: 10px 0;">
+                    <h3>❌ Mermaid 未加载</h3>
+                    <p><strong>可能的原因：</strong></p>
+                    <ul>
+                        <li>CDN 配置未生效</li>
+                        <li>网络连接问题</li>
+                        <li>版本号错误</li>
+                    </ul>
+                </div>
+            `;
+        }
+    }, 3000); // 增加延迟时间，确保强制加载完成
+});
+</script>
+<div id="version-info">
+    <p>正在检测 Mermaid 版本...</p>
+</div>
+<h2 id="网络请求检查">网络请求检查</h2>
+<p>请在浏览器开发者工具的 Network 面板中查看是否有以下请求：</p>
+<ul>
+<li><code>mermaid@11.10.1/dist/mermaid.min.js</code></li>
+<li>或者 <code>lib/mermaid/mermaid.min.js</code> (本地文件)</li>
+</ul>
+<h2 id="配置详情">配置详情</h2>
+<p><strong>当前配置：</strong></p>
+<ul>
+<li>CDN 类型：<code>custom</code></li>
+<li>配置文件：<code>assets/data/cdn/custom.yml</code></li>
+<li>Mermaid 版本：<code>11.10.1</code></li>
+<li>环境：<code>production</code></li>
+</ul>
+<h2 id="控制台输出">控制台输出</h2>
+<p>请在浏览器控制台中查看以下信息：</p>
+<ol>
+<li><code>🔧 开始强制加载 Mermaid 11.10.1...</code></li>
+<li><code>找到现有 Mermaid 脚本数量: [数量]</code></li>
+<li><code>移除脚本: [脚本URL]</code></li>
+<li><code>✅ Mermaid 11.10.1 加载成功</code></li>
+<li><code>Mermaid 版本: 11.10.1</code></li>
+<li><code>找到 Mermaid 图表数量: [数量]</code></li>
+</ol>
+<p>如果看到这些信息，说明强制加载成功。</p>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on 2025-01-27</span>
+            </div></div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="https://omagiclee.github.io/posts/cdn-test/" data-title="CDN 配置测试" data-hashtags="cdn,mermaid,test"><i class="fab fa-twitter fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="https://omagiclee.github.io/posts/cdn-test/" data-hashtag="cdn"><i class="fab fa-facebook-square fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Hacker News" data-sharer="hackernews" data-url="https://omagiclee.github.io/posts/cdn-test/" data-title="CDN 配置测试"><i class="fab fa-hacker-news fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Line" data-sharer="line" data-url="https://omagiclee.github.io/posts/cdn-test/" data-title="CDN 配置测试"><i data-svg-src="/lib/simple-icons/icons/line.min.svg" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on 微博" data-sharer="weibo" data-url="https://omagiclee.github.io/posts/cdn-test/" data-title="CDN 配置测试"><i class="fab fa-weibo fa-fw" aria-hidden="true"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/cdn/">Cdn</a>,&nbsp;<a href="/tags/mermaid/">Mermaid</a>,&nbsp;<a href="/tags/test/">Test</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+            <a href="/posts/e2e/diffusion-drive/" class="next" rel="next" title="DiffusionDrive: Truncated Diffusion Model for End-to-End Autonomous Driving">DiffusionDrive: Truncated Diffusion Model for End-to-End Autonomous Driving<i class="fas fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+</div>
+</article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.148.2">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.3.0"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
+                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2022 - 2025</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">omagiclee</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
+            </a>
+        </div><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript" src="/lib/sharer/sharer.min.js"></script><script type="text/javascript" src="/lib/mermaid/mermaid.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":50},"comment":{},"data":{"id-1":"graph TD\n    A[开始] --\u003e B{CDN 配置}\n    B --\u003e|正确| C[✅ 加载成功]\n    B --\u003e|错误| D[❌ 加载失败]\n    C --\u003e E[显示图表]\n    D --\u003e F[检查配置]"}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>

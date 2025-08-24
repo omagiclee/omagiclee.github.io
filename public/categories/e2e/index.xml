@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>E2E on omagiclee</title>
+    <link>https://omagiclee.github.io/categories/e2e/</link>
+    <description>Recent content in E2E on omagiclee</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 20 May 2025 23:01:01 +0800</lastBuildDate>
+    <atom:link href="https://omagiclee.github.io/categories/e2e/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>DiffAD: A Unified Diffusion Modeling Approach for Autonomous Driving</title>
+      <link>https://omagiclee.github.io/posts/e2e/diff-ad/</link>
+      <pubDate>Tue, 20 May 2025 23:01:01 +0800</pubDate>
+      <guid>https://omagiclee.github.io/posts/e2e/diff-ad/</guid>
+      <description>&lt;p&gt;arXiv(2025-03-15) · &lt;a href=&#34;&#34; rel=&#34;&#34;&gt;arXiv&lt;/a&gt; · &lt;a href=&#34;&#34; rel=&#34;&#34;&gt;GitHub&lt;/a&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;motivations&#34;&gt;Motivations&lt;/h2&gt;&#xA;&lt;p&gt;This is a test article.&lt;/p&gt;&#xA;&lt;h2 id=&#34;contributions&#34;&gt;Contributions&lt;/h2&gt;&#xA;&lt;p&gt;Test content.&lt;/p&gt;&#xA;&lt;h2 id=&#34;method&#34;&gt;Method&lt;/h2&gt;&#xA;&lt;p&gt;&lt;img&#xA;        class=&#34;lazyload&#34;&#xA;        src=&#34;https://omagiclee.github.io/svg/loading.min.svg&#34;&#xA;        data-src=&#34;https://omagiclee.github.io/posts/e2e/diff-ad/comparison-of-Module-E2E-and-DiffAD.png&#34;&#xA;        data-srcset=&#34;https://omagiclee.github.io/posts/e2e/diff-ad/comparison-of-Module-E2E-and-DiffAD.png, https://omagiclee.github.io/posts/e2e/diff-ad/comparison-of-Module-E2E-and-DiffAD.png 1.5x, https://omagiclee.github.io/posts/e2e/diff-ad/comparison-of-Module-E2E-and-DiffAD.png 2x&#34;&#xA;        data-sizes=&#34;auto&#34;&#xA;        alt=&#34;/posts/e2e/diff-ad/comparison-of-Module-E2E-and-DiffAD.png&#34;&#xA;        title=&#34;comparison-of-Module-E2E-and-DiffAD&#34; width=&#34;1128&#34; height=&#34;1510&#34; /&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;experiments&#34;&gt;Experiments&lt;/h2&gt;&#xA;&lt;p&gt;Test content.&lt;/p&gt;&#xA;&lt;h2 id=&#34;references&#34;&gt;References&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Test reference 1&lt;/li&gt;&#xA;&lt;li&gt;Test reference 2&lt;/li&gt;&#xA;&lt;li&gt;Test reference 3&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;questions&#34;&gt;Questions&lt;/h2&gt;&#xA;&lt;p&gt;Test questions.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>DiffusionDrive: Truncated Diffusion Model for End-to-End Autonomous Driving</title>
+      <link>https://omagiclee.github.io/posts/e2e/diffusion-drive/</link>
+      <pubDate>Mon, 19 May 2025 17:29:15 +0800</pubDate>
+      <guid>https://omagiclee.github.io/posts/e2e/diffusion-drive/</guid>
+      <description>&lt;p&gt;CVPR 2025 (Highlight) · Horizon Robotics · &lt;a href=&#34;https://arxiv.org/abs/2411.15139&#34; target=&#34;_blank&#34; rel=&#34;noopener noreffer &#34;&gt;arXiv&lt;/a&gt; · &lt;a href=&#34;https://github.com/hustvl/DiffusionDrive&#34; target=&#34;_blank&#34; rel=&#34;noopener noreffer &#34;&gt;Code&lt;/a&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;motivation&#34;&gt;Motivation&lt;/h2&gt;&#xA;&lt;p&gt;&lt;img&#xA;        class=&#34;lazyload&#34;&#xA;        src=&#34;https://omagiclee.github.io/svg/loading.min.svg&#34;&#xA;        data-src=&#34;https://omagiclee.github.io/posts/e2e/diffusion-drive/comparison-of-e2e-decoder.png&#34;&#xA;        data-srcset=&#34;https://omagiclee.github.io/posts/e2e/diffusion-drive/comparison-of-e2e-decoder.png, https://omagiclee.github.io/posts/e2e/diffusion-drive/comparison-of-e2e-decoder.png 1.5x, https://omagiclee.github.io/posts/e2e/diffusion-drive/comparison-of-e2e-decoder.png 2x&#34;&#xA;        data-sizes=&#34;auto&#34;&#xA;        alt=&#34;/posts/e2e/diffusion-drive/comparison-of-e2e-decoder.png&#34;&#xA;        title=&#34;comparison-of-e2e-decoder.png&#34; width=&#34;1122&#34; height=&#34;872&#34; /&gt;&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;The unimodal regression planner (Transfuser, UniAD, VAD, PPAD, GenAD) do not account for the multimodal nature of the driving behaviors.&lt;/li&gt;&#xA;&lt;li&gt;Existing multimodal planners (VADv2, Hydra-MDP, Hydra-MDP++, SparseDrive) discretize the continuous action space, reformulate the planner in the continuous space as a classification problem, but fail in out-of-vocabulary scenarios and consume large computation cost.&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;p&gt;Diffusion model has proven to be a powerful generative technique for robotic policy learning, capable of modeling multimodal action distributions.&#xA;&lt;strong&gt;=&amp;gt; Replicate the success of the diffusion model in the robotics domain to end-to-end autonomous driving.&lt;/strong&gt;&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

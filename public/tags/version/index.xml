@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Version on omagiclee</title>
+    <link>http://localhost:1313/tags/version/</link>
+    <description>Recent content in Version on omagiclee</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 27 Jan 2025 10:00:00 +0800</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/version/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Mermaid 版本测试</title>
+      <link>http://localhost:1313/posts/mermaid-version-test/</link>
+      <pubDate>Mon, 27 Jan 2025 10:00:00 +0800</pubDate>
+      <guid>http://localhost:1313/posts/mermaid-version-test/</guid>
+      <description>&lt;h1 id=&#34;mermaid-版本测试页面&#34;&gt;Mermaid 版本测试页面&lt;/h1&gt;&#xA;&lt;h2 id=&#34;当前配置的版本&#34;&gt;当前配置的版本&lt;/h2&gt;&#xA;&lt;p&gt;根据你的自定义 CDN 配置，当前配置的 Mermaid 版本是：&lt;strong&gt;11.10.1&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;实际加载的版本&#34;&gt;实际加载的版本&lt;/h2&gt;&#xA;&lt;script&gt;&#xA;document.addEventListener(&#39;DOMContentLoaded&#39;, function() {&#xA;    setTimeout(function() {&#xA;        if (typeof mermaid !== &#39;undefined&#39;) {&#xA;            const version = mermaid.version;&#xA;            document.getElementById(&#39;actual-version&#39;).textContent = version;&#xA;            document.getElementById(&#39;version-info&#39;).style.display = &#39;block&#39;;&#xA;            &#xA;            // 检查版本是否匹配&#xA;            const expectedVersion = &#39;11.10.1&#39;;&#xA;            if (version === expectedVersion) {&#xA;                document.getElementById(&#39;version-status&#39;).textContent = &#39;✅ 版本匹配&#39;;&#xA;                document.getElementById(&#39;version-status&#39;).style.color = &#39;green&#39;;&#xA;            } else {&#xA;                document.getElementById(&#39;version-status&#39;).textContent = &#39;❌ 版本不匹配&#39;;&#xA;                document.getElementById(&#39;version-status&#39;).style.color = &#39;red&#39;;&#xA;            }&#xA;        } else {&#xA;            document.getElementById(&#39;version-info&#39;).innerHTML = &#39;&lt;p style=&#34;color: red;&#34;&gt;❌ Mermaid 未加载&lt;/p&gt;&#39;;&#xA;        }&#xA;    }, 1000);&#xA;});&#xA;&lt;/script&gt;&#xA;&lt;div id=&#34;version-info&#34; style=&#34;display: none; background: #f8f9fa; padding: 15px; border-radius: 8px; margin: 20px 0;&#34;&gt;&#xA;    &lt;h3&gt;版本信息&lt;/h3&gt;&#xA;    &lt;p&gt;&lt;strong&gt;实际加载的版本：&lt;/strong&gt; &lt;span id=&#34;actual-version&#34;&gt;检测中...&lt;/span&gt;&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

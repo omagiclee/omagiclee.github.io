@@ -1,11 +1,26 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Categories on My New Hugo Site</title>
-    <link>http://localhost:1313/categories/</link>
-    <description>Recent content in Categories on My New Hugo Site</description>
+    <title>Categories on omagiclee</title>
+    <link>https://omagiclee.github.io/categories/</link>
+    <description>Recent content in Categories on omagiclee</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <atom:link href="http://localhost:1313/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 20 May 2025 23:01:01 +0800</lastBuildDate>
+    <atom:link href="https://omagiclee.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>E2E</title>
+      <link>https://omagiclee.github.io/categories/e2e/</link>
+      <pubDate>Tue, 20 May 2025 23:01:01 +0800</pubDate>
+      <guid>https://omagiclee.github.io/categories/e2e/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Test</title>
+      <link>https://omagiclee.github.io/categories/test/</link>
+      <pubDate>Mon, 27 Jan 2025 10:00:00 +0800</pubDate>
+      <guid>https://omagiclee.github.io/categories/test/</guid>
+      <description></description>
+    </item>
   </channel>
 </rss>

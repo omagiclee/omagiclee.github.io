@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Simple on omagiclee</title>
+    <link>http://localhost:1313/tags/simple/</link>
+    <description>Recent content in Simple on omagiclee</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 27 Jan 2025 10:00:00 +0800</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/simple/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>简单 Mermaid 测试</title>
+      <link>http://localhost:1313/posts/simple-mermaid-test/</link>
+      <pubDate>Mon, 27 Jan 2025 10:00:00 +0800</pubDate>
+      <guid>http://localhost:1313/posts/simple-mermaid-test/</guid>
+      <description>&lt;h1 id=&#34;简单-mermaid-测试&#34;&gt;简单 Mermaid 测试&lt;/h1&gt;&#xA;&lt;h2 id=&#34;测试-1最简单的图表&#34;&gt;测试 1：最简单的图表&lt;/h2&gt;&#xA;&lt;div class=&#34;mermaid&#34; id=&#34;id-1&#34;&gt;&lt;/div&gt;&#xA;&lt;h2 id=&#34;测试-2带标签的图表&#34;&gt;测试 2：带标签的图表&lt;/h2&gt;&#xA;&lt;div class=&#34;mermaid&#34; id=&#34;id-2&#34;&gt;&lt;/div&gt;&#xA;&lt;h2 id=&#34;测试-3带样式的图表&#34;&gt;测试 3：带样式的图表&lt;/h2&gt;&#xA;&lt;div class=&#34;mermaid&#34; id=&#34;id-3&#34;&gt;&lt;/div&gt;&#xA;&lt;h2 id=&#34;版本信息&#34;&gt;版本信息&lt;/h2&gt;&#xA;&lt;script&gt;&#xA;document.addEventListener(&#39;DOMContentLoaded&#39;, function() {&#xA;    setTimeout(function() {&#xA;        if (typeof mermaid !== &#39;undefined&#39;) {&#xA;            console.log(&#39;Mermaid loaded successfully&#39;);&#xA;            console.log(&#39;Mermaid object:&#39;, mermaid);&#xA;            console.log(&#39;Mermaid keys:&#39;, Object.keys(mermaid));&#xA;            &#xA;            // 尝试获取版本&#xA;            let version = &#39;unknown&#39;;&#xA;            if (mermaid.version) version = mermaid.version;&#xA;            else if (mermaid.default &amp;&amp; mermaid.default.version) version = mermaid.default.version;&#xA;            &#xA;            document.getElementById(&#39;version-display&#39;).innerHTML = `&#xA;                &lt;div style=&#34;background: #d4edda; padding: 10px; border-radius: 5px;&#34;&gt;&#xA;                    &lt;strong&gt;Mermaid 版本：&lt;/strong&gt; ${version}&#xA;                &lt;/div&gt;&#xA;            `;&#xA;        } else {&#xA;            document.getElementById(&#39;version-display&#39;).innerHTML = `&#xA;                &lt;div style=&#34;background: #f8d7da; padding: 10px; border-radius: 5px;&#34;&gt;&#xA;                    &lt;strong&gt;Mermaid 未加载&lt;/strong&gt;&#xA;                &lt;/div&gt;&#xA;            `;&#xA;        }&#xA;    }, 1000);&#xA;});&#xA;&lt;/script&gt;&#xA;&lt;div id=&#34;version-display&#34;&gt;&#xA;    正在检测版本...&#xA;&lt;/div&gt;</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>DiffAD on omagiclee</title>
+    <link>https://omagiclee.github.io/tags/diffad/</link>
+    <description>Recent content in DiffAD on omagiclee</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 20 May 2025 23:01:01 +0800</lastBuildDate>
+    <atom:link href="https://omagiclee.github.io/tags/diffad/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>DiffAD: A Unified Diffusion Modeling Approach for Autonomous Driving</title>
+      <link>https://omagiclee.github.io/posts/e2e/diff-ad/</link>
+      <pubDate>Tue, 20 May 2025 23:01:01 +0800</pubDate>
+      <guid>https://omagiclee.github.io/posts/e2e/diff-ad/</guid>
+      <description>&lt;p&gt;arXiv(2025-03-15) · &lt;a href=&#34;&#34; rel=&#34;&#34;&gt;arXiv&lt;/a&gt; · &lt;a href=&#34;&#34; rel=&#34;&#34;&gt;GitHub&lt;/a&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;motivations&#34;&gt;Motivations&lt;/h2&gt;&#xA;&lt;p&gt;This is a test article.&lt;/p&gt;&#xA;&lt;h2 id=&#34;contributions&#34;&gt;Contributions&lt;/h2&gt;&#xA;&lt;p&gt;Test content.&lt;/p&gt;&#xA;&lt;h2 id=&#34;method&#34;&gt;Method&lt;/h2&gt;&#xA;&lt;p&gt;&lt;img&#xA;        class=&#34;lazyload&#34;&#xA;        src=&#34;https://omagiclee.github.io/svg/loading.min.svg&#34;&#xA;        data-src=&#34;https://omagiclee.github.io/posts/e2e/diff-ad/comparison-of-Module-E2E-and-DiffAD.png&#34;&#xA;        data-srcset=&#34;https://omagiclee.github.io/posts/e2e/diff-ad/comparison-of-Module-E2E-and-DiffAD.png, https://omagiclee.github.io/posts/e2e/diff-ad/comparison-of-Module-E2E-and-DiffAD.png 1.5x, https://omagiclee.github.io/posts/e2e/diff-ad/comparison-of-Module-E2E-and-DiffAD.png 2x&#34;&#xA;        data-sizes=&#34;auto&#34;&#xA;        alt=&#34;/posts/e2e/diff-ad/comparison-of-Module-E2E-and-DiffAD.png&#34;&#xA;        title=&#34;comparison-of-Module-E2E-and-DiffAD&#34; width=&#34;1128&#34; height=&#34;1510&#34; /&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;experiments&#34;&gt;Experiments&lt;/h2&gt;&#xA;&lt;p&gt;Test content.&lt;/p&gt;&#xA;&lt;h2 id=&#34;references&#34;&gt;References&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Test reference 1&lt;/li&gt;&#xA;&lt;li&gt;Test reference 2&lt;/li&gt;&#xA;&lt;li&gt;Test reference 3&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;questions&#34;&gt;Questions&lt;/h2&gt;&#xA;&lt;p&gt;Test questions.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

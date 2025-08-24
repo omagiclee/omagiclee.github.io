@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>E2E Decoder on omagiclee</title>
+    <link>http://localhost:52327/tags/e2e-decoder/</link>
+    <description>Recent content in E2E Decoder on omagiclee</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 20 May 2025 23:59:49 +0800</lastBuildDate>
+    <atom:link href="http://localhost:52327/tags/e2e-decoder/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Diffusion-based Planning for Autonomous Driving with Flexible Guidance</title>
+      <link>http://localhost:52327/posts/e2e/diffusion-planner/</link>
+      <pubDate>Tue, 20 May 2025 23:59:49 +0800</pubDate>
+      <guid>http://localhost:52327/posts/e2e/diffusion-planner/</guid>
+      <description>&lt;p&gt;ICLR 2025, Oral · &lt;a href=&#34;https://zhengyinan-air.github.io/Diffusion-Planner/&#34; target=&#34;_blank&#34; rel=&#34;noopener noreffer &#34;&gt;Project&lt;/a&gt; · &lt;a href=&#34;&#34; rel=&#34;&#34;&gt;arXiv&lt;/a&gt; · &lt;a href=&#34;https://github.com/ZhengYinan-AIR/Diffusion-Planner&#34; target=&#34;_blank&#34; rel=&#34;noopener noreffer &#34;&gt;GitHub&lt;/a&gt; · &lt;a href=&#34;https://huggingface.co/ZhengYinan2001/Diffusion-Planner&#34; target=&#34;_blank&#34; rel=&#34;noopener noreffer &#34;&gt;HuggingFace&lt;/a&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;motivations&#34;&gt;Motivations&lt;/h2&gt;&#xA;&lt;p&gt;:hugging_face:&lt;/p&gt;&#xA;&lt;h2 id=&#34;contributions&#34;&gt;Contributions&lt;/h2&gt;&#xA;&lt;h2 id=&#34;method&#34;&gt;Method&lt;/h2&gt;&#xA;&lt;p&gt;&lt;img&#xA;        class=&#34;lazyload&#34;&#xA;        src=&#34;http://localhost:52327/svg/loading.min.svg&#34;&#xA;        data-src=&#34;http://localhost:52327/posts/e2e/diffusion-planner/architecture-of-Diffusion-Planner.png&#34;&#xA;        data-srcset=&#34;http://localhost:52327/posts/e2e/diffusion-planner/architecture-of-Diffusion-Planner.png, http://localhost:52327/posts/e2e/diffusion-planner/architecture-of-Diffusion-Planner.png 1.5x, http://localhost:52327/posts/e2e/diffusion-planner/architecture-of-Diffusion-Planner.png 2x&#34;&#xA;        data-sizes=&#34;auto&#34;&#xA;        alt=&#34;/posts/e2e/diffusion-planner/architecture-of-Diffusion-Planner.png&#34;&#xA;        title=&#34;architecture-of-Diffusion-Planner&#34; width=&#34;1834&#34; height=&#34;1042&#34; /&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;experiments&#34;&gt;Experiments&lt;/h2&gt;&#xA;&lt;p&gt;Test content.&lt;/p&gt;&#xA;&lt;h2 id=&#34;references&#34;&gt;References&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;questions&#34;&gt;Questions&lt;/h2&gt;</description>
+    </item>
+  </channel>
+</rss>

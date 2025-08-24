@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Debug on omagiclee</title>
+    <link>http://localhost:1313/tags/debug/</link>
+    <description>Recent content in Debug on omagiclee</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 27 Jan 2025 10:00:00 +0800</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/debug/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Mermaid 调试页面</title>
+      <link>http://localhost:1313/posts/mermaid-debug/</link>
+      <pubDate>Mon, 27 Jan 2025 10:00:00 +0800</pubDate>
+      <guid>http://localhost:1313/posts/mermaid-debug/</guid>
+      <description>&lt;h1 id=&#34;mermaid-调试页面&#34;&gt;Mermaid 调试页面&lt;/h1&gt;&#xA;&lt;h2 id=&#34;环境信息&#34;&gt;环境信息&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;Hugo 环境&lt;/strong&gt;：{{ hugo.Environment }}&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;配置的 CDN&lt;/strong&gt;：{{ .Site.Params.cdn }}&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;CDN 数据源&lt;/strong&gt;：{{ .Site.Params.cdn.data }}&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;配置检查&#34;&gt;配置检查&lt;/h2&gt;&#xA;&lt;script&gt;&#xA;document.addEventListener(&#39;DOMContentLoaded&#39;, function() {&#xA;    setTimeout(function() {&#xA;        const debugInfo = document.getElementById(&#39;debug-info&#39;);&#xA;        &#xA;        // 检查所有加载的脚本&#xA;        const scripts = Array.from(document.querySelectorAll(&#39;script[src]&#39;));&#xA;        const mermaidScripts = scripts.filter(script =&gt; script.src.includes(&#39;mermaid&#39;));&#xA;        &#xA;        // 检查 mermaid 对象&#xA;        let mermaidInfo = &#39;未加载&#39;;&#xA;        let mermaidVersion = &#39;未知&#39;;&#xA;        let mermaidType = &#39;未知&#39;;&#xA;        &#xA;        if (typeof mermaid !== &#39;undefined&#39;) {&#xA;            mermaidInfo = &#39;已加载&#39;;&#xA;            mermaidType = typeof mermaid;&#xA;            &#xA;            // 尝试获取版本&#xA;            if (mermaid.version) {&#xA;                mermaidVersion = mermaid.version;&#xA;            } else if (mermaid.default &amp;&amp; mermaid.default.version) {&#xA;                mermaidVersion = mermaid.default.version;&#xA;            } else if (window.mermaid &amp;&amp; window.mermaid.version) {&#xA;                mermaidVersion = window.mermaid.version;&#xA;            }&#xA;        }&#xA;        &#xA;        debugInfo.innerHTML = `&#xA;            &lt;div style=&#34;background: #f8f9fa; padding: 15px; border-radius: 5px; margin: 10px 0;&#34;&gt;&#xA;                &lt;h3&gt;🔍 调试信息&lt;/h3&gt;&#xA;                &lt;p&gt;&lt;strong&gt;Mermaid 状态：&lt;/strong&gt; ${mermaidInfo}&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

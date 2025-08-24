@@ -2,8 +2,19 @@
     xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
     xmlns:xhtml="http://www.w3.org/1999/xhtml"
     ><url>
-            <loc>http://localhost:1313/posts/my-first-post/</loc><lastmod>2025-04-12T23:39:40&#43;08:00</lastmod></url><url>
-            <loc>http://localhost:1313/</loc><lastmod>2025-04-12T23:39:40&#43;08:00</lastmod></url><url>
-            <loc>http://localhost:1313/posts/</loc><lastmod>2025-04-12T23:39:40&#43;08:00</lastmod></url><url>
-            <loc>http://localhost:1313/categories/</loc></url><url>
-            <loc>http://localhost:1313/tags/</loc></url></urlset>
+            <loc>https://omagiclee.github.io/posts/pytorch/ddp/</loc><lastmod>2025-08-23T13:36:45&#43;08:00</lastmod></url><url>
+            <loc>https://omagiclee.github.io/</loc><lastmod>2025-08-23T13:36:45&#43;08:00</lastmod></url><url>
+            <loc>https://omagiclee.github.io/posts/</loc><lastmod>2025-08-23T13:36:45&#43;08:00</lastmod></url><url>
+            <loc>https://omagiclee.github.io/categories/</loc><lastmod>2025-05-20T23:01:01&#43;08:00</lastmod></url><url>
+            <loc>https://omagiclee.github.io/tags/diffad/</loc><lastmod>2025-05-20T23:01:01&#43;08:00</lastmod></url><url>
+            <loc>https://omagiclee.github.io/posts/e2e/diff-ad/</loc><lastmod>2025-05-20T23:01:01&#43;08:00</lastmod></url><url>
+            <loc>https://omagiclee.github.io/categories/e2e/</loc><lastmod>2025-05-20T23:01:01&#43;08:00</lastmod></url><url>
+            <loc>https://omagiclee.github.io/tags/e2e/</loc><lastmod>2025-05-20T23:01:01&#43;08:00</lastmod></url><url>
+            <loc>https://omagiclee.github.io/tags/</loc><lastmod>2025-05-20T23:01:01&#43;08:00</lastmod></url><url>
+            <loc>https://omagiclee.github.io/tags/diffusion-based-planner/</loc><lastmod>2025-05-19T17:29:15&#43;08:00</lastmod></url><url>
+            <loc>https://omagiclee.github.io/posts/e2e/diffusion-drive/</loc><lastmod>2025-05-19T17:29:15&#43;08:00</lastmod></url><url>
+            <loc>https://omagiclee.github.io/tags/cdn/</loc><lastmod>2025-01-27T10:00:00&#43;08:00</lastmod></url><url>
+            <loc>https://omagiclee.github.io/posts/cdn-test/</loc><lastmod>2025-01-27T10:00:00&#43;08:00</lastmod></url><url>
+            <loc>https://omagiclee.github.io/tags/mermaid/</loc><lastmod>2025-01-27T10:00:00&#43;08:00</lastmod></url><url>
+            <loc>https://omagiclee.github.io/categories/test/</loc><lastmod>2025-01-27T10:00:00&#43;08:00</lastmod></url><url>
+            <loc>https://omagiclee.github.io/tags/test/</loc><lastmod>2025-01-27T10:00:00&#43;08:00</lastmod></url></urlset>

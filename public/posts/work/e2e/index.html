@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=52327&amp;path=livereload" data-no-instant defer></script>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>E2E - omagiclee</title><meta name="Description" content="MagicLee&#39;s Blog"><meta property="og:url" content="http://localhost:52327/posts/work/e2e/">
+  <meta property="og:site_name" content="omagiclee">
+  <meta property="og:title" content="E2E">
+  <meta property="og:description" content="CityNOA tech topic VLA Diffusion 基础学习 VLA &amp; Diffusion 合并 大模型蒸馏 强化学习 Carla 实车 VLA能否目标在250TOPS 上跑？ A2000 VLA &amp; E2E 整合 城市地图 Paper Diffuison DIT 时序 joint diffusion (one decoder) Infra A2000 部署摸底【P0】 硬件参数 NM Thor 能否尝试部署 ORIN-X: VLM? (下下周) 模型压缩: 大模型 -&gt; 小模型【P1】 模型训练加速【P0】 耗时瓶颈分析【P0】 DALI【P1】 torch 2.0&#43; 升级【P1】 Partial Label【P1】 Self-Supervised Learning【P1】 预训练大模型 VLA HuggingFace &#43; Qwen2.5-VL-72B-Instruct
+Qwen2.5-VL-72B-Instruct
+论文阅读 数据理解 实操测试 LLava">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-06-16T15:30:51+08:00">
+    <meta property="article:modified_time" content="2025-06-16T15:30:51+08:00">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="E2E">
+  <meta name="twitter:description" content="CityNOA tech topic VLA Diffusion 基础学习 VLA &amp; Diffusion 合并 大模型蒸馏 强化学习 Carla 实车 VLA能否目标在250TOPS 上跑？ A2000 VLA &amp; E2E 整合 城市地图 Paper Diffuison DIT 时序 joint diffusion (one decoder) Infra A2000 部署摸底【P0】 硬件参数 NM Thor 能否尝试部署 ORIN-X: VLM? (下下周) 模型压缩: 大模型 -&gt; 小模型【P1】 模型训练加速【P0】 耗时瓶颈分析【P0】 DALI【P1】 torch 2.0&#43; 升级【P1】 Partial Label【P1】 Self-Supervised Learning【P1】 预训练大模型 VLA HuggingFace &#43; Qwen2.5-VL-72B-Instruct
+Qwen2.5-VL-72B-Instruct
+论文阅读 数据理解 实操测试 LLava">
+<meta name="application-name" content="My cool site">
+<meta name="apple-mobile-web-app-title" content="My cool site"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="http://localhost:52327/posts/work/e2e/" /><link rel="prev" href="http://localhost:52327/posts/work/ai-data/" /><link rel="next" href="http://localhost:52327/posts/organization/companies/xpeng/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="/lib/fontawesome-free/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" href="/lib/animate/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "E2E",
+        "inLanguage": "en-us",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "http:\/\/localhost:52327\/posts\/work\/e2e\/"
+        },"genre": "posts","wordcount":  89 ,
+        "url": "http:\/\/localhost:52327\/posts\/work\/e2e\/","datePublished": "2025-06-16T15:30:51+08:00","dateModified": "2025-06-16T15:30:51+08:00","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "omagiclee"
+            },"description": ""
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="omagiclee">My cool site</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/categories/"> Categories </a><a class="menu-item" href="/tags/"> Tags </a><span class="menu-item delimiter"></span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a></div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="omagiclee">My cool site</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><a class="menu-item" href="/categories/" title="">Categories</a><a class="menu-item" href="/tags/" title="">Tags</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a></div>
+    </div>
+</header><main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">E2E</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>omagiclee</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2025-06-16">2025-06-16</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;89 words&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;One minute&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  data-kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#citynoa">CityNOA</a></li>
+    <li><a href="#infra">Infra</a></li>
+    <li><a href="#vla">VLA</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h2 id="citynoa">CityNOA</h2>
+<ul>
+<li>tech topic
+<ul>
+<li>VLA</li>
+<li>Diffusion
+<ul>
+<li>基础学习</li>
+</ul>
+</li>
+<li>VLA &amp; Diffusion 合并</li>
+<li>大模型蒸馏</li>
+<li>强化学习</li>
+</ul>
+</li>
+<li>Carla</li>
+<li>实车
+<ul>
+<li>VLA能否目标在250TOPS 上跑？</li>
+<li>A2000</li>
+<li>VLA &amp; E2E 整合</li>
+<li>城市地图</li>
+</ul>
+</li>
+<li>Paper
+<ul>
+<li>Diffuison
+<ul>
+<li>DIT</li>
+<li>时序</li>
+<li>joint diffusion (one decoder)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<!-- - Omniverse, NVIDIA DRIVE Sim -->
+<h2 id="infra">Infra</h2>
+<ol>
+<li>A2000 部署摸底【P0】
+<ul>
+<li>硬件参数</li>
+<li>NM Thor 能否尝试部署</li>
+<li>ORIN-X: VLM? (下下周)</li>
+</ul>
+</li>
+<li>模型压缩: 大模型 -&gt; 小模型【P1】</li>
+<li>模型训练加速【P0】
+<ul>
+<li>耗时瓶颈分析【P0】</li>
+<li>DALI【P1】</li>
+<li>torch 2.0+ 升级【P1】</li>
+</ul>
+</li>
+<li>Partial Label【P1】</li>
+<li>Self-Supervised Learning【P1】</li>
+<li>预训练大模型</li>
+</ol>
+<h2 id="vla">VLA</h2>
+<ol>
+<li>
+<p>HuggingFace + Qwen2.5-VL-72B-Instruct</p>
+</li>
+<li>
+<p>Qwen2.5-VL-72B-Instruct</p>
+<ul>
+<li>论文阅读</li>
+<li>数据理解</li>
+<li>实操测试</li>
+</ul>
+</li>
+<li>
+<p>LLava</p>
+</li>
+<li>
+<p>InternVL</p>
+</li>
+<li>
+<p>数据</p>
+</li>
+<li>
+<p>架构</p>
+<ul>
+<li>双流</li>
+<li>VLA</li>
+</ul>
+</li>
+<li>
+<p>机器人领域调研</p>
+</li>
+</ol>
+<p><strong>VLA</strong></p>
+<ul>
+<li>增强可解释性</li>
+<li>人机交互</li>
+<li>VLM 预训练知识</li>
+<li></li>
+</ul>
+<p><strong>Stage-1: VLM + E2E 双模型</strong></p>
+<ul>
+<li>T1: 量化部署和推理 Pipeline</li>
+<li>T2: E2E 实车 common sense 认知</li>
+</ul>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on 2025-06-16</span>
+            </div></div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="http://localhost:52327/posts/work/e2e/" data-title="E2E"><i class="fab fa-twitter fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="http://localhost:52327/posts/work/e2e/"><i class="fab fa-facebook-square fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Hacker News" data-sharer="hackernews" data-url="http://localhost:52327/posts/work/e2e/" data-title="E2E"><i class="fab fa-hacker-news fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Line" data-sharer="line" data-url="http://localhost:52327/posts/work/e2e/" data-title="E2E"><i data-svg-src="/lib/simple-icons/icons/line.min.svg" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on 微博" data-sharer="weibo" data-url="http://localhost:52327/posts/work/e2e/" data-title="E2E"><i class="fab fa-weibo fa-fw" aria-hidden="true"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/posts/work/ai-data/" class="prev" rel="prev" title="AI-Powered Data-Centric Closed-Loop System"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>AI-Powered Data-Centric Closed-Loop System</a>
+            <a href="/posts/organization/companies/xpeng/" class="next" rel="next" title="Scaling up Autonomous Driving via Large Foundation Models">Scaling up Autonomous Driving via Large Foundation Models<i class="fas fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+</div>
+</article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.148.2">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.3.0"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
+                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2022 - 2025</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">omagiclee</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
+            </a>
+        </div><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript" src="/lib/sharer/sharer.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":50},"comment":{}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>

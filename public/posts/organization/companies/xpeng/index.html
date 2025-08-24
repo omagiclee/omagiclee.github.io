@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=52327&amp;path=livereload" data-no-instant defer></script>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>Scaling up Autonomous Driving via Large Foundation Models - omagiclee</title><meta name="Description" content="MagicLee&#39;s Blog"><meta property="og:url" content="http://localhost:52327/posts/organization/companies/xpeng/">
+  <meta property="og:site_name" content="omagiclee">
+  <meta property="og:title" content="Scaling up Autonomous Driving via Large Foundation Models">
+  <meta property="og:description" content="Xpeng 今年 4 月发布 720 亿参数的“世界基座模型”以来 “扩展法则”（Scaling Law）在自动驾驶领域的系统性验证，结合“云端基座模型 &#43; 强化学习”的方法论，还公开了已被 DeepSeek 验证的“知识蒸馏”路径，将 VLA（Visual-Language-Action）模型高效部署在自研芯片上的最新实践。
+软件1.0: rule-based 软件2.0: 模型即软件 软件3.0: 模型生产模型 云端大模型(72B, 行业主流VLA 模型的35倍以上) -&gt; 蒸馏到车端小模型 算力: 10 EFLOPS, 1w&#43; GPUs 数据传输架构，训练速度提升5倍 数据飞轮 5000万 clips (30s), 共计40w hours&#43;，平均每天上传数据600TB，超100种触发机制驱动 基座模型是动态的，持续学习，循环进化。 内循环: 预训练、后训练(包含监督精调 SFT, 强化学习 RL) 和蒸馏部署 外循环: 量产数据飞轮 Scaling Law: 自研芯片的摊销门槛至少是100万片起步；图灵芯片不光会用在车上，也会用在小鹏的飞行汽车以及机器人上。 对于大模型的研发来说，其投入规模也是巨大的，预计今年底/明年头部厂商为辅助驾驶大模型的云端算力投入可能就是以1亿美金作为门槛。
+VLA本身最早就是由DeepMind提出来，用于机器人的模型范式。语言模型加入之后对推理能力的增加，能极大地帮助机器系统建立对世界的认知，从而形成更加通用化的能力。
+小鹏 G7全球首秀: L3级别算力 图灵芯片 x3, 2200TOPS&#43;, 216GB内存容量 图灵 AI 芯片 &#43; 高通8295P 智能座舱芯片 近20000张卡 本地部署 VLA&#43;VLM 图灵AI芯片 40核心 最高可运行大模型参数: 30B 2xNPU DSA">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-06-17T17:19:55+08:00">
+    <meta property="article:modified_time" content="2025-06-17T17:19:55+08:00">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Scaling up Autonomous Driving via Large Foundation Models">
+  <meta name="twitter:description" content="Xpeng 今年 4 月发布 720 亿参数的“世界基座模型”以来 “扩展法则”（Scaling Law）在自动驾驶领域的系统性验证，结合“云端基座模型 &#43; 强化学习”的方法论，还公开了已被 DeepSeek 验证的“知识蒸馏”路径，将 VLA（Visual-Language-Action）模型高效部署在自研芯片上的最新实践。
+软件1.0: rule-based 软件2.0: 模型即软件 软件3.0: 模型生产模型 云端大模型(72B, 行业主流VLA 模型的35倍以上) -&gt; 蒸馏到车端小模型 算力: 10 EFLOPS, 1w&#43; GPUs 数据传输架构，训练速度提升5倍 数据飞轮 5000万 clips (30s), 共计40w hours&#43;，平均每天上传数据600TB，超100种触发机制驱动 基座模型是动态的，持续学习，循环进化。 内循环: 预训练、后训练(包含监督精调 SFT, 强化学习 RL) 和蒸馏部署 外循环: 量产数据飞轮 Scaling Law: 自研芯片的摊销门槛至少是100万片起步；图灵芯片不光会用在车上，也会用在小鹏的飞行汽车以及机器人上。 对于大模型的研发来说，其投入规模也是巨大的，预计今年底/明年头部厂商为辅助驾驶大模型的云端算力投入可能就是以1亿美金作为门槛。
+VLA本身最早就是由DeepMind提出来，用于机器人的模型范式。语言模型加入之后对推理能力的增加，能极大地帮助机器系统建立对世界的认知，从而形成更加通用化的能力。
+小鹏 G7全球首秀: L3级别算力 图灵芯片 x3, 2200TOPS&#43;, 216GB内存容量 图灵 AI 芯片 &#43; 高通8295P 智能座舱芯片 近20000张卡 本地部署 VLA&#43;VLM 图灵AI芯片 40核心 最高可运行大模型参数: 30B 2xNPU DSA">
+<meta name="application-name" content="My cool site">
+<meta name="apple-mobile-web-app-title" content="My cool site"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="http://localhost:52327/posts/organization/companies/xpeng/" /><link rel="prev" href="http://localhost:52327/posts/work/e2e/" /><link rel="next" href="http://localhost:52327/posts/organization/companies/waymo/scaling-laws-in-autonomous-driving/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="/lib/fontawesome-free/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" href="/lib/animate/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Scaling up Autonomous Driving via Large Foundation Models",
+        "inLanguage": "en-us",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "http:\/\/localhost:52327\/posts\/organization\/companies\/xpeng\/"
+        },"genre": "posts","wordcount":  135 ,
+        "url": "http:\/\/localhost:52327\/posts\/organization\/companies\/xpeng\/","datePublished": "2025-06-17T17:19:55+08:00","dateModified": "2025-06-17T17:19:55+08:00","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "omagiclee"
+            },"description": ""
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="omagiclee">My cool site</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/categories/"> Categories </a><a class="menu-item" href="/tags/"> Tags </a><span class="menu-item delimiter"></span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a></div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="omagiclee">My cool site</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><a class="menu-item" href="/categories/" title="">Categories</a><a class="menu-item" href="/tags/" title="">Tags</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a></div>
+    </div>
+</header><main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">Scaling up Autonomous Driving via Large Foundation Models</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>omagiclee</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2025-06-17">2025-06-17</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;135 words&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;One minute&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  data-kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#references">References</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><p>Xpeng
+今年 4 月发布 720 亿参数的“世界基座模型”以来
+“扩展法则”（Scaling Law）在自动驾驶领域的系统性验证，结合“云端基座模型 + 强化学习”的方法论，还公开了已被 DeepSeek 验证的“知识蒸馏”路径，将 VLA（Visual-Language-Action）模型高效部署在自研芯片上的最新实践。</p>
+<ul>
+<li>软件1.0: rule-based</li>
+<li>软件2.0: 模型即软件</li>
+<li>软件3.0: 模型生产模型
+<ul>
+<li>云端大模型(72B, 行业主流VLA 模型的35倍以上) -&gt; 蒸馏到车端小模型</li>
+<li>算力: 10 EFLOPS, 1w+ GPUs</li>
+<li>数据传输架构，训练速度提升5倍</li>
+<li>数据飞轮</li>
+<li>5000万 clips (30s), 共计40w hours+，平均每天上传数据600TB，超100种触发机制驱动</li>
+<li>基座模型是动态的，持续学习，循环进化。
+<ul>
+<li>内循环: 预训练、后训练(包含监督精调 SFT, 强化学习 RL) 和蒸馏部署</li>
+<li>外循环: 量产数据飞轮</li>
+</ul>
+</li>
+<li>Scaling Law:</li>
+</ul>
+</li>
+</ul>
+<p>自研芯片的摊销门槛至少是100万片起步；图灵芯片不光会用在车上，也会用在小鹏的飞行汽车以及机器人上。
+对于大模型的研发来说，其投入规模也是巨大的，预计今年底/明年头部厂商为辅助驾驶大模型的云端算力投入可能就是以1亿美金作为门槛。</p>
+<p>VLA本身最早就是由DeepMind提出来，用于机器人的模型范式。语言模型加入之后对推理能力的增加，能极大地帮助机器系统建立对世界的认知，从而形成更加通用化的能力。</p>
+<ul>
+<li>小鹏 G7全球首秀:
+L3级别算力
+图灵芯片 x3, 2200TOPS+, 216GB内存容量
+图灵 AI 芯片 + 高通8295P 智能座舱芯片
+近20000张卡
+本地部署 VLA+VLM
+图灵AI芯片</li>
+</ul>
+<p>40核心
+最高可运行大模型参数: 30B
+2xNPU
+DSA</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/posts/organization/companies/xpeng/VLA-OL.png"
+        data-srcset="/posts/organization/companies/xpeng/VLA-OL.png, /posts/organization/companies/xpeng/VLA-OL.png 1.5x, /posts/organization/companies/xpeng/VLA-OL.png 2x"
+        data-sizes="auto"
+        alt="/posts/organization/companies/xpeng/VLA-OL.png"
+        title="VLA-OL" width="1666" height="1194" />
+VLA-OL模型</p>
+<ol>
+<li>路面塌陷避让</li>
+<li>救护车识别让行</li>
+<li>拥堵道路合理变道加塞</li>
+<li>积水路面，主动减速</li>
+<li>遮挡推理</li>
+<li>识别交警手势
+上车节奏：
+VLA 软件 OTA，思考推理可视化展示-09
+VLM 硬件免费升级-11
+主动推荐，语音控车，记录学习个性驾驶习惯-12</li>
+</ol>
+<p>全本地端运行</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="VLM.png"
+        data-srcset="VLM.png, VLM.png 1.5x, VLM.png 2x"
+        data-sizes="auto"
+        alt="VLM.png"
+        title="VLM" />
+VLM 整车 AI 大脑</p>
+<ol>
+<li>本地聊天</li>
+<li>本地控车</li>
+<li>主动服务</li>
+<li>变身家人</li>
+<li>多语言对话</li>
+</ol>
+<p>芯片研发：100w 片是门槛
+AI 算力：将2w 张卡
+72B 基座模型</p>
+<p>online reinforcement learning:</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/posts/organization/companies/xpeng/TURING.png"
+        data-srcset="/posts/organization/companies/xpeng/TURING.png, /posts/organization/companies/xpeng/TURING.png 1.5x, /posts/organization/companies/xpeng/TURING.png 2x"
+        data-sizes="auto"
+        alt="/posts/organization/companies/xpeng/TURING.png"
+        title="TURING" width="2778" height="636" /></p>
+<p>Vision-Language-Action - Online Reinforcement Learning (VLA-OL)
+TURING x2
+高帧率
+低时延
+长时序</p>
+<p>人机共驾+强化学习</p>
+<p>VLM
+TURING x1 + 高通8295P</p>
+<h2 id="references">References</h2>
+<ul>
+<li><a href="https://cvpr2025.wad.vision/" target="_blank" rel="noopener noreffer ">https://cvpr2025.wad.vision/</a></li>
+<li><a href="https://weibo.com/ttarticle/x/m/show/id/2309405178106696040457?_wb_client_=1" target="_blank" rel="noopener noreffer ">https://weibo.com/ttarticle/x/m/show/id/2309405178106696040457?_wb_client_=1</a></li>
+<li><a href="https://mp.weixin.qq.com/s/u_vREBzJ7Qeckn4OEWtoMQ" target="_blank" rel="noopener noreffer ">https://mp.weixin.qq.com/s/u_vREBzJ7Qeckn4OEWtoMQ</a></li>
+<li><a href="https://mp.weixin.qq.com/s/od2qG1Q8REGMwg6C5QW-Fg" target="_blank" rel="noopener noreffer ">https://mp.weixin.qq.com/s/od2qG1Q8REGMwg6C5QW-Fg</a></li>
+<li><a href="https://user.guancha.cn/main/content?id=1464995" target="_blank" rel="noopener noreffer ">https://user.guancha.cn/main/content?id=1464995</a></li>
+<li>【跨时代 小鹏G7上市发布会】https://www.bilibili.com/video/BV1Jg37zfE3t?p=2&amp;vd_source=e05fafaa995c59e16affc059ba418214</li>
+<li>【AI科技 AI家庭 小鹏G7 全球首秀】https://www.bilibili.com/video/BV1ArTozTExV?vd_source=e05fafaa995c59e16affc059ba418214</li>
+</ul>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on 2025-06-17</span>
+            </div></div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="http://localhost:52327/posts/organization/companies/xpeng/" data-title="Scaling up Autonomous Driving via Large Foundation Models"><i class="fab fa-twitter fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="http://localhost:52327/posts/organization/companies/xpeng/"><i class="fab fa-facebook-square fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Hacker News" data-sharer="hackernews" data-url="http://localhost:52327/posts/organization/companies/xpeng/" data-title="Scaling up Autonomous Driving via Large Foundation Models"><i class="fab fa-hacker-news fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Line" data-sharer="line" data-url="http://localhost:52327/posts/organization/companies/xpeng/" data-title="Scaling up Autonomous Driving via Large Foundation Models"><i data-svg-src="/lib/simple-icons/icons/line.min.svg" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on 微博" data-sharer="weibo" data-url="http://localhost:52327/posts/organization/companies/xpeng/" data-title="Scaling up Autonomous Driving via Large Foundation Models"><i class="fab fa-weibo fa-fw" aria-hidden="true"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/posts/work/e2e/" class="prev" rel="prev" title="E2E"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>E2E</a>
+            <a href="/posts/organization/companies/waymo/scaling-laws-in-autonomous-driving/" class="next" rel="next" title="New Insights for Scaling Laws in Autonomous Driving">New Insights for Scaling Laws in Autonomous Driving<i class="fas fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+</div>
+</article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.148.2">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.3.0"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
+                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2022 - 2025</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">omagiclee</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
+            </a>
+        </div><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript" src="/lib/sharer/sharer.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":50},"comment":{}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>
