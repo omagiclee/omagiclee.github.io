@@ -4,6 +4,7 @@ draft = false
 title = 'Transformer: Attention Is All You Need'
 categories = ['LLMs']
 tags = ['LLMs', 'Transformer']
+featured = true
 +++
 
 :(fas fa-award fa-fw):<span style="color:gray">NeurIPS 2017</span>

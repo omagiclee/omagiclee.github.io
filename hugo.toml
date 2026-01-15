@@ -1,7 +1,15 @@
 baseURL = 'https://omagiclee.github.io/'
 languageCode = 'en-us'
 title = "Naifan Li's Blog"
+title = "Naifan Li's Blog"
 theme = 'LoveIt'
+
+# 启用自动更新时间追踪
+enableGitInfo = true
+
+# 配置 lastmod 的优先级：git > frontmatter > fileModTime
+[frontmatter]
+  lastmod = [':git', 'lastmod', ':fileModTime']
 
 # 启用自动更新时间追踪
 enableGitInfo = true
@@ -15,7 +23,12 @@ enableGitInfo = true
   keywords = ["AI", "Machine Learning", "Deep Learning"]
   [params.Author]
     name = "Naifan Li"
+    name = "Naifan Li"
   subtitle = "AI & Deep Learning Notes"
+  slogan = "The second best time is now."
+
+  # Google Analytics
+  googleAnalytics = "G-LH4RCL9GEZ"  # 替换为你的 GA4 Measurement ID
   slogan = "The second best time is now."
 
   # Google Analytics
@@ -27,16 +40,26 @@ enableGitInfo = true
       # 导航栏标题名称
       name = "Naifan Li"
 
+      name = "Naifan Li"
+
   # 主页个人信息配置
   [params.home]
     [params.home.profile]
       enable = true
       # 主页显示的网站标题
       title = "Naifan Li"
+      title = "Naifan Li"
       # 主页显示的网站副标题（支持打字机动画）
+      subtitle = "The second best time is now."
       subtitle = "The second best time is now."
       # 是否为副标题显示打字机动画
       typeit = true
+      # 头像（使用 GitHub 头像）
+      avatarURL = "https://avatars.githubusercontent.com/omagiclee"
+      # Bio — one-line identity
+      bio = "AI Research Engineer in Autonomous Driving"
+      # Tech focus tags
+      techTags = ["E2E", "Object Detection", "Data Closed-loop", "LLMs/VLMs/VLAs"]
       # 头像（使用 GitHub 头像）
       avatarURL = "https://avatars.githubusercontent.com/omagiclee"
       # Bio — one-line identity
@@ -50,15 +73,67 @@ enableGitInfo = true
     copyright = true
     author = true
     since = 2018
+    since = 2018
   
   cdn = "custom"
   
   [params.cdn]
     data = "custom"
   
-[markup]
-  [markup.mermaid]
+  [params.markup]
+    [params.markup.mermaid]
+      enable = true
+  
+  [params.section]
+    dateFormat = "2006-01-02"
+
+  [params.search]
     enable = true
+    type = "lunr"
+    contentLength = 4000
+    placeholder = "Search posts..."
+    maxResultLength = 10
+    snippetLength = 50
+    highlightTag = "em"
+    absoluteURL = false
+  
+  # 页面配置
+  [params.page]
+    # 数学公式
+    [params.page.math]
+      enable = true
+      copyTex = true
+      mhchem = true
+    
+    # 目录配置
+    [params.page.toc]
+      enable = true
+      keepStatic = false
+      auto = false  # 设为 false，默认不折叠，直接展开显示
+    
+    # 禁用所有社交分享按钮
+    [params.page.share]
+      enable = false
+    
+    # Giscus 评论系统配置
+    [params.page.comment]
+      enable = false  # ❌ 评论系统已禁用
+      [params.page.comment.giscus]
+        enable = false
+        repo = "omagiclee/omagiclee.github.io"
+        repoId = "R_kgDOOYamQg"
+        category = "General"
+        categoryId = "DIC_kwDOOYamQs4C1JfF"
+        lang = "en"
+        mapping = "pathname"
+        reactionsEnabled = "1"
+        emitMetadata = "1"  # ✅ 启用元数据，可获取评论数量
+        inputPosition = "bottom"
+        lazyLoading = false  # ⚠️ 临时禁用懒加载用于测试
+        lightTheme = "light"
+        darkTheme = "dark_dimmed"  # ✅ 更柔和的深色主题
+
+[markup]
   [markup.goldmark]
     [markup.goldmark.renderer]
       unsafe = true
@@ -154,6 +229,11 @@ enableGitInfo = true
     name = "Archives"
     url = "/posts/"
     weight = 3
+
+  [[menu.main]]
+    name = "About"
+    url = "/about/"
+    weight = 4
 
   [[menu.main]]
     name = "About"

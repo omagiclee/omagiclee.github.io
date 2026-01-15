@@ -53,7 +53,11 @@ pip install build setuptools wheel
 python -m build --wheel  # save to ./dist
 
 # 下载
-pip download torch torchvision --index-url https://download.pytorch.org/whl/cu130
+pip3 download torch torchvision \
+    --index-url https://mirrors.aliyun.com/pytorch-wheels/cu128 \
+    --python-version 3.12 \
+    --only-binary=:all: \
+    -d .
 pip download torch torchvision --find-links https://mirrors.aliyun.com/pytorch-wheels/cu130
 
 ```

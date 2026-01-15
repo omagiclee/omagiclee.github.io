@@ -36,7 +36,11 @@
 {{- partial "plugin/style.html" $options -}}
 
 {{- /* 项目自定义 CSS（文末间距等），后加载以覆盖主题 */ -}}
+<<<<<<< HEAD
 <link rel="stylesheet" href="{{ "css/custom.css" | relURL }}">
+=======
+<link rel="stylesheet" href="{{ "css/custom.css" | absURL }}">
+>>>>>>> 2832ba5 (Content: Add all blog posts)
 
 {{- /* Font Awesome */ -}}
 {{- $source := $cdn.fontawesomeFreeCSS | default "lib/fontawesome-free/all.min.css" -}}

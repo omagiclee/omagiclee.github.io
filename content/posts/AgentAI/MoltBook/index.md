@@ -4,6 +4,10 @@ draft = false
 title = 'MoltBook'
 categories = ['AgentAI']
 tags = ['AgentAI']
+<<<<<<< HEAD
+=======
+featured = true
+>>>>>>> 2832ba5 (Content: Add all blog posts)
 +++
 
 https://www.moltbook.com/
