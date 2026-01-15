@@ -1,0 +1,117 @@
+baseURL = 'https://omagiclee.github.io/'
+languageCode = 'en-us'
+title = 'omagiclee'
+theme = 'LoveIt'
+
+[params]
+  description = "MagicLee's Blog"
+  keywords = ["AI", "Machine Learning", "Deep Learning"]
+  [params.Author]
+    name = "omagiclee"
+  subtitle = "AI & Deep Learning Notes"
+  slogan = "记录学习，分享知识"
+  
+  # 页面头部导航栏配置
+  [params.header]
+    [params.header.title]
+      # 导航栏标题名称
+      name = "omagiclee"
+  
+  # 主页个人信息配置
+  [params.home]
+    [params.home.profile]
+      enable = true
+      # 主页显示的网站标题
+      title = ""
+      # 主页显示的网站副标题（支持打字机动画）
+      subtitle = "Seek Deep, Go Far."
+      # 是否为副标题显示打字机动画
+      typeit = true
+  
+  [params.footer]
+    enable = true
+    hugo = false
+    copyright = true
+    author = true
+  
+  cdn = "custom"
+  
+  [params.cdn]
+    data = "custom"
+  
+  [params.markup]
+    [params.markup.mermaid]
+      enable = true
+  
+  [params.page.math]
+    enable = true
+    copyTex = true
+    mhchem = true
+  
+  [params.search]
+    enable = true
+    type = "lunr"
+    contentLength = 4000
+    placeholder = "搜索标题或内容..."
+    maxResultLength = 10
+    snippetLength = 50
+    highlightTag = "em"
+    absoluteURL = false
+  
+  # 目录配置
+  [params.page]
+    [params.page.toc]
+      enable = true
+      keepStatic = false
+      auto = false  # 设为 false，默认不折叠，直接展开显示
+    
+    # 禁用所有社交分享按钮
+    [params.page.share]
+      enable = false
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+  [markup.highlight]
+    codeFences = true
+    guessSyntax = true
+    lineNos = true
+    lineNumbersInTable = true
+    noClasses = false
+    style = 'monokai'
+    tabWidth = 4
+  # 目录设置
+  [markup.tableOfContents]
+    startLevel = 2  # 从 H2 开始
+    endLevel = 4    # 到 H4 结束（显示 H2, H3, H4）
+
+[taxonomies]
+  category = "categories"
+  tag = "tags"
+
+[caches]
+  [caches.images]
+    dir = ':cacheDir/images'
+
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
+  page = ["HTML"]
+  section = ["HTML", "RSS"]
+  taxonomy = ["HTML", "RSS"]
+
+[menu]
+  [[menu.main]]
+    name = "Tags"
+    url = "/tags/"
+    weight = 1
+
+  [[menu.main]]
+    name = "Categories"
+    url = "/categories/"
+    weight = 2
+
+  [[menu.main]]
+    name = "Archives"
+    url = "/posts/"
+    weight = 3
