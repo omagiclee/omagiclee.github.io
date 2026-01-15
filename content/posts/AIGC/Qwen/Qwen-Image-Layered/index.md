@@ -1,6 +1,6 @@
 +++
 date = '2025-12-23T14:35:16+08:00'
-draft = false
+draft = true
 title = 'Qwen-Image-Layered: Towards Inherent Editability via Layer Decomposition'
 categories = ['AIGC']
 tags = ['Image Editing', 'Image Generation']

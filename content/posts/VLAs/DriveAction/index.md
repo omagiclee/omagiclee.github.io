@@ -1,6 +1,6 @@
 +++
 date = '2025-10-09T11:25:24+08:00'
-draft = false
+draft = true
 title = 'DriveAction: A Benchmark for Exploring Human-like Driving Decisions in VLA Models'
 organization = ['Li Auto']
 categories = []

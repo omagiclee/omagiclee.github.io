@@ -2,6 +2,7 @@
 date = '2025-11-18T15:41:33+08:00'
 draft = false
 title = 'Frontiers in Embodied AI (ICCV 2025 WDFM-AD)'
+featured = true
 organization = ['Wayve']
 categories = []
 tags = []

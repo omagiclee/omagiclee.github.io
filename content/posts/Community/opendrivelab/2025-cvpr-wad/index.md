@@ -1,6 +1,6 @@
 +++
 date = '2025-11-18T20:38:10+08:00'
-draft = false
+draft = true
 title = '2025 Cvpr Wad'
 organization = []
 categories = []

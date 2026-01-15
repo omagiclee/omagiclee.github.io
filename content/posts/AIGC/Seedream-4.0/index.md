@@ -1,6 +1,6 @@
 +++
 date = '2025-12-22T17:23:19+08:00'
-draft = false
+draft = true
 title = 'Seedream 4.0: Toward Next-generation Multimodal Image Generation'
 organization = ['ByteDance-Seed']
 categories = []

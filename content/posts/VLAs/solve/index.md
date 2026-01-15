@@ -1,6 +1,6 @@
 +++
 date = '2025-06-24T13:19:23+08:00'
-draft = false
+draft = true
 title = 'SOLVE: Synergy of Language-Vision and End-to-End Networks for Autonomous Driving'
 organization = []
 categories = []

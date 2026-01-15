@@ -1,6 +1,6 @@
 +++
 date = '2025-12-25T17:25:08+08:00'
-draft = false
+draft = true
 title = 'LLaVA Mini'
 categories = []
 tags = []

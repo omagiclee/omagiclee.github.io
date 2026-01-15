@@ -2,6 +2,7 @@
 date = '2022-01-28T17:43:33+08:00'
 draft = false
 title = 'Chain-of-Thought Prompting Elicits Reasoning in Large Language Models'
+featured = true
 categories = ['LLMs']
 tags = ['LLMs', 'Chain-of-Thought']
 +++

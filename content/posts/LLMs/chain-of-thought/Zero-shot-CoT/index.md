@@ -2,6 +2,7 @@
 date = '2022-05-24T17:41:26+08:00'
 draft = false
 title = 'Zero-shot-CoT: Large Language Models are Zero-Shot Reasoners'
+featured = true
 categories = ['LLMs']
 tags = ['LLMs', 'Chain-of-Thought']
 +++

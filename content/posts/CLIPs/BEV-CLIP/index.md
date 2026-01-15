@@ -1,6 +1,6 @@
 +++
 date = '2025-12-19T10:33:34+08:00'
-draft = false
+draft = true
 title = 'BEV CLIP'
 organization = []
 categories = []

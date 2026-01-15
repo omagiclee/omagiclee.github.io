@@ -4,6 +4,7 @@ draft = false
 title = '{{ replace .File.ContentBaseName "-" " " | title }}'
 categories = []
 tags = []
+featured = false  # 是否推荐到首页 Recommended Posts，默认不推荐
 +++
 
 :(fas fa-award fa-fw):{{ "<span style=\"color:gray\"></span>" }}

@@ -1,6 +1,6 @@
 +++
 date = '2025-12-25T17:44:25+08:00'
-draft = false
+draft = true
 title = 'Scaling Law'
 categories = []
 tags = []

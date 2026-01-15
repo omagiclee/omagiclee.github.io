@@ -1,6 +1,6 @@
 +++
 date = '2025-11-20T21:51:49+08:00'
-draft = false
+draft = true
 title = 'SSR: Navigation-guided Sparse Scene Representation For End-to-End Autonomous Driving'
 organization = ['Zhijia']
 categories = []

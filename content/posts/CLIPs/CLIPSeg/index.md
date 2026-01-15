@@ -1,6 +1,6 @@
 +++
 date = '2025-12-19T10:25:32+08:00'
-draft = false
+draft = true
 title = 'CLIPSeg'
 organization = []
 categories = []

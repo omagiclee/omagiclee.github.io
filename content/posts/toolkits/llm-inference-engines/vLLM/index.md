@@ -2,6 +2,7 @@
 date = '2025-11-27T21:07:50+08:00'
 draft = false
 title = 'vLLM: Easy, fast, and cheap LLM inference and serving'
+featured = true
 categories = ['LLM Inference Frameworks']
 tags = ['vLLM', 'PagedAttention', 'LLM Serving']
 +++
@@ -42,14 +43,14 @@ vLLM is flexible and easy to use with:
 ```bash
 # Install vLLM in a fresh new environment (Recommended).
 # conda: manage python & cuda version
-(vllm-cu128) ➜  /workspace conda create -n vllm-cu128 python=3.12
-(vllm-cu128) ➜  /workspace conda activate vllm-cu128
+(vllm-cu128) ➜  ~ conda create -n vllm-cu128 python=3.12
+(vllm-cu128) ➜  ~ conda activate vllm-cu128
 
 # pip install pipx
-(vllm-cu128) ➜  /workspace pip install pipx
+(vllm-cu128) ➜  ~ pip install pipx
 
 # pipx install uv       
-(vllm-cu128) ➜  /workspace pipx install uv 
+(vllm-cu128) ➜  ~ pipx install uv 
   installed package uv 0.10.2, installed using Python 3.12.12
   These apps are now globally available
     - uv
@@ -57,18 +58,19 @@ vLLM is flexible and easy to use with:
 ⚠️  Note: '/root/.local/bin' is not on your PATH environment variable. These apps will not be globally accessible until your PATH is updated. Run `pipx ensurepath` to automatically add it, or manually
     modify your PATH in your shell's config file (e.g. ~/.bashrc).
 done! ✨ 🌟 ✨
-(vllm-cu128) ➜  /workspace pipx ensurepath
+(vllm-cu128) ➜  ~ pipx ensurepath
+(vllm-cu128) ➜  ~ source ~/.zshrc
 
 # configure uv env
-(vllm-cu128) ➜  /workspace vim pyproject.toml
+(vllm-cu128) ➜  ~ uv init vllm-test --python 3.12
+(vllm-cu128) ➜  ~ vim pyproject.toml
 [tool.uv]
 index-url = "https://mirrors.aliyun.com/pypi/simple/"
 
 # uv pip install vllm
-(vllm-cu128) ➜  /workspace uv init vllm --python 3.12
-(vllm-cu128) ➜  /workspace uv venv vllm-venv --python 3.12
-(vllm-cu128) ➜  /workspace source vllm-venv/bin/activate
-(vllm-venv) (vllm-cu128) ➜  /workspace uv pip install vllm --torch-backend=auto
+(vllm-cu128) ➜  ~ uv venv .vllm --python 3.12
+(vllm-cu128) ➜  ~ source .vllm/bin/activate
+(.vllm) (vllm-cu128) ➜  ~ uv pip install vllm --torch-backend=auto
 
 # configure vllm env
 export VLLM_USE_MODELSCOPE=True
@@ -94,6 +96,10 @@ CUDA_VISIBLE_DEVICES=0,1,2,3 vllm serve --config config1.yaml (change port)
 
 # Test on the local machine
 curl http://localhost:8000/v1/models
+
+# 隧道端口转发
+ssh -L 8000:localhost:8000 -p 25267 root@10.10.9.242 # SSH 端口转发（隧道）
+ssh -fN -R 0.0.0.0:8000:localhost:8000 root@47.117.129.108 # SSH 反向隧道
 ```
 
 #### GLM-5
@@ -130,21 +136,24 @@ It's not recommended on deploying Kimi-K2.5 with vLLM on 8x A100-80G , the conte
 ```yaml
 # config.yaml
 
-model: moonshotai/Kimi-K2___5
-served-model-name: Kimi-K25  # model alias name
+model: moonshotai/Kimi-K2.5
+served-model-name: kimi-k25  # model alias name
 host: "127.0.0.1"
-port: 8002
+port: 8000
 uvicorn-log-level: "info"
 trust_remote_code: True
 
 # Memory Optimization
 tensor_parallel_size: 8  # Tensor Parallelism (TP): split the model across multiple GPUs.
 max_model_len: 50000  # context length
-max_num_seqs: 2  # maximum batch size
-gpu-memory-utilization: 0.98
+max_num_seqs: 1  # maximum batch size
+gpu-memory-utilization: 0.95
+
+mm_encoder_tp_mode: "data"
 
 enable_auto_tool_choice: true
-tool_call_parser: "default"  # 或使用支持的解析器
+tool_call_parser: "kimi_k2"
+reasoning-parser: "kimi_k2"
 ```
 
 ### OpenAI Compatible API with vLLM

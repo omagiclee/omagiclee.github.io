@@ -1,6 +1,6 @@
 +++
 date = '2026-01-28T14:29:41+08:00'
-draft = false
+draft = true
 title = 'SigLIP'
 categories = []
 tags = []

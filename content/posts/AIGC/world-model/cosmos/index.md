@@ -1,6 +1,6 @@
 +++
 date = '2025-11-24T13:21:23+08:00'
-draft = false
+draft = true
 title = 'NVIDIA Cosmos'
 organization = ['NVIDIA']
 categories = []

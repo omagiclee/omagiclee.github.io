@@ -2,6 +2,7 @@
 date = '2022-03-04T17:41:08+08:00'
 draft = false
 title = 'InstructGPT: Training language models to follow instructions with human feedback'
+featured = true
 categories = ['LLMs']
 tags = ['LLMs', 'GPTs', 'Instruction Tuning', 'Reinforcement Learning']
 +++

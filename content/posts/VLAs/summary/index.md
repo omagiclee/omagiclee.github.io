@@ -5,6 +5,7 @@ title = 'Summary of VLAs'
 organization = []
 categories = []
 tags = []
+featured = false
 +++
 
 ## E2E Keys:

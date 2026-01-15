@@ -2,6 +2,7 @@
 date = '2023-08-25T20:53:14+08:00'
 draft = false
 title = 'Qwen-VL: A Versatile Vision-Language Model for  Understanding, Localization, Text Reading, and Beyond'
+featured = true
 categories = ['VLMs']
 tags = ['VLMs', 'LLMs', 'Qwens']
 +++

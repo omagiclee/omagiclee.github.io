@@ -1,6 +1,6 @@
 +++
 date = '2025-11-26T20:24:59+08:00'
-draft = false
+draft = true
 title = 'Depth Anything 3: Recovering the Visual Space from Any Views'
 organization = ['ByteDance Seed']
 categories = ['Depth Map', '']

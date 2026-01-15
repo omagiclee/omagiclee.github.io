@@ -1,0 +1,74 @@
+/* 修复 categories 页面布局对齐问题 */
+.page.archive .categories-card {
+  margin-top: 0;
+}
+
+/* 文末：post-info 横线 / Prev·Next / related-posts 横线 对齐与间距 */
+.single .post-footer {
+  display: block;
+  overflow: hidden;  /* 包含内部 float，避免错位 */
+}
+
+.single .post-footer .post-info {
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  margin-bottom: 0;
+}
+
+[theme="dark"] .single .post-footer .post-info {
+  border-bottom-color: rgba(255, 255, 255, 0.08);
+}
+
+/* Prev/Next 一行：用 flex 替代 float，避免错位 */
+.single .post-footer .post-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1.25rem;
+  margin-bottom: 1.25rem;
+  clear: both;
+}
+
+.single .post-footer .post-nav::before,
+.single .post-footer .post-nav::after {
+  content: none;
+}
+
+.single .post-footer .post-nav a.prev {
+  float: none;
+}
+
+.single .post-footer .post-nav a.next {
+  float: none;
+}
+
+/* Related Posts 与第二条横线 */
+.single .related-posts {
+  display: block;
+  width: 100%;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-top: 1.25rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+  box-sizing: border-box;
+}
+
+[theme="dark"] .single .related-posts {
+  border-top-color: rgba(255, 255, 255, 0.08);
+}
+
+/* 首页日期：小一点、细一点 */
+.post-row-date {
+  color: #a9a9b3;
+  font-size: 0.75rem;
+  font-weight: 300;
+  min-width: 8.5rem;
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+[theme="dark"] .post-row-date {
+  color: #5d5d5f;
+}

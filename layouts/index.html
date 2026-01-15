@@ -84,28 +84,161 @@
                 </div>
             </div>
 
-            {{- /* ===== 右栏：Featured + Recent Posts ===== */ -}}
+            {{- /* ===== 右栏：Recommended 最上 → Chain-of-Thought → Instruction Tuning → Qwen → LLM → VLM → Recent ===== */ -}}
             <div class="home-col-right">
-                {{- /* Featured / Recommended */ -}}
+                {{- /* Recommended Posts 放在最上面 */ -}}
                 {{- $featured := where $allPosts "Params.featured" true -}}
                 {{- if $featured -}}
-                    <div class="posts-section">
-                        <h3 class="posts-section-title">Recommended Posts</h3>
-                        <div class="posts-list">
-                            {{- range $featured -}}
-                                <a href="{{ .RelPermalink }}" class="post-row">
-                                    <span class="post-row-title">{{ .Title | emojify }}</span>
-                                    <span class="post-row-date">{{ .Date.Format "2006-01-02" }}</span>
-                                </a>
-                            {{- end -}}
-                        </div>
+                <div class="posts-section">
+                    <h3 class="posts-section-title">Recommended Posts</h3>
+                    <div class="posts-list">
+                        {{- range $featured -}}
+                            <a href="{{ .RelPermalink }}" class="post-row">
+                                <span class="post-row-title">{{ .Title | emojify }}</span>
+                                <span class="post-row-date">{{ .Date.Format "2006-01-02" }}</span>
+                            </a>
+                        {{- end -}}
                     </div>
+                </div>
                 {{- end -}}
 
+                {{- /* LLM / VLM 系列：Chain-of-Thought → Instruction Tuning → Qwen → LLM → VLM，每系列最多 5 篇 */ -}}
+                {{- $cotPosts := sort (where $allPosts "Params.tags" "intersect" (slice "Chain-of-Thought")) "Date" "desc" -}}
+                {{- $instructPosts := union (where $allPosts "Params.tags" "intersect" (slice "Instruction Tuning")) (where $allPosts "Params.tags" "intersect" (slice "Instruct Tuning")) -}}
+                {{- $instructPosts = sort $instructPosts "Date" "desc" -}}
+                {{- $gptPosts := sort (where $allPosts "Params.tags" "intersect" (slice "GPTs")) "Date" "desc" -}}
+                {{- $qwenPosts := sort (where $allPosts "Params.tags" "intersect" (slice "Qwens")) "Date" "desc" -}}
+                {{- $llmPosts := sort (where $allPosts "Params.categories" "intersect" (slice "LLMs")) "Date" "desc" -}}
+                {{- $vlmPosts := sort (where $allPosts "Params.categories" "intersect" (slice "VLMs")) "Date" "desc" -}}
+
+                {{- /* 1. Chain-of-Thought 系列 */ -}}
+                {{- if $cotPosts -}}
+                <div class="posts-section">
+                    <h3 class="posts-section-title">Chain-of-Thought 系列</h3>
+                    <div class="posts-list">
+                        {{- range first 5 $cotPosts -}}
+                            <a href="{{ .RelPermalink }}" class="post-row">
+                                <span class="post-row-title">{{ .Title | emojify }}</span>
+                                <span class="post-row-date">{{ .Date.Format "2006-01-02" }}</span>
+                            </a>
+                        {{- end -}}
+                    </div>
+                    {{- if gt (len $cotPosts) 5 -}}
+                    <div class="section-footer">
+                        <a href="/tags/chain-of-thought/">Read more &rarr;</a>
+                    </div>
+                    {{- end -}}
+                </div>
+                {{- end -}}
+
+                {{- /* 2. Instruction Tuning */ -}}
+                {{- if $instructPosts -}}
+                <div class="posts-section">
+                    <h3 class="posts-section-title">Instruction Tuning</h3>
+                    <div class="posts-list">
+                        {{- range first 5 $instructPosts -}}
+                            <a href="{{ .RelPermalink }}" class="post-row">
+                                <span class="post-row-title">{{ .Title | emojify }}</span>
+                                <span class="post-row-date">{{ .Date.Format "2006-01-02" }}</span>
+                            </a>
+                        {{- end -}}
+                    </div>
+                    {{- if gt (len $instructPosts) 5 -}}
+                    <div class="section-footer">
+                        <a href="/posts/">Read more &rarr;</a>
+                    </div>
+                    {{- end -}}
+                </div>
+                {{- end -}}
+
+                {{- /* 3. GPTs 系列 */ -}}
+                {{- if $gptPosts -}}
+                <div class="posts-section">
+                    <h3 class="posts-section-title">GPTs 系列</h3>
+                    <div class="posts-list">
+                        {{- range first 5 $gptPosts -}}
+                            <a href="{{ .RelPermalink }}" class="post-row">
+                                <span class="post-row-title">{{ .Title | emojify }}</span>
+                                <span class="post-row-date">{{ .Date.Format "2006-01-02" }}</span>
+                            </a>
+                        {{- end -}}
+                    </div>
+                    {{- if gt (len $gptPosts) 5 -}}
+                    <div class="section-footer">
+                        <a href="/tags/gpts/">Read more &rarr;</a>
+                    </div>
+                    {{- end -}}
+                </div>
+                {{- end -}}
+
+                {{- /* 4. Qwen 系列 */ -}}
+                {{- if $qwenPosts -}}
+                <div class="posts-section">
+                    <h3 class="posts-section-title">Qwen 系列</h3>
+                    <div class="posts-list">
+                        {{- range first 5 $qwenPosts -}}
+                            <a href="{{ .RelPermalink }}" class="post-row">
+                                <span class="post-row-title">{{ .Title | emojify }}</span>
+                                <span class="post-row-date">{{ .Date.Format "2006-01-02" }}</span>
+                            </a>
+                        {{- end -}}
+                    </div>
+                    {{- if gt (len $qwenPosts) 5 -}}
+                    <div class="section-footer">
+                        <a href="/tags/qwens/">Read more &rarr;</a>
+                    </div>
+                    {{- end -}}
+                </div>
+                {{- end -}}
+
+                {{- /* 5. LLM 系列 */ -}}
+                {{- if $llmPosts -}}
+                <div class="posts-section">
+                    <h3 class="posts-section-title">LLM 系列</h3>
+                    <div class="posts-list">
+                        {{- range first 5 $llmPosts -}}
+                            <a href="{{ .RelPermalink }}" class="post-row">
+                                <span class="post-row-title">{{ .Title | emojify }}</span>
+                                <span class="post-row-date">{{ .Date.Format "2006-01-02" }}</span>
+                            </a>
+                        {{- end -}}
+                    </div>
+                    {{- if gt (len $llmPosts) 5 -}}
+                    <div class="section-footer">
+                        <a href="/categories/llms/">Read more &rarr;</a>
+                    </div>
+                    {{- end -}}
+                </div>
+                {{- end -}}
+
+                {{- /* 6. VLM 系列 */ -}}
+                {{- if $vlmPosts -}}
+                <div class="posts-section">
+                    <h3 class="posts-section-title">VLM 系列</h3>
+                    <div class="posts-list">
+                        {{- range first 5 $vlmPosts -}}
+                            <a href="{{ .RelPermalink }}" class="post-row">
+                                <span class="post-row-title">{{ .Title | emojify }}</span>
+                                <span class="post-row-date">{{ .Date.Format "2006-01-02" }}</span>
+                            </a>
+                        {{- end -}}
+                    </div>
+                    {{- if gt (len $vlmPosts) 5 -}}
+                    <div class="section-footer">
+                        <a href="/categories/vlms/">Read more &rarr;</a>
+                    </div>
+                    {{- end -}}
+                </div>
+                {{- end -}}
+
+                {{- /* Recent Posts：仅展示保险相关 2 篇 */ -}}
+                {{- $insurancePosts := where $allPosts "Params.tags" "intersect" (slice "Insurance") -}}
+                {{- $insurancePosts = sort $insurancePosts "Date" "desc" | first 2 -}}
+                {{- if $insurancePosts -}}
                 <div class="posts-section">
                     <h3 class="posts-section-title">Recent Posts</h3>
                     <div class="posts-list">
-                        {{- range first 10 $allPosts -}}
+                        {{- range $insurancePosts -}}
                             <a href="{{ .RelPermalink }}" class="post-row">
                                 <span class="post-row-title">{{ .Title | emojify }}</span>
                                 <span class="post-row-date">{{ .Date.Format "2006-01-02" }}</span>
@@ -116,6 +249,7 @@
                         <a href="/posts/">All Posts &rarr;</a>
                     </div>
                 </div>
+                {{- end -}}
             </div>
         </div>
     </div>

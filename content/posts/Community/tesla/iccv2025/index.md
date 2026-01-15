@@ -2,6 +2,7 @@
 date = '2025-11-18T12:22:50+08:00'
 draft = false
 title = 'Building an Autonomous Future (ICCV 2025 WDFM-AD)'
+featured = true
 organization = ['Tesla']
 categories = []
 tags = []

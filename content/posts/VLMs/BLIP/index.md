@@ -1,6 +1,6 @@
 +++
 date = '2025-11-27T13:24:44+08:00'
-draft = false
+draft = true
 title = 'Blip'
 organization = []
 categories = []

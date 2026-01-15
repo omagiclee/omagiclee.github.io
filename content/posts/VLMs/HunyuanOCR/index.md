@@ -2,6 +2,7 @@
 date = '2025-11-16T14:27:22+08:00'
 draft = false
 title = 'HunyuanOCR Technical Report'
+featured = true
 categories = ['VLMs']
 tags = ['VLMs', 'OCR']
 +++

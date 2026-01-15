@@ -4,7 +4,7 @@ draft = false
 title = 'AI-Powered Data-Centric System: Evolving from Data Closed-loop to World Simulation'
 categories = ['Data Closed-loop System']
 tags = ['Data Closed-loop System']
-featured = true
+featured = false
 +++
 
 ## Pipeline

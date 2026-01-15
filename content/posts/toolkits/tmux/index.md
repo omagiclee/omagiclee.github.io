@@ -1,6 +1,6 @@
 +++
 date = '2026-02-14T03:13:10Z'
-draft = false
+draft = true
 title = 'Tmux'
 categories = []
 tags = []

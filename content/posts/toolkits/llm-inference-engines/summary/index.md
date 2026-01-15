@@ -1,7 +1,8 @@
 +++
 date = '2025-11-28T13:31:43+08:00'
 draft = false
-title = 'LLM Deploy Framework'
+title = '主流 LLM/VLM 推理服务部署框架横评'
+featured = true
 organization = []
 categories = []
 tags = []

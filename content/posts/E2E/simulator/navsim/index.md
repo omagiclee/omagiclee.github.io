@@ -1,6 +1,6 @@
 +++
 date = '2025-12-11T20:37:57+08:00'
-draft = false
+draft = true
 title = 'Navsim'
 organization = []
 categories = []
