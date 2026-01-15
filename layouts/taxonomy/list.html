@@ -1,0 +1,187 @@
+{{- define "title" -}}
+    {{- if eq .Kind "taxonomy" -}}
+        {{- .Params.Title | default (T .Data.Plural) | default .Data.Plural | dict "Some" | T "allSome" }} - {{ .Site.Title -}}
+    {{- else -}}
+        {{- .Title }} - {{ T .Data.Singular | default .Data.Singular }} - {{ .Site.Title -}}
+    {{- end -}}
+{{- end -}}
+
+{{- define "content" -}}
+{{- if eq .Kind "taxonomy" -}}
+    {{- /* ===== 总览页：/tags/ 词云、/categories/ 双列卡片 ===== */ -}}
+    {{- $taxonomies := .Data.Plural -}}
+    {{- $terms := .Data.Terms.ByCount -}}
+    {{- $type := .Type -}}
+
+    <div class="page archive">
+        {{- /* ===== Tags 页：仅词云 ===== */ -}}
+        {{- if eq $taxonomies "tags" -}}
+            {{- $tags := $.Site.Taxonomies.tags.ByCount -}}
+            {{- $minCount := 999999 -}}
+            {{- $maxCount := 0 -}}
+            {{- range $tags -}}
+                {{- if lt .Count $minCount -}}{{- $minCount = .Count -}}{{- end -}}
+                {{- if gt .Count $maxCount -}}{{- $maxCount = .Count -}}{{- end -}}
+            {{- end -}}
+            <div class="tag-cloud-tags taxonomy-tags" id="tag-cloud-container" data-min-count="{{ $minCount }}" data-max-count="{{ $maxCount }}">
+                {{- range $tags.Reverse -}}
+                    <a href="{{ .Page.RelPermalink }}" class="tag-cloud-item" data-count="{{ .Count }}" title="{{ .Page.Title }} ({{ .Count }} posts)">{{ .Page.Title }}<sup class="tag-count">{{ .Count }}</sup></a>
+                {{- end -}}
+            </div>
+            <script>
+            (function() {
+                var container = document.getElementById('tag-cloud-container');
+                if (!container) return;
+                var tags = Array.from(container.querySelectorAll('.tag-cloud-item'));
+                if (tags.length === 0) return;
+
+                var minCount = parseInt(container.dataset.minCount) || 1;
+                var maxCount = parseInt(container.dataset.maxCount) || 1;
+                var sqrtMin = Math.sqrt(Math.max(minCount, 1));
+                var sqrtMax = Math.sqrt(Math.max(maxCount, 1));
+                var sqrtRange = sqrtMax - sqrtMin || 1;
+                var minFont = 0.85, maxFont = 2.8;
+
+                tags.sort(function(a, b) { return parseInt(b.dataset.count) - parseInt(a.dataset.count); });
+
+                // 1) 设置字体、颜色、旋转，先渲染一次获取尺寸
+                var tagData = [];
+                tags.forEach(function(tag) {
+                    var count = parseInt(tag.dataset.count) || 1;
+                    var norm = (Math.sqrt(count) - sqrtMin) / sqrtRange;
+                    var fontSize = minFont + norm * (maxFont - minFont);
+                    var hue = Math.floor(Math.random() * 360);
+                    var sat = 50 + Math.floor(Math.random() * 35);
+                    var lit = 40 + Math.floor(Math.random() * 25);
+                    var rot = (Math.random() * 36 - 18); // ±18°
+                    tag.style.cssText = 'position:absolute;white-space:nowrap;left:0;top:0;'
+                        + 'font-size:' + fontSize.toFixed(2) + 'em;'
+                        + 'transform-origin:center center;'
+                        + 'transform:rotate(' + rot.toFixed(1) + 'deg);';
+                    tag.style.setProperty('color', 'hsl('+hue+','+sat+'%,'+lit+'%)', 'important');
+                    var sup = tag.querySelector('.tag-count');
+                    if (sup) sup.style.setProperty('color', 'inherit', 'important');
+                    tagData.push({ tag: tag, norm: norm, rot: rot * Math.PI / 180 });
+                });
+
+                // 2) 一次性读取所有尺寸（单次回流）
+                requestAnimationFrame(function() {
+                    var cw = container.offsetWidth, ch = container.offsetHeight;
+                    var cx = cw / 2, cy = ch / 2;
+                    var dims = [];
+                    for (var i = 0; i < tags.length; i++) {
+                        var r = tags[i].getBoundingClientRect();
+                        dims.push({ bw: r.width, bh: r.height, ow: tags[i].offsetWidth, oh: tags[i].offsetHeight });
+                    }
+
+                    // 3) 纯数学放置（无 DOM 读取）
+                    var placed = [];
+                    var pad = 20; // 标签间距
+                    function hitTest(bx, by, bw, bh) {
+                        for (var j = 0; j < placed.length; j++) {
+                            var p = placed[j];
+                            if (bx < p.x + p.w + pad && bx + bw + pad > p.x &&
+                                by < p.y + p.h + pad && by + bh + pad > p.y) return true;
+                        }
+                        return false;
+                    }
+
+                    for (var i = 0; i < tagData.length; i++) {
+                        var d = tagData[i], dim = dims[i];
+                        var bw = dim.bw, bh = dim.bh;
+                        var ow = dim.ow, oh = dim.oh;
+                        var startR = 35 + (1 - d.norm) * 0.25 * Math.min(cw, ch) * 0.5;
+                        var found = false;
+                        var aOff = Math.random() * Math.PI * 2;
+
+                        for (var r = startR; r < Math.max(cw,ch) * 0.58; r += 10) {
+                            var nA = Math.max(Math.floor(r * 0.3), 6);
+                            for (var a = 0; a < nA; a++) {
+                                var angle = aOff + (a / nA) * Math.PI * 2;
+                                var ex = r * 1.85, ey = r * 0.75;
+                                var px = cx + ex * Math.cos(angle);
+                                var py = cy + ey * Math.sin(angle);
+
+                                // 椭圆边界：横向更宽、纵向略扁
+                                var edx = (px - cx) / (cw * 0.52);
+                                var edy = (py - cy) / (ch * 0.38);
+                                if (edx*edx + edy*edy > 1) continue;
+
+                                // 包围盒左上角
+                                var bx = px - bw / 2;
+                                var by = py - bh / 2;
+                                if (bx < 0 || by < 0 || bx + bw > cw || by + bh > ch) continue;
+
+                                if (!hitTest(bx, by, bw, bh)) {
+                                    placed.push({ x: bx, y: by, w: bw, h: bh });
+                                    d.tag.style.left = (px - ow / 2) + 'px';
+                                    d.tag.style.top = (py - oh / 2) + 'px';
+                                    found = true;
+                                    break;
+                                }
+                            }
+                            if (found) break;
+                        }
+                        if (!found) d.tag.style.display = 'none';
+                    }
+                });
+            })();
+            </script>
+        {{- end -}}
+
+        {{- /* ===== Categories 页：仅列表/卡片，按文章数倒序 ===== */ -}}
+        {{- if eq $taxonomies "categories" -}}
+            {{- $cats := $.Site.Taxonomies.categories.ByCount -}}
+            <div class="categories-layout categories-layout-list">
+                <div class="categories-cards">
+                    {{- range $cats -}}
+                        <a href="{{ .Page.RelPermalink }}" class="categories-card-item">
+                            <span class="categories-card-name"><i class="far fa-folder fa-fw" aria-hidden="true"></i> {{ .Page.Title }}</span>
+                            <span class="categories-card-count">{{ .Count }} posts</span>
+                        </a>
+                    {{- end -}}
+                </div>
+            </div>
+        {{- end -}}
+    </div>
+
+{{- else -}}
+    {{- /* ===== Term 页：/tags/llms/、/categories/llms/ 等，与 /posts/ 格式一致 ===== */ -}}
+    <div class="page archive">
+        <h2 class="single-title animate__animated animate__pulse animate__faster">
+            {{- $taxonomy := .Data.Singular -}}
+            {{- if eq $taxonomy "category" -}}
+                <i class="far fa-folder-open fa-fw" aria-hidden="true"></i>&nbsp;{{ .Title }}
+            {{- else if eq $taxonomy "tag" -}}
+                <i class="fas fa-tag fa-fw" aria-hidden="true"></i>&nbsp;{{ .Title }}
+            {{- else -}}
+                {{- printf "%v - %v" (T $taxonomy | default $taxonomy) .Title -}}
+            {{- end -}}
+        </h2>
+
+        {{- if .Pages -}}
+            {{- $pages := .Pages.GroupByDate "2006" -}}
+            {{- with .Site.Params.list.paginate | default .Site.Params.paginate -}}
+                {{- $pages = $.Paginate $pages . -}}
+            {{- else -}}
+                {{- $pages = .Paginate $pages -}}
+            {{- end -}}
+            {{- range $pages.PageGroups -}}
+                <h3 class="group-title">{{ .Key }}</h3>
+                {{- range .Pages -}}
+                    <article class="archive-item">
+                        <a href="{{ .RelPermalink }}" class="archive-item-link">
+                            {{- .Title | emojify -}}
+                        </a>
+                        <span class="archive-item-date">
+                            {{- .Date.Format "01-02" -}}
+                        </span>
+                    </article>
+                {{- end -}}
+            {{- end -}}
+            {{- partial "paginator.html" . -}}
+        {{- end -}}
+    </div>
+{{- end -}}
+{{- end -}}
+

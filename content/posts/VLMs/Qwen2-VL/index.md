@@ -3,7 +3,7 @@ date = '2024-09-25T20:53:12+08:00'
 draft = false
 title = 'Qwen2-VL: Enhancing Vision-Language Model’s Perception of the World at Any Resolution'
 categories = ['VLMs']
-tags = ['VLMs']
+tags = ['VLMs', 'LLMs', 'Qwens']
 +++
 
 :(fas fa-building fa-fw):<span style="color:gray">Qwen Team, Alibaba Group</span>

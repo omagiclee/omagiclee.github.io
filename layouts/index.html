@@ -1,0 +1,122 @@
+{{- define "content" -}}
+    {{- $profile := .Site.Params.home.profile -}}
+
+    <div class="page home">
+        {{- /* 准备数据 */ -}}
+        {{- $allPosts := where .Site.RegularPages "Type" "posts" -}}
+        {{- $allPosts = where $allPosts "Params.hiddenfromhomepage" "!=" true -}}
+        {{- $avatar := $profile.avatarURL -}}
+
+        {{- /* ===== 两栏布局 ===== */ -}}
+        <div class="home-two-columns">
+            {{- /* ===== 左栏：Profile + Tags ===== */ -}}
+            <div class="home-col-left">
+                {{- /* 头像 + 名字 + 签名 + 个人信息（一体化） */ -}}
+                <div class="profile-card">
+                    {{- if $avatar -}}
+                        <a href="/about/" class="profile-avatar-link" title="About Me">
+                            <img src="{{ $avatar }}" alt="Naifan Li" class="profile-avatar-img" />
+                        </a>
+                    {{- end -}}
+                    {{- with $profile.subtitle -}}
+                        <div class="profile-subtitle">
+                            {{- if $profile.typeit -}}
+                                {{- $id := dict "Content" . "Scratch" $.Scratch | partial "function/id.html" -}}
+                                <span id="{{ $id }}" class="typeit"></span>
+                                {{- dict $id (slice $id) | dict "typeitMap" | merge ($.Scratch.Get "this") | $.Scratch.Set "this" -}}
+                            {{- else -}}
+                                {{- . | safeHTML -}}
+                            {{- end -}}
+                        </div>
+                    {{- end -}}
+
+                    {{- with $profile.bio -}}
+                        <div class="profile-bio">
+                            <div class="profile-bio-text">
+                                {{- . | safeHTML -}}
+                            </div>
+                            {{- with $profile.techTags -}}
+                                <div class="profile-tech-tags">
+                                    {{- range . -}}
+                                        <span class="tech-tag">{{ . }}</span>
+                                    {{- end -}}
+                                </div>
+                            {{- end -}}
+                        </div>
+                    {{- end -}}
+
+                    <div class="profile-icons">
+                        <span class="profile-icon profile-icon-wechat" title="WeChat: omagiclee" onclick="navigator.clipboard.writeText('omagiclee').then(function(){var t=document.getElementById('wechat-toast');t.classList.add('show');setTimeout(function(){t.classList.remove('show')},2000)})"><i class="fab fa-weixin"></i><span id="wechat-toast" class="wechat-copied-toast">omagiclee<br><small>copied!</small></span></span>
+                        <a href="mailto:omagiclee@gmail.com" class="profile-icon" title="omagiclee@gmail.com"><i class="far fa-envelope"></i></a>
+                        <a href="https://github.com/omagiclee" class="profile-icon" title="GitHub: omagiclee" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
+                        <a href="/index.xml" class="profile-icon" title="RSS Feed" target="_blank" rel="noopener noreferrer"><i class="fas fa-rss"></i></a>
+                    </div>
+
+                    <div class="landing-stats">
+                        <a href="/posts/" class="stat-item">
+                            <span class="stat-number">{{ len $allPosts }}</span>
+                            <span class="stat-label">Posts</span>
+                        </a>
+                        <a href="/tags/" class="stat-item">
+                            <span class="stat-number">{{ len .Site.Taxonomies.tags }}</span>
+                            <span class="stat-label">Tags</span>
+                        </a>
+                        <a href="/categories/" class="stat-item">
+                            <span class="stat-number">{{ len .Site.Taxonomies.categories }}</span>
+                            <span class="stat-label">Categories</span>
+                        </a>
+                    </div>
+                </div>
+
+                {{- /* Post Tags -- 与上方个人 focus tags 区分 */ -}}
+                <div class="profile-tags-section">
+                    <h3 class="section-title">Post Tags</h3>
+                    <div class="dashboard-tags">
+                        {{- range first 12 .Site.Taxonomies.tags.ByCount -}}
+                            <a href="{{ .Page.RelPermalink }}" class="dashboard-tag">
+                                {{ .Page.Title }} <sup>{{ .Count }}</sup>
+                            </a>
+                        {{- end -}}
+                    </div>
+                    <div class="section-footer">
+                        <a href="/tags/">All Tags &rarr;</a>
+                    </div>
+                </div>
+            </div>
+
+            {{- /* ===== 右栏：Featured + Recent Posts ===== */ -}}
+            <div class="home-col-right">
+                {{- /* Featured / Recommended */ -}}
+                {{- $featured := where $allPosts "Params.featured" true -}}
+                {{- if $featured -}}
+                    <div class="posts-section">
+                        <h3 class="posts-section-title">Recommended Posts</h3>
+                        <div class="posts-list">
+                            {{- range $featured -}}
+                                <a href="{{ .RelPermalink }}" class="post-row">
+                                    <span class="post-row-title">{{ .Title | emojify }}</span>
+                                    <span class="post-row-date">{{ .Date.Format "2006-01-02" }}</span>
+                                </a>
+                            {{- end -}}
+                        </div>
+                    </div>
+                {{- end -}}
+
+                <div class="posts-section">
+                    <h3 class="posts-section-title">Recent Posts</h3>
+                    <div class="posts-list">
+                        {{- range first 10 $allPosts -}}
+                            <a href="{{ .RelPermalink }}" class="post-row">
+                                <span class="post-row-title">{{ .Title | emojify }}</span>
+                                <span class="post-row-date">{{ .Date.Format "2006-01-02" }}</span>
+                            </a>
+                        {{- end -}}
+                    </div>
+                    <div class="section-footer">
+                        <a href="/posts/">All Posts &rarr;</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{{- end -}}

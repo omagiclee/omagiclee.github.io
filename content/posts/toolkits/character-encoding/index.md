@@ -1,9 +1,9 @@
 +++
-date = '2026-01-12T13:50:56+08:00'
+date = '2018-06-03T13:50:56+08:00'
 draft = false
 title = 'Character Encoding'
-categories = []
-tags = []
+categories = ['Character Encoding']
+tags = ['Character Encoding']
 +++
 
 ## Unicode

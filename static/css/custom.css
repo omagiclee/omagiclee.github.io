@@ -1,4 +1,0 @@
-/* 修复 categories 页面布局对齐问题 */
-.page.archive .categories-card {
-  margin-top: 0;
-}

@@ -10,15 +10,13 @@
                     {{- with .pre -}}
                         <span class="header-title-pre">{{ . | safeHTML }}</span>
                     {{- end -}}
-                    {{- if .typeit -}}
-                        {{- $id := dict "Content" .name "Scratch" $.Scratch | partial "function/id.html" -}}
-                        <span id="{{ $id }}" class="typeit"></span>
-                        {{- dict $id (slice $id) | dict "typeitMap" | merge ($.Scratch.Get "this") | $.Scratch.Set "this" -}}
-                    {{- else -}}
-                        {{- .name -}}
-                    {{- end -}}
+                    {{- .name -}}
                     {{- with .post -}}
-                        <span class="header-title-post">{{ . | safeHTML }}</span>
+                        <span class="header-title-post">
+                            {{- $postId := dict "Content" . "Scratch" $.Scratch | partial "function/id.html" -}}
+                            <span id="{{ $postId }}" class="typeit"></span>
+                            {{- dict $postId (slice $postId) | dict "typeitMap" | merge ($.Scratch.Get "this") | $.Scratch.Set "this" -}}
+                        </span>
                     {{- end -}}
                 {{- else -}}
                     {{- .Site.Title -}}
@@ -32,7 +30,7 @@
                     {{- with .Page -}}
                         {{- $url = .RelPermalink -}}
                     {{- end -}}
-                    <a class="menu-item{{ if $.IsMenuCurrent `main` . | or ($.HasMenuCurrent `main` .) | or (eq $.RelPermalink $url) }} active{{ end }}" href="{{ $url }}"{{ with .Title }} title="{{ . }}"{{ end }}{{ if (urls.Parse $url).Host }} rel="noopener noreffer" target="_blank"{{ end }}>
+                    <a class="menu-item{{ if $.IsMenuCurrent `main` . | or ($.HasMenuCurrent `main` .) | or (eq $.RelPermalink $url) }} active{{ end }}" href="{{ $url }}"{{ with .Title }} title="{{ . }}"{{ end }}{{ if (urls.Parse $url).Host }} rel="noopener noreferrer" target="_blank"{{ end }}>
                         {{- .Pre | safeHTML }} {{ .Name }} {{ .Post | safeHTML -}}
                     </a>
                 {{- end -}}
@@ -96,15 +94,13 @@
                         {{- with .pre -}}
                             <span class="header-title-pre">{{ . | safeHTML }}</span>
                         {{- end -}}
-                        {{- if .typeit -}}
-                            {{- $id := dict "Content" .name "Scratch" $.Scratch | partial "function/id.html" -}}
-                            <span id="{{ $id }}" class="typeit"></span>
-                            {{- dict $id (slice $id) | dict "typeitMap" | merge ($.Scratch.Get "this") | $.Scratch.Set "this" -}}
-                        {{- else -}}
-                            {{- .name -}}
-                        {{- end -}}
+                        {{- .name -}}
                         {{- with .post -}}
-                            <span class="header-title-post">{{ . | safeHTML }}</span>
+                            <span class="header-title-post">
+                                {{- $postId := dict "Content" . "Scratch" $.Scratch | partial "function/id.html" -}}
+                                <span id="{{ $postId }}" class="typeit"></span>
+                                {{- dict $postId (slice $postId) | dict "typeitMap" | merge ($.Scratch.Get "this") | $.Scratch.Set "this" -}}
+                            </span>
                         {{- end -}}
                     {{- else -}}
                         {{- .Site.Title -}}
@@ -141,7 +137,7 @@
                 {{- with .Page -}}
                     {{- $url = .RelPermalink -}}
                 {{- end -}}
-                <a class="menu-item" href="{{ $url }}" title="{{ .Title }}"{{ if (urls.Parse $url).Host }} rel="noopener noreffer" target="_blank"{{ end }}>
+                <a class="menu-item" href="{{ $url }}" title="{{ .Title }}"{{ if (urls.Parse $url).Host }} rel="noopener noreferrer" target="_blank"{{ end }}>
                     {{- .Pre | safeHTML }}{{ .Name }}{{ .Post | safeHTML -}}
                 </a>
             {{- end -}}

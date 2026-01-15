@@ -16,6 +16,13 @@
             {{- end -}}
         </h2>
 
+        {{- /* 样式选择器 */ -}}
+        <div class="taxonomy-style-selector">
+            <button class="style-btn active" data-style="compact">紧凑信息流</button>
+            <button class="style-btn" data-style="card">卡片式布局</button>
+            <button class="style-btn" data-style="enhanced">增强版</button>
+        </div>
+
         {{- /* Paginate */ -}}
         {{- if .Pages -}}
             {{- $pages := .Pages.GroupByDate "2006" -}}
@@ -26,18 +33,156 @@
             {{- end -}}
             {{- range $pages.PageGroups -}}
                 <h3 class="group-title">{{ .Key }}</h3>
+                
+                {{- /* 样式A: 紧凑信息流 */ -}}
+                <div class="taxonomy-list-compact" data-style="compact">
                 {{- range .Pages -}}
-                    <article class="archive-item">
+                        <article class="archive-item-enhanced">
                         <a href="{{ .RelPermalink }}" class="archive-item-link">
                             {{- .Title | emojify -}}
                         </a>
-                        <span class="archive-item-date">
+                            <div class="archive-item-meta">
+                                <span class="meta-date">
+                                    <i class="far fa-calendar-alt fa-fw"></i>
                             {{- $.Site.Params.list.dateFormat | default "01-02" | .Date.Format -}}
                         </span>
+                                {{- if .Params.categories -}}
+                                    <span class="meta-category">
+                                        <i class="far fa-folder fa-fw"></i>
+                                        <a href="/categories/{{ index .Params.categories 0 | urlize }}/">{{ index .Params.categories 0 }}</a>
+                                    </span>
+                                {{- end -}}
+                                {{- if .Params.tags -}}
+                                    <span class="meta-tags">
+                                        <i class="fas fa-tags fa-fw"></i>
+                                        {{- range $i, $tag := .Params.tags -}}
+                                            {{- if lt $i 3 -}}
+                                                {{- if gt $i 0 }}, {{ end -}}
+                                                <a href="/tags/{{ $tag | urlize }}/">{{ $tag }}</a>
+                                            {{- end -}}
+                                        {{- end -}}
+                                        {{- if gt (len .Params.tags) 3 -}}
+                                            <span class="tag-more">+{{ sub (len .Params.tags) 3 }}</span>
+                                        {{- end -}}
+                                    </span>
+                                {{- end -}}
+                            </div>
+                        </article>
+                    {{- end -}}
+                </div>
+
+                {{- /* 样式B: 卡片式布局 */ -}}
+                <div class="taxonomy-list-card" data-style="card" style="display: none;">
+                    {{- range .Pages -}}
+                        <article class="archive-card">
+                            <div class="card-header">
+                                <a href="{{ .RelPermalink }}" class="card-title">
+                                    {{- .Title | emojify -}}
+                                </a>
+                            </div>
+                            <div class="card-body">
+                                <div class="card-meta">
+                                    <span class="meta-date">
+                                        <i class="far fa-calendar-alt fa-fw"></i>
+                                        {{ .Date.Format "2006-01-02" }}
+                                    </span>
+                                    {{- if .Params.categories -}}
+                                        <span class="meta-category">
+                                            <i class="far fa-folder fa-fw"></i>
+                                            <a href="/categories/{{ index .Params.categories 0 | urlize }}/">{{ index .Params.categories 0 }}</a>
+                                        </span>
+                                    {{- end -}}
+                                </div>
+                                {{- if .Params.tags -}}
+                                    <div class="card-tags">
+                                        <i class="fas fa-tags fa-fw"></i>
+                                        {{- range .Params.tags -}}
+                                            <a href="/tags/{{ . | urlize }}/" class="tag-badge">{{ . }}</a>
+                                        {{- end -}}
+                                    </div>
+                                {{- end -}}
+                            </div>
+                        </article>
+                    {{- end -}}
+                </div>
+
+                {{- /* 样式C: 增强版 */ -}}
+                <div class="taxonomy-list-enhanced" data-style="enhanced" style="display: none;">
+                    {{- range .Pages -}}
+                        <article class="archive-item-full">
+                            <a href="{{ .RelPermalink }}" class="archive-item-link">
+                                {{- .Title | emojify -}}
+                            </a>
+                            {{- if .Summary -}}
+                                <div class="archive-item-summary">
+                                    {{- .Summary | plainify | truncate 150 -}}
+                                </div>
+                            {{- end -}}
+                            <div class="archive-item-meta-full">
+                                <span class="meta-date">
+                                    <i class="far fa-calendar-alt fa-fw"></i>
+                                    {{ .Date.Format "2006-01-02" }}
+                                </span>
+                                {{- if .Params.categories -}}
+                                    <span class="meta-category">
+                                        <i class="far fa-folder fa-fw"></i>
+                                        <a href="/categories/{{ index .Params.categories 0 | urlize }}/">{{ index .Params.categories 0 }}</a>
+                                    </span>
+                                {{- end -}}
+                                {{- if .Params.tags -}}
+                                    <span class="meta-tags">
+                                        <i class="fas fa-tags fa-fw"></i>
+                                        {{ len .Params.tags }} tags
+                                    </span>
+                                {{- end -}}
+                                <span class="meta-reading-time">
+                                    <i class="far fa-clock fa-fw"></i>
+                                    {{ add (div .WordCount 200) 1 }} min read
+                                </span>
+                            </div>
                     </article>
                 {{- end -}}
+                </div>
             {{- end -}}
             {{- partial "paginator.html" . -}}
         {{- end -}}
     </div>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const buttons = document.querySelectorAll('.style-btn');
+        const compactLists = document.querySelectorAll('.taxonomy-list-compact');
+        const cardLists = document.querySelectorAll('.taxonomy-list-card');
+        const enhancedLists = document.querySelectorAll('.taxonomy-list-enhanced');
+        
+        const savedStyle = localStorage.getItem('taxonomyStyle') || 'compact';
+        switchStyle(savedStyle);
+        
+        buttons.forEach(button => {
+            button.addEventListener('click', function() {
+                const style = this.getAttribute('data-style');
+                switchStyle(style);
+                localStorage.setItem('taxonomyStyle', style);
+            });
+        });
+        
+        function switchStyle(style) {
+            buttons.forEach(btn => btn.classList.remove('active'));
+            compactLists.forEach(list => list.style.display = 'none');
+            cardLists.forEach(list => list.style.display = 'none');
+            enhancedLists.forEach(list => list.style.display = 'none');
+            
+            const activeBtn = document.querySelector('.style-btn[data-style="' + style + '"]');
+            if (activeBtn) activeBtn.classList.add('active');
+            
+            if (style === 'compact') {
+                compactLists.forEach(list => list.style.display = 'block');
+            } else if (style === 'card') {
+                cardLists.forEach(list => list.style.display = 'grid');
+            } else if (style === 'enhanced') {
+                enhancedLists.forEach(list => list.style.display = 'block');
+            }
+        }
+    });
+    </script>
 {{- end -}}

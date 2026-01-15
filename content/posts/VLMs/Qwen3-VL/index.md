@@ -3,7 +3,7 @@ date = '2025-11-27T19:13:03+08:00'
 draft = false
 title = 'Qwen3-VL Technical Report'
 categories = ['VLMs']
-tags = ['VLMs']
+tags = ['VLMs', 'LLMs', 'Qwens']
 +++
 
 :(fas fa-building fa-fw):<span style="color:gray">Qwen Team, Alibaba Group</span>
