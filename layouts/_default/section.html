@@ -1,0 +1,68 @@
+{{- define "title" }}
+    {{- .Params.Title | default (T .Section) | default .Section | dict "Some" | T "allSome" }} - {{ .Site.Title -}}
+{{- end -}}
+
+{{- define "content" -}}
+    <div class="page archive">
+        {{- /* Archives Page - 参考 categories 页面样式，每年只显示部分文章，全部年份显示在同一页，按年份倒序显示 */ -}}
+        {{- if .Pages -}}
+            {{- $pagesByYear := .Pages.GroupByDate "2006" -}}
+            {{- /* GroupByDate 默认已经按最新年份在前排序，这里不再 Reverse */ -}}
+            {{- range $pagesByYear -}}
+                <h3 class="group-title">{{ .Key }}</h3>
+                {{- $yearPages := .Pages.ByDate.Reverse -}}
+                {{- range first 5 $yearPages -}}
+                    <article class="archive-item">
+                        <a href="{{ .RelPermalink }}" class="archive-item-link">
+                            {{- .Title | emojify -}}
+                        </a>
+                        <span class="archive-item-date">
+                            {{- $.Site.Params.section.dateFormat | default "01-02" | .Date.Format -}}
+                        </span>
+                    </article>
+                {{- end -}}
+                {{- if gt (len $yearPages) 5 -}}
+                    <div class="archive-year-more" data-year="{{ .Key }}" style="display: none;">
+                        {{- range after 5 $yearPages -}}
+                            <article class="archive-item">
+                                <a href="{{ .RelPermalink }}" class="archive-item-link">
+                                    {{- .Title | emojify -}}
+                                </a>
+                                <span class="archive-item-date">
+                                    {{- $.Site.Params.section.dateFormat | default "01-02" | .Date.Format -}}
+                                </span>
+                            </article>
+                        {{- end -}}
+                    </div>
+                    <span class="more-post">
+                        <a href="javascript:void(0);" class="more-single-link toggle-more" data-year="{{ .Key }}">{{ T "more" }} >></a>
+                    </span>
+                {{- end -}}
+            {{- end -}}
+        {{- end -}}
+    </div>
+    
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const moreLinks = document.querySelectorAll('.toggle-more');
+        moreLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const year = this.getAttribute('data-year');
+                const moreContent = document.querySelector(`.archive-year-more[data-year="${year}"]`);
+                
+                if (moreContent) {
+                    if (moreContent.style.display === 'none') {
+                        moreContent.style.display = 'block';
+                        this.textContent = '<< Less';
+                    } else {
+                        moreContent.style.display = 'none';
+                        this.textContent = 'More >>';
+                    }
+                }
+            });
+        });
+    });
+    </script>
+{{- end -}}
+

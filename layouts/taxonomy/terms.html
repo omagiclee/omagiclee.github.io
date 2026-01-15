@@ -1,0 +1,95 @@
+{{- define "title" -}}
+    {{- .Params.Title | default (T .Data.Plural) | default .Data.Plural | dict "Some" | T "allSome" }} - {{ .Site.Title -}}
+{{- end -}}
+
+{{- define "content" -}}
+    {{- $taxonomies := .Data.Plural -}}
+    {{- $terms := .Data.Terms.ByCount -}}
+    {{- $type := .Type -}}
+
+    <div class="page archive">
+        {{- /* Categories Page */ -}}
+        {{- if eq $taxonomies "categories" -}}
+            <div class="categories-card">
+                {{- range $terms.Reverse -}}
+                    {{- $term := .Term -}}
+                    {{- $pages := .Pages -}}
+                    {{- with $.Site.GetPage "taxonomy" (printf "%v/%v" $type $term) -}}
+                    <div class="card-item">
+                        <div class="card-item-wrapper">
+                            <h3 class="card-item-title">
+                                <a href="{{ .RelPermalink }}">
+                                    <i class="far fa-folder fa-fw" aria-hidden="true"></i>&nbsp;{{ .Page.Title }}
+                                </a>
+                            </h3>
+                            {{- range first 5 ($pages.Reverse) -}}
+                                <article class="archive-item">
+                                    <a href="{{ .RelPermalink }}" class="archive-item-link">
+                                        {{- .Title | emojify -}}
+                                    </a>
+                                </article>
+                            {{- end -}}
+                            {{- if gt (len $pages) 5 -}}
+                                <span class="more-post">
+                                    <a href="{{ .RelPermalink }}" class="more-single-link">{{ T "more" }} >></a>
+                                </span>
+                            {{- end -}}
+                        </div>
+                    </div>
+                    {{- end -}}
+                {{- end -}}
+            </div>
+
+        {{- /* Tag Cloud Page - 彩色词云（优化版） */ -}}
+        {{- else if eq $taxonomies "tags" -}}
+            {{- $tags := $.Site.Taxonomies.tags.ByCount -}}
+            {{- /* 计算最大最小值 */ -}}
+            {{- $minCount := 999999 -}}
+            {{- $maxCount := 0 -}}
+            {{- range $tags -}}
+                {{- if lt .Count $minCount -}}
+                    {{- $minCount = .Count -}}
+                {{- end -}}
+                {{- if gt .Count $maxCount -}}
+                    {{- $maxCount = .Count -}}
+                {{- end -}}
+            {{- end -}}
+            {{- $countRange := sub $maxCount $minCount -}}
+            {{- if eq $countRange 0 -}}
+                {{- $countRange = 1 -}}
+            {{- end -}}
+            
+            <div class="tag-cloud-tags">
+                {{- $index := 0 -}}
+                {{- range $tags.Reverse -}}
+                    {{- /* 归一化大小：0-1 */ -}}
+                    {{- $normalizedSize := div (sub (float .Count) (float $minCount)) (float $countRange) -}}
+                    {{- /* 字号：1.0em - 3.5em */ -}}
+                    {{- $fontSize := add 1.0 (mul $normalizedSize 2.5) -}}
+                    
+                    {{- /* 旋转角度：-30度到30度 */ -}}
+                    {{- $rotationBase := mod (mul $index 137) 61 | sub 30 -}}
+                    {{- $rotation := $rotationBase -}}
+                    
+                    {{- /* 彩虹色相：黄金角分布 */ -}}
+                    {{- $colorHue := mod (mul $index 137) 360 -}}
+                    {{- /* 饱和度：65%-85% */ -}}
+                    {{- $saturation := add 65 (mul $normalizedSize 20) -}}
+                    {{- /* 亮度：45%-65% */ -}}
+                    {{- $lightness := add 45 (mul $normalizedSize 20) -}}
+                    
+                    {{- $index = add $index 1 -}}
+                    
+                    <a href="{{ .Page.RelPermalink }}" 
+                       class="tag-cloud-item" 
+                       style="font-size: {{ printf "%.2f" $fontSize }}em; transform: rotate({{ $rotation }}deg); color: hsl({{ $colorHue }}, {{ $saturation }}%, {{ $lightness }}%) !important;"
+                       data-count="{{ .Count }}"
+                       title="{{ .Page.Title }} ({{ .Count }} 篇)">
+                        {{- .Page.Title -}}
+                    </a>
+                {{- end -}}
+            </div>
+        {{- end -}}
+    </div>
+{{- end -}}
+

@@ -1,0 +1,43 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "🔧 修复 Page Bundle 结构",
+      "type": "shell",
+      "command": "bash",
+      "args": ["scripts/fix-page-bundle-structure.sh"],
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "always",
+        "panel": "new",
+        "clear": true
+      }
+    },
+    {
+      "label": "🎯 启动图片自动转换监听",
+      "type": "shell",
+      "command": "bash",
+      "args": ["scripts/auto-convert-webp.sh"],
+      "isBackground": true,
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated",
+        "showReuseMessage": false,
+        "clear": true
+      }
+    },
+    {
+      "label": "📦 批量转换现有图片为 WebP",
+      "type": "shell",
+      "command": "bash",
+      "args": ["scripts/batch-convert-webp.sh"],
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "always",
+        "panel": "new",
+        "clear": true
+      }
+    }
+  ]
+}

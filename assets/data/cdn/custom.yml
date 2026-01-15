@@ -1,0 +1,5 @@
+prefix:
+  libFiles: https://cdn.jsdelivr.net/npm/
+  simpleIcons: https://cdn.jsdelivr.net/npm/simple-icons@7.3.0/icons/
+libFiles:
+  mermaidJS: mermaid@11.10.1/dist/mermaid.min.js

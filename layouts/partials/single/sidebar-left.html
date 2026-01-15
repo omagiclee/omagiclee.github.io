@@ -1,0 +1,99 @@
+{{- /* 左侧文章导航 - 优化版标签词云 */ -}}
+<aside class="sidebar-left" id="sidebar-left">
+  <div class="sidebar-content">
+    
+    {{- /* 系列文章导航 */ -}}
+    {{- $currentCategory := "" -}}
+    {{- with .Params.categories -}}
+      {{- $currentCategory = index . 0 -}}
+    {{- end -}}
+    
+    {{- if $currentCategory -}}
+      <div class="nav-card series-nav">
+        <div class="card-header">
+          <i class="fas fa-book fa-fw"></i>
+          <span class="card-title">{{ $currentCategory }} 系列</span>
+        </div>
+        
+        <ul class="series-list">
+          {{- $relatedPosts := where .Site.RegularPages "Type" "posts" -}}
+          {{- $relatedPosts = where $relatedPosts ".Params.categories" "intersect" (slice $currentCategory) -}}
+          {{- $relatedPosts = $relatedPosts.ByDate -}}
+          
+          {{- range $relatedPosts -}}
+            <li class="{{ if eq .Permalink $.Permalink }}active{{ end }}">
+              <a href="{{ .RelPermalink }}" title="{{ .Title }}">
+                {{- if eq .Permalink $.Permalink -}}
+                  <i class="fas fa-arrow-right fa-fw"></i>
+                {{- else -}}
+                  <i class="far fa-file-alt fa-fw"></i>
+                {{- end -}}
+                <span>{{ .Title }}</span>
+              </a>
+            </li>
+          {{- end -}}
+        </ul>
+      </div>
+    {{- end -}}
+    
+    {{- /* 优化的标签词云 */ -}}
+    {{- with .Params.tags -}}
+      <div class="nav-card tags-cloud-card">
+        <div class="card-header">
+          <i class="fas fa-tags fa-fw"></i>
+          <span class="card-title">相关标签</span>
+        </div>
+        
+        <div class="tags-cloud-wrapper">
+          {{- range $index, $tag := . -}}
+            {{- $tagPage := partialCached "function/path.html" $tag $tag | printf "/tags/%v" | $.Site.GetPage -}}
+            {{- $tagCount := len $tagPage.Pages -}}
+            {{- $size := "medium" -}}
+            {{- if gt $tagCount 20 -}}
+              {{- $size = "large" -}}
+            {{- else if gt $tagCount 10 -}}
+              {{- $size = "medium-large" -}}
+            {{- else if gt $tagCount 5 -}}
+              {{- $size = "medium" -}}
+            {{- else -}}
+              {{- $size = "small" -}}
+            {{- end -}}
+            
+            <a href="{{ $tagPage.RelPermalink }}" 
+               class="tag-item tag-{{ $size }}" 
+               title="{{ $tag }} ({{ $tagCount }} 篇文章)"
+               data-count="{{ $tagCount }}">
+              <i class="fas fa-hashtag fa-fw"></i>
+              <span>{{ $tag }}</span>
+              <span class="tag-count">{{ $tagCount }}</span>
+            </a>
+          {{- end -}}
+        </div>
+      </div>
+    {{- end -}}
+    
+    {{- /* 快速操作 */ -}}
+    <div class="nav-card quick-actions">
+      <div class="card-header">
+        <i class="fas fa-bolt fa-fw"></i>
+        <span class="card-title">快速操作</span>
+      </div>
+      
+      <div class="action-buttons">
+        <a href="javascript:void(0);" class="action-btn" onclick="window.scrollTo({ top: 0, behavior: 'smooth' });">
+          <i class="fas fa-arrow-up fa-fw"></i>
+          <span>返回顶部</span>
+        </a>
+        <a href="{{ .Site.BaseURL }}tags/" class="action-btn">
+          <i class="fas fa-tags fa-fw"></i>
+          <span>浏览标签</span>
+        </a>
+        <a href="{{ .Site.BaseURL }}posts/" class="action-btn">
+          <i class="fas fa-archive fa-fw"></i>
+          <span>所有文章</span>
+        </a>
+      </div>
+    </div>
+    
+  </div>
+</aside>
