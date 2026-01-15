@@ -1,5 +1,5 @@
 +++
-date = '2025-11-28T11:53:05+08:00'
+date = '2018-06-03T11:53:05+08:00'
 draft = false
 title = 'Linux'
 organization = []

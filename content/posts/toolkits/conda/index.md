@@ -1,5 +1,5 @@
 +++
-date = '2025-11-27T22:05:00+08:00'
+date = '2018-06-03T22:05:00+08:00'
 draft = false
 title = 'Conda'
 organization = []

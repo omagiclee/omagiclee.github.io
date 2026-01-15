@@ -1,5 +1,5 @@
 +++
-date = '2025-11-28T17:10:36+08:00'
+date = '2018-06-03T17:10:36+08:00'
 draft = false
 title = 'pip'
 organization = []
@@ -21,4 +21,7 @@ pip install build setuptools wheel
 #python setup.py bdist_wheel  # save to ./dist 
 # build from pyproject.toml (new)
 python -m build --wheel  # save to ./dist
+
+# 下载
+pip download torch torchvision --index-url https://download.pytorch.org/whl/cu130
 ```
