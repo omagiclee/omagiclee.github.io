@@ -1,5 +1,6 @@
 baseURL = 'https://omagiclee.github.io/'
 languageCode = 'en-us'
+defaultContentLanguage = 'en'
 title = "Naifan Li's Blog"
 theme = 'LoveIt'
 
@@ -51,14 +52,10 @@ enableGitInfo = true
     author = true
     since = 2018
   
-  cdn = "custom"
+  # cdn = "custom"
   
   [params.cdn]
-    data = "custom"
-  
-  [params.markup]
-    [params.markup.mermaid]
-      enable = true
+    data = "jsdelivr"
   
   [params.section]
     dateFormat = "2006-01-02"
@@ -121,6 +118,9 @@ enableGitInfo = true
     noClasses = false
     style = 'monokai'
     tabWidth = 4
+  # Hugo 0.123+ native mermaid support
+  [markup.mermaid]
+    enable = true
   # 目录设置
   [markup.tableOfContents]
     startLevel = 2  # 从 H2 开始
