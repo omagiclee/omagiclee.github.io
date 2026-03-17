@@ -6,7 +6,7 @@
 /* 文末：post-info 横线 / Prev·Next / related-posts 横线 对齐与间距 */
 .single .post-footer {
   display: block;
-  overflow: hidden;  /* 包含内部 float，避免错位 */
+  overflow: hidden;
 }
 
 .single .post-footer .post-info {
@@ -19,7 +19,6 @@
   border-bottom-color: rgba(255, 255, 255, 0.08);
 }
 
-/* Prev/Next 一行：用 flex 替代 float，避免错位 */
 .single .post-footer .post-nav {
   display: flex;
   justify-content: space-between;
@@ -44,7 +43,6 @@
   float: none;
 }
 
-/* Related Posts 与第二条横线 */
 .single .related-posts {
   display: block;
   width: 100%;
@@ -59,7 +57,6 @@
   border-top-color: rgba(255, 255, 255, 0.08);
 }
 
-/* 首页日期：小一点、细一点 */
 .post-row-date {
   color: #a9a9b3;
   font-size: 0.75rem;
@@ -71,4 +68,153 @@
 
 [theme="dark"] .post-row-date {
   color: #5d5d5f;
+}
+
+/* ===== pseudocode.js ===== */
+
+pre.pseudocode {
+  display: none;
+}
+
+.ps-root {
+  font-family: KaTeX_Main, "Times New Roman", Times, serif;
+  font-size: 1em;
+  font-weight: normal;
+  -webkit-font-smoothing: auto;
+  -webkit-text-stroke-width: 0.35px;
+  margin: 1.5em 0;
+  width: fit-content;
+  min-width: min(100%, 20em);
+  max-width: 100%;
+}
+
+/* 所有行：紧凑行距，清零 margin */
+.ps-root p,
+.ps-root .ps-line {
+  margin: 0 !important;
+  line-height: 1.25 !important;
+}
+
+.ps-root .katex {
+  text-indent: 0;
+  font-size: 1em;
+}
+
+/* 三条横线 */
+.ps-root .ps-algorithm {
+  border-top: 3px solid #000;
+  border-bottom: 1px solid #000;
+  margin: 0.8em 0;
+  padding: 0;
+}
+
+/* 标题行 */
+.ps-root .ps-algorithm.with-caption > p:first-child,
+.ps-root .ps-algorithm.with-caption > .ps-line:first-child {
+  border-bottom: 1px solid #000 !important;
+  text-align: left !important;
+  padding: 0.15em 0.15em !important;
+  text-indent: 0 !important;
+  line-height: 1.4 !important;
+}
+
+/* 算法体 */
+.ps-root .ps-algorithmic {
+  padding: 0.2em 0.6em;
+  overflow-x: auto;
+}
+
+/* 关键字 */
+.ps-root .ps-keyword {
+  font-weight: 700;
+}
+
+/* 函数名 */
+.ps-root .ps-funcname {
+  font-weight: 400;
+  font-variant: small-caps;
+}
+
+/* 注释 */
+.ps-root .ps-comment {
+  font-weight: 400;
+}
+
+.ps-root .ps-comment::before {
+  content: "//";
+  font-size: 0.75em;
+  margin-left: 1em;
+  margin-right: 0.25em;
+  vertical-align: 0.05em;
+}
+
+/*
+ * 行号对齐方案：
+ * 1. 清零 pseudocode.js 注入的 ps-block margin-left
+ * 2. 内容行用 position:relative 作为行号的绝对定位锚点
+ * 3. 行号用 position:absolute + left:0，无论嵌套深度始终贴行左端
+ * 4. 通过各级 padding-left 控制文本视觉缩进，行号位置不受影响
+ */
+
+/* 清零 pseudocode.js 注入的 margin-left */
+.ps-root .ps-block {
+  margin-left: 0 !important;
+}
+
+/* 内容行：相对定位作锚点，为行号预留空间 */
+.ps-root p.ps-line.ps-code {
+  position: relative;
+  padding: 0 0 0 2.0em !important;
+}
+
+/* 行号：绝对定位，固定在每行最左端 */
+.ps-root .ps-linenum {
+  font-size: 0.85em;
+  line-height: 1.25;
+  position: absolute !important;
+  left: 0 !important;
+  top: 0;
+  width: 1.6em;
+  text-align: right;
+  padding-right: 0.3em;
+  display: block;
+}
+
+/* 嵌套缩进（每级 0.8em，与 pseudocode.js indentSize 一致）*/
+.ps-root .ps-block .ps-block > p.ps-line.ps-code {
+  padding-left: 2.8em !important;
+}
+.ps-root .ps-block .ps-block .ps-block > p.ps-line.ps-code {
+  padding-left: 3.6em !important;
+}
+.ps-root .ps-block .ps-block .ps-block .ps-block > p.ps-line.ps-code {
+  padding-left: 4.4em !important;
+}
+
+/* ---------- 暗色模式 ---------- */
+[theme="dark"] .ps-root {
+  color: #c9d1d9;
+  -webkit-text-stroke-color: #c9d1d9;
+}
+
+[theme="dark"] .ps-root .ps-algorithm {
+  border-top-color: #ccc;
+  border-bottom-color: #ccc;
+}
+
+[theme="dark"] .ps-root .ps-algorithm.with-caption > p:first-child,
+[theme="dark"] .ps-root .ps-algorithm.with-caption > .ps-line:first-child {
+  border-bottom-color: #ccc !important;
+}
+
+[theme="dark"] .ps-root .ps-keyword {
+  color: #e06c75;
+}
+
+[theme="dark"] .ps-root .ps-comment {
+  color: #7f848e;
+}
+
+[theme="dark"] .ps-root .ps-linenum {
+  color: #999;
 }

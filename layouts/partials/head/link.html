@@ -35,7 +35,7 @@
 {{- $options = dict "Context" . "ToCSS" $toCSS | merge $options -}}
 {{- partial "plugin/style.html" $options -}}
 
-{{- /* 项目自定义 CSS（文末间距等），后加载以覆盖主题 */ -}}
+{{- /* 项目自定义 CSS（文末间距等 + pseudocode.js 样式），后加载以覆盖主题 */ -}}
 <link rel="stylesheet" href="{{ "css/custom.css" | relURL }}">
 
 {{- /* Font Awesome */ -}}

@@ -231,14 +231,13 @@
                 </div>
                 {{- end -}}
 
-                {{- /* Recent Posts：仅展示保险相关 2 篇 */ -}}
-                {{- $insurancePosts := where $allPosts "Params.tags" "intersect" (slice "Insurance") -}}
-                {{- $insurancePosts = sort $insurancePosts "Date" "desc" | first 2 -}}
-                {{- if $insurancePosts -}}
+                {{- /* Recent Posts：展示最新文章 */ -}}
+                {{- $recentPosts := sort $allPosts "Date" "desc" | first 8 -}}
+                {{- if $recentPosts -}}
                 <div class="posts-section">
                     <h3 class="posts-section-title">Recent Posts</h3>
                     <div class="posts-list">
-                        {{- range $insurancePosts -}}
+                        {{- range $recentPosts -}}
                             <a href="{{ .RelPermalink }}" class="post-row">
                                 <span class="post-row-title">{{ .Title | emojify }}</span>
                                 <span class="post-row-date">{{ .Date.Format "2006-01-02" }}</span>

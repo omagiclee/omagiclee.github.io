@@ -1,0 +1,30 @@
+{{- $lineNumber := .Get "lineNumber" | default "true" -}}
+{{- $noEnd := .Get "noEnd" | default "false" -}}
+<pre class="pseudocode" data-line-number="{{ $lineNumber }}" data-no-end="{{ $noEnd }}">
+{{- .Inner | htmlEscape -}}
+</pre>
+{{- if not (.Page.Scratch.Get "pseudocodeLoaded") -}}
+  {{- .Page.Scratch.Set "pseudocodeLoaded" true -}}
+  {{- $jsURL := "js/pseudocode.min.js" | relURL -}}
+  {{- $scriptTpl := `
+(function() {
+  var s = document.createElement('script');
+  s.src = '%s';
+  s.onload = function() {
+    document.querySelectorAll('pre.pseudocode').forEach(function(el) {
+      pseudocode.renderElement(el, {
+        lineNumber: el.dataset.lineNumber !== 'false',
+        noEnd: el.dataset.noEnd === 'true',
+        indentSize: '0.8em',
+        lineNumberPunc: ':',
+        commentDelimiter: ' '
+      });
+    });
+  };
+  document.head.appendChild(s);
+})();
+` -}}
+  {{- $script := printf $scriptTpl $jsURL -}}
+  {{- $scriptArr := (.Page.Scratch.Get "this").scriptArr | default slice -}}
+  {{- $scriptArr | append $script | .Page.Scratch.SetInMap "this" "scriptArr" -}}
+{{- end -}}
