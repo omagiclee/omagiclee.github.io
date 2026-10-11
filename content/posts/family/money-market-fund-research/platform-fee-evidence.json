@@ -1,0 +1,117 @@
+{
+  "as_of": "2026-10-09",
+  "source": "https://fund.cmbchina.com/api/v1/fund/fee-rate?fundCode=018810",
+  "note": "Public CMB fee and transaction schedule response; no account information.",
+  "response": {
+    "returnCode": "SUC0000",
+    "errorMsg": null,
+    "body": {
+      "tradeBuyTimeTip": null,
+      "tradeSellTimeTip": null,
+      "discountRateList": [
+        {
+          "ZCHGSEQ": "",
+          "ZDIVDES": "- -",
+          "ZCHGDES": "- -"
+        }
+      ],
+      "ZFNDCOD": "018810",
+      "ZSAACOD": "007",
+      "ZCATFLG": "N",
+      "ZCHRCST": "0.0400000",
+      "ZCHRMNG": "0.1500000",
+      "ZCHRSAL": "0.0100000",
+      "ZLCKPER": "D0000",
+      "ZOPPFLG": "N",
+      "ZTYPFLG": "N",
+      "ZPSNFLG": "N",
+      "FD20R": [
+        {
+          "ZDSPDES": "",
+          "ZDIVDES": "",
+          "ZCHGDES": "",
+          "ZTDPFLG": null,
+          "ZTDPVAL": null,
+          "ZCDNFLG": null,
+          "ZCDNFEE": null,
+          "ZDSCVAL": null,
+          "ZTDPFEE": null
+        }
+      ],
+      "FD22R": [
+        {
+          "ZDSPDES": "固定费率",
+          "ZDIVDES": "单一费率",
+          "ZCHGDES": "0%",
+          "ZTDPFLG": "N",
+          "ZTDPVAL": "10.0",
+          "ZCDNFLG": "N",
+          "ZCDNFEE": "0",
+          "ZDSCVAL": "10.0",
+          "ZTDPFEE": "0"
+        }
+      ],
+      "FD24R": [
+        {
+          "ZDSPDES": "固定费率",
+          "ZDIVDES": "单一费率",
+          "ZCHGDES": "0%",
+          "ZTDPFLG": null,
+          "ZTDPVAL": null,
+          "ZCDNFLG": null,
+          "ZCDNFEE": null,
+          "ZDSCVAL": null,
+          "ZTDPFEE": null
+        }
+      ],
+      "FD20D": [],
+      "FD22D": [
+        {
+          "ZFNDSHR": "0",
+          "ZTRXCFM": "1",
+          "ZMNYCFM": "1",
+          "ZMCFD01": "周二",
+          "ZMCFD02": "周三",
+          "ZMCFD03": "周四",
+          "ZMCFD04": "周五",
+          "ZMCFD05": "下周一",
+          "ZTBSDAT": "10-09 15:00前",
+          "ZTBSDDT": "10-12",
+          "ZTBSCCD": "10-12",
+          "ZRUNFLG": "Y",
+          "ZEPDFLG": null,
+          "ZEPDDAY": null,
+          "ZEPDCCD": null,
+          "ZWHTFLG": null,
+          "ZTIMMTR": "150000"
+        }
+      ],
+      "FD24D": [
+        {
+          "ZFNDSHR": "0",
+          "ZTRXCFM": "1",
+          "ZMNYCFM": "1",
+          "ZMCFD01": "周二",
+          "ZMCFD02": "周三",
+          "ZMCFD03": "周四",
+          "ZMCFD04": "周五",
+          "ZMCFD05": "下周一",
+          "ZTBSDAT": "10-09 15:00前",
+          "ZTBSDDT": "10-12",
+          "ZTBSCCD": "10-12",
+          "ZRUNFLG": "Y",
+          "ZEPDFLG": "N",
+          "ZEPDDAY": "0",
+          "ZEPDCCD": "10-13",
+          "ZWHTFLG": "N",
+          "ZTIMMTR": "150000"
+        }
+      ],
+      "provisionList": [],
+      "FD20ZTDPFLG": null,
+      "FD20ZTDPVAL": null,
+      "FD22ZTDPFLG": null,
+      "FD22ZTDPVAL": null
+    }
+  }
+}

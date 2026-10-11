@@ -1,0 +1,9 @@
+<nav class="topic-breadcrumb" aria-label="Breadcrumb">
+    {{- range .Ancestors.Reverse -}}
+        {{- if .Params.topic -}}
+            <a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
+            <span aria-hidden="true">/</span>
+        {{- end -}}
+    {{- end -}}
+    <span aria-current="page">{{ .LinkTitle }}</span>
+</nav>

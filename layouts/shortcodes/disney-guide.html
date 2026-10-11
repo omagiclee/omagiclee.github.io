@@ -1,0 +1,167 @@
+{{- with .Page.Resources.GetMatch "guide.css" -}}
+<link rel="stylesheet" href="{{ .RelPermalink }}">
+{{- end -}}
+<div class="disney-guide-shell">
+<aside class="dg-toc" aria-label="本页目录" hidden>
+  <details class="dg-toc-panel">
+    <summary>本页目录</summary>
+    <nav class="dg-toc-nav" aria-label="攻略章节"></nav>
+  </details>
+</aside>
+<div class="disney-guide">
+{{ .Page.RenderString (dict "display" "block") .Inner }}
+</div>
+</div>
+<script>
+(() => {
+  const bindDisneyGuideAnchors = () => {
+    if (window.__disneyGuideAnchorsBound) return;
+    window.__disneyGuideAnchorsBound = true;
+
+    const guide = document.querySelector(".disney-guide");
+    const shell = guide?.closest(".disney-guide-shell");
+    const toc = shell?.querySelector(".dg-toc");
+    const tocPanel = toc?.querySelector(".dg-toc-panel");
+    const tocNav = toc?.querySelector(".dg-toc-nav");
+    let tocHeadings = [];
+    let tocUpdateQueued = false;
+
+    const targetForHash = (hash) => {
+      if (!hash || hash === "#") return null;
+
+      let id;
+      try {
+        id = decodeURIComponent(hash.slice(1));
+      } catch (_) {
+        id = hash.slice(1);
+      }
+
+      const target = document.getElementById(id);
+      return target && target.closest(".disney-guide") ? target : null;
+    };
+
+    const revealTarget = (target, shouldScroll = true) => {
+      if (!target) return;
+
+      let details = target.closest("details");
+      while (details && details.closest(".disney-guide")) {
+        details.open = true;
+        details = details.parentElement.closest("details");
+      }
+
+      if (shouldScroll) {
+        requestAnimationFrame(() => target.scrollIntoView({ block: "start", behavior: "instant" }));
+      }
+    };
+
+    const addTocLink = (list, heading) => {
+      const item = document.createElement("li");
+      const link = document.createElement("a");
+      link.href = `#${encodeURIComponent(heading.id)}`;
+      link.textContent = heading.textContent.trim();
+      link.dataset.target = heading.id;
+      item.appendChild(link);
+      list.appendChild(item);
+      return item;
+    };
+
+    const buildToc = () => {
+      if (!guide || !toc || !tocPanel || !tocNav) return;
+
+      const headings = Array.from(guide.querySelectorAll("h2[id], h3[id]"))
+        .filter((heading) => !heading.closest("details, .dg-pick"));
+      if (!headings.length) return;
+      tocHeadings = headings;
+
+      const list = document.createElement("ol");
+      let sectionItem = null;
+      let sublist = null;
+
+      headings.forEach((heading) => {
+        if (heading.tagName === "H2") {
+          sectionItem = addTocLink(list, heading);
+          sublist = null;
+          return;
+        }
+
+        if (!sectionItem) {
+          addTocLink(list, heading);
+          return;
+        }
+
+        if (!sublist) {
+          sublist = document.createElement("ol");
+          sectionItem.appendChild(sublist);
+        }
+        addTocLink(sublist, heading);
+      });
+
+      tocNav.replaceChildren(list);
+      toc.hidden = false;
+      tocPanel.open = window.matchMedia("(min-width: 1320px)").matches;
+    };
+
+    const updateTocActive = () => {
+      tocUpdateQueued = false;
+      if (!tocHeadings.length || !tocNav) return;
+
+      let active = tocHeadings[0];
+      for (const heading of tocHeadings) {
+        if (heading.getBoundingClientRect().top > 130) break;
+        active = heading;
+      }
+
+      let activeLink = null;
+      tocNav.querySelectorAll("a[data-target]").forEach((link) => {
+        const isActive = link.dataset.target === active.id;
+        link.classList.toggle("is-active", isActive);
+        if (isActive) {
+          link.setAttribute("aria-current", "location");
+          activeLink = link;
+        } else {
+          link.removeAttribute("aria-current");
+        }
+      });
+
+      if (activeLink && tocPanel?.open && getComputedStyle(toc).position === "fixed") {
+        const linkTop = activeLink.offsetTop;
+        const linkBottom = linkTop + activeLink.offsetHeight;
+        if (linkTop < tocNav.scrollTop) tocNav.scrollTop = linkTop;
+        if (linkBottom > tocNav.scrollTop + tocNav.clientHeight) {
+          tocNav.scrollTop = linkBottom - tocNav.clientHeight;
+        }
+      }
+    };
+
+    const queueTocUpdate = () => {
+      if (tocUpdateQueued) return;
+      tocUpdateQueued = true;
+      requestAnimationFrame(updateTocActive);
+    };
+
+    document.addEventListener("click", (event) => {
+      if (!(event.target instanceof Element)) return;
+      const link = event.target.closest("a[href^='#']");
+      if (!link || !link.closest(".disney-guide-shell")) return;
+      revealTarget(targetForHash(link.hash));
+    });
+
+    window.addEventListener("hashchange", () => {
+      revealTarget(targetForHash(window.location.hash));
+      queueTocUpdate();
+    });
+
+    buildToc();
+    window.addEventListener("scroll", queueTocUpdate, { passive: true });
+    window.addEventListener("resize", queueTocUpdate);
+    updateTocActive();
+    revealTarget(targetForHash(window.location.hash));
+  };
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", bindDisneyGuideAnchors, { once: true });
+  } else {
+    bindDisneyGuideAnchors();
+  }
+})();
+</script>

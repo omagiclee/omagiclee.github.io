@@ -18,36 +18,36 @@ featured = false
     <th style="text-align: center; vertical-align: middle; width: auto;">Institution</th>
   </tr>
   <tr>
-    <td><a href="/posts/e2e/world-model/vad/">vad</a></td>
-    <td><a href="">arXiv</a><br><a href="">GitHub</a></td>
+    <td>vad</td>
+    <td>—</td>
     <td></td>
     <td></td>
     <td></td>
   </tr>
   <tr>
-    <td><a href="/posts/e2e/world-model/vadv2/">vadv2</a></td>
-    <td><a href="">arXiv</a><br><a href="">GitHub</a></td>
+    <td>vadv2</td>
+    <td>—</td>
     <td></td>
     <td></td>
     <td></td>
   </tr>
   <tr>
-    <td><a href="/posts/e2e/world-model/hydra-mdp/">Hydra-MDP: End-to-end Multimodal Planning with Multi-target Hydra-Distillation</a></td>
+    <td>Hydra-MDP: End-to-end Multimodal Planning with Multi-target Hydra-Distillation</td>
     <td><a href="https://arxiv.org/pdf/2406.06978">arXiv</a><br><a href="https://github.com/NVlabs/Hydra-MDP">GitHub</a></td>
     <td>2024.06</td>
     <td>The 1st place solution of End-to-end Driving at Scale at the CVPR 2024 Autonomous Grand Challenge</td>
     <td>NVIDIA</td>
   </tr>
   <tr>
-    <td><a href="/posts/e2e/world-model/hydra-mdp++/">Hydra-MDP++: </a></td>
+    <td>Hydra-MDP++</td>
     <td><a href="https://arxiv.org/pdf/2503.12820">arXiv</a><br><a href="https://github.com/NVlabs/Hydra-MDP">GitHub</a></td>
     <td>2025.03</td>
     <td></td>
     <td>NVIDIA</td>
   </tr>
   <tr>
-    <td><a href="/posts/e2e/world-model/world4drive/">World4Drive: End-to-End Autonomous Driving via Intention-aware Physical Latent World Model</a></td>
-    <td><a href="">arXiv</a><br><a href="">GitHub</a></td>
+    <td>World4Drive: End-to-End Autonomous Driving via Intention-aware Physical Latent World Model</td>
+    <td>—</td>
     <td>2025.03</td>
     <td>ICLR</td>
     <td>Li Auto</td>

@@ -4,6 +4,12 @@
 
 {{- define "content" -}}
     <div class="page archive">
+        {{- if .Content -}}
+            <h1>{{ .Params.Title | default (T .Section) | default .Section }}</h1>
+            <div class="content section-content">{{ .Content }}</div>
+        {{- else -}}
+            <h1 class="visually-hidden">{{ .Params.Title | default (T .Section) | default .Section }}</h1>
+        {{- end -}}
         {{- /* Archives Page - 参考 categories 页面样式，每年只显示部分文章，全部年份显示在同一页，按年份倒序显示 */ -}}
         {{- if .Pages -}}
             {{- $pagesByYear := .Pages.GroupByDate "2006" -}}
@@ -65,4 +71,3 @@
     });
     </script>
 {{- end -}}
-

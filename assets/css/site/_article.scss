@@ -1,0 +1,346 @@
+/* ==============================
+   标题层级样式 - 精简优化版
+   符号层级：# | › -
+   间距优化：层级递减，自然呼吸感
+   ============================== */
+
+.single .content {
+  /* H2 标题 - 主要章节 (# 符号) */
+  > h2 {
+    // 保持主题默认字号
+    font-weight: 700 !important;
+    color: #1a202c !important;
+    margin-top: 2rem !important;            // 适中上间距
+    margin-bottom: 1rem !important;
+    
+    [theme=dark] & {
+      color: #f7fafc !important;
+    }
+    
+    // H2 的 # 符号
+    > .header-mark::before {
+      color: #2d96bd !important;
+      
+      [theme=dark] & {
+        color: #55bde2 !important;
+      }
+    }
+  }
+
+  /* H3 标题 - 重要子标题 (单竖线 |) */
+  > h3 {
+    // 保持主题默认字号
+    font-weight: 600 !important;
+    color: #2d3748 !important;
+    margin-top: 1.75rem !important;         // 层级递减
+    margin-bottom: 0.875rem !important;
+    
+    [theme=dark] & {
+      color: #e2e8f0 !important;
+    }
+    
+    // H3 使用单竖线
+    > .header-mark::before {
+      color: #2d96bd !important;
+      
+      [theme=dark] & {
+        color: #55bde2 !important;
+      }
+    }
+  }
+
+  /* H4 标题 - 次级子标题 (尖括号箭头 ›) */
+  > h4 {
+    // 保持主题默认字号
+    font-weight: 600 !important;
+    color: #374151 !important;              // 折中方案：介于 H3 和原 H4 之间
+    margin-top: 1.5rem !important;          // 继续递减
+    margin-bottom: 0.75rem !important;
+    
+    [theme=dark] & {
+      color: #d1d5db !important;            // 深色模式也相应调整
+    }
+    
+    // H4 使用尖括号箭头，简洁优雅
+    > .header-mark::before {
+      content: "›" !important;              // 尖括号箭头符号
+      margin-right: 0.5rem !important;
+      color: #718096 !important;
+      
+      [theme=dark] & {
+        color: #a0aec0 !important;
+      }
+    }
+  }
+
+  /* H5 标题 - 更细分层级 (短横线 -) */
+  > h5 {
+    // 保持主题默认字号
+    font-weight: 500 !important;
+    color: #718096 !important;
+    margin-top: 1.25rem !important;         // 最小间距
+    margin-bottom: 0.625rem !important;
+    
+    [theme=dark] & {
+      color: #a0aec0 !important;
+    }
+    
+    // H5 使用短横线
+    > .header-mark::before {
+      content: "-" !important;
+      margin-right: 0.5rem !important;
+      color: #a0aec0 !important;
+      
+      [theme=dark] & {
+        color: #718096 !important;
+      }
+    }
+  }
+}
+
+/* ==============================
+   博客文章页面 - 元信息一行显示
+   ============================== */
+
+/* 单篇文章页面 - 有分割线 */
+.single:not(.summary) .post-meta {
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #f7fafc;
+  
+  [theme=dark] & {
+    border-bottom-color: #1a202c;
+  }
+}
+
+/* 首页列表 - 无分割线 */
+.single.summary .post-meta {
+  margin-bottom: 1rem;
+}
+
+/* 元信息行样式 */
+.single .post-meta .post-meta-line-compact {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0;
+  font-size: 0.875rem;
+  color: #718096;
+  line-height: 1.5;
+  
+  [theme=dark] & {
+    color: #a0aec0;
+  }
+  
+  .post-meta-item {
+    display: inline-flex;
+    align-items: center;
+    white-space: nowrap;
+    
+    &:not(:last-child) {
+      margin-right: 0.5rem;
+    }
+    
+    i {
+      margin-right: 0.2rem;
+      font-size: 0.875rem;
+      opacity: 0.8;
+    }
+    
+    a {
+      color: inherit;
+      text-decoration: none;
+      transition: color 0.2s ease;
+      
+      &:hover {
+        color: #2d96bd;
+        text-decoration: underline;
+        
+        [theme=dark] & {
+          color: #55bde2;
+        }
+      }
+    }
+    
+    time {
+      font-size: 0.875rem;
+      margin-left: 0.2em; /* 与 "Published on" / "Updated on" 的字符间隔 */
+    }
+  }
+}
+
+/* 移动端适配 */
+@media (max-width: 768px) {
+  .single .single-title {
+    overflow-wrap: anywhere;
+  }
+
+  .single .content {
+    overflow-x: auto;
+  }
+
+  .single:not(.summary) .post-meta {
+    margin-bottom: 0.875rem;
+    padding-bottom: 0.5rem;
+  }
+  
+  .single.summary .post-meta {
+    margin-bottom: 0.875rem;
+  }
+  
+  .single .post-meta .post-meta-line-compact {
+    .post-meta-item {
+      max-width: 100%;
+      min-width: 0;
+      white-space: normal;
+      overflow-wrap: anywhere;
+
+      &:not(:last-child) {
+        margin-right: 0.375rem;
+      }
+      
+      font-size: 0.8125rem;
+      
+      i {
+        font-size: 0.8125rem;
+        margin-right: 0.15rem;
+      }
+    }
+  }
+}
+
+/* 文末：第一条横线 / Prev·Next / 第二条横线 / Related Posts 的间距 */
+.single .post-footer .post-info {
+  padding-bottom: 1rem; /* 第一条横线下留白 */
+}
+
+.single .post-footer .post-nav {
+  margin-top: 1.25rem;   /* 与第一条横线的间隔 */
+  margin-bottom: 1.25rem; /* 与第二条横线的间隔 */
+}
+
+/* 文末相关文章 */
+.related-posts {
+  margin-top: 0;         /* 与 post-nav 的 margin-bottom 组成第二条横线前的间隔 */
+  padding-top: 1.25rem;  /* 第二条横线与标题的间隔 */
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+
+  [theme=dark] & {
+    border-top-color: rgba(255, 255, 255, 0.08);
+  }
+}
+
+.related-posts-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #1a202c;
+  margin: 0 0 0.75rem;
+
+  [theme=dark] & {
+    color: #e2e8f0;
+  }
+}
+
+.related-posts-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  li {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 0.35rem 0;
+    border-bottom: none;
+  }
+
+  a {
+    flex: 1;
+    color: #333;
+    text-decoration: none;
+    font-size: 0.95rem;
+
+    &:hover {
+      color: var(--link-color);
+    }
+
+    [theme=dark] & {
+      color: #ddd;
+
+      &:hover {
+        color: var(--link-color);
+      }
+    }
+  }
+}
+
+.related-posts-date {
+  flex-shrink: 0;
+  font-size: 0.8rem;
+  color: #888;
+  font-variant-numeric: tabular-nums;
+
+  [theme=dark] & {
+    color: #666;
+  }
+}
+
+/* 隐藏页脚的 tags（已移到标题下方） */
+.single .post-footer .post-tags {
+  display: none;
+}
+
+.single .post-footer {
+  display: block;
+  overflow: hidden;
+}
+
+.single .post-footer .post-info {
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  margin-bottom: 0;
+}
+
+[theme="dark"] .single .post-footer .post-info {
+  border-bottom-color: rgba(255, 255, 255, 0.08);
+}
+
+.single .post-footer .post-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1.25rem;
+  margin-bottom: 1.25rem;
+  clear: both;
+}
+
+.single .post-footer .post-nav::before,
+.single .post-footer .post-nav::after {
+  content: none;
+}
+
+.single .post-footer .post-nav a.prev {
+  float: none;
+}
+
+.single .post-footer .post-nav a.next {
+  float: none;
+}
+
+.single .related-posts {
+  display: block;
+  width: 100%;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-top: 1.25rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+  box-sizing: border-box;
+}
+
+[theme="dark"] .single .related-posts {
+  border-top-color: rgba(255, 255, 255, 0.08);
+}
+

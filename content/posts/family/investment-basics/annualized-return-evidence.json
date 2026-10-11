@@ -1,0 +1,320 @@
+{
+  "as_of": "2026-10-07",
+  "common_end": "2026-09-28",
+  "formula": "(1 + dividend-reinvested total return)^(365 / actual calendar days) - 1",
+  "note": "Public same-share history only. No returns extrapolated for unavailable histories. Daily operating costs in NAV; personal transaction costs excluded.",
+  "products": {
+    "006491": {
+      "fund": {
+        "code": "006491",
+        "name": "南方中债1-3年国开行债券指数A"
+      },
+      "method": {
+        "official_endpoint": "https://www.nffund.com/nfwebApi/fund/earningsMovements",
+        "http_method": "POST",
+        "return_field": "data.thisfundlist[-1].upratio",
+        "return_methodology": "南方基金产品页说明：收益走势图按分红再投资复权净值计算。",
+        "annualization_formula": "(1 + total_return)^(365 / actual_calendar_days) - 1",
+        "rounding_note": "Official API upratio is rounded to 0.01 percentage point; annualized figures inherit that rounding."
+      },
+      "rows": [
+        {
+          "window": "3个月",
+          "target_start": "2026-06-29",
+          "actual_start": "2026-06-29",
+          "end": "2026-09-28",
+          "calendar_days": 91,
+          "official_reinvested_total_return_pct": 0.5012564545714637,
+          "geometric_annualized_pct": 2.0257574468740325,
+          "exact_inputs": {
+            "start_unit_nav": 1.0196,
+            "ex_dividend_date": "2026-09-15",
+            "ex_dividend_unit_nav": 1.0175,
+            "dividend_per_share": 0.005,
+            "end_unit_nav": 1.0197
+          }
+        },
+        {
+          "window": "6个月",
+          "target_start": "2026-03-28",
+          "actual_start": "2026-03-27",
+          "end": "2026-09-28",
+          "calendar_days": 185,
+          "official_reinvested_total_return_pct": 1.26,
+          "geometric_annualized_pct": 2.5011823985458426
+        },
+        {
+          "window": "12个月",
+          "target_start": "2025-09-28",
+          "actual_start": "2025-09-26",
+          "end": "2026-09-28",
+          "calendar_days": 367,
+          "official_reinvested_total_return_pct": 2.35,
+          "geometric_annualized_pct": 2.337044968694424
+        },
+        {
+          "window": "2年",
+          "target_start": "2024-09-28",
+          "actual_start": "2024-09-27",
+          "end": "2026-09-28",
+          "calendar_days": 731,
+          "official_reinvested_total_return_pct": 4.54,
+          "geometric_annualized_pct": 2.241699236014316
+        },
+        {
+          "window": "3年",
+          "target_start": "2023-09-28",
+          "actual_start": "2023-09-28",
+          "end": "2026-09-28",
+          "calendar_days": 1096,
+          "official_reinvested_total_return_pct": 8.25,
+          "geometric_annualized_pct": 2.675185834604399
+        }
+      ]
+    },
+    "11305GH": {
+      "product_code": "11305GH",
+      "product_name": "招银理财招睿鑫鼎14天持有期5号固定收益类理财计划",
+      "official_source": {
+        "endpoint": "https://papi.icbc.com.cn/finance/deposit/consignment/getNetValueList",
+        "method": "POST",
+        "request_pages": [
+          {
+            "prodId": "11305GH",
+            "saleTarget": "7",
+            "pageIndex": 1,
+            "pageSize": 200
+          },
+          {
+            "prodId": "11305GH",
+            "saleTarget": "7",
+            "pageIndex": 2,
+            "pageSize": 200
+          }
+        ]
+      },
+      "history": {
+        "api_total": 269,
+        "deduplicated_count": 269,
+        "earliest_published_nav_date": "2025-08-20",
+        "earliest_published_unit_nav": "1.000000",
+        "latest_published_nav_date": "2026-09-28",
+        "product_establishment_date_from_2026_h1_report": "2025-08-26",
+        "all_rows_unit_nav_equals_cumulative_nav": true,
+        "distribution_treatment": "No distribution is visible in the complete API history: unit NAV equals cumulative NAV on all 269 rows. Therefore total return equals unit-NAV return for these windows; no cumulative-NAV ratio was used as a reinvestment proxy."
+      },
+      "common_end_date": "2026-09-28",
+      "formula_note": "Uses the simple annualization convention disclosed in the product 2026 H1 report: ((ending cumulative NAV - starting cumulative NAV) / starting unit NAV) × 365 / actual days. Because there was no distribution, this equals (ending unit NAV / starting unit NAV - 1) × 365 / actual days.",
+      "results": [
+        {
+          "window": "3个月",
+          "requested_start": "2026-06-29",
+          "actual_start": "2026-06-29",
+          "start_unit_nav": "1.026500",
+          "start_cumulative_nav": "1.026500",
+          "end": "2026-09-28",
+          "end_unit_nav": "1.030400",
+          "end_cumulative_nav": "1.030400",
+          "actual_days": 91,
+          "holding_period_total_return_pct": "0.3799",
+          "annualized_return_pct": "1.5239",
+          "annualization": "simple: holding-period total return × 365 / actual calendar days",
+          "geometric_annualized_pct": 1.532641020071357
+        },
+        {
+          "window": "6个月",
+          "requested_start": "2026-03-28",
+          "actual_start": "2026-03-27",
+          "start_unit_nav": "1.015900",
+          "start_cumulative_nav": "1.015900",
+          "end": "2026-09-28",
+          "end_unit_nav": "1.030400",
+          "end_cumulative_nav": "1.030400",
+          "actual_days": 185,
+          "holding_period_total_return_pct": "1.4273",
+          "annualized_return_pct": "2.8160",
+          "annualization": "simple: holding-period total return × 365 / actual calendar days",
+          "geometric_annualized_pct": 2.835586903103704
+        },
+        {
+          "window": "12个月",
+          "requested_start": "2025-09-28",
+          "actual_start": "2025-09-26",
+          "start_unit_nav": "1.005900",
+          "start_cumulative_nav": "1.005900",
+          "end": "2026-09-28",
+          "end_unit_nav": "1.030400",
+          "end_cumulative_nav": "1.030400",
+          "actual_days": 367,
+          "holding_period_total_return_pct": "2.4356",
+          "annualized_return_pct": "2.4224",
+          "annualization": "simple: holding-period total return × 365 / actual calendar days",
+          "geometric_annualized_pct": 2.422197131986392
+        },
+        {
+          "window": "2年",
+          "requested_start": "2024-09-28",
+          "status": "history_unavailable",
+          "annualized_return_pct": null
+        },
+        {
+          "window": "3年",
+          "requested_start": "2023-09-28",
+          "status": "history_unavailable",
+          "annualized_return_pct": null
+        }
+      ],
+      "comparison_formula": "(end/start)^(365/actual_days)-1; uniform geometric convention, not product-specific simple annualization"
+    },
+    "J11241A": {
+      "request": {
+        "prodId": "J11241A",
+        "saleTarget": "7",
+        "pageIndex": 1,
+        "pageSize": 300
+      },
+      "endpoint": "https://papi.icbc.com.cn/finance/deposit/consignment/getNetValueList",
+      "total": 200,
+      "pages": 1,
+      "firstPublishedDate": "2025-12-04",
+      "allUnitEqualsCumulative": true,
+      "returns": [
+        {
+          "window": "3m",
+          "target": "2026-06-29",
+          "start": "2026-06-29",
+          "end": "2026-09-28",
+          "days": 91,
+          "startValue": "1.013593",
+          "endValue": "1.017603",
+          "cumulativePct": 0.395622305994614,
+          "annualizedPct": 1.5963131254386864
+        },
+        {
+          "window": "6m",
+          "target": "2026-03-28",
+          "start": "2026-03-27",
+          "end": "2026-09-28",
+          "days": 185,
+          "startValue": "1.005833",
+          "endValue": "1.017603",
+          "cumulativePct": 1.1701743728829817,
+          "annualizedPct": 2.321863986826078
+        },
+        {
+          "window": "12m",
+          "target": "2025-09-28",
+          "status": "insufficient published same-share history"
+        },
+        {
+          "window": "2y",
+          "target": "2024-09-28",
+          "status": "insufficient published same-share history"
+        },
+        {
+          "window": "3y",
+          "target": "2023-09-28",
+          "status": "insufficient published same-share history"
+        }
+      ]
+    },
+    "AF59659B": {
+      "name": "信银安盈象固收稳健一个月持有期66号",
+      "api_total": 201,
+      "earliest": "2025-12-10",
+      "earliest_value": 1.0093,
+      "latest": "2026-09-29",
+      "latest_value": 1.0365,
+      "end_date": "2026-09-28",
+      "end_value": 1.0366,
+      "windows": {
+        "3个月": {
+          "status": "可计算",
+          "target_start": "2026-06-29",
+          "actual_start": "2026-06-29",
+          "start_value": 1.0306,
+          "actual_end": "2026-09-28",
+          "end_value": 1.0366,
+          "actual_days": 91,
+          "cumulative_return": 0.005821851348728924,
+          "compound_annualized_return": 0.023556851071981466
+        },
+        "6个月": {
+          "status": "可计算",
+          "target_start": "2026-03-28",
+          "actual_start": "2026-03-27",
+          "start_value": 1.0205,
+          "actual_end": "2026-09-28",
+          "end_value": 1.0366,
+          "actual_days": 185,
+          "cumulative_return": 0.01577658010779026,
+          "compound_annualized_return": 0.03136563316583474
+        },
+        "12个月": {
+          "status": "历史不足",
+          "target_start": "2025-09-28",
+          "reason": "该份额官方序列最早仅到2025-12-10"
+        },
+        "2年": {
+          "status": "历史不足",
+          "target_start": "2024-09-28",
+          "reason": "该份额官方序列最早仅到2025-12-10"
+        },
+        "3年": {
+          "status": "历史不足",
+          "target_start": "2023-09-28",
+          "reason": "该份额官方序列最早仅到2025-12-10"
+        }
+      }
+    },
+    "AF53042B": {
+      "name": "信银安盈象固收稳健日开78号",
+      "api_total": 141,
+      "earliest": "2026-03-11",
+      "earliest_value": 1.0027,
+      "latest": "2026-09-29",
+      "latest_value": 1.0177,
+      "end_date": "2026-09-28",
+      "end_value": 1.0176,
+      "windows": {
+        "3个月": {
+          "status": "可计算",
+          "target_start": "2026-06-29",
+          "actual_start": "2026-06-29",
+          "start_value": 1.014,
+          "actual_end": "2026-09-28",
+          "end_value": 1.0176,
+          "actual_days": 91,
+          "cumulative_return": 0.0035502958579882726,
+          "compound_annualized_return": 0.014316492131475567
+        },
+        "6个月": {
+          "status": "可计算",
+          "target_start": "2026-03-28",
+          "actual_start": "2026-03-27",
+          "start_value": 1.0037,
+          "actual_end": "2026-09-28",
+          "end_value": 1.0176,
+          "actual_days": 185,
+          "cumulative_return": 0.0138487595895187,
+          "compound_annualized_return": 0.027507288487689907
+        },
+        "12个月": {
+          "status": "历史不足",
+          "target_start": "2025-09-28",
+          "reason": "该份额官方序列最早仅到2026-03-11"
+        },
+        "2年": {
+          "status": "历史不足",
+          "target_start": "2024-09-28",
+          "reason": "该份额官方序列最早仅到2026-03-11"
+        },
+        "3年": {
+          "status": "历史不足",
+          "target_start": "2023-09-28",
+          "reason": "该份额官方序列最早仅到2026-03-11"
+        }
+      }
+    }
+  }
+}

@@ -57,7 +57,7 @@ VLM 硬件免费升级-11
 
 全本地端运行
 
-![VLM](VLM.webp)
+![VLM](../../../ai-data/ai-powered-data-centric-system/images/VLM.webp)
 VLM 整车 AI 大脑
 1. 本地聊天
 2. 本地控车

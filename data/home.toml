@@ -1,0 +1,47 @@
+[[series]]
+title = "Chain-of-Thought 系列"
+taxonomy = "tags"
+terms = ["Chain-of-Thought"]
+url = "/tags/chain-of-thought/"
+
+[[series]]
+title = "Instruction Tuning"
+taxonomy = "tags"
+terms = ["Instruction Tuning", "Instruct Tuning"]
+url = "/posts/"
+
+[[series]]
+title = "GPTs 系列"
+taxonomy = "tags"
+terms = ["GPTs"]
+url = "/tags/gpts/"
+
+[[series]]
+title = "Qwen 系列"
+taxonomy = "tags"
+terms = ["Qwens"]
+url = "/tags/qwens/"
+
+[[series]]
+title = "LLM 系列"
+taxonomy = "categories"
+terms = ["LLMs"]
+url = "/categories/llms/"
+
+[[series]]
+title = "VLM 系列"
+taxonomy = "categories"
+terms = ["VLMs"]
+url = "/categories/vlms/"
+
+[[series]]
+title = "数据飞轮"
+taxonomy = "categories"
+terms = ["数据飞轮"]
+url = "/posts/data-flywheel/"
+
+[[series]]
+title = "美食"
+taxonomy = "categories"
+terms = ["Food"]
+url = "/posts/food/"

@@ -1,0 +1,81 @@
+{{- $id := .Get "id" | default (printf "gold-price-chart-%d" .Ordinal) -}}
+{{- $title := .Get "title" | default "近30年国际金价" -}}
+{{- $subtitle := .Get "subtitle" | default "月度平均金价 · 美元计价" -}}
+{{- $note := .Get "note" | default "月度平均价格的变化不等于投资持有期收益；人民币投资还受到汇率与费用影响。" -}}
+{{- $rows := slice -}}
+{{- range split (trim .Inner "\n\r ") "\n" -}}
+  {{- $line := trim . "\r\t " -}}
+  {{- if hasPrefix $line "|" -}}
+    {{- $cells := split (trim $line "| ") "|" -}}
+    {{- $month :=  trim (index $cells 0) " " -}}
+    {{- $header := or (eq $month "月份") (eq (lower $month) "month") -}}
+    {{- $separator := gt (len (findRE `^:?-+:?$` $month)) 0 -}}
+    {{- if not (or $header $separator) -}}
+      {{- if ne (len $cells) 3 -}}
+        {{- errorf "gold-price-chart: expected three columns in %q (%s)" $line $.Page.File.Path -}}
+      {{- else if not (findRE `^\d{4}-(0[1-9]|1[0-2])$` $month) -}}
+        {{- errorf "gold-price-chart: invalid month %q (%s)" $month $.Page.File.Path -}}
+      {{- else -}}
+        {{- $priceText := trim (index $cells 1) " " -}}
+        {{- $changeText := trim (index $cells 2) " " -}}
+        {{- $price := replaceRE `[,$*\s]` "" $priceText -}}
+        {{- $change := replaceRE `[%％*\s+]` "" (replace $changeText "−" "-") -}}
+        {{- $missing := or (eq $change "") (in (slice "—" "–" "-") $change) -}}
+        {{- if not (findRE `^\d+(\.\d+)?$` $price) -}}
+          {{- errorf "gold-price-chart: invalid price for %s (%s)" $month $.Page.File.Path -}}
+        {{- else if le (float $price) 0 -}}
+          {{- errorf "gold-price-chart: price must be positive for %s (%s)" $month $.Page.File.Path -}}
+        {{- else if and (not $missing) (not (findRE `^-?\d+(\.\d+)?$` $change)) -}}
+          {{- errorf "gold-price-chart: invalid change for %s (%s)" $month $.Page.File.Path -}}
+        {{- else -}}
+          {{- $row := dict "month" $month "price" (float $price) "priceLabel" $priceText "changeLabel" $changeText -}}
+          {{- if not $missing -}}{{- $row = merge $row (dict "change" (float $change)) -}}{{- end -}}
+          {{- $rows = $rows | append $row -}}
+        {{- end -}}
+      {{- end -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+{{- if lt (len $rows) 2 -}}{{- errorf "gold-price-chart requires at least two data rows (%s)" .Page.File.Path -}}{{- end -}}
+{{- $rows = sort $rows "month" "asc" -}}
+{{- $previousMonth := 0 -}}
+{{- range $index, $row := $rows -}}
+  {{- $parts := split $row.month "-" -}}
+  {{- $serial := add (mul (int (index $parts 0)) 12) (int (strings.TrimLeft "0" (index $parts 1))) -}}
+  {{- if and (gt $index 0) (ne $serial (add $previousMonth 1)) -}}
+    {{- errorf "gold-price-chart: months must be consecutive; got %s (%s)" $row.month $.Page.File.Path -}}
+  {{- end -}}
+  {{- if and (gt $index 0) (not (isset $row "change")) -}}
+    {{- errorf "gold-price-chart: only the first month may omit monthly change (%s)" $.Page.File.Path -}}
+  {{- end -}}
+  {{- $previousMonth = $serial -}}
+{{- end -}}
+{{- if not (.Page.Scratch.Get "goldPriceChartAssets") -}}
+  {{- .Page.Scratch.Set "goldPriceChartAssets" true -}}
+  {{- $css := resources.Get "css/gold-price-chart.css" | minify | fingerprint "sha256" -}}
+  {{- $js := resources.Get "js/gold-price-chart.js" | minify | fingerprint "sha256" -}}
+<link rel="stylesheet" href="{{ $css.RelPermalink }}" integrity="{{ $css.Data.Integrity }}">
+<script defer src="{{ $js.RelPermalink }}" integrity="{{ $js.Data.Integrity }}"></script>
+{{- end -}}
+<figure class="gold-price-chart" id="{{ $id }}" aria-labelledby="{{ $id }}-title">
+  <figcaption class="gold-price-chart__heading"><strong id="{{ $id }}-title">{{ $title }}</strong><span>{{ $subtitle }}</span></figcaption>
+  <div class="gold-price-chart__toolbar" hidden>
+    <div class="gold-price-chart__modes" role="group" aria-label="图表视图">
+      <button type="button" data-mode="price" aria-pressed="true">金价走势</button>
+      <button type="button" data-mode="change" aria-pressed="false">月均价变化</button>
+    </div>
+    <span class="gold-price-chart__unit">美元 / 金衡盎司</span>
+  </div>
+  <div class="gold-price-chart__canvas" tabindex="0" role="group" aria-label="{{ $title }}，左右方向键逐月查看，Home 和 End 查看首末月" aria-describedby="{{ $id }}-help">
+    <p class="gold-price-chart__loading">启用 JavaScript 后显示交互图；月度数据可在下方展开查看。</p>
+  </div>
+  <div class="gold-price-chart__inspection" hidden>
+    <button type="button" class="gold-price-chart__previous" aria-label="查看上一个月">←</button>
+    <output class="gold-price-chart__values" aria-live="polite" aria-atomic="true"></output>
+    <button type="button" class="gold-price-chart__next" aria-label="查看下一个月">→</button>
+  </div>
+  <p class="gold-price-chart__help" id="{{ $id }}-help">悬停或轻触查看月度数据；聚焦图表后可用 ← → 切换。</p>
+  <p class="gold-price-chart__note">{{ $note }}</p>
+  <details class="gold-price-chart__data"><summary>查看原始月度数据</summary><div class="gold-price-chart__table">{{ .Page.RenderString (dict "display" "block") .Inner }}</div></details>
+  <script type="application/json" class="gold-price-chart__dataset">{{ $rows | jsonify | safeJS }}</script>
+</figure>

@@ -31,12 +31,9 @@
 
 {{- /* style.min.css */ -}}
 {{- $options := dict "Source" "css/style.scss" "Fingerprint" $fingerprint -}}
-{{- $toCSS := dict "targetPath" "css/style.min.css" "enableSourceMap" true -}}
+{{- $toCSS := dict "targetPath" "css/style.min.css" "enableSourceMap" (ne hugo.Environment "production") -}}
 {{- $options = dict "Context" . "ToCSS" $toCSS | merge $options -}}
 {{- partial "plugin/style.html" $options -}}
-
-{{- /* 项目自定义 CSS（文末间距等 + pseudocode.js 样式），后加载以覆盖主题 */ -}}
-<link rel="stylesheet" href="{{ "css/custom.css" | relURL }}">
 
 {{- /* Font Awesome */ -}}
 {{- $source := $cdn.fontawesomeFreeCSS | default "lib/fontawesome-free/all.min.css" -}}

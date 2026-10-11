@@ -1,0 +1,16 @@
+{{- if .Pages -}}
+<section class="posts-section">
+    <h2 class="posts-section-title">{{ .Title }}</h2>
+    <div class="posts-list">
+        {{- range first .Limit .Pages -}}
+        <a href="{{ .RelPermalink }}" class="post-row">
+            <span class="post-row-title">{{ .Title | emojify }}</span>
+            <time class="post-row-date" datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2006-01-02" }}</time>
+        </a>
+        {{- end -}}
+    </div>
+    {{- if and .URL (gt (len .Pages) .Limit) -}}
+    <div class="section-footer"><a href="{{ .URL | relURL }}">{{ .LinkLabel | default "Read more" }} &rarr;</a></div>
+    {{- end -}}
+</section>
+{{- end -}}

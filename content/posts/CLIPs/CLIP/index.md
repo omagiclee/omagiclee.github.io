@@ -31,7 +31,7 @@ fasd
 
 ### Model Architecture
 
-![](./images/index-20260202172823.png)
+![](./images/index-20260202172823.webp)
 
 ### Training Recipe
 

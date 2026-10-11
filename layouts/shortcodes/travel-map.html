@@ -1,0 +1,32 @@
+{{- $src := .Get "src" -}}
+{{- $config := .Page.Resources.Get $src -}}
+{{- if not $config -}}
+  {{- errorf "travel-map: page resource %q not found in %s" $src .Page.File.Path -}}
+{{- end -}}
+{{- $amapKey := "" -}}
+{{- $amapSecurityCode := "" -}}
+{{- if hugo.IsServer -}}
+  {{- $amapKey = getenv "HUGO_AMAP_WEB_KEY" -}}
+  {{- $amapSecurityCode = getenv "HUGO_AMAP_SECURITY_JSCODE" -}}
+{{- end -}}
+<link rel="stylesheet" href="{{ "css/travel-map.css" | relURL }}">
+<section class="travel-map-widget" aria-label="{{ .Get "label" | default "旅行交互地图" }}"
+  data-map-config="{{ $config.RelPermalink }}"
+  data-amap-key="{{ $amapKey }}"
+  data-amap-security-code="{{ $amapSecurityCode }}">
+  <header class="travel-map-widget__header">
+    <h2 class="travel-map-widget__title"></h2>
+    <p class="travel-map-widget__description"></p>
+  </header>
+  <div class="travel-map-widget__views" role="tablist" aria-label="地图范围"></div>
+  <div class="travel-map-widget__canvas" data-travel-map-canvas aria-label="高德交互地图" hidden></div>
+  <p class="travel-map-widget__status" data-travel-map-status aria-live="polite">地图配置加载中…</p>
+  <div class="travel-map-widget__stops" aria-label="行程地点"></div>
+  <details class="travel-map-widget__visited">
+    <summary>去过的地方</summary>
+    <div class="travel-map-widget__places"></div>
+  </details>
+  <p class="travel-map-widget__detail" aria-live="polite"></p>
+</section>
+<script defer src="{{ "js/travel-map-platform.js" | relURL }}"></script>
+<script defer src="{{ "js/travel-map-widget.js" | relURL }}"></script>

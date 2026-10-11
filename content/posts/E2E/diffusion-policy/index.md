@@ -6,8 +6,6 @@ categories = []
 tags = []
 +++
 
-123 &middot; [arXiv]() &middot; [GitHub]()
-
 ## Motivation
 
 ![policy-representations.png](images/policy-representations.webp)

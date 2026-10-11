@@ -1,0 +1,25 @@
+{{- define "title" -}}{{ .Title }} - {{ .Site.Title }}{{- end -}}
+
+{{- define "content" -}}
+<div class="page archive topic-page">
+    {{- partial "topics/breadcrumb.html" . -}}
+    <h1 class="single-title">{{ .Title }}</h1>
+    <div class="content section-content">{{ .Content }}</div>
+    <div class="topic-cards">
+        {{- range .Pages.ByWeight -}}
+        <a class="topic-card" href="{{ .RelPermalink }}">
+            <span class="topic-card-heading">
+                <strong>{{ .Title }}</strong>
+                <span aria-hidden="true">&rarr;</span>
+            </span>
+            <span class="topic-card-description">{{ .Description }}</span>
+            {{- if .IsSection -}}
+            <span class="topic-card-meta">{{ len .RegularPagesRecursive }} {{ if eq (len .RegularPagesRecursive) 1 }}article{{ else }}articles{{ end }}</span>
+            {{- else -}}
+            <time class="topic-card-meta" datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2006-01-02" }}</time>
+            {{- end -}}
+        </a>
+        {{- end -}}
+    </div>
+</div>
+{{- end -}}

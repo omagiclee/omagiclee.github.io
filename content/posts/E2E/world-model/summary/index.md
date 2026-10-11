@@ -17,15 +17,15 @@ tags = []
     <th style="text-align: center; vertical-align: middle;">Institution</th>
   </tr>
   <tr>
-    <td style="width: 20vw; word-break: break-word; white-space: normal; overflow-wrap: break-word;"><a href="/posts/e2e/world-model/world4drive/">World4Drive: End-to-End Autonomous Driving via Intention-aware Physical Latent World Model</a></td>
-    <td><a href="">arXiv</a><br><a href="">GitHub</a></td>
+    <td style="width: 20vw; word-break: break-word; white-space: normal; overflow-wrap: break-word;">World4Drive: End-to-End Autonomous Driving via Intention-aware Physical Latent World Model</td>
+    <td>—</td>
     <td>2025.03</td>
     <td>ICLR</td>
     <td>Li Auto</td>
   </tr>  
   <tr>
-    <td style="width: 20vw; word-break: break-word; white-space: normal; overflow-wrap: break-word;"><a href="/posts/e2e/world-model/hydra-mdp/">Hydra-MDP: End-to-end Multimodal Planning with Multi-target Hydra-Distillation</a></td>
-    <td><a href="">arXiv</a><br><a href="">GitHub</a></td>
+    <td style="width: 20vw; word-break: break-word; white-space: normal; overflow-wrap: break-word;">Hydra-MDP: End-to-end Multimodal Planning with Multi-target Hydra-Distillation</td>
+    <td>—</td>
     <td></td>
     <td></td>
     <td></td>

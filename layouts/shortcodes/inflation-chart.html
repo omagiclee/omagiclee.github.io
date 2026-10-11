@@ -1,0 +1,74 @@
+{{- $id := .Get "id" | default (printf "inflation-chart-%d" .Ordinal) -}}
+{{- $title := .Get "title" | default "中美年度通胀率" -}}
+{{- $subtitle := .Get "subtitle" | default "年度平均 CPI 同比" -}}
+{{- $rows := slice -}}
+{{- range split (trim .Inner "\n\r ") "\n" -}}
+  {{- $line := trim . "\r\t " -}}
+  {{- if hasPrefix $line "|" -}}
+    {{- $cells := split (trim $line "| ") "|" -}}
+    {{- $year := trim (index $cells 0) " " -}}
+    {{- $isHeader := or (eq $year "年份") (eq (lower $year) "year") -}}
+    {{- $isSeparator := gt (len (findRE `^:?-+:?$` $year)) 0 -}}
+    {{- if not (or $isHeader $isSeparator) -}}
+      {{- if ne (len $cells) 3 -}}
+        {{- errorf "inflation-chart: expected three columns for data row %q in %s" $line $.Page.File.Path -}}
+      {{- else if not (findRE `^\d{4}$` $year) -}}
+        {{- errorf "inflation-chart: expected a four-digit year, got %q in %s" $year $.Page.File.Path -}}
+      {{- else -}}
+        {{- $chinaText := trim (index $cells 1) " " -}}
+        {{- $usText := trim (index $cells 2) " " -}}
+        {{- $china := replaceRE `[%％*\s]` "" (replace $chinaText "−" "-") -}}
+        {{- $us := replaceRE `[%％*\s]` "" (replace $usText "−" "-") -}}
+        {{- if and (findRE `^-?\d+(\.\d+)?$` $china) (findRE `^-?\d+(\.\d+)?$` $us) -}}
+          {{- $rows = $rows | append (dict "year" (int $year) "china" (float $china) "us" (float $us) "chinaLabel" $chinaText "usLabel" $usText) -}}
+        {{- else -}}
+          {{- errorf "inflation-chart: invalid CPI values for %s in %s" $year $.Page.File.Path -}}
+        {{- end -}}
+      {{- end -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+{{- if lt (len $rows) 2 -}}
+  {{- errorf "inflation-chart requires at least two Markdown data rows in %s" .Page.File.Path -}}
+{{- end -}}
+{{- $rows = sort $rows "year" "asc" -}}
+{{- $previousYear := 0 -}}
+{{- range $rows -}}
+  {{- if eq .year $previousYear -}}
+    {{- errorf "inflation-chart: duplicate year %d in %s" .year $.Page.File.Path -}}
+  {{- end -}}
+  {{- $previousYear = .year -}}
+{{- end -}}
+{{- $css := resources.Get "css/inflation-chart.css" | minify | fingerprint "sha256" -}}
+{{- $js := resources.Get "js/inflation-chart.js" | minify | fingerprint "sha256" -}}
+{{- if not (.Page.Scratch.Get "inflationChartAssets") -}}
+  {{- .Page.Scratch.Set "inflationChartAssets" true -}}
+<link rel="stylesheet" href="{{ $css.RelPermalink }}" integrity="{{ $css.Data.Integrity }}">
+<script defer src="{{ $js.RelPermalink }}" integrity="{{ $js.Data.Integrity }}"></script>
+{{- end -}}
+<figure class="inflation-chart" id="{{ $id }}" aria-labelledby="{{ $id }}-title">
+  <figcaption class="inflation-chart__heading">
+    <strong id="{{ $id }}-title">{{ $title }}</strong>
+    <span>{{ $subtitle }}</span>
+  </figcaption>
+  <div class="inflation-chart__legend" aria-label="图例">
+    <span><i class="inflation-chart__key inflation-chart__key--china" aria-hidden="true"></i>中国大陆</span>
+    <span><i class="inflation-chart__key inflation-chart__key--us" aria-hidden="true"></i>美国</span>
+    <span class="inflation-chart__unit">单位：%</span>
+  </div>
+  <div class="inflation-chart__canvas" tabindex="0" role="group" aria-label="{{ $title }}，使用左右方向键逐年查看，Home 和 End 查看首末年" aria-describedby="{{ $id }}-help">
+    <p class="inflation-chart__loading">启用 JavaScript 后显示交互图；年度数据可在下方展开查看。</p>
+  </div>
+  <div class="inflation-chart__inspection" hidden>
+    <button class="inflation-chart__previous" type="button" aria-label="查看上一年">←</button>
+    <output class="inflation-chart__values" aria-live="polite" aria-atomic="true"></output>
+    <button class="inflation-chart__next" type="button" aria-label="查看下一年">→</button>
+  </div>
+  <p class="inflation-chart__help" id="{{ $id }}-help">悬停或轻触查看年度数据；聚焦图表后可用 ← → 切换。</p>
+  <p class="inflation-chart__note">* 美国 2025 年为已发布的 11 个月 CPI 平均值计算，缺少 10 月数据。来源：中国国家统计局、美国劳工统计局（BLS）。</p>
+  <details class="inflation-chart__data">
+    <summary>查看原始年度数据</summary>
+    <div class="inflation-chart__table">{{ .Page.RenderString (dict "display" "block") .Inner }}</div>
+  </details>
+  <script type="application/json" class="inflation-chart__dataset">{{ $rows | jsonify | safeJS }}</script>
+</figure>

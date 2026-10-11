@@ -39,3 +39,10 @@ yarn-error.log*
 # 备份文件
 *.bak
 *.backup
+
+# Local dependency cache and temporary maintenance scripts
+.pnpm-store/
+/_fix_table.py
+/_fix_table2.py
+# Local report inspection metadata
+*.inspect.ndjson

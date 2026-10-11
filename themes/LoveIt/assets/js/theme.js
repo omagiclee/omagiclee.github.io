@@ -81,12 +81,14 @@ class Theme {
     const $menuMobile = document.getElementById('menu-mobile');
     $menuToggleMobile.addEventListener('click', () => {
       document.body.classList.toggle('blur');
-      $menuToggleMobile.classList.toggle('active');
-      $menuMobile.classList.toggle('active');
+      const isOpen = $menuMobile.classList.toggle('active');
+      $menuToggleMobile.classList.toggle('active', isOpen);
+      $menuToggleMobile.setAttribute('aria-expanded', String(isOpen));
     }, false);
 
     this._menuMobileOnClickMask = this._menuMobileOnClickMask || (() => {
       $menuToggleMobile.classList.remove('active');
+      $menuToggleMobile.setAttribute('aria-expanded', 'false');
       $menuMobile.classList.remove('active');
     });
 

@@ -1,18 +1,18 @@
-# Hugo 站点构建和部署到 GitHub Pages
-name: Deploy Hugo site to Pages
+# Hugo 站点构建检查和部署到 GitHub Pages
+name: Build and deploy Hugo site
 
 on:
   push:
+    branches: ["main"]
+  pull_request:
     branches: ["main"]
   workflow_dispatch:
 
 permissions:
   contents: read
-  pages: write
-  id-token: write
 
 concurrency:
-  group: "pages"
+  group: "pages-${{ github.ref }}"
   cancel-in-progress: false
 
 defaults:
@@ -21,30 +21,33 @@ defaults:
 
 jobs:
   build:
+    name: Hugo build
     runs-on: ubuntu-latest
     env:
-      HUGO_VERSION: 0.138.0
+      HUGO_VERSION: 0.166.0
     steps:
       - name: Install Hugo CLI
         run: |
           wget -O ${{ runner.temp }}/hugo.deb https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_extended_${HUGO_VERSION}_linux-amd64.deb \
           && sudo dpkg -i ${{ runner.temp }}/hugo.deb
           
-      - name: Install Dart Sass
-        run: sudo snap install dart-sass
-        
       - name: Checkout
         uses: actions/checkout@v4
         with:
           submodules: recursive
           fetch-depth: 0
-          
-      - name: Setup Pages
-        id: pages
-        uses: actions/configure-pages@v5
-        
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
       - name: Install Node.js dependencies
-        run: "[[ -f package-lock.json || -f npm-shrinkwrap.json ]] && npm ci || true"
+        run: npm ci
+
+      - name: Install Chromium
+        run: ./node_modules/.bin/playwright install --with-deps chromium
         
       - name: Build with Hugo
         env:
@@ -55,20 +58,34 @@ jobs:
           hugo \
             --gc \
             --minify \
-            --baseURL "${{ steps.pages.outputs.base_url }}/"
-            
+            --cleanDestinationDir
+
+      - name: Check generated site
+        run: python3 scripts/check-site.py public
+
+      - name: Run browser smoke tests
+        run: npm run test:site -- public
+
       - name: Upload artifact
+        if: github.event_name != 'pull_request'
         uses: actions/upload-pages-artifact@v3
         with:
           path: ./public
 
   deploy:
+    if: github.event_name != 'pull_request'
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     needs: build
     steps:
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4

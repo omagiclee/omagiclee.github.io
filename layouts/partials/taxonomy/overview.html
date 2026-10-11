@@ -1,0 +1,16 @@
+<div class="page archive taxonomy-overview">
+    <h1 class="single-title">{{ .Title }}</h1>
+    {{- if eq .Data.Plural "tags" -}}
+    <div class="taxonomy-tag-list">
+        {{- range .Data.Terms.ByCount -}}
+        <a href="{{ .Page.RelPermalink }}" class="taxonomy-tag"><span>{{ .Page.Title }}</span><span class="tag-count">{{ .Count }}</span></a>
+        {{- end -}}
+    </div>
+    {{- else -}}
+    <div class="taxonomy-category-list">
+        {{- range .Data.Terms.ByCount -}}
+        <a href="{{ .Page.RelPermalink }}" class="taxonomy-category"><span>{{ .Page.Title }}</span><span class="tag-count">{{ .Count }}</span></a>
+        {{- end -}}
+    </div>
+    {{- end -}}
+</div>

@@ -1,0 +1,21 @@
+.travel-map__pin { position: relative; display: inline-flex; align-items: center; gap: .2rem; min-height: 24px; padding: 2px 9px 2px 2px; border: 1px solid #fff; border-radius: 999px; background: #fff; color: #7f3828; box-shadow: 0 2px 5px rgba(17, 46, 53, .12), 0 6px 18px rgba(17, 46, 53, .16); font-size: 12px; font-weight: 700; white-space: nowrap; cursor: pointer; transform-origin: 11px 11px; transition: transform .16s ease, box-shadow .16s ease; }
+.travel-map__pin:hover, .travel-map__pin.is-selected { transform: translateY(-2px) scale(1.06); box-shadow: 0 4px 8px rgba(17, 46, 53, .16), 0 8px 22px rgba(17, 46, 53, .22); z-index: 2; }
+.travel-map__pin-number { display: grid; place-items: center; min-width: 22px; height: 22px; padding: 0 3px; border-radius: 999px; background: var(--travel-map-marker-color, #da714b); color: #fff; font-size: 10px; letter-spacing: -.03em; }
+.travel-map__pin.is-selected .travel-map__pin-number { background: #a94e32; }
+.travel-map__pin.is-selected { outline: 3px solid #ffd37a; outline-offset: 2px; }
+.travel-map__pin:focus-visible { outline: 3px solid #192e55; outline-offset: 3px; }
+.travel-map-widget { box-sizing: border-box; margin: 1.5rem 0; padding: 1rem; border: 1px solid #d7e7e3; border-radius: 16px; background: #f9fcfb; color: #244750; font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", sans-serif; }
+.travel-map-widget * { box-sizing: border-box; }
+.travel-map-widget__title { margin: 0 !important; font-size: 1.2rem !important; color: inherit; }
+.travel-map-widget__description { margin: .3rem 0 .8rem !important; color: #638087; font-size: .8rem; }
+.travel-map-widget__views, .travel-map-widget__stops, .travel-map-widget__places { display: flex; flex-wrap: wrap; gap: .4rem; margin: .6rem 0; }
+.travel-map-widget button { border: 1px solid #cbdeda; border-radius: 999px; padding: .35rem .7rem; background: #fff; color: #326b73; font: inherit; font-size: .75rem; cursor: pointer; }
+.travel-map-widget button[aria-selected="true"], .travel-map-widget button[aria-pressed="true"] { border-color: #de855f; background: #fff0e8; color: #a94e32; font-weight: 700; }
+.travel-map-widget__canvas { width: 100%; height: clamp(320px, 48vw, 500px); overflow: hidden; border-radius: 12px; }
+.travel-map-widget__canvas[hidden] { display: none; }
+.travel-map-widget__canvas[data-loading="true"] { position: absolute; left: -10000px; width: min(100%, 900px); pointer-events: none; }
+.travel-map-widget__status { margin: .5rem 0 !important; font-size: .7rem; color: #638087; }
+.travel-map-widget__status[hidden] { display: none; }
+.travel-map-widget__visited { margin-top: .8rem; border-top: 1px solid #d7e7e3; padding-top: .6rem; font-size: .8rem; }
+.travel-map-widget__visited[hidden] { display: none; }
+.travel-map-widget__detail { min-height: 2rem; margin: .7rem 0 0 !important; color: #3d646c; font-size: .8rem; }

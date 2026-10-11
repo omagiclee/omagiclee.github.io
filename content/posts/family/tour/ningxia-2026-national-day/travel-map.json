@@ -1,0 +1,52 @@
+{
+  "version": 1,
+  "title": "从吴江出发，去银川和中卫",
+  "description": "橙色编号是本次行程，蓝绿色区域是去过的城市和国家。",
+  "initialView": "china",
+  "views": {
+    "china": {
+      "label": "行程与足迹",
+      "center": [104, 31],
+      "zoom": 3.1,
+      "stops": ["home", "yinchuan", "zhongwei"],
+      "showVisited": true,
+      "showConnections": true
+    },
+    "ningxia": {
+      "label": "宁夏局部",
+      "center": [105.65, 38.05],
+      "zoom": 8,
+      "stops": ["yinchuan", "shahu", "zhenbeibao", "zhongwei", "shapotou"],
+      "showRoads": true
+    }
+  },
+  "stops": {
+    "home": { "label": "吴江", "days": "1·7", "point": [120.642, 31.117], "focusOnSelect": false },
+    "yinchuan": { "label": "银川", "days": "1·6", "point": [106.23, 38.487] },
+    "shahu": { "label": "沙湖", "days": "2", "point": [106.389, 38.822], "focusZoom": 12 },
+    "zhenbeibao": { "label": "镇北堡", "days": "3", "point": [106.082, 38.627], "focusZoom": 12 },
+    "zhongwei": { "label": "中卫", "days": "4·5", "point": [105.197, 37.5] },
+    "shapotou": { "label": "沙坡头", "days": "5", "point": [105.014, 37.471], "focusZoom": 12 }
+  },
+  "connections": [
+    { "from": "home", "toPoint": [121.327, 31.195], "style": "dashed" },
+    { "fromPoint": [121.327, 31.195], "to": "yinchuan", "style": "dashed" }
+  ],
+  "roads": [
+    { "key": "shahu", "from": "yinchuan", "to": "shahu", "fromName": "银川市", "toName": "沙湖景区", "fromCity": "银川", "toCity": "石嘴山", "roundTrip": true },
+    { "key": "zhenbeibao", "from": "yinchuan", "to": "zhenbeibao", "fromName": "银川市", "toName": "镇北堡西部影城", "fromCity": "银川", "toCity": "银川", "roundTrip": true },
+    { "key": "zhongwei", "from": "yinchuan", "to": "zhongwei", "fromName": "银川市", "toName": "中卫市", "fromCity": "银川", "toCity": "中卫" },
+    { "key": "shapotou", "from": "zhongwei", "to": "shapotou", "fromName": "中卫市", "toName": "沙坡头景区", "fromCity": "中卫", "toCity": "中卫", "roundTrip": true },
+    { "key": "return", "from": "zhongwei", "to": "yinchuan", "fromName": "中卫市", "toName": "银川市", "fromCity": "中卫", "toCity": "银川" }
+  ],
+  "visited": {
+    "重庆": { "point": [106.551, 29.563], "adcode": "500000", "level": "province" },
+    "成都": { "point": [104.067, 30.572], "adcode": "510100", "level": "city" },
+    "北京": { "point": [116.407, 39.904], "adcode": "110000", "level": "province" },
+    "上海": { "point": [121.474, 31.23], "adcode": "310000", "level": "province" },
+    "珠海": { "point": [113.576, 22.271], "adcode": "440400", "level": "city" },
+    "广州": { "point": [113.265, 23.129], "adcode": "440100", "level": "city" },
+    "景德镇": { "point": [117.214, 29.292], "adcode": "360200", "level": "city" },
+    "泰国": { "point": [100.99, 15.87], "countryCode": "THA", "level": "country" }
+  }
+}

@@ -1,0 +1,94 @@
+.nx-route {
+  box-sizing: border-box;
+  margin: 1.5rem 0;
+  padding: 1.15rem;
+  border: 1px solid #d7e7e3;
+  border-radius: 18px;
+  background: #f9fcfb;
+  color: #244750;
+  box-shadow: 0 12px 34px rgba(24, 71, 78, .08);
+  font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif;
+}
+.nx-route *, .nx-route *::before, .nx-route *::after { box-sizing: border-box; }
+.nx-route__header { display: flex; align-items: flex-start; justify-content: space-between; gap: .8rem; }
+.nx-route__eyebrow { margin: 0 0 .25rem !important; color: #cc7252; font-size: .65rem; font-weight: 800; letter-spacing: .13em; }
+.nx-route__heading { margin: 0 !important; color: #244750; font-size: 1.15rem !important; line-height: 1.4 !important; }
+.nx-route__lead { margin: .25rem 0 .75rem !important; color: #638087; font-size: .72rem; line-height: 1.55; }
+.nx-route button { font: inherit; cursor: pointer; }
+.nx-route__expand { flex: none; border: 1px solid #bdd7d0; border-radius: 999px; padding: .35rem .6rem; background: #fff; color: #326b73; font-size: .65rem !important; }
+.nx-route__tabs { display: inline-flex; gap: .25rem; margin: .1rem 0 .65rem; padding: .2rem; border-radius: 999px; background: #e7f0ed; }
+.nx-route__tabs button { border: 0; border-radius: 999px; padding: .35rem .8rem; background: transparent; color: #58767c; font-size: .7rem !important; }
+.nx-route__tabs button[aria-selected="true"] { background: #fff; color: #22636a; font-weight: 700; box-shadow: 0 1px 5px rgba(31, 86, 85, .14); }
+.nx-route__amap { width: 100%; height: clamp(320px, 48vw, 500px); overflow: hidden; border-radius: 14px; }
+.nx-route__amap[hidden] { display: none; }
+.nx-route__amap[data-loading="true"] { position: absolute; left: -10000px; width: calc(100% - 2.3rem); pointer-events: none; }
+.nx-route__map-status { margin: .45rem 0 0 !important; color: #638087; font-size: .65rem; }
+.nx-route__map-status[hidden] { display: none; }
+.nx-route[data-active-view="ningxia"] .travel-map__pin[data-stop="zhongwei"] { transform: translateY(-27px); }
+.nx-route[data-active-view="ningxia"] .travel-map__pin[data-stop="zhongwei"]::after { content: ''; position: absolute; left: 10px; top: 100%; width: 1px; height: 22px; background: #af6449; }
+.nx-route[data-active-view="ningxia"] .travel-map__pin[data-stop="zhongwei"]:hover,
+.nx-route[data-active-view="ningxia"] .travel-map__pin[data-stop="zhongwei"].is-selected { transform: translateY(-29px) scale(1.06); }
+.nx-route__stops { display: flex; flex-wrap: wrap; gap: .32rem; margin-top: .75rem; }
+.nx-route__stops button, .nx-route__cities button { border: 1px solid #cbdeda; border-radius: 999px; padding: .3rem .63rem; background: #fff; color: #426970; font-size: .65rem !important; line-height: 1.4; }
+.nx-route__stops button[aria-pressed="true"] { border-color: #e18760; background: #fff0e8; color: #b35c3e; font-weight: 700; }
+.nx-route__cities button[aria-pressed="true"] { border-color: #4a9a9e; background: #e4f4f3; color: #146a72; font-weight: 700; }
+.nx-route__stops button b { display: inline-block; margin-right: .2rem; color: #bd6747; font-size: .6rem; }
+.nx-route__journey { margin-top: .85rem; padding: .8rem; border: 1px solid #d8e5e0; border-radius: 12px; background: #fff; }
+.nx-route__journey-heading { display: flex; justify-content: space-between; gap: .5rem; align-items: baseline; margin-bottom: .55rem; color: #2c5057; font-size: .73rem; }
+.nx-route__journey-heading span { color: #83999a; font-size: .62rem; }
+.nx-route__days { display: grid; gap: .35rem; margin: 0 !important; padding: 0 !important; list-style: none; }
+.nx-route__days li { margin: 0 !important; padding: 0 !important; }
+.nx-route__days button { display: grid; grid-template-columns: 5rem minmax(8rem, 1fr) minmax(10rem, 1.2fr); width: 100%; align-items: center; gap: .55rem; padding: .45rem .55rem; border: 1px solid #ecf0ed; border-radius: 8px; background: #f8fbfa; color: #294f55; text-align: left; transition: background .16s ease, border-color .16s ease, transform .16s ease; }
+.nx-route__days button:hover { border-color: #efb69e; background: #fff6f0; transform: translateX(2px); }
+.nx-route__days button:focus-visible { outline: 2px solid #bb6446; outline-offset: 2px; }
+.nx-route__day { color: #b96243; font-size: .66rem; font-weight: 800; white-space: nowrap; }
+.nx-route__day-route { font-size: .69rem; font-weight: 700; }
+.nx-route__day-metric { color: #5b777c; font-size: .63rem; line-height: 1.45; }
+.nx-route__journey-note { margin: .65rem .12rem 0 !important; color: #718a8c; font-size: .61rem; line-height: 1.6; }
+.nx-route__departure { display: flex; flex-wrap: wrap; align-items: center; gap: .3rem; margin-top: .7rem; padding: .5rem .6rem; border-radius: 9px; background: #eaf3ef; }
+.nx-route__departure > span { margin-right: .15rem; color: #4c7479; font-size: .62rem; font-weight: 700; }
+.nx-route__departure button { border: 1px solid #bdd8d0; border-radius: 999px; padding: .23rem .52rem; background: #fff; color: #3d7074; font-size: .6rem !important; }
+.nx-route__departure button[aria-pressed="true"] { border-color: #e18760; color: #b35c3e; background: #fff0e8; font-weight: 700; }
+.nx-route__departure-text { flex-basis: 100%; margin: .2rem 0 0 !important; color: #58777b; font-size: .63rem; line-height: 1.55; }
+.nx-route__detail { min-height: 6.5rem; margin-top: .8rem; padding: .85rem .95rem; border-left: 3px solid #e87c58; border-radius: 8px; background: #fff; }
+.nx-route[data-selection-kind="visited"] .nx-route__detail { border-left-color: #23858d; }
+.nx-route__detail-date { display: block; color: #c16c4e; font-size: .64rem; font-weight: 700; }
+.nx-route__detail-title { display: block; margin-top: .14rem; color: #25484f; font-size: .85rem; }
+.nx-route__detail-text { margin: .3rem 0 0 !important; color: #527077; font-size: .7rem; line-height: 1.65; }
+.nx-route__visited { margin-top: .75rem; border-top: 1px solid #dce9e5; padding-top: .55rem; }
+.nx-route__visited summary { cursor: pointer; color: #326972; font-size: .72rem; font-weight: 700; }
+.nx-route__visited summary span { color: #80979b; font-size: .64rem; font-weight: 400; }
+.nx-route__cities { display: flex; flex-wrap: wrap; gap: .32rem; padding-top: .6rem; }
+.nx-route__credit { margin: .65rem 0 0 !important; color: #7e9698; font-size: .6rem; line-height: 1.5; }
+.nx-route--expanded { position: fixed; inset: 2vh 2vw; z-index: 9999; width: auto; max-width: none; height: 96vh; margin: 0; overflow: auto; padding: clamp(1rem, 3vw, 2rem); border-radius: 18px; box-shadow: 0 0 0 100vmax rgba(12, 32, 36, .72); }
+.nx-route--expanded .nx-route__amap { height: 62vh; }
+.nx-route--map-unavailable .nx-route__tabs,
+.nx-route--map-unavailable .nx-route__expand,
+.nx-route--map-unavailable .nx-route__amap { display: none; }
+.nx-route--map-unavailable .nx-route__map-status { padding: .7rem .8rem; border: 1px solid #d8e5e0; border-radius: 9px; background: #f0f6f4; }
+.nx-route--map-unavailable .nx-route__journey-heading span { display: none; }
+@media (max-width: 600px) {
+  .nx-route { padding: .8rem; }
+  .nx-route__heading { font-size: 1rem !important; }
+  .nx-route__expand { padding: .3rem .48rem; }
+  .nx-route__detail { min-height: 7.5rem; }
+  .nx-route--expanded { inset: 1vh 1vw; height: 98vh; }
+  .nx-route__days button { grid-template-columns: 4.5rem 1fr; gap: .2rem .45rem; }
+  .nx-route__day-metric { grid-column: 2; }
+  .nx-route__journey-heading span { display: none; }
+}
+[theme="dark"] .nx-route { background: #203137; border-color: #3d5960; color: #dceae8; }
+[theme="dark"] .nx-route__heading, [theme="dark"] .nx-route__detail-title { color: #e9f3f0; }
+[theme="dark"] .nx-route__tabs { background: #30494d; }
+[theme="dark"] .nx-route__tabs button[aria-selected="true"],
+[theme="dark"] .nx-route__stops button, [theme="dark"] .nx-route__cities button,
+[theme="dark"] .nx-route__expand, [theme="dark"] .nx-route__detail { background: #294047; color: #dceae8; }
+[theme="dark"] .nx-route__detail-text { color: #c2d4d3; }
+[theme="dark"] .nx-route__departure { background: #30494d; }
+[theme="dark"] .nx-route__departure button { background: #294047; color: #dceae8; }
+[theme="dark"] .nx-route__departure-text { color: #c2d4d3; }
+[theme="dark"] .nx-route__journey { background: #294047; border-color: #3d5960; }
+[theme="dark"] .nx-route__journey-heading, [theme="dark"] .nx-route__day-route { color: #e9f3f0; }
+[theme="dark"] .nx-route__days button { background: #20363c; border-color: #3d5960; color: #e9f3f0; }
+[theme="dark"] .nx-route__days button:hover { background: #49392f; border-color: #b4785d; }
+[theme="dark"] .nx-route__day-metric, [theme="dark"] .nx-route__journey-note { color: #bbd0cd; }

@@ -11,8 +11,8 @@ featured = true
 ## 什么是 [OpenClaw](https://openclaw.ai/)？
 
 <div align="center">
-<img src="./images/index-20260312153927.webp" width="40%" style="margin: 10px;"/>
-<img src="./images/index-20260312154000.webp" width="40%" style="margin: 10px;"/>
+<img src="./images/index-20260312153927.webp" alt="Automated daily news briefing email" width="40%" style="margin: 10px;"/>
+<img src="./images/index-20260312154000.webp" alt="Automated arXiv paper briefing email" width="40%" style="margin: 10px;"/>
 </div>
 
 早上 7:30，你的手机震动了一下。

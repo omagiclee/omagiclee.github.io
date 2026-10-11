@@ -1,0 +1,89 @@
+.inflation-chart,
+.single .content figure.inflation-chart {
+  --ic-ink: #253448;
+  --ic-muted: #6b7c91;
+  --ic-grid: #e9eef4;
+  --ic-border: #dce4ed;
+  --ic-panel: #ffffff;
+  --ic-soft: #f5f8fc;
+  --ic-china: #2563b9;
+  --ic-us: #c76b24;
+  margin: 1.6rem 0;
+  padding: 24px 24px 18px;
+  background: var(--ic-panel);
+  border: 1px solid var(--ic-border);
+  border-radius: 16px;
+  box-shadow: 0 5px 22px rgb(23 49 77 / 4%);
+  color: var(--ic-ink);
+  text-align: left;
+}
+[theme="dark"] .inflation-chart,
+[theme="dark"] .single .content figure.inflation-chart {
+  --ic-ink: #e2eaf4;
+  --ic-muted: #a0aec1;
+  --ic-grid: #333e4e;
+  --ic-border: #3b4758;
+  --ic-panel: #252d39;
+  --ic-soft: #2c3644;
+  --ic-china: #79acf5;
+  --ic-us: #edac75;
+  box-shadow: none;
+}
+.inflation-chart .inflation-chart__heading { display: flex; flex-direction: column; gap: 5px; margin: 0 0 18px; }
+.inflation-chart__heading strong { font-size: 1.14rem; font-weight: 650; letter-spacing: .015em; }
+.inflation-chart__heading > span { color: var(--ic-muted); font-size: .82rem; }
+.inflation-chart__legend { display: flex; gap: 22px; align-items: center; font-size: .83rem; margin-bottom: 7px; }
+.inflation-chart__legend > span { display: inline-flex; align-items: center; gap: 8px; }
+.inflation-chart__key { display: inline-block; width: 26px; height: 0; border-top: 2px solid var(--ic-china); position: relative; }
+.inflation-chart__key::after { content: ""; position: absolute; left: 10px; top: -4px; width: 6px; height: 6px; border-radius: 50%; background: var(--ic-china); }
+.inflation-chart__key--us { border-top: 2px dashed var(--ic-us); }
+.inflation-chart__key--us::after { background: var(--ic-us); border-radius: 0; transform: rotate(45deg); }
+.inflation-chart__legend .inflation-chart__unit { margin-left: auto; font-size: .75rem; color: var(--ic-muted); }
+.inflation-chart__canvas { width: 100%; min-width: 0; height: 340px; position: relative; touch-action: pan-y; border-radius: 4px; }
+.inflation-chart__canvas:focus-visible { outline: 2px solid var(--ic-china); outline-offset: 4px; }
+.inflation-chart__canvas svg { display: block; width: 100%; height: 100%; overflow: visible; font-family: inherit; }
+.inflation-chart__canvas text { fill: var(--ic-muted); font-size: 11px; font-variant-numeric: tabular-nums; }
+.inflation-chart__grid { stroke: var(--ic-grid); stroke-width: 1; }
+.inflation-chart__zero { stroke: var(--ic-muted); stroke-width: 1.2; opacity: .7; }
+.inflation-chart__line { fill: none; stroke-width: 2.2; stroke-linejoin: round; stroke-linecap: round; }
+.inflation-chart__china { stroke: var(--ic-china); }
+.inflation-chart__us { stroke: var(--ic-us); }
+.inflation-chart__marker { stroke: var(--ic-panel); stroke-width: 1.2; }
+.inflation-chart__marker--china { fill: var(--ic-china); }
+.inflation-chart__marker--us { fill: var(--ic-us); }
+.inflation-chart__annotation text { font-size: 11px; font-weight: 600; paint-order: stroke; stroke: var(--ic-panel); stroke-width: 5px; stroke-linejoin: round; }
+.inflation-chart__annotation--china text { fill: var(--ic-china); }
+.inflation-chart__annotation--us text { fill: var(--ic-us); }
+.inflation-chart__annotation line { stroke: var(--ic-muted); stroke-width: .8; opacity: .55; }
+.inflation-chart__cursor { stroke: var(--ic-muted); stroke-dasharray: 3 4; opacity: .7; pointer-events: none; }
+.inflation-chart__highlight { fill: var(--ic-panel); stroke-width: 2.5; pointer-events: none; }
+.inflation-chart__overlay { fill: transparent; cursor: crosshair; }
+.inflation-chart .inflation-chart__loading { color: var(--ic-muted); padding: 100px 14px 0; font-size: .85rem; line-height: 1.7; text-align: center; }
+.inflation-chart__inspection { display: flex; align-items: center; justify-content: space-between; gap: 8px; min-height: 44px; padding: 9px 12px; border-radius: 9px; background: var(--ic-soft); }
+.inflation-chart__inspection[hidden] { display: none; }
+.inflation-chart__inspection button { font: inherit; width: 28px; height: 28px; padding: 0; flex-shrink: 0; border: 1px solid var(--ic-border); border-radius: 6px; background: var(--ic-panel); color: var(--ic-ink); cursor: pointer; line-height: 1; }
+.inflation-chart__inspection button:disabled { opacity: .35; cursor: default; }
+.inflation-chart__inspection button:focus-visible { outline: 2px solid var(--ic-china); outline-offset: 2px; }
+.inflation-chart__values { display: flex; align-items: center; justify-content: center; gap: 20px; flex-wrap: wrap; font-size: .83rem; font-variant-numeric: tabular-nums; }
+.inflation-chart__values strong { color: var(--ic-ink); }
+.inflation-chart__values .inflation-chart__value--china { color: var(--ic-china); }
+.inflation-chart__values .inflation-chart__value--us { color: var(--ic-us); }
+.inflation-chart .inflation-chart__help { color: var(--ic-muted); font-size: .72rem; margin: 10px 0 0; line-height: 1.6; }
+.inflation-chart .inflation-chart__note { color: var(--ic-muted); font-size: .73rem; line-height: 1.6; margin: 10px 0 0; }
+.inflation-chart__data { margin-top: 13px; border-top: 1px solid var(--ic-grid); padding-top: 11px; font-size: .78rem; }
+.inflation-chart__data summary { color: var(--ic-muted); cursor: pointer; width: fit-content; }
+.inflation-chart__table { margin-top: 12px; overflow: auto; max-height: 340px; }
+.inflation-chart__table table { width: 100%; font-variant-numeric: tabular-nums; font-size: .8rem; }
+@media (max-width: 600px) {
+  .inflation-chart { padding: 18px 12px 15px; border-radius: 12px; }
+  .inflation-chart .inflation-chart__heading { margin-bottom: 15px; }
+  .inflation-chart__heading strong { font-size: 1rem; }
+  .inflation-chart__heading > span { font-size: .75rem; }
+  .inflation-chart__legend { gap: 18px; font-size: .77rem; }
+  .inflation-chart__canvas { height: 300px; }
+  .inflation-chart__values { gap: 6px 12px; font-size: .75rem; }
+  .inflation-chart__values strong { width: 100%; text-align: center; }
+  .inflation-chart__inspection { padding: 8px; }
+  .inflation-chart .inflation-chart__help { font-size: .68rem; }
+}
+@media (prefers-reduced-motion: reduce) { .inflation-chart * { scroll-behavior: auto; } }

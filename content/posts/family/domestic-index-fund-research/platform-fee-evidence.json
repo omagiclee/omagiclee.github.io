@@ -1,0 +1,1045 @@
+{
+  "asOf": "2026-10-09",
+  "channel": "招商银行公开销售网站",
+  "operation": "普通申购",
+  "amountScope": "单笔不足100万元",
+  "interpretation": {
+    "ZCHGDES": "标准费率显示文本",
+    "ZCDNFLG": "是否显示优惠",
+    "ZCDNFEE": "折后手续费，百分比费率按百分数表示",
+    "ZDSCVAL": "折扣值，1.0表示一折"
+  },
+  "verification": "官网前端umi.js使用ZCDNFEE展示折扣后手续费；未登录账户，没有交易。",
+  "funds": [
+    {
+      "fundCode": "110020",
+      "source": "https://fund.cmbchina.com/api/v1/fund/fee-rate?fundCode=110020",
+      "rawResponse": {
+        "returnCode": "SUC0000",
+        "errorMsg": null,
+        "body": {
+          "tradeBuyTimeTip": null,
+          "tradeSellTimeTip": null,
+          "discountRateList": [
+            {
+              "ZCHGSEQ": "",
+              "ZDIVDES": "- -",
+              "ZCHGDES": "- -"
+            }
+          ],
+          "ZFNDCOD": "110020",
+          "ZSAACOD": "007",
+          "ZCATFLG": "N",
+          "ZCHRCST": "0.0500000",
+          "ZCHRMNG": "0.1500000",
+          "ZCHRSAL": "0.0000000",
+          "ZLCKPER": "D0000",
+          "ZOPPFLG": "N",
+          "ZTYPFLG": "N",
+          "ZPSNFLG": "N",
+          "FD20R": [
+            {
+              "ZDSPDES": "",
+              "ZDIVDES": "",
+              "ZCHGDES": "",
+              "ZTDPFLG": null,
+              "ZTDPVAL": null,
+              "ZCDNFLG": null,
+              "ZCDNFEE": null,
+              "ZDSCVAL": null,
+              "ZTDPFEE": null
+            }
+          ],
+          "FD22R": [
+            {
+              "ZDSPDES": "购买金额",
+              "ZDIVDES": "申购金额≥1000万元",
+              "ZCHGDES": "每笔1000元",
+              "ZTDPFLG": "N",
+              "ZTDPVAL": "10.0",
+              "ZCDNFLG": "N",
+              "ZCDNFEE": "1000",
+              "ZDSCVAL": "10.0",
+              "ZTDPFEE": "1000"
+            },
+            {
+              "ZDSPDES": "购买金额",
+              "ZDIVDES": "申购金额＜100万元",
+              "ZCHGDES": "1.2%",
+              "ZTDPFLG": "N",
+              "ZTDPVAL": "10.0",
+              "ZCDNFLG": "Y",
+              "ZCDNFEE": "0.12",
+              "ZDSCVAL": "1.0",
+              "ZTDPFEE": "1.2"
+            },
+            {
+              "ZDSPDES": "购买金额",
+              "ZDIVDES": "100万元≤申购金额＜500万元",
+              "ZCHGDES": "0.8%",
+              "ZTDPFLG": "N",
+              "ZTDPVAL": "10.0",
+              "ZCDNFLG": "Y",
+              "ZCDNFEE": "0.08",
+              "ZDSCVAL": "1.0",
+              "ZTDPFEE": "0.8"
+            },
+            {
+              "ZDSPDES": "购买金额",
+              "ZDIVDES": "500万元≤申购金额＜1000万元",
+              "ZCHGDES": "0.2%",
+              "ZTDPFLG": "N",
+              "ZTDPVAL": "10.0",
+              "ZCDNFLG": "Y",
+              "ZCDNFEE": "0.02",
+              "ZDSCVAL": "1.0",
+              "ZTDPFEE": "0.2"
+            }
+          ],
+          "FD24R": [
+            {
+              "ZDSPDES": "持有期限",
+              "ZDIVDES": "持有期限≤6日",
+              "ZCHGDES": "1.5%",
+              "ZTDPFLG": null,
+              "ZTDPVAL": null,
+              "ZCDNFLG": null,
+              "ZCDNFEE": null,
+              "ZDSCVAL": null,
+              "ZTDPFEE": null
+            },
+            {
+              "ZDSPDES": "持有期限",
+              "ZDIVDES": "7日≤持有期限≤364日",
+              "ZCHGDES": "0.5%",
+              "ZTDPFLG": null,
+              "ZTDPVAL": null,
+              "ZCDNFLG": null,
+              "ZCDNFEE": null,
+              "ZDSCVAL": null,
+              "ZTDPFEE": null
+            },
+            {
+              "ZDSPDES": "持有期限",
+              "ZDIVDES": "365日≤持有期限≤729日",
+              "ZCHGDES": "0.25%",
+              "ZTDPFLG": null,
+              "ZTDPVAL": null,
+              "ZCDNFLG": null,
+              "ZCDNFEE": null,
+              "ZDSCVAL": null,
+              "ZTDPFEE": null
+            },
+            {
+              "ZDSPDES": "持有期限",
+              "ZDIVDES": "持有期限≥730日",
+              "ZCHGDES": "0%",
+              "ZTDPFLG": null,
+              "ZTDPVAL": null,
+              "ZCDNFLG": null,
+              "ZCDNFEE": null,
+              "ZDSCVAL": null,
+              "ZTDPFEE": null
+            }
+          ],
+          "FD20D": [],
+          "FD22D": [
+            {
+              "ZFNDSHR": "0",
+              "ZTRXCFM": "1",
+              "ZMNYCFM": "1",
+              "ZMCFD01": "周二",
+              "ZMCFD02": "周三",
+              "ZMCFD03": "周四",
+              "ZMCFD04": "周五",
+              "ZMCFD05": "下周一",
+              "ZTBSDAT": "10-09 15:00前",
+              "ZTBSDDT": "10-12",
+              "ZTBSCCD": "10-12",
+              "ZRUNFLG": "Y",
+              "ZEPDFLG": null,
+              "ZEPDDAY": null,
+              "ZEPDCCD": null,
+              "ZWHTFLG": null,
+              "ZTIMMTR": "150000"
+            }
+          ],
+          "FD24D": [
+            {
+              "ZFNDSHR": "0",
+              "ZTRXCFM": "1",
+              "ZMNYCFM": "2",
+              "ZMCFD01": "周三",
+              "ZMCFD02": "周四",
+              "ZMCFD03": "周五",
+              "ZMCFD04": "下周一",
+              "ZMCFD05": "下周二",
+              "ZTBSDAT": "10-09 15:00前",
+              "ZTBSDDT": "10-12",
+              "ZTBSCCD": "10-13",
+              "ZRUNFLG": "Y",
+              "ZEPDFLG": "N",
+              "ZEPDDAY": "0",
+              "ZEPDCCD": "10-13",
+              "ZWHTFLG": "N",
+              "ZTIMMTR": "150000"
+            }
+          ],
+          "provisionList": [],
+          "FD20ZTDPFLG": null,
+          "FD20ZTDPVAL": null,
+          "FD22ZTDPFLG": null,
+          "FD22ZTDPVAL": null
+        }
+      }
+    },
+    {
+      "fundCode": "110026",
+      "source": "https://fund.cmbchina.com/api/v1/fund/fee-rate?fundCode=110026",
+      "rawResponse": {
+        "returnCode": "SUC0000",
+        "errorMsg": null,
+        "body": {
+          "tradeBuyTimeTip": null,
+          "tradeSellTimeTip": null,
+          "discountRateList": [
+            {
+              "ZCHGSEQ": "",
+              "ZDIVDES": "- -",
+              "ZCHGDES": "- -"
+            }
+          ],
+          "ZFNDCOD": "110026",
+          "ZSAACOD": "007",
+          "ZCATFLG": "N",
+          "ZCHRCST": "0.0500000",
+          "ZCHRMNG": "0.1500000",
+          "ZCHRSAL": "0.0000000",
+          "ZLCKPER": "D0000",
+          "ZOPPFLG": "N",
+          "ZTYPFLG": "N",
+          "ZPSNFLG": "N",
+          "FD20R": [
+            {
+              "ZDSPDES": "",
+              "ZDIVDES": "",
+              "ZCHGDES": "",
+              "ZTDPFLG": null,
+              "ZTDPVAL": null,
+              "ZCDNFLG": null,
+              "ZCDNFEE": null,
+              "ZDSCVAL": null,
+              "ZTDPFEE": null
+            }
+          ],
+          "FD22R": [
+            {
+              "ZDSPDES": "购买金额",
+              "ZDIVDES": "申购金额≥1000万元",
+              "ZCHGDES": "每笔1000元",
+              "ZTDPFLG": "N",
+              "ZTDPVAL": "10.0",
+              "ZCDNFLG": "N",
+              "ZCDNFEE": "1000",
+              "ZDSCVAL": "10.0",
+              "ZTDPFEE": "1000"
+            },
+            {
+              "ZDSPDES": "购买金额",
+              "ZDIVDES": "申购金额＜100万元",
+              "ZCHGDES": "1.2%",
+              "ZTDPFLG": "N",
+              "ZTDPVAL": "10.0",
+              "ZCDNFLG": "Y",
+              "ZCDNFEE": "0.12",
+              "ZDSCVAL": "1.0",
+              "ZTDPFEE": "1.2"
+            },
+            {
+              "ZDSPDES": "购买金额",
+              "ZDIVDES": "100万元≤申购金额＜500万元",
+              "ZCHGDES": "0.5%",
+              "ZTDPFLG": "N",
+              "ZTDPVAL": "10.0",
+              "ZCDNFLG": "Y",
+              "ZCDNFEE": "0.05",
+              "ZDSCVAL": "1.0",
+              "ZTDPFEE": "0.5"
+            },
+            {
+              "ZDSPDES": "购买金额",
+              "ZDIVDES": "500万元≤申购金额＜1000万元",
+              "ZCHGDES": "0.1%",
+              "ZTDPFLG": "N",
+              "ZTDPVAL": "10.0",
+              "ZCDNFLG": "Y",
+              "ZCDNFEE": "0.01",
+              "ZDSCVAL": "1.0",
+              "ZTDPFEE": "0.1"
+            }
+          ],
+          "FD24R": [
+            {
+              "ZDSPDES": "持有期限",
+              "ZDIVDES": "持有期限≤6日",
+              "ZCHGDES": "1.5%",
+              "ZTDPFLG": null,
+              "ZTDPVAL": null,
+              "ZCDNFLG": null,
+              "ZCDNFEE": null,
+              "ZDSCVAL": null,
+              "ZTDPFEE": null
+            },
+            {
+              "ZDSPDES": "持有期限",
+              "ZDIVDES": "7日≤持有期限≤29日",
+              "ZCHGDES": "0.5%",
+              "ZTDPFLG": null,
+              "ZTDPVAL": null,
+              "ZCDNFLG": null,
+              "ZCDNFEE": null,
+              "ZDSCVAL": null,
+              "ZTDPFEE": null
+            },
+            {
+              "ZDSPDES": "持有期限",
+              "ZDIVDES": "30日≤持有期限≤179日",
+              "ZCHGDES": "0.1%",
+              "ZTDPFLG": null,
+              "ZTDPVAL": null,
+              "ZCDNFLG": null,
+              "ZCDNFEE": null,
+              "ZDSCVAL": null,
+              "ZTDPFEE": null
+            },
+            {
+              "ZDSPDES": "持有期限",
+              "ZDIVDES": "持有期限≥180日",
+              "ZCHGDES": "0%",
+              "ZTDPFLG": null,
+              "ZTDPVAL": null,
+              "ZCDNFLG": null,
+              "ZCDNFEE": null,
+              "ZDSCVAL": null,
+              "ZTDPFEE": null
+            }
+          ],
+          "FD20D": [],
+          "FD22D": [
+            {
+              "ZFNDSHR": "0",
+              "ZTRXCFM": "1",
+              "ZMNYCFM": "1",
+              "ZMCFD01": "周二",
+              "ZMCFD02": "周三",
+              "ZMCFD03": "周四",
+              "ZMCFD04": "周五",
+              "ZMCFD05": "下周一",
+              "ZTBSDAT": "10-09 15:00前",
+              "ZTBSDDT": "10-12",
+              "ZTBSCCD": "10-12",
+              "ZRUNFLG": "Y",
+              "ZEPDFLG": null,
+              "ZEPDDAY": null,
+              "ZEPDCCD": null,
+              "ZWHTFLG": null,
+              "ZTIMMTR": "150000"
+            }
+          ],
+          "FD24D": [
+            {
+              "ZFNDSHR": "0",
+              "ZTRXCFM": "1",
+              "ZMNYCFM": "2",
+              "ZMCFD01": "周三",
+              "ZMCFD02": "周四",
+              "ZMCFD03": "周五",
+              "ZMCFD04": "下周一",
+              "ZMCFD05": "下周二",
+              "ZTBSDAT": "10-09 15:00前",
+              "ZTBSDDT": "10-12",
+              "ZTBSCCD": "10-13",
+              "ZRUNFLG": "Y",
+              "ZEPDFLG": "N",
+              "ZEPDDAY": "0",
+              "ZEPDCCD": "10-13",
+              "ZWHTFLG": "N",
+              "ZTIMMTR": "150000"
+            }
+          ],
+          "provisionList": [],
+          "FD20ZTDPFLG": null,
+          "FD20ZTDPVAL": null,
+          "FD22ZTDPFLG": null,
+          "FD22ZTDPVAL": null
+        }
+      }
+    },
+    {
+      "fundCode": "460300",
+      "source": "https://fund.cmbchina.com/api/v1/fund/fee-rate?fundCode=460300",
+      "amountScope": "单笔不足100万元",
+      "rawResponse": {
+        "returnCode": "SUC0000",
+        "errorMsg": null,
+        "body": {
+          "tradeBuyTimeTip": null,
+          "tradeSellTimeTip": null,
+          "discountRateList": [
+            {
+              "ZCHGSEQ": "",
+              "ZDIVDES": "- -",
+              "ZCHGDES": "- -"
+            }
+          ],
+          "ZFNDCOD": "460300",
+          "ZSAACOD": "007",
+          "ZCATFLG": "N",
+          "ZCHRCST": "0.0500000",
+          "ZCHRMNG": "0.1500000",
+          "ZCHRSAL": "0.0000000",
+          "ZLCKPER": "D0000",
+          "ZOPPFLG": "N",
+          "ZTYPFLG": "N",
+          "ZPSNFLG": "N",
+          "FD20R": [
+            {
+              "ZDSPDES": "",
+              "ZDIVDES": "",
+              "ZCHGDES": "",
+              "ZTDPFLG": null,
+              "ZTDPVAL": null,
+              "ZCDNFLG": null,
+              "ZCDNFEE": null,
+              "ZDSCVAL": null,
+              "ZTDPFEE": null
+            }
+          ],
+          "FD22R": [
+            {
+              "ZDSPDES": "购买金额",
+              "ZDIVDES": "申购金额≥500万元",
+              "ZCHGDES": "每笔1000元",
+              "ZTDPFLG": "N",
+              "ZTDPVAL": "10.0",
+              "ZCDNFLG": "N",
+              "ZCDNFEE": "1000",
+              "ZDSCVAL": "10.0",
+              "ZTDPFEE": "1000"
+            },
+            {
+              "ZDSPDES": "购买金额",
+              "ZDIVDES": "申购金额＜100万元",
+              "ZCHGDES": "1%",
+              "ZTDPFLG": "N",
+              "ZTDPVAL": "10.0",
+              "ZCDNFLG": "Y",
+              "ZCDNFEE": "0.1",
+              "ZDSCVAL": "1.0",
+              "ZTDPFEE": "1"
+            },
+            {
+              "ZDSPDES": "购买金额",
+              "ZDIVDES": "100万元≤申购金额＜500万元",
+              "ZCHGDES": "0.6%",
+              "ZTDPFLG": "N",
+              "ZTDPVAL": "10.0",
+              "ZCDNFLG": "Y",
+              "ZCDNFEE": "0.06",
+              "ZDSCVAL": "1.0",
+              "ZTDPFEE": "0.6"
+            }
+          ],
+          "FD24R": [
+            {
+              "ZDSPDES": "持有期限",
+              "ZDIVDES": "持有期限＜7日",
+              "ZCHGDES": "1.5%",
+              "ZTDPFLG": null,
+              "ZTDPVAL": null,
+              "ZCDNFLG": null,
+              "ZCDNFEE": null,
+              "ZDSCVAL": null,
+              "ZTDPFEE": null
+            },
+            {
+              "ZDSPDES": "持有期限",
+              "ZDIVDES": "7日≤持有期限＜30日",
+              "ZCHGDES": "0.5%",
+              "ZTDPFLG": null,
+              "ZTDPVAL": null,
+              "ZCDNFLG": null,
+              "ZCDNFEE": null,
+              "ZDSCVAL": null,
+              "ZTDPFEE": null
+            },
+            {
+              "ZDSPDES": "持有期限",
+              "ZDIVDES": "30日≤持有期限＜180日",
+              "ZCHGDES": "0.25%",
+              "ZTDPFLG": null,
+              "ZTDPVAL": null,
+              "ZCDNFLG": null,
+              "ZCDNFEE": null,
+              "ZDSCVAL": null,
+              "ZTDPFEE": null
+            },
+            {
+              "ZDSPDES": "持有期限",
+              "ZDIVDES": "持有期限≥180日",
+              "ZCHGDES": "0%",
+              "ZTDPFLG": null,
+              "ZTDPVAL": null,
+              "ZCDNFLG": null,
+              "ZCDNFEE": null,
+              "ZDSCVAL": null,
+              "ZTDPFEE": null
+            }
+          ],
+          "FD20D": [],
+          "FD22D": [
+            {
+              "ZFNDSHR": "0",
+              "ZTRXCFM": "1",
+              "ZMNYCFM": "1",
+              "ZMCFD01": "周二",
+              "ZMCFD02": "周三",
+              "ZMCFD03": "周四",
+              "ZMCFD04": "周五",
+              "ZMCFD05": "下周一",
+              "ZTBSDAT": "10-09 15:00前",
+              "ZTBSDDT": "10-12",
+              "ZTBSCCD": "10-12",
+              "ZRUNFLG": "Y",
+              "ZEPDFLG": null,
+              "ZEPDDAY": null,
+              "ZEPDCCD": null,
+              "ZWHTFLG": null,
+              "ZTIMMTR": "150000"
+            }
+          ],
+          "FD24D": [
+            {
+              "ZFNDSHR": "0",
+              "ZTRXCFM": "1",
+              "ZMNYCFM": "3",
+              "ZMCFD01": "周四",
+              "ZMCFD02": "周五",
+              "ZMCFD03": "下周一",
+              "ZMCFD04": "下周二",
+              "ZMCFD05": "下周三",
+              "ZTBSDAT": "10-09 15:00前",
+              "ZTBSDDT": "10-12",
+              "ZTBSCCD": "10-14",
+              "ZRUNFLG": "Y",
+              "ZEPDFLG": "N",
+              "ZEPDDAY": "1",
+              "ZEPDCCD": "10-13",
+              "ZWHTFLG": "N",
+              "ZTIMMTR": "150000"
+            }
+          ],
+          "provisionList": [],
+          "FD20ZTDPFLG": null,
+          "FD20ZTDPVAL": null,
+          "FD22ZTDPFLG": null,
+          "FD22ZTDPVAL": null
+        }
+      }
+    },
+    {
+      "fundCode": "000051",
+      "source": "https://fund.cmbchina.com/api/v1/fund/fee-rate?fundCode=000051",
+      "amountScope": "单笔不足100万元",
+      "rawResponse": {
+        "returnCode": "SUC0000",
+        "errorMsg": null,
+        "body": {
+          "tradeBuyTimeTip": null,
+          "tradeSellTimeTip": null,
+          "discountRateList": [
+            {
+              "ZCHGSEQ": "",
+              "ZDIVDES": "- -",
+              "ZCHGDES": "- -"
+            }
+          ],
+          "ZFNDCOD": "000051",
+          "ZSAACOD": "007",
+          "ZCATFLG": "N",
+          "ZCHRCST": "0.0500000",
+          "ZCHRMNG": "0.1500000",
+          "ZCHRSAL": "0.0000000",
+          "ZLCKPER": "D0000",
+          "ZOPPFLG": "N",
+          "ZTYPFLG": "N",
+          "ZPSNFLG": "N",
+          "FD20R": [
+            {
+              "ZDSPDES": "",
+              "ZDIVDES": "",
+              "ZCHGDES": "",
+              "ZTDPFLG": null,
+              "ZTDPVAL": null,
+              "ZCDNFLG": null,
+              "ZCDNFEE": null,
+              "ZDSCVAL": null,
+              "ZTDPFEE": null
+            }
+          ],
+          "FD22R": [
+            {
+              "ZDSPDES": "购买金额",
+              "ZDIVDES": "申购金额≥1000万元",
+              "ZCHGDES": "每笔1000元",
+              "ZTDPFLG": "N",
+              "ZTDPVAL": "10.0",
+              "ZCDNFLG": "N",
+              "ZCDNFEE": "1000",
+              "ZDSCVAL": "10.0",
+              "ZTDPFEE": "1000"
+            },
+            {
+              "ZDSPDES": "购买金额",
+              "ZDIVDES": "申购金额＜100万元",
+              "ZCHGDES": "1.2%",
+              "ZTDPFLG": "N",
+              "ZTDPVAL": "10.0",
+              "ZCDNFLG": "Y",
+              "ZCDNFEE": "0.12",
+              "ZDSCVAL": "1.0",
+              "ZTDPFEE": "1.2"
+            },
+            {
+              "ZDSPDES": "购买金额",
+              "ZDIVDES": "100万元≤申购金额＜500万元",
+              "ZCHGDES": "0.9%",
+              "ZTDPFLG": "N",
+              "ZTDPVAL": "10.0",
+              "ZCDNFLG": "Y",
+              "ZCDNFEE": "0.09",
+              "ZDSCVAL": "1.0",
+              "ZTDPFEE": "0.9"
+            },
+            {
+              "ZDSPDES": "购买金额",
+              "ZDIVDES": "500万元≤申购金额＜1000万元",
+              "ZCHGDES": "0.6%",
+              "ZTDPFLG": "N",
+              "ZTDPVAL": "10.0",
+              "ZCDNFLG": "Y",
+              "ZCDNFEE": "0.06",
+              "ZDSCVAL": "1.0",
+              "ZTDPFEE": "0.6"
+            }
+          ],
+          "FD24R": [
+            {
+              "ZDSPDES": "持有期限",
+              "ZDIVDES": "持有期限＜7日",
+              "ZCHGDES": "1.5%",
+              "ZTDPFLG": null,
+              "ZTDPVAL": null,
+              "ZCDNFLG": null,
+              "ZCDNFEE": null,
+              "ZDSCVAL": null,
+              "ZTDPFEE": null
+            },
+            {
+              "ZDSPDES": "持有期限",
+              "ZDIVDES": "7日≤持有期限＜365日",
+              "ZCHGDES": "0.5%",
+              "ZTDPFLG": null,
+              "ZTDPVAL": null,
+              "ZCDNFLG": null,
+              "ZCDNFEE": null,
+              "ZDSCVAL": null,
+              "ZTDPFEE": null
+            },
+            {
+              "ZDSPDES": "持有期限",
+              "ZDIVDES": "持有期限≥365日",
+              "ZCHGDES": "0%",
+              "ZTDPFLG": null,
+              "ZTDPVAL": null,
+              "ZCDNFLG": null,
+              "ZCDNFEE": null,
+              "ZDSCVAL": null,
+              "ZTDPFEE": null
+            }
+          ],
+          "FD20D": [],
+          "FD22D": [
+            {
+              "ZFNDSHR": "0",
+              "ZTRXCFM": "1",
+              "ZMNYCFM": "1",
+              "ZMCFD01": "周二",
+              "ZMCFD02": "周三",
+              "ZMCFD03": "周四",
+              "ZMCFD04": "周五",
+              "ZMCFD05": "下周一",
+              "ZTBSDAT": "10-09 15:00前",
+              "ZTBSDDT": "10-12",
+              "ZTBSCCD": "10-12",
+              "ZRUNFLG": "Y",
+              "ZEPDFLG": null,
+              "ZEPDDAY": null,
+              "ZEPDCCD": null,
+              "ZWHTFLG": null,
+              "ZTIMMTR": "150000"
+            }
+          ],
+          "FD24D": [
+            {
+              "ZFNDSHR": "0",
+              "ZTRXCFM": "1",
+              "ZMNYCFM": "3",
+              "ZMCFD01": "周四",
+              "ZMCFD02": "周五",
+              "ZMCFD03": "下周一",
+              "ZMCFD04": "下周二",
+              "ZMCFD05": "下周三",
+              "ZTBSDAT": "10-09 15:00前",
+              "ZTBSDDT": "10-12",
+              "ZTBSCCD": "10-14",
+              "ZRUNFLG": "Y",
+              "ZEPDFLG": "N",
+              "ZEPDDAY": "1",
+              "ZEPDCCD": "10-13",
+              "ZWHTFLG": "N",
+              "ZTIMMTR": "150000"
+            }
+          ],
+          "provisionList": [],
+          "FD20ZTDPFLG": null,
+          "FD20ZTDPVAL": null,
+          "FD22ZTDPFLG": null,
+          "FD22ZTDPVAL": null
+        }
+      }
+    },
+    {
+      "fundCode": "160706",
+      "source": "https://fund.cmbchina.com/api/v1/fund/fee-rate?fundCode=160706",
+      "amountScope": "单笔不足50万元",
+      "rawResponse": {
+        "returnCode": "SUC0000",
+        "errorMsg": null,
+        "body": {
+          "tradeBuyTimeTip": null,
+          "tradeSellTimeTip": null,
+          "discountRateList": [
+            {
+              "ZCHGSEQ": "",
+              "ZDIVDES": "- -",
+              "ZCHGDES": "- -"
+            }
+          ],
+          "ZFNDCOD": "160706",
+          "ZSAACOD": "007",
+          "ZCATFLG": "N",
+          "ZCHRCST": "0.0500000",
+          "ZCHRMNG": "0.1500000",
+          "ZCHRSAL": "0.0000000",
+          "ZLCKPER": "D0000",
+          "ZOPPFLG": "N",
+          "ZTYPFLG": "N",
+          "ZPSNFLG": "N",
+          "FD20R": [
+            {
+              "ZDSPDES": "",
+              "ZDIVDES": "",
+              "ZCHGDES": "",
+              "ZTDPFLG": null,
+              "ZTDPVAL": null,
+              "ZCDNFLG": null,
+              "ZCDNFEE": null,
+              "ZDSCVAL": null,
+              "ZTDPFEE": null
+            }
+          ],
+          "FD22R": [
+            {
+              "ZDSPDES": "购买金额",
+              "ZDIVDES": "申购金额≥500万元",
+              "ZCHGDES": "每笔1000元",
+              "ZTDPFLG": "N",
+              "ZTDPVAL": "10.0",
+              "ZCDNFLG": "N",
+              "ZCDNFEE": "1000",
+              "ZDSCVAL": "10.0",
+              "ZTDPFEE": "1000"
+            },
+            {
+              "ZDSPDES": "购买金额",
+              "ZDIVDES": "申购金额＜50万元",
+              "ZCHGDES": "1.5%",
+              "ZTDPFLG": "N",
+              "ZTDPVAL": "10.0",
+              "ZCDNFLG": "Y",
+              "ZCDNFEE": "0.15",
+              "ZDSCVAL": "1.0",
+              "ZTDPFEE": "1.5"
+            },
+            {
+              "ZDSPDES": "购买金额",
+              "ZDIVDES": "50万元≤申购金额＜200万元",
+              "ZCHGDES": "1.2%",
+              "ZTDPFLG": "N",
+              "ZTDPVAL": "10.0",
+              "ZCDNFLG": "Y",
+              "ZCDNFEE": "0.12",
+              "ZDSCVAL": "1.0",
+              "ZTDPFEE": "1.2"
+            },
+            {
+              "ZDSPDES": "购买金额",
+              "ZDIVDES": "200万元≤申购金额＜500万元",
+              "ZCHGDES": "1%",
+              "ZTDPFLG": "N",
+              "ZTDPVAL": "10.0",
+              "ZCDNFLG": "Y",
+              "ZCDNFEE": "0.1",
+              "ZDSCVAL": "1.0",
+              "ZTDPFEE": "1"
+            }
+          ],
+          "FD24R": [
+            {
+              "ZDSPDES": "持有期限",
+              "ZDIVDES": "持有期限＜7日",
+              "ZCHGDES": "1.5%",
+              "ZTDPFLG": null,
+              "ZTDPVAL": null,
+              "ZCDNFLG": null,
+              "ZCDNFEE": null,
+              "ZDSCVAL": null,
+              "ZTDPFEE": null
+            },
+            {
+              "ZDSPDES": "持有期限",
+              "ZDIVDES": "7日≤持有期限＜365日",
+              "ZCHGDES": "0.5%",
+              "ZTDPFLG": null,
+              "ZTDPVAL": null,
+              "ZCDNFLG": null,
+              "ZCDNFEE": null,
+              "ZDSCVAL": null,
+              "ZTDPFEE": null
+            },
+            {
+              "ZDSPDES": "持有期限",
+              "ZDIVDES": "365日≤持有期限＜730日",
+              "ZCHGDES": "0.25%",
+              "ZTDPFLG": null,
+              "ZTDPVAL": null,
+              "ZCDNFLG": null,
+              "ZCDNFEE": null,
+              "ZDSCVAL": null,
+              "ZTDPFEE": null
+            },
+            {
+              "ZDSPDES": "持有期限",
+              "ZDIVDES": "持有期限≥730日",
+              "ZCHGDES": "0%",
+              "ZTDPFLG": null,
+              "ZTDPVAL": null,
+              "ZCDNFLG": null,
+              "ZCDNFEE": null,
+              "ZDSCVAL": null,
+              "ZTDPFEE": null
+            }
+          ],
+          "FD20D": [],
+          "FD22D": [
+            {
+              "ZFNDSHR": "0",
+              "ZTRXCFM": "1",
+              "ZMNYCFM": "1",
+              "ZMCFD01": "周二",
+              "ZMCFD02": "周三",
+              "ZMCFD03": "周四",
+              "ZMCFD04": "周五",
+              "ZMCFD05": "下周一",
+              "ZTBSDAT": "10-09 15:00前",
+              "ZTBSDDT": "10-12",
+              "ZTBSCCD": "10-12",
+              "ZRUNFLG": "Y",
+              "ZEPDFLG": null,
+              "ZEPDDAY": null,
+              "ZEPDCCD": null,
+              "ZWHTFLG": null,
+              "ZTIMMTR": "150000"
+            }
+          ],
+          "FD24D": [
+            {
+              "ZFNDSHR": "0",
+              "ZTRXCFM": "1",
+              "ZMNYCFM": "2",
+              "ZMCFD01": "周三",
+              "ZMCFD02": "周四",
+              "ZMCFD03": "周五",
+              "ZMCFD04": "下周一",
+              "ZMCFD05": "下周二",
+              "ZTBSDAT": "10-09 15:00前",
+              "ZTBSDDT": "10-12",
+              "ZTBSCCD": "10-13",
+              "ZRUNFLG": "Y",
+              "ZEPDFLG": "N",
+              "ZEPDDAY": "0",
+              "ZEPDCCD": "10-13",
+              "ZWHTFLG": "N",
+              "ZTIMMTR": "150000"
+            }
+          ],
+          "provisionList": [],
+          "FD20ZTDPFLG": null,
+          "FD20ZTDPVAL": null,
+          "FD22ZTDPFLG": null,
+          "FD22ZTDPVAL": null
+        }
+      }
+    }
+  ],
+  "excludedCandidate": {
+    "fundCode": "000961",
+    "reason": "招行公开接口运作费与2026中报存在冲突，未作为确定最新费率使用。",
+    "source": "https://fund.cmbchina.com/api/v1/fund/fee-rate?fundCode=000961",
+    "rawResponse": {
+      "returnCode": "SUC0000",
+      "errorMsg": null,
+      "body": {
+        "tradeBuyTimeTip": null,
+        "tradeSellTimeTip": null,
+        "discountRateList": [
+          {
+            "ZCHGSEQ": "",
+            "ZDIVDES": "- -",
+            "ZCHGDES": "- -"
+          }
+        ],
+        "ZFNDCOD": "000961",
+        "ZSAACOD": "007",
+        "ZCATFLG": "N",
+        "ZCHRCST": "0.1000000",
+        "ZCHRMNG": "0.5000000",
+        "ZCHRSAL": "0.0000000",
+        "ZLCKPER": "D0000",
+        "ZOPPFLG": "N",
+        "ZTYPFLG": "N",
+        "ZPSNFLG": "N",
+        "FD20R": [
+          {
+            "ZDSPDES": "",
+            "ZDIVDES": "",
+            "ZCHGDES": "",
+            "ZTDPFLG": null,
+            "ZTDPVAL": null,
+            "ZCDNFLG": null,
+            "ZCDNFEE": null,
+            "ZDSCVAL": null,
+            "ZTDPFEE": null
+          }
+        ],
+        "FD22R": [
+          {
+            "ZDSPDES": "购买金额",
+            "ZDIVDES": "申购金额≥500万元",
+            "ZCHGDES": "每笔1000元",
+            "ZTDPFLG": "N",
+            "ZTDPVAL": "10.0",
+            "ZCDNFLG": "N",
+            "ZCDNFEE": "1000",
+            "ZDSCVAL": "10.0",
+            "ZTDPFEE": "1000"
+          },
+          {
+            "ZDSPDES": "购买金额",
+            "ZDIVDES": "申购金额＜500万元",
+            "ZCHGDES": "1%",
+            "ZTDPFLG": "N",
+            "ZTDPVAL": "10.0",
+            "ZCDNFLG": "Y",
+            "ZCDNFEE": "0.1",
+            "ZDSCVAL": "1.0",
+            "ZTDPFEE": "1"
+          }
+        ],
+        "FD24R": [
+          {
+            "ZDSPDES": "持有期限",
+            "ZDIVDES": "持有期限＜7日",
+            "ZCHGDES": "1.5%",
+            "ZTDPFLG": null,
+            "ZTDPVAL": null,
+            "ZCDNFLG": null,
+            "ZCDNFEE": null,
+            "ZDSCVAL": null,
+            "ZTDPFEE": null
+          },
+          {
+            "ZDSPDES": "持有期限",
+            "ZDIVDES": "持有期限≥7日",
+            "ZCHGDES": "0.05%",
+            "ZTDPFLG": null,
+            "ZTDPVAL": null,
+            "ZCDNFLG": null,
+            "ZCDNFEE": null,
+            "ZDSCVAL": null,
+            "ZTDPFEE": null
+          }
+        ],
+        "FD20D": [],
+        "FD22D": [
+          {
+            "ZFNDSHR": "0",
+            "ZTRXCFM": "1",
+            "ZMNYCFM": "1",
+            "ZMCFD01": "周二",
+            "ZMCFD02": "周三",
+            "ZMCFD03": "周四",
+            "ZMCFD04": "周五",
+            "ZMCFD05": "下周一",
+            "ZTBSDAT": "10-09 15:00前",
+            "ZTBSDDT": "10-12",
+            "ZTBSCCD": "10-12",
+            "ZRUNFLG": "Y",
+            "ZEPDFLG": null,
+            "ZEPDDAY": null,
+            "ZEPDCCD": null,
+            "ZWHTFLG": null,
+            "ZTIMMTR": "150000"
+          }
+        ],
+        "FD24D": [
+          {
+            "ZFNDSHR": "0",
+            "ZTRXCFM": "1",
+            "ZMNYCFM": "3",
+            "ZMCFD01": "周四",
+            "ZMCFD02": "周五",
+            "ZMCFD03": "下周一",
+            "ZMCFD04": "下周二",
+            "ZMCFD05": "下周三",
+            "ZTBSDAT": "10-09 15:00前",
+            "ZTBSDDT": "10-12",
+            "ZTBSCCD": "10-14",
+            "ZRUNFLG": "Y",
+            "ZEPDFLG": "N",
+            "ZEPDDAY": "1",
+            "ZEPDCCD": "10-13",
+            "ZWHTFLG": "N",
+            "ZTIMMTR": "150000"
+          }
+        ],
+        "provisionList": [],
+        "FD20ZTDPFLG": null,
+        "FD20ZTDPVAL": null,
+        "FD22ZTDPFLG": null,
+        "FD22ZTDPVAL": null
+      }
+    }
+  }
+}

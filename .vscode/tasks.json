@@ -38,6 +38,44 @@
         "panel": "new",
         "clear": true
       }
+    },
+    {
+      "label": "📄 按 title 重命名导出的 PDF",
+      "detail": "把 Markdown PDF 扩展导出的 index.pdf 重命名为 index.md front matter 中 title 字段对应的文件名。脚本会等待最多 60 秒检测 index.pdf 是否生成。",
+      "type": "shell",
+      "command": "bash",
+      "args": ["scripts/rename-pdf-by-title.sh", "${fileDirname}"],
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared",
+        "clear": true,
+        "focus": false
+      }
+    },
+    {
+      "label": "📄✨ 导出 PDF 并按 title 重命名 (一键)",
+      "detail": "提示先用 Ctrl+Shift+P 触发 Markdown PDF: Export (pdf)，然后本 task 等待并重命名；或配合 keybindings.json 中 runCommands 一键链式调用。",
+      "dependsOn": ["📄 按 title 重命名导出的 PDF"],
+      "problemMatcher": []
+    },
+    {
+      "label": "📥 按 title 重命名 PDF 并移到 ~/Downloads/export_pdf/",
+      "detail": "把 Markdown PDF 扩展导出的 index.pdf 按 front matter title 改名，并移动到 ~/Downloads/export_pdf/。脚本会等待最多 60 秒检测 index.pdf。",
+      "type": "shell",
+      "command": "bash",
+      "args": [
+        "scripts/rename-pdf-by-title.sh",
+        "${fileDirname}",
+        "${userHome}/Downloads/export_pdf"
+      ],
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared",
+        "clear": true,
+        "focus": false
+      }
     }
   ]
 }

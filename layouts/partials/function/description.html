@@ -1,0 +1,7 @@
+{{- $description := .Description -}}
+{{- if and (not $description) .IsPage -}}
+    {{- $description = .Summary -}}
+{{- end -}}
+{{- $description = $description | default .Site.Params.description | plainify | htmlUnescape -}}
+{{- $description = $description | replaceRE `:\([^)]*\):` "" | replaceRE `\s+` " " | strings.TrimSpace | truncate 160 -}}
+{{- return ($description | default .Title | default .Site.Params.description) -}}

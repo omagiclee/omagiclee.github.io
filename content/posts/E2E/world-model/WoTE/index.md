@@ -7,8 +7,6 @@ categories = []
 tags = ['dense bev', 'world model', 'e2e']
 +++
 
-123 &middot; [arXiv]() &middot; [GitHub]()
-
 ## Motivation
 
 ## Contribution

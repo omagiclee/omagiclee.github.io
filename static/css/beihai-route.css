@@ -1,0 +1,25 @@
+.bh-route { box-sizing: border-box; margin: 1.5rem 0; padding: 1.15rem; border: 1px solid #c9e1dd; border-radius: 18px; background: #f8fcfa; color: #244b50; font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", sans-serif; }
+.bh-route * { box-sizing: border-box; }
+.bh-route__eyebrow { color: #ba6b4b; font-size: .72rem; font-weight: 700; letter-spacing: .08em; }
+.bh-route__head h2 { margin: .2rem 0 !important; color: #244b50; font-size: 1.3rem !important; }
+.bh-route__head p { margin: .2rem 0 .85rem; color: #557b7d; font-size: .82rem; }
+.bh-route__journey { display: flex; align-items: center; flex-wrap: wrap; gap: .35rem; margin-bottom: 1rem; font-size: .73rem; }
+.bh-route__journey span:not(.bh-route__journey-arrow) { padding: .35rem .55rem; border-radius: 999px; background: #fff; border: 1px solid #cee0d9; }
+.bh-route__journey b { color: #c56647; }
+.bh-route__journey-arrow { color: #0d8092; font-size: 1rem; }
+.bh-route__maps { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .8rem; }
+.bh-route__panel { min-width: 0; padding: .55rem; border: 1px solid #d2e5e1; border-radius: 13px; background: white; }
+.bh-route__panel h3 { display: flex; align-items: baseline; gap: .5rem; margin: .15rem .2rem .55rem !important; color: #244b50; font-size: .88rem !important; }
+.bh-route__panel h3 small { color: #6f8c8d; font-size: .68rem; font-weight: 400; }
+.bh-route__panel svg { display: block; width: 100%; height: auto; border-radius: 10px; }
+.bh-route__panel svg text { font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", sans-serif; }
+.bh-route__place { fill: #315e4c; font-size: 29px; font-weight: 800; }
+.bh-route__sub { fill: #547262; font-size: 14px; }
+.bh-route__water { fill: #5c9ba8; font-size: 20px; font-weight: 700; letter-spacing: .12em; }
+.bh-route__label { fill: #28535b; font-size: 16px; font-weight: 700; paint-order: stroke; stroke: #f8fcfa; stroke-width: 4px; stroke-linejoin: round; }
+.bh-route__ferry { fill: #0d8092; font-size: 16px; font-weight: 700; }
+.bh-route__island { fill: #315e4c; font-size: 23px; font-weight: 800; }
+.bh-route__scale { fill: #6e9295; font-size: 13px; }
+.bh-route__note { margin: .8rem .1rem .1rem !important; color: #557b7d; font-size: .72rem; line-height: 1.7; }
+.bh-route__note a { color: #0d7283; }
+@media (max-width: 700px) { .bh-route__maps { grid-template-columns: 1fr; } .bh-route__journey { gap: .25rem; } }

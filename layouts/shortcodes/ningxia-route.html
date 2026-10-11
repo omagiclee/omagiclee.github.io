@@ -1,0 +1,80 @@
+{{- $base := .Page.RelPermalink -}}
+{{- $amapKey := "" -}}
+{{- $amapSecurityCode := "" -}}
+{{- if hugo.IsServer -}}
+  {{- $amapKey = getenv "HUGO_AMAP_WEB_KEY" -}}
+  {{- $amapSecurityCode = getenv "HUGO_AMAP_SECURITY_JSCODE" -}}
+{{- end -}}
+<link rel="stylesheet" href="{{ "css/travel-map.css" | relURL }}">
+<link rel="stylesheet" href="{{ $base }}route-map.css">
+<section class="nx-route" aria-label="宁夏旅行交互地图" data-amap-key="{{ $amapKey }}" data-amap-security-code="{{ $amapSecurityCode }}" data-map-config="{{ $base }}travel-map.json">
+  <div class="nx-route__header">
+    <div>
+      <p class="nx-route__eyebrow">INTERACTIVE ROUTE</p>
+      <h2 class="nx-route__heading">从吴江出发，去银川和中卫</h2>
+      <p class="nx-route__lead">按日期读路线；橙色编号是本次行程，蓝绿色高亮区域是去过的城市和国家。点选地点或区域可查看安排。</p>
+    </div>
+    <button class="nx-route__expand" type="button" aria-pressed="false">放大地图</button>
+  </div>
+
+  <div class="nx-route__tabs" role="tablist" aria-label="地图范围">
+    <button type="button" role="tab" data-view="china" aria-selected="true">行程与足迹</button>
+    <button type="button" role="tab" data-view="ningxia" aria-selected="false">宁夏局部</button>
+  </div>
+
+  <div class="nx-route__amap" data-travel-map-canvas aria-label="高德交互地图" hidden></div>
+  <p class="nx-route__map-status" data-travel-map-status aria-live="polite">高德地图加载中…</p>
+
+  <div class="nx-route__stops" aria-label="本次路线站点">
+    <button type="button" data-stop="home" aria-pressed="true"><b>D1·7</b> 吴江</button>
+    <button type="button" data-stop="yinchuan" aria-pressed="false"><b>D1·6</b> 银川</button>
+    <button type="button" data-stop="shahu" aria-pressed="false"><b>D2</b> 沙湖</button>
+    <button type="button" data-stop="zhenbeibao" aria-pressed="false"><b>D3</b> 镇北堡</button>
+    <button type="button" data-stop="zhongwei" aria-pressed="false"><b>D4·5</b> 中卫</button>
+    <button type="button" data-stop="shapotou" aria-pressed="false"><b>D5</b> 沙坡头</button>
+  </div>
+
+  <div class="nx-route__journey" aria-label="七天路线顺序与路段估时">
+    <div class="nx-route__journey-heading"><strong>行程顺序与路段估时</strong><span>点选日期可定位地图</span></div>
+    <ol class="nx-route__days">
+      <li><button type="button" data-day-stop="home"><span class="nx-route__day">D1 · 10/1</span><span class="nx-route__day-route">吴江 → 上海虹桥 → 银川</span><span class="nx-route__day-metric">虹桥直飞约 3 小时 10 分；接驳待车次</span></button></li>
+      <li><button type="button" data-day-stop="shahu"><span class="nx-route__day">D2 · 10/2</span><span class="nx-route__day-route">银川 ↔ 沙湖</span><span class="nx-route__day-metric" data-road-metric="shahu">约 103 公里 · 1 小时 34 分（往返估算）</span></button></li>
+      <li><button type="button" data-day-stop="zhenbeibao"><span class="nx-route__day">D3 · 10/3</span><span class="nx-route__day-route">银川 ↔ 镇北堡</span><span class="nx-route__day-metric" data-road-metric="zhenbeibao">约 56 公里 · 1 小时 9 分（往返估算）</span></button></li>
+      <li><button type="button" data-day-stop="zhongwei"><span class="nx-route__day">D4 · 10/4</span><span class="nx-route__day-route">银川 → 中卫</span><span class="nx-route__day-metric" data-road-metric="zhongwei">约 185 公里 · 2 小时 9 分</span></button></li>
+      <li><button type="button" data-day-stop="shapotou"><span class="nx-route__day">D5 · 10/5</span><span class="nx-route__day-route">中卫 ↔ 沙坡头</span><span class="nx-route__day-metric" data-road-metric="shapotou">约 44 公里 · 49 分（往返估算）</span></button></li>
+      <li><button type="button" data-day-stop="yinchuan"><span class="nx-route__day">D6 · 10/6</span><span class="nx-route__day-route">中卫 → 银川</span><span class="nx-route__day-metric" data-road-metric="return">约 184 公里 · 2 小时 7 分</span></button></li>
+      <li><button type="button" data-day-stop="home"><span class="nx-route__day">D7 · 10/7</span><span class="nx-route__day-route">银川 → 上海 → 吴江</span><span class="nx-route__day-metric">返程航班与高铁待定</span></button></li>
+    </ol>
+    <p class="nx-route__journey-note">驾车数值基于 2026 年 9 月 27 日高德规划，预览时会重新读取。往返路段按单程估算翻倍，实际回程可能不同；国庆拥堵、停车、休息时间另计。航班约时长按虹桥（SHA）直飞银川（INC）的现有班期参考，订票后以具体航班为准。</p>
+  </div>
+
+  <div class="nx-route__departure" aria-label="吴江到上海虹桥的两条接驳方案">
+    <span>吴江 → 上海虹桥</span>
+    <button type="button" data-departure="south" aria-pressed="true">经苏州南站</button>
+    <button type="button" data-departure="suzhou" aria-pressed="false">经苏州站</button>
+    <p class="nx-route__departure-text">太湖新城开车或打车到苏州南站，再乘高铁到上海虹桥站。</p>
+  </div>
+
+  <div class="nx-route__detail" aria-live="polite">
+    <span class="nx-route__detail-date">10 月 1 日</span>
+    <strong class="nx-route__detail-title">从吴江太湖新城出发</strong>
+    <p class="nx-route__detail-text">先到苏州南站或苏州站，乘高铁抵达上海虹桥，再衔接飞往银川的航班。两条苏州接驳路线都保留，订票时按航班机场和车次选择。</p>
+  </div>
+
+  <details class="nx-route__visited">
+    <summary>看点亮的足迹 <span>7 个城市＋1 个国家</span></summary>
+    <div class="nx-route__cities" aria-label="去过的城市和国家">
+      <button type="button" data-city="重庆">重庆</button>
+      <button type="button" data-city="成都">成都</button>
+      <button type="button" data-city="北京">北京</button>
+      <button type="button" data-city="上海">上海</button>
+      <button type="button" data-city="珠海">珠海</button>
+      <button type="button" data-city="广州">广州</button>
+      <button type="button" data-city="景德镇">景德镇</button>
+      <button type="button" data-city="泰国">泰国</button>
+    </div>
+  </details>
+  <p class="nx-route__credit">橙色编号表示本次路线，蓝绿色区域表示已去足迹。直辖市按全市、其他城市按地级市、泰国按国家边界点亮；边界、底图与宁夏驾车路线使用高德地图。跨省虚线仅供示意。航班参考：<a href="https://www.directflights.com/SHA-INC">SHA—INC 直飞班期</a>。</p>
+</section>
+<script defer src="{{ "js/travel-map-platform.js" | relURL }}"></script>
+<script defer src="{{ $base }}route-map.js"></script>

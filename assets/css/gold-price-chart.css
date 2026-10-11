@@ -1,0 +1,48 @@
+.gold-price-chart,.single .content figure.gold-price-chart {
+  --gc-ink:#253448;--gc-muted:#6b7c91;--gc-grid:#e9eef4;--gc-border:#dce4ed;--gc-panel:#fff;--gc-soft:#f8f7f2;--gc-gold:#aa7b1d;--gc-negative:#788795;
+  margin:1.6rem 0;padding:24px 24px 18px;border:1px solid var(--gc-border);border-radius:16px;background:var(--gc-panel);box-shadow:0 5px 22px rgb(23 49 77 / 4%);color:var(--gc-ink);text-align:left;
+}
+[theme="dark"] .gold-price-chart,[theme="dark"] .single .content figure.gold-price-chart {--gc-ink:#e2eaf4;--gc-muted:#a0aec1;--gc-grid:#333e4e;--gc-border:#3b4758;--gc-panel:#252d39;--gc-soft:#333328;--gc-gold:#e1b85b;--gc-negative:#9caabb;box-shadow:none;}
+.gold-price-chart .gold-price-chart__heading {display:flex;flex-direction:column;gap:5px;margin:0 0 18px;}
+.gold-price-chart__heading strong {font-size:1.14rem;font-weight:650;letter-spacing:.015em;}
+.gold-price-chart__heading>span {color:var(--gc-muted);font-size:.82rem;}
+.gold-price-chart__toolbar {display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:8px;}
+.gold-price-chart__toolbar[hidden],.gold-price-chart__inspection[hidden] {display:none;}
+.gold-price-chart__modes {display:flex;padding:3px;gap:3px;border:1px solid var(--gc-border);border-radius:8px;background:var(--gc-soft);}
+.gold-price-chart__modes button {font:inherit;font-size:.77rem;cursor:pointer;padding:5px 10px;border:0;border-radius:5px;background:transparent;color:var(--gc-muted);white-space:nowrap;}
+.gold-price-chart__modes button[aria-pressed="true"] {background:var(--gc-panel);color:var(--gc-gold);box-shadow:0 1px 3px rgb(0 0 0 / 7%);font-weight:600;}
+.gold-price-chart__unit {font-size:.72rem;color:var(--gc-muted);white-space:nowrap;}
+.gold-price-chart__canvas {width:100%;min-width:0;height:340px;position:relative;touch-action:pan-y;border-radius:4px;}
+.gold-price-chart__canvas:focus-visible,.gold-price-chart button:focus-visible {outline:2px solid var(--gc-gold);outline-offset:3px;}
+.gold-price-chart__canvas svg {display:block;width:100%;height:100%;overflow:visible;font-family:inherit;}
+.gold-price-chart__canvas text {fill:var(--gc-muted);font-size:11px;font-variant-numeric:tabular-nums;}
+.gold-price-chart__grid {stroke:var(--gc-grid);stroke-width:1;}
+.gold-price-chart__zero {stroke:var(--gc-muted);stroke-width:1.2;opacity:.7;}
+.gold-price-chart__line {fill:none;stroke:var(--gc-gold);stroke-width:2.4;stroke-linejoin:round;stroke-linecap:round;}
+.gold-price-chart__area {fill:var(--gc-gold);opacity:.08;}
+.gold-price-chart__marker {fill:var(--gc-gold);stroke:var(--gc-panel);stroke-width:1.2;}
+.gold-price-chart__bar {fill:var(--gc-gold);opacity:.8;}
+.gold-price-chart__bar--negative {fill:var(--gc-negative);}
+.gold-price-chart__annotation {fill:var(--gc-gold)!important;font-size:11px!important;font-weight:600;paint-order:stroke;stroke:var(--gc-panel);stroke-width:5px;stroke-linejoin:round;}
+.gold-price-chart__cursor {stroke:var(--gc-muted);stroke-dasharray:3 4;opacity:.7;pointer-events:none;}
+.gold-price-chart__highlight {fill:var(--gc-panel);stroke:var(--gc-gold);stroke-width:2.5;pointer-events:none;}
+.gold-price-chart__overlay {fill:transparent;cursor:crosshair;}
+.gold-price-chart .gold-price-chart__loading {color:var(--gc-muted);padding:100px 14px 0;font-size:.85rem;line-height:1.7;text-align:center;}
+.gold-price-chart__inspection {display:flex;align-items:center;justify-content:space-between;gap:8px;min-height:44px;padding:9px 12px;border-radius:9px;background:var(--gc-soft);}
+.gold-price-chart__inspection button {font:inherit;width:28px;height:28px;padding:0;flex-shrink:0;border:1px solid var(--gc-border);border-radius:6px;background:var(--gc-panel);color:var(--gc-ink);cursor:pointer;line-height:1;}
+.gold-price-chart__inspection button:disabled {opacity:.35;cursor:default;}
+.gold-price-chart__values {display:flex;align-items:center;justify-content:center;gap:16px;flex-wrap:wrap;font-size:.82rem;font-variant-numeric:tabular-nums;}
+.gold-price-chart__values strong {color:var(--gc-ink);}
+.gold-price-chart__value--price {color:var(--gc-gold);}
+.gold-price-chart__value--change {color:var(--gc-muted);}
+.gold-price-chart .gold-price-chart__help,.gold-price-chart .gold-price-chart__note {color:var(--gc-muted);font-size:.72rem;line-height:1.6;margin:10px 0 0;}
+.gold-price-chart__data {margin-top:13px;border-top:1px solid var(--gc-grid);padding-top:11px;font-size:.78rem;}
+.gold-price-chart__data summary {color:var(--gc-muted);cursor:pointer;width:fit-content;}
+.gold-price-chart__table {margin-top:12px;overflow:auto;max-height:340px;}
+.gold-price-chart__table table {width:100%;font-variant-numeric:tabular-nums;font-size:.8rem;}
+@media(max-width:600px) {
+  .gold-price-chart,.single .content figure.gold-price-chart {padding:18px 12px 15px;border-radius:12px;}
+  .gold-price-chart__heading strong {font-size:1rem;}.gold-price-chart__heading>span {font-size:.75rem;}
+  .gold-price-chart__toolbar {gap:5px;}.gold-price-chart__modes button {padding:5px 7px;font-size:.71rem;}.gold-price-chart__unit {font-size:.64rem;}
+  .gold-price-chart__canvas {height:300px;}.gold-price-chart__values {gap:5px 10px;font-size:.74rem;}.gold-price-chart__values strong {width:100%;text-align:center;}.gold-price-chart__inspection {padding:8px;}
+}

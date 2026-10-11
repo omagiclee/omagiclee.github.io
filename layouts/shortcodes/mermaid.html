@@ -1,0 +1,4 @@
+{{- $source := trim .Inner "\n" -}}
+{{- $id := printf "mermaid-%s-%d" (md5 $source) .Ordinal -}}
+{{- .Page.Scratch.SetInMap "mermaidRegistry" $id $source -}}
+<div class="mermaid" id="{{ $id }}" role="region" tabindex="0" aria-label="Diagram (scroll horizontally to see wide diagrams)"></div>

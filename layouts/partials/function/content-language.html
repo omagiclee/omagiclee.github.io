@@ -1,0 +1,11 @@
+{{- $language := .Params.contentLanguage | default .Site.Params.contentLanguage | default .Site.Language.Locale -}}
+{{- if and .IsPage (not .Params.contentLanguage) -}}
+    {{- /* Approximate reading units, rather than treating one Chinese label as
+         proof that an otherwise English article is Chinese. Explicit metadata
+         always wins for mixed-language articles. */ -}}
+    {{- $text := printf "%s %s" .Title .Plain -}}
+    {{- $han := len (findRE `\p{Han}` $text) -}}
+    {{- $latin := len (findRE `\p{Latin}+` $text) -}}
+    {{- $language = cond (gt $han $latin) "zh-CN" "en-US" -}}
+{{- end -}}
+{{- return $language -}}

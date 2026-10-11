@@ -107,9 +107,9 @@
                     {{- end -}}
                 </a>
             </div>
-            <div class="menu-toggle" id="menu-toggle-mobile">
-                <span></span><span></span><span></span>
-            </div>
+            <button type="button" class="menu-toggle" id="menu-toggle-mobile" aria-label="Toggle menu" aria-controls="menu-mobile" aria-expanded="false">
+                <span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span>
+            </button>
         </div>
         <div class="menu" id="menu-mobile">
             {{- if .Site.Params.search.enable -}}
@@ -179,4 +179,3 @@
         <div id="search-dropdown-mobile"></div>
     </div>
 {{- end -}}
-

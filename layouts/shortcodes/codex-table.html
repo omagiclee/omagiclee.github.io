@@ -1,0 +1,7 @@
+{{- $compact := eq (.Get "compact") "true" -}}
+<div class="codex-table{{ if $compact }} codex-table-compact{{ end }}" role="region" aria-label="{{ .Get "label" | default "Codex 配置对照" }}" tabindex="0">
+    {{- .Page.RenderString (dict "display" "block") .Inner -}}
+</div>
+{{- if not $compact -}}
+<p class="codex-table-hint" aria-hidden="true">横向滑动查看完整表格 &rarr;</p>
+{{- end -}}

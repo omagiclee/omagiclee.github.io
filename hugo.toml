@@ -1,8 +1,12 @@
-baseURL = 'https://omagiclee.github.io/'
-languageCode = 'en-us'
+baseURL = 'https://blog.omagiclee.com/'
+locale = 'en-US'
 defaultContentLanguage = 'en'
 title = "Naifan Li's Blog"
 theme = 'LoveIt'
+hasCJKLanguage = true
+buildDrafts = true
+# Editor backups and raw drafts must never become downloadable page resources.
+ignoreFiles = ['\.bak$', '\.backup$', '(^|/)bak\.md$']
 
 # 启用自动更新时间追踪
 enableGitInfo = true
@@ -12,15 +16,20 @@ enableGitInfo = true
   lastmod = [':git', 'lastmod', ':fileModTime']
 
 [params]
+  fingerprint = "sha256"
   description = "MagicLee's Blog"
   keywords = ["AI", "Machine Learning", "Deep Learning"]
-  [params.Author]
-    name = "Naifan Li"
+  contentLanguage = "zh-CN"
   subtitle = "AI & Deep Learning Notes"
   slogan = "The second best time is now."
 
-  # Google Analytics
-  googleAnalytics = "G-LH4RCL9GEZ"  # 替换为你的 GA4 Measurement ID
+  [params.Author]
+    name = "Naifan Li"
+
+  [params.analytics]
+    enable = true
+    [params.analytics.google]
+      id = "G-LH4RCL9GEZ"
   
   # 页面头部导航栏配置
   [params.header]
@@ -44,6 +53,10 @@ enableGitInfo = true
       bio = "AI Research Engineer in Autonomous Driving"
       # Tech focus tags
       techTags = ["E2E", "Object Detection", "Data Closed-loop", "LLMs/VLMs/VLAs"]
+
+  [params.app]
+    title = "Naifan Li's Blog"
+    svgFavicon = "/favicon.svg"
   
   [params.footer]
     enable = true
@@ -124,9 +137,6 @@ enableGitInfo = true
     noClasses = false
     style = 'monokai'
     tabWidth = 4
-  # Hugo 0.123+ native mermaid support
-  [markup.mermaid]
-    enable = true
   # 目录设置
   [markup.tableOfContents]
     startLevel = 2  # 从 H2 开始
@@ -163,6 +173,16 @@ enableGitInfo = true
     weight = 3
 
   [[menu.main]]
+    name = "Topics"
+    pageRef = "/posts/topics"
+    weight = 4
+
+  [[menu.main]]
+    name = "Food"
+    pageRef = "/posts/food"
+    weight = 5
+
+  [[menu.main]]
     name = "About"
     url = "/about/"
-    weight = 4
+    weight = 6

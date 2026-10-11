@@ -1,0 +1,14 @@
+{
+  "name": "omagiclee-blog",
+  "private": true,
+  "scripts": {
+    "test:site": "node scripts/site-smoke.cjs"
+  },
+  "devDependencies": {
+    "mermaid": "12.0.0",
+    "playwright": "1.62.1"
+  },
+  "overrides": {
+    "lodash-es": "4.18.1"
+  }
+}

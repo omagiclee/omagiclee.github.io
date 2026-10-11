@@ -41,7 +41,7 @@ normal gaussian distribution:
 
 ### 加入 text control
 
-![](./images/index-20260314202113.png)
+![](./images/index-20260314202113.webp)
 
 训练
 
