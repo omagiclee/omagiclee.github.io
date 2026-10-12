@@ -39,6 +39,12 @@ yarn-error.log*
 # 备份文件
 *.bak
 *.backup
+bak.md
+/backup*/
+
+# Python 缓存
+__pycache__/
+*.py[cod]
 
 # Local dependency cache and temporary maintenance scripts
 .pnpm-store/
