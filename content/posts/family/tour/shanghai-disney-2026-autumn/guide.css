@@ -1478,3 +1478,29 @@
     padding: 0.52rem 0.55rem !important;
   }
 }
+
+/* Only the full catalog needs horizontal scrolling; keep core advice readable. */
+@media (max-width: 760px) {
+  .disney-guide .dg-shortlist .table-wrapper { overflow: visible; border: 0; }
+  .disney-guide .dg-shortlist :is(table, tbody, tr, td) {
+    display: block; width: 100%; min-width: 0 !important; box-sizing: border-box;
+  }
+  .disney-guide .dg-shortlist thead { display: none; }
+  .disney-guide .dg-shortlist tbody tr {
+    margin-bottom: .6rem; padding: .7rem .8rem;
+    border: 1px solid var(--dg-border); border-radius: 9px;
+    background: var(--dg-surface) !important;
+  }
+  .disney-guide .dg-shortlist .table-wrapper td {
+    border: 0 !important; padding: .18rem 0 !important; background: transparent;
+  }
+  .disney-guide .dg-shortlist td:first-child {
+    color: var(--dg-accent-strong); font-size: .75rem; font-weight: 700;
+  }
+  .disney-guide .dg-ticket-prices .table-wrapper table {
+    width: 100%; min-width: 0 !important; table-layout: auto; font-size: .76rem;
+  }
+  .disney-guide .dg-ticket-prices .table-wrapper :is(th, td) {
+    padding: .4rem .3rem !important;
+  }
+}

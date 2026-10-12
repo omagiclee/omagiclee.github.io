@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-10-13T01:32:20.963197+08:00",
+  "checkedAt": "2026-10-13T02:18:42+08:00",
   "tickets": [
     {
       "type": "1日票",
@@ -64,7 +64,8 @@
         "currency": "CNY",
         "tax": "0",
         "taxIncluded": false
-      }
+      },
+      "recheckedAt": "2026-10-13T02:18:42+08:00"
     },
     {
       "type": "1日票",
@@ -129,7 +130,8 @@
         "currency": "CNY",
         "tax": "0",
         "taxIncluded": false
-      }
+      },
+      "recheckedAt": "2026-10-13T02:18:42+08:00"
     },
     {
       "type": "2日票",
@@ -190,7 +192,8 @@
         "currency": "CNY",
         "tax": "0",
         "taxIncluded": false
-      }
+      },
+      "recheckedAt": "2026-10-13T02:18:42+08:00"
     }
   ],
   "earlyEntry": {
@@ -202,19 +205,116 @@
       "价格随日期及当日销售情况浮动，官方App/微信公众号选日期查询；需已有该日期有效入园凭证。",
       "3岁以下免购；两个4岁孩子都需要权益，四人一同使用需四份。",
       "不含提前进入疯狂动物城园区、热力追踪和该园区其他体验。",
-      "建议正式开园前90分钟到主入口；权益最多提前1小时入园。"
+      "建议正式开园前90分钟到主入口；权益最多提前1小时入园。",
+      "按当前10/17 08:30正常开园，建议07:00抵主入口、最多约07:30入园；当天运营调整时随之调整。"
     ]
   },
   "premierAccess": {
     "officialIndividualPrices": null,
-    "status": "官网说明单项价格浮动，须官方App或小程序关联有效门票并按规则查询；清单保留的19项均为公开参考或预算估算",
+    "status": "单项价格随日期浮动，娱乐演出/单项权益须游玩组全员入园后官方App查售；历史参考仅留项目详情，不在主表伪装成当次实价",
     "sourceUrl": "https://www.shanghaidisneyresort.com/zh-cn/experience/tour/vip-premier-access"
   },
   "royalBanquetHall": {
     "startingPrice": 790,
     "currency": "CNY",
-    "status": "当前官方套餐起价，含一位夜间秀预留区权益；10/17儿童价及四人总价未取得",
-    "sourceUrl": "https://www.shanghaidisneyresort.com/zh-cn/experience/restaurant/royal-banquet-hall"
+    "status": "指定日期公开报价已取得；餐位预约、具体演出权益和场次仍需确认；未创建订单",
+    "sourceUrl": "https://www.shanghaidisneyresort.com/zh-cn/experience/restaurant/royal-banquet-hall",
+    "visitDate": "2026-10-17",
+    "adult": 790,
+    "adultPremium": 869,
+    "child": 640,
+    "family2Adults2Children": 2860,
+    "familyPremiumAdults2Children": 3018,
+    "serviceChargeIncluded": true,
+    "serviceChargePercent": 15,
+    "parkTicketsIncluded": false,
+    "reservedViewingAreaGuests": 4,
+    "request": {
+      "method": "POST",
+      "url": "https://cu.apigw.shanghaidisneyresort.com/ecoupon/api/v1/products/book/information/RBH-setmenu-wiz-premium-viewNTS/party-mix/2026-10-17?affiliations=STD_GST",
+      "body": {}
+    },
+    "evidence": [
+      {
+        "id": "RBH-setmenu-wiz-premium-viewNTS_1_A_0_0_RF_AF_SOF_41_SHCP01OLFBVC2106A",
+        "text": "皇家宴会厅公主成人套餐含“奇梦之光幻影秀”预留观赏区域一位",
+        "subText": "",
+        "image": "",
+        "price": "790",
+        "defaultNum": "0",
+        "defaultNumCopy": "0",
+        "maxNum": 5,
+        "minNum": 0,
+        "group": "adult",
+        "plu": "SHCP01OLFBVC2106A",
+        "eventId": 20261017,
+        "resourceId": 0,
+        "unitPrice": "790",
+        "description": "皇家宴会厅公主成人套餐含“奇梦之光幻影秀”预留观赏区域一位",
+        "sku": "SHCP01OLFBVC2106A",
+        "couponSpu": "S2024022218395184",
+        "startDateTime": "2026-10-17T00:00:00.000+08:00",
+        "subtotal": "790",
+        "currency": "CNY",
+        "tax": "0",
+        "taxIncluded": false,
+        "displayAmount": "",
+        "displayOrder": 0
+      },
+      {
+        "id": "RBH-setmenu-wiz-premium-viewNTS_1_S_0_0_RF_AF_SOF_41_SHCP01OLFBVC2106AP",
+        "text": "皇家宴会厅公主成人尊享套餐含“奇梦之光幻影秀”预留观赏区域一位",
+        "subText": "",
+        "image": "",
+        "price": "869",
+        "defaultNum": 0,
+        "defaultNumCopy": 0,
+        "maxNum": 5,
+        "minNum": 0,
+        "group": "senior",
+        "plu": "SHCP01OLFBVC2106AP",
+        "eventId": 20261017,
+        "resourceId": 0,
+        "unitPrice": "869",
+        "description": "皇家宴会厅公主成人尊享套餐含“奇梦之光幻影秀”预留观赏区域一位",
+        "sku": "SHCP01OLFBVC2106AP",
+        "couponSpu": "S2024022218395184",
+        "startDateTime": "2026-10-17T00:00:00.000+08:00",
+        "subtotal": "869",
+        "currency": "CNY",
+        "tax": "0",
+        "taxIncluded": false,
+        "displayAmount": "",
+        "displayOrder": 1
+      },
+      {
+        "id": "RBH-setmenu-wiz-premium-viewNTS_1_C_0_0_RF_AF_SOF_41_SHCP01OLFBVC2106K",
+        "text": "皇家宴会厅公主儿童套餐含“奇梦之光幻影秀”预留观赏区域一位",
+        "subText": "",
+        "image": "",
+        "price": "640",
+        "defaultNum": 0,
+        "defaultNumCopy": 0,
+        "maxNum": 5,
+        "minNum": 0,
+        "group": "child",
+        "plu": "SHCP01OLFBVC2106K",
+        "eventId": 20261017,
+        "resourceId": 0,
+        "unitPrice": "640",
+        "description": "皇家宴会厅公主儿童套餐含“奇梦之光幻影秀”预留观赏区域一位",
+        "sku": "SHCP01OLFBVC2106K",
+        "couponSpu": "S2024022218395184",
+        "startDateTime": "2026-10-17T00:00:00.000+08:00",
+        "subtotal": "640",
+        "currency": "CNY",
+        "tax": "0",
+        "taxIncluded": false,
+        "displayAmount": "",
+        "displayOrder": 2
+      }
+    ],
+    "checkedAt": "2026-10-13T02:18:42+08:00"
   },
   "disneytownHalloweenTour": {
     "price": 229,
@@ -238,5 +338,64 @@
     "historicalCheckedAt": "2026-09-29",
     "userReportedApproximatePrice": 2300,
     "status": "旧价与用户看到的价格不作为当前官网可订报价"
+  },
+  "parkCalendar": {
+    "visitDate": "2026-10-17",
+    "checkedAt": "2026-10-13T02:18:42+08:00",
+    "sourceUrl": "https://www.shanghaidisneyresort.com/zh-cn/park-calendar",
+    "verification": "在官方日历实际选择2026年10月17日，读取日期标题、运营和演出时间；不是从SKU时间推算",
+    "parkHours": {
+      "open": "08:30",
+      "close": "22:00"
+    },
+    "shows": {
+      "奇梦之光幻影秀": [
+        "20:00",
+        "21:15"
+      ],
+      "奇妙在身边：10岁生日特别欢庆": [
+        "20:15",
+        "21:30"
+      ],
+      "唐老鸭和朋友们的反派巡游": [
+        "14:15",
+        "18:15"
+      ],
+      "米奇童话专列": [
+        "12:15",
+        "15:45"
+      ],
+      "米奇妙游童话书": [
+        "10:45",
+        "11:45",
+        "13:00",
+        "14:00",
+        "15:10",
+        "16:30",
+        "17:35",
+        "18:55"
+      ],
+      "冰雪奇缘：欢唱盛会": [
+        "10:45",
+        "11:30",
+        "13:15",
+        "14:00",
+        "14:45",
+        "15:30",
+        "16:30",
+        "17:15"
+      ]
+    },
+    "closedExperiences": [
+      "水手打斗",
+      "百亩森林里的欢庆会",
+      "漫威英雄总部见面会 - 与复仇者联盟见面",
+      "E空间聚乐部",
+      "迪士尼小推：神奇回收箱",
+      "探险家独木舟",
+      "海盗大人生",
+      "奇奇蒂蒂淘淘铺 – 与奇奇蒂蒂见面"
+    ],
+    "notice": "演出和开放状态可在到访当天调整；夜间秀尊享卡是否覆盖生日续章和万圣演出不由日历时刻推定"
   }
 }

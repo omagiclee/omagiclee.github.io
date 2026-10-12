@@ -40,8 +40,8 @@
       "reasonShort": "本次必看；响声大，带耳罩",
       "visitNote": "",
       "feeShort": "门票内",
-      "dpaShort": "≈¥249–299/人",
-      "dpaFamily": "四人 ≈¥996–1196",
+      "dpaShort": "另购 · App 查价",
+      "dpaFamily": "",
       "priority": "P0",
       "fullImage": "images/catalog/full/entIgniteDreamNighttimeSpectacular.webp",
       "dpaEstimateBasis": "直接单项参考",
@@ -51,8 +51,12 @@
       ],
       "dpaEstimateConfidence": "中",
       "officialDpaPrice": null,
-      "officialDpaPriceStatus": "本次数价未核实；显示值为公开参考或预算估算",
-      "officialDpaPriceSource": "https://www.shanghaidisneyresort.com/zh-cn/experience/tour/vip-premier-access"
+      "officialDpaPriceStatus": "本次数价未核实；主表不显示估算，历史参考仅见详情",
+      "officialDpaPriceSource": "https://www.shanghaidisneyresort.com/zh-cn/experience/tour/vip-premier-access",
+      "historicalDpaShort": "≈¥249–299/人",
+      "historicalDpaFamily": "四人 ≈¥996–1196",
+      "entitlementCoverageStatus": "各节目不是同一个商品权益；核对当日具体场次和预留区覆盖范围",
+      "scheduleSource": "https://www.shanghaidisneyresort.com/zh-cn/park-calendar"
     },
     {
       "id": "entMickeyStorybookAdventure",
@@ -63,7 +67,7 @@
       "requirements": "未列身高或最低年龄硬性门槛；官网适合年龄：所有年龄（含学龄前儿童）。 座位有限，满座或开场前10分钟关门，请全家一同提前排队。",
       "fit": "优先推荐",
       "reason": "室内坐着看、角色多，适合两个4岁孩子，也能让脚休息。",
-      "notes": "官网约28分钟。 当日是否需要预约等候卡，以 App 为准；尊享卡提前入场需遵守指定时间。",
+      "notes": "约28分钟。四人全部入园后，App关联四张票并建立游玩组；启用预约等候卡时领取同一时段的免费卡，未启用时可直接排队。预约卡只允许到时段进入排队区，不是免排队/立即入场。凭证要求提前到场，满座或开演前10分钟会关门；尊享卡也须按指定时段使用。",
       "feeLabel": "门票内",
       "feeNote": "持有效乐园门票在一般区域观看，无需另购普通演出门票；尊享卡提前入场、预留观赏区域及主题套餐另计。",
       "dpaSupported": true,
@@ -71,7 +75,8 @@
       "dpaPriceSource": "https://tw.trip.com/blog/shanghai-disney-fastpass",
       "dpaReferencePrice": "¥150–180/人/项（直接单项参考）",
       "sourceUrls": [
-        "https://www.shanghaidisneyresort.com/zh-cn/experience/entertainment/mickey-storybook-adventure"
+        "https://www.shanghaidisneyresort.com/zh-cn/experience/entertainment/mickey-storybook-adventure",
+        "https://www.shanghaidisneyresort.com/zh-cn/experience/guest-service/standbypass"
       ],
       "image": "images/catalog/entMickeyStorybookAdventure.webp",
       "imageSource": "https://static.shanghaidisneyresort.com/tridion/prod/zh-cn/system/images/shdr-ent-mickeys-storybook-adventure-hero-v2_tcm1874-223146.png",
@@ -91,8 +96,8 @@
       "reasonShort": "室内坐着看、角色多，适合两个4岁孩子，也能让脚休息",
       "visitNote": "28 分钟，室内",
       "feeShort": "门票内",
-      "dpaShort": "≈¥150–180/人",
-      "dpaFamily": "四人 ≈¥600–720",
+      "dpaShort": "另购 · App 查价",
+      "dpaFamily": "",
       "priority": "P0",
       "fullImage": "images/catalog/full/entMickeyStorybookAdventure.webp",
       "dpaEstimateBasis": "直接单项参考",
@@ -102,8 +107,10 @@
       ],
       "dpaEstimateConfidence": "中",
       "officialDpaPrice": null,
-      "officialDpaPriceStatus": "本次数价未核实；显示值为公开参考或预算估算",
-      "officialDpaPriceSource": "https://www.shanghaidisneyresort.com/zh-cn/experience/tour/vip-premier-access"
+      "officialDpaPriceStatus": "本次数价未核实；主表不显示估算，历史参考仅见详情",
+      "officialDpaPriceSource": "https://www.shanghaidisneyresort.com/zh-cn/experience/tour/vip-premier-access",
+      "historicalDpaShort": "≈¥150–180/人",
+      "historicalDpaFamily": "四人 ≈¥600–720"
     },
     {
       "id": "entFrozenSingAlongCelebration",
@@ -114,7 +121,7 @@
       "requirements": "未列身高或最低年龄硬性门槛；官网适合年龄：所有年龄（含学龄前儿童）。 座位有限，满座或开场前10分钟关门，请全家一同提前排队。",
       "fit": "优先推荐",
       "reason": "室内坐下欣赏，喜欢艾莎或音乐的孩子尤其合适。",
-      "notes": "官网约20分钟。",
+      "notes": "约20分钟，可作为米奇妙游童话书的替代，不要求两场都看。预约等候卡是否启用和入场规则以当日App及现场为准。",
       "feeLabel": "门票内",
       "feeNote": "持有效乐园门票在一般区域观看，无需另购普通演出门票；尊享卡提前入场、预留观赏区域及主题套餐另计。",
       "dpaSupported": true,
@@ -142,8 +149,8 @@
       "reasonShort": "室内坐下欣赏，喜欢艾莎或音乐的孩子尤其合适",
       "visitNote": "20 分钟，室内",
       "feeShort": "门票内",
-      "dpaShort": "≈¥150–180/人",
-      "dpaFamily": "四人 ≈¥600–720",
+      "dpaShort": "另购 · App 查价",
+      "dpaFamily": "",
       "priority": "P0",
       "fullImage": "images/catalog/full/entFrozenSingAlongCelebration.webp",
       "dpaEstimateBasis": "直接单项参考",
@@ -153,8 +160,10 @@
       ],
       "dpaEstimateConfidence": "中",
       "officialDpaPrice": null,
-      "officialDpaPriceStatus": "本次数价未核实；显示值为公开参考或预算估算",
-      "officialDpaPriceSource": "https://www.shanghaidisneyresort.com/zh-cn/experience/tour/vip-premier-access"
+      "officialDpaPriceStatus": "本次数价未核实；主表不显示估算，历史参考仅见详情",
+      "officialDpaPriceSource": "https://www.shanghaidisneyresort.com/zh-cn/experience/tour/vip-premier-access",
+      "historicalDpaShort": "≈¥150–180/人",
+      "historicalDpaFamily": "四人 ≈¥600–720"
     },
     {
       "id": "entTheHeartOfMagic",
@@ -234,8 +243,8 @@
       "reasonShort": "节奏舒缓，适合第一次体验室内故事乘骑；仍有黑暗和梦境场景",
       "visitNote": "",
       "feeShort": "门票内",
-      "dpaShort": "≈¥140/人",
-      "dpaFamily": "四人 ≈¥560",
+      "dpaShort": "另购 · App 查价",
+      "dpaFamily": "",
       "priority": "P0",
       "fullImage": "images/catalog/full/attAdventuresWinniePooh.webp",
       "dpaEstimateBasis": "直接单项参考",
@@ -245,8 +254,10 @@
       ],
       "dpaEstimateConfidence": "中",
       "officialDpaPrice": null,
-      "officialDpaPriceStatus": "本次数价未核实；显示值为公开参考或预算估算",
-      "officialDpaPriceSource": "https://www.shanghaidisneyresort.com/zh-cn/experience/tour/vip-premier-access"
+      "officialDpaPriceStatus": "本次数价未核实；主表不显示估算，历史参考仅见详情",
+      "officialDpaPriceSource": "https://www.shanghaidisneyresort.com/zh-cn/experience/tour/vip-premier-access",
+      "historicalDpaShort": "≈¥140/人",
+      "historicalDpaFamily": "四人 ≈¥560"
     },
     {
       "id": "attPeterPansFlight",
@@ -283,13 +294,15 @@
       "reasonShort": "身高达标，童话飞行很适合这个年龄；先确认能接受暗场",
       "visitNote": "",
       "feeShort": "门票内",
-      "dpaShort": "¥120–180/人",
-      "dpaFamily": "四人 ¥480–720",
+      "dpaShort": "另购 · App 查价",
+      "dpaFamily": "",
       "priority": "P0",
       "fullImage": "images/catalog/full/attPeterPansFlight.webp",
       "officialDpaPrice": null,
-      "officialDpaPriceStatus": "本次数价未核实；显示值为公开参考或预算估算",
-      "officialDpaPriceSource": "https://www.shanghaidisneyresort.com/zh-cn/experience/tour/vip-premier-access"
+      "officialDpaPriceStatus": "本次数价未核实；主表不显示估算，历史参考仅见详情",
+      "officialDpaPriceSource": "https://www.shanghaidisneyresort.com/zh-cn/experience/tour/vip-premier-access",
+      "historicalDpaShort": "¥120–180/人",
+      "historicalDpaFamily": "四人 ¥480–720"
     },
     {
       "id": "attBuzzLightyearPlanetRescue",
@@ -330,8 +343,8 @@
       "reasonShort": "没有最低身高限制，能参与射击；怕机器人或暗场可先观察",
       "visitNote": "",
       "feeShort": "门票内",
-      "dpaShort": "≈¥140/人",
-      "dpaFamily": "四人 ≈¥560",
+      "dpaShort": "另购 · App 查价",
+      "dpaFamily": "",
       "priority": "P0",
       "fullImage": "images/catalog/full/attBuzzLightyearPlanetRescue.webp",
       "dpaEstimateBasis": "直接单项参考",
@@ -341,8 +354,10 @@
       ],
       "dpaEstimateConfidence": "中",
       "officialDpaPrice": null,
-      "officialDpaPriceStatus": "本次数价未核实；显示值为公开参考或预算估算",
-      "officialDpaPriceSource": "https://www.shanghaidisneyresort.com/zh-cn/experience/tour/vip-premier-access"
+      "officialDpaPriceStatus": "本次数价未核实；主表不显示估算，历史参考仅见详情",
+      "officialDpaPriceSource": "https://www.shanghaidisneyresort.com/zh-cn/experience/tour/vip-premier-access",
+      "historicalDpaShort": "≈¥140/人",
+      "historicalDpaFamily": "四人 ≈¥560"
     },
     {
       "id": "attVoyageToCrystalGrotto",
@@ -383,8 +398,8 @@
       "reasonShort": "舒缓船游适合全家，洞窟有较暗的灯光环境",
       "visitNote": "",
       "feeShort": "门票内",
-      "dpaShort": "≈¥140/人",
-      "dpaFamily": "四人 ≈¥560",
+      "dpaShort": "另购 · App 查价",
+      "dpaFamily": "",
       "priority": "P0",
       "fullImage": "images/catalog/full/attVoyageToCrystalGrotto.webp",
       "dpaEstimateBasis": "直接单项参考",
@@ -394,8 +409,10 @@
       ],
       "dpaEstimateConfidence": "中",
       "officialDpaPrice": null,
-      "officialDpaPriceStatus": "本次数价未核实；显示值为公开参考或预算估算",
-      "officialDpaPriceSource": "https://www.shanghaidisneyresort.com/zh-cn/experience/tour/vip-premier-access"
+      "officialDpaPriceStatus": "本次数价未核实；主表不显示估算，历史参考仅见详情",
+      "officialDpaPriceSource": "https://www.shanghaidisneyresort.com/zh-cn/experience/tour/vip-premier-access",
+      "historicalDpaShort": "≈¥140/人",
+      "historicalDpaFamily": "四人 ≈¥560"
     },
     {
       "id": "attDumboFlyingElephant",
@@ -433,8 +450,8 @@
       "reasonShort": "可以和家长同乘，适合儿童体验轻度升降",
       "visitNote": "",
       "feeShort": "门票内",
-      "dpaShort": "≈¥140/人",
-      "dpaFamily": "四人 ≈¥560",
+      "dpaShort": "另购 · App 查价",
+      "dpaFamily": "",
       "priority": "P0",
       "fullImage": "images/catalog/full/attDumboFlyingElephant.webp",
       "dpaEstimateBasis": "直接单项参考",
@@ -444,8 +461,10 @@
       ],
       "dpaEstimateConfidence": "中",
       "officialDpaPrice": null,
-      "officialDpaPriceStatus": "本次数价未核实；显示值为公开参考或预算估算",
-      "officialDpaPriceSource": "https://www.shanghaidisneyresort.com/zh-cn/experience/tour/vip-premier-access"
+      "officialDpaPriceStatus": "本次数价未核实；主表不显示估算，历史参考仅见详情",
+      "officialDpaPriceSource": "https://www.shanghaidisneyresort.com/zh-cn/experience/tour/vip-premier-access",
+      "historicalDpaShort": "≈¥140/人",
+      "historicalDpaFamily": "四人 ≈¥560"
     },
     {
       "id": "attStitchEncounter",
@@ -528,8 +547,8 @@
       "reasonShort": "一次看多个熟悉角色，优先安排；选孩子能看清且不拥挤的位置",
       "visitNote": "14 分钟，巡游",
       "feeShort": "门票内",
-      "dpaShort": "≈¥150–300/人（估）",
-      "dpaFamily": "四人 ≈¥600–1200",
+      "dpaShort": "另购 · App 查价",
+      "dpaFamily": "",
       "priority": "P0",
       "fullImage": "images/catalog/full/entMickeysStorybookExpress.webp",
       "dpaEstimateBasis": "同类估算",
@@ -539,8 +558,10 @@
       ],
       "dpaEstimateConfidence": "低",
       "officialDpaPrice": null,
-      "officialDpaPriceStatus": "本次数价未核实；显示值为公开参考或预算估算",
-      "officialDpaPriceSource": "https://www.shanghaidisneyresort.com/zh-cn/experience/tour/vip-premier-access"
+      "officialDpaPriceStatus": "本次数价未核实；主表不显示估算，历史参考仅见详情",
+      "officialDpaPriceSource": "https://www.shanghaidisneyresort.com/zh-cn/experience/tour/vip-premier-access",
+      "historicalDpaShort": "≈¥150–300/人（估）",
+      "historicalDpaFamily": "四人 ≈¥600–1200"
     },
     {
       "id": "attFantasiaCarousel",
@@ -751,7 +772,9 @@
       "dpaShort": "无",
       "dpaFamily": "",
       "priority": "P0",
-      "fullImage": "images/catalog/full/entMagicTogether.webp"
+      "fullImage": "images/catalog/full/entMagicTogether.webp",
+      "entitlementCoverageStatus": "各节目不是同一个商品权益；核对当日具体场次和预留区覆盖范围",
+      "scheduleSource": "https://www.shanghaidisneyresort.com/zh-cn/park-calendar"
     },
     {
       "id": "entFriendshipDuffyandFriendsSpecialPreParade",
@@ -852,7 +875,8 @@
       "dpaPriceSource": "",
       "dpaReferencePrice": null,
       "sourceUrls": [
-        "https://www.shanghaidisneyresort.com/zh-cn/experience/entertainment/a-special-celebration-in-the-hundred-acre-wood"
+        "https://www.shanghaidisneyresort.com/zh-cn/experience/entertainment/a-special-celebration-in-the-hundred-acre-wood",
+        "https://www.shanghaidisneyresort.com/zh-cn/park-calendar"
       ],
       "image": "images/catalog/entASpecialCelebrationintheHundredAcreWood.webp",
       "imageSource": "https://static.shanghaidisneyresort.com/tridion/prod/zh-cn/system/images/shdr-ent-traveling-troubadours-hero-202400809-gallery1_tcm1874-272637.jpg",
@@ -870,12 +894,14 @@
       "order": 19,
       "requirementShort": "—",
       "reasonShort": "温和熟悉的角色，路过有场次就看",
-      "visitNote": "",
+      "visitNote": "10/17 日历列停运，复查 App",
       "feeShort": "门票内",
       "dpaShort": "无",
       "dpaFamily": "",
       "priority": "P0",
-      "fullImage": "images/catalog/full/entASpecialCelebrationintheHundredAcreWood.webp"
+      "fullImage": "images/catalog/full/entASpecialCelebrationintheHundredAcreWood.webp",
+      "visitDate": "2026-10-17",
+      "visitDateStatus": "官方日历列停运／关闭，出发前及当日复查"
     },
     {
       "id": "entDonaldHalloweenTreatCavalcade",
@@ -1291,8 +1317,8 @@
       "reasonShort": "身高达标，但有横向甩动，愿意接受轻度刺激时再玩",
       "visitNote": "",
       "feeShort": "门票内",
-      "dpaShort": "≈¥140/人",
-      "dpaFamily": "四人 ≈¥560",
+      "dpaShort": "另购 · App 查价",
+      "dpaFamily": "",
       "priority": "P1",
       "fullImage": "images/catalog/full/attWoodysRoundUp.webp",
       "dpaEstimateBasis": "直接单项参考",
@@ -1302,8 +1328,10 @@
       ],
       "dpaEstimateConfidence": "中",
       "officialDpaPrice": null,
-      "officialDpaPriceStatus": "本次数价未核实；显示值为公开参考或预算估算",
-      "officialDpaPriceSource": "https://www.shanghaidisneyresort.com/zh-cn/experience/tour/vip-premier-access"
+      "officialDpaPriceStatus": "本次数价未核实；主表不显示估算，历史参考仅见详情",
+      "officialDpaPriceSource": "https://www.shanghaidisneyresort.com/zh-cn/experience/tour/vip-premier-access",
+      "historicalDpaShort": "≈¥140/人",
+      "historicalDpaFamily": "四人 ≈¥560"
     },
     {
       "id": "attHunnyPotSpin",
@@ -1532,7 +1560,8 @@
       "dpaPriceSource": "",
       "dpaReferencePrice": null,
       "sourceUrls": [
-        "https://www.shanghaidisneyresort.com/zh-cn/experience/entertainment/disney-xiaotui-the-magical-recycle-bin"
+        "https://www.shanghaidisneyresort.com/zh-cn/experience/entertainment/disney-xiaotui-the-magical-recycle-bin",
+        "https://www.shanghaidisneyresort.com/zh-cn/park-calendar"
       ],
       "image": "images/catalog/entDisneyXiaoTuiTheMagicalRecycleBin.webp",
       "imageSource": "https://static.shanghaidisneyresort.com/tridion/prod/zh-cn/system/images/shdr-ent-disney-xiaotui-the-magical-recycle-bin-hero-20240924_tcm1874-273352.jpg",
@@ -1550,12 +1579,14 @@
       "order": 35,
       "requirementShort": "—",
       "reasonShort": "轻松互动有趣，偶遇就看，不需要专门排一段行程",
-      "visitNote": "",
+      "visitNote": "10/17 日历列停运，复查 App",
       "feeShort": "门票内",
       "dpaShort": "无",
       "dpaFamily": "",
       "priority": "P1",
-      "fullImage": "images/catalog/full/entDisneyXiaoTuiTheMagicalRecycleBin.webp"
+      "fullImage": "images/catalog/full/entDisneyXiaoTuiTheMagicalRecycleBin.webp",
+      "visitDate": "2026-10-17",
+      "visitDateStatus": "官方日历列停运／关闭，出发前及当日复查"
     },
     {
       "id": "attVistaTrail",
@@ -2199,7 +2230,8 @@
       "dpaReferencePrice": null,
       "sourceUrls": [
         "https://www.shanghaidisneyresort.com/zh-cn/experience/entertainment/characters-meet-chip-and-dale",
-        "https://www.shanghaidisneyresort.com/zh-cn/"
+        "https://www.shanghaidisneyresort.com/zh-cn/",
+        "https://www.shanghaidisneyresort.com/zh-cn/park-calendar"
       ],
       "image": "images/catalog/charCharactersMeetChipAndDale.webp",
       "imageSource": "https://static.shanghaidisneyresort.com/tridion/prod/zh-cn/system/images/shdr-char-characters-meet-chip-and-dale-hero-0929_tcm1874-293831.jpg",
@@ -2217,12 +2249,14 @@
       "order": 51,
       "requirementShort": "—",
       "reasonShort": "活泼友好的花栗鼠，适合学龄前孩子",
-      "visitNote": "10/17 超级大派对限定",
+      "visitNote": "10/17 日历列停运，复查 App",
       "feeShort": "门票内",
       "dpaShort": "无",
       "dpaFamily": "",
       "priority": "P1",
-      "fullImage": "images/catalog/full/charCharactersMeetChipAndDale.webp"
+      "fullImage": "images/catalog/full/charCharactersMeetChipAndDale.webp",
+      "visitDate": "2026-10-17",
+      "visitDateStatus": "官方日历列停运／关闭，出发前及当日复查"
     },
     {
       "id": "entHalloweenDisneytownTheGhostBand",
@@ -3342,7 +3376,8 @@
       "dpaPriceSource": "",
       "dpaReferencePrice": null,
       "sourceUrls": [
-        "https://www.shanghaidisneyresort.com/zh-cn/experience/entertainment/characters-heroic-encounter-at-the-marvel-universe"
+        "https://www.shanghaidisneyresort.com/zh-cn/experience/entertainment/characters-heroic-encounter-at-the-marvel-universe",
+        "https://www.shanghaidisneyresort.com/zh-cn/park-calendar"
       ],
       "image": "images/catalog/charCharactersHeroicEncounterAtTheMarvelUniverse.webp",
       "imageSource": "https://static.shanghaidisneyresort.com/tridion/prod/zh-cn/system/images/shdr-char-characters-heroic-encounter-at-the-marvel-universe-hero-20231108_tcm1874-267306.jpg",
@@ -3360,12 +3395,14 @@
       "order": 79,
       "requirementShort": "—",
       "reasonShort": "喜欢超级英雄再排，盔甲造型可能让孩子紧张",
-      "visitNote": "",
+      "visitNote": "10/17 日历列停运，复查 App",
       "feeShort": "门票内",
       "dpaShort": "无",
       "dpaFamily": "",
       "priority": "P1",
-      "fullImage": "images/catalog/full/charCharactersHeroicEncounterAtTheMarvelUniverse.webp"
+      "fullImage": "images/catalog/full/charCharactersHeroicEncounterAtTheMarvelUniverse.webp",
+      "visitDate": "2026-10-17",
+      "visitDateStatus": "官方日历列停运／关闭，出发前及当日复查"
     },
     {
       "id": "eventAlienRocketLaunch",
@@ -3778,7 +3815,9 @@
       "fullImage": "images/catalog/full/extraDisneyVillainsCastleCelebration.webp",
       "officialDpaPrice": null,
       "officialDpaPriceStatus": "本次数价未核实；显示值为公开参考或预算估算",
-      "officialDpaPriceSource": "https://www.shanghaidisneyresort.com/zh-cn/experience/tour/vip-premier-access"
+      "officialDpaPriceSource": "https://www.shanghaidisneyresort.com/zh-cn/experience/tour/vip-premier-access",
+      "entitlementCoverageStatus": "各节目不是同一个商品权益；核对当日具体场次和预留区覆盖范围",
+      "scheduleSource": "https://www.shanghaidisneyresort.com/zh-cn/park-calendar"
     },
     {
       "id": "attZootopiaHotPursuit",
@@ -3818,13 +3857,15 @@
       "reasonShort": "身高达标；有急转、陡停和暗场",
       "visitNote": "早享不含动物城，正常开放后再玩",
       "feeShort": "门票内",
-      "dpaShort": "¥140–180/人",
-      "dpaFamily": "四人 ¥560–720",
+      "dpaShort": "另购 · App 查价",
+      "dpaFamily": "",
       "priority": "P2",
       "fullImage": "images/catalog/full/attZootopiaHotPursuit.webp",
       "officialDpaPrice": null,
-      "officialDpaPriceStatus": "本次数价未核实；显示值为公开参考或预算估算",
-      "officialDpaPriceSource": "https://www.shanghaidisneyresort.com/zh-cn/experience/tour/vip-premier-access"
+      "officialDpaPriceStatus": "本次数价未核实；主表不显示估算，历史参考仅见详情",
+      "officialDpaPriceSource": "https://www.shanghaidisneyresort.com/zh-cn/experience/tour/vip-premier-access",
+      "historicalDpaShort": "¥140–180/人",
+      "historicalDpaFamily": "四人 ¥560–720"
     },
     {
       "id": "attPiratesOfCaribbean",
@@ -3863,13 +3904,15 @@
       "reasonShort": "身高达标；有骷髅、巨响和急坠",
       "visitNote": "",
       "feeShort": "门票内",
-      "dpaShort": "¥120–220/人",
-      "dpaFamily": "四人 ¥480–880",
+      "dpaShort": "另购 · App 查价",
+      "dpaFamily": "",
       "priority": "P2",
       "fullImage": "images/catalog/full/attPiratesOfCaribbean.webp",
       "officialDpaPrice": null,
-      "officialDpaPriceStatus": "本次数价未核实；显示值为公开参考或预算估算",
-      "officialDpaPriceSource": "https://www.shanghaidisneyresort.com/zh-cn/experience/tour/vip-premier-access"
+      "officialDpaPriceStatus": "本次数价未核实；主表不显示估算，历史参考仅见详情",
+      "officialDpaPriceSource": "https://www.shanghaidisneyresort.com/zh-cn/experience/tour/vip-premier-access",
+      "historicalDpaShort": "¥120–220/人",
+      "historicalDpaFamily": "四人 ¥480–880"
     },
     {
       "id": "attSoaringOverHorizon",
@@ -3908,13 +3951,15 @@
       "reasonShort": "刚到门槛；悬空画面可能害怕",
       "visitNote": "",
       "feeShort": "门票内",
-      "dpaShort": "¥140–180/人",
-      "dpaFamily": "四人 ¥560–720",
+      "dpaShort": "另购 · App 查价",
+      "dpaFamily": "",
       "priority": "P2",
       "fullImage": "images/catalog/full/attSoaringOverHorizon.webp",
       "officialDpaPrice": null,
-      "officialDpaPriceStatus": "本次数价未核实；显示值为公开参考或预算估算",
-      "officialDpaPriceSource": "https://www.shanghaidisneyresort.com/zh-cn/experience/tour/vip-premier-access"
+      "officialDpaPriceStatus": "本次数价未核实；主表不显示估算，历史参考仅见详情",
+      "officialDpaPriceSource": "https://www.shanghaidisneyresort.com/zh-cn/experience/tour/vip-premier-access",
+      "historicalDpaShort": "¥140–180/人",
+      "historicalDpaFamily": "四人 ¥560–720"
     },
     {
       "id": "attSevenDwarfsMineTrain",
@@ -3953,8 +3998,8 @@
       "reasonShort": "身高达标；过山车仍需看胆量",
       "visitNote": "",
       "feeShort": "门票内",
-      "dpaShort": "≈¥140–180/人",
-      "dpaFamily": "四人 ≈¥560–720",
+      "dpaShort": "另购 · App 查价",
+      "dpaFamily": "",
       "priority": "P2",
       "fullImage": "images/catalog/full/attSevenDwarfsMineTrain.webp",
       "dpaEstimateSources": [
@@ -3962,8 +4007,10 @@
         "https://www.travelclassroom.net/2026/04/shanghai-disneyland.html"
       ],
       "officialDpaPrice": null,
-      "officialDpaPriceStatus": "本次数价未核实；显示值为公开参考或预算估算",
-      "officialDpaPriceSource": "https://www.shanghaidisneyresort.com/zh-cn/experience/tour/vip-premier-access"
+      "officialDpaPriceStatus": "本次数价未核实；主表不显示估算，历史参考仅见详情",
+      "officialDpaPriceSource": "https://www.shanghaidisneyresort.com/zh-cn/experience/tour/vip-premier-access",
+      "historicalDpaShort": "≈¥140–180/人",
+      "historicalDpaFamily": "四人 ≈¥560–720"
     },
     {
       "id": "attExplorerCanoes",
@@ -3982,7 +4029,8 @@
       "dpaPriceSource": "",
       "dpaReferencePrice": null,
       "sourceUrls": [
-        "https://www.shanghaidisneyresort.com/zh-cn/experience/attraction/explorer-canoes"
+        "https://www.shanghaidisneyresort.com/zh-cn/experience/attraction/explorer-canoes",
+        "https://www.shanghaidisneyresort.com/zh-cn/park-calendar"
       ],
       "image": "images/catalog/attExplorerCanoes.webp",
       "imageSource": "https://static.shanghaidisneyresort.com/tridion/prod/zh-cn/system/images/shdr-att-explorer-canoes-hero-new_tcm1874-114838.jpg",
@@ -4000,12 +4048,14 @@
       "order": 94,
       "requirementShort": "双脚须着地；<7 岁穿救生衣",
       "reasonShort": "需确认坐下双脚能着地",
-      "visitNote": "",
+      "visitNote": "10/17 日历列停运，复查 App",
       "feeShort": "门票内",
       "dpaShort": "无",
       "dpaFamily": "",
       "priority": "P2",
-      "fullImage": "images/catalog/full/attExplorerCanoes.webp"
+      "fullImage": "images/catalog/full/attExplorerCanoes.webp",
+      "visitDate": "2026-10-17",
+      "visitDateStatus": "官方日历列停运／关闭，出发前及当日复查"
     },
     {
       "id": "entAPiratesLifeForYou",
@@ -4024,7 +4074,8 @@
       "dpaPriceSource": "",
       "dpaReferencePrice": null,
       "sourceUrls": [
-        "https://www.shanghaidisneyresort.com/zh-cn/experience/entertainment/a-pirates-life-for-you"
+        "https://www.shanghaidisneyresort.com/zh-cn/experience/entertainment/a-pirates-life-for-you",
+        "https://www.shanghaidisneyresort.com/zh-cn/park-calendar"
       ],
       "image": "images/catalog/entAPiratesLifeForYou.webp",
       "imageSource": "https://static.shanghaidisneyresort.com/tridion/prod/zh-cn/system/images/shdr-ent-a-pirates-life-for-you-hero_tcm1874-155886.jpg",
@@ -4042,12 +4093,14 @@
       "order": 95,
       "requirementShort": "—",
       "reasonShort": "孩子喜欢海盗再看；参与规则听现场安排，无须强迫上前",
-      "visitNote": "",
+      "visitNote": "10/17 日历列停运，复查 App",
       "feeShort": "门票内",
       "dpaShort": "无",
       "dpaFamily": "",
       "priority": "P2",
-      "fullImage": "images/catalog/full/entAPiratesLifeForYou.webp"
+      "fullImage": "images/catalog/full/entAPiratesLifeForYou.webp",
+      "visitDate": "2026-10-17",
+      "visitDateStatus": "官方日历列停运／关闭，出发前及当日复查"
     },
     {
       "id": "entEyeOfStormCaptainJacksSpectacular",
@@ -4086,8 +4139,8 @@
       "reasonShort": "能坐下休息；有打斗和突发声响",
       "visitNote": "30 分钟，室内",
       "feeShort": "门票内",
-      "dpaShort": "≈¥150–180/人",
-      "dpaFamily": "四人 ≈¥600–720",
+      "dpaShort": "另购 · App 查价",
+      "dpaFamily": "",
       "priority": "P2",
       "fullImage": "images/catalog/full/entEyeOfStormCaptainJacksSpectacular.webp",
       "dpaEstimateBasis": "直接单项参考",
@@ -4097,8 +4150,10 @@
       ],
       "dpaEstimateConfidence": "中",
       "officialDpaPrice": null,
-      "officialDpaPriceStatus": "本次数价未核实；显示值为公开参考或预算估算",
-      "officialDpaPriceSource": "https://www.shanghaidisneyresort.com/zh-cn/experience/tour/vip-premier-access"
+      "officialDpaPriceStatus": "本次数价未核实；主表不显示估算，历史参考仅见详情",
+      "officialDpaPriceSource": "https://www.shanghaidisneyresort.com/zh-cn/experience/tour/vip-premier-access",
+      "historicalDpaShort": "≈¥150–180/人",
+      "historicalDpaFamily": "四人 ≈¥600–720"
     },
     {
       "id": "entPiratesRoaming",
@@ -4159,7 +4214,8 @@
       "dpaPriceSource": "",
       "dpaReferencePrice": null,
       "sourceUrls": [
-        "https://www.shanghaidisneyresort.com/zh-cn/experience/entertainment/swabbie-fight"
+        "https://www.shanghaidisneyresort.com/zh-cn/experience/entertainment/swabbie-fight",
+        "https://www.shanghaidisneyresort.com/zh-cn/park-calendar"
       ],
       "image": "images/catalog/entSwabbieFight.webp",
       "imageSource": "https://static.shanghaidisneyresort.com/tridion/prod/zh-cn/system/images/shdr-ent-swabbie-fight-hero_tcm1874-174228.jpg",
@@ -4177,12 +4233,14 @@
       "order": 98,
       "requirementShort": "—",
       "reasonShort": "5分钟短表演，打斗是演戏，孩子怕冲突可不看",
-      "visitNote": "",
+      "visitNote": "10/17 日历列停运，复查 App",
       "feeShort": "门票内",
       "dpaShort": "无",
       "dpaFamily": "",
       "priority": "P2",
-      "fullImage": "images/catalog/full/entSwabbieFight.webp"
+      "fullImage": "images/catalog/full/entSwabbieFight.webp",
+      "visitDate": "2026-10-17",
+      "visitDateStatus": "官方日历列停运／关闭，出发前及当日复查"
     },
     {
       "id": "entVoodooAlleyFight",
@@ -4285,7 +4343,8 @@
       "dpaPriceSource": "",
       "dpaReferencePrice": null,
       "sourceUrls": [
-        "https://www.shanghaidisneyresort.com/zh-cn/experience/entertainment/club-destin-e"
+        "https://www.shanghaidisneyresort.com/zh-cn/experience/entertainment/club-destin-e",
+        "https://www.shanghaidisneyresort.com/zh-cn/park-calendar"
       ],
       "image": "images/catalog/entClubDestinE.webp",
       "imageSource": "https://static.shanghaidisneyresort.com/tridion/prod/zh-cn/system/images/shdr-ent-club-destin-e-hero-20250115_tcm1874-276441.jpg",
@@ -4303,12 +4362,14 @@
       "order": 101,
       "requirementShort": "—",
       "reasonShort": "音乐强、夜间晚，不排优先行程，孩子愿意可路过跳一小段",
-      "visitNote": "",
+      "visitNote": "10/17 日历列停运，复查 App",
       "feeShort": "门票内",
       "dpaShort": "无",
       "dpaFamily": "",
       "priority": "P2",
-      "fullImage": "images/catalog/full/entClubDestinE.webp"
+      "fullImage": "images/catalog/full/entClubDestinE.webp",
+      "visitDate": "2026-10-17",
+      "visitDateStatus": "官方日历列停运／关闭，出发前及当日复查"
     },
     {
       "id": "entTheVillainsClub",
@@ -4630,8 +4691,8 @@
       "reasonShort": "当前身高不足",
       "visitNote": "",
       "feeShort": "门票内",
-      "dpaShort": "≈¥140/人",
-      "dpaFamily": "四人 ≈¥560",
+      "dpaShort": "另购 · App 查价",
+      "dpaFamily": "",
       "priority": "P3",
       "fullImage": "images/catalog/full/attChallengeTrails.webp",
       "dpaEstimateBasis": "直接单项参考",
@@ -4641,8 +4702,10 @@
       ],
       "dpaEstimateConfidence": "中",
       "officialDpaPrice": null,
-      "officialDpaPriceStatus": "本次数价未核实；显示值为公开参考或预算估算",
-      "officialDpaPriceSource": "https://www.shanghaidisneyresort.com/zh-cn/experience/tour/vip-premier-access"
+      "officialDpaPriceStatus": "本次数价未核实；主表不显示估算，历史参考仅见详情",
+      "officialDpaPriceSource": "https://www.shanghaidisneyresort.com/zh-cn/experience/tour/vip-premier-access",
+      "historicalDpaShort": "≈¥140/人",
+      "historicalDpaFamily": "四人 ≈¥560"
     },
     {
       "id": "attRoaringRapids",
@@ -4681,13 +4744,15 @@
       "reasonShort": "当前身高不足",
       "visitNote": "",
       "feeShort": "门票内",
-      "dpaShort": "¥120–200/人",
-      "dpaFamily": "四人 ¥480–800",
+      "dpaShort": "另购 · App 查价",
+      "dpaFamily": "",
       "priority": "P3",
       "fullImage": "images/catalog/full/attRoaringRapids.webp",
       "officialDpaPrice": null,
-      "officialDpaPriceStatus": "本次数价未核实；显示值为公开参考或预算估算",
-      "officialDpaPriceSource": "https://www.shanghaidisneyresort.com/zh-cn/experience/tour/vip-premier-access"
+      "officialDpaPriceStatus": "本次数价未核实；主表不显示估算，历史参考仅见详情",
+      "officialDpaPriceSource": "https://www.shanghaidisneyresort.com/zh-cn/experience/tour/vip-premier-access",
+      "historicalDpaShort": "¥120–200/人",
+      "historicalDpaFamily": "四人 ¥480–800"
     },
     {
       "id": "attJetPacks",
@@ -4770,8 +4835,8 @@
       "reasonShort": "当前身高不足",
       "visitNote": "",
       "feeShort": "门票内",
-      "dpaShort": "≈¥180/人",
-      "dpaFamily": "四人 ≈¥720",
+      "dpaShort": "另购 · App 查价",
+      "dpaFamily": "",
       "priority": "P3",
       "fullImage": "images/catalog/full/attRexsRCRacer.webp",
       "dpaEstimateBasis": "直接单项参考",
@@ -4781,8 +4846,10 @@
       ],
       "dpaEstimateConfidence": "中",
       "officialDpaPrice": null,
-      "officialDpaPriceStatus": "本次数价未核实；显示值为公开参考或预算估算",
-      "officialDpaPriceSource": "https://www.shanghaidisneyresort.com/zh-cn/experience/tour/vip-premier-access"
+      "officialDpaPriceStatus": "本次数价未核实；主表不显示估算，历史参考仅见详情",
+      "officialDpaPriceSource": "https://www.shanghaidisneyresort.com/zh-cn/experience/tour/vip-premier-access",
+      "historicalDpaShort": "≈¥180/人",
+      "historicalDpaFamily": "四人 ≈¥720"
     },
     {
       "id": "attTronLightcyclePowerRun",
@@ -4821,13 +4888,15 @@
       "reasonShort": "当前身高不足",
       "visitNote": "",
       "feeShort": "门票内",
-      "dpaShort": "¥140–180/人",
-      "dpaFamily": "四人 ¥560–720",
+      "dpaShort": "另购 · App 查价",
+      "dpaFamily": "",
       "priority": "P3",
       "fullImage": "images/catalog/full/attTronLightcyclePowerRun.webp",
       "officialDpaPrice": null,
-      "officialDpaPriceStatus": "本次数价未核实；显示值为公开参考或预算估算",
-      "officialDpaPriceSource": "https://www.shanghaidisneyresort.com/zh-cn/experience/tour/vip-premier-access"
+      "officialDpaPriceStatus": "本次数价未核实；主表不显示估算，历史参考仅见详情",
+      "officialDpaPriceSource": "https://www.shanghaidisneyresort.com/zh-cn/experience/tour/vip-premier-access",
+      "historicalDpaShort": "¥140–180/人",
+      "historicalDpaFamily": "四人 ¥560–720"
     },
     {
       "id": "eventTomorrowlandLuckyEnergyCore",
@@ -5103,6 +5172,6 @@
       "fullImage": "images/catalog/full/charAnnualPassExclusiveCharacterGreetingatHappyCircle.webp"
     }
   ],
-  "officialPriceCheckedAt": "2026-10-13T01:32:20.963197+08:00",
+  "officialPriceCheckedAt": "2026-10-13T02:18:42+08:00",
   "officialPriceAudit": "official-prices.json"
 }
