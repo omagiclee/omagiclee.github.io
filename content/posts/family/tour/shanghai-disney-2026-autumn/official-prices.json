@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-10-13T02:18:42+08:00",
+  "checkedAt": "2026-10-13T02:40:57+08:00",
   "tickets": [
     {
       "type": "1日票",
@@ -193,7 +193,7 @@
         "tax": "0",
         "taxIncluded": false
       },
-      "recheckedAt": "2026-10-13T02:18:42+08:00"
+      "recheckedAt": "2026-10-13T02:40:57+08:00"
     }
   ],
   "earlyEntry": {
@@ -211,7 +211,7 @@
   },
   "premierAccess": {
     "officialIndividualPrices": null,
-    "status": "单项价格随日期浮动，娱乐演出/单项权益须游玩组全员入园后官方App查售；历史参考仅留项目详情，不在主表伪装成当次实价",
+    "status": "主表显示19项公开参考/预算估算及四人合计；10/17、10/18当次单项售价和库存仍需四人入园后官方App查售",
     "sourceUrl": "https://www.shanghaidisneyresort.com/zh-cn/experience/tour/vip-premier-access"
   },
   "royalBanquetHall": {
@@ -397,5 +397,209 @@
       "奇奇蒂蒂淘淘铺 – 与奇奇蒂蒂见面"
     ],
     "notice": "演出和开放状态可在到访当天调整；夜间秀尊享卡是否覆盖生日续章和万圣演出不由日历时刻推定"
+  },
+  "parkCalendars": [
+    {
+      "visitDate": "2026-10-17",
+      "checkedAt": "2026-10-13T02:37:44.698+08:00",
+      "sourceUrl": "https://www.shanghaidisneyresort.com/zh-cn/park-calendar",
+      "verification": "官方页面实际选择对应日期，读回日期标题与渲染后场次/关闭列表",
+      "dateTitleEvidence": "10月17日, 2026年",
+      "parkHours": {
+        "open": "08:30",
+        "close": "22:00",
+        "raw": "8:30 至 22:00"
+      },
+      "shows": {
+        "“友谊号”：达菲和朋友们的特别巡游": [
+          "12:05",
+          "15:35"
+        ],
+        "奇梦之光幻影秀": [
+          "20:00",
+          "21:15"
+        ],
+        "“奇妙之心”城堡秀": [
+          "10:05",
+          "11:30",
+          "13:40",
+          "15:05"
+        ],
+        "米奇童话专列": [
+          "12:15",
+          "15:45"
+        ],
+        "奇妙在身边：10岁生日特别欢庆": [
+          "20:15",
+          "21:30"
+        ],
+        "唐式太极": [
+          "10:45"
+        ],
+        "复仇者联盟培训行动": [
+          "10:00",
+          "11:15",
+          "12:45",
+          "15:00"
+        ],
+        "反派俱乐部": [
+          "16:40",
+          "17:40",
+          "18:40"
+        ],
+        "风暴来临：杰克船长之惊天特技大冒险": [
+          "10:30",
+          "11:10",
+          "11:50",
+          "13:00",
+          "13:40",
+          "14:20",
+          "15:30",
+          "16:00",
+          "16:30",
+          "17:10"
+        ],
+        "反派阳台漫步": [
+          "12:00"
+        ],
+        "米奇妙游童话书": [
+          "10:45",
+          "11:45",
+          "13:00",
+          "14:00",
+          "15:10",
+          "16:30",
+          "17:35",
+          "18:55"
+        ],
+        "唐老鸭和朋友们的反派巡游": [
+          "14:15",
+          "18:15"
+        ],
+        "冰雪奇缘：欢唱盛会": [
+          "10:45",
+          "11:30",
+          "13:15",
+          "14:00",
+          "14:45",
+          "15:30",
+          "16:30",
+          "17:15"
+        ],
+        "梦幻节": [
+          "09:45"
+        ]
+      },
+      "closedExperiences": [
+        {
+          "name": "水手打斗",
+          "status": "当日停止运营"
+        },
+        {
+          "name": "百亩森林里的欢庆会",
+          "status": "当日停止运营"
+        },
+        {
+          "name": "漫威英雄总部见面会 - 与复仇者联盟见面",
+          "status": "当日停止运营"
+        },
+        {
+          "name": "E空间聚乐部",
+          "status": "当日停止运营"
+        },
+        {
+          "name": "迪士尼小推：神奇回收箱",
+          "status": "当日停止运营"
+        },
+        {
+          "name": "探险家独木舟",
+          "status": "因计划性维修暂时关闭"
+        },
+        {
+          "name": "海盗大人生",
+          "status": "当日停止运营"
+        },
+        {
+          "name": "奇奇蒂蒂淘淘铺 – 与奇奇蒂蒂见面",
+          "status": "当日停止运营"
+        }
+      ],
+      "unpublishedShows": [],
+      "notice": "所有乐园时间及资料只供参考，并有可能于您浏览乐园当天做出更改。",
+      "publicationBoundary": "仅代表核验时点的官方排期，不保证到访日不调整"
+    },
+    {
+      "visitDate": "2026-10-18",
+      "checkedAt": "2026-10-13T02:37:22.429+08:00",
+      "sourceUrl": "https://www.shanghaidisneyresort.com/zh-cn/park-calendar",
+      "verification": "官方页面实际选择对应日期，读回日期标题与渲染后场次/关闭列表",
+      "dateTitleEvidence": "10月18日, 2026年",
+      "parkHours": {
+        "open": "08:30",
+        "close": "22:00",
+        "raw": "8:30 至 22:00"
+      },
+      "shows": {
+        "米奇童话专列": [
+          "12:15",
+          "15:45"
+        ],
+        "奇梦之光幻影秀": [
+          "20:00",
+          "21:15"
+        ],
+        "唐老鸭和朋友们的反派巡游": [
+          "14:15",
+          "18:15"
+        ]
+      },
+      "closedExperiences": [
+        {
+          "name": "探险家独木舟",
+          "status": "因计划性维修暂时关闭"
+        }
+      ],
+      "unpublishedShows": [
+        "米奇妙游童话书",
+        "冰雪奇缘：欢唱盛会",
+        "奇妙在身边：10岁生日特别欢庆",
+        "“友谊号”：达菲和朋友们的特别巡游"
+      ],
+      "notice": "所有乐园时间及资料只供参考，并有可能于您浏览乐园当天做出更改。",
+      "publicationBoundary": "18日官方日历目前只列3个演出和1个关闭项目。童话书/冰雪/生日欢庆没有列出，不等于确认停演；其他7个原停运项目没有列出，不等于确认开放。不能复制17日节目表或关闭表到18日。"
+    }
+  ],
+  "currentPlan": {
+    "updatedAt": "2026-10-13T02:40:57+08:00",
+    "status": "用户暂定，非已订订单",
+    "hotelNights": [
+      "2026-10-16",
+      "2026-10-17"
+    ],
+    "parkVisitDates": [
+      "2026-10-17",
+      "2026-10-18"
+    ],
+    "hotelRequirements": [
+      "园外连锁",
+      "桔子水晶/Holiday Inn假日同档",
+      "近两年装修",
+      "2成人2名4岁儿童一间房"
+    ],
+    "returnTrain": "待订；按第二天离园、酒店取行李与上海南站候车时间倒推，不视为已改签"
+  },
+  "twoDayRefundAudit": {
+    "checkedAt": "2026-10-13T02:40:57+08:00",
+    "sourceUrl": "https://www.shanghaidisneyresort.com/zh-cn/announcement/shanghai-disney-resort-ticketing-refund-and-exchange-policy",
+    "imageEvidence": [
+      "https://static.shanghaidisneyresort.com/web-img-gallery/ticketing-refund-and-exchange-policy-sc-02.png",
+      "https://static.shanghaidisneyresort.com/web-img-gallery/ticketing-refund-and-exchange-policy-sc-03.jpg"
+    ],
+    "firstVisitDate": "2026-10-17",
+    "feePerGuestPerDay": 80,
+    "familyGuests": 4,
+    "visitDays": 2,
+    "familyFeeDuringFeePeriod": 640,
+    "eligibility": "官方直营标准门市价一日/二日票，未使用官方优惠券、未改期；优惠商品等以订单条款为准"
   }
 }

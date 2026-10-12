@@ -54,7 +54,7 @@
 <h3>{{ .name }}</h3>
 <p class="dg-detail-date">站内资料 · {{ $catalog.checkedAt }} 核验</p>
 <p>{{ .description }}</p>
-<dl class="dg-detail-facts"><dt>游玩要求</dt><dd>{{ .requirements }}</dd><dt>我家孩子</dt><dd>{{ .priority }} · {{ .fit }}：{{ .reason }}</dd><dt>价格</dt><dd>{{ .feeLabel }}{{ with .feeNote }} · {{ . }}{{ end }}</dd><dt>尊享卡</dt><dd>{{ .dpaText }}</dd>{{ with .notes }}<dt>特别留意</dt><dd>{{ . }}</dd>{{ end }}</dl>
+<dl class="dg-detail-facts"><dt>游玩要求</dt><dd>{{ .requirements }}</dd><dt>我家孩子</dt><dd>{{ .priority }} · {{ .fit }}：{{ .reason }}</dd><dt>价格</dt><dd>{{ .feeLabel }}{{ with .feeNote }} · {{ . }}{{ end }}</dd><dt>尊享卡</dt><dd>{{ .dpaText }}</dd>{{ with .operatingStatusByDate }}<dt>本次开放状态</dt><dd>{{ range $date, $status := . }}<p>{{ $date }}：{{ $status.label }}</p>{{ end }}</dd>{{ end }}{{ with .notes }}<dt>特别留意</dt><dd>{{ . }}</dd>{{ end }}</dl>
 <p class="dg-detail-sources">资料来源：{{ range $i, $url := .sourceUrls }}{{ if $i }} · {{ end }}<a href="{{ $url }}" target="_blank" rel="noopener">官网来源{{ if $i }} {{ add $i 1 }}{{ end }}</a>{{ end }}</p>
 {{ with .dpaPriceSource }}<p class="dg-detail-sources">价格依据：<a href="{{ . }}" target="_blank" rel="noopener">公开参考</a>{{ with $item.dpaEstimateBasis }} · {{ . }}{{ end }}</p>{{ end }}
 </template>

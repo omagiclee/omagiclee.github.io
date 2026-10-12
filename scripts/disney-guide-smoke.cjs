@@ -38,8 +38,14 @@ async function main() {
       await page.route('**/*', r => new URL(r.request().url()).origin === origin ? r.continue() : r.fulfill({ status: 204, body: '' }));
       assert((await page.goto(origin + route, { waitUntil: 'networkidle' })).ok());
       await page.waitForFunction(() => !document.querySelector('.dg-toc').hidden);
-      assert.equal(await page.locator('#catalog-full').evaluate(el => el.open), false);
-      assert.equal(await page.locator('.dg-experience').count(), catalog.items.length);
+      assert.equal(await page.locator('#catalog-full').evaluate(el => el.tagName), 'H2');
+      assert.equal(await page.locator('[data-disney-catalog]').evaluate(el => el.closest('details')), null, 'Full catalog must not be folded');
+      assert.equal(await page.locator('.dg-experience:visible').count(), catalog.items.length);
+      assert.equal(await page.locator('.dg-dpa-single').filter({ hasText: '参考' }).count(), 19, 'Keep 19 reference budgets visible');
+      for (const id of ['hotel-price-history', 'hotel-refund', 'legacy-premier-research', 'bundle-research']) {
+        assert.equal(await page.locator('#' + id).count(), 1, `Restore legacy research ${id}`);
+        assert.equal(await page.locator('#' + id).evaluate(el => el.open), false, `Keep legacy research folded ${id}`);
+      }
       if (width < 760) {
         assert.equal(await page.locator('.dg-shortlist td').first().evaluate(el => getComputedStyle(el).display), 'block');
         assert(await page.locator('.dg-ticket-prices .table-wrapper').evaluate(el => el.scrollWidth <= el.clientWidth + 1), 'Core ticket prices must not need horizontal scroll');
@@ -47,11 +53,11 @@ async function main() {
       for (const id of ['friday', 'saturday', 'sunday']) assert.equal(await page.locator('#' + id).count(), 1);
       assert.deepEqual(await page.locator('.disney-guide').evaluate(el => [...el.querySelectorAll('a[href^="#"]')].filter(a => !document.getElementById(decodeURIComponent(a.hash.slice(1)))).map(a => a.hash)), []);
       const text = await page.locator('.disney-guide').innerText();
-      for (const phrase of ['¥2,200', '20:00', '08:30', '不安排午睡', '¥2,860']) assert(text.includes(phrase), `Missing core fact ${phrase}`);
+      for (const phrase of ['¥3,768', '20:00', '08:30', '不安排午睡', '¥2,860', '周日', '近两年装修']) assert(text.includes(phrase), `Missing core fact ${phrase}`);
       await page.locator('.disney-guide a[href="#ticket-rules"]').click();
       assert.equal(await page.locator('#ticket-rules').evaluate(el => el.open), true);
       await page.goto(origin + route + '#catalog-full', { waitUntil: 'networkidle' });
-      assert.equal(await page.locator('#catalog-full').evaluate(el => el.open), true);
+      assert(await page.locator('[data-disney-catalog]').isVisible());
       await page.locator('[data-catalog-fit]').selectOption('优先推荐');
       assert.equal(await page.locator('.dg-experience:not([hidden])').count(), catalog.items.filter(x => x.fit === '优先推荐').length);
       await page.locator('[data-catalog-search]').fill('维尼');
@@ -87,7 +93,7 @@ async function main() {
       }
       assert.deepEqual(errors, []);
       await context.close();
-      console.log(`PASS ${width}px: core, ${catalog.items.length} items and assets, anchors, filters, dialogs, no overflow`);
+      console.log(`PASS ${width}px: two-day core, ${catalog.items.length} unfolded items, 19 reference budgets, folded historical research, anchors, filters, dialogs, no overflow`);
     }
   } finally {
     if (browser) await browser.close();
