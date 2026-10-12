@@ -1,3 +1,70 @@
+.dg-catalog-controls {
+  display: grid; grid-template-columns: 1.35fr 1fr 1fr 1fr; gap: .65rem;
+  padding: .8rem; border: 1px solid var(--dg-border); border-radius: 10px; background: var(--dg-surface-subtle);
+}
+.dg-catalog-controls label { display: grid; gap: .25rem; font-size: .8rem; font-weight: 700; min-width: 0; }
+.dg-catalog-controls input, .dg-catalog-controls select {
+  width: 100%; min-width: 0; padding: .5rem; border: 1px solid var(--dg-border);
+  border-radius: 6px; color: var(--dg-ink); background: var(--dg-surface); font: inherit; font-weight: 400;
+}
+.dg-catalog-controls :is(input, select):focus-visible, .dg-catalog-more:focus-visible, .dg-catalog-table-wrap:focus-visible { outline: 3px solid var(--dg-accent); outline-offset: 2px; }
+.dg-catalog-result { color: var(--dg-muted); font-size: .82rem; margin: .65rem 0 !important; }
+.dg-table-legend { display: flex; flex-wrap: wrap; gap: .45rem; margin: .65rem 0; font-size: .75rem; }
+.dg-table-legend span { padding: .2rem .6rem; border-radius: 5px; color: var(--dg-ink); }
+.dg-catalog :is(tr, .dg-table-legend span)[data-fit="优先推荐"], .dg-table-legend [data-level="优先推荐"] { --dg-row-bg: #edf7f0; }
+.dg-catalog :is(tr, .dg-table-legend span)[data-fit="适合备选"], .dg-table-legend [data-level="适合备选"] { --dg-row-bg: #eef4ff; }
+.dg-catalog :is(tr, .dg-table-legend span)[data-fit="先看接受度"], .dg-table-legend [data-level="先看接受度"] { --dg-row-bg: #fff7e8; }
+.dg-catalog :is(tr, .dg-table-legend span)[data-fit="暂不安排"], .dg-table-legend [data-level="暂不安排"] { --dg-row-bg: #f2f3f5; }
+[theme="dark"] .dg-catalog tr[data-fit="优先推荐"], [theme="dark"] .dg-table-legend [data-level="优先推荐"] { --dg-row-bg: #18322b; }
+[theme="dark"] .dg-catalog tr[data-fit="适合备选"], [theme="dark"] .dg-table-legend [data-level="适合备选"] { --dg-row-bg: #1d2b40; }
+[theme="dark"] .dg-catalog tr[data-fit="先看接受度"], [theme="dark"] .dg-table-legend [data-level="先看接受度"] { --dg-row-bg: #3c3020; }
+[theme="dark"] .dg-catalog tr[data-fit="暂不安排"], [theme="dark"] .dg-table-legend [data-level="暂不安排"] { --dg-row-bg: #242a33; }
+.dg-table-legend span { background: var(--dg-row-bg); }
+.dg-catalog-table-wrap { max-width: 100%; overflow-x: auto; border: 1px solid var(--dg-border); border-radius: 10px; }
+.disney-guide .dg-catalog-table-wrap > .table-wrapper { overflow: visible; border: 0; border-radius: 0; margin: 0; width: 100%; max-width: none; box-shadow: none; }
+.dg-table-hint { display: none; }
+.disney-guide .dg-catalog-table { --dg-order-width: 54px; display: table; table-layout: fixed; border-collapse: separate; border-spacing: 0; width: 100%; min-width: 940px !important; max-width: none !important; margin: 0; font-size: .8rem; line-height: 1.5; }
+.dg-col-order { width: 54px; } .dg-col-project { width: 172px; } .dg-col-photo { width: 112px; }
+.dg-col-description { width: auto; } .dg-col-requirement { width: 86px; } .dg-col-fit { width: 56px; } .dg-col-price { width: 116px; }
+.disney-guide .dg-catalog-table :is(th, td) { padding: .45rem .5rem; text-align: left; vertical-align: top; border: 0; border-bottom: 1px solid var(--dg-border); overflow-wrap: anywhere; color: var(--dg-ink); }
+.disney-guide .dg-catalog-table p { margin: 0 !important; }
+.disney-guide .dg-catalog-table th:first-child { width: auto !important; }
+.disney-guide .dg-catalog-table thead th { background: var(--dg-surface-subtle); font-weight: 700; white-space: nowrap; }
+.disney-guide .dg-catalog-table tbody :is(th, td) { background: var(--dg-row-bg); }
+.disney-guide .dg-catalog-table tbody th { font-weight: 400; }
+.disney-guide .dg-catalog-table tbody tr:last-child :is(th, td) { border-bottom: 0; }
+.disney-guide .dg-catalog-table .dg-order-cell { position: sticky; left: 0; z-index: 2; text-align: center; font-variant-numeric: tabular-nums; color: var(--dg-muted); }
+.disney-guide .dg-catalog-table .dg-project-cell { position: sticky; left: var(--dg-order-width); z-index: 1; box-shadow: 1px 0 var(--dg-border); }
+.dg-experience[hidden], .dg-catalog-empty[hidden], .dg-catalog-more[hidden] { display: none; }
+.disney-guide .dg-experience-photo { display: block; width: 100%; max-width: 96px; height: auto; aspect-ratio: 16 / 9; object-fit: cover; border-radius: 5px; margin: 0; }
+.dg-photo-link { display: block; cursor: zoom-in; }
+.dg-photo-link:focus-visible { outline: 2px solid var(--dg-accent); outline-offset: 3px; }
+.disney-guide .dg-experience h4 { font-size: .85rem; line-height: 1.45; margin: 0; padding: 0; }
+.disney-guide .dg-experience h4 a { color: var(--dg-ink); text-decoration: none; }
+.disney-guide .dg-experience h4 a:hover { text-decoration: underline; }
+.disney-guide .dg-experience-meta { font-size: .65rem; line-height: 1.4; margin: .3rem 0 0; color: var(--dg-muted); }
+.dg-fit { display: inline-block; font-size: .72rem; font-weight: 700; padding: .08rem .35rem; border-radius: 4px; background: color-mix(in srgb, var(--dg-surface) 55%, transparent); color: var(--dg-ink); }
+.dg-dpa-family, .dg-visit-note { display: block; margin-top: .25rem; font-size: .7rem; color: var(--dg-muted); }
+.dg-dpa-single { display: block; margin-top: .3rem; font-size: .7rem; }
+.dg-table-caption { caption-side: bottom; padding: .55rem; font-size: .72rem; color: var(--dg-muted); text-align: left; }
+.disney-guide .dg-priority-cell { text-align: center; padding-left: .25rem; padding-right: .25rem; }
+.dg-project-dialog, .dg-photo-dialog { width: min(880px, calc(100vw - 2rem)); max-height: 90vh; overflow: auto; border: 1px solid var(--dg-border); border-radius: 12px; padding: 1.2rem; color: var(--dg-ink); background: var(--dg-surface); box-shadow: 0 20px 60px #0005; }
+.dg-project-dialog::backdrop, .dg-photo-dialog::backdrop { background: #0009; }
+.dg-dialog-close { float: right; padding: .35rem .7rem; border: 1px solid var(--dg-border); border-radius: 6px; color: var(--dg-ink); background: var(--dg-surface-subtle); font: inherit; cursor: pointer; }
+.dg-detail-date, .dg-detail-sources { font-size: .8rem; color: var(--dg-muted); }
+.dg-detail-facts dt { margin-top: .8rem; font-weight: 700; }
+.dg-detail-facts dd { margin: .2rem 0 0; font-size: .9rem; line-height: 1.65; }
+.dg-photo-dialog figure { clear: both; margin: 1rem 0 0; }
+.disney-guide .dg-photo-dialog img { display: block; width: 100%; height: auto; margin: 0; }
+.dg-photo-dialog figcaption { padding-top: .5rem; text-align: center; }
+@media (max-width: 760px) {
+  .disney-guide .dg-table-hint { display: block; color: var(--dg-muted); font-size: .72rem; margin: .3rem 0; }
+  .dg-catalog-controls { grid-template-columns: repeat(2, minmax(0, 1fr)); padding: .65rem; }
+  .disney-guide .dg-catalog-table { --dg-order-width: 50px; min-width: 920px !important; }
+  .dg-col-order { width: 50px; } .dg-col-project { width: 145px; } .dg-col-photo { width: 104px; }
+  .dg-col-requirement { width: 80px; } .dg-col-fit { width: 52px; } .dg-col-price { width: 112px; }
+}
+
 .page.single:has(.disney-guide) {
   width: min(960px, calc(100% - 2rem)) !important;
   max-width: 960px;

@@ -1,0 +1,242 @@
+{
+  "checkedAt": "2026-10-13T01:32:20.963197+08:00",
+  "tickets": [
+    {
+      "type": "1日票",
+      "startDate": "2026-10-17",
+      "endDate": "2026-10-17",
+      "adult": 629,
+      "child": 471,
+      "family2Adults2Children": 2200,
+      "currency": "CNY",
+      "status": "官方指定日期公开接口报价已取得",
+      "request": {
+        "method": "POST",
+        "url": "https://www.shanghaidisneyresort.com/ticketing/api/v2/tickets/book/information/shdr-theme-park-tickets/party-mix/2026-10-17",
+        "body": {
+          "groupId": "ticket-group-shdr-theme-park-tickets-one-day-ticket-hybrid"
+        },
+        "headers": {
+          "Content-Type": "application/json",
+          "x-language": "zh-cn"
+        }
+      },
+      "adultEvidence": {
+        "ageGroup": "adult",
+        "text": "标准票",
+        "subText": "游园当日年龄在12-59周岁（含）",
+        "id": "shdr-theme-park-tickets_2017-04-20_1_A_0_0_RF_AF_SOF_41",
+        "price": "629",
+        "defaultNum": "1",
+        "maxNum": 5,
+        "minNum": 0,
+        "group": "adult",
+        "plu": "SHTP01OLRDQO",
+        "eventId": 90414,
+        "resourceId": 1,
+        "unitPrice": "629",
+        "description": "一日票 - 标准票",
+        "sku": "SHTP01OLRDQO",
+        "startDateTime": "2026-10-17T07:00:00.000+08:00",
+        "subtotal": "629",
+        "currency": "CNY",
+        "tax": "0",
+        "taxIncluded": false
+      },
+      "childEvidence": {
+        "ageGroup": "child",
+        "text": "儿童票",
+        "subText": "游园当日年龄在3周岁（含）至11周岁（含）",
+        "id": "shdr-theme-park-tickets_2017-04-20_1_C_0_0_RF_AF_SOF_41",
+        "price": "471",
+        "defaultNum": "0",
+        "maxNum": 5,
+        "minNum": 0,
+        "group": "child",
+        "plu": "SHTP01OLCDQO",
+        "eventId": 90414,
+        "resourceId": 1,
+        "unitPrice": "471",
+        "description": "一日票 - 儿童票",
+        "sku": "SHTP01OLCDQO",
+        "startDateTime": "2026-10-17T07:00:00.000+08:00",
+        "subtotal": "471",
+        "currency": "CNY",
+        "tax": "0",
+        "taxIncluded": false
+      }
+    },
+    {
+      "type": "1日票",
+      "startDate": "2026-10-18",
+      "endDate": "2026-10-18",
+      "adult": 569,
+      "child": 426,
+      "family2Adults2Children": 1990,
+      "currency": "CNY",
+      "status": "官方指定日期公开接口报价已取得",
+      "request": {
+        "method": "POST",
+        "url": "https://www.shanghaidisneyresort.com/ticketing/api/v2/tickets/book/information/shdr-theme-park-tickets/party-mix/2026-10-18",
+        "body": {
+          "groupId": "ticket-group-shdr-theme-park-tickets-one-day-ticket-hybrid"
+        },
+        "headers": {
+          "Content-Type": "application/json",
+          "x-language": "zh-cn"
+        }
+      },
+      "adultEvidence": {
+        "ageGroup": "adult",
+        "text": "标准票",
+        "subText": "游园当日年龄在12-59周岁（含）",
+        "id": "shdr-theme-park-tickets_2017-04-20_1_A_0_0_RF_AF_SOF_41",
+        "price": "569",
+        "defaultNum": "1",
+        "maxNum": 5,
+        "minNum": 0,
+        "group": "adult",
+        "plu": "SHTP01OLRDQO",
+        "eventId": 90415,
+        "resourceId": 1,
+        "unitPrice": "569",
+        "description": "一日票 - 标准票",
+        "sku": "SHTP01OLRDQO",
+        "startDateTime": "2026-10-18T07:00:00.000+08:00",
+        "subtotal": "569",
+        "currency": "CNY",
+        "tax": "0",
+        "taxIncluded": false
+      },
+      "childEvidence": {
+        "ageGroup": "child",
+        "text": "儿童票",
+        "subText": "游园当日年龄在3周岁（含）至11周岁（含）",
+        "id": "shdr-theme-park-tickets_2017-04-20_1_C_0_0_RF_AF_SOF_41",
+        "price": "426",
+        "defaultNum": "0",
+        "maxNum": 5,
+        "minNum": 0,
+        "group": "child",
+        "plu": "SHTP01OLCDQO",
+        "eventId": 90415,
+        "resourceId": 1,
+        "unitPrice": "426",
+        "description": "一日票 - 儿童票",
+        "sku": "SHTP01OLCDQO",
+        "startDateTime": "2026-10-18T07:00:00.000+08:00",
+        "subtotal": "426",
+        "currency": "CNY",
+        "tax": "0",
+        "taxIncluded": false
+      }
+    },
+    {
+      "type": "2日票",
+      "startDate": "2026-10-17",
+      "endDate": "2026-10-18",
+      "adult": 1078,
+      "child": 806,
+      "family2Adults2Children": 3768,
+      "currency": "CNY",
+      "status": "官方指定日期公开接口报价已取得",
+      "request": {
+        "method": "POST",
+        "url": "https://www.shanghaidisneyresort.com/ticketing/api/v2/tickets/book/information/shdr-theme-park-tickets/party-mix/2026-10-17",
+        "body": {
+          "groupId": "ticket-group-shdr-theme-park-tickets-two-day-ticket-hybrid"
+        },
+        "headers": {
+          "Content-Type": "application/json",
+          "x-language": "zh-cn"
+        }
+      },
+      "adultEvidence": {
+        "ageGroup": "adult",
+        "text": "标准票",
+        "subText": "游园当日年龄在12-59周岁（含）",
+        "id": "shdr-theme-park-tickets_2017-04-20_2_A_0_0_RF_AF_SOF_41",
+        "price": "1078",
+        "defaultNum": "1",
+        "maxNum": 5,
+        "minNum": 0,
+        "group": "adult",
+        "plu": "SHTPP2OLRDQO",
+        "unitPrice": "1078",
+        "description": "二日票 - 标准票",
+        "sku": "SHTPP2OLRDQO",
+        "startDateTime": "2026-10-17T07:00:00.000+08:00",
+        "subtotal": "1078",
+        "currency": "CNY",
+        "tax": "0",
+        "taxIncluded": false
+      },
+      "childEvidence": {
+        "ageGroup": "child",
+        "text": "儿童票",
+        "subText": "游园当日年龄在3周岁（含）至11周岁（含）",
+        "id": "shdr-theme-park-tickets_2017-04-20_2_C_0_0_RF_AF_SOF_41",
+        "price": "806",
+        "defaultNum": "0",
+        "maxNum": 5,
+        "minNum": 0,
+        "group": "child",
+        "plu": "SHTPP2OLCDQO",
+        "unitPrice": "806",
+        "description": "二日票 - 儿童票",
+        "sku": "SHTPP2OLCDQO",
+        "startDateTime": "2026-10-17T07:00:00.000+08:00",
+        "subtotal": "806",
+        "currency": "CNY",
+        "tax": "0",
+        "taxIncluded": false
+      }
+    }
+  ],
+  "earlyEntry": {
+    "visitDate": "2026-10-17",
+    "price": null,
+    "status": "指定日期官方价格未取得；此前199元为历史参考",
+    "sourceUrl": "https://www.shanghaidisneyresort.com/zh-cn/experience/tour/early-access",
+    "rules": [
+      "价格随日期及当日销售情况浮动，官方App/微信公众号选日期查询；需已有该日期有效入园凭证。",
+      "3岁以下免购；两个4岁孩子都需要权益，四人一同使用需四份。",
+      "不含提前进入疯狂动物城园区、热力追踪和该园区其他体验。",
+      "建议正式开园前90分钟到主入口；权益最多提前1小时入园。"
+    ]
+  },
+  "premierAccess": {
+    "officialIndividualPrices": null,
+    "status": "官网说明单项价格浮动，须官方App或小程序关联有效门票并按规则查询；清单保留的19项均为公开参考或预算估算",
+    "sourceUrl": "https://www.shanghaidisneyresort.com/zh-cn/experience/tour/vip-premier-access"
+  },
+  "royalBanquetHall": {
+    "startingPrice": 790,
+    "currency": "CNY",
+    "status": "当前官方套餐起价，含一位夜间秀预留区权益；10/17儿童价及四人总价未取得",
+    "sourceUrl": "https://www.shanghaidisneyresort.com/zh-cn/experience/restaurant/royal-banquet-hall"
+  },
+  "disneytownHalloweenTour": {
+    "price": 229,
+    "currency": "CNY",
+    "validForThisWeekend": false,
+    "availableDates": [
+      "2026-10-23",
+      "2026-10-24",
+      "2026-10-25",
+      "2026-10-30",
+      "2026-10-31",
+      "2026-11-01"
+    ],
+    "sourceUrl": "https://www.shanghaidisneyresort.com/zh-cn/experience/event/disneytown-halloween-tour"
+  },
+  "toyStoryHotel": {
+    "currentDateQuote": null,
+    "decision": "本次不住官方酒店",
+    "historicalPureRoomTotal": 1725,
+    "historicalBreakfastTotal": 2257,
+    "historicalCheckedAt": "2026-09-29",
+    "userReportedApproximatePrice": 2300,
+    "status": "旧价与用户看到的价格不作为当前官网可订报价"
+  }
+}

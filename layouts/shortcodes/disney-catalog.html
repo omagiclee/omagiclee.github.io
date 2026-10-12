@@ -1,0 +1,127 @@
+{{- $data := .Page.Resources.GetMatch "experiences.json" -}}
+{{- with $data -}}
+{{- $catalog := . | transform.Unmarshal -}}
+<div class="dg-catalog" data-disney-catalog>
+<div class="dg-catalog-controls">
+<label>找项目<input type="search" data-catalog-search placeholder="项目名、园区、角色…" autocomplete="off"></label>
+<label>体验类型<select data-catalog-type><option value="">全部类型</option><option>乘骑与探索</option><option>演出与烟花</option><option>角色互动</option><option>季节特别活动</option><option>互动游戏</option><option>园外体验</option></select></label>
+<label>优先级<select data-catalog-fit><option value="">全部优先级</option><option value="优先推荐">P0 · 优先推荐</option><option value="适合备选">P1 · 适合备选</option><option value="先看接受度">P2 · 先看接受度</option><option value="暂不安排">P3 · 暂不安排</option></select></label>
+<label>排序<select data-catalog-sort><option value="family">家庭优先顺序</option><option value="land">按园区集中查看</option></select></label>
+</div>
+<p class="dg-catalog-result" data-catalog-result aria-live="polite">共 {{ len $catalog.items }} 项，按家庭优先顺序排列。</p>
+<div class="dg-table-legend" aria-label="表格底色说明">
+<span data-level="优先推荐">P0 推荐</span><span data-level="适合备选">P1 适合</span><span data-level="先看接受度">P2 谨慎</span><span data-level="暂不安排">P3 不安排</span>
+</div>
+<p class="dg-table-hint">左右滑动查看其余列 →</p>
+<div class="dg-catalog-table-wrap" tabindex="0" role="region" aria-label="项目清单，窄屏可左右滑动">
+<table class="dg-catalog-table">
+<caption class="dg-table-caption">一行一个项目 · 窄屏可左右滑动查看</caption>
+<colgroup><col class="dg-col-order"><col class="dg-col-project"><col class="dg-col-photo"><col class="dg-col-description"><col class="dg-col-requirement"><col class="dg-col-fit"><col class="dg-col-price"></colgroup>
+<thead><tr><th scope="col" class="dg-order-cell">序号</th><th scope="col" class="dg-project-cell">项目名称</th><th scope="col">缩略图</th><th scope="col">描述</th><th scope="col">游玩要求</th><th scope="col">优先级</th><th scope="col">价格</th></tr></thead>
+<tbody class="dg-experience-grid">
+{{- range $catalog.items -}}
+{{- $item := . -}}
+<tr class="dg-experience" data-type="{{ .type }}" data-fit="{{ .fit }}" data-rank="{{ .order }}" data-land="{{ .land }}" data-search="{{ .name }} {{ .land }} {{ .description }} {{ .reason }} {{ .type }}">
+<td class="dg-order-cell">{{ .order }}</td>
+<th scope="row" class="dg-project-cell">
+<h4><a href="#disney-detail-{{ .id }}" data-catalog-detail="disney-detail-{{ .id }}" aria-haspopup="dialog">{{ .name }}</a></h4>
+<p class="dg-experience-meta">{{ .land }}</p>
+{{ with .visitNote }}<small class="dg-visit-note">{{ . }}</small>{{ end }}
+</th>
+<td class="dg-photo-cell">
+{{- $full := $.Page.Resources.GetMatch .fullImage -}}
+{{- with $.Page.Resources.GetMatch .image -}}
+<a href="{{ $full.RelPermalink }}" class="dg-photo-link" data-catalog-zoom data-photo-name="{{ $item.name }}" aria-label="放大{{ $item.name }}图片" aria-haspopup="dialog">
+<img src="{{ .RelPermalink }}" width="340" height="192" loading="lazy" decoding="async" alt="{{ $item.name }}官方项目图" class="dg-experience-photo">
+</a>
+{{- end -}}
+</td>
+<td class="dg-description-cell">{{ .description }}</td>
+<td class="dg-requirement-cell">{{ .requirementShort }}</td>
+<td class="dg-priority-cell"><span class="dg-fit" data-level="{{ .fit }}" title="{{ .fit }}：{{ .reasonShort }}" aria-label="{{ .fit }}：{{ .reasonShort }}">{{ .priority }}</span></td>
+<td class="dg-price-cell"><span>{{ .feeShort }}</span><small class="dg-dpa-single">尊享：{{ if .dpaPriceSource }}<a href="#disney-detail-{{ .id }}" data-catalog-detail="disney-detail-{{ .id }}" aria-haspopup="dialog">{{ .dpaShort }}</a>{{ else }}{{ .dpaShort }}{{ end }}</small>{{ with .dpaFamily }}<small class="dg-dpa-family">{{ . }}</small>{{ end }}</td>
+</tr>
+{{- end -}}
+</tbody>
+</table>
+</div>
+<p class="dg-catalog-empty" data-catalog-empty hidden>没有符合条件的项目，试试其他名称或筛选条件。</p>
+<dialog class="dg-project-dialog" aria-label="项目详情" data-catalog-detail-dialog><button type="button" class="dg-dialog-close" data-catalog-close>关闭</button><div data-catalog-detail-content></div></dialog>
+<dialog class="dg-photo-dialog" aria-label="项目大图" data-catalog-photo-dialog><button type="button" class="dg-dialog-close" data-catalog-close>关闭</button><figure><img data-catalog-full-photo alt=""><figcaption data-catalog-photo-caption></figcaption></figure></dialog>
+{{- range $catalog.items -}}
+{{- $item := . -}}
+<template id="disney-detail-{{ .id }}">
+<h3>{{ .name }}</h3>
+<p class="dg-detail-date">站内资料 · {{ $catalog.checkedAt }} 核验</p>
+<p>{{ .description }}</p>
+<dl class="dg-detail-facts"><dt>游玩要求</dt><dd>{{ .requirements }}</dd><dt>我家孩子</dt><dd>{{ .priority }} · {{ .fit }}：{{ .reason }}</dd><dt>价格</dt><dd>{{ .feeLabel }}{{ with .feeNote }} · {{ . }}{{ end }}</dd><dt>尊享卡</dt><dd>{{ .dpaText }}</dd>{{ with .notes }}<dt>特别留意</dt><dd>{{ . }}</dd>{{ end }}</dl>
+<p class="dg-detail-sources">资料来源：{{ range $i, $url := .sourceUrls }}{{ if $i }} · {{ end }}<a href="{{ $url }}" target="_blank" rel="noopener">官网来源{{ if $i }} {{ add $i 1 }}{{ end }}</a>{{ end }}</p>
+{{ with .dpaPriceSource }}<p class="dg-detail-sources">价格依据：<a href="{{ . }}" target="_blank" rel="noopener">公开参考</a>{{ with $item.dpaEstimateBasis }} · {{ . }}{{ end }}</p>{{ end }}
+</template>
+{{- end -}}
+<noscript><p>全部项目已展示；筛选和站内详情需要 JavaScript，大图可直接打开。</p></noscript>
+</div>
+<script>
+(() => {
+const catalog = document.querySelector('[data-disney-catalog]');
+if (!catalog || catalog.dataset.bound) return;
+catalog.dataset.bound = 'true';
+const grid = catalog.querySelector('.dg-experience-grid');
+const cards = [...grid.children];
+const search = catalog.querySelector('[data-catalog-search]');
+const type = catalog.querySelector('[data-catalog-type]');
+const fit = catalog.querySelector('[data-catalog-fit]');
+const sort = catalog.querySelector('[data-catalog-sort]');
+const result = catalog.querySelector('[data-catalog-result]');
+const empty = catalog.querySelector('[data-catalog-empty]');
+const render = () => {
+const query = search.value.trim().toLocaleLowerCase();
+const ordered = [...cards].sort((a, b) => {
+if (sort.value === 'land') {
+const land = a.dataset.land.localeCompare(b.dataset.land, 'zh-CN');
+if (land) return land;
+}
+return Number(a.dataset.rank) - Number(b.dataset.rank);
+});
+const matching = ordered.filter(card => (!type.value || card.dataset.type === type.value)
+&& (!fit.value || card.dataset.fit === fit.value)
+&& (!query || card.dataset.search.toLocaleLowerCase().includes(query)));
+cards.forEach(card => { card.hidden = true; });
+matching.forEach(card => { card.hidden = false; });
+ordered.forEach(card => grid.append(card));
+result.textContent = matching.length === cards.length ? `共 ${cards.length} 项` : `${matching.length} / ${cards.length} 项`;
+empty.hidden = matching.length !== 0;
+};
+[search, type, fit, sort].forEach(control => control.addEventListener(control === search ? 'input' : 'change', render));
+const detailDialog = catalog.querySelector('[data-catalog-detail-dialog]');
+const photoDialog = catalog.querySelector('[data-catalog-photo-dialog]');
+catalog.addEventListener('click', event => {
+if (!(event.target instanceof Element)) return;
+const detail = event.target.closest('[data-catalog-detail]');
+const zoom = event.target.closest('[data-catalog-zoom]');
+if (detail) {
+const template = document.getElementById(detail.dataset.catalogDetail);
+if (!template) return;
+event.preventDefault();
+detailDialog.querySelector('[data-catalog-detail-content]').replaceChildren(template.content.cloneNode(true));
+detailDialog.showModal();
+} else if (zoom) {
+event.preventDefault();
+const photo = photoDialog.querySelector('[data-catalog-full-photo]');
+photo.src = zoom.href;
+photo.alt = zoom.dataset.photoName;
+photoDialog.querySelector('[data-catalog-photo-caption]').textContent = zoom.dataset.photoName;
+photoDialog.showModal();
+} else if (event.target.closest('[data-catalog-close]')) {
+event.target.closest('dialog').close();
+}
+});
+[detailDialog, photoDialog].forEach(dialog => dialog.addEventListener('click', event => {
+if (event.target !== dialog) return;
+const box = dialog.getBoundingClientRect();
+if (event.clientX < box.left || event.clientX > box.right || event.clientY < box.top || event.clientY > box.bottom) dialog.close();
+}));
+render();
+})();
+</script>
+{{- end -}}
