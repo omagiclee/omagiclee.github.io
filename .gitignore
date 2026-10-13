@@ -52,3 +52,7 @@ __pycache__/
 /_fix_table2.py
 # Local report inspection metadata
 *.inspect.ndjson
+
+# Private local photo indexes, previews, environment and local blog build.
+/.local-photos/
+/.local-artalk/

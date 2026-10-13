@@ -1,0 +1,35 @@
+services:
+  artalk:
+    image: artalk/artalk-go:2.10.0
+    restart: unless-stopped
+    expose:
+      - "23366"
+    volumes:
+      - artalk-data:/data
+    environment:
+      TZ: Asia/Shanghai
+      ATK_TIMEZONE: Asia/Shanghai
+      ATK_LOCALE: en
+      ATK_APP_KEY: ${ARTALK_APP_KEY:?Set ARTALK_APP_KEY in .env}
+      ATK_SITE_DEFAULT: "Naifan Li's Blog"
+      ATK_SITE_URL: https://blog.omagiclee.com
+      ATK_TRUSTED_DOMAINS: https://blog.omagiclee.com
+  caddy:
+    image: caddy:2-alpine
+    restart: unless-stopped
+    depends_on:
+      - artalk
+    ports:
+      - "80:80"
+      - "443:443"
+      - "443:443/udp"
+    environment:
+      ARTALK_DOMAIN: ${ARTALK_DOMAIN:?Set ARTALK_DOMAIN in .env}
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy-data:/data
+      - caddy-config:/config
+volumes:
+  artalk-data:
+  caddy-data:
+  caddy-config:

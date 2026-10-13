@@ -1,0 +1,3 @@
+{$ARTALK_DOMAIN} {
+  reverse_proxy artalk:23366
+}

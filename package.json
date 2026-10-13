@@ -2,11 +2,20 @@
   "name": "omagiclee-blog",
   "private": true,
   "scripts": {
-    "test:site": "node scripts/site-smoke.cjs"
+    "install:browser": "playwright install chromium --no-shell",
+    "test:site": "node scripts/site-smoke.cjs",
+    "comments:start": "docker compose -p blog-artalk-local -f deploy/artalk/compose.local.yaml up -d",
+    "comments:stop": "docker compose -p blog-artalk-local -f deploy/artalk/compose.local.yaml stop",
+    "preview:comments": "hugo server --environment artalk-preview --bind 127.0.0.1 --port 1317 --renderToMemory --buildDrafts=false",
+    "test:comments": "node scripts/comments-smoke.cjs",
+    "photos": "node scripts/local-photos.mjs",
+    "photos:setup": "node scripts/local-photos.mjs --setup",
+    "photos:test": "node scripts/local-photos.mjs --test"
   },
   "devDependencies": {
+    "artalk": "2.10.0",
     "mermaid": "12.0.0",
-    "playwright": "1.62.1"
+    "playwright": "1.63.0"
   },
   "overrides": {
     "lodash-es": "4.18.1"

@@ -1,0 +1,6 @@
+mujoco>=3.3,<4
+stable-baselines3>=2.7,<3
+gymnasium>=1.2,<2
+fastapi
+uvicorn[standard]
+pillow

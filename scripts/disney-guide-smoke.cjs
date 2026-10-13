@@ -8,10 +8,31 @@ const { chromium } = require('playwright');
 const root = path.resolve(process.argv[2] || 'public');
 const route = '/posts/family/tour/shanghai-disney-2026-autumn/';
 const catalog = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../content' + route + 'experiences.json'), 'utf8'));
+const videos = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../content' + route + 'videos.json'), 'utf8'));
 const mime = { '.html': 'text/html', '.css': 'text/css', '.js': 'text/javascript', '.json': 'application/json', '.webp': 'image/webp', '.svg': 'image/svg+xml', '.png': 'image/png', '.woff2': 'font/woff2' };
 async function main() {
   assert(fs.existsSync(path.join(root, route, 'index.html')), 'Build must include guide');
   assert.equal(new Set(catalog.items.map(x => x.id)).size, catalog.items.length);
+  assert.equal(Object.keys(videos.items).length + Object.keys(videos.pending).length, catalog.items.length, 'Each row has a selected video or an explicit pending status');
+  for (const [id, video] of Object.entries(videos.items)) {
+    assert(catalog.items.some(item => item.id === id) && !videos.pending[id], `Video must belong to one catalog row: ${id}`);
+    assert(video.title && video.creator && video.note, `Missing video context: ${id}`);
+    const url = new URL(video.url);
+    const embed = new URL(video.embedUrl);
+    assert.equal(url.protocol, 'https:');
+    assert.equal(embed.searchParams.get('autoplay'), '0');
+    if (video.provider === 'bilibili') {
+      assert.equal(url.hostname, 'www.bilibili.com');
+      assert.equal(url.pathname, `/video/${video.videoId}/`);
+      assert.equal(embed.hostname, 'player.bilibili.com');
+      assert.equal(embed.searchParams.get('bvid'), video.videoId);
+    } else {
+      assert.equal(url.hostname, 'www.youtube.com');
+      assert.equal(url.searchParams.get('v'), video.videoId);
+      assert.equal(embed.hostname, 'www.youtube-nocookie.com');
+      assert.equal(embed.pathname, `/embed/${video.videoId}`);
+    }
+  }
   for (const item of catalog.items) for (const field of ['image', 'fullImage']) assert(fs.existsSync(path.join(root, route, item[field])), `Missing asset ${item.id} ${field}`);
   const server = http.createServer((req, res) => {
     let file;
@@ -41,6 +62,9 @@ async function main() {
       assert.equal(await page.locator('#catalog-full').evaluate(el => el.tagName), 'H2');
       assert.equal(await page.locator('[data-disney-catalog]').evaluate(el => el.closest('details')), null, 'Full catalog must not be folded');
       assert.equal(await page.locator('.dg-experience:visible').count(), catalog.items.length);
+      assert.equal(await page.locator('.dg-experience [data-catalog-video]').count(), Object.keys(videos.items).length);
+      assert.equal(await page.locator('.dg-video-pending').count(), Object.keys(videos.pending).length);
+      assert.equal(await page.locator('.dg-catalog iframe').count(), 0, 'Do not load players before the visitor chooses a video');
       assert.equal(await page.locator('.dg-dpa-single').filter({ hasText: '参考' }).count(), 19, 'Keep 19 reference budgets visible');
       for (const id of ['hotel-price-history', 'hotel-refund', 'legacy-premier-research', 'bundle-research']) {
         assert.equal(await page.locator('#' + id).count(), 1, `Restore legacy research ${id}`);
@@ -77,6 +101,25 @@ async function main() {
       await page.locator('.dg-experience [data-catalog-zoom]').first().click();
       await page.waitForFunction(() => { const i = document.querySelector('[data-catalog-full-photo]'); return i.complete && i.naturalWidth > 0; });
       await page.keyboard.press('Escape');
+      const videoLink = page.locator('.dg-experience [data-catalog-video="disney-video-entMickeyStorybookAdventure"]');
+      await videoLink.click();
+      await page.locator('[data-catalog-video-dialog]').waitFor({ state: 'visible' });
+      assert((await page.locator('[data-catalog-video-content]').innerText()).includes('室内坐着看'));
+      assert.equal(await page.locator('[data-catalog-video-dialog] iframe').getAttribute('src'), videos.items.entMickeyStorybookAdventure.embedUrl);
+      await page.keyboard.press('Escape');
+      assert.equal(await page.locator('[data-catalog-video-dialog] iframe').count(), 0, 'Closing a video must unload its player and stop audio');
+      await page.locator('.dg-experience [data-catalog-video="disney-video-entTheHeartOfMagic"]').click();
+      assert((await page.locator('[data-catalog-video-content]').innerText()).includes('十周年日间户外'));
+      await page.locator('[data-catalog-video-dialog] [data-catalog-close]').click();
+      assert.equal(await page.locator('[data-catalog-video-dialog] iframe').count(), 0);
+      const wishlistRows = await page.locator('.dg-wife-pick').evaluateAll(elements => elements.map(el => Number(el.closest('tr').dataset.rank)));
+      assert.deepEqual(wishlistRows, [1, 2, 3, 4, 6, 7, 11, 13, 22]);
+      if (process.env.SITE_SMOKE_SCREENSHOT_DIR) {
+        await page.locator('[data-disney-catalog]').scrollIntoViewIfNeeded();
+        await page.evaluate(() => document.querySelector('.dg-catalog-table-wrap').scrollLeft = 0);
+        const dir = process.env.SITE_SMOKE_SCREENSHOT_DIR; fs.mkdirSync(dir, { recursive: true });
+        await page.screenshot({ path: path.join(dir, `disney-${width}-catalog.png`) });
+      }
       assert(await page.evaluate(() => document.documentElement.scrollWidth <= document.documentElement.clientWidth + 1), `Page overflow at ${width}px`);
       if (process.env.SITE_SMOKE_SCREENSHOT_DIR) {
         const dir = process.env.SITE_SMOKE_SCREENSHOT_DIR; fs.mkdirSync(dir, { recursive: true });
@@ -93,7 +136,7 @@ async function main() {
       }
       assert.deepEqual(errors, []);
       await context.close();
-      console.log(`PASS ${width}px: two-day core, ${catalog.items.length} unfolded items, 19 reference budgets, folded historical research, anchors, filters, dialogs, no overflow`);
+      console.log(`PASS ${width}px: ${catalog.items.length} items, ${Object.keys(videos.items).length} video links, lazy players and close cleanup, wishlist notes, filters, dialogs, no overflow`);
     }
   } finally {
     if (browser) await browser.close();

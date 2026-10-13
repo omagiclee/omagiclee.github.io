@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light"><title>Go2 · 强化学习游乐场</title>
+  <link rel="stylesheet" href="/static/style.css"><script src="/static/app.js" defer></script>
+</head>
+<body>
+  <header class="topbar"><a class="brand" href="/" aria-label="Go2 游乐场首页"><span class="mark">G<span>2</span></span><span>GO2 <b>PLAYGROUND</b></span></a><span class="local"><i></i> LOCAL LAB</span></header>
+  <main>
+    <div class="heading"><div><div class="eyebrow">EMBODIED LEARNING / EXPERIMENT 01</div><h1>让机器狗，学会迈出一步。</h1><p>从平地出发，观察每次动作，训练属于你的四足策略。</p></div><div class="hardware"><span id="chip">本机环境</span><strong id="memory">MuJoCo · CPU PPO</strong></div></div>
+    <div class="workspace">
+      <section class="simulation card" aria-label="Go2 实时仿真">
+        <div class="section-head"><div><span class="dot"></span><h2>实时仿真</h2><span class="subtle">UNITREE GO2</span></div><span id="connection" class="badge">连接中</span></div>
+        <div class="viewport"><img id="frame" alt="MuJoCo 中的 Go2 物理仿真画面"><div class="scene-label"><span>01 / FLAT TERRAIN</span><strong>平地训练场</strong></div><div id="scene-message" class="scene-message">正在载入物理模型…</div><div class="viewport-bottom"><span id="mode-label">站姿参考控制</span><span><b id="fps">—</b> FPS</span></div></div>
+        <div class="metrics"><div><span>前向速度</span><strong id="speed">—<small> m/s</small></strong></div><div><span>身体高度</span><strong id="height">—<small> m</small></strong></div><div><span>即时奖励</span><strong id="reward">—</strong></div><div><span>仿真时间</span><strong id="sim-time">—<small> s</small></strong></div></div>
+        <div class="scene-actions"><div class="buttons"><button id="pause" class="outline">暂停</button><button id="reset" class="outline">重置姿态</button><button id="push" class="outline">推它一下 ↗</button></div><div class="camera"><label for="camera">视角</label><select id="camera"><option value="135">前侧</option><option value="45">后侧</option><option value="90">侧面</option><option value="180">正面</option></select></div></div>
+      </section>
+      <aside class="control card">
+        <div class="section-head"><h2>控制台</h2><span class="subtle">CONTROL</span></div>
+        <div class="control-body"><label class="field-label" for="controller">控制方式</label><select id="controller"><option value="standing">站姿参考 · 固定关节目标</option><option value="random">随机动作 · 观察探索</option></select><p class="help" id="controller-help">站姿参考用 PD 控制保持姿态。速度指令需加载训练策略后生效。</p>
+          <div class="separator"></div><div class="section-title"><h3>目标速度</h3><span class="subtle">50 Hz</span></div>
+          <label class="slider-label" for="vx">前进 / 后退 <output id="vx-value">0.00 m/s</output></label><input id="vx" type="range" min="-0.7" max="0.7" value="0" step="0.05">
+          <label class="slider-label" for="vy">左右平移 <output id="vy-value">0.00 m/s</output></label><input id="vy" type="range" min="-0.3" max="0.3" value="0" step="0.05">
+          <label class="slider-label" for="yaw">转向 <output id="yaw-value">0.00 rad/s</output></label><input id="yaw" type="range" min="-1" max="1" value="0" step="0.1">
+          <button id="zero" class="text-button">归零速度指令</button><div class="keyboard"><div><kbd>W</kbd><kbd>S</kbd><span>前进 / 后退</span></div><div><kbd>A</kbd><kbd>D</kbd><span>左转 / 右转</span></div></div>
+          <div class="separator"></div><div class="section-title"><h3>足端接触</h3><span class="subtle">CONTACT</span></div><div class="feet"><span data-foot="FL"><i></i>左前</span><span data-foot="FR"><i></i>右前</span><span data-foot="RL"><i></i>左后</span><span data-foot="RR"><i></i>右后</span></div>
+        </div>
+      </aside>
+    </div>
+    <section class="training card" aria-label="强化学习训练">
+      <div class="section-head"><div><h2>训练你的第一只机器狗</h2><span class="subtle">PPO / VELOCITY TRACKING</span></div><span id="train-status" class="badge neutral">尚未开始</span></div>
+      <div class="training-grid"><div class="training-config"><p class="intro">用真实物理交互学习 12 个关节的动作。短实验验证训练流程；稳定行走需要持续训练和独立评估。</p>
+        <label class="field-label" for="budget">本次训练步数</label><select id="budget"><option value="8192">8,192 步 · 流程体验</option><option value="65536" selected>65,536 步 · 初步实验</option><option value="262144">262,144 步 · 持续学习</option><option value="1048576">1,048,576 步 · 较长实验</option></select>
+        <label class="field-label" for="seed">随机种子</label><input id="seed" type="number" min="0" max="2147483647" value="42">
+        <label class="field-label" for="checkpoint">已保存策略</label><select id="checkpoint"><option value="">暂无模型</option></select>
+        <label class="checkbox"><input id="resume" type="checkbox">从选中策略继续训练</label>
+        <div class="training-buttons"><button id="train" class="primary">开始训练 <span>↗</span></button><button id="stop" class="outline" disabled>停止并保存</button></div>
+        <div class="model-actions"><button id="load" class="text-button" disabled>加载到训练场 →</button><a id="download" hidden>下载模型</a></div>
+        <p class="help">训练使用 4 个仿真环境、2 个 CPU 计算线程，不渲染训练画面。</p>
+      </div>
+      <div class="training-visual"><div class="training-stats"><div><span>采样进度</span><strong id="progress-text">—</strong></div><div><span>实际训练速度</span><strong id="train-speed">—</strong></div><div><span>平均回合时长</span><strong id="episode-length">—</strong></div></div><progress id="progress" value="0" max="1" aria-label="训练进度"></progress>
+        <div class="chart-title"><h3>学习曲线</h3><span>平均回合回报 · 最近 100 回合</span></div><div class="chart-wrap"><canvas id="chart" aria-label="训练回报曲线"></canvas><div id="chart-empty">开始一次训练，观察策略如何变化。</div></div>
+        <div id="evaluation" class="evaluation" hidden></div><details><summary>训练日志</summary><pre id="train-log">等待训练开始。</pre></details>
+      </div></div>
+    </section>
+    <section class="experiment-history"><div class="history-title"><h2>实验记录</h2><span>每次训练独立保存，随时加载和继续。</span></div><div id="runs" class="runs-empty">你的第一场实验，从这里开始。</div></section>
+    <footer><span>GO2 PLAYGROUND <b>·</b> 本地具身学习实验室</span><span id="benchmark">物理仿真与策略训练分别计速</span></footer>
+  </main><div id="toast" role="status" aria-live="polite" hidden></div>
+</body>
+</html>

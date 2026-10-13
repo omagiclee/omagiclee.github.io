@@ -1,6 +1,8 @@
 {{- $data := .Page.Resources.GetMatch "experiences.json" -}}
 {{- with $data -}}
 {{- $catalog := . | transform.Unmarshal -}}
+{{- $videos := dict "items" dict -}}
+{{- with $.Page.Resources.GetMatch "videos.json" -}}{{- $videos = . | transform.Unmarshal -}}{{- end -}}
 <div class="dg-catalog" data-disney-catalog>
 <div class="dg-catalog-controls">
 <label>找项目<input type="search" data-catalog-search placeholder="项目名、园区、角色…" autocomplete="off"></label>
@@ -9,6 +11,7 @@
 <label>排序<select data-catalog-sort><option value="family">家庭优先顺序</option><option value="land">按园区集中查看</option></select></label>
 </div>
 <p class="dg-catalog-result" data-catalog-result aria-live="polite">共 {{ len $catalog.items }} 项，按家庭优先顺序排列。</p>
+<p class="dg-video-guide">已补 {{ len $videos.items }} 项视频 · 点击播放，或打开原平台。旧版、片段和互动示例单独标注；其余项目待补匹配实拍。</p>
 <div class="dg-table-legend" aria-label="表格底色说明">
 <span data-level="优先推荐">P0 推荐</span><span data-level="适合备选">P1 适合</span><span data-level="先看接受度">P2 谨慎</span><span data-level="暂不安排">P3 不安排</span>
 </div>
@@ -16,8 +19,8 @@
 <div class="dg-catalog-table-wrap" tabindex="0" role="region" aria-label="项目清单，窄屏可左右滑动">
 <table class="dg-catalog-table">
 <caption class="dg-table-caption">一行一个项目 · 窄屏可左右滑动查看</caption>
-<colgroup><col class="dg-col-order"><col class="dg-col-project"><col class="dg-col-photo"><col class="dg-col-description"><col class="dg-col-requirement"><col class="dg-col-fit"><col class="dg-col-price"></colgroup>
-<thead><tr><th scope="col" class="dg-order-cell">序号</th><th scope="col" class="dg-project-cell">项目名称</th><th scope="col">缩略图</th><th scope="col">描述</th><th scope="col">游玩要求</th><th scope="col">优先级</th><th scope="col">价格</th></tr></thead>
+<colgroup><col class="dg-col-order"><col class="dg-col-project"><col class="dg-col-photo"><col class="dg-col-video"><col class="dg-col-description"><col class="dg-col-requirement"><col class="dg-col-fit"><col class="dg-col-price"></colgroup>
+<thead><tr><th scope="col" class="dg-order-cell">序号</th><th scope="col" class="dg-project-cell">项目名称</th><th scope="col">缩略图</th><th scope="col">项目视频</th><th scope="col">描述</th><th scope="col">游玩要求</th><th scope="col">优先级</th><th scope="col">价格</th></tr></thead>
 <tbody class="dg-experience-grid">
 {{- range $catalog.items -}}
 {{- $item := . -}}
@@ -36,10 +39,20 @@
 </a>
 {{- end -}}
 </td>
+<td class="dg-video-cell">
+{{- with index $videos.items .id -}}
+<a class="dg-video-play" href="{{ .url }}" target="_blank" rel="noopener noreferrer" data-catalog-video="disney-video-{{ $item.id }}" aria-label="播放{{ $item.name }}项目视频" aria-haspopup="dialog">▶ 播放视频</a>
+<small class="dg-video-meta">{{ .platform }}{{ with .durationLabel }} · {{ . }}{{ end }}</small>
+<small class="dg-video-kind">{{ .kind }} · {{ .publishedYear }}年发布</small>
+<small class="dg-video-note">{{ .note }}</small>
+{{- else -}}
+<span class="dg-video-pending">待补匹配实拍</span>
+{{- end -}}
+</td>
 <td class="dg-description-cell">{{ .description }}</td>
 <td class="dg-requirement-cell">{{ .requirementShort }}</td>
 <td class="dg-priority-cell"><span class="dg-fit" data-level="{{ .fit }}" title="{{ .fit }}：{{ .reasonShort }}" aria-label="{{ .fit }}：{{ .reasonShort }}">{{ .priority }}</span></td>
-<td class="dg-price-cell"><span>{{ .feeShort }}</span><small class="dg-dpa-single">尊享：{{ if .dpaPriceSource }}<a href="#disney-detail-{{ .id }}" data-catalog-detail="disney-detail-{{ .id }}" aria-haspopup="dialog">{{ .dpaShort }}</a>{{ else }}{{ .dpaShort }}{{ end }}</small>{{ with .dpaFamily }}<small class="dg-dpa-family">{{ . }}</small>{{ end }}</td>
+<td class="dg-price-cell">{{ with .familyWishlist }}<strong class="dg-wife-pick">{{ . }}</strong>{{ end }}<span>{{ .feeShort }}</span><small class="dg-dpa-single">尊享：{{ if .dpaPriceSource }}<a href="#disney-detail-{{ .id }}" data-catalog-detail="disney-detail-{{ .id }}" aria-haspopup="dialog">{{ .dpaShort }}</a>{{ else }}{{ .dpaShort }}{{ end }}</small>{{ with .dpaFamily }}<small class="dg-dpa-family">{{ . }}</small>{{ end }}</td>
 </tr>
 {{- end -}}
 </tbody>
@@ -48,18 +61,31 @@
 <p class="dg-catalog-empty" data-catalog-empty hidden>没有符合条件的项目，试试其他名称或筛选条件。</p>
 <dialog class="dg-project-dialog" aria-label="项目详情" data-catalog-detail-dialog><button type="button" class="dg-dialog-close" data-catalog-close>关闭</button><div data-catalog-detail-content></div></dialog>
 <dialog class="dg-photo-dialog" aria-label="项目大图" data-catalog-photo-dialog><button type="button" class="dg-dialog-close" data-catalog-close>关闭</button><figure><img data-catalog-full-photo alt=""><figcaption data-catalog-photo-caption></figcaption></figure></dialog>
+<dialog class="dg-video-dialog" aria-label="项目视频" data-catalog-video-dialog><button type="button" class="dg-dialog-close" data-catalog-close>关闭</button><div data-catalog-video-content></div></dialog>
 {{- range $catalog.items -}}
 {{- $item := . -}}
 <template id="disney-detail-{{ .id }}">
 <h3>{{ .name }}</h3>
 <p class="dg-detail-date">站内资料 · {{ $catalog.checkedAt }} 核验</p>
 <p>{{ .description }}</p>
+{{ with index $videos.items .id }}<p class="dg-detail-sources">项目视频：<a href="{{ .url }}" target="_blank" rel="noopener noreferrer">{{ .title }}</a> · {{ .kind }} · {{ .note }}</p>{{ end }}
 <dl class="dg-detail-facts"><dt>游玩要求</dt><dd>{{ .requirements }}</dd><dt>我家孩子</dt><dd>{{ .priority }} · {{ .fit }}：{{ .reason }}</dd><dt>价格</dt><dd>{{ .feeLabel }}{{ with .feeNote }} · {{ . }}{{ end }}</dd><dt>尊享卡</dt><dd>{{ .dpaText }}</dd>{{ with .operatingStatusByDate }}<dt>本次开放状态</dt><dd>{{ range $date, $status := . }}<p>{{ $date }}：{{ $status.label }}</p>{{ end }}</dd>{{ end }}{{ with .notes }}<dt>特别留意</dt><dd>{{ . }}</dd>{{ end }}</dl>
 <p class="dg-detail-sources">资料来源：{{ range $i, $url := .sourceUrls }}{{ if $i }} · {{ end }}<a href="{{ $url }}" target="_blank" rel="noopener">官网来源{{ if $i }} {{ add $i 1 }}{{ end }}</a>{{ end }}</p>
 {{ with .dpaPriceSource }}<p class="dg-detail-sources">价格依据：<a href="{{ . }}" target="_blank" rel="noopener">公开参考</a>{{ with $item.dpaEstimateBasis }} · {{ . }}{{ end }}</p>{{ end }}
 </template>
+{{- with index $videos.items .id -}}
+<template id="disney-video-{{ $item.id }}">
+<h3>{{ $item.name }}</h3>
+<p>{{ $item.description }}</p>
+<div class="dg-video-player"><iframe data-video-src="{{ .embedUrl }}" title="{{ $item.name }}：{{ .title }}" allow="fullscreen; picture-in-picture" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+<p class="dg-video-title">{{ .title }}</p>
+<p class="dg-detail-sources">{{ .creator }} · {{ .platform }}{{ with .durationLabel }} · {{ . }}{{ end }} · {{ .publishedYear }}年发布 · {{ .kind }}</p>
+<p class="dg-video-context">{{ .note }}</p>
+<p><a href="{{ .url }}" target="_blank" rel="noopener noreferrer">在{{ .platform }}打开原视频 ↗</a><small class="dg-video-fallback">播放不成功时可直接打开原平台。</small></p>
+</template>
 {{- end -}}
-<noscript><p>全部项目已展示；筛选和站内详情需要 JavaScript，大图可直接打开。</p></noscript>
+{{- end -}}
+<noscript><p>全部项目已展示；筛选和站内详情需要 JavaScript，大图及视频可直接打开。</p></noscript>
 </div>
 <script>
 (() => {
@@ -95,11 +121,28 @@ empty.hidden = matching.length !== 0;
 [search, type, fit, sort].forEach(control => control.addEventListener(control === search ? 'input' : 'change', render));
 const detailDialog = catalog.querySelector('[data-catalog-detail-dialog]');
 const photoDialog = catalog.querySelector('[data-catalog-photo-dialog]');
+const videoDialog = catalog.querySelector('[data-catalog-video-dialog]');
+const unloadVideo = () => videoDialog.querySelector('[data-catalog-video-content]').replaceChildren();
+const closeDialog = dialog => {
+if (dialog === videoDialog) unloadVideo();
+dialog.close();
+};
 catalog.addEventListener('click', event => {
 if (!(event.target instanceof Element)) return;
 const detail = event.target.closest('[data-catalog-detail]');
 const zoom = event.target.closest('[data-catalog-zoom]');
-if (detail) {
+const video = event.target.closest('[data-catalog-video]');
+if (video) {
+if (event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
+const template = document.getElementById(video.dataset.catalogVideo);
+if (!template) return;
+event.preventDefault();
+const content = videoDialog.querySelector('[data-catalog-video-content]');
+content.replaceChildren(template.content.cloneNode(true));
+const frame = content.querySelector('iframe');
+frame.src = frame.dataset.videoSrc;
+videoDialog.showModal();
+} else if (detail) {
 const template = document.getElementById(detail.dataset.catalogDetail);
 if (!template) return;
 event.preventDefault();
@@ -113,13 +156,15 @@ photo.alt = zoom.dataset.photoName;
 photoDialog.querySelector('[data-catalog-photo-caption]').textContent = zoom.dataset.photoName;
 photoDialog.showModal();
 } else if (event.target.closest('[data-catalog-close]')) {
-event.target.closest('dialog').close();
+closeDialog(event.target.closest('dialog'));
 }
 });
-[detailDialog, photoDialog].forEach(dialog => dialog.addEventListener('click', event => {
+videoDialog.addEventListener('cancel', unloadVideo);
+videoDialog.addEventListener('close', unloadVideo);
+[detailDialog, photoDialog, videoDialog].forEach(dialog => dialog.addEventListener('click', event => {
 if (event.target !== dialog) return;
 const box = dialog.getBoundingClientRect();
-if (event.clientX < box.left || event.clientX > box.right || event.clientY < box.top || event.clientY > box.bottom) dialog.close();
+if (event.clientX < box.left || event.clientX > box.right || event.clientY < box.top || event.clientY > box.bottom) closeDialog(dialog);
 }));
 render();
 })();

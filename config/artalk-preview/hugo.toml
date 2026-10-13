@@ -1,0 +1,3 @@
+[params.page.comment.artalk]
+  server = "http://127.0.0.1:23366"
+  site = "Naifan Li's Blog (Local)"

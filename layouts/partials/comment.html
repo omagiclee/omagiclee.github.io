@@ -1,0 +1,35 @@
+{{- with partial "comments/config.html" . -}}
+  {{- $runtime := resources.Get "js/artalk-runtime.js" | js.Build (dict "targetPath" "js/artalk-runtime.js" "format" "iife" "minify" true) | fingerprint "sha256" -}}
+  {{- $css := resources.FromString "css/artalk.css" (readFile "node_modules/artalk/dist/Artalk.css") | fingerprint "sha256" -}}
+  {{- $controller := resources.Get "js/artalk-comments.js" | minify | fingerprint "sha256" -}}
+  <section id="comments" class="blog-discussion" aria-labelledby="discussion-title"
+    data-server="{{ .server }}" data-site="{{ .site }}" data-locale="{{ .locale | default "en" }}"
+    data-page-key="{{ $.RelPermalink }}" data-page-title="{{ $.Title }}"
+    data-runtime="{{ $runtime.RelPermalink }}" data-runtime-integrity="{{ $runtime.Data.Integrity }}"
+    data-styles="{{ $css.RelPermalink }}" data-styles-integrity="{{ $css.Data.Integrity }}">
+    <div class="discussion-heading">
+      <div><p class="discussion-eyebrow">CONTINUE THE CONVERSATION</p><h2 id="discussion-title">Discussion <span class="discussion-count" hidden></span></h2></div>
+      <button type="button" class="discussion-open">Join the discussion <span aria-hidden="true">↗</span></button>
+    </div>
+    <p class="discussion-intro">Questions, corrections, and experience are welcome. Select a passage above to reply with context.</p>
+    {{- if eq hugo.Environment "artalk-preview" -}}
+      <p class="discussion-preview-note">Local preview · comments are stored only in the local Artalk service.</p>
+    {{- end -}}
+    <div class="discussion-status" role="status" aria-live="polite"><span>Comments load when you reach this section.</span> <button type="button" class="discussion-retry" hidden>Try again</button></div>
+    <div class="discussion-home"><div id="artalk-comments"></div></div>
+    <p class="discussion-privacy">Your email is not published. It can be used for reply notifications.</p>
+    <noscript>Please enable JavaScript to read and post comments.</noscript>
+  </section>
+  <div id="selection-discussion" class="selection-discussion" role="toolbar" aria-label="Selected passage actions" hidden>
+    <button type="button" data-quote-reply>Reply with quote <span aria-hidden="true">↗</span></button>
+    <button type="button" data-quote-copy>Copy link</button>
+  </div>
+  <dialog id="discussion-panel" class="discussion-panel" aria-labelledby="discussion-panel-title">
+    <header class="discussion-panel-header"><div><p class="discussion-eyebrow">{{ $.Title }}</p><h2 id="discussion-panel-title">Discussion</h2></div><button type="button" class="discussion-close" aria-label="Close discussion">×</button></header>
+    <div class="discussion-quote-preview" hidden><span>QUOTED PASSAGE</span><blockquote></blockquote><button type="button" class="discussion-context">View context</button> <button type="button" class="discussion-remove-quote">Remove quote</button></div>
+    <div class="discussion-panel-body"></div>
+    <p class="discussion-panel-footer">Replies are public. Please keep the conversation constructive.</p>
+  </dialog>
+  <div class="discussion-toast" role="status" aria-live="polite" hidden></div>
+  <script src="{{ $controller.RelPermalink }}" integrity="{{ $controller.Data.Integrity }}" defer></script>
+{{- end -}}

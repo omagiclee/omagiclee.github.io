@@ -46,8 +46,8 @@ jobs:
       - name: Install Node.js dependencies
         run: npm ci
 
-      - name: Install Chromium
-        run: ./node_modules/.bin/playwright install --with-deps chromium
+      - name: Install Chrome for Testing
+        run: ./node_modules/.bin/playwright install --with-deps chromium --no-shell
         
       - name: Build with Hugo
         env:
@@ -61,7 +61,9 @@ jobs:
             --cleanDestinationDir
 
       - name: Check generated site
-        run: python3 scripts/check-site.py public
+        run: |
+          python3 scripts/check-site.py public
+          python3 scripts/check-local-photos-publication.py public
 
       - name: Run browser smoke tests
         run: npm run test:site -- public

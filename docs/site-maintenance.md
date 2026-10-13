@@ -20,13 +20,17 @@ Build with a clean destination so removed drafts and resources cannot survive fr
 
 ```sh
 npm ci
-npx --no-install playwright install chromium
+npm run install:browser
 hugo --environment production --gc --minify --cleanDestinationDir
 python3 scripts/check-site.py public
 npm run test:site -- public
 ```
 
-The browser smoke test starts its own temporary localhost server and runs headless Chromium. CI installs the pinned Playwright version and browser. A local cached browser can be selected with `PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH`; screenshots can be written for visual debugging by setting `SITE_SMOKE_SCREENSHOT_DIR`.
+The browser smoke tests start their own temporary localhost servers and use Playwright-managed Chrome for Testing in its new headless mode (`channel: 'chromium'`). Playwright is pinned to 1.63.0, matching the local data-flywheel project, so both projects can share the same browser download. Local and CI installation use `--no-shell` to avoid downloading a separate Headless Shell. Tests use isolated browser contexts, without a personal browser profile. A custom isolated browser executable can still be selected with `PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH`; screenshots can be written for visual debugging by setting `SITE_SMOKE_SCREENSHOT_DIR`.
+
+## Private local photo viewer
+
+Run `npm run photos:setup` once, then `npm run photos` to build a separate local blog with the photo entry and start the loopback-only service. Source and usage details are in `local/photos/README.md`. Runtime indexes, previews and builds belong only in the ignored `.local-photos/` directory. Do not move them into Hugo content, assets or static sources. The photo page itself is served by the local service; production Hugo builds omit its entry. CI checks the artifact with `scripts/check-local-photos-publication.py`. Run `npm run photos:test` for independent fixture and headless browser checks.
 
 ## Mermaid diagrams
 

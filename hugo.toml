@@ -101,23 +101,15 @@ enableGitInfo = true
     [params.page.share]
       enable = false
     
-    # Giscus 评论系统配置
+    # Artalk comments. Set server after deploying the backend; an empty server
+    # keeps unfinished comment UI out of production. Local preview has its own config.
     [params.page.comment]
-      enable = false  # ❌ 评论系统已禁用
-      [params.page.comment.giscus]
-        enable = false
-        repo = "omagiclee/omagiclee.github.io"
-        repoId = "R_kgDOOYamQg"
-        category = "General"
-        categoryId = "DIC_kwDOOYamQs4C1JfF"
-        lang = "en"
-        mapping = "pathname"
-        reactionsEnabled = "1"
-        emitMetadata = "1"  # ✅ 启用元数据，可获取评论数量
-        inputPosition = "bottom"
-        lazyLoading = false  # ⚠️ 临时禁用懒加载用于测试
-        lightTheme = "light"
-        darkTheme = "dark_dimmed"  # ✅ 更柔和的深色主题
+      enable = true
+      [params.page.comment.artalk]
+        enable = true
+        server = ""
+        site = "Naifan Li's Blog"
+        locale = "en"
 
 [markup]
   [markup.goldmark]

@@ -76,6 +76,9 @@
                     <i class="far fa-clock fa-fw" aria-hidden="true"></i>
                     {{ T "readingTime" .ReadingTime }}
                 </span>
+                {{- with partial "comments/config.html" . -}}
+                    <span class="post-meta-item"><a href="#comments" class="discussion-jump"><i class="far fa-comment fa-fw" aria-hidden="true"></i> Discussion</a></span>
+                {{- end -}}
             </div>
         </div>
 
@@ -111,6 +114,8 @@
         {{- /* Footer - 不包含 tags */ -}}
         {{- partial "single/footer.html" . -}}
 
+        {{- partial "comment.html" . -}}
+
         {{- /* Related Posts */ -}}
         {{- $related := slice -}}
         {{- $myTags := .Params.tags | default slice -}}
@@ -136,7 +141,5 @@
             </section>
         {{- end -}}
 
-        {{- /* Comment */ -}}
-        {{- partial "comment.html" . -}}
     </article>
 {{- end -}}

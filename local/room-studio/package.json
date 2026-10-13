@@ -1,0 +1,17 @@
+{
+  "name": "room-studio-local",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "node server.mjs",
+    "setup": "node scripts/setup.mjs",
+    "setup:gsplat": "node scripts/setup-gsplat.mjs",
+    "test": "node --test tests/*.test.mjs",
+    "test:browser": "node scripts/smoke.mjs"
+  },
+  "dependencies": {
+    "@sparkjsdev/spark": "2.3.1",
+    "three": "0.180.0"
+  }
+}

@@ -103,6 +103,7 @@ async function main() {
   let context;
   try {
     browser = await chromium.launch({
+      channel: 'chromium',
       headless: true,
       ...(executablePath ? { executablePath } : {}),
     });

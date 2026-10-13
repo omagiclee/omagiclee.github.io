@@ -1,0 +1,15 @@
+services:
+  artalk:
+    image: artalk/artalk-go:2.10.0
+    ports:
+      - "127.0.0.1:23366:23366"
+    volumes:
+      - ../../.local-artalk:/data
+    environment:
+      TZ: Asia/Shanghai
+      ATK_TIMEZONE: Asia/Shanghai
+      ATK_LOCALE: en
+      ATK_SITE_DEFAULT: "Naifan Li's Blog (Local)"
+      ATK_SITE_URL: http://127.0.0.1:1317
+      ATK_TRUSTED_DOMAINS: "http://127.0.0.1:1317 http://localhost:1317 http://127.0.0.1:1314"
+      ATK_CAPTCHA_ENABLED: "false"

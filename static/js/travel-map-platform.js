@@ -7,15 +7,20 @@
     window._AMapSecurityConfig = { securityJsCode: securityCode };
     loaderPromise = new Promise((resolve, reject) => {
       const script = document.createElement('script');
+      const timeout = setTimeout(() => { script.remove(); reject(new Error('AMap script timeout')); }, 12000);
       script.src = `https://webapi.amap.com/maps?v=2.0&key=${encodeURIComponent(key)}&plugin=AMap.Driving,AMap.DistrictSearch,AMap.DistrictLayer`;
-      script.onload = () => window.AMap ? resolve(window.AMap) : reject(new Error('AMap unavailable'));
-      script.onerror = () => reject(new Error('AMap script failed'));
+      script.onload = () => { clearTimeout(timeout); window.AMap ? resolve(window.AMap) : reject(new Error('AMap unavailable')); };
+      script.onerror = () => { clearTimeout(timeout); script.remove(); reject(new Error('AMap script failed')); };
       document.head.appendChild(script);
+    }).catch(error => {
+      loaderPromise = null;
+      throw error;
     });
     return loaderPromise;
   };
 
   window.TravelMapPlatform = {
+    loadAmap,
     async loadConfig(url) {
       const response = await fetch(url, { credentials: 'same-origin' });
       if (!response.ok) throw new Error('Travel map config unavailable');

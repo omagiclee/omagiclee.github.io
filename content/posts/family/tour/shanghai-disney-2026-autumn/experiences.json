@@ -56,18 +56,19 @@
       "historicalDpaShort": "≈¥249–299/人",
       "historicalDpaFamily": "四人 ≈¥996–1196",
       "entitlementCoverageStatus": "各节目不是同一个商品权益；核对当日具体场次和预留区覆盖范围",
-      "scheduleSource": "https://www.shanghaidisneyresort.com/zh-cn/park-calendar"
+      "scheduleSource": "https://www.shanghaidisneyresort.com/zh-cn/park-calendar",
+      "familyWishlist": "老婆想玩"
     },
     {
       "id": "entMickeyStorybookAdventure",
       "name": "米奇妙游童话书",
       "type": "演出与烟花",
       "land": "米奇大街",
-      "description": "米奇、高飞和雪宝穿梭多个迪士尼故事，以歌舞完成一场童话书里的冒险。",
+      "description": "室内坐着看的28分钟剧情歌舞剧：米奇、高飞帮助雪宝回到童话书，串联多个迪士尼故事。相比城堡秀，布景、灯光和投影更集中，也能让孩子坐下休息。",
       "requirements": "未列身高或最低年龄硬性门槛；官网适合年龄：所有年龄（含学龄前儿童）。 座位有限，满座或开场前10分钟关门，请全家一同提前排队。",
       "fit": "优先推荐",
       "reason": "室内坐着看、角色多，适合两个4岁孩子，也能让脚休息。",
-      "notes": "约28分钟。四人全部入园后，App关联四张票并建立游玩组；启用预约等候卡时领取同一时段的免费卡，未启用时可直接排队。预约卡只允许到时段进入排队区，不是免排队/立即入场。凭证要求提前到场，满座或开演前10分钟会关门；尊享卡也须按指定时段使用。",
+      "notes": "约28分钟。四人全部入园后，App关联四张票并建立游玩组；启用预约等候卡时领取同一时段的免费卡，未启用时可直接排队。预约卡只允许到时段进入排队区，不是免排队/立即入场。凭证要求提前到场，满座或开演前10分钟会关门；尊享卡也须按指定时段使用。 与“奇妙之心”城堡秀是不同演出：本项在米奇大街的华特迪士尼大剧院室内观看，以童话书冒险串联剧情；城堡秀是户外日间庆典。带两个4岁孩子，优先保证本项，再按场次、视野和体力补看城堡秀。",
       "feeLabel": "门票内",
       "feeNote": "持有效乐园门票在一般区域观看，无需另购普通演出门票；尊享卡提前入场、预留观赏区域及主题套餐另计。",
       "dpaSupported": true,
@@ -110,7 +111,8 @@
       "officialDpaPriceStatus": "主表为公开参考/预算估算；10/17、10/18当次官方实价与库存未取得",
       "officialDpaPriceSource": "https://www.shanghaidisneyresort.com/zh-cn/experience/tour/vip-premier-access",
       "historicalDpaShort": "≈¥150–180/人",
-      "historicalDpaFamily": "四人 ≈¥600–720"
+      "historicalDpaFamily": "四人 ≈¥600–720",
+      "familyWishlist": "老婆想玩（2/4候选）"
     },
     {
       "id": "entFrozenSingAlongCelebration",
@@ -163,18 +165,19 @@
       "officialDpaPriceStatus": "主表为公开参考/预算估算；10/17、10/18当次官方实价与库存未取得",
       "officialDpaPriceSource": "https://www.shanghaidisneyresort.com/zh-cn/experience/tour/vip-premier-access",
       "historicalDpaShort": "≈¥150–180/人",
-      "historicalDpaFamily": "四人 ≈¥600–720"
+      "historicalDpaFamily": "四人 ≈¥600–720",
+      "familyWishlist": "老婆想玩"
     },
     {
       "id": "entTheHeartOfMagic",
       "name": "“奇妙之心”城堡秀",
       "type": "演出与烟花",
       "land": "奇想花园",
-      "description": "米奇和朋友们在城堡舞台以歌舞带你穿越九个迪士尼经典故事。",
+      "description": "十周年日间户外城堡歌舞秀：米奇和朋友们探寻“奇妙之心”，穿越九个迪士尼故事。城堡实景与多个舞台营造庆典氛围；相比室内坐看的童话书，通常站着看，更要照顾孩子视线和体力。",
       "requirements": "未列身高或最低年龄硬性门槛；官网适合年龄：所有年龄（含学龄前儿童）。",
       "fit": "优先推荐",
       "reason": "白天角色歌舞容易理解；户外站看，要照顾视线和体力。",
-      "notes": "",
+      "notes": "与“米奇妙游童话书”是不同演出：本项在奇幻童话城堡前的户外舞台观看，重在城堡实景、角色歌舞与庆典氛围；童话书是约28分钟的室内剧情歌舞剧，可以坐下休息。两场均包含在普通乐园门票内。带两个4岁孩子，优先保证童话书，城堡秀按当天场次和孩子能否看清顺路补看。",
       "feeLabel": "门票内",
       "feeNote": "持有效乐园门票在一般区域观看，无需另购普通演出门票；尊享卡提前入场、预留观赏区域及主题套餐另计。",
       "dpaSupported": false,
@@ -200,12 +203,13 @@
       "order": 4,
       "requirementShort": "—",
       "reasonShort": "白天角色歌舞容易理解；户外站看，要照顾视线和体力",
-      "visitNote": "",
+      "visitNote": "十周年日间秀，户外",
       "feeShort": "门票内",
       "dpaShort": "无",
       "dpaFamily": "",
       "priority": "P0",
-      "fullImage": "images/catalog/full/entTheHeartOfMagic.webp"
+      "fullImage": "images/catalog/full/entTheHeartOfMagic.webp",
+      "familyWishlist": "老婆想玩（2/4候选）"
     },
     {
       "id": "attAdventuresWinniePooh",
@@ -302,7 +306,8 @@
       "officialDpaPriceStatus": "主表为公开参考/预算估算；10/17、10/18当次官方实价与库存未取得",
       "officialDpaPriceSource": "https://www.shanghaidisneyresort.com/zh-cn/experience/tour/vip-premier-access",
       "historicalDpaShort": "¥120–180/人",
-      "historicalDpaFamily": "四人 ¥480–720"
+      "historicalDpaFamily": "四人 ¥480–720",
+      "familyWishlist": "老婆想玩"
     },
     {
       "id": "attBuzzLightyearPlanetRescue",
@@ -357,7 +362,8 @@
       "officialDpaPriceStatus": "主表为公开参考/预算估算；10/17、10/18当次官方实价与库存未取得",
       "officialDpaPriceSource": "https://www.shanghaidisneyresort.com/zh-cn/experience/tour/vip-premier-access",
       "historicalDpaShort": "≈¥140/人",
-      "historicalDpaFamily": "四人 ≈¥560"
+      "historicalDpaFamily": "四人 ≈¥560",
+      "familyWishlist": "老婆想玩"
     },
     {
       "id": "attVoyageToCrystalGrotto",
@@ -561,7 +567,8 @@
       "officialDpaPriceStatus": "主表为公开参考/预算估算；10/17、10/18当次官方实价与库存未取得",
       "officialDpaPriceSource": "https://www.shanghaidisneyresort.com/zh-cn/experience/tour/vip-premier-access",
       "historicalDpaShort": "≈¥150–300/人（估）",
-      "historicalDpaFamily": "四人 ≈¥600–1200"
+      "historicalDpaFamily": "四人 ≈¥600–1200",
+      "familyWishlist": "老婆想玩"
     },
     {
       "id": "attFantasiaCarousel",
@@ -646,7 +653,8 @@
       "dpaShort": "无",
       "dpaFamily": "",
       "priority": "P0",
-      "fullImage": "images/catalog/full/attAliceWonderlandMaze.webp"
+      "fullImage": "images/catalog/full/attAliceWonderlandMaze.webp",
+      "familyWishlist": "老婆想玩"
     },
     {
       "id": "charCharactersMickeyMouseGardensImagination",
@@ -1045,7 +1053,8 @@
       "dpaShort": "无",
       "dpaFamily": "",
       "priority": "P0",
-      "fullImage": "images/catalog/full/attEnchantedStorybookCastle.webp"
+      "fullImage": "images/catalog/full/attEnchantedStorybookCastle.webp",
+      "familyWishlist": "老婆想玩"
     },
     {
       "id": "charCharactersMeetJudyNickAtZootopiaPoliceDepartmentRecruitmentCenter",

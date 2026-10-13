@@ -34,6 +34,9 @@
                         {{- .Pre | safeHTML }} {{ .Name }} {{ .Post | safeHTML -}}
                     </a>
                 {{- end -}}
+                {{- if and (eq hugo.Environment "local-photos") .Site.Params.localPhotos -}}
+                    <a class="menu-item" href="/local-photos/">本地相册</a>
+                {{- end -}}
                 {{- if .Site.Menus.main -}}
                     <span class="menu-item delimiter"></span>
                 {{- end -}}
@@ -140,6 +143,9 @@
                 <a class="menu-item" href="{{ $url }}" title="{{ .Title }}"{{ if (urls.Parse $url).Host }} rel="noopener noreferrer" target="_blank"{{ end }}>
                     {{- .Pre | safeHTML }}{{ .Name }}{{ .Post | safeHTML -}}
                 </a>
+            {{- end -}}
+            {{- if and (eq hugo.Environment "local-photos") .Site.Params.localPhotos -}}
+                <a class="menu-item" href="/local-photos/">本地相册</a>
             {{- end -}}
             <a href="javascript:void(0);" class="menu-item theme-switch" title="{{ T "switchTheme" }}">
                 <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>

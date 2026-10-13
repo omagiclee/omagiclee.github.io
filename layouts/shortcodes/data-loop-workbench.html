@@ -1,0 +1,96 @@
+{{- $id := printf "data-loop-workbench-%d" .Ordinal -}}
+{{- if not (.Page.Scratch.Get "dataLoopWorkbenchAssets") -}}
+  {{- .Page.Scratch.Set "dataLoopWorkbenchAssets" true -}}
+  {{- $css := resources.Get "css/data-loop-workbench.scss" | toCSS | minify | fingerprint "sha256" -}}
+  {{- $js := resources.Get "js/data-loop-workbench.js" | minify | fingerprint "sha256" -}}
+<link rel="stylesheet" href="{{ $css.RelPermalink }}" integrity="{{ $css.Data.Integrity }}">
+<script defer src="{{ $js.RelPermalink }}" integrity="{{ $js.Data.Integrity }}"></script>
+{{- end -}}
+<section class="dlw" id="{{ $id }}" aria-labelledby="{{ $id }}-title">
+  <header class="dlw__header">
+    <span class="dlw__eyebrow">DATA LOOP / 产品工作台</span>
+    <h3 id="{{ $id }}-title">从样本到下一轮决策</h3>
+    <p class="dlw__disclaimer">本文设计示意：样本、版本与任务均为演示，不代表已交付产品。</p>
+  </header>
+  <nav class="dlw__tabs" aria-label="工作区" hidden>
+    <button type="button" id="{{ $id }}-tab-selection" data-tab="selection" aria-controls="{{ $id }}-selection">检索与选样</button>
+    <button type="button" id="{{ $id }}-tab-gt" data-tab="gt" aria-controls="{{ $id }}-gt">GT 审阅</button>
+    <button type="button" id="{{ $id }}-tab-iteration" data-tab="iteration" aria-controls="{{ $id }}-iteration">迭代复盘</button>
+  </nav>
+  <div class="dlw__panel" id="{{ $id }}-selection" data-panel="selection">
+    <div class="dlw__section-heading"><h4>检索与选样</h4><span>候选数据 → 审阅队列</span></div>
+    <p class="dlw__intro">从已发现的问题寻找相关样本，再按覆盖缺口选样。这里展示筛选与解释的交互，不执行真实检索或模型推理。</p>
+    <div class="dlw__filters" role="group" aria-label="按数据类型过滤" hidden>
+      <button type="button" data-filter="all" aria-pressed="true">全部</button>
+      <button type="button" data-filter="text" aria-pressed="false">文本</button>
+      <button type="button" data-filter="video" aria-pressed="false">视频</button>
+      <button type="button" data-filter="robot" aria-pressed="false">机器人</button>
+    </div>
+    <div class="dlw__samples">
+      <article class="dlw__sample" data-kind="text" data-sample="T-01">
+        <div class="dlw__sample-meta"><span class="dlw__tag">文本 / 工具轨迹</span><code>T-01</code></div>
+        <h5>工具超时后，智能体重复调用</h5>
+        <p>演示来源：脱敏运行日志；保留任务、调用与返回的关联。</p>
+        <dl><dt>选样理由</dt><dd>对应“恢复策略”缺口，需要保留失败及后续恢复上下文。</dd><dt>待核验</dt><dd>日志是否完整；重复调用是否由客户端重试造成。</dd></dl>
+        <button type="button" class="dlw__pick" data-pick="T-01" aria-pressed="false" hidden>加入演示选样</button>
+      </article>
+      <article class="dlw__sample" data-kind="text" data-sample="T-02">
+        <div class="dlw__sample-meta"><span class="dlw__tag">文本 / 对照轨迹</span><code>T-02</code></div>
+        <h5>相同任务，工具异常后成功恢复</h5>
+        <p>演示来源：经审核的成功轨迹；与失败样本按任务分组。</p>
+        <dl><dt>选样理由</dt><dd>提供成功对照，避免只积累失败样本而失去分布参照。</dd><dt>待核验</dt><dd>成功是否有可验证结果；训练与测试任务是否关联。</dd></dl>
+        <button type="button" class="dlw__pick" data-pick="T-02" aria-pressed="false" hidden>加入演示选样</button>
+      </article>
+      <article class="dlw__sample" data-kind="video" data-sample="V-01">
+        <div class="dlw__sample-meta"><span class="dlw__tag">视频 / 遮挡事件</span><code>V-01</code></div>
+        <h5>雨夜行人在遮挡后进入视野</h5>
+        <p>演示来源：事件触发片段；保留触发前后连续帧。</p>
+        <dl><dt>选样理由</dt><dd>补充环境、遮挡与出现时刻的组合场景，而非仅选单帧。</dd><dt>待核验</dt><dd>时间同步、可见性边界、跟踪标签与重复事件。</dd></dl>
+        <button type="button" class="dlw__pick" data-pick="V-01" aria-pressed="false" hidden>加入演示选样</button>
+      </article>
+      <article class="dlw__sample" data-kind="video" data-sample="V-02">
+        <div class="dlw__sample-meta"><span class="dlw__tag">视频 / 场景对照</span><code>V-02</code></div>
+        <h5>相近道路条件下的正常通行</h5>
+        <p>演示来源：同类场景检索结果；按事件去重。</p>
+        <dl><dt>选样理由</dt><dd>作为场景对照；检查选样是否过度集中于异常事件。</dd><dt>待核验</dt><dd>同一路段相邻片段是否跨训练与测试划分。</dd></dl>
+        <button type="button" class="dlw__pick" data-pick="V-02" aria-pressed="false" hidden>加入演示选样</button>
+      </article>
+      <article class="dlw__sample" data-kind="robot" data-sample="R-01">
+        <div class="dlw__sample-meta"><span class="dlw__tag">机器人 / 失败 episode</span><code>R-01</code></div>
+        <h5>抓取后滑落，伴随力觉变化</h5>
+        <p>演示来源：设备事件回传；关联视频、动作与力觉时间轴。</p>
+        <dl><dt>选样理由</dt><dd>定位接触阶段的失败；片段需要包含抓取前、接触与滑落。</dd><dt>待核验</dt><dd>传感器标定、延迟、物体状态及干预记录。</dd></dl>
+        <button type="button" class="dlw__pick" data-pick="R-01" aria-pressed="false" hidden>加入演示选样</button>
+      </article>
+      <article class="dlw__sample" data-kind="robot" data-sample="R-02">
+        <div class="dlw__sample-meta"><span class="dlw__tag">机器人 / 干预轨迹</span><code>R-02</code></div>
+        <h5>操作员接管并完成重新抓取</h5>
+        <p>演示来源：遥操作干预；分别记录策略动作与人工动作。</p>
+        <dl><dt>选样理由</dt><dd>补充恢复行为；保留干预边界，避免混淆动作来源。</dd><dt>待核验</dt><dd>操作员命令与执行动作是否对齐，任务是否最终完成。</dd></dl>
+        <button type="button" class="dlw__pick" data-pick="R-02" aria-pressed="false" hidden>加入演示选样</button>
+      </article>
+    </div>
+    <div class="dlw__queue" hidden><strong>演示选样队列</strong><output data-queue aria-live="polite" aria-atomic="true">尚未选择样本。</output><p>选择只改变本页演示状态；实际送审仍需来源、质量与数据划分检查。</p></div>
+  </div>
+  <div class="dlw__panel" id="{{ $id }}-gt" data-panel="gt">
+    <div class="dlw__section-heading"><h4>GT 审阅</h4><span>证据来源 → 使用条件</span></div>
+    <p class="dlw__intro">GT 的可信度来自生成与核验过程。教师预测不自动成为真值；以下是证据检查设计，不是准确率测量。</p>
+    <div class="dlw__evidence-grid">
+      <article class="dlw__evidence"><span class="dlw__tag">直接观测</span><h5>传感器与可验证结果</h5><p>例如关节读数、工具返回、任务完成记录。</p><details><summary>查看可信度检查</summary><p>核对时间戳、标定、完整性与观测边界。传感器值可能有噪声；任务返回成功也需要检查真实结果。</p><p><strong>使用条件：</strong>来源可追溯，误差与不可观测状态有明确记录。</p></details></article>
+      <article class="dlw__evidence"><span class="dlw__tag">人工审阅</span><h5>规范、审核与争议仲裁</h5><p>例如可见对象标签、偏好判断、失败分类。</p><details><summary>查看可信度检查</summary><p>核对标注规范、审核记录与独立金标准；记录歧义。多人一致不能单独证明正确。</p><p><strong>使用条件：</strong>明确审核流程，保留争议与标签版本。</p></details></article>
+      <article class="dlw__evidence"><span class="dlw__tag">模型伪标签</span><h5>教师预测与约束校验</h5><p>例如分割、跟踪、描述或动作阶段预测。</p><details><summary>查看可信度检查</summary><p>保存教师版本，检查域差异、校准与独立审核。同一模型生成和验证可能共享偏差。</p><p><strong>使用条件：</strong>标明伪标签；按任务风险决定复核、降权或隔离。</p></details></article>
+      <article class="dlw__evidence"><span class="dlw__tag">仿真真值</span><h5>模拟器内部状态</h5><p>例如对象位姿、接触、深度与场景语义。</p><details><summary>查看可信度检查</summary><p>真值对应模拟器中的世界；检查物理假设、资产、渲染及真实域差距。</p><p><strong>使用条件：</strong>记录仿真配置与版本，并通过真实任务验证用途。</p></details></article>
+    </div>
+    <aside class="dlw__callout"><strong>发布前检查</strong><p>样本来源 → 标签证据 → 独立核验 → 歧义/误差记录 → GT 版本。未经核验的标签保持待审状态，不用置信度数字替代审核证据。</p></aside>
+  </div>
+  <div class="dlw__panel" id="{{ $id }}-iteration" data-panel="iteration">
+    <div class="dlw__section-heading"><h4>迭代复盘</h4><span>版本绑定 → 决策 → 下一轮</span></div>
+    <p class="dlw__intro">以下以机器人抓取为设计案例。版本号表示演示关联；没有运行实验，不呈现收益数字。</p>
+    <div class="dlw__round-picker" hidden><label for="{{ $id }}-round">查看轮次</label><select id="{{ $id }}-round" data-round-select><option value="1">第一轮 · 建立基线</option><option value="2">第二轮 · 处理滑落问题</option><option value="3">第三轮 · 检查迁移与回归</option></select></div>
+    <article class="dlw__round" data-round="1"><h5>第一轮 · 建立基线</h5><ol class="dlw__steps"><li><strong>问题与假设</strong><span>需要确认抓取策略在不同物体上的失败类型。</span></li><li><strong>数据任务</strong><span>收集成功与失败 episode，校验视频、状态与动作同步。</span></li><li><strong>版本绑定</strong><span><code>D1 数据 / G1 标签 / P1 配方 / M1 模型 / E1 评测</code>共同绑定到演示实验 X1；冻结评测划分。</span></li><li><strong>决策与下一轮</strong><span>若发现接触后滑落，先排除标定与执行异常，再建立补采和 GT 审阅任务；效果仍待验证。</span></li></ol></article>
+    <article class="dlw__round" data-round="2"><h5>第二轮 · 处理滑落问题</h5><ol class="dlw__steps"><li><strong>问题与假设</strong><span>接触阶段数据不足可能是滑落原因；这是假设，需对照验证。</span></li><li><strong>数据任务</strong><span>关联检索滑落片段与成功对照，补采干预恢复轨迹；审查力觉与动作对齐。</span></li><li><strong>版本绑定</strong><span><code>D2 数据 / G2 标签 / P2 配方 / M2 模型 / E1+E2 评测</code>绑定演示实验 X2；沿用冻结 E1，并追加独立分桶 E2。</span></li><li><strong>决策与下一轮</strong><span>对照基线并检查旧任务回归。只有真实任务复验支持改进才进入发布判断，否则回到归因或数据任务。</span></li></ol></article>
+    <article class="dlw__round" data-round="3"><h5>第三轮 · 检查迁移与回归</h5><ol class="dlw__steps"><li><strong>问题与假设</strong><span>新增物体与环境可能引入分布变化，需要识别适用边界。</span></li><li><strong>数据任务</strong><span>采集新环境对照，按 episode 与环境隔离评测；审查旧标签与新场景定义是否一致。</span></li><li><strong>版本绑定</strong><span><code>D3 数据 / G3 标签 / P3 配方 / M3 模型 / E1+E2+E3 评测</code>绑定演示实验 X3；保留历史版本与回归分桶。</span></li><li><strong>决策与下一轮</strong><span>结合独立评测、实机复验和回归检查决定继续补采、改配方或回滚。记录证据，再生成下一轮任务。</span></li></ol></article>
+    <aside class="dlw__callout"><strong>闭环的结束条件</strong><p>任务完成不等于问题修复。每一轮需要问题、数据变化、版本链和验证证据，再决定继续、停止或回滚。</p></aside>
+  </div>
+  <footer class="dlw__footer"><p>功能启发：<a href="https://docs.voxel51.com/user_guide/app.html">FiftyOne 的样本探索</a>、<a href="https://docs.argilla.io/latest/">Argilla 的反馈审阅</a>、<a href="https://rerun.io/docs/concepts/timelines">Rerun 的时间轴</a>。此处为独立设计示意，非上述产品截图或能力复刻。</p><noscript><p>JavaScript 未启用：三个工作区与全部轮次均以静态内容展示。</p></noscript></footer>
+</section>

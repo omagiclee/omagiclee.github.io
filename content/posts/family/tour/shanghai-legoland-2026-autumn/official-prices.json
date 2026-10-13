@@ -1,0 +1,2002 @@
+{
+  "checkedAt": "2026-10-13",
+  "source": "https://www.legolandshanghai.cn/",
+  "method": "Read-only public website data; date explicitly passed to the same public query used by the official calendar. Empty schedules do not imply closure. Product display prices are starting prices, not selected-date booking quotes.",
+  "parkHours": {
+    "2026-10-17": {
+      "date": "2026-10-17",
+      "opening_time": "10:00",
+      "closing_time": "19:00",
+      "closed": 0,
+      "closure_reason": "",
+      "temperature_value": null,
+      "min_temp": null,
+      "max_temp": null,
+      "weather": null,
+      "icon": "https://tencent-web-1320474462.cos.ap-shanghai.myqcloud.com/lego/weather/无.png"
+    },
+    "2026-10-18": {
+      "date": "2026-10-18",
+      "opening_time": "10:00",
+      "closing_time": "19:00",
+      "closed": 0,
+      "closure_reason": "",
+      "temperature_value": null,
+      "min_temp": null,
+      "max_temp": null,
+      "weather": null,
+      "icon": "https://tencent-web-1320474462.cos.ap-shanghai.myqcloud.com/lego/weather/无.png"
+    }
+  },
+  "priceLadder": {
+    "id": 11,
+    "title": "上海乐高乐园将对指定单日门票的价格结构进行优化，新版票价体系将从2026年8月起正式实施",
+    "page_content_type": "text",
+    "jump_url": "",
+    "content": "<p>亲爱的玩乐家们：</p><p>感谢大家一直以来对上海乐高乐园<sup>®</sup>度假区的喜爱与支持。自2025年7月开园以来，我们持续倾听游客的反馈与建议，深入了解大小玩乐家们的出行需求和游玩习惯。在乐园运营即将满一周年之际，我们对整体运营情况进行了系统评估。经审慎研究，上海乐高乐园将对指定单日门票的价格结构进行优化，新版票价体系将从2026年8月起正式实施。</p><p><br>本次票价优化，将在现行六级票价的基础上，新增469元中间票价档位，形成更细分的七级票价体系，优化后的票价阶梯将变得更为平滑。此次调整仅新增一级中间票价档位，原有六级票价均保持不变。<br><br>新增的469元票价档位，主要适用于特定周末、节假日前后等非极端高峰时段，可为游客提供贴合实际出行需求的灵活票务选择，也有助于温和引导错峰出行。非高峰时段入园的游客，能够享受更从容、舒适的游玩环境。<br><br>乐园原有优惠政策保持不变，儿童、长者及残障人士仍可享受对应门票优惠。我们也将持续推出并丰富“早鸟票”等特色票务产品，进一步降低游客出游门槛。门票收入也将持续投入于园区设施升级、服务优化和体验创新，让游客的想象力与创造力在此尽情释放。<br><br>感谢您的理解与支持，期待与您和家人相聚上海乐高乐园，共赴创意与欢乐之旅！</p><p style=\"text-align: right;\"><br>上海乐高乐园度假区</p><p style=\"text-align: right;\">2026年4月30日</p><p style=\"text-align: right;\"> </p><table style=\"width: auto;\"><tbody><tr><td colSpan=\"1\" rowSpan=\"1\" width=\"368\">一日票类型</td><td colSpan=\"1\" rowSpan=\"1\" width=\"292\">票价</td><td colSpan=\"1\" rowSpan=\"1\" width=\"445\">适用日期描述</td></tr><tr><td colSpan=\"1\" rowSpan=\"1\" width=\"368\">平季日</td><td colSpan=\"1\" rowSpan=\"1\" width=\"292\">儿童 - 255元<br>成人 - 319元</td><td colSpan=\"1\" rowSpan=\"1\" width=\"445\">涵盖部分周中，节假日除外</td></tr><tr><td colSpan=\"1\" rowSpan=\"1\" width=\"368\">常规日</td><td colSpan=\"1\" rowSpan=\"1\" width=\"292\">儿童 - 300元<br>成人 - 379元</td><td colSpan=\"1\" rowSpan=\"1\" width=\"445\">涵盖大部分周中，节假日除外</td></tr><tr><td colSpan=\"1\" rowSpan=\"1\" width=\"368\">特别常规日</td><td colSpan=\"1\" rowSpan=\"1\" width=\"292\">儿童 - 350元<br>成人 - 439元</td><td colSpan=\"1\" rowSpan=\"1\" width=\"445\">通常为部分春季、秋季及冬季的周末，以及节假日期间的工作日</td></tr><tr><td colSpan=\"1\" rowSpan=\"1\" width=\"368\">潜在旺季日</td><td colSpan=\"1\" rowSpan=\"1\" width=\"292\">儿童 - 375元<br>成人 - 469元</td><td colSpan=\"1\" rowSpan=\"1\" width=\"445\">通常为特定周末，以及节假日前后</td></tr><tr><td colSpan=\"1\" rowSpan=\"1\" width=\"368\">旺季日</td><td colSpan=\"1\" rowSpan=\"1\" width=\"292\">儿童 - 399元<br>成人-499元</td><td colSpan=\"1\" rowSpan=\"1\" width=\"445\">通常为部分春季、秋季及冬季的周末</td></tr><tr><td colSpan=\"1\" rowSpan=\"1\" width=\"368\">高峰日</td><td colSpan=\"1\" rowSpan=\"1\" width=\"292\">儿童 - 439元<br>成人-549元</td><td colSpan=\"1\" rowSpan=\"1\" width=\"445\">重大节假日期间的旺季时段</td></tr><tr><td colSpan=\"1\" rowSpan=\"1\" width=\"368\">特别高峰日</td><td colSpan=\"1\" rowSpan=\"1\" width=\"292\">儿童 - 479元<br>成人 - 599元</td><td colSpan=\"1\" rowSpan=\"1\" width=\"445\">国庆节、春节和劳动节等出行需求旺盛的日期</td></tr></tbody></table><p style=\"text-align: left;\"> </p><p><br></p>"
+  },
+  "ticketProducts": [
+    {
+      "id": 90,
+      "product_type": "tickets",
+      "image": "https://tencent-web-1320474462.cos.ap-shanghai.myqcloud.com/official-website/2026-10-12/78cb7bc52b5e.jpg",
+      "title": "限时：65折一日票",
+      "price": "285",
+      "tags": [
+        "门票65折",
+        "赠自助晚餐75折优惠券",
+        "仅限10月18日使用"
+      ]
+    },
+    {
+      "id": 88,
+      "product_type": "tickets",
+      "image": "https://tencent-web-1320474462.cos.ap-shanghai.myqcloud.com/official-website/2026-09-21/a3aadd28729d.jpg",
+      "title": "1大1小/2大1小亲子套票",
+      "price": "598",
+      "tags": [
+        "最高约享85折优惠",
+        "赠指定零售商品8.5折优惠券",
+        "赠软饮含乐高乐园南瓜头角色纪念杯7.5折优惠券"
+      ]
+    },
+    {
+      "id": 89,
+      "product_type": "tickets",
+      "image": "https://tencent-web-1320474462.cos.ap-shanghai.myqcloud.com/official-website/2026-09-21/6be12fcf970c.jpg",
+      "title": "1大2小亲子票",
+      "price": "882",
+      "tags": [
+        "享81折优惠",
+        "含双人脸绘兑换券",
+        "含爆米花桶7.5折优惠券"
+      ]
+    },
+    {
+      "id": 14,
+      "product_type": "tickets",
+      "image": "https://tencent-web-1320474462.cos.ap-shanghai.myqcloud.com/official-website/2026-05-20/0527f8b20186.jpg",
+      "title": "乐高乐园®一日票",
+      "price": "300",
+      "tags": [
+        "当日多次入园",
+        "八大主题区",
+        "75+游玩项目"
+      ]
+    },
+    {
+      "id": 60,
+      "product_type": "tickets",
+      "image": "https://tencent-web-1320474462.cos.ap-shanghai.myqcloud.com/official-website/2026-04-17/d0c1e9d1c43a.jpg",
+      "title": "全家福套票(2大2老1小)",
+      "price": "1045",
+      "tags": [
+        "全家出行，享约6.3折优惠 "
+      ]
+    }
+  ],
+  "extras": [
+    {
+      "id": 7,
+      "product_type": "extras",
+      "image": "https://tencent-web-1320474462.cos.ap-shanghai.myqcloud.com/official-website/2025-06-29/493afd570806.jpg",
+      "title": "乐捷通-单项",
+      "price": "48",
+      "tags": [
+        "指定单项热门项目",
+        "快速通行"
+      ]
+    },
+    {
+      "id": 62,
+      "product_type": "extras",
+      "image": "https://tencent-web-1320474462.cos.ap-shanghai.myqcloud.com/official-website/2026-04-17/88d67f999947.jpg",
+      "title": "乐捷通-乐玩套餐",
+      "price": "255",
+      "tags": [
+        "指定5项骑乘快速通行各一次"
+      ]
+    },
+    {
+      "id": 6,
+      "product_type": "extras",
+      "image": "https://tencent-web-1320474462.cos.ap-shanghai.myqcloud.com/official-website/2025-07-04/becbb150e172.jpg",
+      "title": "乐捷通-无限次",
+      "price": "688",
+      "tags": [
+        "无限次畅玩21个热门项目",
+        "快速通行"
+      ]
+    },
+    {
+      "id": 21,
+      "product_type": "extras",
+      "image": "https://tencent-web-1320474462.cos.ap-shanghai.myqcloud.com/official-website/2026-04-17/9744dcb9f8af.jpg",
+      "title": "VIP尊享体验",
+      "price": "2988",
+      "tags": [
+        "3位游客起订，至多可容纳6位游客",
+        "VIP尊享体验-一日票x1",
+        "VIP尊享体验-小人仔工厂&钥匙扣x1",
+        "VIP尊享体验-影像服务x1",
+        "VIP尊享体验-特色美食x1",
+        "贵宾导览专员全程陪伴x1",
+        "指定商品8折购物券"
+      ]
+    },
+    {
+      "id": 80,
+      "product_type": "extras",
+      "image": "https://tencent-web-1320474462.cos.ap-shanghai.myqcloud.com/official-website/2026-08-07/97438d4ef95f.jpg",
+      "title": "生日欢享套餐(城市餐厅)",
+      "price": "768",
+      "tags": [
+        "至少提前2天购买",
+        "年卡领券享9折"
+      ]
+    },
+    {
+      "id": 81,
+      "product_type": "extras",
+      "image": "https://tencent-web-1320474462.cos.ap-shanghai.myqcloud.com/official-website/2026-08-07/2a7e1e2865e1.jpg",
+      "title": "生日欢享套餐(骑士宴会)",
+      "price": "768",
+      "tags": [
+        "至少提前2天购买",
+        "年卡领券享9折"
+      ]
+    },
+    {
+      "id": 82,
+      "product_type": "extras",
+      "image": "https://tencent-web-1320474462.cos.ap-shanghai.myqcloud.com/official-website/2026-08-07/21e653ecd7d1.jpg",
+      "title": "生日欢享套餐(冒险酒廊)",
+      "price": "1288",
+      "tags": [
+        "至少提前2天购买",
+        "年卡领券享9折"
+      ]
+    },
+    {
+      "id": 74,
+      "product_type": "extras",
+      "image": "https://tencent-web-1320474462.cos.ap-shanghai.myqcloud.com/official-website/2026-07-06/4c47ec18d766.jpg",
+      "title": "尊享生日派对套餐定金",
+      "price": "1000",
+      "tags": [
+        "至少提前10天购买"
+      ]
+    },
+    {
+      "id": 55,
+      "product_type": "extras",
+      "image": "https://tencent-web-1320474462.cos.ap-shanghai.myqcloud.com/official-website/2026-05-20/acbba4040360.jpg",
+      "title": "月球探险家砖享体验券",
+      "price": "198",
+      "tags": [
+        "建议5-16岁儿童",
+        "园内乐高®创意工坊使用"
+      ]
+    },
+    {
+      "id": 63,
+      "product_type": "extras",
+      "image": "https://tencent-web-1320474462.cos.ap-shanghai.myqcloud.com/official-website/2026-04-17/4b089f576941.jpg",
+      "title": "童车租赁-折叠童车 ",
+      "price": "48",
+      "tags": [
+        "适用于6个月-3岁儿童"
+      ]
+    },
+    {
+      "id": 20,
+      "product_type": "extras",
+      "image": "https://tencent-web-1320474462.cos.ap-shanghai.myqcloud.com/official-website/2025-07-04/6be62dfdf241.jpg",
+      "title": "童车租赁-单人/双人",
+      "price": "68",
+      "tags": [
+        "单人童车￥68",
+        "双人童车￥118"
+      ]
+    },
+    {
+      "id": 51,
+      "product_type": "extras",
+      "image": "https://tencent-web-1320474462.cos.ap-shanghai.myqcloud.com/official-website/2026-02-05/2f17a06d7f8d.jpg",
+      "title": "脸绘服务",
+      "price": "89",
+      "tags": [
+        "复杂手部+复杂半脸",
+        "复杂全脸彩绘",
+        "简单脸部彩绘"
+      ]
+    },
+    {
+      "id": 52,
+      "product_type": "extras",
+      "image": "https://tencent-web-1320474462.cos.ap-shanghai.myqcloud.com/official-website/2026-02-05/af67751893c2.jpg",
+      "title": "“砖”属纪念护照",
+      "price": "99",
+      "tags": [
+        "儿童成长护照"
+      ]
+    },
+    {
+      "id": 18,
+      "product_type": "extras",
+      "image": "https://tencent-web-1320474462.cos.ap-shanghai.myqcloud.com/official-website/2026-08-07/cbd4b2fa2ddd.jpg",
+      "title": "拍拍乐",
+      "price": "188",
+      "tags": [
+        "可下载电子照片",
+        "未核销可退"
+      ]
+    },
+    {
+      "id": 56,
+      "product_type": "extras",
+      "image": "https://tencent-web-1320474462.cos.ap-shanghai.myqcloud.com/official-website/2026-08-07/a06babdb8a35.jpg",
+      "title": "乐园限量纪念砖礼遇券包",
+      "price": "199",
+      "tags": [
+        "限量纪念砖兑换券",
+        "零售购物8折优惠券"
+      ]
+    },
+    {
+      "id": 83,
+      "product_type": "extras",
+      "image": "https://tencent-web-1320474462.cos.ap-shanghai.myqcloud.com/official-website/2026-08-07/a426fe5b2b96.jpg",
+      "title": "“砖” 属魔法变装约拍服务",
+      "price": "298",
+      "tags": [
+        "儿童魔法变装",
+        "30分钟专业跟拍"
+      ]
+    },
+    {
+      "id": 42,
+      "product_type": "extras",
+      "image": "https://tencent-web-1320474462.cos.ap-shanghai.myqcloud.com/official-website/2026-08-07/30125dad9e29.jpg",
+      "title": "“砖”属约拍服务",
+      "price": "388",
+      "tags": [
+        "专业摄影师全程跟拍",
+        "主题道具创意加持",
+        "个性化拍摄路线定制",
+        "专属趣味数字合成照"
+      ]
+    },
+    {
+      "id": 84,
+      "product_type": "extras",
+      "image": "https://tencent-web-1320474462.cos.ap-shanghai.myqcloud.com/official-website/2026-08-07/398c19381e08.jpg",
+      "title": "「砖」属早享约拍服务",
+      "price": "1088",
+      "tags": [
+        "本产品仅限酒店住客购买",
+        "每组可5人同享拍摄"
+      ]
+    },
+    {
+      "id": 85,
+      "product_type": "extras",
+      "image": "https://tencent-web-1320474462.cos.ap-shanghai.myqcloud.com/official-website/2026-08-07/42e8711e3b18.jpg",
+      "title": "乐高®幻影忍者能量修炼半自助晚餐兑换券",
+      "price": "128",
+      "tags": [
+        "所选日期当日17:30-20:00使用"
+      ]
+    }
+  ],
+  "hotelPackages": [
+    {
+      "id": 66,
+      "product_type": "packages",
+      "image": "https://tencent-web-1320474462.cos.ap-shanghai.myqcloud.com/official-website/2026-05-20/61cefaabf44c.jpg",
+      "title": "酒店园景家庭房（生日主题房）",
+      "price": "3020",
+      "tags": [
+        "五大主题客房可选",
+        "生日主题装饰",
+        "美味迎宾小食",
+        "生日惊喜盲盒"
+      ]
+    },
+    {
+      "id": 17,
+      "product_type": "packages",
+      "image": "https://tencent-web-1320474462.cos.ap-shanghai.myqcloud.com/official-website/2025-06-12/f65dfc6fd14a.jpg",
+      "title": "酒店主题客房（含自助早餐）",
+      "price": "2400",
+      "tags": [
+        "五大主题客房可选",
+        "玩乐设施及特别演出",
+        "丰盛自助早餐"
+      ]
+    },
+    {
+      "id": 16,
+      "product_type": "packages",
+      "image": "https://tencent-web-1320474462.cos.ap-shanghai.myqcloud.com/official-website/2025-06-12/69bcaa034057.jpg",
+      "title": "酒店家庭房+一日票（2大1小）",
+      "price": "3458",
+      "tags": [
+        "超适合三口之家",
+        "含酒店自助早餐",
+        "室内外玩乐景点"
+      ]
+    },
+    {
+      "id": 13,
+      "product_type": "packages",
+      "image": "https://tencent-web-1320474462.cos.ap-shanghai.myqcloud.com/official-website/2025-06-12/649d55519595.jpg",
+      "title": "酒店家庭套房+一日票（2大1小）",
+      "price": "6563",
+      "tags": [
+        "套房设施和专属礼遇",
+        "每位住客享2张单项乐捷通",
+        "享优先入园权益"
+      ]
+    }
+  ],
+  "promotion18": {
+    "title": "缤纷欢乐跑限定：6.5折通用一日票现已上线，还赠自助餐优惠券！",
+    "product": [
+      {
+        "id": 210,
+        "name": "金山跑特邀一日票(赠自助晚餐75折优惠券)",
+        "desc": "约6.5折！仅限10月18日使用，入园挑战乐高乐园铁人三项吧",
+        "image_url_card": "https://tencent-web-1320474462.cos.ap-shanghai.myqcloud.com/2026-10-11/20261011110115546573.jpg",
+        "price": "285.00",
+        "qr_code_image": "https://tencent-web-1320474462.cos.ap-shanghai.myqcloud.com/app_code/spu/id_210_wxa_code.jpg"
+      }
+    ],
+    "eligibility": "官方海报明确要求报名成功的缤纷欢乐跑参赛跑者；本家庭资格未确认。",
+    "posterSourceUrl": "https://tencent-web-1320474462.cos.ap-shanghai.myqcloud.com/2026-10-11/20261011190531446454.jpg"
+  },
+  "season": {
+    "title": "9月25日-11月1日，乐高乐园®一年一度的小怪兽大派对，又回来啦！",
+    "sourceUrl": "https://www.legolandshanghai.cn/#/activity?id=372&lang=zh"
+  },
+  "dateQuotes": {
+    "ticketsForFour": null,
+    "hotelTwoNights": null,
+    "quickPassByRide": null
+  },
+  "catalogStatus": {
+    "163": {
+      "2026-10-17": {
+        "label": "已列运营时段：10:00-19:00",
+        "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+        "publishedTimes": "10:00-19:00",
+        "memo": ""
+      },
+      "2026-10-18": {
+        "label": "已列运营时段：10:00-19:00",
+        "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+        "publishedTimes": "10:00-19:00",
+        "memo": ""
+      }
+    },
+    "245": {
+      "2026-10-17": {
+        "label": "已列运营时段：10:00-11:30/13:30-14:30/15:30-16:30/17:00-18:00",
+        "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+        "publishedTimes": "10:00-11:30/13:30-14:30/15:30-16:30/17:00-18:00",
+        "memo": ""
+      },
+      "2026-10-18": {
+        "label": "已列运营时段：10:00-11:30/13:30-14:30/15:30-16:30/17:00-18:00",
+        "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+        "publishedTimes": "10:00-11:30/13:30-14:30/15:30-16:30/17:00-18:00",
+        "memo": ""
+      }
+    },
+    "191": {
+      "2026-10-17": {
+        "label": "已列运营时段：10:00-19:00",
+        "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+        "publishedTimes": "10:00-19:00",
+        "memo": ""
+      },
+      "2026-10-18": {
+        "label": "场次／开放时间尚未列出",
+        "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+        "publishedTimes": null,
+        "memo": ""
+      }
+    },
+    "146": {
+      "2026-10-17": {
+        "label": "已列场次：11:40/12:20/13:00/13:40/14:20/15:00/15:40/16:20/17:00/17:40/18:20",
+        "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+        "publishedTimes": "11:40/12:20/13:00/13:40/14:20/15:00/15:40/16:20/17:00/17:40/18:20",
+        "memo": ""
+      },
+      "2026-10-18": {
+        "label": "已列场次：11:40/12:20/13:00/13:40/14:20/15:00/15:40/16:20/17:00/17:40/18:20",
+        "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+        "publishedTimes": "11:40/12:20/13:00/13:40/14:20/15:00/15:40/16:20/17:00/17:40/18:20",
+        "memo": ""
+      }
+    },
+    "150": {
+      "2026-10-17": {
+        "label": "场次／开放时间尚未列出",
+        "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+        "publishedTimes": null,
+        "memo": ""
+      },
+      "2026-10-18": {
+        "label": "场次／开放时间尚未列出",
+        "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+        "publishedTimes": null,
+        "memo": ""
+      }
+    },
+    "405": {
+      "2026-10-17": {
+        "label": "场次／开放时间尚未列出",
+        "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+        "publishedTimes": null,
+        "memo": ""
+      },
+      "2026-10-18": {
+        "label": "场次／开放时间尚未列出",
+        "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+        "publishedTimes": null,
+        "memo": ""
+      }
+    },
+    "30": {
+      "2026-10-17": {
+        "label": "已列运营时段：10:00-19:00",
+        "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+        "publishedTimes": "10:00-19:00",
+        "memo": ""
+      },
+      "2026-10-18": {
+        "label": "已列运营时段：10:00-19:00",
+        "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+        "publishedTimes": "10:00-19:00",
+        "memo": ""
+      }
+    },
+    "161": {
+      "2026-10-17": {
+        "label": "已列运营时段：10:00-19:00",
+        "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+        "publishedTimes": "10:00-19:00",
+        "memo": ""
+      },
+      "2026-10-18": {
+        "label": "已列运营时段：10:00-19:00",
+        "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+        "publishedTimes": "10:00-19:00",
+        "memo": ""
+      }
+    },
+    "406": {
+      "2026-10-17": {
+        "label": "场次／开放时间尚未列出",
+        "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+        "publishedTimes": null,
+        "memo": ""
+      },
+      "2026-10-18": {
+        "label": "场次／开放时间尚未列出",
+        "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+        "publishedTimes": null,
+        "memo": ""
+      }
+    },
+    "28": {
+      "2026-10-17": {
+        "label": "已列运营时段：10:00-19:00",
+        "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+        "publishedTimes": "10:00-19:00",
+        "memo": ""
+      },
+      "2026-10-18": {
+        "label": "已列运营时段：10:00-19:00",
+        "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+        "publishedTimes": "10:00-19:00",
+        "memo": ""
+      }
+    },
+    "8": {
+      "2026-10-17": {
+        "label": "已列运营时段：10:00-19:00",
+        "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+        "publishedTimes": "10:00-19:00",
+        "memo": ""
+      },
+      "2026-10-18": {
+        "label": "已列运营时段：10:00-19:00",
+        "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+        "publishedTimes": "10:00-19:00",
+        "memo": ""
+      }
+    },
+    "9": {
+      "2026-10-17": {
+        "label": "已列运营时段：10:00-19:00",
+        "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+        "publishedTimes": "10:00-19:00",
+        "memo": ""
+      },
+      "2026-10-18": {
+        "label": "已列运营时段：10:00-19:00",
+        "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+        "publishedTimes": "10:00-19:00",
+        "memo": ""
+      }
+    },
+    "219": {
+      "2026-10-17": {
+        "label": "已列场次：11:30/14:30/16:30",
+        "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+        "publishedTimes": "11:30/14:30/16:30",
+        "memo": ""
+      },
+      "2026-10-18": {
+        "label": "已列场次：11:30/14:30/16:30",
+        "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+        "publishedTimes": "11:30/14:30/16:30",
+        "memo": ""
+      }
+    },
+    "36": {
+      "2026-10-17": {
+        "label": "已列运营时段：10:00-19:00",
+        "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+        "publishedTimes": "10:00-19:00",
+        "memo": ""
+      },
+      "2026-10-18": {
+        "label": "已列运营时段：10:00-19:00",
+        "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+        "publishedTimes": "10:00-19:00",
+        "memo": ""
+      }
+    },
+    "37": {
+      "2026-10-17": {
+        "label": "已列运营时段：10:00-19:00",
+        "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+        "publishedTimes": "10:00-19:00",
+        "memo": ""
+      },
+      "2026-10-18": {
+        "label": "已列运营时段：10:00-19:00",
+        "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+        "publishedTimes": "10:00-19:00",
+        "memo": ""
+      }
+    },
+    "25": {
+      "2026-10-17": {
+        "label": "已列运营时段：10:00-19:00",
+        "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+        "publishedTimes": "10:00-19:00",
+        "memo": ""
+      },
+      "2026-10-18": {
+        "label": "已列运营时段：10:00-19:00",
+        "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+        "publishedTimes": "10:00-19:00",
+        "memo": ""
+      }
+    },
+    "143": {
+      "2026-10-17": {
+        "label": "已列运营时段：10:00-19:00",
+        "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+        "publishedTimes": "10:00-19:00",
+        "memo": ""
+      },
+      "2026-10-18": {
+        "label": "已列运营时段：10:00-19:00",
+        "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+        "publishedTimes": "10:00-19:00",
+        "memo": ""
+      }
+    },
+    "174": {
+      "2026-10-17": {
+        "label": "已列运营时段：10:00-19:00",
+        "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+        "publishedTimes": "10:00-19:00",
+        "memo": ""
+      },
+      "2026-10-18": {
+        "label": "已列运营时段：10:00-19:00",
+        "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+        "publishedTimes": "10:00-19:00",
+        "memo": ""
+      }
+    },
+    "175": {
+      "2026-10-17": {
+        "label": "已列运营时段：10:00-19:00",
+        "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+        "publishedTimes": "10:00-19:00",
+        "memo": ""
+      },
+      "2026-10-18": {
+        "label": "已列运营时段：10:00-19:00",
+        "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+        "publishedTimes": "10:00-19:00",
+        "memo": ""
+      }
+    },
+    "279": {
+      "2026-10-17": {
+        "label": "场次／开放时间尚未列出",
+        "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+        "publishedTimes": null,
+        "memo": ""
+      },
+      "2026-10-18": {
+        "label": "场次／开放时间尚未列出",
+        "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+        "publishedTimes": null,
+        "memo": ""
+      }
+    },
+    "389": {
+      "2026-10-17": {
+        "label": "场次／开放时间尚未列出",
+        "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+        "publishedTimes": null,
+        "memo": ""
+      },
+      "2026-10-18": {
+        "label": "场次／开放时间尚未列出",
+        "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+        "publishedTimes": null,
+        "memo": ""
+      }
+    },
+    "397": {
+      "2026-10-17": {
+        "label": "场次／开放时间尚未列出",
+        "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+        "publishedTimes": null,
+        "memo": ""
+      },
+      "2026-10-18": {
+        "label": "场次／开放时间尚未列出",
+        "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+        "publishedTimes": null,
+        "memo": ""
+      }
+    },
+    "398": {
+      "2026-10-17": {
+        "label": "场次／开放时间尚未列出",
+        "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+        "publishedTimes": null,
+        "memo": ""
+      },
+      "2026-10-18": {
+        "label": "场次／开放时间尚未列出",
+        "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+        "publishedTimes": null,
+        "memo": ""
+      }
+    },
+    "404": {
+      "2026-10-17": {
+        "label": "场次／开放时间尚未列出",
+        "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+        "publishedTimes": null,
+        "memo": ""
+      },
+      "2026-10-18": {
+        "label": "场次／开放时间尚未列出",
+        "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+        "publishedTimes": null,
+        "memo": ""
+      }
+    },
+    "409": {
+      "2026-10-17": {
+        "label": "场次／开放时间尚未列出",
+        "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+        "publishedTimes": null,
+        "memo": ""
+      },
+      "2026-10-18": {
+        "label": "场次／开放时间尚未列出",
+        "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+        "publishedTimes": null,
+        "memo": ""
+      }
+    },
+    "410": {
+      "2026-10-17": {
+        "label": "场次／开放时间尚未列出",
+        "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+        "publishedTimes": null,
+        "memo": ""
+      },
+      "2026-10-18": {
+        "label": "场次／开放时间尚未列出",
+        "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+        "publishedTimes": null,
+        "memo": ""
+      }
+    },
+    "46": {
+      "2026-10-17": {
+        "label": "已列运营时段：10:00-19:00",
+        "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+        "publishedTimes": "10:00-19:00",
+        "memo": ""
+      },
+      "2026-10-18": {
+        "label": "已列运营时段：10:00-19:00",
+        "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+        "publishedTimes": "10:00-19:00",
+        "memo": ""
+      }
+    },
+    "56": {
+      "2026-10-17": {
+        "label": "已列运营时段：10:00-19:00",
+        "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+        "publishedTimes": "10:00-19:00",
+        "memo": ""
+      },
+      "2026-10-18": {
+        "label": "已列运营时段：10:00-19:00",
+        "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+        "publishedTimes": "10:00-19:00",
+        "memo": ""
+      }
+    },
+    "121": {
+      "2026-10-17": {
+        "label": "已列运营时段：10:00-19:00",
+        "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+        "publishedTimes": "10:00-19:00",
+        "memo": ""
+      },
+      "2026-10-18": {
+        "label": "已列运营时段：10:00-19:00",
+        "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+        "publishedTimes": "10:00-19:00",
+        "memo": ""
+      }
+    },
+    "148": {
+      "2026-10-17": {
+        "label": "场次／开放时间尚未列出",
+        "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+        "publishedTimes": null,
+        "memo": ""
+      },
+      "2026-10-18": {
+        "label": "场次／开放时间尚未列出",
+        "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+        "publishedTimes": null,
+        "memo": ""
+      }
+    },
+    "162": {
+      "2026-10-17": {
+        "label": "已列运营时段：10:00-19:00",
+        "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+        "publishedTimes": "10:00-19:00",
+        "memo": ""
+      },
+      "2026-10-18": {
+        "label": "已列运营时段：10:00-19:00",
+        "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+        "publishedTimes": "10:00-19:00",
+        "memo": ""
+      }
+    },
+    "270": {
+      "2026-10-17": {
+        "label": "场次／开放时间尚未列出",
+        "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+        "publishedTimes": null,
+        "memo": ""
+      },
+      "2026-10-18": {
+        "label": "场次／开放时间尚未列出",
+        "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+        "publishedTimes": null,
+        "memo": ""
+      }
+    },
+    "320": {
+      "2026-10-17": {
+        "label": "场次／开放时间尚未列出",
+        "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+        "publishedTimes": null,
+        "memo": ""
+      },
+      "2026-10-18": {
+        "label": "场次／开放时间尚未列出",
+        "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+        "publishedTimes": null,
+        "memo": ""
+      }
+    },
+    "344": {
+      "2026-10-17": {
+        "label": "场次／开放时间尚未列出",
+        "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+        "publishedTimes": null,
+        "memo": ""
+      },
+      "2026-10-18": {
+        "label": "场次／开放时间尚未列出",
+        "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+        "publishedTimes": null,
+        "memo": ""
+      }
+    },
+    "388": {
+      "2026-10-17": {
+        "label": "场次／开放时间尚未列出",
+        "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+        "publishedTimes": null,
+        "memo": ""
+      },
+      "2026-10-18": {
+        "label": "场次／开放时间尚未列出",
+        "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+        "publishedTimes": null,
+        "memo": ""
+      }
+    },
+    "400": {
+      "2026-10-17": {
+        "label": "场次／开放时间尚未列出",
+        "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+        "publishedTimes": null,
+        "memo": ""
+      },
+      "2026-10-18": {
+        "label": "场次／开放时间尚未列出",
+        "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+        "publishedTimes": null,
+        "memo": ""
+      }
+    },
+    "401": {
+      "2026-10-17": {
+        "label": "场次／开放时间尚未列出",
+        "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+        "publishedTimes": null,
+        "memo": ""
+      },
+      "2026-10-18": {
+        "label": "场次／开放时间尚未列出",
+        "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+        "publishedTimes": null,
+        "memo": ""
+      }
+    },
+    "402": {
+      "2026-10-17": {
+        "label": "场次／开放时间尚未列出",
+        "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+        "publishedTimes": null,
+        "memo": ""
+      },
+      "2026-10-18": {
+        "label": "场次／开放时间尚未列出",
+        "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+        "publishedTimes": null,
+        "memo": ""
+      }
+    },
+    "403": {
+      "2026-10-17": {
+        "label": "场次／开放时间尚未列出",
+        "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+        "publishedTimes": null,
+        "memo": ""
+      },
+      "2026-10-18": {
+        "label": "场次／开放时间尚未列出",
+        "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+        "publishedTimes": null,
+        "memo": ""
+      }
+    },
+    "412": {
+      "2026-10-17": {
+        "label": "场次／开放时间尚未列出",
+        "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+        "publishedTimes": null,
+        "memo": ""
+      },
+      "2026-10-18": {
+        "label": "场次／开放时间尚未列出",
+        "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+        "publishedTimes": null,
+        "memo": ""
+      }
+    },
+    "129": {
+      "2026-10-17": {
+        "label": "已列运营时段：10:00-19:00",
+        "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+        "publishedTimes": "10:00-19:00",
+        "memo": ""
+      },
+      "2026-10-18": {
+        "label": "已列运营时段：10:00-19:00",
+        "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+        "publishedTimes": "10:00-19:00",
+        "memo": ""
+      }
+    },
+    "145": {
+      "2026-10-17": {
+        "label": "场次／开放时间尚未列出",
+        "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+        "publishedTimes": null,
+        "memo": ""
+      },
+      "2026-10-18": {
+        "label": "场次／开放时间尚未列出",
+        "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+        "publishedTimes": null,
+        "memo": ""
+      }
+    },
+    "217": {
+      "2026-10-17": {
+        "label": "已列运营时段：10:00-19:00",
+        "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+        "publishedTimes": "10:00-19:00",
+        "memo": ""
+      },
+      "2026-10-18": {
+        "label": "已列运营时段：10:00-19:00",
+        "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+        "publishedTimes": "10:00-19:00",
+        "memo": ""
+      }
+    },
+    "411": {
+      "2026-10-17": {
+        "label": "场次／开放时间尚未列出",
+        "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+        "publishedTimes": null,
+        "memo": ""
+      },
+      "2026-10-18": {
+        "label": "场次／开放时间尚未列出",
+        "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+        "publishedTimes": null,
+        "memo": ""
+      }
+    },
+    "24": {
+      "2026-10-17": {
+        "label": "已列运营时段：10:00-19:00",
+        "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+        "publishedTimes": "10:00-19:00",
+        "memo": ""
+      },
+      "2026-10-18": {
+        "label": "已列运营时段：10:00-19:00",
+        "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+        "publishedTimes": "10:00-19:00",
+        "memo": ""
+      }
+    },
+    "126": {
+      "2026-10-17": {
+        "label": "已列运营时段：10:00-19:00",
+        "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+        "publishedTimes": "10:00-19:00",
+        "memo": ""
+      },
+      "2026-10-18": {
+        "label": "已列运营时段：10:00-19:00",
+        "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+        "publishedTimes": "10:00-19:00",
+        "memo": ""
+      }
+    },
+    "136": {
+      "2026-10-17": {
+        "label": "已列运营时段：10:00-19:00",
+        "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+        "publishedTimes": "10:00-19:00",
+        "memo": ""
+      },
+      "2026-10-18": {
+        "label": "已列运营时段：10:00-19:00",
+        "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+        "publishedTimes": "10:00-19:00",
+        "memo": ""
+      }
+    },
+    "137": {
+      "2026-10-17": {
+        "label": "场次／开放时间尚未列出",
+        "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+        "publishedTimes": null,
+        "memo": ""
+      },
+      "2026-10-18": {
+        "label": "场次／开放时间尚未列出",
+        "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+        "publishedTimes": null,
+        "memo": ""
+      }
+    },
+    "266": {
+      "2026-10-17": {
+        "label": "场次／开放时间尚未列出",
+        "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+        "publishedTimes": null,
+        "memo": ""
+      },
+      "2026-10-18": {
+        "label": "场次／开放时间尚未列出",
+        "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+        "publishedTimes": null,
+        "memo": ""
+      }
+    },
+    "362": {
+      "2026-10-17": {
+        "label": "场次／开放时间尚未列出",
+        "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+        "publishedTimes": null,
+        "memo": ""
+      },
+      "2026-10-18": {
+        "label": "场次／开放时间尚未列出",
+        "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+        "publishedTimes": null,
+        "memo": ""
+      }
+    },
+    "124": {
+      "2026-10-17": {
+        "label": "已列运营时段：10:00-19:00",
+        "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+        "publishedTimes": "10:00-19:00",
+        "memo": ""
+      },
+      "2026-10-18": {
+        "label": "已列运营时段：10:00-19:00",
+        "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+        "publishedTimes": "10:00-19:00",
+        "memo": ""
+      }
+    },
+    "354": {
+      "2026-10-17": {
+        "label": "场次／开放时间尚未列出",
+        "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+        "publishedTimes": null,
+        "memo": ""
+      },
+      "2026-10-18": {
+        "label": "场次／开放时间尚未列出",
+        "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+        "publishedTimes": null,
+        "memo": ""
+      }
+    },
+    "358": {
+      "2026-10-17": {
+        "label": "场次／开放时间尚未列出",
+        "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+        "publishedTimes": null,
+        "memo": ""
+      },
+      "2026-10-18": {
+        "label": "场次／开放时间尚未列出",
+        "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+        "publishedTimes": null,
+        "memo": ""
+      }
+    },
+    "395": {
+      "2026-10-17": {
+        "label": "场次／开放时间尚未列出",
+        "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+        "publishedTimes": null,
+        "memo": ""
+      },
+      "2026-10-18": {
+        "label": "场次／开放时间尚未列出",
+        "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+        "publishedTimes": null,
+        "memo": ""
+      }
+    },
+    "408": {
+      "2026-10-17": {
+        "label": "场次／开放时间尚未列出",
+        "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+        "publishedTimes": null,
+        "memo": ""
+      },
+      "2026-10-18": {
+        "label": "场次／开放时间尚未列出",
+        "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+        "publishedTimes": null,
+        "memo": ""
+      }
+    },
+    "7": {
+      "2026-10-17": {
+        "label": "已列运营时段：10:00-19:00",
+        "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+        "publishedTimes": "10:00-19:00",
+        "memo": ""
+      },
+      "2026-10-18": {
+        "label": "已列运营时段：10:00-19:00",
+        "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+        "publishedTimes": "10:00-19:00",
+        "memo": ""
+      }
+    },
+    "11": {
+      "2026-10-17": {
+        "label": "已列运营时段：10:00-19:00",
+        "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+        "publishedTimes": "10:00-19:00",
+        "memo": ""
+      },
+      "2026-10-18": {
+        "label": "已列运营时段：10:00-19:00",
+        "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+        "publishedTimes": "10:00-19:00",
+        "memo": ""
+      }
+    },
+    "20": {
+      "2026-10-17": {
+        "label": "已列运营时段：10:00-19:00",
+        "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+        "publishedTimes": "10:00-19:00",
+        "memo": ""
+      },
+      "2026-10-18": {
+        "label": "已列运营时段：10:00-19:00",
+        "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+        "publishedTimes": "10:00-19:00",
+        "memo": ""
+      }
+    },
+    "21": {
+      "2026-10-17": {
+        "label": "已列运营时段：10:00-19:00",
+        "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+        "publishedTimes": "10:00-19:00",
+        "memo": ""
+      },
+      "2026-10-18": {
+        "label": "已列运营时段：10:00-19:00",
+        "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+        "publishedTimes": "10:00-19:00",
+        "memo": ""
+      }
+    },
+    "71": {
+      "2026-10-17": {
+        "label": "已列运营时段：10:00-19:00",
+        "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+        "publishedTimes": "10:00-19:00",
+        "memo": ""
+      },
+      "2026-10-18": {
+        "label": "已列运营时段：10:00-19:00",
+        "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+        "publishedTimes": "10:00-19:00",
+        "memo": ""
+      }
+    },
+    "138": {
+      "2026-10-17": {
+        "label": "场次／开放时间尚未列出",
+        "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+        "publishedTimes": null,
+        "memo": ""
+      },
+      "2026-10-18": {
+        "label": "场次／开放时间尚未列出",
+        "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+        "publishedTimes": null,
+        "memo": ""
+      }
+    },
+    "139": {
+      "2026-10-17": {
+        "label": "场次／开放时间尚未列出",
+        "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+        "publishedTimes": null,
+        "memo": ""
+      },
+      "2026-10-18": {
+        "label": "场次／开放时间尚未列出",
+        "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+        "publishedTimes": null,
+        "memo": ""
+      }
+    },
+    "177": {
+      "2026-10-17": {
+        "label": "已列运营时段：10:00-19:00",
+        "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+        "publishedTimes": "10:00-19:00",
+        "memo": ""
+      },
+      "2026-10-18": {
+        "label": "已列运营时段：10:00-19:00",
+        "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+        "publishedTimes": "10:00-19:00",
+        "memo": ""
+      }
+    },
+    "224": {
+      "2026-10-17": {
+        "label": "已列运营时段：10:00-19:00",
+        "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+        "publishedTimes": "10:00-19:00",
+        "memo": ""
+      },
+      "2026-10-18": {
+        "label": "已列运营时段：10:00-19:00",
+        "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+        "publishedTimes": "10:00-19:00",
+        "memo": ""
+      }
+    },
+    "390": {
+      "2026-10-17": {
+        "label": "场次／开放时间尚未列出",
+        "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+        "publishedTimes": null,
+        "memo": ""
+      },
+      "2026-10-18": {
+        "label": "场次／开放时间尚未列出",
+        "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+        "publishedTimes": null,
+        "memo": ""
+      }
+    },
+    "392": {
+      "2026-10-17": {
+        "label": "场次／开放时间尚未列出",
+        "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+        "publishedTimes": null,
+        "memo": ""
+      },
+      "2026-10-18": {
+        "label": "场次／开放时间尚未列出",
+        "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+        "publishedTimes": null,
+        "memo": ""
+      }
+    },
+    "393": {
+      "2026-10-17": {
+        "label": "场次／开放时间尚未列出",
+        "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+        "publishedTimes": null,
+        "memo": ""
+      },
+      "2026-10-18": {
+        "label": "场次／开放时间尚未列出",
+        "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+        "publishedTimes": null,
+        "memo": ""
+      }
+    },
+    "394": {
+      "2026-10-17": {
+        "label": "场次／开放时间尚未列出",
+        "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+        "publishedTimes": null,
+        "memo": ""
+      },
+      "2026-10-18": {
+        "label": "场次／开放时间尚未列出",
+        "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+        "publishedTimes": null,
+        "memo": ""
+      }
+    },
+    "122": {
+      "2026-10-17": {
+        "label": "已列运营时段：10:00-19:00",
+        "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+        "publishedTimes": "10:00-19:00",
+        "memo": ""
+      },
+      "2026-10-18": {
+        "label": "已列运营时段：10:00-19:00",
+        "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+        "publishedTimes": "10:00-19:00",
+        "memo": ""
+      }
+    },
+    "123": {
+      "2026-10-17": {
+        "label": "已列运营时段：10:00-19:00",
+        "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+        "publishedTimes": "10:00-19:00",
+        "memo": ""
+      },
+      "2026-10-18": {
+        "label": "已列运营时段：10:00-19:00",
+        "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+        "publishedTimes": "10:00-19:00",
+        "memo": ""
+      }
+    },
+    "149": {
+      "2026-10-17": {
+        "label": "场次／开放时间尚未列出",
+        "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+        "publishedTimes": null,
+        "memo": ""
+      },
+      "2026-10-18": {
+        "label": "场次／开放时间尚未列出",
+        "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+        "publishedTimes": null,
+        "memo": ""
+      }
+    },
+    "29": {
+      "2026-10-17": {
+        "label": "场次／开放时间尚未列出",
+        "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+        "publishedTimes": null,
+        "memo": ""
+      },
+      "2026-10-18": {
+        "label": "场次／开放时间尚未列出",
+        "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+        "publishedTimes": null,
+        "memo": ""
+      }
+    },
+    "243": {
+      "2026-10-17": {
+        "label": "场次／开放时间尚未列出",
+        "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+        "publishedTimes": null,
+        "memo": ""
+      },
+      "2026-10-18": {
+        "label": "场次／开放时间尚未列出",
+        "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+        "publishedTimes": null,
+        "memo": ""
+      }
+    },
+    "5": {
+      "2026-10-17": {
+        "label": "已列运营时段：10:00-19:00",
+        "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+        "publishedTimes": "10:00-19:00",
+        "memo": ""
+      },
+      "2026-10-18": {
+        "label": "已列运营时段：10:00-19:00",
+        "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+        "publishedTimes": "10:00-19:00",
+        "memo": ""
+      }
+    },
+    "172": {
+      "2026-10-17": {
+        "label": "已列运营时段：10:00-19:00",
+        "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+        "publishedTimes": "10:00-19:00",
+        "memo": ""
+      },
+      "2026-10-18": {
+        "label": "已列运营时段：10:00-19:00",
+        "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+        "publishedTimes": "10:00-19:00",
+        "memo": ""
+      }
+    },
+    "173": {
+      "2026-10-17": {
+        "label": "已列运营时段：10:00-19:00",
+        "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+        "publishedTimes": "10:00-19:00",
+        "memo": ""
+      },
+      "2026-10-18": {
+        "label": "已列运营时段：10:00-19:00",
+        "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+        "publishedTimes": "10:00-19:00",
+        "memo": ""
+      }
+    },
+    "160": {
+      "2026-10-17": {
+        "label": "已列运营时段：10:00-19:00",
+        "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+        "publishedTimes": "10:00-19:00",
+        "memo": ""
+      },
+      "2026-10-18": {
+        "label": "已列运营时段：10:00-19:00",
+        "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+        "publishedTimes": "10:00-19:00",
+        "memo": ""
+      }
+    },
+    "276": {
+      "2026-10-17": {
+        "label": "场次／开放时间尚未列出",
+        "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+        "publishedTimes": null,
+        "memo": ""
+      },
+      "2026-10-18": {
+        "label": "场次／开放时间尚未列出",
+        "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+        "publishedTimes": null,
+        "memo": ""
+      }
+    },
+    "278": {
+      "2026-10-17": {
+        "label": "场次／开放时间尚未列出",
+        "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+        "publishedTimes": null,
+        "memo": ""
+      },
+      "2026-10-18": {
+        "label": "场次／开放时间尚未列出",
+        "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+        "publishedTimes": null,
+        "memo": ""
+      }
+    },
+    "396": {
+      "2026-10-17": {
+        "label": "场次／开放时间尚未列出",
+        "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+        "publishedTimes": null,
+        "memo": ""
+      },
+      "2026-10-18": {
+        "label": "场次／开放时间尚未列出",
+        "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+        "publishedTimes": null,
+        "memo": ""
+      }
+    },
+    "52": {
+      "2026-10-17": {
+        "label": "已列运营时段：10:00-19:00",
+        "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+        "publishedTimes": "10:00-19:00",
+        "memo": ""
+      },
+      "2026-10-18": {
+        "label": "已列运营时段：10:00-19:00",
+        "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+        "publishedTimes": "10:00-19:00",
+        "memo": ""
+      }
+    },
+    "164": {
+      "2026-10-17": {
+        "label": "已列运营时段：10:00-19:00",
+        "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+        "publishedTimes": "10:00-19:00",
+        "memo": ""
+      },
+      "2026-10-18": {
+        "label": "已列运营时段：10:00-19:00",
+        "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+        "publishedTimes": "10:00-19:00",
+        "memo": ""
+      }
+    },
+    "169": {
+      "2026-10-17": {
+        "label": "已列运营时段：10:00-19:00",
+        "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+        "publishedTimes": "10:00-19:00",
+        "memo": ""
+      },
+      "2026-10-18": {
+        "label": "已列运营时段：10:00-19:00",
+        "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+        "publishedTimes": "10:00-19:00",
+        "memo": ""
+      }
+    },
+    "171": {
+      "2026-10-17": {
+        "label": "已列运营时段：10:00-19:00",
+        "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+        "publishedTimes": "10:00-19:00",
+        "memo": ""
+      },
+      "2026-10-18": {
+        "label": "已列运营时段：10:00-19:00",
+        "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+        "publishedTimes": "10:00-19:00",
+        "memo": ""
+      }
+    },
+    "168": {
+      "2026-10-17": {
+        "label": "已列运营时段：10:00-19:00",
+        "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+        "publishedTimes": "10:00-19:00",
+        "memo": ""
+      },
+      "2026-10-18": {
+        "label": "已列运营时段：10:00-19:00",
+        "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+        "publishedTimes": "10:00-19:00",
+        "memo": ""
+      }
+    },
+    "65": {
+      "2026-10-17": {
+        "label": "已列运营时段：10:00-19:00",
+        "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+        "publishedTimes": "10:00-19:00",
+        "memo": ""
+      },
+      "2026-10-18": {
+        "label": "已列运营时段：10:00-19:00",
+        "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+        "publishedTimes": "10:00-19:00",
+        "memo": ""
+      }
+    },
+    "176": {
+      "2026-10-17": {
+        "label": "已列运营时段：10:00-19:00",
+        "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+        "publishedTimes": "10:00-19:00",
+        "memo": ""
+      },
+      "2026-10-18": {
+        "label": "已列运营时段：10:00-19:00",
+        "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+        "publishedTimes": "10:00-19:00",
+        "memo": ""
+      }
+    },
+    "277": {
+      "2026-10-17": {
+        "label": "场次／开放时间尚未列出",
+        "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+        "publishedTimes": null,
+        "memo": ""
+      },
+      "2026-10-18": {
+        "label": "场次／开放时间尚未列出",
+        "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+        "publishedTimes": null,
+        "memo": ""
+      }
+    },
+    "280": {
+      "2026-10-17": {
+        "label": "场次／开放时间尚未列出",
+        "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+        "publishedTimes": null,
+        "memo": ""
+      },
+      "2026-10-18": {
+        "label": "场次／开放时间尚未列出",
+        "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+        "publishedTimes": null,
+        "memo": ""
+      }
+    },
+    "407": {
+      "2026-10-17": {
+        "label": "场次／开放时间尚未列出",
+        "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+        "publishedTimes": null,
+        "memo": ""
+      },
+      "2026-10-18": {
+        "label": "场次／开放时间尚未列出",
+        "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+        "publishedTimes": null,
+        "memo": ""
+      }
+    },
+    "45": {
+      "2026-10-17": {
+        "label": "已列运营时段：10:00-19:00",
+        "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+        "publishedTimes": "10:00-19:00",
+        "memo": ""
+      },
+      "2026-10-18": {
+        "label": "已列运营时段：10:00-19:00",
+        "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+        "publishedTimes": "10:00-19:00",
+        "memo": ""
+      }
+    },
+    "54": {
+      "2026-10-17": {
+        "label": "季节性关闭Seasonal Closure",
+        "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+        "publishedTimes": null,
+        "memo": "季节性关闭Seasonal Closure"
+      },
+      "2026-10-18": {
+        "label": "季节性关闭Seasonal Closure",
+        "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+        "publishedTimes": null,
+        "memo": "季节性关闭Seasonal Closure"
+      }
+    },
+    "170": {
+      "2026-10-17": {
+        "label": "已列运营时段：10:00-19:00",
+        "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+        "publishedTimes": "10:00-19:00",
+        "memo": ""
+      },
+      "2026-10-18": {
+        "label": "已列运营时段：10:00-19:00",
+        "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+        "publishedTimes": "10:00-19:00",
+        "memo": ""
+      }
+    },
+    "166": {
+      "2026-10-17": {
+        "label": "今日关闭Closed Today",
+        "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+        "publishedTimes": null,
+        "memo": "今日关闭Closed Today"
+      },
+      "2026-10-18": {
+        "label": "今日关闭Closed Today",
+        "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+        "publishedTimes": null,
+        "memo": "今日关闭Closed Today"
+      }
+    },
+    "167": {
+      "2026-10-17": {
+        "label": "已列运营时段：10:00-19:00",
+        "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+        "publishedTimes": "10:00-19:00",
+        "memo": ""
+      },
+      "2026-10-18": {
+        "label": "已列运营时段：10:00-19:00",
+        "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+        "publishedTimes": "10:00-19:00",
+        "memo": ""
+      }
+    }
+  },
+  "transport": [
+    {
+      "traffic_type": "drive",
+      "group_title": "自驾",
+      "list": [
+        {
+          "id": 2,
+          "traffic_type": "drive",
+          "group_title": null,
+          "title": "P1爱琴海·缤纷里地下停车场",
+          "sub_title": "",
+          "icon": "https://tencent-web-1320474462.cos.ap-shanghai.myqcloud.com/2025-05-18/20250518144413942564.png",
+          "content": "<p style=\"line-height: 1.5;\"><span style=\"font-size: 14px;\">B1、B2均设有无障碍机动车停车位</span></p>",
+          "lat": "30.88208255686686",
+          "lng": "121.09574890061162",
+          "weight": 4
+        },
+        {
+          "id": 1,
+          "traffic_type": "drive",
+          "group_title": null,
+          "title": "P2秀州塘停车场",
+          "sub_title": "",
+          "icon": "https://tencent-web-1320474462.cos.ap-shanghai.myqcloud.com/2025-05-18/20250518144420774355.png",
+          "content": "<p style=\"line-height: 1.5;\"><span style=\"font-size: 14px;\">设有无障碍机动车停车位</span></p>",
+          "lat": "30.88824577063277",
+          "lng": "121.10002355067104",
+          "weight": 2
+        },
+        {
+          "id": 8,
+          "traffic_type": "drive",
+          "group_title": null,
+          "title": "酒店地下停车场",
+          "sub_title": "",
+          "icon": "https://tencent-web-1320474462.cos.ap-shanghai.myqcloud.com/2025-05-18/20250518144425821758.png",
+          "content": "<p style=\"line-height: 1.5;\"><span style=\"font-size: 14px;\">酒店提供地下停车场，入住当日免费停车，离店当日免费停车至下午两点，之后需支付停车费8元/小时。</span></p>",
+          "lat": "30.884426026393243",
+          "lng": "121.09601837014031",
+          "weight": 1
+        }
+      ]
+    },
+    {
+      "traffic_type": "airport",
+      "group_title": "机场/火车站",
+      "list": [
+        {
+          "id": 7,
+          "traffic_type": "airport",
+          "group_title": null,
+          "title": "上海虹桥站——上海乐高乐园®度假区",
+          "sub_title": "",
+          "icon": "https://tencent-web-1320474462.cos.ap-shanghai.myqcloud.com/2025-05-18/20250518144442838847.png",
+          "content": "<p style=\"line-height: 1.5;\"><span style=\"font-size: 14px;\">&gt;请在“金山北站”下车</span></p><p style=\"line-height: 1.5;\"><span style=\"font-size: 14px;\">请根据行程选择合适的高铁班次，金山北站下车后可打车前往上海乐高乐园度假区。</span></p><p><br></p>",
+          "lat": null,
+          "lng": null,
+          "weight": 6
+        },
+        {
+          "id": 6,
+          "traffic_type": "airport",
+          "group_title": null,
+          "title": "上海南站——上海乐高乐园®度假区",
+          "sub_title": "",
+          "icon": "https://tencent-web-1320474462.cos.ap-shanghai.myqcloud.com/2025-05-18/20250518144449433312.png",
+          "content": "<p>&gt;请在“金山北站”下车</p><p>请根据行程选择合适的高铁班次，金山北站下车后<span style=\"font-size: 14px;\">可打车</span>前往上海乐高乐园度假区。</p><p><br></p>",
+          "lat": null,
+          "lng": null,
+          "weight": 5
+        },
+        {
+          "id": 11,
+          "traffic_type": "airport",
+          "group_title": null,
+          "title": "上海虹桥国际机场——上海乐高乐园®度假区",
+          "sub_title": "",
+          "icon": "https://tencent-web-1320474462.cos.ap-shanghai.myqcloud.com/2025-05-18/20250518144454719609.png",
+          "content": "<p style=\"line-height: 1.5;\"><span style=\"font-size: 14px;\">乘坐地铁2号线或10号线至“虹桥火车站”，乘坐合适的高铁班次至“金山北站”，下车后可打车前往上海乐高乐园度假区。</span></p><p><br></p>",
+          "lat": null,
+          "lng": null,
+          "weight": 4
+        },
+        {
+          "id": 12,
+          "traffic_type": "airport",
+          "group_title": null,
+          "title": "上海浦东国际机场——上海乐高乐园®度假区",
+          "sub_title": "",
+          "icon": "https://tencent-web-1320474462.cos.ap-shanghai.myqcloud.com/2025-05-18/20250518144459112145.png",
+          "content": "<p style=\"line-height: 1.5;\"><span style=\"font-size: 14px;\">乘坐机场联络线至“虹桥2号航站楼”，换乘地铁2号线或10号线至“虹桥火车站”，乘坐合适的高铁班次至“金山北站”，下车后可打车前往上海乐高乐园度假区。</span></p><p><br></p>",
+          "lat": null,
+          "lng": null,
+          "weight": 2
+        }
+      ]
+    },
+    {
+      "traffic_type": "taxi",
+      "group_title": "乘坐网约车/出租车",
+      "list": [
+        {
+          "id": 5,
+          "traffic_type": "taxi",
+          "group_title": null,
+          "title": "上海乐高乐园®度假区",
+          "sub_title": "",
+          "icon": "https://tencent-web-1320474462.cos.ap-shanghai.myqcloud.com/2025-05-18/20250518144628983801.png",
+          "content": "<p style=\"line-height: 1.5;\"><span style=\"font-size: 14px;\">上海市金山区枫泾镇乐缤路999号</span></p><p><br></p>",
+          "lat": null,
+          "lng": null,
+          "weight": 2
+        },
+        {
+          "id": 10,
+          "traffic_type": "taxi",
+          "group_title": null,
+          "title": "乐高乐园酒店®",
+          "sub_title": "",
+          "icon": "https://tencent-web-1320474462.cos.ap-shanghai.myqcloud.com/2025-05-18/20250518144633726308.png",
+          "content": "<p style=\"line-height: 1.5;\"><span style=\"font-size: 14px;\">上海市金山区枫泾镇乐纷路188号</span></p><p><br></p>",
+          "lat": null,
+          "lng": null,
+          "weight": 1
+        }
+      ]
+    },
+    {
+      "traffic_type": "bus",
+      "group_title": "上海市内公共交通",
+      "list": [
+        {
+          "id": 13,
+          "traffic_type": "bus",
+          "group_title": null,
+          "title": "乐园环线  金山北站—乐高乐园公交枢纽",
+          "sub_title": ">请在“乐缤路申高路”下车",
+          "icon": "https://tencent-web-1320474462.cos.ap-shanghai.myqcloud.com/2025-07-26/20250726213802149677.png",
+          "content": "<p>首班车：8:00</p><p>末班车：20:00</p><p>具体运营时间请查看地图导航应用，如高德地图/百度地图等。</p>",
+          "lat": null,
+          "lng": null,
+          "weight": 20
+        },
+        {
+          "id": 4,
+          "traffic_type": "bus",
+          "group_title": null,
+          "title": "乐朱线(朱泾5路)  金山北站—朱泾汽车站​",
+          "sub_title": ">请在“乐纷路启高路”下车",
+          "icon": "https://tencent-web-1320474462.cos.ap-shanghai.myqcloud.com/2025-05-18/20250518144607382102.png",
+          "content": "<p style=\"line-height: 1.5;\"><span style=\"font-size: 14px;\">具体运营时间请查看地图导航应用，如高德地图/百度地图等。</span></p>",
+          "lat": null,
+          "lng": null,
+          "weight": 19
+        },
+        {
+          "id": 3,
+          "traffic_type": "bus",
+          "group_title": null,
+          "title": "乐枫线(枫泾7路)  枫泾枢纽站​—金山北站​",
+          "sub_title": ">请在“乐缤路申高路”下车",
+          "icon": "https://tencent-web-1320474462.cos.ap-shanghai.myqcloud.com/2025-05-18/20250518144601190257.png",
+          "content": "<p style=\"line-height: 1.5;\"><span style=\"font-size: 14px;\">具体运营时间请查看地图导航应用，如高德地图/百度地图等。</span></p>",
+          "lat": null,
+          "lng": null,
+          "weight": 18
+        },
+        {
+          "id": 14,
+          "traffic_type": "bus",
+          "group_title": null,
+          "title": "乐兴线(1675路)  兴塔农贸市场—韩坞村",
+          "sub_title": ">请在“乐纷路启高路”下车",
+          "icon": "https://tencent-web-1320474462.cos.ap-shanghai.myqcloud.com/2025-08-21/20250821110816110434.png",
+          "content": "<p>具体运营时间请查看地图导航应用，如高德地图/百度地图等。</p>",
+          "lat": null,
+          "lng": null,
+          "weight": 17
+        },
+        {
+          "id": 15,
+          "traffic_type": "bus",
+          "group_title": null,
+          "title": "乐松专线  乐高乐园公交枢纽—松江枢纽",
+          "sub_title": ">请在“乐高乐园公交枢纽站”下车",
+          "icon": "https://tencent-web-1320474462.cos.ap-shanghai.myqcloud.com/2025-08-21/20250821111057782639.png",
+          "content": "<p>具体运营时间请查看地图导航应用，如高德地图/百度地图等。</p>",
+          "lat": null,
+          "lng": null,
+          "weight": 16
+        },
+        {
+          "id": 16,
+          "traffic_type": "bus",
+          "group_title": null,
+          "title": "乐张线  乐高乐园公交枢纽—松金公路张堰",
+          "sub_title": ">请在“乐高乐园公交枢纽站”下车",
+          "icon": "https://tencent-web-1320474462.cos.ap-shanghai.myqcloud.com/2025-08-21/20250821111245800715.png",
+          "content": "<p>具体运营时间请查看地图导航应用，如高德地图/百度地图等。</p>",
+          "lat": null,
+          "lng": null,
+          "weight": 15
+        },
+        {
+          "id": 17,
+          "traffic_type": "bus",
+          "group_title": null,
+          "title": "平湖229路(乐平线)  平湖客运中心—乐高乐园公交枢纽",
+          "sub_title": ">请在“乐缤路申高路”下车",
+          "icon": "https://tencent-web-1320474462.cos.ap-shanghai.myqcloud.com/2025-08-21/20250821111521677803.png",
+          "content": "<p>具体运营时间请查看地图导航应用，如高德地图/百度地图等。</p>",
+          "lat": null,
+          "lng": null,
+          "weight": 9
+        },
+        {
+          "id": 18,
+          "traffic_type": "bus",
+          "group_title": null,
+          "title": "嘉善113路(乐嘉线)  嘉善客运中心—乐纷路启高路—朱泾汽车站",
+          "sub_title": ">请在“乐纷路启高路”下车",
+          "icon": "https://tencent-web-1320474462.cos.ap-shanghai.myqcloud.com/2025-08-21/20250821111642748530.png",
+          "content": "<p>具体运营时间请查看地图导航应用，如高德地图/百度地图等。</p>",
+          "lat": null,
+          "lng": null,
+          "weight": 7
+        },
+        {
+          "id": 19,
+          "traffic_type": "bus",
+          "group_title": null,
+          "title": "定制乐卫线  乐高乐园公交枢纽—金山卫站",
+          "sub_title": ">请在“乐纷路启高路”下车",
+          "icon": "https://tencent-web-1320474462.cos.ap-shanghai.myqcloud.com/2025-08-21/20250821111844185279.png",
+          "content": "<p>具体运营时间请查看地图导航应用，如高德地图/百度地图等。</p>",
+          "lat": null,
+          "lng": null,
+          "weight": 6
+        },
+        {
+          "id": 20,
+          "traffic_type": "bus",
+          "group_title": null,
+          "title": "定制金山旅游2线  朱泾汽车站(东林寺)—枫泾枢纽站",
+          "sub_title": ">请在“乐纷路启高路”下车",
+          "icon": "https://tencent-web-1320474462.cos.ap-shanghai.myqcloud.com/2025-08-21/20250821112010655402.png",
+          "content": "<p>具体运营时间请查看地图导航应用，如高德地图/百度地图等。</p>",
+          "lat": null,
+          "lng": null,
+          "weight": 4
+        },
+        {
+          "id": 21,
+          "traffic_type": "bus",
+          "group_title": null,
+          "title": "定制乐南线  乐高乐园公交枢纽—南桥汽车站",
+          "sub_title": ">请在“乐高乐园公交枢纽站”下车",
+          "icon": "https://tencent-web-1320474462.cos.ap-shanghai.myqcloud.com/2025-08-21/20250821112141232268.png",
+          "content": "<p>具体运营时间请查看地图导航应用，如高德地图/百度地图等。</p>",
+          "lat": null,
+          "lng": null,
+          "weight": 3
+        },
+        {
+          "id": 22,
+          "traffic_type": "bus",
+          "group_title": null,
+          "title": "定制乐莲线  莲花路地铁站(北广场)—乐高乐园公交枢纽",
+          "sub_title": ">请在“乐高乐园公交枢纽站”下车",
+          "icon": "https://tencent-web-1320474462.cos.ap-shanghai.myqcloud.com/2025-08-21/20250821112253685289.png",
+          "content": "<p>具体运营时间请查看地图导航应用，如高德地图/百度地图等。</p>",
+          "lat": null,
+          "lng": null,
+          "weight": 2
+        }
+      ]
+    }
+  ],
+  "map": {
+    "title": "前往官方APP/小程序，查看地图更方便",
+    "bg_image": "https://tencent-web-1320474462.cos.ap-shanghai.myqcloud.com/official-website/2025-04-25/4377419e7811358b51b9319b5680f4ea.jpg",
+    "map_file": "https://tencent-web-1320474462.cos.ap-shanghai.myqcloud.com/official-website/2026-03-23/4c4e3f72573b.jpg"
+  }
+}

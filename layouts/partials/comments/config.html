@@ -1,0 +1,10 @@
+{{- $config := dict -}}
+{{- $comment := .Site.Params.page.comment | default dict -}}
+{{- if reflect.IsMap .Params.comment -}}
+  {{- $comment = merge $comment .Params.comment -}}
+{{- end -}}
+{{- $artalk := $comment.artalk | default dict -}}
+{{- if and (eq .Kind "page") (eq .Type "posts") (ne .Params.comment false) $comment.enable $artalk.enable (strings.TrimSpace ($artalk.server | default "")) -}}
+  {{- $config = $artalk -}}
+{{- end -}}
+{{- return $config -}}

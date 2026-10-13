@@ -1,0 +1,1756 @@
+{
+  "checkedAt": "2026-10-13",
+  "totalEntries": 95,
+  "matchedEntries": 34,
+  "unconfirmedEntries": 61,
+  "selectionRule": "按用户方案2，只保留准确匹配该项目的上海实拍；相邻场地、同主题、其它版本和未证实的节目均不凑覆盖。",
+  "searchScope": {
+    "bilibiliQueries": 135,
+    "distinctResultUrls": 1001,
+    "additionalChannels": [
+      "全网中文/英文检索",
+      "抖音公开视频与主视频画面",
+      "YouTube及供应商/媒体专题",
+      "乐高官方微博/新浪公开发布",
+      "小红书公开访客检索（访问受限）"
+    ],
+    "method": "搜索结果先按标题/场地筛选；候选进一步核对原页面与画面；长合集逐段定位。候选URL数量不是全部视频已完整观看的数量。"
+  },
+  "excludedExamples": [
+    {
+      "url": "https://www.bilibili.com/video/BV17goWYCE5P/",
+      "reason": "2025/4上海开园前上传的海外忍者乘车游，未作上海园区实拍。"
+    },
+    {
+      "url": "https://www.bilibili.com/video/BV1wCN9zHEVr/",
+      "reason": "作者声明前23秒使用AI创作；未作为实拍证据。"
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=AFwfkGjVnag",
+      "reason": "创想世界申报片后段播放报错，未看到的具体拼搭画面没有配入。"
+    }
+  ],
+  "items": {
+    "163": {
+      "name": "初级驾驶学校",
+      "land": "乐高®城市",
+      "type": "骑乘",
+      "status": "not_confirmed",
+      "checkedAt": "2026-10-13",
+      "reason": "原先驾校品牌视频不能确认展示了3—5岁初级场地的实际驾驶，因此撤下；本轮未确认准确的初级驾驶实拍。",
+      "queries": [
+        {
+          "query": "上海乐高乐园 初级驾驶学校",
+          "url": "https://search.bilibili.com/all?keyword=%E4%B8%8A%E6%B5%B7%E4%B9%90%E9%AB%98%E4%B9%90%E5%9B%AD%20%E5%88%9D%E7%BA%A7%E9%A9%BE%E9%A9%B6%E5%AD%A6%E6%A0%A1",
+          "returnedCandidates": 10
+        },
+        {
+          "query": "初级驾驶",
+          "url": "https://search.bilibili.com/all?keyword=%E5%88%9D%E7%BA%A7%E9%A9%BE%E9%A9%B6",
+          "returnedCandidates": 10
+        }
+      ],
+      "officialSource": "https://www.legolandshanghai.cn/spot/detail?id=163"
+    },
+    "245": {
+      "name": "迷你天地大探险",
+      "land": "乐高乐园®创想世界",
+      "type": "景点",
+      "status": "matched",
+      "checkedAt": "2026-10-13",
+      "reason": "只展示迷你天地豫园部分，不是探索任务卡完整流程。",
+      "queries": [
+        {
+          "query": "上海乐高乐园 迷你天地",
+          "url": "https://search.bilibili.com/all?keyword=%E4%B8%8A%E6%B5%B7%E4%B9%90%E9%AB%98%E4%B9%90%E5%9B%AD%20%E8%BF%B7%E4%BD%A0%E5%A4%A9%E5%9C%B0",
+          "returnedCandidates": 10
+        },
+        {
+          "query": "迷你天地",
+          "url": "https://search.bilibili.com/all?keyword=%E8%BF%B7%E4%BD%A0%E5%A4%A9%E5%9C%B0",
+          "returnedCandidates": 10
+        }
+      ],
+      "officialSource": "https://www.legolandshanghai.cn/spot/detail?id=245"
+    },
+    "191": {
+      "name": "乐高®创意工坊",
+      "land": "乐高乐园®创想世界",
+      "type": "拼搭体验",
+      "status": "matched",
+      "checkedAt": "2026-10-13",
+      "reason": "创想世界创意工坊的课堂、老师和儿童拼搭实拍；定位03:11，不保证本次预约相同课程。 抖音可能提示登录，在原平台手动定位。",
+      "queries": [
+        {
+          "query": "上海乐高乐园 创意工坊",
+          "url": "https://search.bilibili.com/all?keyword=%E4%B8%8A%E6%B5%B7%E4%B9%90%E9%AB%98%E4%B9%90%E5%9B%AD%20%E5%88%9B%E6%84%8F%E5%B7%A5%E5%9D%8A",
+          "returnedCandidates": 10
+        },
+        {
+          "query": "乐高乐园 乐高创意工坊",
+          "url": "https://search.bilibili.com/all?keyword=%E4%B9%90%E9%AB%98%E4%B9%90%E5%9B%AD%20%E4%B9%90%E9%AB%98%E5%88%9B%E6%84%8F%E5%B7%A5%E5%9D%8A",
+          "returnedCandidates": 20
+        }
+      ],
+      "officialSource": "https://www.legolandshanghai.cn/spot/detail?id=191"
+    },
+    "146": {
+      "name": "4D影院",
+      "land": "乐高®城市",
+      "type": "演出",
+      "status": "matched",
+      "checkedAt": "2026-10-13",
+      "reason": "2025年上海园区4D影院银幕与环境特效片段；定位02:45，不代表本次播放同一影片。",
+      "queries": [
+        {
+          "query": "上海乐高乐园 4D影院",
+          "url": "https://search.bilibili.com/all?keyword=%E4%B8%8A%E6%B5%B7%E4%B9%90%E9%AB%98%E4%B9%90%E5%9B%AD%204D%E5%BD%B1%E9%99%A2",
+          "returnedCandidates": 10
+        },
+        {
+          "query": "乐高乐园 4D影院",
+          "url": "https://search.bilibili.com/all?keyword=%E4%B9%90%E9%AB%98%E4%B9%90%E5%9B%AD%204D%E5%BD%B1%E9%99%A2",
+          "returnedCandidates": 20
+        }
+      ],
+      "officialSource": "https://www.legolandshanghai.cn/spot/detail?id=146"
+    },
+    "150": {
+      "name": "剧场-乐高®悟空小侠现场秀《花果山降魔》",
+      "land": "奇趣积木城！",
+      "type": "演出",
+      "status": "matched",
+      "checkedAt": "2026-10-13",
+      "reason": "2025年悟空小侠剧场全程记录，含剧情；与花果山冒险乘骑是不同项目。",
+      "queries": [
+        {
+          "query": "上海乐高乐园 花果山降魔",
+          "url": "https://search.bilibili.com/all?keyword=%E4%B8%8A%E6%B5%B7%E4%B9%90%E9%AB%98%E4%B9%90%E5%9B%AD%20%E8%8A%B1%E6%9E%9C%E5%B1%B1%E9%99%8D%E9%AD%94",
+          "returnedCandidates": 10
+        },
+        {
+          "query": "花果山降魔",
+          "url": "https://search.bilibili.com/all?keyword=%E8%8A%B1%E6%9E%9C%E5%B1%B1%E9%99%8D%E9%AD%94",
+          "returnedCandidates": 10
+        }
+      ],
+      "officialSource": "https://www.legolandshanghai.cn/spot/detail?id=150"
+    },
+    "405": {
+      "name": "怪兽能量补给站（乐高®城堡）",
+      "land": "乐高®城堡",
+      "type": "小怪兽大派对",
+      "status": "not_confirmed",
+      "checkedAt": "2026-10-13",
+      "reason": "已见固定讨糖点实拍，但无法确认所在点位为城堡区；城市版与城堡版未混配。",
+      "queries": [
+        {
+          "query": "乐高乐园 怪兽能量补给站",
+          "url": "https://search.bilibili.com/all?keyword=%E4%B9%90%E9%AB%98%E4%B9%90%E5%9B%AD%20%E6%80%AA%E5%85%BD%E8%83%BD%E9%87%8F%E8%A1%A5%E7%BB%99%E7%AB%99",
+          "returnedCandidates": 20
+        },
+        {
+          "query": "乐高乐园 怪兽能量补给站-年卡专属",
+          "url": "https://search.bilibili.com/all?keyword=%E4%B9%90%E9%AB%98%E4%B9%90%E5%9B%AD%20%E6%80%AA%E5%85%BD%E8%83%BD%E9%87%8F%E8%A1%A5%E7%BB%99%E7%AB%99-%E5%B9%B4%E5%8D%A1%E4%B8%93%E5%B1%9E",
+          "returnedCandidates": 20
+        }
+      ],
+      "officialSource": "https://www.legolandshanghai.cn/spot/detail?id=405"
+    },
+    "30": {
+      "name": "警察总部",
+      "land": "乐高®城市",
+      "type": "拼搭体验",
+      "status": "not_confirmed",
+      "checkedAt": "2026-10-13",
+      "reason": "本轮未找到能核实项目名称、场地与实际体验的对应实拍。",
+      "queries": [
+        {
+          "query": "乐高乐园 警察总部",
+          "url": "https://search.bilibili.com/all?keyword=%E4%B9%90%E9%AB%98%E4%B9%90%E5%9B%AD%20%E8%AD%A6%E5%AF%9F%E6%80%BB%E9%83%A8",
+          "returnedCandidates": 20
+        },
+        {
+          "query": "乐高乐园 警察总部·极速执勤挑战",
+          "url": "https://search.bilibili.com/all?keyword=%E4%B9%90%E9%AB%98%E4%B9%90%E5%9B%AD%20%E8%AD%A6%E5%AF%9F%E6%80%BB%E9%83%A8%C2%B7%E6%9E%81%E9%80%9F%E6%89%A7%E5%8B%A4%E6%8C%91%E6%88%98",
+          "returnedCandidates": 20
+        }
+      ],
+      "officialSource": "https://www.legolandshanghai.cn/spot/detail?id=30"
+    },
+    "161": {
+      "name": "乐高®城市火车站",
+      "land": "乐高®城市",
+      "type": "骑乘",
+      "status": "matched",
+      "checkedAt": "2026-10-13",
+      "reason": "城市火车的现场体验，可看车厢与乘坐节奏。",
+      "queries": [
+        {
+          "query": "上海乐高乐园 城市火车站",
+          "url": "https://search.bilibili.com/all?keyword=%E4%B8%8A%E6%B5%B7%E4%B9%90%E9%AB%98%E4%B9%90%E5%9B%AD%20%E5%9F%8E%E5%B8%82%E7%81%AB%E8%BD%A6%E7%AB%99",
+          "returnedCandidates": 10
+        }
+      ],
+      "officialSource": "https://www.legolandshanghai.cn/spot/detail?id=161"
+    },
+    "406": {
+      "name": "怪兽能量补给站（乐高®城市）",
+      "land": "乐高®城市",
+      "type": "小怪兽大派对",
+      "status": "not_confirmed",
+      "checkedAt": "2026-10-13",
+      "reason": "已见固定讨糖点实拍，但无法确认所在点位为城市区；城市版与城堡版未混配。",
+      "queries": [
+        {
+          "query": "乐高乐园 怪兽能量补给站",
+          "url": "https://search.bilibili.com/all?keyword=%E4%B9%90%E9%AB%98%E4%B9%90%E5%9B%AD%20%E6%80%AA%E5%85%BD%E8%83%BD%E9%87%8F%E8%A1%A5%E7%BB%99%E7%AB%99",
+          "returnedCandidates": 20
+        },
+        {
+          "query": "乐高乐园 怪兽能量补给站-年卡专属",
+          "url": "https://search.bilibili.com/all?keyword=%E4%B9%90%E9%AB%98%E4%B9%90%E5%9B%AD%20%E6%80%AA%E5%85%BD%E8%83%BD%E9%87%8F%E8%A1%A5%E7%BB%99%E7%AB%99-%E5%B9%B4%E5%8D%A1%E4%B8%93%E5%B1%9E",
+          "returnedCandidates": 20
+        }
+      ],
+      "officialSource": "https://www.legolandshanghai.cn/spot/detail?id=406"
+    },
+    "28": {
+      "name": "拼搭宝殿",
+      "land": "乐高®悟空小侠",
+      "type": "拼搭体验",
+      "status": "not_confirmed",
+      "checkedAt": "2026-10-13",
+      "reason": "本轮未找到能核实项目名称、场地与实际体验的对应实拍。",
+      "queries": [
+        {
+          "query": "上海乐高乐园 拼搭宝殿",
+          "url": "https://search.bilibili.com/all?keyword=%E4%B8%8A%E6%B5%B7%E4%B9%90%E9%AB%98%E4%B9%90%E5%9B%AD%20%E6%8B%BC%E6%90%AD%E5%AE%9D%E6%AE%BF",
+          "returnedCandidates": 10
+        },
+        {
+          "query": "乐高乐园 拼搭宝殿",
+          "url": "https://search.bilibili.com/all?keyword=%E4%B9%90%E9%AB%98%E4%B9%90%E5%9B%AD%20%E6%8B%BC%E6%90%AD%E5%AE%9D%E6%AE%BF",
+          "returnedCandidates": 20
+        }
+      ],
+      "officialSource": "https://www.legolandshanghai.cn/spot/detail?id=28"
+    },
+    "8": {
+      "name": "城市建筑师",
+      "land": "乐高乐园®创想世界",
+      "type": "拼搭体验",
+      "status": "not_confirmed",
+      "checkedAt": "2026-10-13",
+      "reason": "本轮未找到能核实项目名称、场地与实际体验的对应实拍。",
+      "queries": [
+        {
+          "query": "上海乐高乐园 城市建筑师",
+          "url": "https://search.bilibili.com/all?keyword=%E4%B8%8A%E6%B5%B7%E4%B9%90%E9%AB%98%E4%B9%90%E5%9B%AD%20%E5%9F%8E%E5%B8%82%E5%BB%BA%E7%AD%91%E5%B8%88",
+          "returnedCandidates": 10
+        },
+        {
+          "query": "乐高乐园 城市建筑师",
+          "url": "https://search.bilibili.com/all?keyword=%E4%B9%90%E9%AB%98%E4%B9%90%E5%9B%AD%20%E5%9F%8E%E5%B8%82%E5%BB%BA%E7%AD%91%E5%B8%88",
+          "returnedCandidates": 20
+        }
+      ],
+      "officialSource": "https://www.legolandshanghai.cn/spot/detail?id=8"
+    },
+    "9": {
+      "name": "赛车",
+      "land": "乐高乐园®创想世界",
+      "type": "拼搭体验",
+      "status": "matched",
+      "checkedAt": "2026-10-13",
+      "reason": "创想世界赛车拼搭区与赛道测试现场；定位30:00。不能由这段录像确认属于单列的定时赛车活动。",
+      "queries": [
+        {
+          "query": "乐高乐园 赛车",
+          "url": "https://search.bilibili.com/all?keyword=%E4%B9%90%E9%AB%98%E4%B9%90%E5%9B%AD%20%E8%B5%9B%E8%BD%A6",
+          "returnedCandidates": 20
+        }
+      ],
+      "officialSource": "https://www.legolandshanghai.cn/spot/detail?id=9"
+    },
+    "219": {
+      "name": "迷你天地导览服务",
+      "land": "乐高乐园®创想世界",
+      "type": "景点",
+      "status": "not_confirmed",
+      "checkedAt": "2026-10-13",
+      "reason": "原先豫园景观片段没有官方导览讲解，因此撤下；未确认该导览服务的实拍。",
+      "queries": [
+        {
+          "query": "上海乐高乐园 迷你天地",
+          "url": "https://search.bilibili.com/all?keyword=%E4%B8%8A%E6%B5%B7%E4%B9%90%E9%AB%98%E4%B9%90%E5%9B%AD%20%E8%BF%B7%E4%BD%A0%E5%A4%A9%E5%9C%B0",
+          "returnedCandidates": 10
+        },
+        {
+          "query": "迷你天地",
+          "url": "https://search.bilibili.com/all?keyword=%E8%BF%B7%E4%BD%A0%E5%A4%A9%E5%9C%B0",
+          "returnedCandidates": 10
+        }
+      ],
+      "officialSource": "https://www.legolandshanghai.cn/spot/detail?id=219"
+    },
+    "36": {
+      "name": "旋转积木派对",
+      "land": "奇趣积木城！",
+      "type": "骑乘",
+      "status": "matched",
+      "checkedAt": "2026-10-13",
+      "reason": "旋转积木派对载客画面；定位00:56，非完整一轮。",
+      "queries": [
+        {
+          "query": "上海乐高乐园 旋转积木派对",
+          "url": "https://search.bilibili.com/all?keyword=%E4%B8%8A%E6%B5%B7%E4%B9%90%E9%AB%98%E4%B9%90%E5%9B%AD%20%E6%97%8B%E8%BD%AC%E7%A7%AF%E6%9C%A8%E6%B4%BE%E5%AF%B9",
+          "returnedCandidates": 10
+        },
+        {
+          "query": "旋转积木派对",
+          "url": "https://search.bilibili.com/all?keyword=%E6%97%8B%E8%BD%AC%E7%A7%AF%E6%9C%A8%E6%B4%BE%E5%AF%B9",
+          "returnedCandidates": 10
+        },
+        {
+          "query": "乐高乐园 旋转积木派对",
+          "url": "https://search.bilibili.com/all?keyword=%E4%B9%90%E9%AB%98%E4%B9%90%E5%9B%AD%20%E6%97%8B%E8%BD%AC%E7%A7%AF%E6%9C%A8%E6%B4%BE%E5%AF%B9",
+          "returnedCandidates": 20
+        }
+      ],
+      "officialSource": "https://www.legolandshanghai.cn/spot/detail?id=36"
+    },
+    "37": {
+      "name": "得宝®快车",
+      "land": "奇趣积木城！",
+      "type": "骑乘",
+      "status": "matched",
+      "checkedAt": "2026-10-13",
+      "reason": "得宝快车列车与站台画面；定位00:48，非整段乘坐。",
+      "queries": [
+        {
+          "query": "上海乐高乐园 得宝快车",
+          "url": "https://search.bilibili.com/all?keyword=%E4%B8%8A%E6%B5%B7%E4%B9%90%E9%AB%98%E4%B9%90%E5%9B%AD%20%E5%BE%97%E5%AE%9D%E5%BF%AB%E8%BD%A6",
+          "returnedCandidates": 10
+        },
+        {
+          "query": "得宝快车",
+          "url": "https://search.bilibili.com/all?keyword=%E5%BE%97%E5%AE%9D%E5%BF%AB%E8%BD%A6",
+          "returnedCandidates": 10
+        },
+        {
+          "query": "乐高乐园 得宝快车",
+          "url": "https://search.bilibili.com/all?keyword=%E4%B9%90%E9%AB%98%E4%B9%90%E5%9B%AD%20%E5%BE%97%E5%AE%9D%E5%BF%AB%E8%BD%A6",
+          "returnedCandidates": 20
+        }
+      ],
+      "officialSource": "https://www.legolandshanghai.cn/spot/detail?id=37"
+    },
+    "25": {
+      "name": "拼砌者公会",
+      "land": "乐高®城堡",
+      "type": "拼搭体验",
+      "status": "not_confirmed",
+      "checkedAt": "2026-10-13",
+      "reason": "本轮未找到能核实项目名称、场地与实际体验的对应实拍。",
+      "queries": [
+        {
+          "query": "乐高乐园 拼砌者公会",
+          "url": "https://search.bilibili.com/all?keyword=%E4%B9%90%E9%AB%98%E4%B9%90%E5%9B%AD%20%E6%8B%BC%E7%A0%8C%E8%80%85%E5%85%AC%E4%BC%9A",
+          "returnedCandidates": 20
+        },
+        {
+          "query": "乐高乐园 拼砌者公会·极速拼搭",
+          "url": "https://search.bilibili.com/all?keyword=%E4%B9%90%E9%AB%98%E4%B9%90%E5%9B%AD%20%E6%8B%BC%E7%A0%8C%E8%80%85%E5%85%AC%E4%BC%9A%C2%B7%E6%9E%81%E9%80%9F%E6%8B%BC%E6%90%AD",
+          "returnedCandidates": 20
+        }
+      ],
+      "officialSource": "https://www.legolandshanghai.cn/spot/detail?id=25"
+    },
+    "143": {
+      "name": "得宝®大积木天地（乐高®城堡）",
+      "land": "乐高®城堡",
+      "type": "拼搭体验",
+      "status": "not_confirmed",
+      "checkedAt": "2026-10-13",
+      "reason": "本轮未确认该园区版本的独立画面；其它园区的同名儿童区未混用。",
+      "queries": [
+        {
+          "query": "乐高乐园 得宝大积木天地",
+          "url": "https://search.bilibili.com/all?keyword=%E4%B9%90%E9%AB%98%E4%B9%90%E5%9B%AD%20%E5%BE%97%E5%AE%9D%E5%A4%A7%E7%A7%AF%E6%9C%A8%E5%A4%A9%E5%9C%B0",
+          "returnedCandidates": 20
+        }
+      ],
+      "officialSource": "https://www.legolandshanghai.cn/spot/detail?id=143"
+    },
+    "174": {
+      "name": "巫师飞行器",
+      "land": "乐高®城堡",
+      "type": "骑乘",
+      "status": "matched",
+      "checkedAt": "2026-10-13",
+      "reason": "户外巫师飞行器的踩踏与升空玩法，不是乐高探索中心的室内版本。",
+      "queries": [
+        {
+          "query": "上海乐高乐园 巫师飞行器",
+          "url": "https://search.bilibili.com/all?keyword=%E4%B8%8A%E6%B5%B7%E4%B9%90%E9%AB%98%E4%B9%90%E5%9B%AD%20%E5%B7%AB%E5%B8%88%E9%A3%9E%E8%A1%8C%E5%99%A8",
+          "returnedCandidates": 10
+        }
+      ],
+      "officialSource": "https://www.legolandshanghai.cn/spot/detail?id=174"
+    },
+    "175": {
+      "name": "皇家竞技场",
+      "land": "乐高®城堡",
+      "type": "骑乘",
+      "status": "matched",
+      "checkedAt": "2026-10-13",
+      "reason": "查看轨道骑马的场景与乘骑方式。",
+      "queries": [
+        {
+          "query": "上海乐高乐园 皇家竞技场",
+          "url": "https://search.bilibili.com/all?keyword=%E4%B8%8A%E6%B5%B7%E4%B9%90%E9%AB%98%E4%B9%90%E5%9B%AD%20%E7%9A%87%E5%AE%B6%E7%AB%9E%E6%8A%80%E5%9C%BA",
+          "returnedCandidates": 10
+        }
+      ],
+      "officialSource": "https://www.legolandshanghai.cn/spot/detail?id=175"
+    },
+    "279": {
+      "name": "小怪兽巡逻队",
+      "land": "乐高®城堡",
+      "type": "小怪兽大派对",
+      "status": "not_confirmed",
+      "checkedAt": "2026-10-13",
+      "reason": "本轮未找到可同时核实节目名、场地和具体互动的对应实拍；同季节合集未直接配入。",
+      "queries": [
+        {
+          "query": "乐高乐园 小怪兽巡逻队",
+          "url": "https://search.bilibili.com/all?keyword=%E4%B9%90%E9%AB%98%E4%B9%90%E5%9B%AD%20%E5%B0%8F%E6%80%AA%E5%85%BD%E5%B7%A1%E9%80%BB%E9%98%9F",
+          "returnedCandidates": 20
+        }
+      ],
+      "officialSource": "https://www.legolandshanghai.cn/spot/detail?id=279"
+    },
+    "389": {
+      "name": "【日常活动】拼砌者公会·极速拼搭",
+      "land": "乐高®城堡",
+      "type": "演出",
+      "status": "not_confirmed",
+      "checkedAt": "2026-10-13",
+      "reason": "未确认该定时活动版本的实拍；同场地自由拼搭画面不作为活动流程视频。",
+      "queries": [
+        {
+          "query": "乐高乐园 拼砌者公会",
+          "url": "https://search.bilibili.com/all?keyword=%E4%B9%90%E9%AB%98%E4%B9%90%E5%9B%AD%20%E6%8B%BC%E7%A0%8C%E8%80%85%E5%85%AC%E4%BC%9A",
+          "returnedCandidates": 20
+        },
+        {
+          "query": "乐高乐园 拼砌者公会·极速拼搭",
+          "url": "https://search.bilibili.com/all?keyword=%E4%B9%90%E9%AB%98%E4%B9%90%E5%9B%AD%20%E6%8B%BC%E7%A0%8C%E8%80%85%E5%85%AC%E4%BC%9A%C2%B7%E6%9E%81%E9%80%9F%E6%8B%BC%E6%90%AD",
+          "returnedCandidates": 20
+        }
+      ],
+      "officialSource": "https://www.legolandshanghai.cn/spot/detail?id=389"
+    },
+    "397": {
+      "name": "骨咚节拍",
+      "land": "乐高®城堡",
+      "type": "小怪兽大派对",
+      "status": "not_confirmed",
+      "checkedAt": "2026-10-13",
+      "reason": "本轮未找到可同时核实节目名、场地和具体互动的对应实拍；同季节合集未直接配入。",
+      "queries": [
+        {
+          "query": "乐高 骨咚节拍",
+          "url": "https://search.bilibili.com/all?keyword=%E4%B9%90%E9%AB%98%20%E9%AA%A8%E5%92%9A%E8%8A%82%E6%8B%8D",
+          "returnedCandidates": 10
+        },
+        {
+          "query": "乐高乐园 骨咚节拍",
+          "url": "https://search.bilibili.com/all?keyword=%E4%B9%90%E9%AB%98%E4%B9%90%E5%9B%AD%20%E9%AA%A8%E5%92%9A%E8%8A%82%E6%8B%8D",
+          "returnedCandidates": 20
+        }
+      ],
+      "officialSource": "https://www.legolandshanghai.cn/spot/detail?id=397"
+    },
+    "398": {
+      "name": "魔法药水派对",
+      "land": "乐高®城堡",
+      "type": "小怪兽大派对",
+      "status": "not_confirmed",
+      "checkedAt": "2026-10-13",
+      "reason": "本轮未找到可同时核实节目名、场地和具体互动的对应实拍；同季节合集未直接配入。",
+      "queries": [
+        {
+          "query": "乐高乐园 魔法药水派对",
+          "url": "https://search.bilibili.com/all?keyword=%E4%B9%90%E9%AB%98%E4%B9%90%E5%9B%AD%20%E9%AD%94%E6%B3%95%E8%8D%AF%E6%B0%B4%E6%B4%BE%E5%AF%B9",
+          "returnedCandidates": 20
+        }
+      ],
+      "officialSource": "https://www.legolandshanghai.cn/spot/detail?id=398"
+    },
+    "404": {
+      "name": "怪兽搜索令",
+      "land": "乐高®城堡",
+      "type": "小怪兽大派对",
+      "status": "not_confirmed",
+      "checkedAt": "2026-10-13",
+      "reason": "本轮未找到可同时核实节目名、场地和具体互动的对应实拍；同季节合集未直接配入。",
+      "queries": [
+        {
+          "query": "乐高乐园 怪兽搜索令",
+          "url": "https://search.bilibili.com/all?keyword=%E4%B9%90%E9%AB%98%E4%B9%90%E5%9B%AD%20%E6%80%AA%E5%85%BD%E6%90%9C%E7%B4%A2%E4%BB%A4",
+          "returnedCandidates": 20
+        }
+      ],
+      "officialSource": "https://www.legolandshanghai.cn/spot/detail?id=404"
+    },
+    "409": {
+      "name": "骨咚节拍（餐厅版）",
+      "land": "乐高®城堡",
+      "type": "小怪兽大派对",
+      "status": "not_confirmed",
+      "checkedAt": "2026-10-13",
+      "reason": "未确认该餐厅内版本的独立实拍，普通园区版本不能替代。",
+      "queries": [
+        {
+          "query": "乐高 骨咚节拍",
+          "url": "https://search.bilibili.com/all?keyword=%E4%B9%90%E9%AB%98%20%E9%AA%A8%E5%92%9A%E8%8A%82%E6%8B%8D",
+          "returnedCandidates": 10
+        },
+        {
+          "query": "乐高乐园 骨咚节拍",
+          "url": "https://search.bilibili.com/all?keyword=%E4%B9%90%E9%AB%98%E4%B9%90%E5%9B%AD%20%E9%AA%A8%E5%92%9A%E8%8A%82%E6%8B%8D",
+          "returnedCandidates": 20
+        }
+      ],
+      "officialSource": "https://www.legolandshanghai.cn/spot/detail?id=409"
+    },
+    "410": {
+      "name": "小怪兽巡逻队（餐厅版）",
+      "land": "乐高®城堡",
+      "type": "小怪兽大派对",
+      "status": "not_confirmed",
+      "checkedAt": "2026-10-13",
+      "reason": "未确认该餐厅内版本的独立实拍，普通园区版本不能替代。",
+      "queries": [
+        {
+          "query": "乐高乐园 小怪兽巡逻队",
+          "url": "https://search.bilibili.com/all?keyword=%E4%B9%90%E9%AB%98%E4%B9%90%E5%9B%AD%20%E5%B0%8F%E6%80%AA%E5%85%BD%E5%B7%A1%E9%80%BB%E9%98%9F",
+          "returnedCandidates": 20
+        }
+      ],
+      "officialSource": "https://www.legolandshanghai.cn/spot/detail?id=410"
+    },
+    "46": {
+      "name": "海岸警卫学院",
+      "land": "乐高®城市",
+      "type": "骑乘",
+      "status": "matched",
+      "checkedAt": "2026-10-13",
+      "reason": "家长与孩子开小船的现场片段；定位10:50，对应海岸警卫学院。",
+      "queries": [
+        {
+          "query": "上海乐高乐园 海岸警卫学院",
+          "url": "https://search.bilibili.com/all?keyword=%E4%B8%8A%E6%B5%B7%E4%B9%90%E9%AB%98%E4%B9%90%E5%9B%AD%20%E6%B5%B7%E5%B2%B8%E8%AD%A6%E5%8D%AB%E5%AD%A6%E9%99%A2",
+          "returnedCandidates": 10
+        },
+        {
+          "query": "乐高乐园 海岸警卫学院",
+          "url": "https://search.bilibili.com/all?keyword=%E4%B9%90%E9%AB%98%E4%B9%90%E5%9B%AD%20%E6%B5%B7%E5%B2%B8%E8%AD%A6%E5%8D%AB%E5%AD%A6%E9%99%A2",
+          "returnedCandidates": 20
+        }
+      ],
+      "officialSource": "https://www.legolandshanghai.cn/spot/detail?id=46"
+    },
+    "56": {
+      "name": "得宝®大积木天地（乐高®城市）",
+      "land": "乐高®城市",
+      "type": "拼搭体验",
+      "status": "not_confirmed",
+      "checkedAt": "2026-10-13",
+      "reason": "本轮未确认该园区版本的独立画面；其它园区的同名儿童区未混用。",
+      "queries": [
+        {
+          "query": "乐高乐园 得宝大积木天地",
+          "url": "https://search.bilibili.com/all?keyword=%E4%B9%90%E9%AB%98%E4%B9%90%E5%9B%AD%20%E5%BE%97%E5%AE%9D%E5%A4%A7%E7%A7%AF%E6%9C%A8%E5%A4%A9%E5%9C%B0",
+          "returnedCandidates": 20
+        }
+      ],
+      "officialSource": "https://www.legolandshanghai.cn/spot/detail?id=56"
+    },
+    "121": {
+      "name": "码头",
+      "land": "乐高®城市",
+      "type": "景点",
+      "status": "not_confirmed",
+      "checkedAt": "2026-10-13",
+      "reason": "本轮未找到能核实项目名称、场地与实际体验的对应实拍。",
+      "queries": [
+        {
+          "query": "乐高乐园 码头",
+          "url": "https://search.bilibili.com/all?keyword=%E4%B9%90%E9%AB%98%E4%B9%90%E5%9B%AD%20%E7%A0%81%E5%A4%B4",
+          "returnedCandidates": 20
+        }
+      ],
+      "officialSource": "https://www.legolandshanghai.cn/spot/detail?id=121"
+    },
+    "148": {
+      "name": "乐高®城市角色见面会",
+      "land": "乐高®城市",
+      "type": "演出",
+      "status": "not_confirmed",
+      "checkedAt": "2026-10-13",
+      "reason": "本轮未找到能核实项目名称、场地与实际体验的对应实拍。",
+      "queries": [
+        {
+          "query": "乐高乐园 乐高城市角色见面会",
+          "url": "https://search.bilibili.com/all?keyword=%E4%B9%90%E9%AB%98%E4%B9%90%E5%9B%AD%20%E4%B9%90%E9%AB%98%E5%9F%8E%E5%B8%82%E8%A7%92%E8%89%B2%E8%A7%81%E9%9D%A2%E4%BC%9A",
+          "returnedCandidates": 20
+        }
+      ],
+      "officialSource": "https://www.legolandshanghai.cn/spot/detail?id=148"
+    },
+    "162": {
+      "name": "救援学院",
+      "land": "乐高®城市",
+      "type": "骑乘",
+      "status": "matched",
+      "checkedAt": "2026-10-13",
+      "reason": "看亲子协作操作与救援玩法，家长也需要出力。",
+      "queries": [
+        {
+          "query": "上海乐高乐园 救援学院",
+          "url": "https://search.bilibili.com/all?keyword=%E4%B8%8A%E6%B5%B7%E4%B9%90%E9%AB%98%E4%B9%90%E5%9B%AD%20%E6%95%91%E6%8F%B4%E5%AD%A6%E9%99%A2",
+          "returnedCandidates": 10
+        }
+      ],
+      "officialSource": "https://www.legolandshanghai.cn/spot/detail?id=162"
+    },
+    "270": {
+      "name": "盛装游园会",
+      "land": "乐高®城市",
+      "type": "小怪兽大派对",
+      "status": "not_confirmed",
+      "checkedAt": "2026-10-13",
+      "reason": "本轮未找到可同时核实节目名、场地和具体互动的对应实拍；同季节合集未直接配入。",
+      "queries": [
+        {
+          "query": "乐高乐园 盛装游园会",
+          "url": "https://search.bilibili.com/all?keyword=%E4%B9%90%E9%AB%98%E4%B9%90%E5%9B%AD%20%E7%9B%9B%E8%A3%85%E6%B8%B8%E5%9B%AD%E4%BC%9A",
+          "returnedCandidates": 20
+        }
+      ],
+      "officialSource": "https://www.legolandshanghai.cn/spot/detail?id=270"
+    },
+    "320": {
+      "name": "【日常活动】积木带动跳",
+      "land": "乐高®城市",
+      "type": "演出",
+      "status": "not_confirmed",
+      "checkedAt": "2026-10-13",
+      "reason": "未确认该定时活动版本的实拍；同场地自由拼搭画面不作为活动流程视频。",
+      "queries": [
+        {
+          "query": "乐高乐园 积木带动跳",
+          "url": "https://search.bilibili.com/all?keyword=%E4%B9%90%E9%AB%98%E4%B9%90%E5%9B%AD%20%E7%A7%AF%E6%9C%A8%E5%B8%A6%E5%8A%A8%E8%B7%B3",
+          "returnedCandidates": 20
+        }
+      ],
+      "officialSource": "https://www.legolandshanghai.cn/spot/detail?id=320"
+    },
+    "344": {
+      "name": "【日常活动】积木多米诺",
+      "land": "乐高®城市",
+      "type": "演出",
+      "status": "not_confirmed",
+      "checkedAt": "2026-10-13",
+      "reason": "未确认该定时活动版本的实拍；同场地自由拼搭画面不作为活动流程视频。",
+      "queries": [
+        {
+          "query": "乐高乐园 积木多米诺",
+          "url": "https://search.bilibili.com/all?keyword=%E4%B9%90%E9%AB%98%E4%B9%90%E5%9B%AD%20%E7%A7%AF%E6%9C%A8%E5%A4%9A%E7%B1%B3%E8%AF%BA",
+          "returnedCandidates": 20
+        }
+      ],
+      "officialSource": "https://www.legolandshanghai.cn/spot/detail?id=344"
+    },
+    "388": {
+      "name": "【日常活动】警察总部·极速执勤挑战",
+      "land": "乐高®城市",
+      "type": "演出",
+      "status": "not_confirmed",
+      "checkedAt": "2026-10-13",
+      "reason": "未确认该定时活动版本的实拍；同场地自由拼搭画面不作为活动流程视频。",
+      "queries": [
+        {
+          "query": "乐高乐园 警察总部",
+          "url": "https://search.bilibili.com/all?keyword=%E4%B9%90%E9%AB%98%E4%B9%90%E5%9B%AD%20%E8%AD%A6%E5%AF%9F%E6%80%BB%E9%83%A8",
+          "returnedCandidates": 20
+        },
+        {
+          "query": "乐高乐园 警察总部·极速执勤挑战",
+          "url": "https://search.bilibili.com/all?keyword=%E4%B9%90%E9%AB%98%E4%B9%90%E5%9B%AD%20%E8%AD%A6%E5%AF%9F%E6%80%BB%E9%83%A8%C2%B7%E6%9E%81%E9%80%9F%E6%89%A7%E5%8B%A4%E6%8C%91%E6%88%98",
+          "returnedCandidates": 20
+        }
+      ],
+      "officialSource": "https://www.legolandshanghai.cn/spot/detail?id=388"
+    },
+    "400": {
+      "name": "怪兽大出动",
+      "land": "乐高®城市",
+      "type": "小怪兽大派对",
+      "status": "not_confirmed",
+      "checkedAt": "2026-10-13",
+      "reason": "本轮未找到可同时核实节目名、场地和具体互动的对应实拍；同季节合集未直接配入。",
+      "queries": [
+        {
+          "query": "乐高乐园 怪兽大出动",
+          "url": "https://search.bilibili.com/all?keyword=%E4%B9%90%E9%AB%98%E4%B9%90%E5%9B%AD%20%E6%80%AA%E5%85%BD%E5%A4%A7%E5%87%BA%E5%8A%A8",
+          "returnedCandidates": 20
+        }
+      ],
+      "officialSource": "https://www.legolandshanghai.cn/spot/detail?id=400"
+    },
+    "401": {
+      "name": "搞怪南瓜农场（怪兽电视台）",
+      "land": "乐高®城市",
+      "type": "小怪兽大派对",
+      "status": "not_confirmed",
+      "checkedAt": "2026-10-13",
+      "reason": "本轮未找到可同时核实节目名、场地和具体互动的对应实拍；同季节合集未直接配入。",
+      "queries": [
+        {
+          "query": "乐高乐园 搞怪南瓜农场",
+          "url": "https://search.bilibili.com/all?keyword=%E4%B9%90%E9%AB%98%E4%B9%90%E5%9B%AD%20%E6%90%9E%E6%80%AA%E5%8D%97%E7%93%9C%E5%86%9C%E5%9C%BA",
+          "returnedCandidates": 20
+        }
+      ],
+      "officialSource": "https://www.legolandshanghai.cn/spot/detail?id=401"
+    },
+    "402": {
+      "name": "一二三稻草人",
+      "land": "乐高®城市",
+      "type": "小怪兽大派对",
+      "status": "not_confirmed",
+      "checkedAt": "2026-10-13",
+      "reason": "本轮未找到可同时核实节目名、场地和具体互动的对应实拍；同季节合集未直接配入。",
+      "queries": [
+        {
+          "query": "乐高乐园 一二三稻草人",
+          "url": "https://search.bilibili.com/all?keyword=%E4%B9%90%E9%AB%98%E4%B9%90%E5%9B%AD%20%E4%B8%80%E4%BA%8C%E4%B8%89%E7%A8%BB%E8%8D%89%E4%BA%BA",
+          "returnedCandidates": 20
+        }
+      ],
+      "officialSource": "https://www.legolandshanghai.cn/spot/detail?id=402"
+    },
+    "403": {
+      "name": "小怪兽创造营",
+      "land": "乐高®城市",
+      "type": "小怪兽大派对",
+      "status": "not_confirmed",
+      "checkedAt": "2026-10-13",
+      "reason": "本轮未找到可同时核实节目名、场地和具体互动的对应实拍；同季节合集未直接配入。",
+      "queries": [
+        {
+          "query": "乐高 小怪兽创造营",
+          "url": "https://search.bilibili.com/all?keyword=%E4%B9%90%E9%AB%98%20%E5%B0%8F%E6%80%AA%E5%85%BD%E5%88%9B%E9%80%A0%E8%90%A5",
+          "returnedCandidates": 10
+        },
+        {
+          "query": "乐高乐园 小怪兽创造营",
+          "url": "https://search.bilibili.com/all?keyword=%E4%B9%90%E9%AB%98%E4%B9%90%E5%9B%AD%20%E5%B0%8F%E6%80%AA%E5%85%BD%E5%88%9B%E9%80%A0%E8%90%A5",
+          "returnedCandidates": 20
+        }
+      ],
+      "officialSource": "https://www.legolandshanghai.cn/spot/detail?id=403"
+    },
+    "412": {
+      "name": "【日常活动】秋日奇妙狂欢（乐高®城市）",
+      "land": "乐高®城市",
+      "type": "演出",
+      "status": "not_confirmed",
+      "checkedAt": "2026-10-13",
+      "reason": "未确认该定时活动版本的实拍；同场地自由拼搭画面不作为活动流程视频。",
+      "queries": [
+        {
+          "query": "乐高乐园 秋日奇妙狂欢",
+          "url": "https://search.bilibili.com/all?keyword=%E4%B9%90%E9%AB%98%E4%B9%90%E5%9B%AD%20%E7%A7%8B%E6%97%A5%E5%A5%87%E5%A6%99%E7%8B%82%E6%AC%A2",
+          "returnedCandidates": 20
+        }
+      ],
+      "officialSource": "https://www.legolandshanghai.cn/spot/detail?id=412"
+    },
+    "129": {
+      "name": "拼搭船",
+      "land": "乐高®好朋友",
+      "type": "拼搭体验",
+      "status": "matched",
+      "checkedAt": "2026-10-13",
+      "reason": "孩子现场拼船并放入水道测试的片段；定位14:00。",
+      "queries": [
+        {
+          "query": "乐高乐园 拼搭船",
+          "url": "https://search.bilibili.com/all?keyword=%E4%B9%90%E9%AB%98%E4%B9%90%E5%9B%AD%20%E6%8B%BC%E6%90%AD%E8%88%B9",
+          "returnedCandidates": 20
+        }
+      ],
+      "officialSource": "https://www.legolandshanghai.cn/spot/detail?id=129"
+    },
+    "145": {
+      "name": "乐高®好朋友才艺秀",
+      "land": "乐高®好朋友",
+      "type": "演出",
+      "status": "not_confirmed",
+      "checkedAt": "2026-10-13",
+      "reason": "本轮未找到能核实项目名称、场地与实际体验的对应实拍。",
+      "queries": [
+        {
+          "query": "乐高乐园 乐高好朋友才艺秀",
+          "url": "https://search.bilibili.com/all?keyword=%E4%B9%90%E9%AB%98%E4%B9%90%E5%9B%AD%20%E4%B9%90%E9%AB%98%E5%A5%BD%E6%9C%8B%E5%8F%8B%E6%89%8D%E8%89%BA%E7%A7%80",
+          "returnedCandidates": 20
+        }
+      ],
+      "officialSource": "https://www.legolandshanghai.cn/spot/detail?id=145"
+    },
+    "217": {
+      "name": "得宝®大积木天地（乐高®好朋友）",
+      "land": "乐高®好朋友",
+      "type": "拼搭体验",
+      "status": "not_confirmed",
+      "checkedAt": "2026-10-13",
+      "reason": "本轮未确认该园区版本的独立画面；其它园区的同名儿童区未混用。",
+      "queries": [
+        {
+          "query": "乐高乐园 得宝大积木天地",
+          "url": "https://search.bilibili.com/all?keyword=%E4%B9%90%E9%AB%98%E4%B9%90%E5%9B%AD%20%E5%BE%97%E5%AE%9D%E5%A4%A7%E7%A7%AF%E6%9C%A8%E5%A4%A9%E5%9C%B0",
+          "returnedCandidates": 20
+        }
+      ],
+      "officialSource": "https://www.legolandshanghai.cn/spot/detail?id=217"
+    },
+    "411": {
+      "name": "【日常活动】秋日奇妙狂欢（乐高®好朋友）",
+      "land": "乐高®好朋友",
+      "type": "演出",
+      "status": "not_confirmed",
+      "checkedAt": "2026-10-13",
+      "reason": "未确认该定时活动版本的实拍；同场地自由拼搭画面不作为活动流程视频。",
+      "queries": [
+        {
+          "query": "乐高乐园 秋日奇妙狂欢",
+          "url": "https://search.bilibili.com/all?keyword=%E4%B9%90%E9%AB%98%E4%B9%90%E5%9B%AD%20%E7%A7%8B%E6%97%A5%E5%A5%87%E5%A6%99%E7%8B%82%E6%AC%A2",
+          "returnedCandidates": 20
+        }
+      ],
+      "officialSource": "https://www.legolandshanghai.cn/spot/detail?id=411"
+    },
+    "24": {
+      "name": "幻影旋转训练场",
+      "land": "乐高®幻影忍者",
+      "type": "拼搭体验",
+      "status": "not_confirmed",
+      "checkedAt": "2026-10-13",
+      "reason": "本轮未找到能核实项目名称、场地与实际体验的对应实拍。",
+      "queries": [
+        {
+          "query": "乐高乐园 幻影旋转训练场",
+          "url": "https://search.bilibili.com/all?keyword=%E4%B9%90%E9%AB%98%E4%B9%90%E5%9B%AD%20%E5%B9%BB%E5%BD%B1%E6%97%8B%E8%BD%AC%E8%AE%AD%E7%BB%83%E5%9C%BA",
+          "returnedCandidates": 20
+        }
+      ],
+      "officialSource": "https://www.legolandshanghai.cn/spot/detail?id=24"
+    },
+    "126": {
+      "name": "幻影忍者训练基地",
+      "land": "乐高®幻影忍者",
+      "type": "景点",
+      "status": "not_confirmed",
+      "checkedAt": "2026-10-13",
+      "reason": "本轮未找到能核实项目名称、场地与实际体验的对应实拍。",
+      "queries": [
+        {
+          "query": "乐高乐园 幻影忍者训练基地",
+          "url": "https://search.bilibili.com/all?keyword=%E4%B9%90%E9%AB%98%E4%B9%90%E5%9B%AD%20%E5%B9%BB%E5%BD%B1%E5%BF%8D%E8%80%85%E8%AE%AD%E7%BB%83%E5%9F%BA%E5%9C%B0",
+          "returnedCandidates": 20
+        }
+      ],
+      "officialSource": "https://www.legolandshanghai.cn/spot/detail?id=126"
+    },
+    "136": {
+      "name": "得宝®大积木天地（乐高®幻影忍者）",
+      "land": "乐高®幻影忍者",
+      "type": "拼搭体验",
+      "status": "not_confirmed",
+      "checkedAt": "2026-10-13",
+      "reason": "本轮未确认该园区版本的独立画面；其它园区的同名儿童区未混用。",
+      "queries": [
+        {
+          "query": "乐高乐园 得宝大积木天地",
+          "url": "https://search.bilibili.com/all?keyword=%E4%B9%90%E9%AB%98%E4%B9%90%E5%9B%AD%20%E5%BE%97%E5%AE%9D%E5%A4%A7%E7%A7%AF%E6%9C%A8%E5%A4%A9%E5%9C%B0",
+          "returnedCandidates": 20
+        }
+      ],
+      "officialSource": "https://www.legolandshanghai.cn/spot/detail?id=136"
+    },
+    "137": {
+      "name": "乐高®幻影忍者角色见面会",
+      "land": "乐高®幻影忍者",
+      "type": "演出",
+      "status": "not_confirmed",
+      "checkedAt": "2026-10-13",
+      "reason": "本轮未找到能核实项目名称、场地与实际体验的对应实拍。",
+      "queries": [
+        {
+          "query": "乐高乐园 乐高幻影忍者角色见面会",
+          "url": "https://search.bilibili.com/all?keyword=%E4%B9%90%E9%AB%98%E4%B9%90%E5%9B%AD%20%E4%B9%90%E9%AB%98%E5%B9%BB%E5%BD%B1%E5%BF%8D%E8%80%85%E8%A7%92%E8%89%B2%E8%A7%81%E9%9D%A2%E4%BC%9A",
+          "returnedCandidates": 20
+        }
+      ],
+      "officialSource": "https://www.legolandshanghai.cn/spot/detail?id=137"
+    },
+    "266": {
+      "name": "【日常活动】幻影忍者大擂台 · 游走版",
+      "land": "乐高®幻影忍者",
+      "type": "演出",
+      "status": "not_confirmed",
+      "checkedAt": "2026-10-13",
+      "reason": "未确认该定时活动版本的实拍；同场地自由拼搭画面不作为活动流程视频。",
+      "queries": [
+        {
+          "query": "乐高乐园 幻影忍者大擂台 · 游走版",
+          "url": "https://search.bilibili.com/all?keyword=%E4%B9%90%E9%AB%98%E4%B9%90%E5%9B%AD%20%E5%B9%BB%E5%BD%B1%E5%BF%8D%E8%80%85%E5%A4%A7%E6%93%82%E5%8F%B0%20%C2%B7%20%E6%B8%B8%E8%B5%B0%E7%89%88",
+          "returnedCandidates": 20
+        }
+      ],
+      "officialSource": "https://www.legolandshanghai.cn/spot/detail?id=266"
+    },
+    "362": {
+      "name": "【日常活动】极速拼搭陀螺赛",
+      "land": "乐高®幻影忍者",
+      "type": "演出",
+      "status": "not_confirmed",
+      "checkedAt": "2026-10-13",
+      "reason": "未确认该定时活动版本的实拍；同场地自由拼搭画面不作为活动流程视频。",
+      "queries": [
+        {
+          "query": "乐高乐园 极速拼搭陀螺赛",
+          "url": "https://search.bilibili.com/all?keyword=%E4%B9%90%E9%AB%98%E4%B9%90%E5%9B%AD%20%E6%9E%81%E9%80%9F%E6%8B%BC%E6%90%AD%E9%99%80%E8%9E%BA%E8%B5%9B",
+          "returnedCandidates": 20
+        }
+      ],
+      "officialSource": "https://www.legolandshanghai.cn/spot/detail?id=362"
+    },
+    "124": {
+      "name": "万千城挑战营",
+      "land": "乐高®悟空小侠",
+      "type": "景点",
+      "status": "not_confirmed",
+      "checkedAt": "2026-10-13",
+      "reason": "本轮未找到能核实项目名称、场地与实际体验的对应实拍。",
+      "queries": [
+        {
+          "query": "乐高乐园 万千城挑战营",
+          "url": "https://search.bilibili.com/all?keyword=%E4%B9%90%E9%AB%98%E4%B9%90%E5%9B%AD%20%E4%B8%87%E5%8D%83%E5%9F%8E%E6%8C%91%E6%88%98%E8%90%A5",
+          "returnedCandidates": 20
+        }
+      ],
+      "officialSource": "https://www.legolandshanghai.cn/spot/detail?id=124"
+    },
+    "354": {
+      "name": "英雄接棒仪式",
+      "land": "乐高®悟空小侠",
+      "type": "演出",
+      "status": "not_confirmed",
+      "checkedAt": "2026-10-13",
+      "reason": "本轮未找到能核实项目名称、场地与实际体验的对应实拍。",
+      "queries": [
+        {
+          "query": "乐高乐园 英雄接棒仪式",
+          "url": "https://search.bilibili.com/all?keyword=%E4%B9%90%E9%AB%98%E4%B9%90%E5%9B%AD%20%E8%8B%B1%E9%9B%84%E6%8E%A5%E6%A3%92%E4%BB%AA%E5%BC%8F",
+          "returnedCandidates": 20
+        }
+      ],
+      "officialSource": "https://www.legolandshanghai.cn/spot/detail?id=354"
+    },
+    "358": {
+      "name": "《朱大厨美食争霸》",
+      "land": "乐高®悟空小侠",
+      "type": "演出",
+      "status": "not_confirmed",
+      "checkedAt": "2026-10-13",
+      "reason": "本轮未找到能核实项目名称、场地与实际体验的对应实拍。",
+      "queries": [
+        {
+          "query": "乐高乐园 《朱大厨美食争霸》",
+          "url": "https://search.bilibili.com/all?keyword=%E4%B9%90%E9%AB%98%E4%B9%90%E5%9B%AD%20%E3%80%8A%E6%9C%B1%E5%A4%A7%E5%8E%A8%E7%BE%8E%E9%A3%9F%E4%BA%89%E9%9C%B8%E3%80%8B",
+          "returnedCandidates": 20
+        },
+        {
+          "query": "乐高乐园 朱大厨美食争霸",
+          "url": "https://search.bilibili.com/all?keyword=%E4%B9%90%E9%AB%98%E4%B9%90%E5%9B%AD%20%E6%9C%B1%E5%A4%A7%E5%8E%A8%E7%BE%8E%E9%A3%9F%E4%BA%89%E9%9C%B8",
+          "returnedCandidates": 20
+        }
+      ],
+      "officialSource": "https://www.legolandshanghai.cn/spot/detail?id=358"
+    },
+    "395": {
+      "name": "【日常活动】拼搭宝殿",
+      "land": "乐高®悟空小侠",
+      "type": "演出",
+      "status": "not_confirmed",
+      "checkedAt": "2026-10-13",
+      "reason": "未确认该定时活动版本的实拍；同场地自由拼搭画面不作为活动流程视频。",
+      "queries": [
+        {
+          "query": "上海乐高乐园 拼搭宝殿",
+          "url": "https://search.bilibili.com/all?keyword=%E4%B8%8A%E6%B5%B7%E4%B9%90%E9%AB%98%E4%B9%90%E5%9B%AD%20%E6%8B%BC%E6%90%AD%E5%AE%9D%E6%AE%BF",
+          "returnedCandidates": 10
+        },
+        {
+          "query": "乐高乐园 拼搭宝殿",
+          "url": "https://search.bilibili.com/all?keyword=%E4%B9%90%E9%AB%98%E4%B9%90%E5%9B%AD%20%E6%8B%BC%E6%90%AD%E5%AE%9D%E6%AE%BF",
+          "returnedCandidates": 20
+        }
+      ],
+      "officialSource": "https://www.legolandshanghai.cn/spot/detail?id=395"
+    },
+    "408": {
+      "name": "朱大厨美食争霸（餐厅版）",
+      "land": "乐高®悟空小侠",
+      "type": "演出",
+      "status": "not_confirmed",
+      "checkedAt": "2026-10-13",
+      "reason": "未确认该餐厅内版本的独立实拍，普通园区版本不能替代。",
+      "queries": [
+        {
+          "query": "乐高乐园 《朱大厨美食争霸》",
+          "url": "https://search.bilibili.com/all?keyword=%E4%B9%90%E9%AB%98%E4%B9%90%E5%9B%AD%20%E3%80%8A%E6%9C%B1%E5%A4%A7%E5%8E%A8%E7%BE%8E%E9%A3%9F%E4%BA%89%E9%9C%B8%E3%80%8B",
+          "returnedCandidates": 20
+        },
+        {
+          "query": "乐高乐园 朱大厨美食争霸",
+          "url": "https://search.bilibili.com/all?keyword=%E4%B9%90%E9%AB%98%E4%B9%90%E5%9B%AD%20%E6%9C%B1%E5%A4%A7%E5%8E%A8%E7%BE%8E%E9%A3%9F%E4%BA%89%E9%9C%B8",
+          "returnedCandidates": 20
+        }
+      ],
+      "officialSource": "https://www.legolandshanghai.cn/spot/detail?id=408"
+    },
+    "7": {
+      "name": "太空冒险",
+      "land": "乐高乐园®创想世界",
+      "type": "拼搭体验",
+      "status": "matched",
+      "checkedAt": "2026-10-13",
+      "reason": "太空冒险区域的火箭拼搭与触屏模拟发射实拍；定位04:23。 抖音可能提示登录，在原平台手动定位。",
+      "queries": [
+        {
+          "query": "乐高乐园 太空冒险",
+          "url": "https://search.bilibili.com/all?keyword=%E4%B9%90%E9%AB%98%E4%B9%90%E5%9B%AD%20%E5%A4%AA%E7%A9%BA%E5%86%92%E9%99%A9",
+          "returnedCandidates": 20
+        }
+      ],
+      "officialSource": "https://www.legolandshanghai.cn/spot/detail?id=7"
+    },
+    "11": {
+      "name": "乐高®小黄鸭",
+      "land": "乐高乐园®创想世界",
+      "type": "拼搭体验",
+      "status": "not_confirmed",
+      "checkedAt": "2026-10-13",
+      "reason": "本轮未找到能核实项目名称、场地与实际体验的对应实拍。",
+      "queries": [
+        {
+          "query": "乐高乐园 乐高小黄鸭",
+          "url": "https://search.bilibili.com/all?keyword=%E4%B9%90%E9%AB%98%E4%B9%90%E5%9B%AD%20%E4%B9%90%E9%AB%98%E5%B0%8F%E9%BB%84%E9%B8%AD",
+          "returnedCandidates": 20
+        }
+      ],
+      "officialSource": "https://www.legolandshanghai.cn/spot/detail?id=11"
+    },
+    "20": {
+      "name": "天灯",
+      "land": "乐高乐园®创想世界",
+      "type": "拼搭体验",
+      "status": "not_confirmed",
+      "checkedAt": "2026-10-13",
+      "reason": "本轮未找到能核实项目名称、场地与实际体验的对应实拍。",
+      "queries": [
+        {
+          "query": "乐高乐园 天灯",
+          "url": "https://search.bilibili.com/all?keyword=%E4%B9%90%E9%AB%98%E4%B9%90%E5%9B%AD%20%E5%A4%A9%E7%81%AF",
+          "returnedCandidates": 20
+        }
+      ],
+      "officialSource": "https://www.legolandshanghai.cn/spot/detail?id=20"
+    },
+    "21": {
+      "name": "长城",
+      "land": "乐高乐园®创想世界",
+      "type": "拼搭体验",
+      "status": "not_confirmed",
+      "checkedAt": "2026-10-13",
+      "reason": "本轮未找到能核实项目名称、场地与实际体验的对应实拍。",
+      "queries": [
+        {
+          "query": "乐高乐园 长城",
+          "url": "https://search.bilibili.com/all?keyword=%E4%B9%90%E9%AB%98%E4%B9%90%E5%9B%AD%20%E9%95%BF%E5%9F%8E",
+          "returnedCandidates": 20
+        }
+      ],
+      "officialSource": "https://www.legolandshanghai.cn/spot/detail?id=21"
+    },
+    "71": {
+      "name": "得宝®瀑布",
+      "land": "乐高乐园®创想世界",
+      "type": "拼搭体验",
+      "status": "not_confirmed",
+      "checkedAt": "2026-10-13",
+      "reason": "本轮未找到能核实项目名称、场地与实际体验的对应实拍。",
+      "queries": [
+        {
+          "query": "乐高乐园 得宝瀑布",
+          "url": "https://search.bilibili.com/all?keyword=%E4%B9%90%E9%AB%98%E4%B9%90%E5%9B%AD%20%E5%BE%97%E5%AE%9D%E7%80%91%E5%B8%83",
+          "returnedCandidates": 20
+        }
+      ],
+      "officialSource": "https://www.legolandshanghai.cn/spot/detail?id=71"
+    },
+    "138": {
+      "name": "上海梦幻奇境",
+      "land": "乐高乐园®创想世界",
+      "type": "演出",
+      "status": "not_confirmed",
+      "checkedAt": "2026-10-13",
+      "reason": "已看到迷你天地的投影变化，但未能确认是“上海梦幻奇境”这场节目，不按名称猜配。",
+      "queries": [
+        {
+          "query": "上海乐高乐园 上海梦幻奇境",
+          "url": "https://search.bilibili.com/all?keyword=%E4%B8%8A%E6%B5%B7%E4%B9%90%E9%AB%98%E4%B9%90%E5%9B%AD%20%E4%B8%8A%E6%B5%B7%E6%A2%A6%E5%B9%BB%E5%A5%87%E5%A2%83",
+          "returnedCandidates": 10
+        },
+        {
+          "query": "上海梦幻奇境",
+          "url": "https://search.bilibili.com/all?keyword=%E4%B8%8A%E6%B5%B7%E6%A2%A6%E5%B9%BB%E5%A5%87%E5%A2%83",
+          "returnedCandidates": 10
+        },
+        {
+          "query": "乐高乐园 上海梦幻奇境",
+          "url": "https://search.bilibili.com/all?keyword=%E4%B9%90%E9%AB%98%E4%B9%90%E5%9B%AD%20%E4%B8%8A%E6%B5%B7%E6%A2%A6%E5%B9%BB%E5%A5%87%E5%A2%83",
+          "returnedCandidates": 20
+        }
+      ],
+      "officialSource": "https://www.legolandshanghai.cn/spot/detail?id=138"
+    },
+    "139": {
+      "name": "迷你天地光影秀",
+      "land": "乐高乐园®创想世界",
+      "type": "演出",
+      "status": "not_confirmed",
+      "checkedAt": "2026-10-13",
+      "reason": "已找到迷你天地昼夜灯光录像，但未能确认是该独立光影秀；普通景观录像未作节目视频。",
+      "queries": [
+        {
+          "query": "上海乐高乐园 迷你天地",
+          "url": "https://search.bilibili.com/all?keyword=%E4%B8%8A%E6%B5%B7%E4%B9%90%E9%AB%98%E4%B9%90%E5%9B%AD%20%E8%BF%B7%E4%BD%A0%E5%A4%A9%E5%9C%B0",
+          "returnedCandidates": 10
+        },
+        {
+          "query": "上海乐高乐园 迷你天地光影秀",
+          "url": "https://search.bilibili.com/all?keyword=%E4%B8%8A%E6%B5%B7%E4%B9%90%E9%AB%98%E4%B9%90%E5%9B%AD%20%E8%BF%B7%E4%BD%A0%E5%A4%A9%E5%9C%B0%E5%85%89%E5%BD%B1%E7%A7%80",
+          "returnedCandidates": 10
+        },
+        {
+          "query": "迷你天地",
+          "url": "https://search.bilibili.com/all?keyword=%E8%BF%B7%E4%BD%A0%E5%A4%A9%E5%9C%B0",
+          "returnedCandidates": 10
+        },
+        {
+          "query": "迷你天地光影",
+          "url": "https://search.bilibili.com/all?keyword=%E8%BF%B7%E4%BD%A0%E5%A4%A9%E5%9C%B0%E5%85%89%E5%BD%B1",
+          "returnedCandidates": 10
+        },
+        {
+          "query": "乐高乐园 迷你天地光影秀",
+          "url": "https://search.bilibili.com/all?keyword=%E4%B9%90%E9%AB%98%E4%B9%90%E5%9B%AD%20%E8%BF%B7%E4%BD%A0%E5%A4%A9%E5%9C%B0%E5%85%89%E5%BD%B1%E7%A7%80",
+          "returnedCandidates": 20
+        }
+      ],
+      "officialSource": "https://www.legolandshanghai.cn/spot/detail?id=139"
+    },
+    "177": {
+      "name": "乐高乐园®游船",
+      "land": "乐高乐园®创想世界",
+      "type": "骑乘",
+      "status": "matched",
+      "checkedAt": "2026-10-13",
+      "reason": "上海园区游船体验，主要看沿途积木景观与行进节奏。",
+      "queries": [
+        {
+          "query": "上海乐高乐园 乐高乐园游船",
+          "url": "https://search.bilibili.com/all?keyword=%E4%B8%8A%E6%B5%B7%E4%B9%90%E9%AB%98%E4%B9%90%E5%9B%AD%20%E4%B9%90%E9%AB%98%E4%B9%90%E5%9B%AD%E6%B8%B8%E8%88%B9",
+          "returnedCandidates": 10
+        }
+      ],
+      "officialSource": "https://www.legolandshanghai.cn/spot/detail?id=177"
+    },
+    "224": {
+      "name": "乐高®品牌故事",
+      "land": "乐高乐园®创想世界",
+      "type": "拼搭体验",
+      "status": "not_confirmed",
+      "checkedAt": "2026-10-13",
+      "reason": "本轮未找到能核实项目名称、场地与实际体验的对应实拍。",
+      "queries": [
+        {
+          "query": "乐高乐园 乐高品牌故事",
+          "url": "https://search.bilibili.com/all?keyword=%E4%B9%90%E9%AB%98%E4%B9%90%E5%9B%AD%20%E4%B9%90%E9%AB%98%E5%93%81%E7%89%8C%E6%95%85%E4%BA%8B",
+          "returnedCandidates": 20
+        }
+      ],
+      "officialSource": "https://www.legolandshanghai.cn/spot/detail?id=224"
+    },
+    "390": {
+      "name": "【日常活动】城市建筑师",
+      "land": "乐高乐园®创想世界",
+      "type": "演出",
+      "status": "not_confirmed",
+      "checkedAt": "2026-10-13",
+      "reason": "未确认该定时活动版本的实拍；同场地自由拼搭画面不作为活动流程视频。",
+      "queries": [
+        {
+          "query": "上海乐高乐园 城市建筑师",
+          "url": "https://search.bilibili.com/all?keyword=%E4%B8%8A%E6%B5%B7%E4%B9%90%E9%AB%98%E4%B9%90%E5%9B%AD%20%E5%9F%8E%E5%B8%82%E5%BB%BA%E7%AD%91%E5%B8%88",
+          "returnedCandidates": 10
+        },
+        {
+          "query": "乐高乐园 城市建筑师",
+          "url": "https://search.bilibili.com/all?keyword=%E4%B9%90%E9%AB%98%E4%B9%90%E5%9B%AD%20%E5%9F%8E%E5%B8%82%E5%BB%BA%E7%AD%91%E5%B8%88",
+          "returnedCandidates": 20
+        }
+      ],
+      "officialSource": "https://www.legolandshanghai.cn/spot/detail?id=390"
+    },
+    "392": {
+      "name": "【日常活动】赛车",
+      "land": "乐高乐园®创想世界",
+      "type": "演出",
+      "status": "not_confirmed",
+      "checkedAt": "2026-10-13",
+      "reason": "未确认该定时活动版本的实拍；同场地自由拼搭画面不作为活动流程视频。",
+      "queries": [
+        {
+          "query": "乐高乐园 赛车",
+          "url": "https://search.bilibili.com/all?keyword=%E4%B9%90%E9%AB%98%E4%B9%90%E5%9B%AD%20%E8%B5%9B%E8%BD%A6",
+          "returnedCandidates": 20
+        }
+      ],
+      "officialSource": "https://www.legolandshanghai.cn/spot/detail?id=392"
+    },
+    "393": {
+      "name": "【日常活动】太空冒险",
+      "land": "乐高乐园®创想世界",
+      "type": "演出",
+      "status": "not_confirmed",
+      "checkedAt": "2026-10-13",
+      "reason": "未确认该定时活动版本的实拍；同场地自由拼搭画面不作为活动流程视频。",
+      "queries": [
+        {
+          "query": "乐高乐园 太空冒险",
+          "url": "https://search.bilibili.com/all?keyword=%E4%B9%90%E9%AB%98%E4%B9%90%E5%9B%AD%20%E5%A4%AA%E7%A9%BA%E5%86%92%E9%99%A9",
+          "returnedCandidates": 20
+        }
+      ],
+      "officialSource": "https://www.legolandshanghai.cn/spot/detail?id=393"
+    },
+    "394": {
+      "name": "【日常活动】天灯",
+      "land": "乐高乐园®创想世界",
+      "type": "演出",
+      "status": "not_confirmed",
+      "checkedAt": "2026-10-13",
+      "reason": "未确认该定时活动版本的实拍；同场地自由拼搭画面不作为活动流程视频。",
+      "queries": [
+        {
+          "query": "乐高乐园 天灯",
+          "url": "https://search.bilibili.com/all?keyword=%E4%B9%90%E9%AB%98%E4%B9%90%E5%9B%AD%20%E5%A4%A9%E7%81%AF",
+          "returnedCandidates": 20
+        }
+      ],
+      "officialSource": "https://www.legolandshanghai.cn/spot/detail?id=394"
+    },
+    "122": {
+      "name": "得宝®创意丛林",
+      "land": "奇趣积木城！",
+      "type": "景点",
+      "status": "matched",
+      "checkedAt": "2026-10-13",
+      "reason": "得宝创意丛林的攀爬、滑行区画面；定位01:04。",
+      "queries": [
+        {
+          "query": "乐高乐园 得宝创意丛林",
+          "url": "https://search.bilibili.com/all?keyword=%E4%B9%90%E9%AB%98%E4%B9%90%E5%9B%AD%20%E5%BE%97%E5%AE%9D%E5%88%9B%E6%84%8F%E4%B8%9B%E6%9E%97",
+          "returnedCandidates": 20
+        }
+      ],
+      "officialSource": "https://www.legolandshanghai.cn/spot/detail?id=122"
+    },
+    "123": {
+      "name": "踏步音律",
+      "land": "奇趣积木城！",
+      "type": "景点",
+      "status": "matched",
+      "checkedAt": "2026-10-13",
+      "reason": "乐器造型互动喷泉画面，与官方踏步音律的场景对应；定位05:52。",
+      "queries": [
+        {
+          "query": "乐高乐园 踏步音律",
+          "url": "https://search.bilibili.com/all?keyword=%E4%B9%90%E9%AB%98%E4%B9%90%E5%9B%AD%20%E8%B8%8F%E6%AD%A5%E9%9F%B3%E5%BE%8B",
+          "returnedCandidates": 20
+        }
+      ],
+      "officialSource": "https://www.legolandshanghai.cn/spot/detail?id=123"
+    },
+    "149": {
+      "name": "乐高乐园®音乐嘉年华",
+      "land": "奇趣积木城！",
+      "type": "演出",
+      "status": "matched",
+      "checkedAt": "2026-10-13",
+      "reason": "音乐嘉年华现场演出记录；本次场次以当天App为准。",
+      "queries": [],
+      "officialSource": "https://www.legolandshanghai.cn/spot/detail?id=149"
+    },
+    "29": {
+      "name": "怪兽欢迎秀",
+      "land": "积木街道",
+      "type": "小怪兽大派对",
+      "status": "not_confirmed",
+      "checkedAt": "2026-10-13",
+      "reason": "本轮未找到可同时核实节目名、场地和具体互动的对应实拍；同季节合集未直接配入。",
+      "queries": [
+        {
+          "query": "乐高乐园 怪兽欢迎秀",
+          "url": "https://search.bilibili.com/all?keyword=%E4%B9%90%E9%AB%98%E4%B9%90%E5%9B%AD%20%E6%80%AA%E5%85%BD%E6%AC%A2%E8%BF%8E%E7%A7%80",
+          "returnedCandidates": 20
+        }
+      ],
+      "officialSource": "https://www.legolandshanghai.cn/spot/detail?id=29"
+    },
+    "243": {
+      "name": "积木街道角色见面会",
+      "land": "积木街道",
+      "type": "演出",
+      "status": "matched",
+      "checkedAt": "2026-10-13",
+      "reason": "积木街道咖啡馆前与角色合照的实拍；定位17:00，只展示其中一个角色。",
+      "queries": [
+        {
+          "query": "乐高乐园 积木街道角色见面会",
+          "url": "https://search.bilibili.com/all?keyword=%E4%B9%90%E9%AB%98%E4%B9%90%E5%9B%AD%20%E7%A7%AF%E6%9C%A8%E8%A1%97%E9%81%93%E8%A7%92%E8%89%B2%E8%A7%81%E9%9D%A2%E4%BC%9A",
+          "returnedCandidates": 20
+        }
+      ],
+      "officialSource": "https://www.legolandshanghai.cn/spot/detail?id=243"
+    },
+    "5": {
+      "name": "飞龙过山车",
+      "land": "乐高®城堡",
+      "type": "骑乘",
+      "status": "matched",
+      "checkedAt": "2026-10-13",
+      "reason": "含城堡场景与过山车段，帮助判断暗场、速度和转弯。",
+      "queries": [
+        {
+          "query": "上海乐高乐园 飞龙过山车",
+          "url": "https://search.bilibili.com/all?keyword=%E4%B8%8A%E6%B5%B7%E4%B9%90%E9%AB%98%E4%B9%90%E5%9B%AD%20%E9%A3%9E%E9%BE%99%E8%BF%87%E5%B1%B1%E8%BD%A6",
+          "returnedCandidates": 10
+        }
+      ],
+      "officialSource": "https://www.legolandshanghai.cn/spot/detail?id=5"
+    },
+    "172": {
+      "name": "小龙飞车",
+      "land": "乐高®城堡",
+      "type": "骑乘",
+      "status": "matched",
+      "checkedAt": "2026-10-13",
+      "reason": "上海园区的小龙飞车，查看轨道与乘骑节奏；102 cm儿童仍需成人陪同。",
+      "queries": [
+        {
+          "query": "上海乐高乐园 小龙飞车",
+          "url": "https://search.bilibili.com/all?keyword=%E4%B8%8A%E6%B5%B7%E4%B9%90%E9%AB%98%E4%B9%90%E5%9B%AD%20%E5%B0%8F%E9%BE%99%E9%A3%9E%E8%BD%A6",
+          "returnedCandidates": 10
+        }
+      ],
+      "officialSource": "https://www.legolandshanghai.cn/spot/detail?id=172"
+    },
+    "173": {
+      "name": "勇登高塔",
+      "land": "乐高®城堡",
+      "type": "骑乘",
+      "status": "matched",
+      "checkedAt": "2026-10-13",
+      "reason": "亲手拉升座椅的玩法示例；身高、年龄、同舱承重仍看官方要求。",
+      "queries": [
+        {
+          "query": "上海乐高乐园 勇登高塔",
+          "url": "https://search.bilibili.com/all?keyword=%E4%B8%8A%E6%B5%B7%E4%B9%90%E9%AB%98%E4%B9%90%E5%9B%AD%20%E5%8B%87%E7%99%BB%E9%AB%98%E5%A1%94",
+          "returnedCandidates": 10
+        }
+      ],
+      "officialSource": "https://www.legolandshanghai.cn/spot/detail?id=173"
+    },
+    "160": {
+      "name": "初级飞行学院",
+      "land": "乐高®城市",
+      "type": "骑乘",
+      "status": "matched",
+      "checkedAt": "2026-10-13",
+      "reason": "同作者的城市区飞行学院现场记录，可看小飞机的转动与升降。",
+      "queries": [
+        {
+          "query": "上海乐高乐园 初级飞行学院",
+          "url": "https://search.bilibili.com/all?keyword=%E4%B8%8A%E6%B5%B7%E4%B9%90%E9%AB%98%E4%B9%90%E5%9B%AD%20%E5%88%9D%E7%BA%A7%E9%A3%9E%E8%A1%8C%E5%AD%A6%E9%99%A2",
+          "returnedCandidates": 10
+        }
+      ],
+      "officialSource": "https://www.legolandshanghai.cn/spot/detail?id=160"
+    },
+    "276": {
+      "name": "派对“砖”属角色见面会-僵尸伯爵/蜘蛛夫人",
+      "land": "乐高®城市",
+      "type": "小怪兽大派对",
+      "status": "not_confirmed",
+      "checkedAt": "2026-10-13",
+      "reason": "找到同角色出场画面，但未能确认独立见面会点位和参与流程，未拿舞台/游走片段替代。",
+      "queries": [
+        {
+          "query": "乐高乐园 派对“砖”属角色见面会-僵尸伯爵/蜘蛛夫人",
+          "url": "https://search.bilibili.com/all?keyword=%E4%B9%90%E9%AB%98%E4%B9%90%E5%9B%AD%20%E6%B4%BE%E5%AF%B9%E2%80%9C%E7%A0%96%E2%80%9D%E5%B1%9E%E8%A7%92%E8%89%B2%E8%A7%81%E9%9D%A2%E4%BC%9A-%E5%83%B5%E5%B0%B8%E4%BC%AF%E7%88%B5/%E8%9C%98%E8%9B%9B%E5%A4%AB%E4%BA%BA",
+          "returnedCandidates": 20
+        }
+      ],
+      "officialSource": "https://www.legolandshanghai.cn/spot/detail?id=276"
+    },
+    "278": {
+      "name": "V.I.M. 大咖怪兽派对",
+      "land": "乐高®城市",
+      "type": "小怪兽大派对",
+      "status": "not_confirmed",
+      "checkedAt": "2026-10-13",
+      "reason": "找到2026怪兽舞台画面，但节目名未从视频确认，未直接认定为V.I.M.大咖怪兽派对。",
+      "queries": [
+        {
+          "query": "乐高乐园 V.I.M. 大咖怪兽派对",
+          "url": "https://search.bilibili.com/all?keyword=%E4%B9%90%E9%AB%98%E4%B9%90%E5%9B%AD%20V.I.M.%20%E5%A4%A7%E5%92%96%E6%80%AA%E5%85%BD%E6%B4%BE%E5%AF%B9",
+          "returnedCandidates": 20
+        }
+      ],
+      "officialSource": "https://www.legolandshanghai.cn/spot/detail?id=278"
+    },
+    "396": {
+      "name": "搞怪电音派对",
+      "land": "乐高®城市",
+      "type": "小怪兽大派对",
+      "status": "not_confirmed",
+      "checkedAt": "2026-10-13",
+      "reason": "本轮未找到可同时核实节目名、场地和具体互动的对应实拍；同季节合集未直接配入。",
+      "queries": [
+        {
+          "query": "乐高乐园 搞怪电音派对",
+          "url": "https://search.bilibili.com/all?keyword=%E4%B9%90%E9%AB%98%E4%B9%90%E5%9B%AD%20%E6%90%9E%E6%80%AA%E7%94%B5%E9%9F%B3%E6%B4%BE%E5%AF%B9",
+          "returnedCandidates": 20
+        }
+      ],
+      "officialSource": "https://www.legolandshanghai.cn/spot/detail?id=396"
+    },
+    "52": {
+      "name": "摩托艇追逐",
+      "land": "乐高®好朋友",
+      "type": "骑乘",
+      "status": "matched",
+      "checkedAt": "2026-10-13",
+      "reason": "查看水面转圈、方向盘操作和飞溅；标题使用“摩托追逐艇”，对应摩托艇追逐。",
+      "queries": [
+        {
+          "query": "上海乐高乐园 摩托艇追逐",
+          "url": "https://search.bilibili.com/all?keyword=%E4%B8%8A%E6%B5%B7%E4%B9%90%E9%AB%98%E4%B9%90%E5%9B%AD%20%E6%91%A9%E6%89%98%E8%89%87%E8%BF%BD%E9%80%90",
+          "returnedCandidates": 10
+        }
+      ],
+      "officialSource": "https://www.legolandshanghai.cn/spot/detail?id=52"
+    },
+    "164": {
+      "name": "心湖城秋千",
+      "land": "乐高®好朋友",
+      "type": "骑乘",
+      "status": "matched",
+      "checkedAt": "2026-10-13",
+      "reason": "2025年试运营载客片段，展示秋千的旋转与高度；不是本次运营安排。",
+      "queries": [
+        {
+          "query": "上海乐高乐园 心湖城秋千",
+          "url": "https://search.bilibili.com/all?keyword=%E4%B8%8A%E6%B5%B7%E4%B9%90%E9%AB%98%E4%B9%90%E5%9B%AD%20%E5%BF%83%E6%B9%96%E5%9F%8E%E7%A7%8B%E5%8D%83",
+          "returnedCandidates": 10
+        }
+      ],
+      "officialSource": "https://www.legolandshanghai.cn/spot/detail?id=164"
+    },
+    "169": {
+      "name": "乐高®幻影忍者之旅",
+      "land": "乐高®幻影忍者",
+      "type": "骑乘",
+      "status": "matched",
+      "checkedAt": "2026-10-13",
+      "reason": "上海园区幻影忍者之旅的乘坐与手势互动实拍；定位05:15。",
+      "queries": [
+        {
+          "query": "上海乐高乐园 幻影忍者之旅",
+          "url": "https://search.bilibili.com/all?keyword=%E4%B8%8A%E6%B5%B7%E4%B9%90%E9%AB%98%E4%B9%90%E5%9B%AD%20%E5%B9%BB%E5%BD%B1%E5%BF%8D%E8%80%85%E4%B9%8B%E6%97%85",
+          "returnedCandidates": 10
+        },
+        {
+          "query": "幻影忍者之旅",
+          "url": "https://search.bilibili.com/all?keyword=%E5%B9%BB%E5%BD%B1%E5%BF%8D%E8%80%85%E4%B9%8B%E6%97%85",
+          "returnedCandidates": 10
+        },
+        {
+          "query": "乐高乐园 乐高幻影忍者之旅",
+          "url": "https://search.bilibili.com/all?keyword=%E4%B9%90%E9%AB%98%E4%B9%90%E5%9B%AD%20%E4%B9%90%E9%AB%98%E5%B9%BB%E5%BD%B1%E5%BF%8D%E8%80%85%E4%B9%8B%E6%97%85",
+          "returnedCandidates": 20
+        }
+      ],
+      "officialSource": "https://www.legolandshanghai.cn/spot/detail?id=169"
+    },
+    "171": {
+      "name": "凯的空中竞技",
+      "land": "乐高®幻影忍者",
+      "type": "骑乘",
+      "status": "not_confirmed",
+      "checkedAt": "2026-10-13",
+      "reason": "找到准确的入口与介绍画面；尚未确认该乘骑的实际运行片段，未用相邻重力训练营录像代替。",
+      "queries": [
+        {
+          "query": "上海乐高乐园 凯的空中竞技",
+          "url": "https://search.bilibili.com/all?keyword=%E4%B8%8A%E6%B5%B7%E4%B9%90%E9%AB%98%E4%B9%90%E5%9B%AD%20%E5%87%AF%E7%9A%84%E7%A9%BA%E4%B8%AD%E7%AB%9E%E6%8A%80",
+          "returnedCandidates": 10
+        },
+        {
+          "query": "空中竞技",
+          "url": "https://search.bilibili.com/all?keyword=%E7%A9%BA%E4%B8%AD%E7%AB%9E%E6%8A%80",
+          "returnedCandidates": 10
+        },
+        {
+          "query": "乐高乐园 凯的空中竞技",
+          "url": "https://search.bilibili.com/all?keyword=%E4%B9%90%E9%AB%98%E4%B9%90%E5%9B%AD%20%E5%87%AF%E7%9A%84%E7%A9%BA%E4%B8%AD%E7%AB%9E%E6%8A%80",
+          "returnedCandidates": 20
+        }
+      ],
+      "officialSource": "https://www.legolandshanghai.cn/spot/detail?id=171"
+    },
+    "168": {
+      "name": "龙小骄之玉龙神力",
+      "land": "乐高®悟空小侠",
+      "type": "骑乘",
+      "status": "matched",
+      "checkedAt": "2026-10-13",
+      "reason": "画面标有“龙小骄之玉龙神力”，对应同项目现场体验；定位04:11。 抖音可能提示登录，在原平台手动定位。",
+      "queries": [
+        {
+          "query": "玉龙神力",
+          "url": "https://search.bilibili.com/all?keyword=%E7%8E%89%E9%BE%99%E7%A5%9E%E5%8A%9B",
+          "returnedCandidates": 10
+        },
+        {
+          "query": "乐高乐园 龙小骄之玉龙神力",
+          "url": "https://search.bilibili.com/all?keyword=%E4%B9%90%E9%AB%98%E4%B9%90%E5%9B%AD%20%E9%BE%99%E5%B0%8F%E9%AA%84%E4%B9%8B%E7%8E%89%E9%BE%99%E7%A5%9E%E5%8A%9B",
+          "returnedCandidates": 20
+        }
+      ],
+      "officialSource": "https://www.legolandshanghai.cn/spot/detail?id=168"
+    },
+    "65": {
+      "name": "乐高乐园®观光塔",
+      "land": "乐高乐园®创想世界",
+      "type": "骑乘",
+      "status": "matched",
+      "checkedAt": "2026-10-13",
+      "reason": "观光塔与高处视野实拍，先让孩子判断是否愿意升到高处。",
+      "queries": [
+        {
+          "query": "上海乐高乐园 观光塔",
+          "url": "https://search.bilibili.com/all?keyword=%E4%B8%8A%E6%B5%B7%E4%B9%90%E9%AB%98%E4%B9%90%E5%9B%AD%20%E8%A7%82%E5%85%89%E5%A1%94",
+          "returnedCandidates": 10
+        }
+      ],
+      "officialSource": "https://www.legolandshanghai.cn/spot/detail?id=65"
+    },
+    "176": {
+      "name": "乐高®大飞车",
+      "land": "乐高乐园®创想世界",
+      "type": "骑乘",
+      "status": "matched",
+      "checkedAt": "2026-10-13",
+      "reason": "上海园区乘车视角，可观察轨道、转弯和速度感；成人感受不能代替孩子接受度。",
+      "queries": [
+        {
+          "query": "上海乐高乐园 乐高大飞车",
+          "url": "https://search.bilibili.com/all?keyword=%E4%B8%8A%E6%B5%B7%E4%B9%90%E9%AB%98%E4%B9%90%E5%9B%AD%20%E4%B9%90%E9%AB%98%E5%A4%A7%E9%A3%9E%E8%BD%A6",
+          "returnedCandidates": 10
+        }
+      ],
+      "officialSource": "https://www.legolandshanghai.cn/spot/detail?id=176"
+    },
+    "277": {
+      "name": "派对“砖”属角色见面会-稻草人",
+      "land": "乐高乐园酒店®",
+      "type": "小怪兽大派对",
+      "status": "not_confirmed",
+      "checkedAt": "2026-10-13",
+      "reason": "未确认乐高酒店内该稻草人见面会的实拍；园内同角色录像未替代。",
+      "queries": [
+        {
+          "query": "乐高乐园 派对“砖”属角色见面会-稻草人",
+          "url": "https://search.bilibili.com/all?keyword=%E4%B9%90%E9%AB%98%E4%B9%90%E5%9B%AD%20%E6%B4%BE%E5%AF%B9%E2%80%9C%E7%A0%96%E2%80%9D%E5%B1%9E%E8%A7%92%E8%89%B2%E8%A7%81%E9%9D%A2%E4%BC%9A-%E7%A8%BB%E8%8D%89%E4%BA%BA",
+          "returnedCandidates": 20
+        }
+      ],
+      "officialSource": "https://www.legolandshanghai.cn/spot/detail?id=277"
+    },
+    "280": {
+      "name": "稻草人的怪诞舞会",
+      "land": "乐高乐园酒店®",
+      "type": "小怪兽大派对",
+      "status": "not_confirmed",
+      "checkedAt": "2026-10-13",
+      "reason": "未确认乐高酒店内该独立舞会的实拍；泛万圣活动视频未替代。",
+      "queries": [
+        {
+          "query": "乐高乐园 稻草人的怪诞舞会",
+          "url": "https://search.bilibili.com/all?keyword=%E4%B9%90%E9%AB%98%E4%B9%90%E5%9B%AD%20%E7%A8%BB%E8%8D%89%E4%BA%BA%E7%9A%84%E6%80%AA%E8%AF%9E%E8%88%9E%E4%BC%9A",
+          "returnedCandidates": 20
+        }
+      ],
+      "officialSource": "https://www.legolandshanghai.cn/spot/detail?id=280"
+    },
+    "407": {
+      "name": "怪兽能量补给站-年卡专属",
+      "land": "乐高®城堡",
+      "type": "小怪兽大派对",
+      "status": "not_confirmed",
+      "checkedAt": "2026-10-13",
+      "reason": "普通讨糖实拍不能证明年卡专属兑换点，未将其算作匹配。",
+      "queries": [
+        {
+          "query": "乐高乐园 怪兽能量补给站",
+          "url": "https://search.bilibili.com/all?keyword=%E4%B9%90%E9%AB%98%E4%B9%90%E5%9B%AD%20%E6%80%AA%E5%85%BD%E8%83%BD%E9%87%8F%E8%A1%A5%E7%BB%99%E7%AB%99",
+          "returnedCandidates": 20
+        },
+        {
+          "query": "乐高乐园 怪兽能量补给站-年卡专属",
+          "url": "https://search.bilibili.com/all?keyword=%E4%B9%90%E9%AB%98%E4%B9%90%E5%9B%AD%20%E6%80%AA%E5%85%BD%E8%83%BD%E9%87%8F%E8%A1%A5%E7%BB%99%E7%AB%99-%E5%B9%B4%E5%8D%A1%E4%B8%93%E5%B1%9E",
+          "returnedCandidates": 20
+        }
+      ],
+      "officialSource": "https://www.legolandshanghai.cn/spot/detail?id=407"
+    },
+    "45": {
+      "name": "驾驶学校",
+      "land": "乐高®城市",
+      "type": "骑乘",
+      "status": "matched",
+      "checkedAt": "2026-10-13",
+      "reason": "介绍驾校的小车、交规与驾驶证体验；本次4岁孩子选择初级驾驶学校。",
+      "queries": [
+        {
+          "query": "上海乐高乐园 初级驾驶学校",
+          "url": "https://search.bilibili.com/all?keyword=%E4%B8%8A%E6%B5%B7%E4%B9%90%E9%AB%98%E4%B9%90%E5%9B%AD%20%E5%88%9D%E7%BA%A7%E9%A9%BE%E9%A9%B6%E5%AD%A6%E6%A0%A1",
+          "returnedCandidates": 10
+        }
+      ],
+      "officialSource": "https://www.legolandshanghai.cn/spot/detail?id=45"
+    },
+    "54": {
+      "name": "沙滩派对",
+      "land": "乐高®好朋友",
+      "type": "景点",
+      "status": "matched",
+      "checkedAt": "2026-10-13",
+      "reason": "2025年好朋友区水上攀爬与滑道实拍；定位44:00。本次两天季节性关闭，视频不代表开放。",
+      "queries": [
+        {
+          "query": "乐高乐园 沙滩派对",
+          "url": "https://search.bilibili.com/all?keyword=%E4%B9%90%E9%AB%98%E4%B9%90%E5%9B%AD%20%E6%B2%99%E6%BB%A9%E6%B4%BE%E5%AF%B9",
+          "returnedCandidates": 20
+        }
+      ],
+      "officialSource": "https://www.legolandshanghai.cn/spot/detail?id=54"
+    },
+    "170": {
+      "name": "杰的重力训练营",
+      "land": "乐高®幻影忍者",
+      "type": "骑乘",
+      "status": "matched",
+      "checkedAt": "2026-10-13",
+      "reason": "查看转动与起伏；最低110 cm，本次已知102 cm不安排。",
+      "queries": [
+        {
+          "query": "上海乐高乐园 杰的重力训练营",
+          "url": "https://search.bilibili.com/all?keyword=%E4%B8%8A%E6%B5%B7%E4%B9%90%E9%AB%98%E4%B9%90%E5%9B%AD%20%E6%9D%B0%E7%9A%84%E9%87%8D%E5%8A%9B%E8%AE%AD%E7%BB%83%E8%90%A5",
+          "returnedCandidates": 10
+        }
+      ],
+      "officialSource": "https://www.legolandshanghai.cn/spot/detail?id=170"
+    },
+    "166": {
+      "name": "乐高®悟空小侠花果山冒险",
+      "land": "乐高®悟空小侠",
+      "type": "骑乘",
+      "status": "matched",
+      "checkedAt": "2026-10-13",
+      "reason": "2026年开放首日体验，仅说明水上玩法；10/17、10/18官网当前均列关闭。",
+      "queries": [
+        {
+          "query": "上海乐高乐园 花果山冒险",
+          "url": "https://search.bilibili.com/all?keyword=%E4%B8%8A%E6%B5%B7%E4%B9%90%E9%AB%98%E4%B9%90%E5%9B%AD%20%E8%8A%B1%E6%9E%9C%E5%B1%B1%E5%86%92%E9%99%A9",
+          "returnedCandidates": 10
+        }
+      ],
+      "officialSource": "https://www.legolandshanghai.cn/spot/detail?id=166"
+    },
+    "167": {
+      "name": "悟空小侠云霄历险",
+      "land": "乐高®悟空小侠",
+      "type": "骑乘",
+      "status": "matched",
+      "checkedAt": "2026-10-13",
+      "reason": "查看云霄历险的摆动与乘坐方式；最低120 cm，本次不安排。",
+      "queries": [
+        {
+          "query": "上海乐高乐园 云霄历险",
+          "url": "https://search.bilibili.com/all?keyword=%E4%B8%8A%E6%B5%B7%E4%B9%90%E9%AB%98%E4%B9%90%E5%9B%AD%20%E4%BA%91%E9%9C%84%E5%8E%86%E9%99%A9",
+          "returnedCandidates": 10
+        }
+      ],
+      "officialSource": "https://www.legolandshanghai.cn/spot/detail?id=167"
+    }
+  },
+  "accessLimitations": [
+    {
+      "platform": "小红书",
+      "query": "上海乐高乐园 拼搭",
+      "result": "公开访客搜索显示IP安全限制300012，未取得可核对结果；未尝试绕过限制。"
+    },
+    {
+      "platform": "抖音搜索",
+      "query": "上海乐高乐园 小怪兽",
+      "result": "公开搜索页未返回可读列表；已有准确片段来自可读取的公开单视频页面。"
+    },
+    {
+      "platform": "YouTube",
+      "url": "https://www.youtube.com/watch?v=m96VEPUXpYA",
+      "result": "能够核对标题、作者与拍摄日期，但后段播放器报错，未据其描述配入未看见的项目。"
+    }
+  ]
+}

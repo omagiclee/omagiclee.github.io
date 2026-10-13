@@ -23,8 +23,22 @@
 .dg-catalog-table-wrap { max-width: 100%; overflow-x: auto; border: 1px solid var(--dg-border); border-radius: 10px; }
 .disney-guide .dg-catalog-table-wrap > .table-wrapper { overflow: visible; border: 0; border-radius: 0; margin: 0; width: 100%; max-width: none; box-shadow: none; }
 .dg-table-hint { display: none; }
-.disney-guide .dg-catalog-table { --dg-order-width: 54px; display: table; table-layout: fixed; border-collapse: separate; border-spacing: 0; width: 100%; min-width: 940px !important; max-width: none !important; margin: 0; font-size: .8rem; line-height: 1.5; }
+.disney-guide .dg-catalog-table { --dg-order-width: 54px; display: table; table-layout: fixed; border-collapse: separate; border-spacing: 0; width: 100%; min-width: 1100px !important; max-width: none !important; margin: 0; font-size: .8rem; line-height: 1.5; }
 .dg-col-order { width: 54px; } .dg-col-project { width: 172px; } .dg-col-photo { width: 112px; }
+.dg-col-video { width: 154px; }
+.dg-video-guide { font-size: .8rem; color: var(--dg-muted); }
+.dg-video-play { display: inline-block; padding: .25rem .45rem; border: 1px solid var(--dg-border); border-radius: 5px; background: var(--dg-surface); font-weight: 700; }
+.dg-video-play:focus-visible { outline: 2px solid var(--dg-accent-strong); outline-offset: 3px; }
+.dg-video-meta, .dg-video-kind, .dg-video-note, .dg-video-fallback { display: block; margin-top: .25rem; font-size: .7rem; line-height: 1.5; color: var(--dg-muted); }
+.dg-video-pending { font-size: .72rem; color: var(--dg-muted); }
+.dg-wife-pick { display: block; width: fit-content; margin-bottom: .35rem; padding: .15rem .35rem; border: 1px solid #e2a5bd; border-radius: 4px; background: #fff0f5; color: #8b3158; font-size: .7rem; line-height: 1.45; }
+[theme="dark"] .dg-wife-pick { border-color: #89516a; background: #3b2634; color: #ffc0d8; }
+.dg-video-dialog { width: min(880px, calc(100vw - 2rem)); max-height: 90vh; overflow: auto; border: 1px solid var(--dg-border); border-radius: 12px; padding: 1.2rem; color: var(--dg-ink); background: var(--dg-surface); box-shadow: 0 20px 60px #0005; }
+.dg-video-dialog::backdrop { background: #0009; }
+.dg-video-player { clear: both; aspect-ratio: 16 / 9; background: #111; border-radius: 6px; overflow: hidden; }
+.dg-video-player iframe { display: block; width: 100%; height: 100%; border: 0; }
+.dg-video-title { font-size: .9rem; font-weight: 700; }
+.dg-video-context { font-size: .85rem; }
 .dg-col-description { width: auto; } .dg-col-requirement { width: 86px; } .dg-col-fit { width: 56px; } .dg-col-price { width: 116px; }
 .disney-guide .dg-catalog-table :is(th, td) { padding: .45rem .5rem; text-align: left; vertical-align: top; border: 0; border-bottom: 1px solid var(--dg-border); overflow-wrap: anywhere; color: var(--dg-ink); }
 .disney-guide .dg-catalog-table p { margin: 0 !important; }
@@ -60,7 +74,7 @@
 @media (max-width: 760px) {
   .disney-guide .dg-table-hint { display: block; color: var(--dg-muted); font-size: .72rem; margin: .3rem 0; }
   .dg-catalog-controls { grid-template-columns: repeat(2, minmax(0, 1fr)); padding: .65rem; }
-  .disney-guide .dg-catalog-table { --dg-order-width: 50px; min-width: 920px !important; }
+  .disney-guide .dg-catalog-table { --dg-order-width: 50px; min-width: 1080px !important; }
   .dg-col-order { width: 50px; } .dg-col-project { width: 145px; } .dg-col-photo { width: 104px; }
   .dg-col-requirement { width: 80px; } .dg-col-fit { width: 52px; } .dg-col-price { width: 112px; }
 }

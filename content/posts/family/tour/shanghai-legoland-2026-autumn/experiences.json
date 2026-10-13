@@ -1,0 +1,4006 @@
+{
+  "checkedAt": "2026-10-13",
+  "family": {
+    "adults": 2,
+    "children": 2,
+    "childAge": "4岁2个月",
+    "knownMinimumHeightCm": 102
+  },
+  "visitDates": [
+    "2026-10-17",
+    "2026-10-18"
+  ],
+  "coverage": "官网全目录206条中，骑乘24、景点8、拼搭18、演出25、季节活动20，共95条；保留不同位置和餐厅版本，排除餐厅、商店、服务点、卫生间与酒店条目。",
+  "items": [
+    {
+      "id": "163",
+      "officialId": 163,
+      "name": "初级驾驶学校",
+      "land": "乐高®城市",
+      "type": "骑乘",
+      "description": "3—5 岁儿童自己慢速驾驶小车，适合两个 4 岁孩子。",
+      "fit": "优先推荐",
+      "priority": "P0",
+      "reason": "适合本次年龄，优先体验；仍以现场规则与孩子意愿为准。",
+      "reasonShort": "适合本次年龄，优先体验；仍以现场规则与孩子意愿为准。",
+      "requirements": "3—5 岁儿童；每个座位一名儿童；家长在旁看护；官网列表最大体重 50 kg。达到数值仍须符合座位与现场乘坐须知。",
+      "requirementShort": "3—5 岁",
+      "feeLabel": "门票内常规体验",
+      "feeShort": "门票内常规体验",
+      "feeNote": "付费游戏、材料、商品及额外服务另核；不含餐饮。",
+      "quickPassText": "官网未标记支持乐捷通，不按快速通行项目计算。",
+      "quickPassShort": "未标记支持",
+      "notes": "可自控 | 平缓；儿童；室外",
+      "sourceUrls": [
+        "https://www.legolandshanghai.cn/spot/detail?id=163"
+      ],
+      "image": "images/catalog/163.webp",
+      "fullImage": "images/catalog/full/163.webp",
+      "imageSourceUrl": "https://tencent-web-1320474462.cos.ap-shanghai.myqcloud.com/2025-08-04/20250804105822924255.jpg",
+      "operatingStatusByDate": {
+        "2026-10-17": {
+          "label": "已列运营时段：10:00-19:00",
+          "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+          "publishedTimes": "10:00-19:00",
+          "memo": ""
+        },
+        "2026-10-18": {
+          "label": "已列运营时段：10:00-19:00",
+          "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+          "publishedTimes": "10:00-19:00",
+          "memo": ""
+        }
+      },
+      "visitNote": "",
+      "order": 1
+    },
+    {
+      "id": "245",
+      "officialId": 245,
+      "name": "迷你天地大探险",
+      "land": "乐高乐园®创想世界",
+      "type": "景点",
+      "description": "在室内微缩城市里找建筑、人物和互动点，前台可领取探索任务卡。",
+      "fit": "优先推荐",
+      "priority": "P0",
+      "reason": "适合本次年龄，优先体验；仍以现场规则与孩子意愿为准。",
+      "reasonShort": "适合本次年龄，优先体验；仍以现场规则与孩子意愿为准。",
+      "requirements": "未列统一最低身高；按具体体验的现场要求参与。达到数值仍须符合座位与现场乘坐须知。",
+      "requirementShort": "按现场规则",
+      "feeLabel": "门票内常规体验",
+      "feeShort": "门票内常规体验",
+      "feeNote": "付费游戏、材料、商品及额外服务另核；不含餐饮。",
+      "quickPassText": "官网未标记支持乐捷通，不按快速通行项目计算。",
+      "quickPassShort": "未标记支持",
+      "notes": "室内 | 雨天可玩",
+      "sourceUrls": [
+        "https://www.legolandshanghai.cn/spot/detail?id=245"
+      ],
+      "image": "images/catalog/245.webp",
+      "fullImage": "images/catalog/full/245.webp",
+      "imageSourceUrl": "https://tencent-web-1320474462.cos.ap-shanghai.myqcloud.com/2025-07-16/20250716215008902167.jpg",
+      "operatingStatusByDate": {
+        "2026-10-17": {
+          "label": "已列运营时段：10:00-11:30/13:30-14:30/15:30-16:30/17:00-18:00",
+          "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+          "publishedTimes": "10:00-11:30/13:30-14:30/15:30-16:30/17:00-18:00",
+          "memo": ""
+        },
+        "2026-10-18": {
+          "label": "已列运营时段：10:00-11:30/13:30-14:30/15:30-16:30/17:00-18:00",
+          "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+          "publishedTimes": "10:00-11:30/13:30-14:30/15:30-16:30/17:00-18:00",
+          "memo": ""
+        }
+      },
+      "visitNote": "",
+      "order": 2
+    },
+    {
+      "id": "191",
+      "officialId": 191,
+      "name": "乐高®创意工坊",
+      "land": "乐高乐园®创想世界",
+      "type": "拼搭体验",
+      "description": "按年龄预约拼搭课程，既有免费场次，也有付费主题课。",
+      "fit": "优先推荐",
+      "priority": "P0",
+      "reason": "适合本次年龄，优先体验；仍以现场规则与孩子意愿为准。",
+      "reasonShort": "适合本次年龄，优先体验；仍以现场规则与孩子意愿为准。",
+      "requirements": "入园后在官方 App／小程序预约；2—5 岁儿童须有成人陪同；选择对应年龄场次；免费与付费场次分别核对。达到数值仍须符合座位与现场乘坐须知。",
+      "requirementShort": "2—5 岁须陪同",
+      "feeLabel": "免费／付费课",
+      "feeShort": "免费／付费课",
+      "feeNote": "免费课须预约；月球探险家体验券官网 ¥198 起，建议 5—16 岁，本次 4 岁不预购。",
+      "quickPassText": "官网未标记支持乐捷通，不按快速通行项目计算。",
+      "quickPassShort": "未标记支持",
+      "notes": "室内",
+      "sourceUrls": [
+        "https://www.legolandshanghai.cn/spot/detail?id=191"
+      ],
+      "image": "images/catalog/191.webp",
+      "fullImage": "images/catalog/full/191.webp",
+      "imageSourceUrl": "https://tencent-web-1320474462.cos.ap-shanghai.myqcloud.com/2026-04-16/20260416200820785943.jpg",
+      "operatingStatusByDate": {
+        "2026-10-17": {
+          "label": "已列运营时段：10:00-19:00",
+          "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+          "publishedTimes": "10:00-19:00",
+          "memo": ""
+        },
+        "2026-10-18": {
+          "label": "场次／开放时间尚未列出",
+          "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+          "publishedTimes": null,
+          "memo": ""
+        }
+      },
+      "visitNote": "",
+      "order": 3
+    },
+    {
+      "id": "146",
+      "officialId": 146,
+      "name": "4D影院",
+      "land": "乐高®城市",
+      "type": "演出",
+      "description": "室内 4D 电影，有立体画面、音响及环境特效，怕声光可退出。",
+      "fit": "优先推荐",
+      "priority": "P0",
+      "reason": "适合本次年龄，优先体验；仍以现场规则与孩子意愿为准。",
+      "reasonShort": "适合本次年龄，优先体验；仍以现场规则与孩子意愿为准。",
+      "requirements": "未列统一最低身高；按具体体验的现场要求参与。达到数值仍须符合座位与现场乘坐须知。",
+      "requirementShort": "按现场规则",
+      "feeLabel": "门票内常规体验",
+      "feeShort": "门票内常规体验",
+      "feeNote": "付费游戏、材料、商品及额外服务另核；不含餐饮。",
+      "quickPassText": "官网未标记支持乐捷通，不按快速通行项目计算。",
+      "quickPassShort": "未标记支持",
+      "notes": "4D特效 | 剧场观赏；室内",
+      "sourceUrls": [
+        "https://www.legolandshanghai.cn/spot/detail?id=146"
+      ],
+      "image": "images/catalog/146.webp",
+      "fullImage": "images/catalog/full/146.webp",
+      "imageSourceUrl": "https://tencent-web-1320474462.cos.ap-shanghai.myqcloud.com/2025-07-13/20250713180158915110.jpg",
+      "operatingStatusByDate": {
+        "2026-10-17": {
+          "label": "已列场次：11:40/12:20/13:00/13:40/14:20/15:00/15:40/16:20/17:00/17:40/18:20",
+          "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+          "publishedTimes": "11:40/12:20/13:00/13:40/14:20/15:00/15:40/16:20/17:00/17:40/18:20",
+          "memo": ""
+        },
+        "2026-10-18": {
+          "label": "已列场次：11:40/12:20/13:00/13:40/14:20/15:00/15:40/16:20/17:00/17:40/18:20",
+          "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+          "publishedTimes": "11:40/12:20/13:00/13:40/14:20/15:00/15:40/16:20/17:00/17:40/18:20",
+          "memo": ""
+        }
+      },
+      "visitNote": "两天场次已列",
+      "order": 4
+    },
+    {
+      "id": "150",
+      "officialId": 150,
+      "name": "剧场-乐高®悟空小侠现场秀《花果山降魔》",
+      "land": "奇趣积木城！",
+      "type": "演出",
+      "description": "室内剧场演出，悟空小侠对抗牛魔王，结合投影与现场舞台效果。",
+      "fit": "优先推荐",
+      "priority": "P0",
+      "reason": "适合本次年龄，优先体验；仍以现场规则与孩子意愿为准。",
+      "reasonShort": "适合本次年龄，优先体验；仍以现场规则与孩子意愿为准。",
+      "requirements": "未列统一最低身高；按具体体验的现场要求参与。达到数值仍须符合座位与现场乘坐须知。",
+      "requirementShort": "按现场规则",
+      "feeLabel": "门票内常规体验",
+      "feeShort": "门票内常规体验",
+      "feeNote": "付费游戏、材料、商品及额外服务另核；不含餐饮。",
+      "quickPassText": "官网未标记支持乐捷通，不按快速通行项目计算。",
+      "quickPassShort": "未标记支持",
+      "notes": "剧场观赏；室内",
+      "sourceUrls": [
+        "https://www.legolandshanghai.cn/spot/detail?id=150"
+      ],
+      "image": "images/catalog/150.webp",
+      "fullImage": "images/catalog/full/150.webp",
+      "imageSourceUrl": "https://tencent-web-1320474462.cos.ap-shanghai.myqcloud.com/2025-08-05/20250805100615449589.jpg",
+      "operatingStatusByDate": {
+        "2026-10-17": {
+          "label": "场次／开放时间尚未列出",
+          "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+          "publishedTimes": null,
+          "memo": ""
+        },
+        "2026-10-18": {
+          "label": "场次／开放时间尚未列出",
+          "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+          "publishedTimes": null,
+          "memo": ""
+        }
+      },
+      "visitNote": "",
+      "order": 5
+    },
+    {
+      "id": "405",
+      "officialId": 405,
+      "name": "怪兽能量补给站（乐高®城堡）",
+      "land": "乐高®城堡",
+      "type": "小怪兽大派对",
+      "description": "城堡区固定讨糖点，可查询糖果情报站的隐藏点位。",
+      "fit": "优先推荐",
+      "priority": "P0",
+      "reason": "适合本次年龄，优先体验；仍以现场规则与孩子意愿为准。",
+      "reasonShort": "适合本次年龄，优先体验；仍以现场规则与孩子意愿为准。",
+      "requirements": "未列统一最低身高；按具体体验的现场要求参与。达到数值仍须符合座位与现场乘坐须知。",
+      "requirementShort": "按现场规则",
+      "feeLabel": "门票内常规体验",
+      "feeShort": "门票内常规体验",
+      "feeNote": "付费游戏、材料、商品及额外服务另核；不含餐饮。",
+      "quickPassText": "官网未标记支持乐捷通，不按快速通行项目计算。",
+      "quickPassShort": "未标记支持",
+      "notes": "互动体验",
+      "sourceUrls": [
+        "https://www.legolandshanghai.cn/spot/detail?id=405"
+      ],
+      "image": "images/catalog/405.webp",
+      "fullImage": "images/catalog/full/405.webp",
+      "imageSourceUrl": "https://tencent-web-1320474462.cos.ap-shanghai.myqcloud.com/2026-09-28/20260928143902940783.jpg",
+      "operatingStatusByDate": {
+        "2026-10-17": {
+          "label": "场次／开放时间尚未列出",
+          "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+          "publishedTimes": null,
+          "memo": ""
+        },
+        "2026-10-18": {
+          "label": "场次／开放时间尚未列出",
+          "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+          "publishedTimes": null,
+          "memo": ""
+        }
+      },
+      "visitNote": "",
+      "order": 6
+    },
+    {
+      "id": "30",
+      "officialId": 30,
+      "name": "警察总部",
+      "land": "乐高®城市",
+      "type": "拼搭体验",
+      "description": "警察主题拼搭与互动，适合喜欢车辆和职业角色的孩子。",
+      "fit": "优先推荐",
+      "priority": "P0",
+      "reason": "适合本次年龄，优先体验；仍以现场规则与孩子意愿为准。",
+      "reasonShort": "适合本次年龄，优先体验；仍以现场规则与孩子意愿为准。",
+      "requirements": "未列统一最低身高；按具体体验的现场要求参与。达到数值仍须符合座位与现场乘坐须知。",
+      "requirementShort": "按现场规则",
+      "feeLabel": "门票内常规体验",
+      "feeShort": "门票内常规体验",
+      "feeNote": "付费游戏、材料、商品及额外服务另核；不含餐饮。",
+      "quickPassText": "官网未标记支持乐捷通，不按快速通行项目计算。",
+      "quickPassShort": "未标记支持",
+      "notes": "室内",
+      "sourceUrls": [
+        "https://www.legolandshanghai.cn/spot/detail?id=30"
+      ],
+      "image": "images/catalog/30.webp",
+      "fullImage": "images/catalog/full/30.webp",
+      "imageSourceUrl": "https://tencent-web-1320474462.cos.ap-shanghai.myqcloud.com/2026-02-10/20260210210043822962.jpg",
+      "operatingStatusByDate": {
+        "2026-10-17": {
+          "label": "已列运营时段：10:00-19:00",
+          "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+          "publishedTimes": "10:00-19:00",
+          "memo": ""
+        },
+        "2026-10-18": {
+          "label": "已列运营时段：10:00-19:00",
+          "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+          "publishedTimes": "10:00-19:00",
+          "memo": ""
+        }
+      },
+      "visitNote": "",
+      "order": 7
+    },
+    {
+      "id": "161",
+      "officialId": 161,
+      "name": "乐高®城市火车站",
+      "land": "乐高®城市",
+      "type": "骑乘",
+      "description": "城市主题小火车，穿行场景，可用来放缓节奏。",
+      "fit": "优先推荐",
+      "priority": "P0",
+      "reason": "适合本次年龄，优先体验；仍以现场规则与孩子意愿为准。",
+      "reasonShort": "适合本次年龄，优先体验；仍以现场规则与孩子意愿为准。",
+      "requirements": "官网未列最低身高数值；身高不足110厘米的游客，必须由16周岁及以上且符合其他所有景点乘坐要求的看护人员陪同乘坐。达到数值仍须符合座位与现场乘坐须知。",
+      "requirementShort": "按现场规则",
+      "feeLabel": "门票内常规体验",
+      "feeShort": "门票内常规体验",
+      "feeNote": "付费游戏、材料、商品及额外服务另核；不含餐饮。",
+      "quickPassText": "官网支持乐捷通；单项产品 ¥48 起仅为产品入口起价，本项目10/17、10/18价格与库存未取得。",
+      "quickPassShort": "支持 · 实价待查",
+      "notes": "平缓；儿童 | 青少年 | 成人 | 老年人；室外",
+      "sourceUrls": [
+        "https://www.legolandshanghai.cn/spot/detail?id=161"
+      ],
+      "image": "images/catalog/161.webp",
+      "fullImage": "images/catalog/full/161.webp",
+      "imageSourceUrl": "https://tencent-web-1320474462.cos.ap-shanghai.myqcloud.com/2025-07-13/20250713183859805595.jpg",
+      "operatingStatusByDate": {
+        "2026-10-17": {
+          "label": "已列运营时段：10:00-19:00",
+          "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+          "publishedTimes": "10:00-19:00",
+          "memo": ""
+        },
+        "2026-10-18": {
+          "label": "已列运营时段：10:00-19:00",
+          "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+          "publishedTimes": "10:00-19:00",
+          "memo": ""
+        }
+      },
+      "visitNote": "",
+      "order": 8
+    },
+    {
+      "id": "406",
+      "officialId": 406,
+      "name": "怪兽能量补给站（乐高®城市）",
+      "land": "乐高®城市",
+      "type": "小怪兽大派对",
+      "description": "城市区固定讨糖点，可顺路领取糖果。",
+      "fit": "优先推荐",
+      "priority": "P0",
+      "reason": "适合本次年龄，优先体验；仍以现场规则与孩子意愿为准。",
+      "reasonShort": "适合本次年龄，优先体验；仍以现场规则与孩子意愿为准。",
+      "requirements": "未列统一最低身高；按具体体验的现场要求参与。达到数值仍须符合座位与现场乘坐须知。",
+      "requirementShort": "按现场规则",
+      "feeLabel": "门票内常规体验",
+      "feeShort": "门票内常规体验",
+      "feeNote": "付费游戏、材料、商品及额外服务另核；不含餐饮。",
+      "quickPassText": "官网未标记支持乐捷通，不按快速通行项目计算。",
+      "quickPassShort": "未标记支持",
+      "notes": "互动体验",
+      "sourceUrls": [
+        "https://www.legolandshanghai.cn/spot/detail?id=406"
+      ],
+      "image": "images/catalog/406.webp",
+      "fullImage": "images/catalog/full/406.webp",
+      "imageSourceUrl": "https://tencent-web-1320474462.cos.ap-shanghai.myqcloud.com/2026-09-28/20260928143918354257.jpg",
+      "operatingStatusByDate": {
+        "2026-10-17": {
+          "label": "场次／开放时间尚未列出",
+          "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+          "publishedTimes": null,
+          "memo": ""
+        },
+        "2026-10-18": {
+          "label": "场次／开放时间尚未列出",
+          "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+          "publishedTimes": null,
+          "memo": ""
+        }
+      },
+      "visitNote": "",
+      "order": 9
+    },
+    {
+      "id": "28",
+      "officialId": 28,
+      "name": "拼搭宝殿",
+      "land": "乐高®悟空小侠",
+      "type": "拼搭体验",
+      "description": "悟空小侠主题拼搭空间，可作为安静停留点。",
+      "fit": "优先推荐",
+      "priority": "P0",
+      "reason": "适合本次年龄，优先体验；仍以现场规则与孩子意愿为准。",
+      "reasonShort": "适合本次年龄，优先体验；仍以现场规则与孩子意愿为准。",
+      "requirements": "未列统一最低身高；按具体体验的现场要求参与。达到数值仍须符合座位与现场乘坐须知。",
+      "requirementShort": "按现场规则",
+      "feeLabel": "门票内常规体验",
+      "feeShort": "门票内常规体验",
+      "feeNote": "付费游戏、材料、商品及额外服务另核；不含餐饮。",
+      "quickPassText": "官网未标记支持乐捷通，不按快速通行项目计算。",
+      "quickPassShort": "未标记支持",
+      "notes": "室内",
+      "sourceUrls": [
+        "https://www.legolandshanghai.cn/spot/detail?id=28"
+      ],
+      "image": "images/catalog/28.webp",
+      "fullImage": "images/catalog/full/28.webp",
+      "imageSourceUrl": "https://tencent-web-1320474462.cos.ap-shanghai.myqcloud.com/2026-04-16/20260416210540375469.jpg",
+      "operatingStatusByDate": {
+        "2026-10-17": {
+          "label": "已列运营时段：10:00-19:00",
+          "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+          "publishedTimes": "10:00-19:00",
+          "memo": ""
+        },
+        "2026-10-18": {
+          "label": "已列运营时段：10:00-19:00",
+          "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+          "publishedTimes": "10:00-19:00",
+          "memo": ""
+        }
+      },
+      "visitNote": "",
+      "order": 10
+    },
+    {
+      "id": "8",
+      "officialId": 8,
+      "name": "城市建筑师",
+      "land": "乐高乐园®创想世界",
+      "type": "拼搭体验",
+      "description": "拼搭建筑与城市，适合一起讨论和合作。",
+      "fit": "优先推荐",
+      "priority": "P0",
+      "reason": "适合本次年龄，优先体验；仍以现场规则与孩子意愿为准。",
+      "reasonShort": "适合本次年龄，优先体验；仍以现场规则与孩子意愿为准。",
+      "requirements": "未列统一最低身高；按具体体验的现场要求参与。达到数值仍须符合座位与现场乘坐须知。",
+      "requirementShort": "按现场规则",
+      "feeLabel": "门票内常规体验",
+      "feeShort": "门票内常规体验",
+      "feeNote": "付费游戏、材料、商品及额外服务另核；不含餐饮。",
+      "quickPassText": "官网未标记支持乐捷通，不按快速通行项目计算。",
+      "quickPassShort": "未标记支持",
+      "notes": "室内",
+      "sourceUrls": [
+        "https://www.legolandshanghai.cn/spot/detail?id=8"
+      ],
+      "image": "images/catalog/8.webp",
+      "fullImage": "images/catalog/full/8.webp",
+      "imageSourceUrl": "https://tencent-web-1320474462.cos.ap-shanghai.myqcloud.com/2025-07-07/20250707105415551442.jpg",
+      "operatingStatusByDate": {
+        "2026-10-17": {
+          "label": "已列运营时段：10:00-19:00",
+          "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+          "publishedTimes": "10:00-19:00",
+          "memo": ""
+        },
+        "2026-10-18": {
+          "label": "已列运营时段：10:00-19:00",
+          "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+          "publishedTimes": "10:00-19:00",
+          "memo": ""
+        }
+      },
+      "visitNote": "",
+      "order": 11
+    },
+    {
+      "id": "9",
+      "officialId": 9,
+      "name": "赛车",
+      "land": "乐高乐园®创想世界",
+      "type": "拼搭体验",
+      "description": "拼搭赛车并测试自己的作品。",
+      "fit": "优先推荐",
+      "priority": "P0",
+      "reason": "适合本次年龄，优先体验；仍以现场规则与孩子意愿为准。",
+      "reasonShort": "适合本次年龄，优先体验；仍以现场规则与孩子意愿为准。",
+      "requirements": "未列统一最低身高；按具体体验的现场要求参与。达到数值仍须符合座位与现场乘坐须知。",
+      "requirementShort": "按现场规则",
+      "feeLabel": "门票内常规体验",
+      "feeShort": "门票内常规体验",
+      "feeNote": "付费游戏、材料、商品及额外服务另核；不含餐饮。",
+      "quickPassText": "官网未标记支持乐捷通，不按快速通行项目计算。",
+      "quickPassShort": "未标记支持",
+      "notes": "室内",
+      "sourceUrls": [
+        "https://www.legolandshanghai.cn/spot/detail?id=9"
+      ],
+      "image": "images/catalog/9.webp",
+      "fullImage": "images/catalog/full/9.webp",
+      "imageSourceUrl": "https://tencent-web-1320474462.cos.ap-shanghai.myqcloud.com/2025-07-07/20250707105528237920.jpg",
+      "operatingStatusByDate": {
+        "2026-10-17": {
+          "label": "已列运营时段：10:00-19:00",
+          "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+          "publishedTimes": "10:00-19:00",
+          "memo": ""
+        },
+        "2026-10-18": {
+          "label": "已列运营时段：10:00-19:00",
+          "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+          "publishedTimes": "10:00-19:00",
+          "memo": ""
+        }
+      },
+      "visitNote": "",
+      "order": 12
+    },
+    {
+      "id": "219",
+      "officialId": 219,
+      "name": "迷你天地导览服务",
+      "land": "乐高乐园®创想世界",
+      "type": "景点",
+      "description": "听工作人员介绍微缩城市和建筑细节；官网介绍约 30 分钟。",
+      "fit": "优先推荐",
+      "priority": "P0",
+      "reason": "适合本次年龄，优先体验；仍以现场规则与孩子意愿为准。",
+      "reasonShort": "适合本次年龄，优先体验；仍以现场规则与孩子意愿为准。",
+      "requirements": "未列统一最低身高；按具体体验的现场要求参与。达到数值仍须符合座位与现场乘坐须知。",
+      "requirementShort": "按现场规则",
+      "feeLabel": "门票内常规体验",
+      "feeShort": "门票内常规体验",
+      "feeNote": "付费游戏、材料、商品及额外服务另核；不含餐饮。",
+      "quickPassText": "官网未标记支持乐捷通，不按快速通行项目计算。",
+      "quickPassShort": "未标记支持",
+      "notes": "室内",
+      "sourceUrls": [
+        "https://www.legolandshanghai.cn/spot/detail?id=219"
+      ],
+      "image": "images/catalog/219.webp",
+      "fullImage": "images/catalog/full/219.webp",
+      "imageSourceUrl": "https://tencent-web-1320474462.cos.ap-shanghai.myqcloud.com/2025-05-17/20250517103919156299.jpg",
+      "operatingStatusByDate": {
+        "2026-10-17": {
+          "label": "已列场次：11:30/14:30/16:30",
+          "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+          "publishedTimes": "11:30/14:30/16:30",
+          "memo": ""
+        },
+        "2026-10-18": {
+          "label": "已列场次：11:30/14:30/16:30",
+          "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+          "publishedTimes": "11:30/14:30/16:30",
+          "memo": ""
+        }
+      },
+      "visitNote": "",
+      "order": 13
+    },
+    {
+      "id": "36",
+      "officialId": 36,
+      "name": "旋转积木派对",
+      "land": "奇趣积木城！",
+      "type": "骑乘",
+      "description": "积木动物和车辆造型的旋转木马，作为温和乘骑备选。",
+      "fit": "优先推荐",
+      "priority": "P0",
+      "reason": "适合本次年龄，优先体验；仍以现场规则与孩子意愿为准。",
+      "reasonShort": "适合本次年龄，优先体验；仍以现场规则与孩子意愿为准。",
+      "requirements": "最低身高 70 cm；游客独自乘坐的最低身高要求为120厘米；身高介于70厘米和120厘米之间的游客，必须由16周岁及以上且符合其他所有景点乘坐要求的看护人员陪同乘坐。达到数值仍须符合座位与现场乘坐须知。",
+      "requirementShort": "≥70 cm",
+      "feeLabel": "门票内常规体验",
+      "feeShort": "门票内常规体验",
+      "feeNote": "付费游戏、材料、商品及额外服务另核；不含餐饮。",
+      "quickPassText": "官网支持乐捷通；单项产品 ¥48 起仅为产品入口起价，本项目10/17、10/18价格与库存未取得。",
+      "quickPassShort": "支持 · 实价待查",
+      "notes": "旋转；儿童 | 青少年 | 成人 | 老年人；室外",
+      "sourceUrls": [
+        "https://www.legolandshanghai.cn/spot/detail?id=36"
+      ],
+      "image": "images/catalog/36.webp",
+      "fullImage": "images/catalog/full/36.webp",
+      "imageSourceUrl": "https://tencent-web-1320474462.cos.ap-shanghai.myqcloud.com/2025-07-13/20250713211948786610.jpg",
+      "operatingStatusByDate": {
+        "2026-10-17": {
+          "label": "已列运营时段：10:00-19:00",
+          "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+          "publishedTimes": "10:00-19:00",
+          "memo": ""
+        },
+        "2026-10-18": {
+          "label": "已列运营时段：10:00-19:00",
+          "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+          "publishedTimes": "10:00-19:00",
+          "memo": ""
+        }
+      },
+      "visitNote": "",
+      "order": 14
+    },
+    {
+      "id": "37",
+      "officialId": 37,
+      "name": "得宝®快车",
+      "land": "奇趣积木城！",
+      "type": "骑乘",
+      "description": "得宝数字主题小列车，适合低龄儿童。",
+      "fit": "优先推荐",
+      "priority": "P0",
+      "reason": "适合本次年龄，优先体验；仍以现场规则与孩子意愿为准。",
+      "reasonShort": "适合本次年龄，优先体验；仍以现场规则与孩子意愿为准。",
+      "requirements": "官网未列最低身高数值；年龄不足2周岁的游客，必须由16周岁及以上且符合其他所有景点乘坐要求的看护人员陪同乘坐。达到数值仍须符合座位与现场乘坐须知。",
+      "requirementShort": "按现场规则",
+      "feeLabel": "门票内常规体验",
+      "feeShort": "门票内常规体验",
+      "feeNote": "付费游戏、材料、商品及额外服务另核；不含餐饮。",
+      "quickPassText": "官网未标记支持乐捷通，不按快速通行项目计算。",
+      "quickPassShort": "未标记支持",
+      "notes": "平缓；儿童 | 青少年 | 成人 | 老年人；室外",
+      "sourceUrls": [
+        "https://www.legolandshanghai.cn/spot/detail?id=37"
+      ],
+      "image": "images/catalog/37.webp",
+      "fullImage": "images/catalog/full/37.webp",
+      "imageSourceUrl": "https://tencent-web-1320474462.cos.ap-shanghai.myqcloud.com/2025-07-07/20250707103758231225.jpg",
+      "operatingStatusByDate": {
+        "2026-10-17": {
+          "label": "已列运营时段：10:00-19:00",
+          "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+          "publishedTimes": "10:00-19:00",
+          "memo": ""
+        },
+        "2026-10-18": {
+          "label": "已列运营时段：10:00-19:00",
+          "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+          "publishedTimes": "10:00-19:00",
+          "memo": ""
+        }
+      },
+      "visitNote": "",
+      "order": 15
+    },
+    {
+      "id": "25",
+      "officialId": 25,
+      "name": "拼砌者公会",
+      "land": "乐高®城堡",
+      "type": "拼搭体验",
+      "description": "城堡主题拼搭空间，按兴趣自由停留。",
+      "fit": "适合备选",
+      "priority": "P1",
+      "reason": "按兴趣和所在园区顺路选择，不增加跨区赶场。",
+      "reasonShort": "按兴趣和所在园区顺路选择，不增加跨区赶场。",
+      "requirements": "未列统一最低身高；按具体体验的现场要求参与。达到数值仍须符合座位与现场乘坐须知。",
+      "requirementShort": "按现场规则",
+      "feeLabel": "门票内常规体验",
+      "feeShort": "门票内常规体验",
+      "feeNote": "付费游戏、材料、商品及额外服务另核；不含餐饮。",
+      "quickPassText": "官网未标记支持乐捷通，不按快速通行项目计算。",
+      "quickPassShort": "未标记支持",
+      "notes": "室内",
+      "sourceUrls": [
+        "https://www.legolandshanghai.cn/spot/detail?id=25"
+      ],
+      "image": "images/catalog/25.webp",
+      "fullImage": "images/catalog/full/25.webp",
+      "imageSourceUrl": "https://tencent-web-1320474462.cos.ap-shanghai.myqcloud.com/2025-06-18/20250618151542702053.jpg",
+      "operatingStatusByDate": {
+        "2026-10-17": {
+          "label": "已列运营时段：10:00-19:00",
+          "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+          "publishedTimes": "10:00-19:00",
+          "memo": ""
+        },
+        "2026-10-18": {
+          "label": "已列运营时段：10:00-19:00",
+          "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+          "publishedTimes": "10:00-19:00",
+          "memo": ""
+        }
+      },
+      "visitNote": "",
+      "order": 16
+    },
+    {
+      "id": "143",
+      "officialId": 143,
+      "name": "得宝®大积木天地（乐高®城堡）",
+      "land": "乐高®城堡",
+      "type": "拼搭体验",
+      "description": "大积木搭建、攀爬与滑行空间，家长在旁看护；室内区域按规定脱鞋穿袜。",
+      "fit": "适合备选",
+      "priority": "P1",
+      "reason": "按兴趣和所在园区顺路选择，不增加跨区赶场。",
+      "reasonShort": "按兴趣和所在园区顺路选择，不增加跨区赶场。",
+      "requirements": "未列统一最低身高；按具体体验的现场要求参与；家长持续看护；室内脱鞋穿袜，室外穿鞋。达到数值仍须符合座位与现场乘坐须知。",
+      "requirementShort": "按现场规则",
+      "feeLabel": "门票内常规体验",
+      "feeShort": "门票内常规体验",
+      "feeNote": "付费游戏、材料、商品及额外服务另核；不含餐饮。",
+      "quickPassText": "官网未标记支持乐捷通，不按快速通行项目计算。",
+      "quickPassShort": "未标记支持",
+      "notes": "室内",
+      "sourceUrls": [
+        "https://www.legolandshanghai.cn/spot/detail?id=143"
+      ],
+      "image": "images/catalog/143.webp",
+      "fullImage": "images/catalog/full/143.webp",
+      "imageSourceUrl": "https://tencent-web-1320474462.cos.ap-shanghai.myqcloud.com/2025-07-07/20250707111714254208.jpg",
+      "operatingStatusByDate": {
+        "2026-10-17": {
+          "label": "已列运营时段：10:00-19:00",
+          "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+          "publishedTimes": "10:00-19:00",
+          "memo": ""
+        },
+        "2026-10-18": {
+          "label": "已列运营时段：10:00-19:00",
+          "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+          "publishedTimes": "10:00-19:00",
+          "memo": ""
+        }
+      },
+      "visitNote": "",
+      "order": 17
+    },
+    {
+      "id": "174",
+      "officialId": 174,
+      "name": "巫师飞行器",
+      "land": "乐高®城堡",
+      "type": "骑乘",
+      "description": "旋转与升降的飞行器体验，适合愿意尝试轻度刺激的孩子。",
+      "fit": "适合备选",
+      "priority": "P1",
+      "reason": "按兴趣和所在园区顺路选择，不增加跨区赶场。",
+      "reasonShort": "按兴趣和所在园区顺路选择，不增加跨区赶场。",
+      "requirements": "最低身高 90 cm；最低年龄 4 岁；体重上限 110 kg；身高介于90厘米和120厘米之间的游客，必须由看护人员陪同乘坐。（看护人员的定义是年龄在16周岁及以上且符合其他所有景点乘坐要求的人员）；游客乘坐的最大体重限制为110公斤；每个乘客舱最大承重为115公斤；游客独自乘坐的最低身高要求为120厘米。达到数值仍须符合座位与现场乘坐须知。",
+      "requirementShort": "≥90 cm／≥4 岁",
+      "feeLabel": "门票内常规体验",
+      "feeShort": "门票内常规体验",
+      "feeNote": "付费游戏、材料、商品及额外服务另核；不含餐饮。",
+      "quickPassText": "官网支持乐捷通；单项产品 ¥48 起仅为产品入口起价，本项目10/17、10/18价格与库存未取得。",
+      "quickPassShort": "支持 · 实价待查",
+      "notes": "可自控 | 旋转；青少年 | 儿童 | 成人 | 老年人；室外",
+      "sourceUrls": [
+        "https://www.legolandshanghai.cn/spot/detail?id=174"
+      ],
+      "image": "images/catalog/174.webp",
+      "fullImage": "images/catalog/full/174.webp",
+      "imageSourceUrl": "https://tencent-web-1320474462.cos.ap-shanghai.myqcloud.com/2025-06-18/20250618150412872704.jpg",
+      "operatingStatusByDate": {
+        "2026-10-17": {
+          "label": "已列运营时段：10:00-19:00",
+          "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+          "publishedTimes": "10:00-19:00",
+          "memo": ""
+        },
+        "2026-10-18": {
+          "label": "已列运营时段：10:00-19:00",
+          "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+          "publishedTimes": "10:00-19:00",
+          "memo": ""
+        }
+      },
+      "visitNote": "",
+      "order": 18
+    },
+    {
+      "id": "175",
+      "officialId": 175,
+      "name": "皇家竞技场",
+      "land": "乐高®城堡",
+      "type": "骑乘",
+      "description": "骑乘与骑士主题互动，现场确认座位和陪同要求。",
+      "fit": "适合备选",
+      "priority": "P1",
+      "reason": "按兴趣和所在园区顺路选择，不增加跨区赶场。",
+      "reasonShort": "按兴趣和所在园区顺路选择，不增加跨区赶场。",
+      "requirements": "最低身高 91 cm；体重上限 100 kg。达到数值仍须符合座位与现场乘坐须知。",
+      "requirementShort": "≥91 cm",
+      "feeLabel": "门票内常规体验",
+      "feeShort": "门票内常规体验",
+      "feeNote": "付费游戏、材料、商品及额外服务另核；不含餐饮。",
+      "quickPassText": "官网支持乐捷通；单项产品 ¥48 起仅为产品入口起价，本项目10/17、10/18价格与库存未取得。",
+      "quickPassShort": "支持 · 实价待查",
+      "notes": "平缓；儿童 | 青少年；室外",
+      "sourceUrls": [
+        "https://www.legolandshanghai.cn/spot/detail?id=175"
+      ],
+      "image": "images/catalog/175.webp",
+      "fullImage": "images/catalog/full/175.webp",
+      "imageSourceUrl": "https://tencent-web-1320474462.cos.ap-shanghai.myqcloud.com/2025-06-12/20250612163742392827.jpg",
+      "operatingStatusByDate": {
+        "2026-10-17": {
+          "label": "已列运营时段：10:00-19:00",
+          "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+          "publishedTimes": "10:00-19:00",
+          "memo": ""
+        },
+        "2026-10-18": {
+          "label": "已列运营时段：10:00-19:00",
+          "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+          "publishedTimes": "10:00-19:00",
+          "memo": ""
+        }
+      },
+      "visitNote": "",
+      "order": 19
+    },
+    {
+      "id": "279",
+      "officialId": 279,
+      "name": "小怪兽巡逻队",
+      "land": "乐高®城堡",
+      "type": "小怪兽大派对",
+      "description": "流动怪兽角色与游客互动，依当天路线偶遇。",
+      "fit": "适合备选",
+      "priority": "P1",
+      "reason": "按兴趣和所在园区顺路选择，不增加跨区赶场。",
+      "reasonShort": "按兴趣和所在园区顺路选择，不增加跨区赶场。",
+      "requirements": "未列统一最低身高；按具体体验的现场要求参与。达到数值仍须符合座位与现场乘坐须知。",
+      "requirementShort": "按现场规则",
+      "feeLabel": "门票内常规体验",
+      "feeShort": "门票内常规体验",
+      "feeNote": "付费游戏、材料、商品及额外服务另核；不含餐饮。",
+      "quickPassText": "官网未标记支持乐捷通，不按快速通行项目计算。",
+      "quickPassShort": "未标记支持",
+      "notes": "限定演出",
+      "sourceUrls": [
+        "https://www.legolandshanghai.cn/spot/detail?id=279"
+      ],
+      "image": "images/catalog/279.webp",
+      "fullImage": "images/catalog/full/279.webp",
+      "imageSourceUrl": "https://tencent-web-1320474462.cos.ap-shanghai.myqcloud.com/2026-09-29/20260929101650760176.jpg",
+      "operatingStatusByDate": {
+        "2026-10-17": {
+          "label": "场次／开放时间尚未列出",
+          "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+          "publishedTimes": null,
+          "memo": ""
+        },
+        "2026-10-18": {
+          "label": "场次／开放时间尚未列出",
+          "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+          "publishedTimes": null,
+          "memo": ""
+        }
+      },
+      "visitNote": "",
+      "order": 20
+    },
+    {
+      "id": "389",
+      "officialId": 389,
+      "name": "【日常活动】拼砌者公会·极速拼搭",
+      "land": "乐高®城堡",
+      "type": "演出",
+      "description": "城堡拼搭空间里的限时拼搭挑战。",
+      "fit": "适合备选",
+      "priority": "P1",
+      "reason": "按兴趣和所在园区顺路选择，不增加跨区赶场。",
+      "reasonShort": "按兴趣和所在园区顺路选择，不增加跨区赶场。",
+      "requirements": "未列统一最低身高；按具体体验的现场要求参与。达到数值仍须符合座位与现场乘坐须知。",
+      "requirementShort": "按现场规则",
+      "feeLabel": "门票内常规体验",
+      "feeShort": "门票内常规体验",
+      "feeNote": "付费游戏、材料、商品及额外服务另核；不含餐饮。",
+      "quickPassText": "官网未标记支持乐捷通，不按快速通行项目计算。",
+      "quickPassShort": "未标记支持",
+      "notes": "趣味游戏；室内",
+      "sourceUrls": [
+        "https://www.legolandshanghai.cn/spot/detail?id=389"
+      ],
+      "image": "images/catalog/389.webp",
+      "fullImage": "images/catalog/full/389.webp",
+      "imageSourceUrl": "https://tencent-web-1320474462.cos.ap-shanghai.myqcloud.com/2026-07-27/20260727110208677207.jpg",
+      "operatingStatusByDate": {
+        "2026-10-17": {
+          "label": "场次／开放时间尚未列出",
+          "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+          "publishedTimes": null,
+          "memo": ""
+        },
+        "2026-10-18": {
+          "label": "场次／开放时间尚未列出",
+          "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+          "publishedTimes": null,
+          "memo": ""
+        }
+      },
+      "visitNote": "",
+      "order": 21
+    },
+    {
+      "id": "397",
+      "officialId": 397,
+      "name": "骨咚节拍",
+      "land": "乐高®城堡",
+      "type": "小怪兽大派对",
+      "description": "怪兽节奏表演，适合顺路观看。",
+      "fit": "适合备选",
+      "priority": "P1",
+      "reason": "按兴趣和所在园区顺路选择，不增加跨区赶场。",
+      "reasonShort": "按兴趣和所在园区顺路选择，不增加跨区赶场。",
+      "requirements": "未列统一最低身高；按具体体验的现场要求参与。达到数值仍须符合座位与现场乘坐须知。",
+      "requirementShort": "按现场规则",
+      "feeLabel": "门票内常规体验",
+      "feeShort": "门票内常规体验",
+      "feeNote": "付费游戏、材料、商品及额外服务另核；不含餐饮。",
+      "quickPassText": "官网未标记支持乐捷通，不按快速通行项目计算。",
+      "quickPassShort": "未标记支持",
+      "notes": "限定演出",
+      "sourceUrls": [
+        "https://www.legolandshanghai.cn/spot/detail?id=397"
+      ],
+      "image": "images/catalog/397.webp",
+      "fullImage": "images/catalog/full/397.webp",
+      "imageSourceUrl": "https://tencent-web-1320474462.cos.ap-shanghai.myqcloud.com/2026-09-28/20260928143801663271.jpg",
+      "operatingStatusByDate": {
+        "2026-10-17": {
+          "label": "场次／开放时间尚未列出",
+          "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+          "publishedTimes": null,
+          "memo": ""
+        },
+        "2026-10-18": {
+          "label": "场次／开放时间尚未列出",
+          "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+          "publishedTimes": null,
+          "memo": ""
+        }
+      },
+      "visitNote": "",
+      "order": 22
+    },
+    {
+      "id": "398",
+      "officialId": 398,
+      "name": "魔法药水派对",
+      "land": "乐高®城堡",
+      "type": "小怪兽大派对",
+      "description": "魔法药水主题互动，具体参与规则现场确认。",
+      "fit": "适合备选",
+      "priority": "P1",
+      "reason": "按兴趣和所在园区顺路选择，不增加跨区赶场。",
+      "reasonShort": "按兴趣和所在园区顺路选择，不增加跨区赶场。",
+      "requirements": "未列统一最低身高；按具体体验的现场要求参与。达到数值仍须符合座位与现场乘坐须知。",
+      "requirementShort": "按现场规则",
+      "feeLabel": "收费待确认",
+      "feeShort": "收费待确认",
+      "feeNote": "官网未取得本次材料或服务费用，按现场说明决定。",
+      "quickPassText": "官网未标记支持乐捷通，不按快速通行项目计算。",
+      "quickPassShort": "未标记支持",
+      "notes": "限定演出",
+      "sourceUrls": [
+        "https://www.legolandshanghai.cn/spot/detail?id=398"
+      ],
+      "image": "images/catalog/398.webp",
+      "fullImage": "images/catalog/full/398.webp",
+      "imageSourceUrl": "https://tencent-web-1320474462.cos.ap-shanghai.myqcloud.com/2026-09-29/20260929104207817245.jpg",
+      "operatingStatusByDate": {
+        "2026-10-17": {
+          "label": "场次／开放时间尚未列出",
+          "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+          "publishedTimes": null,
+          "memo": ""
+        },
+        "2026-10-18": {
+          "label": "场次／开放时间尚未列出",
+          "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+          "publishedTimes": null,
+          "memo": ""
+        }
+      },
+      "visitNote": "",
+      "order": 23
+    },
+    {
+      "id": "404",
+      "officialId": 404,
+      "name": "怪兽搜索令",
+      "land": "乐高®城堡",
+      "type": "小怪兽大派对",
+      "description": "一名家长与至少一名儿童组队寻找怪兽，单场名额有限。",
+      "fit": "适合备选",
+      "priority": "P1",
+      "reason": "按兴趣和所在园区顺路选择，不增加跨区赶场。",
+      "reasonShort": "按兴趣和所在园区顺路选择，不增加跨区赶场。",
+      "requirements": "每组至少一名家长和一名儿童；单场名额有限。达到数值仍须符合座位与现场乘坐须知。",
+      "requirementShort": "按现场规则",
+      "feeLabel": "门票内常规体验",
+      "feeShort": "门票内常规体验",
+      "feeNote": "付费游戏、材料、商品及额外服务另核；不含餐饮。",
+      "quickPassText": "官网未标记支持乐捷通，不按快速通行项目计算。",
+      "quickPassShort": "未标记支持",
+      "notes": "互动体验",
+      "sourceUrls": [
+        "https://www.legolandshanghai.cn/spot/detail?id=404"
+      ],
+      "image": "images/catalog/404.webp",
+      "fullImage": "images/catalog/full/404.webp",
+      "imageSourceUrl": "https://tencent-web-1320474462.cos.ap-shanghai.myqcloud.com/2026-09-22/20260922160504251141.jpg",
+      "operatingStatusByDate": {
+        "2026-10-17": {
+          "label": "场次／开放时间尚未列出",
+          "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+          "publishedTimes": null,
+          "memo": ""
+        },
+        "2026-10-18": {
+          "label": "场次／开放时间尚未列出",
+          "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+          "publishedTimes": null,
+          "memo": ""
+        }
+      },
+      "visitNote": "",
+      "order": 24
+    },
+    {
+      "id": "409",
+      "officialId": 409,
+      "name": "骨咚节拍（餐厅版）",
+      "land": "乐高®城堡",
+      "type": "小怪兽大派对",
+      "description": "餐厅内的骨咚节拍版本，可能需要餐厅消费或入场资格。",
+      "fit": "适合备选",
+      "priority": "P1",
+      "reason": "按兴趣和所在园区顺路选择，不增加跨区赶场。",
+      "reasonShort": "按兴趣和所在园区顺路选择，不增加跨区赶场。",
+      "requirements": "未列统一最低身高；按具体体验的现场要求参与。达到数值仍须符合座位与现场乘坐须知。",
+      "requirementShort": "按现场规则",
+      "feeLabel": "餐饮另计",
+      "feeShort": "餐饮另计",
+      "feeNote": "餐厅版本是否须购买餐饮、预订或持券，需向现场确认。",
+      "quickPassText": "官网未标记支持乐捷通，不按快速通行项目计算。",
+      "quickPassShort": "未标记支持",
+      "notes": "限定演出",
+      "sourceUrls": [
+        "https://www.legolandshanghai.cn/spot/detail?id=409"
+      ],
+      "image": "images/catalog/409.webp",
+      "fullImage": "images/catalog/full/409.webp",
+      "imageSourceUrl": "https://tencent-web-1320474462.cos.ap-shanghai.myqcloud.com/2026-09-28/20260928143817605464.jpg",
+      "operatingStatusByDate": {
+        "2026-10-17": {
+          "label": "场次／开放时间尚未列出",
+          "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+          "publishedTimes": null,
+          "memo": ""
+        },
+        "2026-10-18": {
+          "label": "场次／开放时间尚未列出",
+          "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+          "publishedTimes": null,
+          "memo": ""
+        }
+      },
+      "visitNote": "",
+      "order": 25
+    },
+    {
+      "id": "410",
+      "officialId": 410,
+      "name": "小怪兽巡逻队（餐厅版）",
+      "land": "乐高®城堡",
+      "type": "小怪兽大派对",
+      "description": "餐厅内的小怪兽巡逻版本，消费与观赏条件现场确认。",
+      "fit": "适合备选",
+      "priority": "P1",
+      "reason": "按兴趣和所在园区顺路选择，不增加跨区赶场。",
+      "reasonShort": "按兴趣和所在园区顺路选择，不增加跨区赶场。",
+      "requirements": "未列统一最低身高；按具体体验的现场要求参与。达到数值仍须符合座位与现场乘坐须知。",
+      "requirementShort": "按现场规则",
+      "feeLabel": "餐饮另计",
+      "feeShort": "餐饮另计",
+      "feeNote": "餐厅版本是否须购买餐饮、预订或持券，需向现场确认。",
+      "quickPassText": "官网未标记支持乐捷通，不按快速通行项目计算。",
+      "quickPassShort": "未标记支持",
+      "notes": "限定演出",
+      "sourceUrls": [
+        "https://www.legolandshanghai.cn/spot/detail?id=410"
+      ],
+      "image": "images/catalog/410.webp",
+      "fullImage": "images/catalog/full/410.webp",
+      "imageSourceUrl": "https://tencent-web-1320474462.cos.ap-shanghai.myqcloud.com/2026-09-29/20260929101540261978.jpg",
+      "operatingStatusByDate": {
+        "2026-10-17": {
+          "label": "场次／开放时间尚未列出",
+          "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+          "publishedTimes": null,
+          "memo": ""
+        },
+        "2026-10-18": {
+          "label": "场次／开放时间尚未列出",
+          "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+          "publishedTimes": null,
+          "memo": ""
+        }
+      },
+      "visitNote": "",
+      "order": 26
+    },
+    {
+      "id": "46",
+      "officialId": 46,
+      "name": "海岸警卫学院",
+      "land": "乐高®城市",
+      "type": "骑乘",
+      "description": "驾驶主题小船沿水道前行，现场按陪同规则登船。",
+      "fit": "适合备选",
+      "priority": "P1",
+      "reason": "按兴趣和所在园区顺路选择，不增加跨区赶场。",
+      "reasonShort": "按兴趣和所在园区顺路选择，不增加跨区赶场。",
+      "requirements": "最低身高 90 cm；身高介于90厘米和130厘米之间的游客，必须由16周岁及以上且符合其他所有景点乘坐要求的看护人员陪同乘坐。达到数值仍须符合座位与现场乘坐须知。",
+      "requirementShort": "≥90 cm",
+      "feeLabel": "门票内常规体验",
+      "feeShort": "门票内常规体验",
+      "feeNote": "付费游戏、材料、商品及额外服务另核；不含餐饮。",
+      "quickPassText": "官网支持乐捷通；单项产品 ¥48 起仅为产品入口起价，本项目10/17、10/18价格与库存未取得。",
+      "quickPassShort": "支持 · 实价待查",
+      "notes": "水上项目 | 可自控；儿童 | 青少年 | 成人；室外",
+      "sourceUrls": [
+        "https://www.legolandshanghai.cn/spot/detail?id=46"
+      ],
+      "image": "images/catalog/46.webp",
+      "fullImage": "images/catalog/full/46.webp",
+      "imageSourceUrl": "https://tencent-web-1320474462.cos.ap-shanghai.myqcloud.com/2025-07-13/20250713175000666631.jpg",
+      "operatingStatusByDate": {
+        "2026-10-17": {
+          "label": "已列运营时段：10:00-19:00",
+          "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+          "publishedTimes": "10:00-19:00",
+          "memo": ""
+        },
+        "2026-10-18": {
+          "label": "已列运营时段：10:00-19:00",
+          "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+          "publishedTimes": "10:00-19:00",
+          "memo": ""
+        }
+      },
+      "visitNote": "",
+      "order": 27
+    },
+    {
+      "id": "56",
+      "officialId": 56,
+      "name": "得宝®大积木天地（乐高®城市）",
+      "land": "乐高®城市",
+      "type": "拼搭体验",
+      "description": "大积木搭建、攀爬与滑行空间，家长在旁看护；室内区域按规定脱鞋穿袜。",
+      "fit": "适合备选",
+      "priority": "P1",
+      "reason": "按兴趣和所在园区顺路选择，不增加跨区赶场。",
+      "reasonShort": "按兴趣和所在园区顺路选择，不增加跨区赶场。",
+      "requirements": "未列统一最低身高；按具体体验的现场要求参与；家长持续看护；室内脱鞋穿袜，室外穿鞋。达到数值仍须符合座位与现场乘坐须知。",
+      "requirementShort": "按现场规则",
+      "feeLabel": "门票内常规体验",
+      "feeShort": "门票内常规体验",
+      "feeNote": "付费游戏、材料、商品及额外服务另核；不含餐饮。",
+      "quickPassText": "官网未标记支持乐捷通，不按快速通行项目计算。",
+      "quickPassShort": "未标记支持",
+      "notes": "室外",
+      "sourceUrls": [
+        "https://www.legolandshanghai.cn/spot/detail?id=56"
+      ],
+      "image": "images/catalog/56.webp",
+      "fullImage": "images/catalog/full/56.webp",
+      "imageSourceUrl": "https://tencent-web-1320474462.cos.ap-shanghai.myqcloud.com/2025-07-07/20250707102553785938.jpg",
+      "operatingStatusByDate": {
+        "2026-10-17": {
+          "label": "已列运营时段：10:00-19:00",
+          "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+          "publishedTimes": "10:00-19:00",
+          "memo": ""
+        },
+        "2026-10-18": {
+          "label": "已列运营时段：10:00-19:00",
+          "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+          "publishedTimes": "10:00-19:00",
+          "memo": ""
+        }
+      },
+      "visitNote": "",
+      "order": 28
+    },
+    {
+      "id": "121",
+      "officialId": 121,
+      "name": "码头",
+      "land": "乐高®城市",
+      "type": "景点",
+      "description": "城市主题水边探索点，可顺路停留看场景。",
+      "fit": "适合备选",
+      "priority": "P1",
+      "reason": "按兴趣和所在园区顺路选择，不增加跨区赶场。",
+      "reasonShort": "按兴趣和所在园区顺路选择，不增加跨区赶场。",
+      "requirements": "未列统一最低身高；按具体体验的现场要求参与。达到数值仍须符合座位与现场乘坐须知。",
+      "requirementShort": "按现场规则",
+      "feeLabel": "门票内常规体验",
+      "feeShort": "门票内常规体验",
+      "feeNote": "付费游戏、材料、商品及额外服务另核；不含餐饮。",
+      "quickPassText": "官网未标记支持乐捷通，不按快速通行项目计算。",
+      "quickPassShort": "未标记支持",
+      "notes": "攀爬探索；室外",
+      "sourceUrls": [
+        "https://www.legolandshanghai.cn/spot/detail?id=121"
+      ],
+      "image": "images/catalog/121.webp",
+      "fullImage": "images/catalog/full/121.webp",
+      "imageSourceUrl": "https://tencent-web-1320474462.cos.ap-shanghai.myqcloud.com/2025-06-18/20250618143455406950.jpg",
+      "operatingStatusByDate": {
+        "2026-10-17": {
+          "label": "已列运营时段：10:00-19:00",
+          "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+          "publishedTimes": "10:00-19:00",
+          "memo": ""
+        },
+        "2026-10-18": {
+          "label": "已列运营时段：10:00-19:00",
+          "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+          "publishedTimes": "10:00-19:00",
+          "memo": ""
+        }
+      },
+      "visitNote": "",
+      "order": 29
+    },
+    {
+      "id": "148",
+      "officialId": 148,
+      "name": "乐高®城市角色见面会",
+      "land": "乐高®城市",
+      "type": "演出",
+      "description": "与乐高城市角色互动合影。",
+      "fit": "适合备选",
+      "priority": "P1",
+      "reason": "按兴趣和所在园区顺路选择，不增加跨区赶场。",
+      "reasonShort": "按兴趣和所在园区顺路选择，不增加跨区赶场。",
+      "requirements": "未列统一最低身高；按具体体验的现场要求参与。达到数值仍须符合座位与现场乘坐须知。",
+      "requirementShort": "按现场规则",
+      "feeLabel": "门票内常规体验",
+      "feeShort": "门票内常规体验",
+      "feeNote": "付费游戏、材料、商品及额外服务另核；不含餐饮。",
+      "quickPassText": "官网未标记支持乐捷通，不按快速通行项目计算。",
+      "quickPassShort": "未标记支持",
+      "notes": "角色见面会 | 互动合影；室外",
+      "sourceUrls": [
+        "https://www.legolandshanghai.cn/spot/detail?id=148"
+      ],
+      "image": "images/catalog/148.webp",
+      "fullImage": "images/catalog/full/148.webp",
+      "imageSourceUrl": "https://tencent-web-1320474462.cos.ap-shanghai.myqcloud.com/2026-10-08/20261008153943811809.jpg",
+      "operatingStatusByDate": {
+        "2026-10-17": {
+          "label": "场次／开放时间尚未列出",
+          "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+          "publishedTimes": null,
+          "memo": ""
+        },
+        "2026-10-18": {
+          "label": "场次／开放时间尚未列出",
+          "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+          "publishedTimes": null,
+          "memo": ""
+        }
+      },
+      "visitNote": "",
+      "order": 30
+    },
+    {
+      "id": "162",
+      "officialId": 162,
+      "name": "救援学院",
+      "land": "乐高®城市",
+      "type": "骑乘",
+      "description": "家长与孩子协作完成救援挑战，需要一起出力。",
+      "fit": "适合备选",
+      "priority": "P1",
+      "reason": "按兴趣和所在园区顺路选择，不增加跨区赶场。",
+      "reasonShort": "按兴趣和所在园区顺路选择，不增加跨区赶场。",
+      "requirements": "最低身高 86 cm；身高介于86厘米和110厘米之间的游客，必须由16周岁及以上且符合其他所有景点乘坐要求的看护人员陪同乘坐。达到数值仍须符合座位与现场乘坐须知。",
+      "requirementShort": "≥86 cm",
+      "feeLabel": "门票内常规体验",
+      "feeShort": "门票内常规体验",
+      "feeNote": "付费游戏、材料、商品及额外服务另核；不含餐饮。",
+      "quickPassText": "官网支持乐捷通；单项产品 ¥48 起仅为产品入口起价，本项目10/17、10/18价格与库存未取得。",
+      "quickPassShort": "支持 · 实价待查",
+      "notes": "可自控 | 平缓；儿童 | 青少年 | 成人；室外",
+      "sourceUrls": [
+        "https://www.legolandshanghai.cn/spot/detail?id=162"
+      ],
+      "image": "images/catalog/162.webp",
+      "fullImage": "images/catalog/full/162.webp",
+      "imageSourceUrl": "https://tencent-web-1320474462.cos.ap-shanghai.myqcloud.com/2025-06-12/20250612163649147527.jpg",
+      "operatingStatusByDate": {
+        "2026-10-17": {
+          "label": "已列运营时段：10:00-19:00",
+          "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+          "publishedTimes": "10:00-19:00",
+          "memo": ""
+        },
+        "2026-10-18": {
+          "label": "已列运营时段：10:00-19:00",
+          "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+          "publishedTimes": "10:00-19:00",
+          "memo": ""
+        }
+      },
+      "visitNote": "",
+      "order": 31
+    },
+    {
+      "id": "270",
+      "officialId": 270,
+      "name": "盛装游园会",
+      "land": "乐高®城市",
+      "type": "小怪兽大派对",
+      "description": "穿着亲子友好的季节装扮游园，遵守面具与道具限制。",
+      "fit": "适合备选",
+      "priority": "P1",
+      "reason": "按兴趣和所在园区顺路选择，不增加跨区赶场。",
+      "reasonShort": "按兴趣和所在园区顺路选择，不增加跨区赶场。",
+      "requirements": "未列统一最低身高；按具体体验的现场要求参与。达到数值仍须符合座位与现场乘坐须知。",
+      "requirementShort": "按现场规则",
+      "feeLabel": "门票内常规体验",
+      "feeShort": "门票内常规体验",
+      "feeNote": "付费游戏、材料、商品及额外服务另核；不含餐饮。",
+      "quickPassText": "官网未标记支持乐捷通，不按快速通行项目计算。",
+      "quickPassShort": "未标记支持",
+      "notes": "互动体验",
+      "sourceUrls": [
+        "https://www.legolandshanghai.cn/spot/detail?id=270"
+      ],
+      "image": "images/catalog/270.webp",
+      "fullImage": "images/catalog/full/270.webp",
+      "imageSourceUrl": "https://tencent-web-1320474462.cos.ap-shanghai.myqcloud.com/2026-09-22/20260922160322686378.jpg",
+      "operatingStatusByDate": {
+        "2026-10-17": {
+          "label": "场次／开放时间尚未列出",
+          "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+          "publishedTimes": null,
+          "memo": ""
+        },
+        "2026-10-18": {
+          "label": "场次／开放时间尚未列出",
+          "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+          "publishedTimes": null,
+          "memo": ""
+        }
+      },
+      "visitNote": "",
+      "order": 32
+    },
+    {
+      "id": "320",
+      "officialId": 320,
+      "name": "【日常活动】积木带动跳",
+      "land": "乐高®城市",
+      "type": "演出",
+      "description": "跟着积木主题音乐做动作，按兴趣短时参与。",
+      "fit": "适合备选",
+      "priority": "P1",
+      "reason": "按兴趣和所在园区顺路选择，不增加跨区赶场。",
+      "reasonShort": "按兴趣和所在园区顺路选择，不增加跨区赶场。",
+      "requirements": "未列统一最低身高；按具体体验的现场要求参与。达到数值仍须符合座位与现场乘坐须知。",
+      "requirementShort": "按现场规则",
+      "feeLabel": "门票内常规体验",
+      "feeShort": "门票内常规体验",
+      "feeNote": "付费游戏、材料、商品及额外服务另核；不含餐饮。",
+      "quickPassText": "官网未标记支持乐捷通，不按快速通行项目计算。",
+      "quickPassShort": "未标记支持",
+      "notes": "趣味游戏；室外",
+      "sourceUrls": [
+        "https://www.legolandshanghai.cn/spot/detail?id=320"
+      ],
+      "image": "images/catalog/320.webp",
+      "fullImage": "images/catalog/full/320.webp",
+      "imageSourceUrl": "https://tencent-web-1320474462.cos.ap-shanghai.myqcloud.com/2026-03-19/20260319215333171327.jpg",
+      "operatingStatusByDate": {
+        "2026-10-17": {
+          "label": "场次／开放时间尚未列出",
+          "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+          "publishedTimes": null,
+          "memo": ""
+        },
+        "2026-10-18": {
+          "label": "场次／开放时间尚未列出",
+          "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+          "publishedTimes": null,
+          "memo": ""
+        }
+      },
+      "visitNote": "",
+      "order": 33
+    },
+    {
+      "id": "344",
+      "officialId": 344,
+      "name": "【日常活动】积木多米诺",
+      "land": "乐高®城市",
+      "type": "演出",
+      "description": "积木多米诺主题互动，观看或参与依现场安排。",
+      "fit": "适合备选",
+      "priority": "P1",
+      "reason": "按兴趣和所在园区顺路选择，不增加跨区赶场。",
+      "reasonShort": "按兴趣和所在园区顺路选择，不增加跨区赶场。",
+      "requirements": "未列统一最低身高；按具体体验的现场要求参与。达到数值仍须符合座位与现场乘坐须知。",
+      "requirementShort": "按现场规则",
+      "feeLabel": "门票内常规体验",
+      "feeShort": "门票内常规体验",
+      "feeNote": "付费游戏、材料、商品及额外服务另核；不含餐饮。",
+      "quickPassText": "官网未标记支持乐捷通，不按快速通行项目计算。",
+      "quickPassShort": "未标记支持",
+      "notes": "趣味游戏；室外",
+      "sourceUrls": [
+        "https://www.legolandshanghai.cn/spot/detail?id=344"
+      ],
+      "image": "images/catalog/344.webp",
+      "fullImage": "images/catalog/full/344.webp",
+      "imageSourceUrl": "https://tencent-web-1320474462.cos.ap-shanghai.myqcloud.com/2026-09-14/20260914153546224870.jpg",
+      "operatingStatusByDate": {
+        "2026-10-17": {
+          "label": "场次／开放时间尚未列出",
+          "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+          "publishedTimes": null,
+          "memo": ""
+        },
+        "2026-10-18": {
+          "label": "场次／开放时间尚未列出",
+          "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+          "publishedTimes": null,
+          "memo": ""
+        }
+      },
+      "visitNote": "",
+      "order": 34
+    },
+    {
+      "id": "388",
+      "officialId": 388,
+      "name": "【日常活动】警察总部·极速执勤挑战",
+      "land": "乐高®城市",
+      "type": "演出",
+      "description": "警察主题的限时执勤与互动挑战。",
+      "fit": "适合备选",
+      "priority": "P1",
+      "reason": "按兴趣和所在园区顺路选择，不增加跨区赶场。",
+      "reasonShort": "按兴趣和所在园区顺路选择，不增加跨区赶场。",
+      "requirements": "未列统一最低身高；按具体体验的现场要求参与。达到数值仍须符合座位与现场乘坐须知。",
+      "requirementShort": "按现场规则",
+      "feeLabel": "门票内常规体验",
+      "feeShort": "门票内常规体验",
+      "feeNote": "付费游戏、材料、商品及额外服务另核；不含餐饮。",
+      "quickPassText": "官网未标记支持乐捷通，不按快速通行项目计算。",
+      "quickPassShort": "未标记支持",
+      "notes": "趣味游戏；室内",
+      "sourceUrls": [
+        "https://www.legolandshanghai.cn/spot/detail?id=388"
+      ],
+      "image": "images/catalog/388.webp",
+      "fullImage": "images/catalog/full/388.webp",
+      "imageSourceUrl": "https://tencent-web-1320474462.cos.ap-shanghai.myqcloud.com/2026-07-27/20260727105559141290.jpg",
+      "operatingStatusByDate": {
+        "2026-10-17": {
+          "label": "场次／开放时间尚未列出",
+          "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+          "publishedTimes": null,
+          "memo": ""
+        },
+        "2026-10-18": {
+          "label": "场次／开放时间尚未列出",
+          "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+          "publishedTimes": null,
+          "memo": ""
+        }
+      },
+      "visitNote": "",
+      "order": 35
+    },
+    {
+      "id": "400",
+      "officialId": 400,
+      "name": "怪兽大出动",
+      "land": "乐高®城市",
+      "type": "小怪兽大派对",
+      "description": "怪兽主题流动互动，遇到时再加入，不专程追赶。",
+      "fit": "适合备选",
+      "priority": "P1",
+      "reason": "按兴趣和所在园区顺路选择，不增加跨区赶场。",
+      "reasonShort": "按兴趣和所在园区顺路选择，不增加跨区赶场。",
+      "requirements": "未列统一最低身高；按具体体验的现场要求参与。达到数值仍须符合座位与现场乘坐须知。",
+      "requirementShort": "按现场规则",
+      "feeLabel": "门票内常规体验",
+      "feeShort": "门票内常规体验",
+      "feeNote": "付费游戏、材料、商品及额外服务另核；不含餐饮。",
+      "quickPassText": "官网未标记支持乐捷通，不按快速通行项目计算。",
+      "quickPassShort": "未标记支持",
+      "notes": "限定演出",
+      "sourceUrls": [
+        "https://www.legolandshanghai.cn/spot/detail?id=400"
+      ],
+      "image": "images/catalog/400.webp",
+      "fullImage": "images/catalog/full/400.webp",
+      "imageSourceUrl": "https://tencent-web-1320474462.cos.ap-shanghai.myqcloud.com/2026-09-29/20260929101819971859.jpg",
+      "operatingStatusByDate": {
+        "2026-10-17": {
+          "label": "场次／开放时间尚未列出",
+          "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+          "publishedTimes": null,
+          "memo": ""
+        },
+        "2026-10-18": {
+          "label": "场次／开放时间尚未列出",
+          "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+          "publishedTimes": null,
+          "memo": ""
+        }
+      },
+      "visitNote": "",
+      "order": 36
+    },
+    {
+      "id": "401",
+      "officialId": 401,
+      "name": "搞怪南瓜农场（怪兽电视台）",
+      "land": "乐高®城市",
+      "type": "小怪兽大派对",
+      "description": "南瓜农场主题的怪兽互动体验，按现场指引参与。",
+      "fit": "适合备选",
+      "priority": "P1",
+      "reason": "按兴趣和所在园区顺路选择，不增加跨区赶场。",
+      "reasonShort": "按兴趣和所在园区顺路选择，不增加跨区赶场。",
+      "requirements": "未列统一最低身高；按具体体验的现场要求参与。达到数值仍须符合座位与现场乘坐须知。",
+      "requirementShort": "按现场规则",
+      "feeLabel": "门票内常规体验",
+      "feeShort": "门票内常规体验",
+      "feeNote": "付费游戏、材料、商品及额外服务另核；不含餐饮。",
+      "quickPassText": "官网未标记支持乐捷通，不按快速通行项目计算。",
+      "quickPassShort": "未标记支持",
+      "notes": "互动体验 | 拼搭体验",
+      "sourceUrls": [
+        "https://www.legolandshanghai.cn/spot/detail?id=401"
+      ],
+      "image": "images/catalog/401.webp",
+      "fullImage": "images/catalog/full/401.webp",
+      "imageSourceUrl": "https://tencent-web-1320474462.cos.ap-shanghai.myqcloud.com/2026-09-29/20260929101849524530.jpg",
+      "operatingStatusByDate": {
+        "2026-10-17": {
+          "label": "场次／开放时间尚未列出",
+          "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+          "publishedTimes": null,
+          "memo": ""
+        },
+        "2026-10-18": {
+          "label": "场次／开放时间尚未列出",
+          "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+          "publishedTimes": null,
+          "memo": ""
+        }
+      },
+      "visitNote": "",
+      "order": 37
+    },
+    {
+      "id": "402",
+      "officialId": 402,
+      "name": "一二三稻草人",
+      "land": "乐高®城市",
+      "type": "小怪兽大派对",
+      "description": "稻草人主题互动游戏，家长陪孩子理解口令。",
+      "fit": "适合备选",
+      "priority": "P1",
+      "reason": "按兴趣和所在园区顺路选择，不增加跨区赶场。",
+      "reasonShort": "按兴趣和所在园区顺路选择，不增加跨区赶场。",
+      "requirements": "未列统一最低身高；按具体体验的现场要求参与。达到数值仍须符合座位与现场乘坐须知。",
+      "requirementShort": "按现场规则",
+      "feeLabel": "门票内常规体验",
+      "feeShort": "门票内常规体验",
+      "feeNote": "付费游戏、材料、商品及额外服务另核；不含餐饮。",
+      "quickPassText": "官网未标记支持乐捷通，不按快速通行项目计算。",
+      "quickPassShort": "未标记支持",
+      "notes": "互动体验",
+      "sourceUrls": [
+        "https://www.legolandshanghai.cn/spot/detail?id=402"
+      ],
+      "image": "images/catalog/402.webp",
+      "fullImage": "images/catalog/full/402.webp",
+      "imageSourceUrl": "https://tencent-web-1320474462.cos.ap-shanghai.myqcloud.com/2026-09-29/20260929104117549554.jpg",
+      "operatingStatusByDate": {
+        "2026-10-17": {
+          "label": "场次／开放时间尚未列出",
+          "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+          "publishedTimes": null,
+          "memo": ""
+        },
+        "2026-10-18": {
+          "label": "场次／开放时间尚未列出",
+          "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+          "publishedTimes": null,
+          "memo": ""
+        }
+      },
+      "visitNote": "",
+      "order": 38
+    },
+    {
+      "id": "403",
+      "officialId": 403,
+      "name": "小怪兽创造营",
+      "land": "乐高®城市",
+      "type": "小怪兽大派对",
+      "description": "怪兽主题创作体验，预约、材料及收费现场确认。",
+      "fit": "适合备选",
+      "priority": "P1",
+      "reason": "按兴趣和所在园区顺路选择，不增加跨区赶场。",
+      "reasonShort": "按兴趣和所在园区顺路选择，不增加跨区赶场。",
+      "requirements": "未列统一最低身高；按具体体验的现场要求参与。达到数值仍须符合座位与现场乘坐须知。",
+      "requirementShort": "按现场规则",
+      "feeLabel": "收费待确认",
+      "feeShort": "收费待确认",
+      "feeNote": "官网未取得本次材料或服务费用，按现场说明决定。",
+      "quickPassText": "官网未标记支持乐捷通，不按快速通行项目计算。",
+      "quickPassShort": "未标记支持",
+      "notes": "互动体验",
+      "sourceUrls": [
+        "https://www.legolandshanghai.cn/spot/detail?id=403"
+      ],
+      "image": "images/catalog/403.webp",
+      "fullImage": "images/catalog/full/403.webp",
+      "imageSourceUrl": "https://tencent-web-1320474462.cos.ap-shanghai.myqcloud.com/2026-09-22/20260922155841148641.jpg",
+      "operatingStatusByDate": {
+        "2026-10-17": {
+          "label": "场次／开放时间尚未列出",
+          "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+          "publishedTimes": null,
+          "memo": ""
+        },
+        "2026-10-18": {
+          "label": "场次／开放时间尚未列出",
+          "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+          "publishedTimes": null,
+          "memo": ""
+        }
+      },
+      "visitNote": "",
+      "order": 39
+    },
+    {
+      "id": "412",
+      "officialId": 412,
+      "name": "【日常活动】秋日奇妙狂欢（乐高®城市）",
+      "land": "乐高®城市",
+      "type": "演出",
+      "description": "秋日主题的日常互动活动，具体场次待公布。",
+      "fit": "适合备选",
+      "priority": "P1",
+      "reason": "按兴趣和所在园区顺路选择，不增加跨区赶场。",
+      "reasonShort": "按兴趣和所在园区顺路选择，不增加跨区赶场。",
+      "requirements": "未列统一最低身高；按具体体验的现场要求参与。达到数值仍须符合座位与现场乘坐须知。",
+      "requirementShort": "按现场规则",
+      "feeLabel": "门票内常规体验",
+      "feeShort": "门票内常规体验",
+      "feeNote": "付费游戏、材料、商品及额外服务另核；不含餐饮。",
+      "quickPassText": "官网未标记支持乐捷通，不按快速通行项目计算。",
+      "quickPassShort": "未标记支持",
+      "notes": "趣味游戏；室外",
+      "sourceUrls": [
+        "https://www.legolandshanghai.cn/spot/detail?id=412"
+      ],
+      "image": "images/catalog/412.webp",
+      "fullImage": "images/catalog/full/412.webp",
+      "imageSourceUrl": "https://tencent-web-1320474462.cos.ap-shanghai.myqcloud.com/2026-10-13/20261013095928861483.jpg",
+      "operatingStatusByDate": {
+        "2026-10-17": {
+          "label": "场次／开放时间尚未列出",
+          "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+          "publishedTimes": null,
+          "memo": ""
+        },
+        "2026-10-18": {
+          "label": "场次／开放时间尚未列出",
+          "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+          "publishedTimes": null,
+          "memo": ""
+        }
+      },
+      "visitNote": "",
+      "order": 40
+    },
+    {
+      "id": "129",
+      "officialId": 129,
+      "name": "拼搭船",
+      "land": "乐高®好朋友",
+      "type": "拼搭体验",
+      "description": "拼搭小船主题体验，观察作品和水的互动。",
+      "fit": "适合备选",
+      "priority": "P1",
+      "reason": "按兴趣和所在园区顺路选择，不增加跨区赶场。",
+      "reasonShort": "按兴趣和所在园区顺路选择，不增加跨区赶场。",
+      "requirements": "未列统一最低身高；按具体体验的现场要求参与。达到数值仍须符合座位与现场乘坐须知。",
+      "requirementShort": "按现场规则",
+      "feeLabel": "门票内常规体验",
+      "feeShort": "门票内常规体验",
+      "feeNote": "付费游戏、材料、商品及额外服务另核；不含餐饮。",
+      "quickPassText": "官网未标记支持乐捷通，不按快速通行项目计算。",
+      "quickPassShort": "未标记支持",
+      "notes": "室外",
+      "sourceUrls": [
+        "https://www.legolandshanghai.cn/spot/detail?id=129"
+      ],
+      "image": "images/catalog/129.webp",
+      "fullImage": "images/catalog/full/129.webp",
+      "imageSourceUrl": "https://tencent-web-1320474462.cos.ap-shanghai.myqcloud.com/2025-07-13/20250713184229900987.jpg",
+      "operatingStatusByDate": {
+        "2026-10-17": {
+          "label": "已列运营时段：10:00-19:00",
+          "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+          "publishedTimes": "10:00-19:00",
+          "memo": ""
+        },
+        "2026-10-18": {
+          "label": "已列运营时段：10:00-19:00",
+          "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+          "publishedTimes": "10:00-19:00",
+          "memo": ""
+        }
+      },
+      "visitNote": "",
+      "order": 41
+    },
+    {
+      "id": "145",
+      "officialId": 145,
+      "name": "乐高®好朋友才艺秀",
+      "land": "乐高®好朋友",
+      "type": "演出",
+      "description": "好朋友角色与音乐才艺表演。",
+      "fit": "适合备选",
+      "priority": "P1",
+      "reason": "按兴趣和所在园区顺路选择，不增加跨区赶场。",
+      "reasonShort": "按兴趣和所在园区顺路选择，不增加跨区赶场。",
+      "requirements": "未列统一最低身高；按具体体验的现场要求参与。达到数值仍须符合座位与现场乘坐须知。",
+      "requirementShort": "按现场规则",
+      "feeLabel": "门票内常规体验",
+      "feeShort": "门票内常规体验",
+      "feeNote": "付费游戏、材料、商品及额外服务另核；不含餐饮。",
+      "quickPassText": "官网未标记支持乐捷通，不按快速通行项目计算。",
+      "quickPassShort": "未标记支持",
+      "notes": "氛围演出 | 歌舞派对；室外",
+      "sourceUrls": [
+        "https://www.legolandshanghai.cn/spot/detail?id=145"
+      ],
+      "image": "images/catalog/145.webp",
+      "fullImage": "images/catalog/full/145.webp",
+      "imageSourceUrl": "https://tencent-web-1320474462.cos.ap-shanghai.myqcloud.com/2025-06-18/20250618173120362210.jpg",
+      "operatingStatusByDate": {
+        "2026-10-17": {
+          "label": "场次／开放时间尚未列出",
+          "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+          "publishedTimes": null,
+          "memo": ""
+        },
+        "2026-10-18": {
+          "label": "场次／开放时间尚未列出",
+          "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+          "publishedTimes": null,
+          "memo": ""
+        }
+      },
+      "visitNote": "",
+      "order": 42
+    },
+    {
+      "id": "217",
+      "officialId": 217,
+      "name": "得宝®大积木天地（乐高®好朋友）",
+      "land": "乐高®好朋友",
+      "type": "拼搭体验",
+      "description": "大积木搭建、攀爬与滑行空间，家长在旁看护；室内区域按规定脱鞋穿袜。",
+      "fit": "适合备选",
+      "priority": "P1",
+      "reason": "按兴趣和所在园区顺路选择，不增加跨区赶场。",
+      "reasonShort": "按兴趣和所在园区顺路选择，不增加跨区赶场。",
+      "requirements": "未列统一最低身高；按具体体验的现场要求参与；家长持续看护；室内脱鞋穿袜，室外穿鞋。达到数值仍须符合座位与现场乘坐须知。",
+      "requirementShort": "按现场规则",
+      "feeLabel": "门票内常规体验",
+      "feeShort": "门票内常规体验",
+      "feeNote": "付费游戏、材料、商品及额外服务另核；不含餐饮。",
+      "quickPassText": "官网未标记支持乐捷通，不按快速通行项目计算。",
+      "quickPassShort": "未标记支持",
+      "notes": "室内外",
+      "sourceUrls": [
+        "https://www.legolandshanghai.cn/spot/detail?id=217"
+      ],
+      "image": "images/catalog/217.webp",
+      "fullImage": "images/catalog/full/217.webp",
+      "imageSourceUrl": "https://tencent-web-1320474462.cos.ap-shanghai.myqcloud.com/2025-07-07/20250707102411630727.jpg",
+      "operatingStatusByDate": {
+        "2026-10-17": {
+          "label": "已列运营时段：10:00-19:00",
+          "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+          "publishedTimes": "10:00-19:00",
+          "memo": ""
+        },
+        "2026-10-18": {
+          "label": "已列运营时段：10:00-19:00",
+          "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+          "publishedTimes": "10:00-19:00",
+          "memo": ""
+        }
+      },
+      "visitNote": "",
+      "order": 43
+    },
+    {
+      "id": "411",
+      "officialId": 411,
+      "name": "【日常活动】秋日奇妙狂欢（乐高®好朋友）",
+      "land": "乐高®好朋友",
+      "type": "演出",
+      "description": "秋日主题的日常互动活动，具体场次待公布。",
+      "fit": "适合备选",
+      "priority": "P1",
+      "reason": "按兴趣和所在园区顺路选择，不增加跨区赶场。",
+      "reasonShort": "按兴趣和所在园区顺路选择，不增加跨区赶场。",
+      "requirements": "未列统一最低身高；按具体体验的现场要求参与。达到数值仍须符合座位与现场乘坐须知。",
+      "requirementShort": "按现场规则",
+      "feeLabel": "门票内常规体验",
+      "feeShort": "门票内常规体验",
+      "feeNote": "付费游戏、材料、商品及额外服务另核；不含餐饮。",
+      "quickPassText": "官网未标记支持乐捷通，不按快速通行项目计算。",
+      "quickPassShort": "未标记支持",
+      "notes": "趣味游戏；室外",
+      "sourceUrls": [
+        "https://www.legolandshanghai.cn/spot/detail?id=411"
+      ],
+      "image": "images/catalog/411.webp",
+      "fullImage": "images/catalog/full/411.webp",
+      "imageSourceUrl": "https://tencent-web-1320474462.cos.ap-shanghai.myqcloud.com/2026-10-13/20261013093617961078.jpg",
+      "operatingStatusByDate": {
+        "2026-10-17": {
+          "label": "场次／开放时间尚未列出",
+          "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+          "publishedTimes": null,
+          "memo": ""
+        },
+        "2026-10-18": {
+          "label": "场次／开放时间尚未列出",
+          "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+          "publishedTimes": null,
+          "memo": ""
+        }
+      },
+      "visitNote": "",
+      "order": 44
+    },
+    {
+      "id": "24",
+      "officialId": 24,
+      "name": "幻影旋转训练场",
+      "land": "乐高®幻影忍者",
+      "type": "拼搭体验",
+      "description": "忍者主题的旋转与拼搭训练体验。",
+      "fit": "适合备选",
+      "priority": "P1",
+      "reason": "按兴趣和所在园区顺路选择，不增加跨区赶场。",
+      "reasonShort": "按兴趣和所在园区顺路选择，不增加跨区赶场。",
+      "requirements": "未列统一最低身高；按具体体验的现场要求参与。达到数值仍须符合座位与现场乘坐须知。",
+      "requirementShort": "按现场规则",
+      "feeLabel": "门票内常规体验",
+      "feeShort": "门票内常规体验",
+      "feeNote": "付费游戏、材料、商品及额外服务另核；不含餐饮。",
+      "quickPassText": "官网未标记支持乐捷通，不按快速通行项目计算。",
+      "quickPassShort": "未标记支持",
+      "notes": "室内",
+      "sourceUrls": [
+        "https://www.legolandshanghai.cn/spot/detail?id=24"
+      ],
+      "image": "images/catalog/24.webp",
+      "fullImage": "images/catalog/full/24.webp",
+      "imageSourceUrl": "https://tencent-web-1320474462.cos.ap-shanghai.myqcloud.com/2025-07-07/20250707105646456150.jpg",
+      "operatingStatusByDate": {
+        "2026-10-17": {
+          "label": "已列运营时段：10:00-19:00",
+          "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+          "publishedTimes": "10:00-19:00",
+          "memo": ""
+        },
+        "2026-10-18": {
+          "label": "已列运营时段：10:00-19:00",
+          "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+          "publishedTimes": "10:00-19:00",
+          "memo": ""
+        }
+      },
+      "visitNote": "",
+      "order": 45
+    },
+    {
+      "id": "126",
+      "officialId": 126,
+      "name": "幻影忍者训练基地",
+      "land": "乐高®幻影忍者",
+      "type": "景点",
+      "description": "忍者主题训练与探索区，按孩子能力选择互动。",
+      "fit": "适合备选",
+      "priority": "P1",
+      "reason": "按兴趣和所在园区顺路选择，不增加跨区赶场。",
+      "reasonShort": "按兴趣和所在园区顺路选择，不增加跨区赶场。",
+      "requirements": "未列统一最低身高；按具体体验的现场要求参与。达到数值仍须符合座位与现场乘坐须知。",
+      "requirementShort": "按现场规则",
+      "feeLabel": "门票内常规体验",
+      "feeShort": "门票内常规体验",
+      "feeNote": "付费游戏、材料、商品及额外服务另核；不含餐饮。",
+      "quickPassText": "官网未标记支持乐捷通，不按快速通行项目计算。",
+      "quickPassShort": "未标记支持",
+      "notes": "学习训练；室外",
+      "sourceUrls": [
+        "https://www.legolandshanghai.cn/spot/detail?id=126"
+      ],
+      "image": "images/catalog/126.webp",
+      "fullImage": "images/catalog/full/126.webp",
+      "imageSourceUrl": "https://tencent-web-1320474462.cos.ap-shanghai.myqcloud.com/2025-07-07/20250707111809432999.jpg",
+      "operatingStatusByDate": {
+        "2026-10-17": {
+          "label": "已列运营时段：10:00-19:00",
+          "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+          "publishedTimes": "10:00-19:00",
+          "memo": ""
+        },
+        "2026-10-18": {
+          "label": "已列运营时段：10:00-19:00",
+          "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+          "publishedTimes": "10:00-19:00",
+          "memo": ""
+        }
+      },
+      "visitNote": "",
+      "order": 46
+    },
+    {
+      "id": "136",
+      "officialId": 136,
+      "name": "得宝®大积木天地（乐高®幻影忍者）",
+      "land": "乐高®幻影忍者",
+      "type": "拼搭体验",
+      "description": "大积木搭建、攀爬与滑行空间，家长在旁看护；室内区域按规定脱鞋穿袜。",
+      "fit": "适合备选",
+      "priority": "P1",
+      "reason": "按兴趣和所在园区顺路选择，不增加跨区赶场。",
+      "reasonShort": "按兴趣和所在园区顺路选择，不增加跨区赶场。",
+      "requirements": "未列统一最低身高；按具体体验的现场要求参与；家长持续看护；室内脱鞋穿袜，室外穿鞋。达到数值仍须符合座位与现场乘坐须知。",
+      "requirementShort": "按现场规则",
+      "feeLabel": "门票内常规体验",
+      "feeShort": "门票内常规体验",
+      "feeNote": "付费游戏、材料、商品及额外服务另核；不含餐饮。",
+      "quickPassText": "官网未标记支持乐捷通，不按快速通行项目计算。",
+      "quickPassShort": "未标记支持",
+      "notes": "室外",
+      "sourceUrls": [
+        "https://www.legolandshanghai.cn/spot/detail?id=136"
+      ],
+      "image": "images/catalog/136.webp",
+      "fullImage": "images/catalog/full/136.webp",
+      "imageSourceUrl": "https://tencent-web-1320474462.cos.ap-shanghai.myqcloud.com/2025-10-22/20251022175612442731.jpg",
+      "operatingStatusByDate": {
+        "2026-10-17": {
+          "label": "已列运营时段：10:00-19:00",
+          "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+          "publishedTimes": "10:00-19:00",
+          "memo": ""
+        },
+        "2026-10-18": {
+          "label": "已列运营时段：10:00-19:00",
+          "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+          "publishedTimes": "10:00-19:00",
+          "memo": ""
+        }
+      },
+      "visitNote": "",
+      "order": 47
+    },
+    {
+      "id": "137",
+      "officialId": 137,
+      "name": "乐高®幻影忍者角色见面会",
+      "land": "乐高®幻影忍者",
+      "type": "演出",
+      "description": "忍者角色见面合影，队伍合适时参加。",
+      "fit": "适合备选",
+      "priority": "P1",
+      "reason": "按兴趣和所在园区顺路选择，不增加跨区赶场。",
+      "reasonShort": "按兴趣和所在园区顺路选择，不增加跨区赶场。",
+      "requirements": "未列统一最低身高；按具体体验的现场要求参与。达到数值仍须符合座位与现场乘坐须知。",
+      "requirementShort": "按现场规则",
+      "feeLabel": "门票内常规体验",
+      "feeShort": "门票内常规体验",
+      "feeNote": "付费游戏、材料、商品及额外服务另核；不含餐饮。",
+      "quickPassText": "官网未标记支持乐捷通，不按快速通行项目计算。",
+      "quickPassShort": "未标记支持",
+      "notes": "角色见面会 | 互动合影；室外",
+      "sourceUrls": [
+        "https://www.legolandshanghai.cn/spot/detail?id=137"
+      ],
+      "image": "images/catalog/137.webp",
+      "fullImage": "images/catalog/full/137.webp",
+      "imageSourceUrl": "https://tencent-web-1320474462.cos.ap-shanghai.myqcloud.com/2025-07-10/20250710091801777261.jpg",
+      "operatingStatusByDate": {
+        "2026-10-17": {
+          "label": "场次／开放时间尚未列出",
+          "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+          "publishedTimes": null,
+          "memo": ""
+        },
+        "2026-10-18": {
+          "label": "场次／开放时间尚未列出",
+          "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+          "publishedTimes": null,
+          "memo": ""
+        }
+      },
+      "visitNote": "",
+      "order": 48
+    },
+    {
+      "id": "266",
+      "officialId": 266,
+      "name": "【日常活动】幻影忍者大擂台 · 游走版",
+      "land": "乐高®幻影忍者",
+      "type": "演出",
+      "description": "忍者主题的游走互动挑战。",
+      "fit": "适合备选",
+      "priority": "P1",
+      "reason": "按兴趣和所在园区顺路选择，不增加跨区赶场。",
+      "reasonShort": "按兴趣和所在园区顺路选择，不增加跨区赶场。",
+      "requirements": "未列统一最低身高；按具体体验的现场要求参与。达到数值仍须符合座位与现场乘坐须知。",
+      "requirementShort": "按现场规则",
+      "feeLabel": "门票内常规体验",
+      "feeShort": "门票内常规体验",
+      "feeNote": "付费游戏、材料、商品及额外服务另核；不含餐饮。",
+      "quickPassText": "官网未标记支持乐捷通，不按快速通行项目计算。",
+      "quickPassShort": "未标记支持",
+      "notes": "氛围演出；室外",
+      "sourceUrls": [
+        "https://www.legolandshanghai.cn/spot/detail?id=266"
+      ],
+      "image": "images/catalog/266.webp",
+      "fullImage": "images/catalog/full/266.webp",
+      "imageSourceUrl": "https://tencent-web-1320474462.cos.ap-shanghai.myqcloud.com/2025-10-22/20251022180001814853.jpg",
+      "operatingStatusByDate": {
+        "2026-10-17": {
+          "label": "场次／开放时间尚未列出",
+          "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+          "publishedTimes": null,
+          "memo": ""
+        },
+        "2026-10-18": {
+          "label": "场次／开放时间尚未列出",
+          "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+          "publishedTimes": null,
+          "memo": ""
+        }
+      },
+      "visitNote": "",
+      "order": 49
+    },
+    {
+      "id": "362",
+      "officialId": 362,
+      "name": "【日常活动】极速拼搭陀螺赛",
+      "land": "乐高®幻影忍者",
+      "type": "演出",
+      "description": "拼搭陀螺并参加互动比赛，名额和规则现场确认。",
+      "fit": "适合备选",
+      "priority": "P1",
+      "reason": "按兴趣和所在园区顺路选择，不增加跨区赶场。",
+      "reasonShort": "按兴趣和所在园区顺路选择，不增加跨区赶场。",
+      "requirements": "未列统一最低身高；按具体体验的现场要求参与。达到数值仍须符合座位与现场乘坐须知。",
+      "requirementShort": "按现场规则",
+      "feeLabel": "门票内常规体验",
+      "feeShort": "门票内常规体验",
+      "feeNote": "付费游戏、材料、商品及额外服务另核；不含餐饮。",
+      "quickPassText": "官网未标记支持乐捷通，不按快速通行项目计算。",
+      "quickPassShort": "未标记支持",
+      "notes": "趣味游戏；室内",
+      "sourceUrls": [
+        "https://www.legolandshanghai.cn/spot/detail?id=362"
+      ],
+      "image": "images/catalog/362.webp",
+      "fullImage": "images/catalog/full/362.webp",
+      "imageSourceUrl": "https://tencent-web-1320474462.cos.ap-shanghai.myqcloud.com/2026-05-19/20260519103948830030.jpg",
+      "operatingStatusByDate": {
+        "2026-10-17": {
+          "label": "场次／开放时间尚未列出",
+          "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+          "publishedTimes": null,
+          "memo": ""
+        },
+        "2026-10-18": {
+          "label": "场次／开放时间尚未列出",
+          "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+          "publishedTimes": null,
+          "memo": ""
+        }
+      },
+      "visitNote": "",
+      "order": 50
+    },
+    {
+      "id": "124",
+      "officialId": 124,
+      "name": "万千城挑战营",
+      "land": "乐高®悟空小侠",
+      "type": "景点",
+      "description": "攀爬和探索体验，家长关注孩子实际能力与疲劳程度。",
+      "fit": "适合备选",
+      "priority": "P1",
+      "reason": "按兴趣和所在园区顺路选择，不增加跨区赶场。",
+      "reasonShort": "按兴趣和所在园区顺路选择，不增加跨区赶场。",
+      "requirements": "未列统一最低身高；按具体体验的现场要求参与。达到数值仍须符合座位与现场乘坐须知。",
+      "requirementShort": "按现场规则",
+      "feeLabel": "门票内常规体验",
+      "feeShort": "门票内常规体验",
+      "feeNote": "付费游戏、材料、商品及额外服务另核；不含餐饮。",
+      "quickPassText": "官网未标记支持乐捷通，不按快速通行项目计算。",
+      "quickPassShort": "未标记支持",
+      "notes": "攀爬探索；室外",
+      "sourceUrls": [
+        "https://www.legolandshanghai.cn/spot/detail?id=124"
+      ],
+      "image": "images/catalog/124.webp",
+      "fullImage": "images/catalog/full/124.webp",
+      "imageSourceUrl": "https://tencent-web-1320474462.cos.ap-shanghai.myqcloud.com/2025-07-07/20250707200851204579.jpg",
+      "operatingStatusByDate": {
+        "2026-10-17": {
+          "label": "已列运营时段：10:00-19:00",
+          "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+          "publishedTimes": "10:00-19:00",
+          "memo": ""
+        },
+        "2026-10-18": {
+          "label": "已列运营时段：10:00-19:00",
+          "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+          "publishedTimes": "10:00-19:00",
+          "memo": ""
+        }
+      },
+      "visitNote": "",
+      "order": 51
+    },
+    {
+      "id": "354",
+      "officialId": 354,
+      "name": "英雄接棒仪式",
+      "land": "乐高®悟空小侠",
+      "type": "演出",
+      "description": "英雄主题互动仪式，按当天现场时间观看。",
+      "fit": "适合备选",
+      "priority": "P1",
+      "reason": "按兴趣和所在园区顺路选择，不增加跨区赶场。",
+      "reasonShort": "按兴趣和所在园区顺路选择，不增加跨区赶场。",
+      "requirements": "未列统一最低身高；按具体体验的现场要求参与。达到数值仍须符合座位与现场乘坐须知。",
+      "requirementShort": "按现场规则",
+      "feeLabel": "门票内常规体验",
+      "feeShort": "门票内常规体验",
+      "feeNote": "付费游戏、材料、商品及额外服务另核；不含餐饮。",
+      "quickPassText": "官网未标记支持乐捷通，不按快速通行项目计算。",
+      "quickPassShort": "未标记支持",
+      "notes": "趣味游戏 | 互动合影；室外",
+      "sourceUrls": [
+        "https://www.legolandshanghai.cn/spot/detail?id=354"
+      ],
+      "image": "images/catalog/354.webp",
+      "fullImage": "images/catalog/full/354.webp",
+      "imageSourceUrl": "https://tencent-web-1320474462.cos.ap-shanghai.myqcloud.com/2026-04-15/20260415174036199584.jpg",
+      "operatingStatusByDate": {
+        "2026-10-17": {
+          "label": "场次／开放时间尚未列出",
+          "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+          "publishedTimes": null,
+          "memo": ""
+        },
+        "2026-10-18": {
+          "label": "场次／开放时间尚未列出",
+          "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+          "publishedTimes": null,
+          "memo": ""
+        }
+      },
+      "visitNote": "",
+      "order": 52
+    },
+    {
+      "id": "358",
+      "officialId": 358,
+      "name": "《朱大厨美食争霸》",
+      "land": "乐高®悟空小侠",
+      "type": "演出",
+      "description": "悟空小侠与美食主题现场互动，场次待公布。",
+      "fit": "适合备选",
+      "priority": "P1",
+      "reason": "按兴趣和所在园区顺路选择，不增加跨区赶场。",
+      "reasonShort": "按兴趣和所在园区顺路选择，不增加跨区赶场。",
+      "requirements": "未列统一最低身高；按具体体验的现场要求参与。达到数值仍须符合座位与现场乘坐须知。",
+      "requirementShort": "按现场规则",
+      "feeLabel": "门票内常规体验",
+      "feeShort": "门票内常规体验",
+      "feeNote": "付费游戏、材料、商品及额外服务另核；不含餐饮。",
+      "quickPassText": "官网未标记支持乐捷通，不按快速通行项目计算。",
+      "quickPassShort": "未标记支持",
+      "notes": "氛围演出；室外",
+      "sourceUrls": [
+        "https://www.legolandshanghai.cn/spot/detail?id=358"
+      ],
+      "image": "images/catalog/358.webp",
+      "fullImage": "images/catalog/full/358.webp",
+      "imageSourceUrl": "https://tencent-web-1320474462.cos.ap-shanghai.myqcloud.com/2026-04-20/20260420113352488361.jpg",
+      "operatingStatusByDate": {
+        "2026-10-17": {
+          "label": "场次／开放时间尚未列出",
+          "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+          "publishedTimes": null,
+          "memo": ""
+        },
+        "2026-10-18": {
+          "label": "场次／开放时间尚未列出",
+          "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+          "publishedTimes": null,
+          "memo": ""
+        }
+      },
+      "visitNote": "",
+      "order": 53
+    },
+    {
+      "id": "395",
+      "officialId": 395,
+      "name": "【日常活动】拼搭宝殿",
+      "land": "乐高®悟空小侠",
+      "type": "演出",
+      "description": "拼搭宝殿的定时互动版本，与自由拼搭点分别列示。",
+      "fit": "适合备选",
+      "priority": "P1",
+      "reason": "按兴趣和所在园区顺路选择，不增加跨区赶场。",
+      "reasonShort": "按兴趣和所在园区顺路选择，不增加跨区赶场。",
+      "requirements": "未列统一最低身高；按具体体验的现场要求参与。达到数值仍须符合座位与现场乘坐须知。",
+      "requirementShort": "按现场规则",
+      "feeLabel": "门票内常规体验",
+      "feeShort": "门票内常规体验",
+      "feeNote": "付费游戏、材料、商品及额外服务另核；不含餐饮。",
+      "quickPassText": "官网未标记支持乐捷通，不按快速通行项目计算。",
+      "quickPassShort": "未标记支持",
+      "notes": "趣味游戏；室内",
+      "sourceUrls": [
+        "https://www.legolandshanghai.cn/spot/detail?id=395"
+      ],
+      "image": "images/catalog/395.webp",
+      "fullImage": "images/catalog/full/395.webp",
+      "imageSourceUrl": "https://tencent-web-1320474462.cos.ap-shanghai.myqcloud.com/2026-08-30/20260830173440555496.jpg",
+      "operatingStatusByDate": {
+        "2026-10-17": {
+          "label": "场次／开放时间尚未列出",
+          "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+          "publishedTimes": null,
+          "memo": ""
+        },
+        "2026-10-18": {
+          "label": "场次／开放时间尚未列出",
+          "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+          "publishedTimes": null,
+          "memo": ""
+        }
+      },
+      "visitNote": "",
+      "order": 54
+    },
+    {
+      "id": "408",
+      "officialId": 408,
+      "name": "朱大厨美食争霸（餐厅版）",
+      "land": "乐高®悟空小侠",
+      "type": "演出",
+      "description": "餐厅内的朱大厨互动演出版本，先核对消费条件。",
+      "fit": "适合备选",
+      "priority": "P1",
+      "reason": "按兴趣和所在园区顺路选择，不增加跨区赶场。",
+      "reasonShort": "按兴趣和所在园区顺路选择，不增加跨区赶场。",
+      "requirements": "未列统一最低身高；按具体体验的现场要求参与。达到数值仍须符合座位与现场乘坐须知。",
+      "requirementShort": "按现场规则",
+      "feeLabel": "餐饮另计",
+      "feeShort": "餐饮另计",
+      "feeNote": "餐厅版本是否须购买餐饮、预订或持券，需向现场确认。",
+      "quickPassText": "官网未标记支持乐捷通，不按快速通行项目计算。",
+      "quickPassShort": "未标记支持",
+      "notes": "氛围演出；室内",
+      "sourceUrls": [
+        "https://www.legolandshanghai.cn/spot/detail?id=408"
+      ],
+      "image": "images/catalog/408.webp",
+      "fullImage": "images/catalog/full/408.webp",
+      "imageSourceUrl": "https://tencent-web-1320474462.cos.ap-shanghai.myqcloud.com/2026-09-22/20260922162059457522.jpg",
+      "operatingStatusByDate": {
+        "2026-10-17": {
+          "label": "场次／开放时间尚未列出",
+          "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+          "publishedTimes": null,
+          "memo": ""
+        },
+        "2026-10-18": {
+          "label": "场次／开放时间尚未列出",
+          "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+          "publishedTimes": null,
+          "memo": ""
+        }
+      },
+      "visitNote": "",
+      "order": 55
+    },
+    {
+      "id": "7",
+      "officialId": 7,
+      "name": "太空冒险",
+      "land": "乐高乐园®创想世界",
+      "type": "拼搭体验",
+      "description": "太空主题拼搭，孩子可从简单造型开始。",
+      "fit": "适合备选",
+      "priority": "P1",
+      "reason": "按兴趣和所在园区顺路选择，不增加跨区赶场。",
+      "reasonShort": "按兴趣和所在园区顺路选择，不增加跨区赶场。",
+      "requirements": "未列统一最低身高；按具体体验的现场要求参与。达到数值仍须符合座位与现场乘坐须知。",
+      "requirementShort": "按现场规则",
+      "feeLabel": "门票内常规体验",
+      "feeShort": "门票内常规体验",
+      "feeNote": "付费游戏、材料、商品及额外服务另核；不含餐饮。",
+      "quickPassText": "官网未标记支持乐捷通，不按快速通行项目计算。",
+      "quickPassShort": "未标记支持",
+      "notes": "室内",
+      "sourceUrls": [
+        "https://www.legolandshanghai.cn/spot/detail?id=7"
+      ],
+      "image": "images/catalog/7.webp",
+      "fullImage": "images/catalog/full/7.webp",
+      "imageSourceUrl": "https://tencent-web-1320474462.cos.ap-shanghai.myqcloud.com/2025-07-07/20250707105253302421.jpg",
+      "operatingStatusByDate": {
+        "2026-10-17": {
+          "label": "已列运营时段：10:00-19:00",
+          "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+          "publishedTimes": "10:00-19:00",
+          "memo": ""
+        },
+        "2026-10-18": {
+          "label": "已列运营时段：10:00-19:00",
+          "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+          "publishedTimes": "10:00-19:00",
+          "memo": ""
+        }
+      },
+      "visitNote": "",
+      "order": 56
+    },
+    {
+      "id": "11",
+      "officialId": 11,
+      "name": "乐高®小黄鸭",
+      "land": "乐高乐园®创想世界",
+      "type": "拼搭体验",
+      "description": "小黄鸭主题拼搭，适合短时尝试和亲子合作。",
+      "fit": "适合备选",
+      "priority": "P1",
+      "reason": "按兴趣和所在园区顺路选择，不增加跨区赶场。",
+      "reasonShort": "按兴趣和所在园区顺路选择，不增加跨区赶场。",
+      "requirements": "未列统一最低身高；按具体体验的现场要求参与。达到数值仍须符合座位与现场乘坐须知。",
+      "requirementShort": "按现场规则",
+      "feeLabel": "门票内常规体验",
+      "feeShort": "门票内常规体验",
+      "feeNote": "付费游戏、材料、商品及额外服务另核；不含餐饮。",
+      "quickPassText": "官网未标记支持乐捷通，不按快速通行项目计算。",
+      "quickPassShort": "未标记支持",
+      "notes": "室内",
+      "sourceUrls": [
+        "https://www.legolandshanghai.cn/spot/detail?id=11"
+      ],
+      "image": "images/catalog/11.webp",
+      "fullImage": "images/catalog/full/11.webp",
+      "imageSourceUrl": "https://tencent-web-1320474462.cos.ap-shanghai.myqcloud.com/2025-07-07/20250707110055444994.jpg",
+      "operatingStatusByDate": {
+        "2026-10-17": {
+          "label": "已列运营时段：10:00-19:00",
+          "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+          "publishedTimes": "10:00-19:00",
+          "memo": ""
+        },
+        "2026-10-18": {
+          "label": "已列运营时段：10:00-19:00",
+          "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+          "publishedTimes": "10:00-19:00",
+          "memo": ""
+        }
+      },
+      "visitNote": "",
+      "order": 57
+    },
+    {
+      "id": "20",
+      "officialId": 20,
+      "name": "天灯",
+      "land": "乐高乐园®创想世界",
+      "type": "拼搭体验",
+      "description": "用积木做天灯主题创作，家长可协助理解步骤。",
+      "fit": "适合备选",
+      "priority": "P1",
+      "reason": "按兴趣和所在园区顺路选择，不增加跨区赶场。",
+      "reasonShort": "按兴趣和所在园区顺路选择，不增加跨区赶场。",
+      "requirements": "未列统一最低身高；按具体体验的现场要求参与。达到数值仍须符合座位与现场乘坐须知。",
+      "requirementShort": "按现场规则",
+      "feeLabel": "门票内常规体验",
+      "feeShort": "门票内常规体验",
+      "feeNote": "付费游戏、材料、商品及额外服务另核；不含餐饮。",
+      "quickPassText": "官网未标记支持乐捷通，不按快速通行项目计算。",
+      "quickPassShort": "未标记支持",
+      "notes": "室内",
+      "sourceUrls": [
+        "https://www.legolandshanghai.cn/spot/detail?id=20"
+      ],
+      "image": "images/catalog/20.webp",
+      "fullImage": "images/catalog/full/20.webp",
+      "imageSourceUrl": "https://tencent-web-1320474462.cos.ap-shanghai.myqcloud.com/2025-07-07/20250707105551358032.jpg",
+      "operatingStatusByDate": {
+        "2026-10-17": {
+          "label": "已列运营时段：10:00-19:00",
+          "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+          "publishedTimes": "10:00-19:00",
+          "memo": ""
+        },
+        "2026-10-18": {
+          "label": "已列运营时段：10:00-19:00",
+          "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+          "publishedTimes": "10:00-19:00",
+          "memo": ""
+        }
+      },
+      "visitNote": "",
+      "order": 58
+    },
+    {
+      "id": "21",
+      "officialId": 21,
+      "name": "长城",
+      "land": "乐高乐园®创想世界",
+      "type": "拼搭体验",
+      "description": "长城主题拼搭，让孩子通过积木认识建筑结构。",
+      "fit": "适合备选",
+      "priority": "P1",
+      "reason": "按兴趣和所在园区顺路选择，不增加跨区赶场。",
+      "reasonShort": "按兴趣和所在园区顺路选择，不增加跨区赶场。",
+      "requirements": "未列统一最低身高；按具体体验的现场要求参与。达到数值仍须符合座位与现场乘坐须知。",
+      "requirementShort": "按现场规则",
+      "feeLabel": "门票内常规体验",
+      "feeShort": "门票内常规体验",
+      "feeNote": "付费游戏、材料、商品及额外服务另核；不含餐饮。",
+      "quickPassText": "官网未标记支持乐捷通，不按快速通行项目计算。",
+      "quickPassShort": "未标记支持",
+      "notes": "室内",
+      "sourceUrls": [
+        "https://www.legolandshanghai.cn/spot/detail?id=21"
+      ],
+      "image": "images/catalog/21.webp",
+      "fullImage": "images/catalog/full/21.webp",
+      "imageSourceUrl": "https://tencent-web-1320474462.cos.ap-shanghai.myqcloud.com/2025-07-07/20250707105446512301.jpg",
+      "operatingStatusByDate": {
+        "2026-10-17": {
+          "label": "已列运营时段：10:00-19:00",
+          "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+          "publishedTimes": "10:00-19:00",
+          "memo": ""
+        },
+        "2026-10-18": {
+          "label": "已列运营时段：10:00-19:00",
+          "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+          "publishedTimes": "10:00-19:00",
+          "memo": ""
+        }
+      },
+      "visitNote": "",
+      "order": 59
+    },
+    {
+      "id": "71",
+      "officialId": 71,
+      "name": "得宝®瀑布",
+      "land": "乐高乐园®创想世界",
+      "type": "拼搭体验",
+      "description": "得宝主题水与积木互动，留意衣物是否会湿。",
+      "fit": "适合备选",
+      "priority": "P1",
+      "reason": "按兴趣和所在园区顺路选择，不增加跨区赶场。",
+      "reasonShort": "按兴趣和所在园区顺路选择，不增加跨区赶场。",
+      "requirements": "未列统一最低身高；按具体体验的现场要求参与。达到数值仍须符合座位与现场乘坐须知。",
+      "requirementShort": "按现场规则",
+      "feeLabel": "门票内常规体验",
+      "feeShort": "门票内常规体验",
+      "feeNote": "付费游戏、材料、商品及额外服务另核；不含餐饮。",
+      "quickPassText": "官网未标记支持乐捷通，不按快速通行项目计算。",
+      "quickPassShort": "未标记支持",
+      "notes": "室内",
+      "sourceUrls": [
+        "https://www.legolandshanghai.cn/spot/detail?id=71"
+      ],
+      "image": "images/catalog/71.webp",
+      "fullImage": "images/catalog/full/71.webp",
+      "imageSourceUrl": "https://tencent-web-1320474462.cos.ap-shanghai.myqcloud.com/2025-07-07/20250707105227156618.jpg",
+      "operatingStatusByDate": {
+        "2026-10-17": {
+          "label": "已列运营时段：10:00-19:00",
+          "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+          "publishedTimes": "10:00-19:00",
+          "memo": ""
+        },
+        "2026-10-18": {
+          "label": "已列运营时段：10:00-19:00",
+          "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+          "publishedTimes": "10:00-19:00",
+          "memo": ""
+        }
+      },
+      "visitNote": "",
+      "order": 60
+    },
+    {
+      "id": "138",
+      "officialId": 138,
+      "name": "上海梦幻奇境",
+      "land": "乐高乐园®创想世界",
+      "type": "演出",
+      "description": "围绕上海城市发展展开的室内微缩景观演出。",
+      "fit": "适合备选",
+      "priority": "P1",
+      "reason": "按兴趣和所在园区顺路选择，不增加跨区赶场。",
+      "reasonShort": "按兴趣和所在园区顺路选择，不增加跨区赶场。",
+      "requirements": "未列统一最低身高；按具体体验的现场要求参与。达到数值仍须符合座位与现场乘坐须知。",
+      "requirementShort": "按现场规则",
+      "feeLabel": "门票内常规体验",
+      "feeShort": "门票内常规体验",
+      "feeNote": "付费游戏、材料、商品及额外服务另核；不含餐饮。",
+      "quickPassText": "官网未标记支持乐捷通，不按快速通行项目计算。",
+      "quickPassShort": "未标记支持",
+      "notes": "氛围演出；室内",
+      "sourceUrls": [
+        "https://www.legolandshanghai.cn/spot/detail?id=138"
+      ],
+      "image": "images/catalog/138.webp",
+      "fullImage": "images/catalog/full/138.webp",
+      "imageSourceUrl": "https://tencent-web-1320474462.cos.ap-shanghai.myqcloud.com/2025-10-22/20251022175928717402.jpg",
+      "operatingStatusByDate": {
+        "2026-10-17": {
+          "label": "场次／开放时间尚未列出",
+          "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+          "publishedTimes": null,
+          "memo": ""
+        },
+        "2026-10-18": {
+          "label": "场次／开放时间尚未列出",
+          "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+          "publishedTimes": null,
+          "memo": ""
+        }
+      },
+      "visitNote": "",
+      "order": 61
+    },
+    {
+      "id": "139",
+      "officialId": 139,
+      "name": "迷你天地光影秀",
+      "land": "乐高乐园®创想世界",
+      "type": "演出",
+      "description": "室内微缩城市的灯光与声音秀，包含模拟天气等效果。",
+      "fit": "适合备选",
+      "priority": "P1",
+      "reason": "按兴趣和所在园区顺路选择，不增加跨区赶场。",
+      "reasonShort": "按兴趣和所在园区顺路选择，不增加跨区赶场。",
+      "requirements": "未列统一最低身高；按具体体验的现场要求参与。达到数值仍须符合座位与现场乘坐须知。",
+      "requirementShort": "按现场规则",
+      "feeLabel": "门票内常规体验",
+      "feeShort": "门票内常规体验",
+      "feeNote": "付费游戏、材料、商品及额外服务另核；不含餐饮。",
+      "quickPassText": "官网未标记支持乐捷通，不按快速通行项目计算。",
+      "quickPassShort": "未标记支持",
+      "notes": "氛围演出；室内",
+      "sourceUrls": [
+        "https://www.legolandshanghai.cn/spot/detail?id=139"
+      ],
+      "image": "images/catalog/139.webp",
+      "fullImage": "images/catalog/full/139.webp",
+      "imageSourceUrl": "https://tencent-web-1320474462.cos.ap-shanghai.myqcloud.com/2025-05-30/20250530161110765669.png",
+      "operatingStatusByDate": {
+        "2026-10-17": {
+          "label": "场次／开放时间尚未列出",
+          "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+          "publishedTimes": null,
+          "memo": ""
+        },
+        "2026-10-18": {
+          "label": "场次／开放时间尚未列出",
+          "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+          "publishedTimes": null,
+          "memo": ""
+        }
+      },
+      "visitNote": "",
+      "order": 62
+    },
+    {
+      "id": "177",
+      "officialId": 177,
+      "name": "乐高乐园®游船",
+      "land": "乐高乐园®创想世界",
+      "type": "骑乘",
+      "description": "坐船看乐高与江南水乡场景，可作为舒缓的乘骑选择。",
+      "fit": "适合备选",
+      "priority": "P1",
+      "reason": "按兴趣和所在园区顺路选择，不增加跨区赶场。",
+      "reasonShort": "按兴趣和所在园区顺路选择，不增加跨区赶场。",
+      "requirements": "官网未列最低身高数值；游客独自乘坐的最低身高要求为140厘米；身高不足140厘米的游客，必须由16周岁及以上且符合其他所有景点乘坐要求的看护人员陪同乘坐。达到数值仍须符合座位与现场乘坐须知。",
+      "requirementShort": "按现场规则",
+      "feeLabel": "门票内常规体验",
+      "feeShort": "门票内常规体验",
+      "feeNote": "付费游戏、材料、商品及额外服务另核；不含餐饮。",
+      "quickPassText": "官网支持乐捷通；单项产品 ¥48 起仅为产品入口起价，本项目10/17、10/18价格与库存未取得。",
+      "quickPassShort": "支持 · 实价待查",
+      "notes": "水上项目 | 平缓；老年人 | 成人 | 青少年 | 儿童；室外",
+      "sourceUrls": [
+        "https://www.legolandshanghai.cn/spot/detail?id=177"
+      ],
+      "image": "images/catalog/177.webp",
+      "fullImage": "images/catalog/full/177.webp",
+      "imageSourceUrl": "https://tencent-web-1320474462.cos.ap-shanghai.myqcloud.com/2025-07-07/20250707102818627347.jpg",
+      "operatingStatusByDate": {
+        "2026-10-17": {
+          "label": "已列运营时段：10:00-19:00",
+          "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+          "publishedTimes": "10:00-19:00",
+          "memo": ""
+        },
+        "2026-10-18": {
+          "label": "已列运营时段：10:00-19:00",
+          "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+          "publishedTimes": "10:00-19:00",
+          "memo": ""
+        }
+      },
+      "visitNote": "",
+      "order": 63
+    },
+    {
+      "id": "224",
+      "officialId": 224,
+      "name": "乐高®品牌故事",
+      "land": "乐高乐园®创想世界",
+      "type": "拼搭体验",
+      "description": "通过乐高品牌展示和积木内容认识拼搭的故事。",
+      "fit": "适合备选",
+      "priority": "P1",
+      "reason": "按兴趣和所在园区顺路选择，不增加跨区赶场。",
+      "reasonShort": "按兴趣和所在园区顺路选择，不增加跨区赶场。",
+      "requirements": "未列统一最低身高；按具体体验的现场要求参与。达到数值仍须符合座位与现场乘坐须知。",
+      "requirementShort": "按现场规则",
+      "feeLabel": "门票内常规体验",
+      "feeShort": "门票内常规体验",
+      "feeNote": "付费游戏、材料、商品及额外服务另核；不含餐饮。",
+      "quickPassText": "官网未标记支持乐捷通，不按快速通行项目计算。",
+      "quickPassShort": "未标记支持",
+      "notes": "室内",
+      "sourceUrls": [
+        "https://www.legolandshanghai.cn/spot/detail?id=224"
+      ],
+      "image": "images/catalog/224.webp",
+      "fullImage": "images/catalog/full/224.webp",
+      "imageSourceUrl": "https://tencent-web-1320474462.cos.ap-shanghai.myqcloud.com/2025-07-07/20250707105059512706.jpg",
+      "operatingStatusByDate": {
+        "2026-10-17": {
+          "label": "已列运营时段：10:00-19:00",
+          "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+          "publishedTimes": "10:00-19:00",
+          "memo": ""
+        },
+        "2026-10-18": {
+          "label": "已列运营时段：10:00-19:00",
+          "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+          "publishedTimes": "10:00-19:00",
+          "memo": ""
+        }
+      },
+      "visitNote": "",
+      "order": 64
+    },
+    {
+      "id": "390",
+      "officialId": 390,
+      "name": "【日常活动】城市建筑师",
+      "land": "乐高乐园®创想世界",
+      "type": "演出",
+      "description": "城市建筑主题的定时活动，按孩子能力参与。",
+      "fit": "适合备选",
+      "priority": "P1",
+      "reason": "按兴趣和所在园区顺路选择，不增加跨区赶场。",
+      "reasonShort": "按兴趣和所在园区顺路选择，不增加跨区赶场。",
+      "requirements": "未列统一最低身高；按具体体验的现场要求参与。达到数值仍须符合座位与现场乘坐须知。",
+      "requirementShort": "按现场规则",
+      "feeLabel": "门票内常规体验",
+      "feeShort": "门票内常规体验",
+      "feeNote": "付费游戏、材料、商品及额外服务另核；不含餐饮。",
+      "quickPassText": "官网未标记支持乐捷通，不按快速通行项目计算。",
+      "quickPassShort": "未标记支持",
+      "notes": "趣味游戏；室内",
+      "sourceUrls": [
+        "https://www.legolandshanghai.cn/spot/detail?id=390"
+      ],
+      "image": "images/catalog/390.webp",
+      "fullImage": "images/catalog/full/390.webp",
+      "imageSourceUrl": "https://tencent-web-1320474462.cos.ap-shanghai.myqcloud.com/2026-07-31/20260731094540138891.jpg",
+      "operatingStatusByDate": {
+        "2026-10-17": {
+          "label": "场次／开放时间尚未列出",
+          "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+          "publishedTimes": null,
+          "memo": ""
+        },
+        "2026-10-18": {
+          "label": "场次／开放时间尚未列出",
+          "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+          "publishedTimes": null,
+          "memo": ""
+        }
+      },
+      "visitNote": "",
+      "order": 65
+    },
+    {
+      "id": "392",
+      "officialId": 392,
+      "name": "【日常活动】赛车",
+      "land": "乐高乐园®创想世界",
+      "type": "演出",
+      "description": "赛车主题的定时拼搭活动。",
+      "fit": "适合备选",
+      "priority": "P1",
+      "reason": "按兴趣和所在园区顺路选择，不增加跨区赶场。",
+      "reasonShort": "按兴趣和所在园区顺路选择，不增加跨区赶场。",
+      "requirements": "未列统一最低身高；按具体体验的现场要求参与。达到数值仍须符合座位与现场乘坐须知。",
+      "requirementShort": "按现场规则",
+      "feeLabel": "门票内常规体验",
+      "feeShort": "门票内常规体验",
+      "feeNote": "付费游戏、材料、商品及额外服务另核；不含餐饮。",
+      "quickPassText": "官网未标记支持乐捷通，不按快速通行项目计算。",
+      "quickPassShort": "未标记支持",
+      "notes": "趣味游戏；室内",
+      "sourceUrls": [
+        "https://www.legolandshanghai.cn/spot/detail?id=392"
+      ],
+      "image": "images/catalog/392.webp",
+      "fullImage": "images/catalog/full/392.webp",
+      "imageSourceUrl": "https://tencent-web-1320474462.cos.ap-shanghai.myqcloud.com/2026-08-30/20260830171444725595.jpg",
+      "operatingStatusByDate": {
+        "2026-10-17": {
+          "label": "场次／开放时间尚未列出",
+          "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+          "publishedTimes": null,
+          "memo": ""
+        },
+        "2026-10-18": {
+          "label": "场次／开放时间尚未列出",
+          "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+          "publishedTimes": null,
+          "memo": ""
+        }
+      },
+      "visitNote": "",
+      "order": 66
+    },
+    {
+      "id": "393",
+      "officialId": 393,
+      "name": "【日常活动】太空冒险",
+      "land": "乐高乐园®创想世界",
+      "type": "演出",
+      "description": "太空冒险主题的定时拼搭活动。",
+      "fit": "适合备选",
+      "priority": "P1",
+      "reason": "按兴趣和所在园区顺路选择，不增加跨区赶场。",
+      "reasonShort": "按兴趣和所在园区顺路选择，不增加跨区赶场。",
+      "requirements": "未列统一最低身高；按具体体验的现场要求参与。达到数值仍须符合座位与现场乘坐须知。",
+      "requirementShort": "按现场规则",
+      "feeLabel": "门票内常规体验",
+      "feeShort": "门票内常规体验",
+      "feeNote": "付费游戏、材料、商品及额外服务另核；不含餐饮。",
+      "quickPassText": "官网未标记支持乐捷通，不按快速通行项目计算。",
+      "quickPassShort": "未标记支持",
+      "notes": "趣味游戏；室内",
+      "sourceUrls": [
+        "https://www.legolandshanghai.cn/spot/detail?id=393"
+      ],
+      "image": "images/catalog/393.webp",
+      "fullImage": "images/catalog/full/393.webp",
+      "imageSourceUrl": "https://tencent-web-1320474462.cos.ap-shanghai.myqcloud.com/2026-08-30/20260830172316876929.jpg",
+      "operatingStatusByDate": {
+        "2026-10-17": {
+          "label": "场次／开放时间尚未列出",
+          "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+          "publishedTimes": null,
+          "memo": ""
+        },
+        "2026-10-18": {
+          "label": "场次／开放时间尚未列出",
+          "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+          "publishedTimes": null,
+          "memo": ""
+        }
+      },
+      "visitNote": "",
+      "order": 67
+    },
+    {
+      "id": "394",
+      "officialId": 394,
+      "name": "【日常活动】天灯",
+      "land": "乐高乐园®创想世界",
+      "type": "演出",
+      "description": "天灯主题的定时拼搭活动，名额和场次现场确认。",
+      "fit": "适合备选",
+      "priority": "P1",
+      "reason": "按兴趣和所在园区顺路选择，不增加跨区赶场。",
+      "reasonShort": "按兴趣和所在园区顺路选择，不增加跨区赶场。",
+      "requirements": "未列统一最低身高；按具体体验的现场要求参与。达到数值仍须符合座位与现场乘坐须知。",
+      "requirementShort": "按现场规则",
+      "feeLabel": "门票内常规体验",
+      "feeShort": "门票内常规体验",
+      "feeNote": "付费游戏、材料、商品及额外服务另核；不含餐饮。",
+      "quickPassText": "官网未标记支持乐捷通，不按快速通行项目计算。",
+      "quickPassShort": "未标记支持",
+      "notes": "趣味游戏；室内",
+      "sourceUrls": [
+        "https://www.legolandshanghai.cn/spot/detail?id=394"
+      ],
+      "image": "images/catalog/394.webp",
+      "fullImage": "images/catalog/full/394.webp",
+      "imageSourceUrl": "https://tencent-web-1320474462.cos.ap-shanghai.myqcloud.com/2026-08-30/20260830172947993385.jpg",
+      "operatingStatusByDate": {
+        "2026-10-17": {
+          "label": "场次／开放时间尚未列出",
+          "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+          "publishedTimes": null,
+          "memo": ""
+        },
+        "2026-10-18": {
+          "label": "场次／开放时间尚未列出",
+          "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+          "publishedTimes": null,
+          "memo": ""
+        }
+      },
+      "visitNote": "",
+      "order": 68
+    },
+    {
+      "id": "122",
+      "officialId": 122,
+      "name": "得宝®创意丛林",
+      "land": "奇趣积木城！",
+      "type": "景点",
+      "description": "得宝主题的探索空间，适合低龄孩子边看边玩。",
+      "fit": "适合备选",
+      "priority": "P1",
+      "reason": "按兴趣和所在园区顺路选择，不增加跨区赶场。",
+      "reasonShort": "按兴趣和所在园区顺路选择，不增加跨区赶场。",
+      "requirements": "未列统一最低身高；按具体体验的现场要求参与。达到数值仍须符合座位与现场乘坐须知。",
+      "requirementShort": "按现场规则",
+      "feeLabel": "门票内常规体验",
+      "feeShort": "门票内常规体验",
+      "feeNote": "付费游戏、材料、商品及额外服务另核；不含餐饮。",
+      "quickPassText": "官网未标记支持乐捷通，不按快速通行项目计算。",
+      "quickPassShort": "未标记支持",
+      "notes": "攀爬探索 | 学习训练；室外",
+      "sourceUrls": [
+        "https://www.legolandshanghai.cn/spot/detail?id=122"
+      ],
+      "image": "images/catalog/122.webp",
+      "fullImage": "images/catalog/full/122.webp",
+      "imageSourceUrl": "https://tencent-web-1320474462.cos.ap-shanghai.myqcloud.com/2025-06-18/20250618143523753325.jpg",
+      "operatingStatusByDate": {
+        "2026-10-17": {
+          "label": "已列运营时段：10:00-19:00",
+          "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+          "publishedTimes": "10:00-19:00",
+          "memo": ""
+        },
+        "2026-10-18": {
+          "label": "已列运营时段：10:00-19:00",
+          "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+          "publishedTimes": "10:00-19:00",
+          "memo": ""
+        }
+      },
+      "visitNote": "",
+      "order": 69
+    },
+    {
+      "id": "123",
+      "officialId": 123,
+      "name": "踏步音律",
+      "land": "奇趣积木城！",
+      "type": "景点",
+      "description": "通过脚步与声音互动的探索点，适合顺路短暂停留。",
+      "fit": "适合备选",
+      "priority": "P1",
+      "reason": "按兴趣和所在园区顺路选择，不增加跨区赶场。",
+      "reasonShort": "按兴趣和所在园区顺路选择，不增加跨区赶场。",
+      "requirements": "未列统一最低身高；按具体体验的现场要求参与。达到数值仍须符合座位与现场乘坐须知。",
+      "requirementShort": "按现场规则",
+      "feeLabel": "门票内常规体验",
+      "feeShort": "门票内常规体验",
+      "feeNote": "付费游戏、材料、商品及额外服务另核；不含餐饮。",
+      "quickPassText": "官网未标记支持乐捷通，不按快速通行项目计算。",
+      "quickPassShort": "未标记支持",
+      "notes": "水上乐趣；室外",
+      "sourceUrls": [
+        "https://www.legolandshanghai.cn/spot/detail?id=123"
+      ],
+      "image": "images/catalog/123.webp",
+      "fullImage": "images/catalog/full/123.webp",
+      "imageSourceUrl": "https://tencent-web-1320474462.cos.ap-shanghai.myqcloud.com/2025-07-13/20250713212008406671.jpg",
+      "operatingStatusByDate": {
+        "2026-10-17": {
+          "label": "已列运营时段：10:00-19:00",
+          "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+          "publishedTimes": "10:00-19:00",
+          "memo": ""
+        },
+        "2026-10-18": {
+          "label": "已列运营时段：10:00-19:00",
+          "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+          "publishedTimes": "10:00-19:00",
+          "memo": ""
+        }
+      },
+      "visitNote": "",
+      "order": 70
+    },
+    {
+      "id": "149",
+      "officialId": 149,
+      "name": "乐高乐园®音乐嘉年华",
+      "land": "奇趣积木城！",
+      "type": "演出",
+      "description": "音乐与舞动演出，适合顺路停下休息。",
+      "fit": "适合备选",
+      "priority": "P1",
+      "reason": "按兴趣和所在园区顺路选择，不增加跨区赶场。",
+      "reasonShort": "按兴趣和所在园区顺路选择，不增加跨区赶场。",
+      "requirements": "未列统一最低身高；按具体体验的现场要求参与。达到数值仍须符合座位与现场乘坐须知。",
+      "requirementShort": "按现场规则",
+      "feeLabel": "门票内常规体验",
+      "feeShort": "门票内常规体验",
+      "feeNote": "付费游戏、材料、商品及额外服务另核；不含餐饮。",
+      "quickPassText": "官网未标记支持乐捷通，不按快速通行项目计算。",
+      "quickPassShort": "未标记支持",
+      "notes": "氛围演出 | 歌舞派对；室内",
+      "sourceUrls": [
+        "https://www.legolandshanghai.cn/spot/detail?id=149"
+      ],
+      "image": "images/catalog/149.webp",
+      "fullImage": "images/catalog/full/149.webp",
+      "imageSourceUrl": "https://tencent-web-1320474462.cos.ap-shanghai.myqcloud.com/2026-05-21/20260521094027960621.jpg",
+      "operatingStatusByDate": {
+        "2026-10-17": {
+          "label": "场次／开放时间尚未列出",
+          "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+          "publishedTimes": null,
+          "memo": ""
+        },
+        "2026-10-18": {
+          "label": "场次／开放时间尚未列出",
+          "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+          "publishedTimes": null,
+          "memo": ""
+        }
+      },
+      "visitNote": "",
+      "order": 71
+    },
+    {
+      "id": "29",
+      "officialId": 29,
+      "name": "怪兽欢迎秀",
+      "land": "积木街道",
+      "type": "小怪兽大派对",
+      "description": "入园区域的季节欢迎表演，时间未公布时不为此提前长等。",
+      "fit": "适合备选",
+      "priority": "P1",
+      "reason": "按兴趣和所在园区顺路选择，不增加跨区赶场。",
+      "reasonShort": "按兴趣和所在园区顺路选择，不增加跨区赶场。",
+      "requirements": "未列统一最低身高；按具体体验的现场要求参与。达到数值仍须符合座位与现场乘坐须知。",
+      "requirementShort": "按现场规则",
+      "feeLabel": "门票内常规体验",
+      "feeShort": "门票内常规体验",
+      "feeNote": "付费游戏、材料、商品及额外服务另核；不含餐饮。",
+      "quickPassText": "官网未标记支持乐捷通，不按快速通行项目计算。",
+      "quickPassShort": "未标记支持",
+      "notes": "限定演出 | 角色见面会",
+      "sourceUrls": [
+        "https://www.legolandshanghai.cn/spot/detail?id=29"
+      ],
+      "image": "images/catalog/29.webp",
+      "fullImage": "images/catalog/full/29.webp",
+      "imageSourceUrl": "https://tencent-web-1320474462.cos.ap-shanghai.myqcloud.com/2026-09-24/20260924150234994149.jpg",
+      "operatingStatusByDate": {
+        "2026-10-17": {
+          "label": "场次／开放时间尚未列出",
+          "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+          "publishedTimes": null,
+          "memo": ""
+        },
+        "2026-10-18": {
+          "label": "场次／开放时间尚未列出",
+          "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+          "publishedTimes": null,
+          "memo": ""
+        }
+      },
+      "visitNote": "",
+      "order": 72
+    },
+    {
+      "id": "243",
+      "officialId": 243,
+      "name": "积木街道角色见面会",
+      "land": "积木街道",
+      "type": "演出",
+      "description": "积木街道上的角色见面会，可顺路合影。",
+      "fit": "适合备选",
+      "priority": "P1",
+      "reason": "按兴趣和所在园区顺路选择，不增加跨区赶场。",
+      "reasonShort": "按兴趣和所在园区顺路选择，不增加跨区赶场。",
+      "requirements": "未列统一最低身高；按具体体验的现场要求参与。达到数值仍须符合座位与现场乘坐须知。",
+      "requirementShort": "按现场规则",
+      "feeLabel": "门票内常规体验",
+      "feeShort": "门票内常规体验",
+      "feeNote": "付费游戏、材料、商品及额外服务另核；不含餐饮。",
+      "quickPassText": "官网未标记支持乐捷通，不按快速通行项目计算。",
+      "quickPassShort": "未标记支持",
+      "notes": "角色见面会 | 互动合影；室内",
+      "sourceUrls": [
+        "https://www.legolandshanghai.cn/spot/detail?id=243"
+      ],
+      "image": "images/catalog/243.webp",
+      "fullImage": "images/catalog/full/243.webp",
+      "imageSourceUrl": "https://tencent-web-1320474462.cos.ap-shanghai.myqcloud.com/2025-07-04/20250704230952574915.jpg",
+      "operatingStatusByDate": {
+        "2026-10-17": {
+          "label": "场次／开放时间尚未列出",
+          "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+          "publishedTimes": null,
+          "memo": ""
+        },
+        "2026-10-18": {
+          "label": "场次／开放时间尚未列出",
+          "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+          "publishedTimes": null,
+          "memo": ""
+        }
+      },
+      "visitNote": "",
+      "order": 73
+    },
+    {
+      "id": "5",
+      "officialId": 5,
+      "name": "飞龙过山车",
+      "land": "乐高®城堡",
+      "type": "骑乘",
+      "description": "城堡主题过山车，有转弯、落差和速度感。",
+      "fit": "先看接受度",
+      "priority": "P2",
+      "reason": "存在高度、转动、速度或较强声光；先观察孩子反应，不为了打卡强玩。",
+      "reasonShort": "存在高度、转动、速度或较强声光；先观察孩子反应，不为了打卡强玩。",
+      "requirements": "最低身高 100 cm；最高身高 195 cm；最低年龄 4 岁；体重上限 130 kg；身高介于100厘米和130厘米，或年龄介于4周岁和8周岁之间的游客，必须由16周岁及以上且符合其他所有景点乘坐要求的看护人员陪同乘坐；游客独自乘坐的最低身高要求为130厘米，且最低年龄要求为8周岁。达到数值仍须符合座位与现场乘坐须知。",
+      "requirementShort": "≥100 cm／≥4 岁",
+      "feeLabel": "门票内常规体验",
+      "feeShort": "门票内常规体验",
+      "feeNote": "付费游戏、材料、商品及额外服务另核；不含餐饮。",
+      "quickPassText": "官网支持乐捷通；单项产品 ¥48 起仅为产品入口起价，本项目10/17、10/18价格与库存未取得。",
+      "quickPassShort": "支持 · 实价待查",
+      "notes": "高空视野 | 旋转；儿童 | 青少年 | 成人；室外",
+      "sourceUrls": [
+        "https://www.legolandshanghai.cn/spot/detail?id=5"
+      ],
+      "image": "images/catalog/5.webp",
+      "fullImage": "images/catalog/full/5.webp",
+      "imageSourceUrl": "https://tencent-web-1320474462.cos.ap-shanghai.myqcloud.com/2025-08-25/20250825110200289028.jpg",
+      "operatingStatusByDate": {
+        "2026-10-17": {
+          "label": "已列运营时段：10:00-19:00",
+          "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+          "publishedTimes": "10:00-19:00",
+          "memo": ""
+        },
+        "2026-10-18": {
+          "label": "已列运营时段：10:00-19:00",
+          "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+          "publishedTimes": "10:00-19:00",
+          "memo": ""
+        }
+      },
+      "visitNote": "",
+      "order": 74
+    },
+    {
+      "id": "172",
+      "officialId": 172,
+      "name": "小龙飞车",
+      "land": "乐高®城堡",
+      "type": "骑乘",
+      "description": "较小的龙主题过山车，也有速度和转弯，先观察再决定。",
+      "fit": "先看接受度",
+      "priority": "P2",
+      "reason": "存在高度、转动、速度或较强声光；先观察孩子反应，不为了打卡强玩。",
+      "reasonShort": "存在高度、转动、速度或较强声光；先观察孩子反应，不为了打卡强玩。",
+      "requirements": "最低身高 90 cm；身高介于90厘米和105厘米之间的游客，必须由16周岁及以上且符合其他所有景点乘坐要求的看护人员陪同乘坐；每个乘客舱仅允许一名看护人员和一名儿童；游客独自乘坐的最低身高要求为105厘米。达到数值仍须符合座位与现场乘坐须知。",
+      "requirementShort": "≥90 cm",
+      "feeLabel": "门票内常规体验",
+      "feeShort": "门票内常规体验",
+      "feeNote": "付费游戏、材料、商品及额外服务另核；不含餐饮。",
+      "quickPassText": "官网支持乐捷通；单项产品 ¥48 起仅为产品入口起价，本项目10/17、10/18价格与库存未取得。",
+      "quickPassShort": "支持 · 实价待查",
+      "notes": "旋转；儿童 | 青少年 | 成人；室外",
+      "sourceUrls": [
+        "https://www.legolandshanghai.cn/spot/detail?id=172"
+      ],
+      "image": "images/catalog/172.webp",
+      "fullImage": "images/catalog/full/172.webp",
+      "imageSourceUrl": "https://tencent-web-1320474462.cos.ap-shanghai.myqcloud.com/2025-07-13/20250713183832241366.jpg",
+      "operatingStatusByDate": {
+        "2026-10-17": {
+          "label": "已列运营时段：10:00-19:00",
+          "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+          "publishedTimes": "10:00-19:00",
+          "memo": ""
+        },
+        "2026-10-18": {
+          "label": "已列运营时段：10:00-19:00",
+          "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+          "publishedTimes": "10:00-19:00",
+          "memo": ""
+        }
+      },
+      "visitNote": "",
+      "order": 75
+    },
+    {
+      "id": "173",
+      "officialId": 173,
+      "name": "勇登高塔",
+      "land": "乐高®城堡",
+      "type": "骑乘",
+      "description": "亲子协作拉升到高处，兼顾恐高程度与体力。",
+      "fit": "先看接受度",
+      "priority": "P2",
+      "reason": "存在高度、转动、速度或较强声光；先观察孩子反应，不为了打卡强玩。",
+      "reasonShort": "存在高度、转动、速度或较强声光；先观察孩子反应，不为了打卡强玩。",
+      "requirements": "最低身高 95 cm；最低年龄 3 岁；体重上限 90 kg；身高介于95厘米和120厘米，或年龄介于3周岁和7周岁之间的游客，必须由16周岁及以上且符合其他所有景点乘坐要求的看护人员陪同乘坐；游客独自乘坐的最低身高要求为120厘米，且最低年龄要求为7周岁；游客乘坐的最大体重限制为90公斤；每个乘客舱最大承重为154公斤。达到数值仍须符合座位与现场乘坐须知。",
+      "requirementShort": "≥95 cm／≥3 岁",
+      "feeLabel": "门票内常规体验",
+      "feeShort": "门票内常规体验",
+      "feeNote": "付费游戏、材料、商品及额外服务另核；不含餐饮。",
+      "quickPassText": "官网支持乐捷通；单项产品 ¥48 起仅为产品入口起价，本项目10/17、10/18价格与库存未取得。",
+      "quickPassShort": "支持 · 实价待查",
+      "notes": "高空视野 | 可自控 | 旋转；儿童 | 青少年 | 成人；室外",
+      "sourceUrls": [
+        "https://www.legolandshanghai.cn/spot/detail?id=173"
+      ],
+      "image": "images/catalog/173.webp",
+      "fullImage": "images/catalog/full/173.webp",
+      "imageSourceUrl": "https://tencent-web-1320474462.cos.ap-shanghai.myqcloud.com/2025-06-18/20250618150401469071.jpg",
+      "operatingStatusByDate": {
+        "2026-10-17": {
+          "label": "已列运营时段：10:00-19:00",
+          "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+          "publishedTimes": "10:00-19:00",
+          "memo": ""
+        },
+        "2026-10-18": {
+          "label": "已列运营时段：10:00-19:00",
+          "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+          "publishedTimes": "10:00-19:00",
+          "memo": ""
+        }
+      },
+      "visitNote": "",
+      "order": 76
+    },
+    {
+      "id": "160",
+      "officialId": 160,
+      "name": "初级飞行学院",
+      "land": "乐高®城市",
+      "type": "骑乘",
+      "description": "双翼飞机主题乘骑，体验转动与高度变化。",
+      "fit": "先看接受度",
+      "priority": "P2",
+      "reason": "存在高度、转动、速度或较强声光；先观察孩子反应，不为了打卡强玩。",
+      "reasonShort": "存在高度、转动、速度或较强声光；先观察孩子反应，不为了打卡强玩。",
+      "requirements": "最低身高 100 cm；身高介于100厘米和140厘米之间的游客，必须由16周岁及以上且符合其他所有景点乘坐要求的看护人员陪同乘坐。达到数值仍须符合座位与现场乘坐须知。",
+      "requirementShort": "≥100 cm",
+      "feeLabel": "门票内常规体验",
+      "feeShort": "门票内常规体验",
+      "feeNote": "付费游戏、材料、商品及额外服务另核；不含餐饮。",
+      "quickPassText": "官网支持乐捷通；单项产品 ¥48 起仅为产品入口起价，本项目10/17、10/18价格与库存未取得。",
+      "quickPassShort": "支持 · 实价待查",
+      "notes": "可自控 | 旋转；儿童 | 青少年 | 成人；室外",
+      "sourceUrls": [
+        "https://www.legolandshanghai.cn/spot/detail?id=160"
+      ],
+      "image": "images/catalog/160.webp",
+      "fullImage": "images/catalog/full/160.webp",
+      "imageSourceUrl": "https://tencent-web-1320474462.cos.ap-shanghai.myqcloud.com/2026-06-15/20260615140253875638.jpg",
+      "operatingStatusByDate": {
+        "2026-10-17": {
+          "label": "已列运营时段：10:00-19:00",
+          "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+          "publishedTimes": "10:00-19:00",
+          "memo": ""
+        },
+        "2026-10-18": {
+          "label": "已列运营时段：10:00-19:00",
+          "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+          "publishedTimes": "10:00-19:00",
+          "memo": ""
+        }
+      },
+      "visitNote": "",
+      "order": 77
+    },
+    {
+      "id": "276",
+      "officialId": 276,
+      "name": "派对“砖”属角色见面会-僵尸伯爵/蜘蛛夫人",
+      "land": "乐高®城市",
+      "type": "小怪兽大派对",
+      "description": "与僵尸伯爵或蜘蛛夫人见面合影，先看孩子是否接受造型。",
+      "fit": "先看接受度",
+      "priority": "P2",
+      "reason": "存在高度、转动、速度或较强声光；先观察孩子反应，不为了打卡强玩。",
+      "reasonShort": "存在高度、转动、速度或较强声光；先观察孩子反应，不为了打卡强玩。",
+      "requirements": "未列统一最低身高；按具体体验的现场要求参与。达到数值仍须符合座位与现场乘坐须知。",
+      "requirementShort": "按现场规则",
+      "feeLabel": "门票内常规体验",
+      "feeShort": "门票内常规体验",
+      "feeNote": "付费游戏、材料、商品及额外服务另核；不含餐饮。",
+      "quickPassText": "官网未标记支持乐捷通，不按快速通行项目计算。",
+      "quickPassShort": "未标记支持",
+      "notes": "角色见面会",
+      "sourceUrls": [
+        "https://www.legolandshanghai.cn/spot/detail?id=276"
+      ],
+      "image": "images/catalog/276.webp",
+      "fullImage": "images/catalog/full/276.webp",
+      "imageSourceUrl": "https://tencent-web-1320474462.cos.ap-shanghai.myqcloud.com/2025-10-10/20251010165722566061.jpg",
+      "operatingStatusByDate": {
+        "2026-10-17": {
+          "label": "场次／开放时间尚未列出",
+          "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+          "publishedTimes": null,
+          "memo": ""
+        },
+        "2026-10-18": {
+          "label": "场次／开放时间尚未列出",
+          "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+          "publishedTimes": null,
+          "memo": ""
+        }
+      },
+      "visitNote": "",
+      "order": 78
+    },
+    {
+      "id": "278",
+      "officialId": 278,
+      "name": "V.I.M. 大咖怪兽派对",
+      "land": "乐高®城市",
+      "type": "小怪兽大派对",
+      "description": "季节限定的怪兽歌舞派对，场次与天气影响须当日核对。",
+      "fit": "先看接受度",
+      "priority": "P2",
+      "reason": "存在高度、转动、速度或较强声光；先观察孩子反应，不为了打卡强玩。",
+      "reasonShort": "存在高度、转动、速度或较强声光；先观察孩子反应，不为了打卡强玩。",
+      "requirements": "未列统一最低身高；按具体体验的现场要求参与。达到数值仍须符合座位与现场乘坐须知。",
+      "requirementShort": "按现场规则",
+      "feeLabel": "门票内常规体验",
+      "feeShort": "门票内常规体验",
+      "feeNote": "付费游戏、材料、商品及额外服务另核；不含餐饮。",
+      "quickPassText": "官网未标记支持乐捷通，不按快速通行项目计算。",
+      "quickPassShort": "未标记支持",
+      "notes": "限定演出 | 角色见面会",
+      "sourceUrls": [
+        "https://www.legolandshanghai.cn/spot/detail?id=278"
+      ],
+      "image": "images/catalog/278.webp",
+      "fullImage": "images/catalog/full/278.webp",
+      "imageSourceUrl": "https://tencent-web-1320474462.cos.ap-shanghai.myqcloud.com/2026-09-24/20260924152024914708.jpg",
+      "operatingStatusByDate": {
+        "2026-10-17": {
+          "label": "场次／开放时间尚未列出",
+          "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+          "publishedTimes": null,
+          "memo": ""
+        },
+        "2026-10-18": {
+          "label": "场次／开放时间尚未列出",
+          "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+          "publishedTimes": null,
+          "memo": ""
+        }
+      },
+      "visitNote": "",
+      "order": 79
+    },
+    {
+      "id": "396",
+      "officialId": 396,
+      "name": "搞怪电音派对",
+      "land": "乐高®城市",
+      "type": "小怪兽大派对",
+      "description": "电音与舞动派对，留意音量和孩子反应。",
+      "fit": "先看接受度",
+      "priority": "P2",
+      "reason": "存在高度、转动、速度或较强声光；先观察孩子反应，不为了打卡强玩。",
+      "reasonShort": "存在高度、转动、速度或较强声光；先观察孩子反应，不为了打卡强玩。",
+      "requirements": "未列统一最低身高；按具体体验的现场要求参与。达到数值仍须符合座位与现场乘坐须知。",
+      "requirementShort": "按现场规则",
+      "feeLabel": "门票内常规体验",
+      "feeShort": "门票内常规体验",
+      "feeNote": "付费游戏、材料、商品及额外服务另核；不含餐饮。",
+      "quickPassText": "官网未标记支持乐捷通，不按快速通行项目计算。",
+      "quickPassShort": "未标记支持",
+      "notes": "限定演出 | 角色见面会",
+      "sourceUrls": [
+        "https://www.legolandshanghai.cn/spot/detail?id=396"
+      ],
+      "image": "images/catalog/396.webp",
+      "fullImage": "images/catalog/full/396.webp",
+      "imageSourceUrl": "https://tencent-web-1320474462.cos.ap-shanghai.myqcloud.com/2026-10-12/20261012145534501656.jpg",
+      "operatingStatusByDate": {
+        "2026-10-17": {
+          "label": "场次／开放时间尚未列出",
+          "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+          "publishedTimes": null,
+          "memo": ""
+        },
+        "2026-10-18": {
+          "label": "场次／开放时间尚未列出",
+          "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+          "publishedTimes": null,
+          "memo": ""
+        }
+      },
+      "visitNote": "",
+      "order": 80
+    },
+    {
+      "id": "52",
+      "officialId": 52,
+      "name": "摩托艇追逐",
+      "land": "乐高®好朋友",
+      "type": "骑乘",
+      "description": "水面上的摩托艇主题乘骑，留意旋转和飞溅。",
+      "fit": "先看接受度",
+      "priority": "P2",
+      "reason": "存在高度、转动、速度或较强声光；先观察孩子反应，不为了打卡强玩。",
+      "reasonShort": "存在高度、转动、速度或较强声光；先观察孩子反应，不为了打卡强玩。",
+      "requirements": "最低身高 100 cm；最低年龄 4 岁；身高介于100厘米和130厘米，或年龄介于4周岁和8周岁之间的游客，必须由看护人员陪同乘坐。（看护人员的定义是年龄在16周岁及以上且符合其他所有景点乘坐要求的人员）；游客独自乘坐的最低身高要求为130厘米，且最低年龄要求为8周岁。达到数值仍须符合座位与现场乘坐须知。",
+      "requirementShort": "≥100 cm／≥4 岁",
+      "feeLabel": "门票内常规体验",
+      "feeShort": "门票内常规体验",
+      "feeNote": "付费游戏、材料、商品及额外服务另核；不含餐饮。",
+      "quickPassText": "官网支持乐捷通；单项产品 ¥48 起仅为产品入口起价，本项目10/17、10/18价格与库存未取得。",
+      "quickPassShort": "支持 · 实价待查",
+      "notes": "可自控 | 旋转 | 水上项目；儿童 | 青少年 | 成人；室外",
+      "sourceUrls": [
+        "https://www.legolandshanghai.cn/spot/detail?id=52"
+      ],
+      "image": "images/catalog/52.webp",
+      "fullImage": "images/catalog/full/52.webp",
+      "imageSourceUrl": "https://tencent-web-1320474462.cos.ap-shanghai.myqcloud.com/2025-06-18/20250618150322625502.jpg",
+      "operatingStatusByDate": {
+        "2026-10-17": {
+          "label": "已列运营时段：10:00-19:00",
+          "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+          "publishedTimes": "10:00-19:00",
+          "memo": ""
+        },
+        "2026-10-18": {
+          "label": "已列运营时段：10:00-19:00",
+          "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+          "publishedTimes": "10:00-19:00",
+          "memo": ""
+        }
+      },
+      "visitNote": "",
+      "order": 81
+    },
+    {
+      "id": "164",
+      "officialId": 164,
+      "name": "心湖城秋千",
+      "land": "乐高®好朋友",
+      "type": "骑乘",
+      "description": "悬空旋转秋千，先看孩子是否接受高度与离心感。",
+      "fit": "先看接受度",
+      "priority": "P2",
+      "reason": "存在高度、转动、速度或较强声光；先观察孩子反应，不为了打卡强玩。",
+      "reasonShort": "存在高度、转动、速度或较强声光；先观察孩子反应，不为了打卡强玩。",
+      "requirements": "最低身高 100 cm；最低年龄 4 岁；身高介于100厘米和120厘米，或年龄介于4周岁和6周岁之间的游客，必须由看护人员陪同乘坐。（看护人员的定义是年龄在16周岁及以上且符合其他所有景点乘坐要求的人员）；游客独自乘坐的最低身高要求为120厘米，且最低年龄要求为6周岁。达到数值仍须符合座位与现场乘坐须知。",
+      "requirementShort": "≥100 cm／≥4 岁",
+      "feeLabel": "门票内常规体验",
+      "feeShort": "门票内常规体验",
+      "feeNote": "付费游戏、材料、商品及额外服务另核；不含餐饮。",
+      "quickPassText": "官网支持乐捷通；单项产品 ¥48 起仅为产品入口起价，本项目10/17、10/18价格与库存未取得。",
+      "quickPassShort": "支持 · 实价待查",
+      "notes": "高空视野 | 旋转；儿童 | 青少年 | 成人；室外",
+      "sourceUrls": [
+        "https://www.legolandshanghai.cn/spot/detail?id=164"
+      ],
+      "image": "images/catalog/164.webp",
+      "fullImage": "images/catalog/full/164.webp",
+      "imageSourceUrl": "https://tencent-web-1320474462.cos.ap-shanghai.myqcloud.com/2025-07-07/20250707102346440239.jpg",
+      "operatingStatusByDate": {
+        "2026-10-17": {
+          "label": "已列运营时段：10:00-19:00",
+          "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+          "publishedTimes": "10:00-19:00",
+          "memo": ""
+        },
+        "2026-10-18": {
+          "label": "已列运营时段：10:00-19:00",
+          "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+          "publishedTimes": "10:00-19:00",
+          "memo": ""
+        }
+      },
+      "visitNote": "",
+      "order": 82
+    },
+    {
+      "id": "169",
+      "officialId": 169,
+      "name": "乐高®幻影忍者之旅",
+      "land": "乐高®幻影忍者",
+      "type": "骑乘",
+      "description": "戴 3D 眼镜，通过手势参与忍者对战；有暗场与声光。",
+      "fit": "先看接受度",
+      "priority": "P2",
+      "reason": "存在高度、转动、速度或较强声光；先观察孩子反应，不为了打卡强玩。",
+      "reasonShort": "存在高度、转动、速度或较强声光；先观察孩子反应，不为了打卡强玩。",
+      "requirements": "官网未列最低身高数值；身高不足115厘米的游客，必须由看护人员陪同乘坐。（看护人员的定义是年龄在16周岁及以上且符合其他所有景点乘坐要求的人员）；不可怀抱儿童；需独立坐稳。达到数值仍须符合座位与现场乘坐须知。",
+      "requirementShort": "按现场规则",
+      "feeLabel": "门票内常规体验",
+      "feeShort": "门票内常规体验",
+      "feeNote": "付费游戏、材料、商品及额外服务另核；不含餐饮。",
+      "quickPassText": "官网支持乐捷通；单项产品 ¥48 起仅为产品入口起价，本项目10/17、10/18价格与库存未取得。",
+      "quickPassShort": "支持 · 实价待查",
+      "notes": "平缓；儿童 | 青少年 | 成人 | 老年人；室内",
+      "sourceUrls": [
+        "https://www.legolandshanghai.cn/spot/detail?id=169"
+      ],
+      "image": "images/catalog/169.webp",
+      "fullImage": "images/catalog/full/169.webp",
+      "imageSourceUrl": "https://tencent-web-1320474462.cos.ap-shanghai.myqcloud.com/2025-06-12/20250612163706241714.jpg",
+      "operatingStatusByDate": {
+        "2026-10-17": {
+          "label": "已列运营时段：10:00-19:00",
+          "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+          "publishedTimes": "10:00-19:00",
+          "memo": ""
+        },
+        "2026-10-18": {
+          "label": "已列运营时段：10:00-19:00",
+          "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+          "publishedTimes": "10:00-19:00",
+          "memo": ""
+        }
+      },
+      "visitNote": "",
+      "order": 83
+    },
+    {
+      "id": "171",
+      "officialId": 171,
+      "name": "凯的空中竞技",
+      "land": "乐高®幻影忍者",
+      "type": "骑乘",
+      "description": "旋转的忍者主题乘骑，有转动和晃动。",
+      "fit": "先看接受度",
+      "priority": "P2",
+      "reason": "存在高度、转动、速度或较强声光；先观察孩子反应，不为了打卡强玩。",
+      "reasonShort": "存在高度、转动、速度或较强声光；先观察孩子反应，不为了打卡强玩。",
+      "requirements": "最低身高 90 cm；身高介于90厘米和120厘米之间的游客，必须由看护人员陪同乘坐。(看护人员的定义是年龄在16周岁及以上且符合其他所有景点乘坐要求的人员)；游客独自乘坐的最低身高要求为120厘米。达到数值仍须符合座位与现场乘坐须知。",
+      "requirementShort": "≥90 cm",
+      "feeLabel": "门票内常规体验",
+      "feeShort": "门票内常规体验",
+      "feeNote": "付费游戏、材料、商品及额外服务另核；不含餐饮。",
+      "quickPassText": "官网支持乐捷通；单项产品 ¥48 起仅为产品入口起价，本项目10/17、10/18价格与库存未取得。",
+      "quickPassShort": "支持 · 实价待查",
+      "notes": "可自控 | 高空视野 | 旋转；儿童 | 青少年 | 成人；室外",
+      "sourceUrls": [
+        "https://www.legolandshanghai.cn/spot/detail?id=171"
+      ],
+      "image": "images/catalog/171.webp",
+      "fullImage": "images/catalog/full/171.webp",
+      "imageSourceUrl": "https://tencent-web-1320474462.cos.ap-shanghai.myqcloud.com/2025-07-07/20250707104130537847.jpg",
+      "operatingStatusByDate": {
+        "2026-10-17": {
+          "label": "已列运营时段：10:00-19:00",
+          "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+          "publishedTimes": "10:00-19:00",
+          "memo": ""
+        },
+        "2026-10-18": {
+          "label": "已列运营时段：10:00-19:00",
+          "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+          "publishedTimes": "10:00-19:00",
+          "memo": ""
+        }
+      },
+      "visitNote": "",
+      "order": 84
+    },
+    {
+      "id": "168",
+      "officialId": 168,
+      "name": "龙小骄之玉龙神力",
+      "land": "乐高®悟空小侠",
+      "type": "骑乘",
+      "description": "玉龙主题互动乘骑，结合孩子对晃动的接受度选择。",
+      "fit": "先看接受度",
+      "priority": "P2",
+      "reason": "存在高度、转动、速度或较强声光；先观察孩子反应，不为了打卡强玩。",
+      "reasonShort": "存在高度、转动、速度或较强声光；先观察孩子反应，不为了打卡强玩。",
+      "requirements": "最低身高 90 cm；体重上限 136 kg；身高介于90厘米和120厘米之间的游客,必须由看护人员陪同乘坐。(看护人员的定义是年龄在16周岁及以上且符合其他所有景点乘坐要求的人员)；游客独自乘坐的最低身高要求为120厘米；游客乘坐的最大体重限制为136公斤。达到数值仍须符合座位与现场乘坐须知。",
+      "requirementShort": "≥90 cm",
+      "feeLabel": "门票内常规体验",
+      "feeShort": "门票内常规体验",
+      "feeNote": "付费游戏、材料、商品及额外服务另核；不含餐饮。",
+      "quickPassText": "官网未标记支持乐捷通，不按快速通行项目计算。",
+      "quickPassShort": "未标记支持",
+      "notes": "旋转；儿童 | 青少年 | 成人；室外",
+      "sourceUrls": [
+        "https://www.legolandshanghai.cn/spot/detail?id=168"
+      ],
+      "image": "images/catalog/168.webp",
+      "fullImage": "images/catalog/full/168.webp",
+      "imageSourceUrl": "https://tencent-web-1320474462.cos.ap-shanghai.myqcloud.com/2025-05-30/20250530161036873575.png",
+      "operatingStatusByDate": {
+        "2026-10-17": {
+          "label": "已列运营时段：10:00-19:00",
+          "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+          "publishedTimes": "10:00-19:00",
+          "memo": ""
+        },
+        "2026-10-18": {
+          "label": "已列运营时段：10:00-19:00",
+          "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+          "publishedTimes": "10:00-19:00",
+          "memo": ""
+        }
+      },
+      "visitNote": "",
+      "order": 85
+    },
+    {
+      "id": "65",
+      "officialId": 65,
+      "name": "乐高乐园®观光塔",
+      "land": "乐高乐园®创想世界",
+      "type": "骑乘",
+      "description": "升至约 60 米高处看全园，怕高的孩子可跳过。",
+      "fit": "先看接受度",
+      "priority": "P2",
+      "reason": "存在高度、转动、速度或较强声光；先观察孩子反应，不为了打卡强玩。",
+      "reasonShort": "存在高度、转动、速度或较强声光；先观察孩子反应，不为了打卡强玩。",
+      "requirements": "官网未列最低身高数值；身高不足100厘米的游客，必须由16周岁及以上且符合其他所有景点乘坐要求的看护人员陪同乘坐；游客独自乘坐的最低身高要求为100厘米。达到数值仍须符合座位与现场乘坐须知。",
+      "requirementShort": "按现场规则",
+      "feeLabel": "门票内常规体验",
+      "feeShort": "门票内常规体验",
+      "feeNote": "付费游戏、材料、商品及额外服务另核；不含餐饮。",
+      "quickPassText": "官网支持乐捷通；单项产品 ¥48 起仅为产品入口起价，本项目10/17、10/18价格与库存未取得。",
+      "quickPassShort": "支持 · 实价待查",
+      "notes": "高空视野 | 旋转 | 平缓；儿童 | 青少年 | 成人 | 老年人；室内",
+      "sourceUrls": [
+        "https://www.legolandshanghai.cn/spot/detail?id=65"
+      ],
+      "image": "images/catalog/65.webp",
+      "fullImage": "images/catalog/full/65.webp",
+      "imageSourceUrl": "https://tencent-web-1320474462.cos.ap-shanghai.myqcloud.com/2025-06-12/20250612163637807574.jpg",
+      "operatingStatusByDate": {
+        "2026-10-17": {
+          "label": "已列运营时段：10:00-19:00",
+          "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+          "publishedTimes": "10:00-19:00",
+          "memo": ""
+        },
+        "2026-10-18": {
+          "label": "已列运营时段：10:00-19:00",
+          "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+          "publishedTimes": "10:00-19:00",
+          "memo": ""
+        }
+      },
+      "visitNote": "",
+      "order": 86
+    },
+    {
+      "id": "176",
+      "officialId": 176,
+      "name": "乐高®大飞车",
+      "land": "乐高乐园®创想世界",
+      "type": "骑乘",
+      "description": "在积木主题轨道上盘旋、转弯和俯冲，速度感较强。",
+      "fit": "先看接受度",
+      "priority": "P2",
+      "reason": "存在高度、转动、速度或较强声光；先观察孩子反应，不为了打卡强玩。",
+      "reasonShort": "存在高度、转动、速度或较强声光；先观察孩子反应，不为了打卡强玩。",
+      "requirements": "最低身高 100 cm；最高身高 195 cm；体重上限 136 kg；游客独自乘坐的最低身高要求为130厘米，且最低年龄要求为8周岁；身高介于100厘米和130厘米，或年龄不足8周岁的游客，必须由看护人员陪同乘坐在旁边座位。（看护人员的定义是年龄在16周岁及以上且符合其他所有景点乘坐要求的人员）。达到数值仍须符合座位与现场乘坐须知。",
+      "requirementShort": "≥100 cm",
+      "feeLabel": "门票内常规体验",
+      "feeShort": "门票内常规体验",
+      "feeNote": "付费游戏、材料、商品及额外服务另核；不含餐饮。",
+      "quickPassText": "官网支持乐捷通；单项产品 ¥48 起仅为产品入口起价，本项目10/17、10/18价格与库存未取得。",
+      "quickPassShort": "支持 · 实价待查",
+      "notes": "高空视野 | 旋转；儿童 | 青少年 | 成人；室外",
+      "sourceUrls": [
+        "https://www.legolandshanghai.cn/spot/detail?id=176"
+      ],
+      "image": "images/catalog/176.webp",
+      "fullImage": "images/catalog/full/176.webp",
+      "imageSourceUrl": "https://tencent-web-1320474462.cos.ap-shanghai.myqcloud.com/2025-07-13/20250713184144416000.jpg",
+      "operatingStatusByDate": {
+        "2026-10-17": {
+          "label": "已列运营时段：10:00-19:00",
+          "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+          "publishedTimes": "10:00-19:00",
+          "memo": ""
+        },
+        "2026-10-18": {
+          "label": "已列运营时段：10:00-19:00",
+          "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+          "publishedTimes": "10:00-19:00",
+          "memo": ""
+        }
+      },
+      "visitNote": "",
+      "order": 87
+    },
+    {
+      "id": "277",
+      "officialId": 277,
+      "name": "派对“砖”属角色见面会-稻草人",
+      "land": "乐高乐园酒店®",
+      "type": "小怪兽大派对",
+      "description": "与稻草人角色合影，是否有场次以当天公布为准。",
+      "fit": "先看接受度",
+      "priority": "P2",
+      "reason": "存在高度、转动、速度或较强声光；先观察孩子反应，不为了打卡强玩。",
+      "reasonShort": "存在高度、转动、速度或较强声光；先观察孩子反应，不为了打卡强玩。",
+      "requirements": "未列统一最低身高；按具体体验的现场要求参与。达到数值仍须符合座位与现场乘坐须知。",
+      "requirementShort": "按现场规则",
+      "feeLabel": "门票内常规体验",
+      "feeShort": "门票内常规体验",
+      "feeNote": "付费游戏、材料、商品及额外服务另核；不含餐饮。",
+      "quickPassText": "官网未标记支持乐捷通，不按快速通行项目计算。",
+      "quickPassShort": "未标记支持",
+      "notes": "角色见面会",
+      "sourceUrls": [
+        "https://www.legolandshanghai.cn/spot/detail?id=277"
+      ],
+      "image": "images/catalog/277.webp",
+      "fullImage": "images/catalog/full/277.webp",
+      "imageSourceUrl": "https://tencent-web-1320474462.cos.ap-shanghai.myqcloud.com/2025-10-11/20251011110948495955.jpg",
+      "operatingStatusByDate": {
+        "2026-10-17": {
+          "label": "场次／开放时间尚未列出",
+          "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+          "publishedTimes": null,
+          "memo": ""
+        },
+        "2026-10-18": {
+          "label": "场次／开放时间尚未列出",
+          "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+          "publishedTimes": null,
+          "memo": ""
+        }
+      },
+      "visitNote": "",
+      "order": 88
+    },
+    {
+      "id": "280",
+      "officialId": 280,
+      "name": "稻草人的怪诞舞会",
+      "land": "乐高乐园酒店®",
+      "type": "小怪兽大派对",
+      "description": "稻草人主题歌舞活动，孩子喜欢角色时顺路加入。",
+      "fit": "先看接受度",
+      "priority": "P2",
+      "reason": "存在高度、转动、速度或较强声光；先观察孩子反应，不为了打卡强玩。",
+      "reasonShort": "存在高度、转动、速度或较强声光；先观察孩子反应，不为了打卡强玩。",
+      "requirements": "未列统一最低身高；按具体体验的现场要求参与。达到数值仍须符合座位与现场乘坐须知。",
+      "requirementShort": "按现场规则",
+      "feeLabel": "门票内常规体验",
+      "feeShort": "门票内常规体验",
+      "feeNote": "付费游戏、材料、商品及额外服务另核；不含餐饮。",
+      "quickPassText": "官网未标记支持乐捷通，不按快速通行项目计算。",
+      "quickPassShort": "未标记支持",
+      "notes": "限定演出",
+      "sourceUrls": [
+        "https://www.legolandshanghai.cn/spot/detail?id=280"
+      ],
+      "image": "images/catalog/280.webp",
+      "fullImage": "images/catalog/full/280.webp",
+      "imageSourceUrl": "https://tencent-web-1320474462.cos.ap-shanghai.myqcloud.com/2026-09-22/20260922154952551170.jpg",
+      "operatingStatusByDate": {
+        "2026-10-17": {
+          "label": "场次／开放时间尚未列出",
+          "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+          "publishedTimes": null,
+          "memo": ""
+        },
+        "2026-10-18": {
+          "label": "场次／开放时间尚未列出",
+          "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+          "publishedTimes": null,
+          "memo": ""
+        }
+      },
+      "visitNote": "",
+      "order": 89
+    },
+    {
+      "id": "407",
+      "officialId": 407,
+      "name": "怪兽能量补给站-年卡专属",
+      "land": "乐高®城堡",
+      "type": "小怪兽大派对",
+      "description": "年卡专属糖果兑换点，需要年卡与对应兑换券。",
+      "fit": "暂不安排",
+      "priority": "P3",
+      "reason": "本次没有确认持有年卡，不把年卡专属权益算进普通门票。",
+      "reasonShort": "本次没有确认持有年卡，不把年卡专属权益算进普通门票。",
+      "requirements": "年卡持有人；凭年卡中心领取的糖果兑换券。达到数值仍须符合座位与现场乘坐须知。",
+      "requirementShort": "年卡专属",
+      "feeLabel": "年卡权益",
+      "feeShort": "年卡权益",
+      "feeNote": "普通门票不自动含年卡专属兑换。",
+      "quickPassText": "官网未标记支持乐捷通，不按快速通行项目计算。",
+      "quickPassShort": "未标记支持",
+      "notes": "互动体验",
+      "sourceUrls": [
+        "https://www.legolandshanghai.cn/spot/detail?id=407"
+      ],
+      "image": "images/catalog/407.webp",
+      "fullImage": "images/catalog/full/407.webp",
+      "imageSourceUrl": "https://tencent-web-1320474462.cos.ap-shanghai.myqcloud.com/2026-09-28/20260928143947251552.jpg",
+      "operatingStatusByDate": {
+        "2026-10-17": {
+          "label": "场次／开放时间尚未列出",
+          "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+          "publishedTimes": null,
+          "memo": ""
+        },
+        "2026-10-18": {
+          "label": "场次／开放时间尚未列出",
+          "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+          "publishedTimes": null,
+          "memo": ""
+        }
+      },
+      "visitNote": "",
+      "order": 90
+    },
+    {
+      "id": "45",
+      "officialId": 45,
+      "name": "驾驶学校",
+      "land": "乐高®城市",
+      "type": "骑乘",
+      "description": "6—13 岁儿童驾驶小车学习交通规则，4 岁孩子不适用。",
+      "fit": "暂不安排",
+      "priority": "P3",
+      "reason": "要求 6—13 岁，本次两名孩子只有 4 岁。",
+      "reasonShort": "要求 6—13 岁，本次两名孩子只有 4 岁。",
+      "requirements": "6—13 岁儿童；本次不安排。达到数值仍须符合座位与现场乘坐须知。",
+      "requirementShort": "6—13 岁",
+      "feeLabel": "门票内常规体验",
+      "feeShort": "门票内常规体验",
+      "feeNote": "付费游戏、材料、商品及额外服务另核；不含餐饮。",
+      "quickPassText": "官网未标记支持乐捷通，不按快速通行项目计算。",
+      "quickPassShort": "未标记支持",
+      "notes": "平缓 | 可自控；儿童 | 青少年；室外",
+      "sourceUrls": [
+        "https://www.legolandshanghai.cn/spot/detail?id=45"
+      ],
+      "image": "images/catalog/45.webp",
+      "fullImage": "images/catalog/full/45.webp",
+      "imageSourceUrl": "https://tencent-web-1320474462.cos.ap-shanghai.myqcloud.com/2025-06-12/20250612164107943318.jpg",
+      "operatingStatusByDate": {
+        "2026-10-17": {
+          "label": "已列运营时段：10:00-19:00",
+          "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+          "publishedTimes": "10:00-19:00",
+          "memo": ""
+        },
+        "2026-10-18": {
+          "label": "已列运营时段：10:00-19:00",
+          "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+          "publishedTimes": "10:00-19:00",
+          "memo": ""
+        }
+      },
+      "visitNote": "",
+      "order": 91
+    },
+    {
+      "id": "54",
+      "officialId": 54,
+      "name": "沙滩派对",
+      "land": "乐高®好朋友",
+      "type": "景点",
+      "description": "水桶、滑道和喷水设施组成的户外戏水区，本次两天列季节性关闭。",
+      "fit": "暂不安排",
+      "priority": "P3",
+      "reason": "10/17 与 10/18 官网均列季节性关闭。",
+      "reasonShort": "10/17 与 10/18 官网均列季节性关闭。",
+      "requirements": "未列统一最低身高；按具体体验的现场要求参与。达到数值仍须符合座位与现场乘坐须知。",
+      "requirementShort": "按现场规则",
+      "feeLabel": "门票内常规体验",
+      "feeShort": "门票内常规体验",
+      "feeNote": "付费游戏、材料、商品及额外服务另核；不含餐饮。",
+      "quickPassText": "官网未标记支持乐捷通，不按快速通行项目计算。",
+      "quickPassShort": "未标记支持",
+      "notes": "水上乐趣；室外",
+      "sourceUrls": [
+        "https://www.legolandshanghai.cn/spot/detail?id=54"
+      ],
+      "image": "images/catalog/54.webp",
+      "fullImage": "images/catalog/full/54.webp",
+      "imageSourceUrl": "https://tencent-web-1320474462.cos.ap-shanghai.myqcloud.com/2025-07-13/20250713184008265341.jpg",
+      "operatingStatusByDate": {
+        "2026-10-17": {
+          "label": "季节性关闭Seasonal Closure",
+          "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+          "publishedTimes": null,
+          "memo": "季节性关闭Seasonal Closure"
+        },
+        "2026-10-18": {
+          "label": "季节性关闭Seasonal Closure",
+          "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+          "publishedTimes": null,
+          "memo": "季节性关闭Seasonal Closure"
+        }
+      },
+      "visitNote": "两天列关闭",
+      "order": 92
+    },
+    {
+      "id": "170",
+      "officialId": 170,
+      "name": "杰的重力训练营",
+      "land": "乐高®幻影忍者",
+      "type": "骑乘",
+      "description": "重力与升降体验，最低身高 110 cm，本次已知身高不足。",
+      "fit": "暂不安排",
+      "priority": "P3",
+      "reason": "最低身高 110 cm，只知满 102 cm，不能判达标。",
+      "reasonShort": "最低身高 110 cm，只知满 102 cm，不能判达标。",
+      "requirements": "最低身高 110 cm；身高介于110厘米和130厘米之间的游客，必须由看护人员陪同乘坐（看护人员的定义是年龄在16周岁及以上且符合其他所有景点乘坐要求的人员）；游客独自乘坐的最低身高要求为130厘米；每个乘客舱仅允许两名游客，且乘客舱最大承重为150公斤。儿童请坐在乘客舱的内侧。达到数值仍须符合座位与现场乘坐须知。",
+      "requirementShort": "≥110 cm",
+      "feeLabel": "门票内常规体验",
+      "feeShort": "门票内常规体验",
+      "feeNote": "付费游戏、材料、商品及额外服务另核；不含餐饮。",
+      "quickPassText": "官网支持乐捷通；单项产品 ¥48 起仅为产品入口起价，本项目10/17、10/18价格与库存未取得。",
+      "quickPassShort": "支持 · 实价待查",
+      "notes": "旋转；儿童 | 青少年 | 成人；室外",
+      "sourceUrls": [
+        "https://www.legolandshanghai.cn/spot/detail?id=170"
+      ],
+      "image": "images/catalog/170.webp",
+      "fullImage": "images/catalog/full/170.webp",
+      "imageSourceUrl": "https://tencent-web-1320474462.cos.ap-shanghai.myqcloud.com/2025-07-13/20250713184210931006.jpg",
+      "operatingStatusByDate": {
+        "2026-10-17": {
+          "label": "已列运营时段：10:00-19:00",
+          "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+          "publishedTimes": "10:00-19:00",
+          "memo": ""
+        },
+        "2026-10-18": {
+          "label": "已列运营时段：10:00-19:00",
+          "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+          "publishedTimes": "10:00-19:00",
+          "memo": ""
+        }
+      },
+      "visitNote": "",
+      "order": 93
+    },
+    {
+      "id": "166",
+      "officialId": 166,
+      "name": "乐高®悟空小侠花果山冒险",
+      "land": "乐高®悟空小侠",
+      "type": "骑乘",
+      "description": "水上乘骑穿过悟空小侠场景，有声光、飞溅，可能淋湿；本次两天列关闭。",
+      "fit": "暂不安排",
+      "priority": "P3",
+      "reason": "10/17 与 10/18 官网均列当日关闭，出发前复查。",
+      "reasonShort": "10/17 与 10/18 官网均列当日关闭，出发前复查。",
+      "requirements": "最低身高 100 cm；身高介于100厘米和130厘米之间的游客，必须由16周岁及以上且符合其他所有景点乘坐要求的看护人员陪同乘坐；游客独自乘坐的最低身高要求为130厘米；可能淋湿。达到数值仍须符合座位与现场乘坐须知。",
+      "requirementShort": "≥100 cm",
+      "feeLabel": "门票内常规体验",
+      "feeShort": "门票内常规体验",
+      "feeNote": "付费游戏、材料、商品及额外服务另核；不含餐饮。",
+      "quickPassText": "官网支持乐捷通；单项产品 ¥48 起仅为产品入口起价，本项目10/17、10/18价格与库存未取得。",
+      "quickPassShort": "支持 · 实价待查",
+      "notes": "水上项目 | 高空视野；儿童 | 青少年 | 成人；室外",
+      "sourceUrls": [
+        "https://www.legolandshanghai.cn/spot/detail?id=166"
+      ],
+      "image": "images/catalog/166.webp",
+      "fullImage": "images/catalog/full/166.webp",
+      "imageSourceUrl": "https://tencent-web-1320474462.cos.ap-shanghai.myqcloud.com/2026-04-16/20260416112935726058.jpg",
+      "operatingStatusByDate": {
+        "2026-10-17": {
+          "label": "今日关闭Closed Today",
+          "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+          "publishedTimes": null,
+          "memo": "今日关闭Closed Today"
+        },
+        "2026-10-18": {
+          "label": "今日关闭Closed Today",
+          "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+          "publishedTimes": null,
+          "memo": "今日关闭Closed Today"
+        }
+      },
+      "visitNote": "两天列关闭",
+      "order": 94
+    },
+    {
+      "id": "167",
+      "officialId": 167,
+      "name": "悟空小侠云霄历险",
+      "land": "乐高®悟空小侠",
+      "type": "骑乘",
+      "description": "高空冒险乘骑，最低身高 120 cm，本次已知身高不足。",
+      "fit": "暂不安排",
+      "priority": "P3",
+      "reason": "最低身高 120 cm，只知满 102 cm，不能判达标。",
+      "reasonShort": "最低身高 120 cm，只知满 102 cm，不能判达标。",
+      "requirements": "最低身高 120 cm。达到数值仍须符合座位与现场乘坐须知。",
+      "requirementShort": "≥120 cm",
+      "feeLabel": "门票内常规体验",
+      "feeShort": "门票内常规体验",
+      "feeNote": "付费游戏、材料、商品及额外服务另核；不含餐饮。",
+      "quickPassText": "官网支持乐捷通；单项产品 ¥48 起仅为产品入口起价，本项目10/17、10/18价格与库存未取得。",
+      "quickPassShort": "支持 · 实价待查",
+      "notes": "旋转；青少年 | 成人；室外",
+      "sourceUrls": [
+        "https://www.legolandshanghai.cn/spot/detail?id=167"
+      ],
+      "image": "images/catalog/167.webp",
+      "fullImage": "images/catalog/full/167.webp",
+      "imageSourceUrl": "https://tencent-web-1320474462.cos.ap-shanghai.myqcloud.com/2025-06-18/20250618143152677531.jpg",
+      "operatingStatusByDate": {
+        "2026-10-17": {
+          "label": "已列运营时段：10:00-19:00",
+          "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+          "publishedTimes": "10:00-19:00",
+          "memo": ""
+        },
+        "2026-10-18": {
+          "label": "已列运营时段：10:00-19:00",
+          "sourceUrl": "https://www.legolandshanghai.cn/spot/date",
+          "publishedTimes": "10:00-19:00",
+          "memo": ""
+        }
+      },
+      "visitNote": "",
+      "order": 95
+    }
+  ]
+}

@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="robots" content="noindex,nofollow,noarchive">
+  <title>本地相册 · Naifan Li</title>
+  <link rel="icon" href="/local-photos/favicon.svg">
+  <link rel="stylesheet" href="/local-photos/style.css">
+  <script src="/local-photos/app.js" defer></script>
+  <script src="/local-photos/travel-map-platform.js" defer></script>
+  <script src="/local-photos/coordtransform.js" defer></script>
+  <script src="/local-photos/amap-map.js" defer></script>
+  <script src="/local-photos/journeys.js" defer></script>
+  <script src="/local-photos/boundary-cache.js" defer></script>
+  <script src="/local-photos/footprints.js" defer></script>
+  <script src="/local-photos/organize.js" defer></script>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="/">Naifan Li<span class="brand-divider">/</span><span>本地相册</span></a>
+    <div class="top-actions"><span class="private-label"><span class="status-dot"></span>仅在本机浏览</span><button id="theme" class="icon-button" aria-label="切换明暗主题">◐</button><a class="blog-link" href="/">返回博客 ↗</a></div>
+  </header>
+  <div class="app-layout">
+    <aside class="sidebar" aria-label="相册导航">
+      <div class="library-mark"><svg viewBox="0 0 32 32" aria-hidden="true"><rect x="4" y="4" width="24" height="24" rx="7"/><circle cx="12" cy="12" r="2"/><path d="m6 24 8-9 5 5 4-4 5 8"/></svg><div><strong>我的照片图库</strong><span>把回忆留在身边。</span></div></div>
+      <p class="section-label">照片</p>
+      <nav id="views">
+        <button class="nav-item active" data-view="all"><span>▦</span>全部照片<b id="count-all">0</b></button>
+        <button class="nav-item" data-view="favorites"><span>☆</span>收藏<b id="count-favorites">0</b></button>
+        <button class="nav-item" data-view="duplicates"><span>▧</span>完全重复<b id="count-duplicates">0</b></button>
+        <button class="nav-item" data-view="organize"><span>▥</span>内容整理<b id="organize-nav-count">—</b></button>
+        <button class="nav-item" data-view="footprints"><span>⌖</span>旅游足迹<b id="footprint-count-nav">—</b></button>
+        <button class="nav-item" data-view="journeys"><span>▤</span>旅行相册</button>
+      </nav>
+      <div class="sidebar-heading"><p class="section-label">按时间浏览</p><button id="clear-month" class="text-button" hidden>清除</button></div>
+      <nav id="months" class="month-list" aria-label="按月份浏览"></nav>
+      <div class="sidebar-bottom"><button id="source-button" class="source-button"><span>⌘</span><span id="source-name">系统照片图库</span><span>↗</span></button><p>原图保留在原位置。<br>照片文件保存在本机。</p></div>
+    </aside>
+    <main id="main">
+      <div class="page-heading"><div><p class="eyebrow">我的私人相册</p><h1 id="view-title">全部照片<span class="title-dot">.</span></h1><p id="view-description" class="lead">把值得留下的瞬间，整理在这里。</p></div><button id="refresh" class="button secondary">↻ 刷新相册</button></div>
+      <div class="overview" aria-label="照片在本机的可用状态"><button data-availability="local"><span class="metric-label">本地原图</span><strong id="stat-local">—</strong><span class="metric-foot">可直接查看原图</span></button><button data-availability="preview"><span class="metric-label">本地预览</span><strong id="stat-preview">—</strong><span class="metric-foot">原图尚未下载</span></button><button data-availability="unavailable"><span class="metric-label">尚未下载</span><strong id="stat-unavailable">—</strong><span class="metric-foot">暂时显示占位图</span></button></div>
+      <div id="status" class="status-message" role="status" aria-live="polite">正在连接本机图库…</div>
+      <section id="organize-workbench" hidden aria-label="照片内容整理">
+        <div class="organize-heading"><div><h2>先整理，再决定留下什么</h2><p>类型和内容分开归类，模型结果是建议。这里只记录复核状态，不删除原图。</p></div><div class="organize-actions"><select id="analysis-limit" aria-label="分析数量"><option value="64">先整理 64 张</option><option value="256">整理 256 张</option><option value="">整理全部待处理照片</option></select><button id="analysis-start" class="button primary">开始本地整理</button><button id="analysis-stop" class="button secondary" hidden>停止任务</button></div></div>
+        <div class="organize-stats"><div><strong id="organized-count">—</strong><span>张已整理</span></div><div><strong id="embedding-count">—</strong><span>张可文搜图</span></div><div><strong id="review-count">—</strong><span>张待人工复核</span></div><div><strong id="delete-count">—</strong><span>张标记待删除</span></div></div>
+        <p id="analysis-status" class="status-message" role="status">读取本地整理记录…</p>
+        <div id="content-categories" class="content-categories"></div>
+        <div class="organize-filters"><select id="content-type" aria-label="照片类型"><option value="">全部类型</option></select><select id="content-review" aria-label="复核状态"><option value="">全部复核状态</option><option value="unreviewed">待复核</option><option value="keep">已决定保留</option><option value="delete">已标记待删除</option></select><select id="search-mode" aria-label="搜索方式"><option value="keyword">文字／标签检索</option><option value="semantic">语义文搜图</option></select><label class="checkbox-label"><input id="only-unprocessed" type="checkbox">只看未整理照片</label></div>
+        <div class="review-toolbar"><button id="select-page" class="button secondary">选择当前页</button><span id="selected-count">未选择照片</span><button id="review-keep" class="button secondary">标记保留</button><button id="review-delete" class="button secondary">标记待删除</button><button id="review-reset" class="text-button">恢复待复核</button></div>
+      </section>
+      <section id="footprint-workbench" hidden aria-label="旅游足迹">
+        <div class="footprint-metrics"><div><strong id="footprint-city-count">—</strong><span>个有照片的城市</span></div><div><strong id="footprint-country-count">—</strong><span>个国家或地区</span></div><div><strong id="footprint-photo-count">—</strong><span>张留下足迹的照片</span></div><p>城市来自照片的拍摄地点。<br>生活的地方，也是一段足迹。</p></div>
+        <div class="footprint-toolbar"><label class="search-field"><span aria-hidden="true">⌕</span><input id="footprint-search" type="search" placeholder="搜索城市或省份" aria-label="搜索足迹城市"></label><label class="sr-only" for="footprint-year">拍摄年份</label><select id="footprint-year"><option value="">全部年份</option></select><label class="sr-only" for="footprint-country">国家或地区</label><select id="footprint-country"><option value="">全部国家与地区</option></select></div>
+        <div class="footprint-map-layout"><div class="footprint-map-panel"><div class="map-controls"><label class="sr-only" for="footprint-provider">足迹地图来源</label><select id="footprint-provider"><option value="amap">高德城市地图</option><option value="offline">离线区域填色</option></select><div><button id="footprint-fit" class="button secondary">查看全部足迹</button></div></div><div id="footprint-amap" aria-label="已点亮城市的高德地图" hidden></div><svg id="footprint-offline" viewBox="0 0 900 520" role="img" aria-label="城市足迹离线地图"></svg><p id="footprint-map-status" class="footprint-map-status" role="status">正在汇总拍摄城市…</p><div class="footprint-legend"><span><i></i>拍过照片的城市</span><span><i class="selected"></i>正在查看的城市</span><span>高德底图会联网，照片文件留在本机。</span></div></div><aside class="footprint-city-list-panel" aria-label="点亮城市列表"><div class="footprint-list-heading"><strong>我的城市足迹</strong><span id="footprint-list-count"></span></div><div id="footprint-city-list"></div><p id="footprint-list-empty" class="muted" hidden>没有符合条件的城市。</p></aside></div>
+        <div class="footprint-data-note"><p id="footprint-data-note"></p><button id="footprint-source" class="text-button" hidden>选择系统照片图库</button></div>
+        <section id="footprint-detail" hidden aria-label="城市照片"><div class="footprint-detail-heading"><div><p class="eyebrow">这些回忆，留在这里</p><h2 id="footprint-city-title"></h2><p id="footprint-city-description" class="muted"></p></div><button id="footprint-make-album" class="button secondary">整理成旅行相册</button></div><p id="footprint-city-dates" class="muted"></p><div id="footprint-photo-grid" class="gallery"></div><div class="load-area"><button id="footprint-load-more" class="button secondary" hidden>查看更多城市照片</button></div></section>
+      </section>
+      <section id="journey-workbench" hidden aria-label="旅行相册">
+        <div class="journey-toolbar"><div><h2>重温一次旅行</h2><p id="geo-coverage" class="muted">正在读取拍摄地点…</p></div><button id="new-journey" class="button primary">＋ 旅行相册</button></div>
+        <div id="journey-list" class="journey-list"></div>
+        <div class="journey-hint">建议相册按拍摄时间归组，你也可以指定日期建立旅行相册。</div>
+        <div id="journey-detail" hidden>
+          <div class="journey-detail-heading"><div><h2 id="journey-title"></h2><p id="journey-summary" class="muted"></p></div><div class="journey-actions"><button id="save-suggestion" class="button secondary" hidden>保存为旅行相册</button><button id="share-story" class="button secondary">导出故事 ↓</button></div></div>
+          <div class="map-timeline-layout"><div class="map-panel"><div class="map-controls"><label class="sr-only" for="map-provider">地图来源</label><select id="map-provider"><option value="amap">高德街道地图</option><option value="offline">离线地图</option></select><div><button id="map-fit" class="icon-button" aria-label="显示全部拍摄点">⊙</button><button id="map-out" class="icon-button" aria-label="缩小地图">−</button><button id="map-in" class="icon-button" aria-label="放大地图">＋</button></div></div><div id="amap-canvas" aria-label="高德街道地图" hidden></div><svg id="route-map" viewBox="0 0 900 520" role="img" aria-label="照片拍摄地点地图"></svg><div id="map-empty" hidden class="map-empty">这个相册没有 GPS 信息。<br>仍可按时间查看照片。</div><div class="map-caption"><span id="map-location"></span><span id="map-attribution">Natural Earth · 离线底图</span></div><div class="replay-controls"><button id="replay" class="button secondary">▶ 按时间回看</button><input id="journey-scrubber" type="range" min="0" max="0" value="0" aria-label="旅行时间线位置"><span id="replay-position"></span></div><p id="map-provider-status" class="map-provider-status" role="status"></p><p id="map-disclaimer" class="map-disclaimer">连线仅连接照片拍摄点，不代表真实步行或驾车轨迹。离线底图不含详细街道。</p></div><aside class="journey-timeline" aria-label="旅行照片时间线"><div id="timeline-list"></div><button id="timeline-more" class="button secondary" hidden>查看更多照片</button></aside></div>
+        </div>
+      </section>
+      <div class="toolbar photo-only"><label class="search-field"><span aria-hidden="true">⌕</span><input id="search" type="search" placeholder="搜索文件名、相册、标签或笔记" aria-label="搜索照片"><kbd>/</kbd></label><label class="sr-only" for="album-filter">按相册筛选</label><select id="album-filter"><option value="">全部相册</option></select><button id="check-duplicates" class="button secondary">检查重复照片</button></div>
+      <div class="results-heading photo-only"><span id="results-count">正在载入照片…</span><button id="clear-filters" class="text-button" hidden>清除筛选</button><a class="text-button export-link" href="/api/export" download>导出整理记录 ↓</a></div>
+      <div id="gallery" class="gallery" aria-label="照片网格"></div>
+      <section id="empty" class="empty-state" hidden><span class="empty-symbol" aria-hidden="true">▦</span><h2 id="empty-title">开始整理你的照片</h2><p id="empty-description">连接照片图库或本地文件夹，照片文件保留在本机。</p><button id="empty-source" class="button primary">选择照片来源</button></section>
+      <div class="load-area"><button id="load-more" class="button secondary" hidden>加载更多照片</button></div>
+      <footer class="gallery-footer"><span id="updated">本地相册</span><span>本机相册 · 不主动下载 iCloud 原图</span></footer>
+    </main>
+  </div>
+  <dialog id="photo-dialog" aria-labelledby="photo-title">
+    <div class="photo-layout"><div class="photo-stage"><button id="close-photo" class="stage-button close" aria-label="关闭照片">×</button><button id="previous-photo" class="stage-button previous" aria-label="上一张照片">‹</button><div id="photo-frame"></div><button id="next-photo" class="stage-button next" aria-label="下一张照片">›</button><span id="photo-position" class="photo-position"></span></div><div class="photo-details"><p class="eyebrow">照片详情</p><h2 id="photo-title"></h2><p id="photo-date" class="muted"></p><div id="photo-availability" class="availability-badge"></div><dl id="photo-metadata"></dl><button id="favorite-photo" class="button secondary">☆ 加入收藏</button><form id="annotation-form"><label for="photo-category">内容分类修正</label><select id="photo-category"><option value="">使用建议分类</option></select><label for="photo-media-type">类型修正</label><select id="photo-media-type"><option value="">使用自动类型</option></select><label for="photo-review">清理复核</label><select id="photo-review"><option value="unreviewed">待复核</option><option value="keep">保留</option><option value="delete">待删除（仅标记）</option></select><label for="custom-album">自定义相册</label><input id="custom-album" list="album-names" placeholder="例如：家人、周末旅行" maxlength="120"><datalist id="album-names"></datalist><label for="tags">自定义标签</label><input id="tags" placeholder="多个标签用逗号分隔" maxlength="2400"><label for="note">记下一句话</label><textarea id="note" rows="3" maxlength="4000" placeholder="那一刻发生了什么？"></textarea><button class="button primary" type="submit">保存详情</button><p id="save-status" role="status" class="muted"></p></form><details id="photo-ocr"><summary>识别出的文字</summary><pre id="ocr-text"></pre></details><a id="download-original" class="original-link" download>保存原图到本机 ↓</a><p id="original-help" class="muted small"></p></div></div>
+  </dialog>
+  <dialog id="source-dialog" aria-labelledby="source-title"><form id="source-form" class="source-form"><div class="dialog-heading"><h2 id="source-title">照片来源</h2><button type="button" id="close-source" class="icon-button" aria-label="关闭来源设置">×</button></div><p>读取本机已有照片。收藏、标签和笔记保存在这个本地相册中。</p><label for="source-kind">来源类型</label><select id="source-kind"><option value="photos">macOS 照片图库</option><option value="folder">本地照片文件夹</option></select><label for="source-path">文件夹路径</label><input id="source-path" required placeholder="/Users/you/Pictures/Photos Library.photoslibrary"><p class="muted small">iCloud 原图未下载时，也可以浏览本地已有预览。隐藏照片和最近删除的项目不会载入。</p><button class="button primary" type="submit">连接并刷新</button><p id="source-error" class="form-error" role="alert"></p></form></dialog>
+  <div id="toast" role="status" hidden></div>
+  <dialog id="journey-dialog" aria-labelledby="new-journey-title"><form id="journey-form" class="source-form"><div class="dialog-heading"><h2 id="new-journey-title">新建旅行相册</h2><button type="button" id="close-journey" class="icon-button" aria-label="关闭旅行相册表单">×</button></div><input id="journey-city" type="hidden"><p id="journey-city-scope" class="muted small" hidden></p><label for="journey-name">相册名称</label><input id="journey-name" maxlength="120" required placeholder="上海周末游"><div class="date-fields"><div><label for="journey-start">开始日期</label><input id="journey-start" type="date" required></div><div><label for="journey-end">结束日期</label><input id="journey-end" type="date" required></div></div><label for="journey-album">来源相册</label><select id="journey-album"><option value="">该日期范围内的全部照片</option></select><label for="journey-intro">这次旅行的故事</label><textarea id="journey-intro" rows="3" maxlength="4000" placeholder="写几句这次旅行的回忆…"></textarea><p class="muted small">这里只做本地归类，不移动原图，也不修改系统照片相册。</p><button class="button primary" type="submit">创建旅行相册</button><p id="journey-error" class="form-error" role="alert"></p></form></dialog>
+  <dialog id="story-dialog" aria-labelledby="story-title"><form id="story-form" class="source-form"><div class="dialog-heading"><h2 id="story-title">导出离线照片故事</h2><button type="button" id="close-story" class="icon-button" aria-label="关闭故事导出">×</button></div><p>导出一个可离线打开的 HTML 文件，你可以自行分享给别人，不会自动发布到网站。</p><label for="story-limit">包含多少张照片</label><select id="story-limit"><option value="24">最多 24 张</option><option value="60" selected>最多 60 张</option><option value="100">最多 100 张</option></select><p class="muted small">较长相册会按时间均匀选取照片，只包含本机可用预览。</p><label class="checkbox-label"><input id="story-locations" type="checkbox"> 包含粗略拍摄位置</label><p class="muted small">默认关闭。开启后位置仅保留到 0.1°，精确 GPS 和图片 EXIF 信息会移除。</p><label class="checkbox-label"><input id="story-notes" type="checkbox"> 包含我的照片笔记</label><p class="muted small">故事包含相册名称、简介和拍摄日期，不包含原始文件名和本地路径。</p><button class="button primary" type="submit">导出 HTML 故事</button><p id="story-error" class="form-error" role="alert"></p></form></dialog>
+</body>
+</html>
