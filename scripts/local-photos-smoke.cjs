@@ -38,7 +38,18 @@ async function main() {
     if (['http:', 'https:'].includes(url.protocol) && url.origin !== baseURL) { remote.push(url.origin); return route.abort(); }
     return route.continue();
   });
-  await page.goto(`${baseURL}/local-photos/`, { waitUntil: 'networkidle' });
+  // Opening the album from a chat/website link must admit the first document
+  // while its subsequent requests use the local page's own origin.
+  const entryURL = `http://localhost:${new URL(baseURL).port}/photo-entry-fixture`;
+  await page.route(entryURL, route => route.fulfill({ contentType: 'text/html; charset=utf-8', body: `<a href="${baseURL}/local-photos/?map=offline">打开本地相册</a>` }));
+  await page.goto(entryURL);
+  const [entryResponse] = await Promise.all([
+    page.waitForResponse(`${baseURL}/local-photos/?map=offline`),
+    page.getByRole('link', { name: '打开本地相册' }).click()
+  ]);
+  assert.equal(entryResponse.status(), 200);
+  await page.waitForURL(`${baseURL}/local-photos/?map=offline`);
+  await page.waitForLoadState('networkidle');
   await page.waitForFunction(() => document.querySelectorAll('.photo-card').length === 7);
   assert.equal(await page.locator('.photo-card img').count(), 7);
   await page.screenshot({ path: path.join(fixtureRoot, 'gallery-desktop.png'), fullPage: true });
@@ -58,10 +69,12 @@ async function main() {
   await page.waitForFunction(() => document.querySelectorAll('.photo-card').length === 1);
   await page.locator('[data-view=all]').click();
   await page.waitForFunction(() => document.querySelectorAll('.photo-card').length === 7);
+  await page.locator('[data-view=duplicates]').click();
   await page.locator('#check-duplicates').click();
   await page.waitForFunction(() => document.querySelector('#status').textContent.includes('完全重复照片'));
   await page.locator('[data-view=duplicates]').click();
   await page.waitForFunction(() => document.querySelectorAll('.photo-card').length === 2);
+  await page.locator('[data-view=footprints]').click();
   await page.locator('[data-view=journeys]').click();
   await page.waitForFunction(() => document.querySelectorAll('.timeline-moment').length === 7 && document.querySelectorAll('#route-map .map-pin').length > 0);
   await page.locator('#journey-scrubber').fill('3');

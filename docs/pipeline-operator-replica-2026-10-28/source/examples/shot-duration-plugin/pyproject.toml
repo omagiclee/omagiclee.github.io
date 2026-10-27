@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "flywheel-shot-duration-plugin"
+version = "1.0.0"
+description = "Filter video shot artifacts by duration while preserving their source references"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = ["data-flywheel-sdk>=1,<2"]
+license = "MIT"
+
+[project.entry-points."data_flywheel.operators"]
+"project.shot_duration" = "shot_duration_plugin:plugin"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools]
+include-package-data = false

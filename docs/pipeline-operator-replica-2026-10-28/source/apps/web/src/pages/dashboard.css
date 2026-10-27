@@ -1,0 +1,79 @@
+.dashboard-page { max-width: var(--console-page-max-width, 1680px); }
+.dashboard-header { margin-bottom: 12px; }
+.dashboard-header-main { display: flex; flex-wrap:wrap; align-items: center; justify-content: space-between; gap: 16px; min-height: 48px; }
+.dashboard-controls { display: flex; flex-wrap:wrap; min-width:0; max-width:100%; align-items: center; gap: 8px; flex-shrink: 0; }
+.dashboard-controls button { min-height: 48px; background: transparent; }
+.dashboard-meta { display: flex; align-items: center; justify-content: space-between; gap: 8px 16px; min-height: 24px; margin-top: 12px; color: var(--muted-foreground); font-size: 12px; line-height: 16px; }
+.dashboard-timestamps { display: flex; align-items: center; flex-wrap: wrap; gap: 4px 16px; }
+.dashboard-timestamps span { display: inline-flex; align-items: center; gap: 6px; font-variant-numeric: tabular-nums; }
+.dashboard-timestamps svg { width: 14px; height: 14px; flex-shrink: 0; }
+.dashboard-statistics-notes { position: relative; flex-shrink: 0; max-width: 100%; }
+.dashboard-page .dashboard-statistics-notes summary { position: relative; display: flex; align-items: center; min-height: 24px; cursor: pointer; border-radius: var(--console-radius-control, 4px); color: var(--primary); text-decoration: underline; text-underline-offset: 3px; }
+.dashboard-statistics-notes summary::before { content: ""; position: absolute; inset: -12px 0; min-width: 48px; }
+.dashboard-statistics-notes summary::after { content: "▾"; margin-inline-start: 4px; }
+.dashboard-statistics-notes[open] summary::after { content: "▴"; }
+.dashboard-statistics-notes summary::-webkit-details-marker { display: none; }
+.dashboard-statistics-notes summary:focus-visible { outline: 2px solid var(--primary); outline-offset: 3px; }
+.dashboard-statistics-notes > div { position: absolute; inset-inline-end: 0; top: calc(100% + 8px); z-index: 10; width: 340px; max-width: calc(100vw - 40px); padding: 16px; border-radius: var(--md-sys-shape-corner-extra-small); background: var(--md-sys-color-surface-container); color: var(--md-sys-color-on-surface); box-shadow: var(--md-sys-elevation-level-2); font-size: 12px; line-height: 16px; }
+.dashboard-statistics-notes p { overflow-wrap: anywhere; }
+.dashboard-statistics-notes p + p { margin-top: 8px; }
+.dashboard-page .dashboard-summary { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0; background: transparent; border: 0; border-radius: var(--md-sys-shape-corner-medium); }
+.dashboard-page .dashboard-summary .insights-stat { border: 0; border-radius: var(--md-sys-shape-corner-medium); background: transparent; padding: 14px 20px; }
+.dashboard-page .insights-stat > div > span:last-child { display: grid; place-items: center; flex-shrink: 0; color: var(--muted-foreground); }
+.dashboard-page .insights-stat-value { margin-top: 6px; font-size: 28px; line-height: 36px; font-weight: 400; letter-spacing: 0; }
+.dashboard-page .insights-stat-note { margin-top: 4px; }
+.dashboard-page a.insights-stat:focus-visible { outline: 2px solid var(--primary); outline-offset: 3px; }
+.dashboard-priority-grid { display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr); gap: 16px; margin-top: 16px; align-items: start; }
+.dashboard-priority-grid > * { min-width: 0; }
+.dashboard-attention-heading { display: flex; align-items: center; gap: 8px; }
+.dashboard-attention-count { display: inline-flex; align-items: center; justify-content: center; min-width: 16px; min-height: 16px; height:auto; padding-inline: 4px; border-radius: var(--md-sys-shape-corner-full); background: var(--muted); color: var(--muted-foreground); font-size: 11px; line-height: 16px; font-weight: 500; }
+.dashboard-priority-grid .insights-empty { min-height: 112px; padding: 16px 8px; }
+.dashboard-attention-list { list-style: none; margin: 0; padding: 0; }
+.dashboard-attention-list > li { border-bottom: 1px solid var(--md-sys-color-outline-variant); }
+.dashboard-attention-list > li:last-child { border-bottom: 0; }
+.dashboard-attention-link { display: flex; align-items: start; justify-content: space-between; gap: 12px; padding-block: 12px; border-radius: var(--console-radius-control, 4px); }
+.dashboard-attention-link:hover { background: var(--muted); }
+.dashboard-attention-link:focus-visible { outline: 2px solid var(--primary); outline-offset: 3px; }
+.dashboard-attention-status { margin-top: 1px; }
+.dashboard-attention-status[data-status="failed"] { background: var(--md-sys-color-error-container); color: var(--md-sys-color-on-error-container); }
+.dashboard-attention-status[data-status="overdue"] { background: var(--md-sys-color-warning-container); color: var(--md-sys-color-on-warning-container); }
+.dashboard-attention-status[data-status="pending_review"], .dashboard-attention-status[data-status="pending_acceptance"] { background: var(--accent); color: var(--primary); }
+.dashboard-details-section { display: flex; align-items: start; flex-wrap: wrap; gap: 0 16px; margin-top: 16px; padding-top: 0; }
+.dashboard-detail-links { order: 2; display: flex; align-items: center; justify-content: flex-end; flex-wrap: wrap; gap: 12px; margin-inline-start: auto; }
+.dashboard-detail-links a { display: inline-flex; align-items: center; gap: 4px; color: var(--primary); font-size: 14px; }
+.dashboard-detail-links svg { width: 16px; height: 16px; }
+.dashboard-details { order: 1; flex: 1 1 250px; min-width: 0; }
+.dashboard-details[open] { flex-basis: 100%; }
+.dashboard-details > summary { display: flex; align-items: center; min-height: 48px; padding-inline: 8px; width: fit-content; max-width: 100%; cursor: pointer; border-radius: var(--md-sys-shape-corner-extra-small); font-size: 14px; line-height: 20px; font-weight: 500; letter-spacing: .1px; color: var(--primary); text-decoration: underline; text-underline-offset: 3px; }
+.dashboard-details > summary::after { content: "▾"; margin-inline-start: 4px; }
+.dashboard-details[open] > summary::after { content: "▴"; }
+.dashboard-details > summary::-webkit-details-marker { display: none; }
+.dashboard-details > summary:hover { background: color-mix(in srgb, var(--primary) 8%, transparent); }
+.dashboard-details > summary:active { background: color-mix(in srgb, var(--primary) 12%, transparent); }
+.dashboard-details > summary:focus-visible { outline: 2px solid var(--primary); outline-offset: 3px; }
+.dashboard-details[open] .insights-panels { margin-top: 16px; }
+@media (max-width: 1100px) { .dashboard-priority-grid { grid-template-columns: minmax(0, 1fr); } }
+@media (max-width: 600px) {
+  .dashboard-header-main { gap: 8px; }
+  .dashboard-controls { gap: 4px; }
+  .dashboard-controls [data-size="sm"] .md-button-container { padding-inline: 12px; }
+  .dashboard-meta { align-items: start; }
+  .dashboard-timestamps { column-gap: 8px; }
+  .dashboard-page .insights-stat { padding: 16px; }
+  .dashboard-page .insights-stat > div { gap: 8px; }
+  .dashboard-page .dashboard-summary { grid-template-columns: 1fr; }
+  .dashboard-page .dashboard-summary .insights-stat { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; column-gap: 12px; padding: 12px 16px; }
+  .dashboard-page .dashboard-summary .insights-stat-value { grid-column: 2; grid-row: 1 / 3; margin: 0; font-size: 24px; }
+  .dashboard-page .dashboard-summary .insights-stat-note { grid-column: 1; }
+}
+@media (prefers-reduced-motion: reduce) { .dashboard-page .insights-stat { transition: none; } }
+
+.dashboard-statistics-notes summary:hover { text-decoration-thickness: 2px; }
+.dashboard-statistics-notes summary:hover::before { background: color-mix(in srgb, var(--primary) 8%, transparent); border-radius: var(--md-sys-shape-corner-extra-small); }
+.dashboard-statistics-notes summary:active::before { background: color-mix(in srgb, var(--primary) 12%, transparent); }
+
+.dashboard-meta, .dashboard-statistics-notes > div { letter-spacing: var(--md-sys-typescale-body-small-tracking); }
+.dashboard-attention-count { letter-spacing: var(--md-sys-typescale-label-small-tracking); }
+
+/* Related metrics use spacing on the white workspace rather than another grey panel. */
+.dashboard-page .dashboard-summary a.insights-stat:hover { background: color-mix(in srgb, var(--primary) 8%, var(--md-sys-color-surface)); }

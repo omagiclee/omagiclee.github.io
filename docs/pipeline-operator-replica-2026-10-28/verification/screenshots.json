@@ -1,0 +1,170 @@
+{
+  "base": "http://127.0.0.1:18482",
+  "api": "http://127.0.0.1:18481",
+  "isolatedDatabase": true,
+  "pageErrors": [],
+  "screenshots": [
+    {
+      "file": "01-pipeline-directory.png",
+      "url": "http://127.0.0.1:18482/projects/demo/pipelines",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "note": "真实临时 API 数据；无生产运行"
+    },
+    {
+      "file": "02-pipeline-new.png",
+      "url": "http://127.0.0.1:18482/projects/demo/pipelines?view=new",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "note": "空白流程"
+    },
+    {
+      "file": "03-video-template.png",
+      "url": "http://127.0.0.1:18482/projects/demo/pipelines?view=new&template=video",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "note": "视频模板输入"
+    },
+    {
+      "file": "04-text-template.png",
+      "url": "http://127.0.0.1:18482/projects/demo/pipelines?view=new&template=text",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "note": "文本模板输入"
+    },
+    {
+      "file": "05-video-builder.png",
+      "url": "http://127.0.0.1:18482/projects/demo/pipelines?pipelineId=71fd7ae6-47c0-4d9c-8771-ede688bf4ef7&view=builder",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "note": "真实七节点视频定义，未执行模型"
+    },
+    {
+      "file": "06-node-parameters.png",
+      "url": "http://127.0.0.1:18482/projects/demo/pipelines?pipelineId=71fd7ae6-47c0-4d9c-8771-ede688bf4ef7&view=builder",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "note": "节点参数与小样本调试控件"
+    },
+    {
+      "file": "07-node-json.png",
+      "url": "http://127.0.0.1:18482/projects/demo/pipelines?pipelineId=71fd7ae6-47c0-4d9c-8771-ede688bf4ef7&view=builder",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "note": "完整配置 JSON 编辑"
+    },
+    {
+      "file": "08-editor-menu.png",
+      "url": "http://127.0.0.1:18482/projects/demo/pipelines?pipelineId=71fd7ae6-47c0-4d9c-8771-ede688bf4ef7&view=builder",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "note": "导入导出与缓存开关"
+    },
+    {
+      "file": "09-version.png",
+      "url": "http://127.0.0.1:18482/projects/demo/pipelines?project_id=demo&pipelineId=71fd7ae6-47c0-4d9c-8771-ede688bf4ef7&view=versions",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "note": "历史只读定义"
+    },
+    {
+      "file": "10-deployment.png",
+      "url": "http://127.0.0.1:18482/projects/demo/pipelines?project_id=demo&pipelineId=71fd7ae6-47c0-4d9c-8771-ede688bf4ef7&view=versions",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "note": "部署修订表单，未创建触发器"
+    },
+    {
+      "file": "11-operator-library.png",
+      "url": "http://127.0.0.1:18482/projects/demo/operators",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "note": "真实预装算子库"
+    },
+    {
+      "file": "12-plugin-enable.png",
+      "url": "http://127.0.0.1:18482/projects/demo/operators",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "note": "项目插件启用对话框"
+    },
+    {
+      "file": "13-plugin-development-empty.png",
+      "url": "http://127.0.0.1:18482/projects/demo/operators?view=development",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "note": "插件开发空状态"
+    },
+    {
+      "file": "14-plugin-upload.png",
+      "url": "http://127.0.0.1:18482/projects/demo/operators?view=development",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "note": "真实上传表单，未上传 wheel"
+    },
+    {
+      "file": "15-plugin-validation-fixture.png",
+      "url": "http://127.0.0.1:18482/projects/demo/operators?view=development&releaseId=fixture-release",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "note": "合成失败报告，仅展示真实组件的条件状态"
+    },
+    {
+      "file": "16-plugin-published-fixture.png",
+      "url": "http://127.0.0.1:18482/projects/demo/operators?view=development&releaseId=fixture-release",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "note": "合成已发布并启用状态；不表示真实发布"
+    },
+    {
+      "file": "17-run-artifact-fixture.png",
+      "url": "http://127.0.0.1:18482/projects/demo/pipelines?pipelineId=4a53326e-dc10-4496-87c4-fc562398da0c&view=runs&runId=fixture-run",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "note": "合成运行与文档产物，展示检查和候选交付；未执行正式运行"
+    },
+    {
+      "file": "18-mobile-parameters.png",
+      "url": "http://127.0.0.1:18482/projects/demo/pipelines?pipelineId=71fd7ae6-47c0-4d9c-8771-ede688bf4ef7&view=builder",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "note": "390px 窄屏参数抽屉"
+    }
+  ]
+}

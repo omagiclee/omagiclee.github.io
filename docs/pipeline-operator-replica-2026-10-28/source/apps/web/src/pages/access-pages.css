@@ -1,0 +1,39 @@
+.access-surface { min-width:0; background:var(--md-sys-color-surface); overflow-wrap:anywhere; }
+.access-workspace > header { margin-bottom:.75rem; align-items:center; gap:.5rem; }
+.access-workspace > header > div { flex:1; min-width:min-content; max-width:100%; }
+.access-workspace > header .md-label-large { position:absolute; width:1px; height:1px; padding:0; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; }
+.access-workspace > header h1 { margin-top:0; white-space:nowrap; }
+.access-workspace > header .md-body-medium { margin-top:0; font-size:12px; line-height:16px; letter-spacing:var(--md-sys-typescale-body-small-tracking); }
+.access-workspace > .grid > aside, .access-workspace > .grid > div { min-width:0; }
+.access-scope-toolbar { display:flex; flex-wrap:wrap; align-items:center; gap:.5rem; min-width:0; margin-bottom:.75rem; }
+.access-scope-toolbar > p { flex:1 1 20rem; }
+.access-permission-toolbar { display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:.75rem; padding:1rem 1.25rem; }
+.access-permission-toolbar > span { font-size:.875rem; color:var(--muted-foreground); }
+.access-permission-toolbar [data-slot="input"] { width:min(100%,20rem); }
+.access-permission-group { border-bottom:1px solid var(--md-sys-color-outline-variant); }
+.access-permission-group:last-child { border-bottom:0; }
+.access-permission-group > summary { display:flex; align-items:center; gap:.75rem; min-height:64px; padding:.75rem 1.25rem; cursor:pointer; list-style:none; font-size:var(--md-sys-typescale-title-medium-size); line-height:var(--md-sys-typescale-title-medium-line-height); font-weight:var(--md-sys-typescale-title-medium-weight); letter-spacing:var(--md-sys-typescale-title-medium-tracking); }
+.access-permission-group > summary::-webkit-details-marker { display:none; }
+.access-permission-group > summary::before { content:"›"; color:var(--muted-foreground); font-size:1.25rem; }
+.access-permission-group[open] > summary::before { transform:rotate(90deg); }
+.access-permission-group > summary > span { margin-inline-start:auto; color:var(--md-sys-color-on-surface-variant); font-size:var(--md-sys-typescale-body-medium-size); line-height:var(--md-sys-typescale-body-medium-line-height); font-weight:var(--md-sys-typescale-body-medium-weight); letter-spacing:var(--md-sys-typescale-body-medium-tracking); }
+
+.access-permission-group > div > div, .access-permission-group > div > button { min-height:64px; }
+.access-permission-group > div > div + div { border-top:1px solid var(--md-sys-color-outline-variant); }
+.access-permission-group summary:focus-visible, .access-effective-permissions > summary:focus-visible { outline:2px solid var(--primary); outline-offset:-3px; }
+.access-effective-permissions > summary { display:flex; flex-wrap:wrap; align-items:center; gap:.5rem; cursor:pointer; list-style:none; }
+.access-effective-permissions > summary::-webkit-details-marker { display:none; }
+.access-effective-permissions > summary::before { content:"›"; color:var(--muted-foreground); font-size:1.25rem; }
+.access-effective-permissions[open] > summary::before { transform:rotate(90deg); }
+.access-effective-permissions > summary > span { margin-inline-start:auto; color:var(--md-sys-color-on-surface-variant); font-size:var(--md-sys-typescale-body-medium-size); line-height:var(--md-sys-typescale-body-medium-line-height); font-weight:var(--md-sys-typescale-body-medium-weight); letter-spacing:var(--md-sys-typescale-body-medium-tracking); }
+.access-effective-permissions [data-slot="badge"] { white-space:normal; overflow-wrap:anywhere; }
+.access-permission-empty { padding:1.25rem; color:var(--muted-foreground); font-size:.875rem; }
+@media(max-width:640px) {
+  .access-permission-toolbar { padding:1rem; }
+  .access-permission-toolbar [data-slot="input"] { width:100%; }
+  .access-permission-group > summary { padding:.75rem 1rem; }
+}
+
+.access-action-link { text-decoration:underline; text-underline-offset:3px; display:inline-flex; align-items:center; min-height:48px; padding:8px 12px; border-radius:var(--console-radius-control); }
+.access-action-disclosure, .access-effective-permissions > summary { min-height:48px; display:flex; align-items:center; cursor:pointer; }
+.access-action-disclosure:focus-visible, .access-effective-permissions > summary:focus-visible, .access-action-link:focus-visible { outline:2px solid var(--primary); outline-offset:2px; }

@@ -1,0 +1,72 @@
+.console-management .pipe-page-heading { margin-bottom: 24px; }
+.console-management .pipe-section-heading h2,
+.console-setup > h2 { font-size: 16px; font-weight: 500; line-height: 24px; }
+.console-management .pipe-control-section { margin-top: 24px; }
+.console-management .pipe-control-section > h2 { font-size: 16px; font-weight: 500; margin-bottom: 4px; }
+.console-management .pipe-control-section > p { color: var(--muted-foreground); font-size: 14px; line-height: 20px; margin-bottom: 12px; max-width: 72ch; }
+.console-list-empty { padding: 20px; border-radius: var(--console-radius-panel); background: var(--md-sys-color-surface-container-low); margin-block: 12px 24px; }
+.console-list-empty h2 { font-size: 16px; font-weight: 500; line-height: 24px; }
+.console-list-empty p { color: var(--muted-foreground); font-size: 14px; line-height: 20px; margin-top: 4px; }
+.console-setup { margin-top: 24px; }
+.console-setup > p { color: var(--muted-foreground); margin-top: 4px; font-size: 14px; line-height: 20px; }
+.console-setup-grid { display: grid; gap: 12px; margin-top: 16px; }
+.console-form-disclosure { border-radius: var(--console-radius-panel); background: var(--md-sys-color-surface-container-low); margin-top: 16px; }
+.console-setup-grid .console-form-disclosure { margin-top: 0; }
+.console-form-disclosure > summary { cursor: pointer; padding: 16px 20px; font-size: 14px; font-weight: 500; line-height: 24px; }
+.console-form-disclosure > summary span { font-size: 12px; font-weight: 400; color: var(--muted-foreground); margin-inline-start: 16px; }
+.console-form-disclosure > summary:focus-visible { outline: 2px solid var(--primary); outline-offset: -3px; border-radius: inherit; }
+.console-management .pipe-metadata-form { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px 24px; padding: 20px; max-width: none; }
+.console-management .pipe-metadata-form > .pipe-field { display: flex; flex-direction: column; gap: 6px; margin: 0; font-size: 12px; font-weight: 500; color: var(--muted-foreground); }
+.console-management .pipe-field input:focus-visible,
+.console-management .pipe-field select:focus-visible { outline: 2px solid var(--primary); outline-offset: -1px; }
+.console-management .pipe-metadata-form > fieldset,
+.console-management .console-form-note,
+.console-management .pipe-metadata-form > [role="alert"] { grid-column: 1 / -1; }
+.console-management .pipe-metadata-form > fieldset { padding-top: 12px; }
+.console-management .pipe-metadata-form > fieldset legend { padding-inline-end: 12px; }
+.console-management .pipe-checkbox { display: flex; align-items: center; gap: 8px; color: var(--foreground); font-size: 14px; font-weight: 400; }
+.console-management .pipe-checkbox input { width: 16px; min-height: 16px; accent-color: var(--primary); }
+.console-management .pipe-metadata-form > button { justify-self: start; align-self: end; }
+.console-form-note { color: var(--muted-foreground); font-size: 12px; line-height: 16px; }
+@media (max-width: 640px) {
+  .console-management .pipe-metadata-form { grid-template-columns: 1fr; padding: 16px; }
+  .console-form-disclosure > summary { padding: 12px 16px; }
+  .console-form-disclosure > summary span { display: block; margin-inline-start: 16px; }
+  .console-management .pipe-directory table { min-width: 0; }
+  .console-management .pipe-directory thead { display: none; }
+  .console-management .pipe-directory tbody { display: block; }
+  .console-management .pipe-directory tr { display: grid; padding: 12px 16px; border-bottom: 1px solid var(--md-sys-color-outline-variant); }
+  .console-management .pipe-directory tbody tr:last-child { border-bottom: 0; }
+  .console-management .pipe-directory td[data-label] { display: grid; grid-template-columns: 72px minmax(0, 1fr); gap: 8px; padding: 6px 0; border: 0; overflow-wrap: anywhere; }
+  .console-management .pipe-directory td[data-label]::before { content: attr(data-label); color: var(--muted-foreground); font-size: 12px; }
+  .console-management .pipe-directory td[data-label] p { grid-column: 2; }
+}
+
+/* Expanded runtime controls live inside a table cell; do not inherit nowrap or clipped preview text. */
+.console-management .connection-runtime-controls { min-width: 0; }
+.console-management .connection-runtime-panel { display: grid; min-width: 0; gap: 12px; margin-top: 12px; white-space: normal; overflow-wrap: anywhere; }
+.console-management .connection-runtime-panel > label { display: grid; min-width: 0; gap: 8px; color: var(--muted-foreground); font-size: 12px; line-height: 16px; }
+.console-management .connection-runtime-panel select { width: 100%; max-width: 100%; min-width: 0; min-height: 56px; padding: 8px 12px; border: 1px solid var(--md-sys-color-outline); border-radius: var(--md-sys-shape-corner-extra-small); background-color: var(--card); color: var(--foreground); font-size: 16px; line-height: 24px; }
+.console-management .connection-runtime-panel select:hover:not(:disabled):not(:focus-visible) { border-color: var(--md-sys-color-on-surface); }
+.console-management .connection-runtime-actions { display: flex; min-width: 0; flex-wrap: wrap; gap: 8px; }
+.console-management .pipe-directory .connection-runtime-panel p { display: block; max-width: none; margin: 0; overflow: visible; white-space: normal; -webkit-line-clamp: unset; font-size: 14px; line-height: 20px; }
+.console-management .connection-runtime-panel ul { display: grid; gap: 8px; padding-inline-start: 20px; font-size: 14px; line-height: 20px; }
+.console-management .pipe-directory .connection-runtime-panel .connection-runtime-notice { color: var(--primary); }
+.console-management .pipe-directory .connection-runtime-panel .connection-runtime-error { color: var(--destructive); }
+.console-management .connection-runtime-panel { grid-template-columns: minmax(0, 1fr); }
+.console-management .pipe-directory .connection-runtime-panel > p { grid-column: 1; }
+@media (max-width: 640px) {
+  .console-management .pipe-directory td[data-label] > .connection-runtime-controls { grid-column: 1 / -1; }
+}
+.console-management .pipe-directory td[data-label] .connection-runtime-panel > * { grid-column: 1; }
+
+/* Dense table rows retain one subtle separator; their outer chrome is unnecessary. */
+.console-management .pipe-directory { border:0; }
+.console-management .pipe-directory th, .console-management .pipe-directory td { border-color:var(--md-sys-color-outline-variant); }
+
+/* Complete typography roles prevent body metrics from leaking into titles and controls. */
+.console-management .pipe-section-heading h2, .console-setup > h2, .console-management .pipe-control-section > h2, .console-list-empty h2 { font-size: var(--md-sys-typescale-title-medium-size); line-height: var(--md-sys-typescale-title-medium-line-height); font-weight: var(--md-sys-typescale-title-medium-weight); letter-spacing: var(--md-sys-typescale-title-medium-tracking); }
+.console-form-disclosure > summary { font-size: var(--md-sys-typescale-label-large-size); line-height: var(--md-sys-typescale-label-large-line-height); font-weight: var(--md-sys-typescale-label-large-weight); letter-spacing: var(--md-sys-typescale-label-large-tracking); }
+.console-form-disclosure > summary span, .console-management .pipe-metadata-form > .pipe-field, .console-form-note, .console-management .connection-runtime-panel > label { font-size: var(--md-sys-typescale-body-small-size); line-height: var(--md-sys-typescale-body-small-line-height); font-weight: var(--md-sys-typescale-body-small-weight); letter-spacing: var(--md-sys-typescale-body-small-tracking); }
+.console-management .pipe-checkbox, .console-management .connection-runtime-panel ul, .console-management .pipe-directory .connection-runtime-panel p { font-size: var(--md-sys-typescale-body-medium-size); line-height: var(--md-sys-typescale-body-medium-line-height); font-weight: var(--md-sys-typescale-body-medium-weight); letter-spacing: var(--md-sys-typescale-body-medium-tracking); }
+.console-management .connection-runtime-panel select { font-size: var(--md-sys-typescale-body-large-size); line-height: var(--md-sys-typescale-body-large-line-height); font-weight: var(--md-sys-typescale-body-large-weight); letter-spacing: var(--md-sys-typescale-body-large-tracking); }

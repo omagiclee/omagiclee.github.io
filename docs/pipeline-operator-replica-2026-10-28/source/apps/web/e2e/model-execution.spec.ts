@@ -1,0 +1,35 @@
+import {expect,test} from '@playwright/test';
+const api=`http://127.0.0.1:${process.env.E2E_API_PORT??8010}`;
+
+test('video scoring contract, streamed manual results, complete comparison and leaderboard',async({page})=>{
+ await page.goto('/projects/demo/evaluations');await expect(page.getByRole('heading',{name:'评测实验',exact:true})).toBeVisible();
+ const suffix=Date.now();let me=await(await page.request.get(`${api}/api/me`)).json();
+ const post=async(path:string,body:unknown,expected=201)=>{const response=await page.request.post(`${api}/api/data-platform${path}?project_id=demo`,{headers:{'X-CSRF-Token':me.csrf_token},data:body});expect(response.status(),await response.text()).toBe(expected);return response.json();};
+ const reference=JSON.stringify({points:[{time:0,position:[0,0]}]});
+ const dataset=await post('/datasets',{name:`轨迹固定基准 ${suffix}`,purpose:'评测',modality:'轨迹',samples:[{name:'真实轨迹参考',input:`真实轨迹输入 ${suffix}`,split:'test'}]});
+ const users=await(await page.request.get(`${api}/api/data-platform/users?project_id=demo`)).json();const reviewer=users.items.find((row:any)=>row.id!==me.user.id&&row.canReview);expect(reviewer).toBeTruthy();
+ const spec=await post('/specs',{name:`轨迹规范 ${suffix}`,type:'轨迹',labels:['verified'],instructions:'输出参考坐标，单位与时间点保持一致'});
+ const task=await post('/tasks',{name:`轨迹任务 ${suffix}`,datasetId:dataset.id,sampleIds:[dataset.samples[0].id],specId:spec.id,assignee:me.user.id,reviewer:reviewer.id});
+ const annotated=await post(`/tasks/${task.id}/samples/${dataset.samples[0].id}/annotation`,{expectedRevision:1,output:reference,label:'verified'});
+ let response=await page.request.post(`${api}/api/admin/impersonation/start`,{headers:{'X-CSRF-Token':me.csrf_token},data:{target_user_id:reviewer.id,reason:'验证真实独立审核和轨迹评测固定参考'}});expect(response.ok()).toBeTruthy();
+ me=await(await page.request.get(`${api}/api/me`)).json();
+ await post(`/tasks/${task.id}/samples/${dataset.samples[0].id}/review`,{expectedRevision:annotated.revision,annotationId:annotated.annotationId,decision:'approve'});
+ await page.reload();const stopped=page.waitForResponse(response=>response.url().endsWith('/api/admin/impersonation/stop')&&response.request().method()==='POST');await page.getByRole('button',{name:'退出代登录'}).click();expect((await stopped).ok()).toBeTruthy();await expect(page.getByRole('button',{name:'退出代登录'})).toHaveCount(0);me=await(await page.request.get(`${api}/api/me`)).json();
+ const current=await(await page.request.get(`${api}/api/data-platform/datasets/${dataset.id}?project_id=demo&summaryOnly=true`)).json();
+ const version=await post(`/datasets/${dataset.id}/versions`,{expectedRevision:current.revision,description:'真实参考冻结版本'});
+ const benchmark=await post('/benchmarks',{name:`轨迹基准 ${suffix}`,datasetId:dataset.id,datasetVersion:version.id,metric:'score',rule:'trajectory-v1 本地坐标误差',scorer:'trajectory-v1'});
+ const first=await post('/experiments',{name:`真实实验 A ${suffix}`,benchmarkId:benchmark.id,model:'manual-A'});
+ await page.goto(`/projects/demo/evaluations/${first.id}`);
+ await page.getByLabel('人工评测 JSONL 文件').setInputFiles({name:'actual-results.jsonl',mimeType:'application/x-ndjson',buffer:Buffer.from(JSON.stringify({sampleId:dataset.samples[0].id,output:reference,score:0,note:'真实人工输出，固定规则将重算'})+'\n')});
+ await page.getByRole('button',{name:'导入并发布完整结果'}).click();
+ await expect(page.getByText(/完整固定基准已发布：1 条人工结果/)).toBeVisible();
+ const second=await post('/experiments',{name:`真实实验 B ${suffix}`,benchmarkId:benchmark.id,model:'manual-B'});
+ response=await page.request.put(`${api}/api/data-platform/execution/experiments/${second.id}/manual-results?project_id=demo&expected_revision=1&finalize=true`,{headers:{'X-CSRF-Token':me.csrf_token,'Content-Type':'application/x-ndjson'},data:JSON.stringify({sampleId:dataset.samples[0].id,output:JSON.stringify({points:[{time:0,position:[1,0]}]}),score:100,note:'一单位坐标误差'})});expect(response.ok(),await response.text()).toBeTruthy();
+ await page.goto('/projects/demo/evaluations');
+ await page.getByRole('checkbox',{name:`选择实验 ${first.name}`}).check();await page.getByRole('checkbox',{name:`选择实验 ${second.name}`}).check();
+ await page.getByRole('button',{name:'对比实验（2/2）'}).click();
+ const dialog=page.getByRole('dialog');await expect(dialog.getByText(/全量平均分 100 \/ 50，差值 -50/)).toBeVisible();await expect(dialog.getByRole('cell').filter({hasText:'真实轨迹参考'})).toBeVisible();await dialog.getByRole('button',{name:'完成',exact:true}).click();
+ await page.goto(`/projects/demo/benchmarks/${benchmark.id}?tab=规则`);
+ await page.getByRole('button',{name:'配置执行门禁'}).click();await page.getByRole('dialog').getByLabel('指标阈值 JSON').fill('[{"metric":"rmse","direction":"lte","target":0.2,"slice":"all"}]');await page.getByRole('dialog').getByRole('button',{name:'保存门禁'}).click();await expect(page.getByText(/门禁配置已保存/)).toBeVisible();
+ await page.getByRole('tab',{name:'排行榜',exact:true}).click();await expect(page.getByText('共 2 个已完成实验')).toBeVisible();await expect(page.getByRole('row').filter({hasText:first.name})).toContainText('100');await expect(page.getByRole('row').filter({hasText:second.name})).toContainText('50');
+});

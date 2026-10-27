@@ -1,0 +1,2823 @@
+{
+  "snapshot_date": "2026-10-28",
+  "timezone": "Asia/Shanghai",
+  "source_root": "/Users/omagiclee/Desktop/data-flywheel",
+  "source_head": "d4c9d72e92fbc05092ab1f91d83885e8480dfe2f",
+  "basis": "current working-tree files, including uncommitted changes; not HEAD-only",
+  "files": [
+    {
+      "path": "package.json",
+      "category": "build",
+      "bytes": 849,
+      "sha256": "cbb8ea6c2b69471240234f9563a1fe6fcdacc527939d54ba209c664a94f27181",
+      "lines": 24
+    },
+    {
+      "path": "package-lock.json",
+      "category": "build",
+      "bytes": 247022,
+      "sha256": "93c466043fb5913ba2f3d522550cbac91ef5ef324f15372e2acf4ec155b79d1a",
+      "lines": 7117
+    },
+    {
+      "path": "apps/web/src/App.css",
+      "category": "frontend",
+      "bytes": 53394,
+      "sha256": "c1ed3d282bc268be0ae0f147b6641c1136b86ad0c58338f11ce39a8fd8290870",
+      "lines": 745
+    },
+    {
+      "path": "apps/web/src/App.test.tsx",
+      "category": "frontend",
+      "bytes": 8821,
+      "sha256": "489790ebf69681ccaf899dc29a52a2f518f8a6faa6da90420e252a549e65a583",
+      "lines": 142
+    },
+    {
+      "path": "apps/web/src/App.tsx",
+      "category": "frontend",
+      "bytes": 13060,
+      "sha256": "93e107a7a4d061a91cafcf0866928fcbb545151e63f3c2252d3e65f35009be84",
+      "lines": 191
+    },
+    {
+      "path": "apps/web/src/access-api.ts",
+      "category": "frontend",
+      "bytes": 6681,
+      "sha256": "cfc616ca006554db3bc6cd86302077d20f7ef5e82aa9db5c923c3252171b108c",
+      "lines": 123
+    },
+    {
+      "path": "apps/web/src/admin-api.ts",
+      "category": "frontend",
+      "bytes": 2311,
+      "sha256": "4e37b449bd287897254612e6aa63621cabdedf3fa22a06cf890e989712cdbaed",
+      "lines": 84
+    },
+    {
+      "path": "apps/web/src/api.test.ts",
+      "category": "frontend",
+      "bytes": 2963,
+      "sha256": "072ebaac25353522b758213638779cc392527a4710c87c8cbc38f1a66cab2d96",
+      "lines": 70
+    },
+    {
+      "path": "apps/web/src/api.ts",
+      "category": "frontend",
+      "bytes": 5073,
+      "sha256": "475df5a1f5d4aa8b13fa1e497863097389f9454beaf41330a21c517fd3d784db",
+      "lines": 122
+    },
+    {
+      "path": "apps/web/src/auth-api.test.ts",
+      "category": "frontend",
+      "bytes": 2532,
+      "sha256": "4b78cb8418a30387643f95e021f836f664ea211deb8b762a618b57a7a2766e86",
+      "lines": 66
+    },
+    {
+      "path": "apps/web/src/auth-api.ts",
+      "category": "frontend",
+      "bytes": 3993,
+      "sha256": "b7bc628b8fb91c32d8398d509441d458679dcde78781d032a984ab938f7cf156",
+      "lines": 130
+    },
+    {
+      "path": "apps/web/src/auth-context.test.tsx",
+      "category": "frontend",
+      "bytes": 3313,
+      "sha256": "1ffc09ddf321922f2266cc151cda96dc940dc213d0759de158dcf3270114e09f",
+      "lines": 51
+    },
+    {
+      "path": "apps/web/src/auth-context.tsx",
+      "category": "frontend",
+      "bytes": 3652,
+      "sha256": "474377e5a10134038d8d95221adc60b70e86cbfd76d47e09b3b011e8591bbd03",
+      "lines": 87
+    },
+    {
+      "path": "apps/web/src/auto-gt-api.test.ts",
+      "category": "frontend",
+      "bytes": 4381,
+      "sha256": "4bf5f14bcd009cef72fd41726a5e02ed1ab5bc67e518711ddb6c445cd4a98ab5",
+      "lines": 46
+    },
+    {
+      "path": "apps/web/src/auto-gt-api.ts",
+      "category": "frontend",
+      "bytes": 7140,
+      "sha256": "1fbcc994c578d85550b108fc263617d6142d58f7c1b93dda3315e288ffd248a3",
+      "lines": 49
+    },
+    {
+      "path": "apps/web/src/auto-gt-workbench-api.ts",
+      "category": "frontend",
+      "bytes": 8265,
+      "sha256": "6d73f628c03a0b64ef448ff38dcb9d0edcdbde55b55becc407cff855cf44fcfd",
+      "lines": 42
+    },
+    {
+      "path": "apps/web/src/components/AccessRequestCard.tsx",
+      "category": "frontend",
+      "bytes": 4684,
+      "sha256": "71f4c6befaf943d6dcd9d35627b03675cbde43f25f2eb1bff30ba50878472141",
+      "lines": 51
+    },
+    {
+      "path": "apps/web/src/components/AppAccountMenu.tsx",
+      "category": "frontend",
+      "bytes": 4747,
+      "sha256": "b8d79489fa4cec2573b2e5e0643dfe6ad318963115dab8faf070b0d13aa5d26a",
+      "lines": 76
+    },
+    {
+      "path": "apps/web/src/components/AppNavigation.test.tsx",
+      "category": "frontend",
+      "bytes": 8960,
+      "sha256": "681e59f9e7de7a913df483d8a4cb8bae42485a233249fba80818708bd18bc802",
+      "lines": 128
+    },
+    {
+      "path": "apps/web/src/components/AppNavigation.tsx",
+      "category": "frontend",
+      "bytes": 15237,
+      "sha256": "f668a243e4309d6240cf9b0237870615345b92772c15bb37660276fd7c9c7608",
+      "lines": 207
+    },
+    {
+      "path": "apps/web/src/components/ArtifactDatasetActions.test.tsx",
+      "category": "frontend",
+      "bytes": 5793,
+      "sha256": "232ea53bcd570d3beda832278b299d138c278bfd946b18c7b130b182d065d040",
+      "lines": 61
+    },
+    {
+      "path": "apps/web/src/components/ArtifactDatasetActions.tsx",
+      "category": "frontend",
+      "bytes": 4671,
+      "sha256": "a49a1c639f46b47c1508c2a1702c2cf0c7eb140b4fcafb43ebd6a38b4233315b",
+      "lines": 47
+    },
+    {
+      "path": "apps/web/src/components/AutoGtComparisonPanel.test.tsx",
+      "category": "frontend",
+      "bytes": 6750,
+      "sha256": "537f2771e41716f1b4911d2202a60e55212b9aa8a7755a1402ff73edfc57ded1",
+      "lines": 36
+    },
+    {
+      "path": "apps/web/src/components/AutoGtComparisonPanel.tsx",
+      "category": "frontend",
+      "bytes": 13496,
+      "sha256": "67dd1d5dd1a6d799a4a0a5ab3ef7fc621c57d610614d7460ec48a4daea8bb447",
+      "lines": 44
+    },
+    {
+      "path": "apps/web/src/components/AutoGtFailureEvidence.test.tsx",
+      "category": "frontend",
+      "bytes": 4793,
+      "sha256": "4160b1ed90476626b2942e42466510d489f5f3181c08657f2ee073faa60f78d5",
+      "lines": 33
+    },
+    {
+      "path": "apps/web/src/components/AutoGtFailureEvidence.tsx",
+      "category": "frontend",
+      "bytes": 4493,
+      "sha256": "0b553e841198511e098dd4f272915ea40b48087c6bb9ea4b2b8a30e673f384c2",
+      "lines": 23
+    },
+    {
+      "path": "apps/web/src/components/AutoGtFailureReflow.test.tsx",
+      "category": "frontend",
+      "bytes": 4095,
+      "sha256": "260106839e0b511f74606c45623ba14aca75104fdf75361771e8a881ea743b6e",
+      "lines": 21
+    },
+    {
+      "path": "apps/web/src/components/AutoGtFailureReflow.tsx",
+      "category": "frontend",
+      "bytes": 8606,
+      "sha256": "868901ce87003e1e174088ac2a3a409f6b6beaded3ee8376dc81dfbece7151ff",
+      "lines": 28
+    },
+    {
+      "path": "apps/web/src/components/AutoGtPairReview.test.tsx",
+      "category": "frontend",
+      "bytes": 8596,
+      "sha256": "1189176c57fe1841bdd6b9710975d395e7a561dd123252603acb43f133a8d325",
+      "lines": 50
+    },
+    {
+      "path": "apps/web/src/components/AutoGtPairReview.tsx",
+      "category": "frontend",
+      "bytes": 8197,
+      "sha256": "ef8250690d5be3056daccf2318fa6c6aff45c9bca6336fec225a12a24300e8fa",
+      "lines": 32
+    },
+    {
+      "path": "apps/web/src/components/AutoGtPublishedExport.test.tsx",
+      "category": "frontend",
+      "bytes": 4265,
+      "sha256": "e8a80cea7d8d9f95c886d8b4816369b6d228b2b8f8c3f3368b0309ff1e50935e",
+      "lines": 23
+    },
+    {
+      "path": "apps/web/src/components/AutoGtPublishedExport.tsx",
+      "category": "frontend",
+      "bytes": 3853,
+      "sha256": "6924dbbbff877ad2d064089e69a3c54634403d8715ab4eba0de4f8d41a7249b7",
+      "lines": 15
+    },
+    {
+      "path": "apps/web/src/components/AutoGtRevisionPanel.test.tsx",
+      "category": "frontend",
+      "bytes": 6251,
+      "sha256": "b9bea7ba7ad04b3b6be42a02ca2a96cca932c58ca28368ff860a1cfc129759c4",
+      "lines": 30
+    },
+    {
+      "path": "apps/web/src/components/AutoGtRevisionPanel.tsx",
+      "category": "frontend",
+      "bytes": 9647,
+      "sha256": "2d6f2fb2c528f6486a102144b0a70592d698c5531974e86dea9c5ade9b56c6c1",
+      "lines": 30
+    },
+    {
+      "path": "apps/web/src/components/AutoGtRoiEditor.tsx",
+      "category": "frontend",
+      "bytes": 2922,
+      "sha256": "b3cce9f288b9cb1b561ecd98ca1fe22313d98c0453def309e2aa1829caf8a0e0",
+      "lines": 15
+    },
+    {
+      "path": "apps/web/src/components/BehaviorTracker.tsx",
+      "category": "frontend",
+      "bytes": 1316,
+      "sha256": "ada00874c9654b70f55146e70af350875346af477bebb1c515b78933457d655f",
+      "lines": 22
+    },
+    {
+      "path": "apps/web/src/components/ConnectionRuntimeControls.tsx",
+      "category": "frontend",
+      "bytes": 3777,
+      "sha256": "ab48f2889b88c90e22e2f1f48c3917535da657d58699a1810c4eed01852e7d07",
+      "lines": 23
+    },
+    {
+      "path": "apps/web/src/components/DatasetQualityPanel.test.tsx",
+      "category": "frontend",
+      "bytes": 1897,
+      "sha256": "2d405357f6bc337200d796db96bee920e45acbb29ad78b86b69104d12f8e96d7",
+      "lines": 24
+    },
+    {
+      "path": "apps/web/src/components/DatasetQualityPanel.tsx",
+      "category": "frontend",
+      "bytes": 1834,
+      "sha256": "8a8fee8cfba89a429443483f950f85d09d18b6b3a6a33fe55e5a95b6e05edabb",
+      "lines": 19
+    },
+    {
+      "path": "apps/web/src/components/DatasetSplitPlanner.test.tsx",
+      "category": "frontend",
+      "bytes": 3471,
+      "sha256": "ca3cae5d9884ca2ea281dd99ffd1abfc59af57b8fd98fc5c20092243674ddbcb",
+      "lines": 20
+    },
+    {
+      "path": "apps/web/src/components/DatasetSplitPlanner.tsx",
+      "category": "frontend",
+      "bytes": 5835,
+      "sha256": "a39112c3e1d5280b86caf6b8f431bdd421b5eda35363f4724ce5ed2758dcca7f",
+      "lines": 15
+    },
+    {
+      "path": "apps/web/src/components/EventForm.stories.tsx",
+      "category": "frontend",
+      "bytes": 633,
+      "sha256": "ac54699121dbdd33c3780d0b5c4995a8acdbc468eb20ed5678eba08d13d36e9a",
+      "lines": 21
+    },
+    {
+      "path": "apps/web/src/components/EventForm.tsx",
+      "category": "frontend",
+      "bytes": 5483,
+      "sha256": "a33d8d0cabb4a9425d5397a3903d94ff2eae6e06778386068e33be9bbe07b759",
+      "lines": 92
+    },
+    {
+      "path": "apps/web/src/components/ExecutionSelection.tsx",
+      "category": "frontend",
+      "bytes": 2484,
+      "sha256": "62b3a6e337f06d5d36ad718ab374639fbd83f21f9c88ac4ffcb1b30fa4ba9d5d",
+      "lines": 20
+    },
+    {
+      "path": "apps/web/src/components/ExecutionWorkers.tsx",
+      "category": "frontend",
+      "bytes": 1537,
+      "sha256": "981e2f60f8f83691c7ea85c905632eef313f65316e28a4d14ddae15775d215af",
+      "lines": 9
+    },
+    {
+      "path": "apps/web/src/components/GlobalRouteError.test.tsx",
+      "category": "frontend",
+      "bytes": 1707,
+      "sha256": "e14bc323b91bd985b99c67d782a204fbb93280c7c3c907c4b04f4fbff8bb31ff",
+      "lines": 33
+    },
+    {
+      "path": "apps/web/src/components/GlobalRouteError.tsx",
+      "category": "frontend",
+      "bytes": 1697,
+      "sha256": "4f8280d064919f560e588aacd580af36447dde5a93f5d5d29e08e75a55fb2593",
+      "lines": 27
+    },
+    {
+      "path": "apps/web/src/components/GlobalRouteNotFound.tsx",
+      "category": "frontend",
+      "bytes": 1107,
+      "sha256": "cd541dce066c0412ab4e442f512c0917977661197dcd35be3fc1819582b460f5",
+      "lines": 17
+    },
+    {
+      "path": "apps/web/src/components/ImpersonationDialog.test.tsx",
+      "category": "frontend",
+      "bytes": 6201,
+      "sha256": "6a51369644b8e8c7bd65d6bc094892cc7802d5720a0d26d00f1080a989ff030b",
+      "lines": 103
+    },
+    {
+      "path": "apps/web/src/components/ImpersonationDialog.tsx",
+      "category": "frontend",
+      "bytes": 11179,
+      "sha256": "6efde7d1ecb9b8381d31cd51232bc479411b889fd7cb68b3474771714f29fa81",
+      "lines": 168
+    },
+    {
+      "path": "apps/web/src/components/MediaCurationPanel.tsx",
+      "category": "frontend",
+      "bytes": 11016,
+      "sha256": "fafe409c324eaf74035e1a9b4c91cb57597858b67b65e2a46bb72ff78e122b91",
+      "lines": 119
+    },
+    {
+      "path": "apps/web/src/components/MediaEvaluationPanel.test.tsx",
+      "category": "frontend",
+      "bytes": 14470,
+      "sha256": "06d4d527d7c9f25949acd26e4c87455acc42d8530f322e564ed897ccfb581c94",
+      "lines": 158
+    },
+    {
+      "path": "apps/web/src/components/MediaEvaluationPanel.tsx",
+      "category": "frontend",
+      "bytes": 23962,
+      "sha256": "b0af6dc94c2db84b8b0263a71b3c44ba7d60f448a0a85d604fceedbb79d9421b",
+      "lines": 167
+    },
+    {
+      "path": "apps/web/src/components/MediaUpload.test.tsx",
+      "category": "frontend",
+      "bytes": 8653,
+      "sha256": "b4126627a8ecb6ba22f3198ec244742a15e6dc48ae3fca296ad7fdc4166c1723",
+      "lines": 143
+    },
+    {
+      "path": "apps/web/src/components/MediaUpload.tsx",
+      "category": "frontend",
+      "bytes": 9856,
+      "sha256": "fbbbcdb898df198992011ec805adc5af63cd35fbc5119e014476e38f501b8e89",
+      "lines": 119
+    },
+    {
+      "path": "apps/web/src/components/NotificationBell.tsx",
+      "category": "frontend",
+      "bytes": 1086,
+      "sha256": "83372cca4019c161ca7edb51a9629f4f5638c6648b0468cfc1f14dfd0f9fb315",
+      "lines": 15
+    },
+    {
+      "path": "apps/web/src/components/PermissionRequestButton.tsx",
+      "category": "frontend",
+      "bytes": 690,
+      "sha256": "e7a0ede1dd511b428ecf4a893821795f92aaedbb9a8be3b9dea6ef370316cd50",
+      "lines": 11
+    },
+    {
+      "path": "apps/web/src/components/PipelineCanvas.test.ts",
+      "category": "frontend",
+      "bytes": 5848,
+      "sha256": "1b949a320f530ad5f52ee66412361d776743a4858d892d7a3c3c2183c06435c8",
+      "lines": 71
+    },
+    {
+      "path": "apps/web/src/components/PipelineCanvas.tsx",
+      "category": "frontend",
+      "bytes": 10985,
+      "sha256": "f3fcb082ea3ef4bcbd0edfaeb28d0b4b9a07c8973c2918ccb7c4d058928bc5e3",
+      "lines": 109
+    },
+    {
+      "path": "apps/web/src/components/PipelineCanvasInteractions.test.tsx",
+      "category": "frontend",
+      "bytes": 7361,
+      "sha256": "1ffdf04d4ca03f12a3517b4ed623941318abc55e61f784bfb42f6223b77c71e8",
+      "lines": 104
+    },
+    {
+      "path": "apps/web/src/components/PipelineDebugControls.test.tsx",
+      "category": "frontend",
+      "bytes": 8023,
+      "sha256": "46bc084a1e59d90d9e1bac3901b562f0a559b9143c8d54ec9ce9d5f435e3e467",
+      "lines": 108
+    },
+    {
+      "path": "apps/web/src/components/PipelineDebugControls.tsx",
+      "category": "frontend",
+      "bytes": 7379,
+      "sha256": "31149fc23f01c1453bcdb6eb078827b0680acd8d5f9e301e13b617b175456265",
+      "lines": 78
+    },
+    {
+      "path": "apps/web/src/components/PipelineDeployments.test.tsx",
+      "category": "frontend",
+      "bytes": 5395,
+      "sha256": "c426a31b17ef096b4a092268e0fd059a7154206dbdeb7030305eae9568dcb412",
+      "lines": 78
+    },
+    {
+      "path": "apps/web/src/components/PipelineDeployments.tsx",
+      "category": "frontend",
+      "bytes": 9214,
+      "sha256": "47d1516958ab47f63ac6597e25b8534bccf17bb2a619fbee744c509e1f63fe03",
+      "lines": 73
+    },
+    {
+      "path": "apps/web/src/components/PluginCandidateForm.tsx",
+      "category": "frontend",
+      "bytes": 14467,
+      "sha256": "2261e617805bf5300daca8a44e49fb7d4be4637c2eab8e8f3e1595b85d8a3024",
+      "lines": 149
+    },
+    {
+      "path": "apps/web/src/components/PluginCapabilities.tsx",
+      "category": "frontend",
+      "bytes": 1564,
+      "sha256": "b3825ab7158d744ce374ef2d910e031160bdf02c043f1624a4572835f1b17f07",
+      "lines": 14
+    },
+    {
+      "path": "apps/web/src/components/PluginDevelopmentWorkspace.tsx",
+      "category": "frontend",
+      "bytes": 20944,
+      "sha256": "f806d6ee74ec33489f6a2859e8e842228d0a56aaee74c5e561e16e59c0a90495",
+      "lines": 104
+    },
+    {
+      "path": "apps/web/src/components/PluginReleasePagination.tsx",
+      "category": "frontend",
+      "bytes": 998,
+      "sha256": "7e5ea3ca04f7f7cc36f97c482bf98b96a5be164b6054a092dbf23a54ab1dd7e7",
+      "lines": 10
+    },
+    {
+      "path": "apps/web/src/components/PluginValidationReport.tsx",
+      "category": "frontend",
+      "bytes": 4134,
+      "sha256": "98d0b9a6e8db29873f745af29e1365a2f72cd50b959b192b7c8b80c3d9931f11",
+      "lines": 37
+    },
+    {
+      "path": "apps/web/src/components/ProjectContext.test.tsx",
+      "category": "frontend",
+      "bytes": 2754,
+      "sha256": "1322742bedbcec8080b2b8918333fc521ae0fbe3b4d51767fa5522a8dc8fd1da",
+      "lines": 42
+    },
+    {
+      "path": "apps/web/src/components/ProjectContext.tsx",
+      "category": "frontend",
+      "bytes": 6584,
+      "sha256": "f36c00e771a99314955aed307bbfc3e297f2d1cecddc1385c7949b6ad4aefd61",
+      "lines": 108
+    },
+    {
+      "path": "apps/web/src/components/RequirementActions.tsx",
+      "category": "frontend",
+      "bytes": 19855,
+      "sha256": "2d2482ff96282d7af598ba7d2084ef8ec33b53720a83181c61cc4d07fccca958",
+      "lines": 107
+    },
+    {
+      "path": "apps/web/src/components/RequirementDeliveryBinding.tsx",
+      "category": "frontend",
+      "bytes": 3424,
+      "sha256": "2369c21b5dca53e58c5fd720a91c65cc4bdb13e618b7328989691db253f912e7",
+      "lines": 17
+    },
+    {
+      "path": "apps/web/src/components/RequirementForm.tsx",
+      "category": "frontend",
+      "bytes": 23345,
+      "sha256": "3b4cf7a7d0bae2a82fda14dbffdb190845a0cf56e1bae5d3cd071755794f4e40",
+      "lines": 189
+    },
+    {
+      "path": "apps/web/src/components/RequirementRouteState.tsx",
+      "category": "frontend",
+      "bytes": 1363,
+      "sha256": "796bf0eb3dd19b8f84e17672ce2ccd037159a40fe3d96d3bf58054b1f56aafcc",
+      "lines": 12
+    },
+    {
+      "path": "apps/web/src/components/RuntimeControls.test.tsx",
+      "category": "frontend",
+      "bytes": 5453,
+      "sha256": "9e9ebdd89a542bc9df61e0ff1e6525dd309aec4abab55600e91c8859e0a0a090",
+      "lines": 45
+    },
+    {
+      "path": "apps/web/src/components/TaskProgress.tsx",
+      "category": "frontend",
+      "bytes": 1719,
+      "sha256": "ff8f94ddbce4966156e9d57f920c3cf1ca44968ea89055baca9df47eea54b0c2",
+      "lines": 19
+    },
+    {
+      "path": "apps/web/src/components/TaskRecordCounts.tsx",
+      "category": "frontend",
+      "bytes": 944,
+      "sha256": "4695242865f33df2c8d5ce8b153101b3a356f2085dd38c2093d4e1b338798f5b",
+      "lines": 11
+    },
+    {
+      "path": "apps/web/src/components/TextPipelineTemplate.tsx",
+      "category": "frontend",
+      "bytes": 2766,
+      "sha256": "1927617063fc0e0c711cf3734764421fcfdfa65118b5f1c21f16faa430e9105f",
+      "lines": 28
+    },
+    {
+      "path": "apps/web/src/components/app-shell.css",
+      "category": "frontend",
+      "bytes": 16273,
+      "sha256": "dbab86b8366588130a47994a0e0cccedda66d6fdd5856ce8a06cd9ecae119d7a",
+      "lines": 124
+    },
+    {
+      "path": "apps/web/src/components/auto-gt-failure-evidence.css",
+      "category": "frontend",
+      "bytes": 903,
+      "sha256": "4bce41881fba434d083fcfb683866174f80766e270928b4cb17586c0292a3c27",
+      "lines": 11
+    },
+    {
+      "path": "apps/web/src/components/auto-gt-published-export.css",
+      "category": "frontend",
+      "bytes": 619,
+      "sha256": "5630e7f33d4e280783a274380bcaa23cc591f7983af898e7045edbfa409fcde9",
+      "lines": 7
+    },
+    {
+      "path": "apps/web/src/components/dataset-split.css",
+      "category": "frontend",
+      "bytes": 593,
+      "sha256": "fe52eed93a6f031fae4ddc24d5528a3f5716ff4c56b0fddc148e69ed6a6c96ef",
+      "lines": 9
+    },
+    {
+      "path": "apps/web/src/components/insights/ExecutionHealth.tsx",
+      "category": "frontend",
+      "bytes": 2209,
+      "sha256": "7bee9a53488646b1f1532a87911e51ae039165516f44e0e28b1833b78e4af1e2",
+      "lines": 8
+    },
+    {
+      "path": "apps/web/src/components/insights/FilterFields.tsx",
+      "category": "frontend",
+      "bytes": 2486,
+      "sha256": "d568cd518fb46a5d6427aa1be6061c4cd2cbfb00358001a80a0eed28893f7981",
+      "lines": 27
+    },
+    {
+      "path": "apps/web/src/components/insights/OperationsRecords.tsx",
+      "category": "frontend",
+      "bytes": 5770,
+      "sha256": "90f7eac095a9e97eeb3ad2dd6820ed8a788ae49561c36e032f01b9bd8c7da23b",
+      "lines": 37
+    },
+    {
+      "path": "apps/web/src/components/insights/action-labels.ts",
+      "category": "frontend",
+      "bytes": 2018,
+      "sha256": "165c3a0e19ece5218f2b9d7e0520085f498e425ad8f24cde1c7b1e6e1b482a76",
+      "lines": 28
+    },
+    {
+      "path": "apps/web/src/components/insights/insights.css",
+      "category": "frontend",
+      "bytes": 14970,
+      "sha256": "9809f6ca471900f04886d1c46dea27830c97f47b0ed98c9dedd48ff034da3cdb",
+      "lines": 126
+    },
+    {
+      "path": "apps/web/src/components/insights/shared.tsx",
+      "category": "frontend",
+      "bytes": 17049,
+      "sha256": "ce55790319b8e22b6932421d69faf95349fca528e011fa6477dc716b6bc07388",
+      "lines": 157
+    },
+    {
+      "path": "apps/web/src/components/media-evaluation.css",
+      "category": "frontend",
+      "bytes": 2941,
+      "sha256": "e16ed49d0b72fde9bf22fdb5481699e36886c2874c7caeb64cfb5ef572093132",
+      "lines": 24
+    },
+    {
+      "path": "apps/web/src/components/media-upload.css",
+      "category": "frontend",
+      "bytes": 3358,
+      "sha256": "7f608a267a6560544aa3e3161e36013ce7a55a128438bc406eec22b2f1886e6a",
+      "lines": 23
+    },
+    {
+      "path": "apps/web/src/components/requirement-form.css",
+      "category": "frontend",
+      "bytes": 1119,
+      "sha256": "5fe658e084374ccab3de2106c0a0daa14709a564de756a908fb041e6a3c14f52",
+      "lines": 15
+    },
+    {
+      "path": "apps/web/src/components/status-semantics.test.tsx",
+      "category": "frontend",
+      "bytes": 1253,
+      "sha256": "9021de8455ba687c6f33fd3e813a0162a17823f850a23878459613609a3a7121",
+      "lines": 22
+    },
+    {
+      "path": "apps/web/src/components/task-progress.css",
+      "category": "frontend",
+      "bytes": 1182,
+      "sha256": "1e1a9709025ffa73a2ae83cbd82df3fff5ea41a26f383a3308da4c2fae0d5956",
+      "lines": 9
+    },
+    {
+      "path": "apps/web/src/components/ui/__tests__/button.test.tsx",
+      "category": "frontend",
+      "bytes": 460,
+      "sha256": "8639e95565381c0a092974964a8e6dc1dbb07566bdcc0ef5dbe0100240a486bd",
+      "lines": 14
+    },
+    {
+      "path": "apps/web/src/components/ui/badge.tsx",
+      "category": "frontend",
+      "bytes": 1619,
+      "sha256": "0717beb22c5e3775e3b816ea1790b60676e746410712621719fb11f6fd976d13",
+      "lines": 26
+    },
+    {
+      "path": "apps/web/src/components/ui/button.stories.tsx",
+      "category": "frontend",
+      "bytes": 1091,
+      "sha256": "e15d4778e9c0f4e301379660299bf0b5fb7f65daff79a8dae139a0cd24745454",
+      "lines": 50
+    },
+    {
+      "path": "apps/web/src/components/ui/button.tsx",
+      "category": "frontend",
+      "bytes": 1792,
+      "sha256": "e987d5986b4de4bb1b469cdf68567c08a5ab267356e63b86d0f16341258f72de",
+      "lines": 38
+    },
+    {
+      "path": "apps/web/src/components/ui/card.tsx",
+      "category": "frontend",
+      "bytes": 1843,
+      "sha256": "ee3dc7ec07a74859bf94cad0df5b03a7d847a8e25205894f91f67a3fdc2c744a",
+      "lines": 35
+    },
+    {
+      "path": "apps/web/src/components/ui/grid-theme.ts",
+      "category": "frontend",
+      "bytes": 2415,
+      "sha256": "0a2d3fae8dd9143eca8386294fa628d4a3c8f44bfbaa54cb34a5f1b1adf5e3bf",
+      "lines": 31
+    },
+    {
+      "path": "apps/web/src/components/ui/input.tsx",
+      "category": "frontend",
+      "bytes": 1033,
+      "sha256": "5660bb3b7408f1bc0112fa815e7b8147ac98656001df460f37a5470c0c6590ea",
+      "lines": 17
+    },
+    {
+      "path": "apps/web/src/components/ui/period-menu.css",
+      "category": "frontend",
+      "bytes": 1419,
+      "sha256": "473db225dd6b433cda8bf7866c88798b82fe646ac01f6fcd8824f810b701a262",
+      "lines": 10
+    },
+    {
+      "path": "apps/web/src/components/ui/period-menu.tsx",
+      "category": "frontend",
+      "bytes": 2120,
+      "sha256": "9e49d81cfe841cba5b7c06411bf7c7c199b6eefb3c1bb64c79ee718b7eb52009",
+      "lines": 37
+    },
+    {
+      "path": "apps/web/src/components/ui/progress.css",
+      "category": "frontend",
+      "bytes": 3253,
+      "sha256": "20e4ce3bc1d0a2ef2f095728719ffa1bf58eafe731728d6a715ae27b341f888c",
+      "lines": 26
+    },
+    {
+      "path": "apps/web/src/components/ui/progress.tsx",
+      "category": "frontend",
+      "bytes": 1718,
+      "sha256": "3619b82823b00b7b88780e5607897ddfc231af4718ee885f4bc59ca2304f7085",
+      "lines": 31
+    },
+    {
+      "path": "apps/web/src/components/ui/tabs.tsx",
+      "category": "frontend",
+      "bytes": 863,
+      "sha256": "4cf37f84ff358903fa68d8e4ef8b12ab7d8f0f65b4b971be7fcded877f12ebfc",
+      "lines": 19
+    },
+    {
+      "path": "apps/web/src/data-platform-api.test.ts",
+      "category": "frontend",
+      "bytes": 11803,
+      "sha256": "8aaad1bd18b5fec2309900d349911af33ed703eb26c8c2654dad4996d32c62c1",
+      "lines": 179
+    },
+    {
+      "path": "apps/web/src/data-platform-api.ts",
+      "category": "frontend",
+      "bytes": 11833,
+      "sha256": "c4c53c39a50a662393bcccc28bd4f13c19a9e1ebc207cb3763709907a176df1d",
+      "lines": 133
+    },
+    {
+      "path": "apps/web/src/deployments-api.ts",
+      "category": "frontend",
+      "bytes": 2636,
+      "sha256": "14e87b138307ac6e07c7fe9703fc12fa675419494699f99583b4597e0d5173f3",
+      "lines": 34
+    },
+    {
+      "path": "apps/web/src/fonts.css",
+      "category": "frontend",
+      "bytes": 111170,
+      "sha256": "05236dee1a4026ffa47c7dfb42b3ce40ab9180f21517d7903b9a9433253215b6",
+      "lines": 954
+    },
+    {
+      "path": "apps/web/src/insights-api.ts",
+      "category": "frontend",
+      "bytes": 5665,
+      "sha256": "c5cbfb800730a56eb5d81d7a6e5504251954997fe75c24fe5e66392a24fe2d7f",
+      "lines": 73
+    },
+    {
+      "path": "apps/web/src/lib/status-variant.ts",
+      "category": "frontend",
+      "bytes": 1080,
+      "sha256": "37f666b0fa2e8143ad47c9e4e0f78149dd489d9e2dd4dea2cf6f74954c95878f",
+      "lines": 10
+    },
+    {
+      "path": "apps/web/src/lib/utils.ts",
+      "category": "frontend",
+      "bytes": 169,
+      "sha256": "d1f1e0d62cb8d8d1e04c26e14de842d8a151f75812d81b046c65b5d1fe8e4b27",
+      "lines": 6
+    },
+    {
+      "path": "apps/web/src/main.tsx",
+      "category": "frontend",
+      "bytes": 499,
+      "sha256": "c97278693398204c48d333775a5456e782696a56740464787f475f57aca5560b",
+      "lines": 14
+    },
+    {
+      "path": "apps/web/src/media-api.test.ts",
+      "category": "frontend",
+      "bytes": 4073,
+      "sha256": "1d7477f643501af03f7ca4473142b7076b5a38cdf8f1a6aed3a3fb4a7b1edf64",
+      "lines": 59
+    },
+    {
+      "path": "apps/web/src/media-api.ts",
+      "category": "frontend",
+      "bytes": 13074,
+      "sha256": "2ec575fe75fabfbf342923f94d60785bfcd4665d1199184004d325a05fe31f66",
+      "lines": 152
+    },
+    {
+      "path": "apps/web/src/media-evaluation-api.test.ts",
+      "category": "frontend",
+      "bytes": 3576,
+      "sha256": "65ccb182990fff04cd56319f96fcc2f68fd2ca11a7eed3b8c75523373622d697",
+      "lines": 40
+    },
+    {
+      "path": "apps/web/src/media-evaluation-api.ts",
+      "category": "frontend",
+      "bytes": 4534,
+      "sha256": "857cd7616ff0af88bd4611aa0c403f8e38f87dd4633882aab72dd3e3b0218fbf",
+      "lines": 50
+    },
+    {
+      "path": "apps/web/src/mocks/browser.ts",
+      "category": "frontend",
+      "bytes": 131,
+      "sha256": "fb12fc84f921ddd75428d5f44a591beea7b34349c1c20ec77fa6cba62a651772",
+      "lines": 4
+    },
+    {
+      "path": "apps/web/src/mocks/handlers.ts",
+      "category": "frontend",
+      "bytes": 1728,
+      "sha256": "7ff16f9d4b5befaedb13ba44f6ce1614ebe06a34d2033c78523701dcfd392734",
+      "lines": 38
+    },
+    {
+      "path": "apps/web/src/operator-route.ts",
+      "category": "frontend",
+      "bytes": 603,
+      "sha256": "77aa64d051893ac2a35a90367a75912b34403942896f14083d56194cdf7f30f0",
+      "lines": 21
+    },
+    {
+      "path": "apps/web/src/pages/AccessAdminPage.tsx",
+      "category": "frontend",
+      "bytes": 18775,
+      "sha256": "512ce2ecd6fdc02eb9087f3245a41949c3be09cf73fde4dd6b2b804031dbe76b",
+      "lines": 145
+    },
+    {
+      "path": "apps/web/src/pages/AccessPage.tsx",
+      "category": "frontend",
+      "bytes": 9792,
+      "sha256": "e48d8a2389d5075b736d2f3b6c51b0f0f7d833cd23946d01fce05af138408589",
+      "lines": 85
+    },
+    {
+      "path": "apps/web/src/pages/AccessPages.test.tsx",
+      "category": "frontend",
+      "bytes": 18250,
+      "sha256": "305ba35226549107f6eb66e197f8a9d3c77fecae9c85e34b2a6012acafc5ab7e",
+      "lines": 275
+    },
+    {
+      "path": "apps/web/src/pages/AuditPage.tsx",
+      "category": "frontend",
+      "bytes": 11306,
+      "sha256": "98a34b81c913f0d27ec61db5ead8c2b9336edda95ef14ab8174c1037c63fca94",
+      "lines": 62
+    },
+    {
+      "path": "apps/web/src/pages/AutoGtPage.test.tsx",
+      "category": "frontend",
+      "bytes": 16512,
+      "sha256": "cb04a4190352df97affc51af28a4d0b77cab89804d36b6dee04849cd6d885182",
+      "lines": 124
+    },
+    {
+      "path": "apps/web/src/pages/AutoGtPage.tsx",
+      "category": "frontend",
+      "bytes": 29385,
+      "sha256": "16acee3bc57b3e0e70af0c36096f7612f42492107b6d4fc636a4ca3a1d784ff1",
+      "lines": 121
+    },
+    {
+      "path": "apps/web/src/pages/ConnectionsPage.test.tsx",
+      "category": "frontend",
+      "bytes": 10335,
+      "sha256": "1554c3e08d0badb07f0078588c9e416ca27f93606923f2c1a294137c12ecf955",
+      "lines": 171
+    },
+    {
+      "path": "apps/web/src/pages/ConnectionsPage.tsx",
+      "category": "frontend",
+      "bytes": 10473,
+      "sha256": "11d8df11a0a8795b2f7ff9c2742978ce7b20e0f0846793e80d9f640cd395bff3",
+      "lines": 139
+    },
+    {
+      "path": "apps/web/src/pages/DashboardPage.tsx",
+      "category": "frontend",
+      "bytes": 7828,
+      "sha256": "92964dda070a198bc8f05f9947fe3dc3b64f43609c1234aa3f507b1e75cf481b",
+      "lines": 98
+    },
+    {
+      "path": "apps/web/src/pages/DataOperationsPage.tsx",
+      "category": "frontend",
+      "bytes": 4097,
+      "sha256": "cbdb855435a4a4760a0ad27c618deef6fc50f6a951c03715cc5b917c086eedd9",
+      "lines": 27
+    },
+    {
+      "path": "apps/web/src/pages/EnvironmentsAdminPage.test.tsx",
+      "category": "frontend",
+      "bytes": 3947,
+      "sha256": "a285b83b1620b79474cc638e9579c9e5445587a5dbdf3c5abe6201465f6f52e5",
+      "lines": 59
+    },
+    {
+      "path": "apps/web/src/pages/EnvironmentsAdminPage.tsx",
+      "category": "frontend",
+      "bytes": 16443,
+      "sha256": "dea5d295b203941d13bd6bf5c5568f0ebb7246461747059e6264a3ccf7c9941f",
+      "lines": 86
+    },
+    {
+      "path": "apps/web/src/pages/EventsPage.tsx",
+      "category": "frontend",
+      "bytes": 7176,
+      "sha256": "53df0a20bbc2a88f72e01788e20c43ec504d8fe9670d8319a61190956a6c7a22",
+      "lines": 154
+    },
+    {
+      "path": "apps/web/src/pages/InsightsPages.test.tsx",
+      "category": "frontend",
+      "bytes": 13188,
+      "sha256": "518f55f9b5aa5067c0d4c203d17a873f056ed7fd4889786ec4d913345483925b",
+      "lines": 169
+    },
+    {
+      "path": "apps/web/src/pages/MediaPage.test.tsx",
+      "category": "frontend",
+      "bytes": 43291,
+      "sha256": "b1fe7229cd35282c9456cffa42899909063a557fa9a8775020ba4dc299c3c891",
+      "lines": 603
+    },
+    {
+      "path": "apps/web/src/pages/MediaPage.tsx",
+      "category": "frontend",
+      "bytes": 49410,
+      "sha256": "2393c4443ab38534e6340959a53d93c6cfbe0452f9e794f378419559fdf6fb3a",
+      "lines": 427
+    },
+    {
+      "path": "apps/web/src/pages/NotificationsPage.tsx",
+      "category": "frontend",
+      "bytes": 5276,
+      "sha256": "03aedce0056cdae7c2b6f5653d2fc1d9fa46aa438759c1b4691d9c09e345d041",
+      "lines": 46
+    },
+    {
+      "path": "apps/web/src/pages/OperatorsPage.tsx",
+      "category": "frontend",
+      "bytes": 18399,
+      "sha256": "74e9066bf3b041a36e561c57c419f45e177f56829a735948e074263259579721",
+      "lines": 127
+    },
+    {
+      "path": "apps/web/src/pages/PipelineEditorReview.test.tsx",
+      "category": "frontend",
+      "bytes": 29033,
+      "sha256": "e57e71863ae0edd001b5821d1c3da6ccfb74d60847beb03d816a96d1e409de69",
+      "lines": 393
+    },
+    {
+      "path": "apps/web/src/pages/PipelineWorkspace.test.tsx",
+      "category": "frontend",
+      "bytes": 21785,
+      "sha256": "fc237cca893823c3c8794ec0e78ebaa96ebaf1da79e31a9fa9f0901f2c265779",
+      "lines": 272
+    },
+    {
+      "path": "apps/web/src/pages/PipelinesPage.tsx",
+      "category": "frontend",
+      "bytes": 82414,
+      "sha256": "80387ffa51fe3bf452d9983dabea3abf22fb39b16cdef5f55470548cfc985f74",
+      "lines": 521
+    },
+    {
+      "path": "apps/web/src/pages/PipelinesProjectScope.test.tsx",
+      "category": "frontend",
+      "bytes": 8293,
+      "sha256": "ae7627566a24add27f959a6f0be50820db328d0b8651c25992ff9ef1a7457df4",
+      "lines": 128
+    },
+    {
+      "path": "apps/web/src/pages/PipelinesRunDetail.test.tsx",
+      "category": "frontend",
+      "bytes": 11001,
+      "sha256": "ba2de0074933ad31f8f91640801983fc25116d662a8bb7490e2077de7cb2ddd3",
+      "lines": 189
+    },
+    {
+      "path": "apps/web/src/pages/PlatformMockPages.tsx",
+      "category": "frontend",
+      "bytes": 2006,
+      "sha256": "52da755346d01eceb4660d5e6ec32f21470ea0d8d5ca3b0eddb0f8de7cdbb839",
+      "lines": 22
+    },
+    {
+      "path": "apps/web/src/pages/PluginDevelopment.test.tsx",
+      "category": "frontend",
+      "bytes": 35259,
+      "sha256": "6246d37cbc52533033e06c0693fd1c606cf0d706a3fcf68f340bb276d757fe45",
+      "lines": 415
+    },
+    {
+      "path": "apps/web/src/pages/RequirementDetailPage.tsx",
+      "category": "frontend",
+      "bytes": 21683,
+      "sha256": "bdad7807f52aaece317da8a5706a93448b56ed8d931f15f4855c2ffe19c25e29",
+      "lines": 121
+    },
+    {
+      "path": "apps/web/src/pages/RequirementsPage.test.tsx",
+      "category": "frontend",
+      "bytes": 8670,
+      "sha256": "e35e79c5bb799e71936d68bfce5609048f846171a1661a5677f50942ae5128f7",
+      "lines": 120
+    },
+    {
+      "path": "apps/web/src/pages/RequirementsPage.tsx",
+      "category": "frontend",
+      "bytes": 15642,
+      "sha256": "2d13ebdcf8c9ddf2edc3b9030e6830751837f4debb62f4af3f31e4b37beafa4b",
+      "lines": 122
+    },
+    {
+      "path": "apps/web/src/pages/RunProgressWorkspaces.test.tsx",
+      "category": "frontend",
+      "bytes": 6976,
+      "sha256": "3d06bb7745a8b0b90d446cb558e0b77cea4cda9bea654618f2f9372542feded2",
+      "lines": 111
+    },
+    {
+      "path": "apps/web/src/pages/RunsPage.test.tsx",
+      "category": "frontend",
+      "bytes": 5824,
+      "sha256": "eb3f22beb3dd394a14ff44625bbd19cd8fe83a9c5eb29a111bc912857cfff9f6",
+      "lines": 125
+    },
+    {
+      "path": "apps/web/src/pages/RunsPage.tsx",
+      "category": "frontend",
+      "bytes": 8214,
+      "sha256": "166324c83a4d83472eaa1cb6d37dcda599fc9e8b211cafc9b90f69b5b04344d5",
+      "lines": 139
+    },
+    {
+      "path": "apps/web/src/pages/TrainingPage.test.tsx",
+      "category": "frontend",
+      "bytes": 14554,
+      "sha256": "1871b2a90f09440d3f792b48c8ca2f6a9f9ee22b6f9ecd2075720c953e93bcba",
+      "lines": 131
+    },
+    {
+      "path": "apps/web/src/pages/TrainingPage.tsx",
+      "category": "frontend",
+      "bytes": 26123,
+      "sha256": "47c7acc3433d4a16c676e03b814b10b930fe8f3ab6c6280dc1680354584bb9fa",
+      "lines": 141
+    },
+    {
+      "path": "apps/web/src/pages/UsageAnalyticsPage.tsx",
+      "category": "frontend",
+      "bytes": 9193,
+      "sha256": "355cd1aad569624701b087bd29846b7fd5fbd89c0eceb1d833e8ee5fc22f8b3b",
+      "lines": 55
+    },
+    {
+      "path": "apps/web/src/pages/UsersAdminPage.test.tsx",
+      "category": "frontend",
+      "bytes": 10102,
+      "sha256": "a3a04e0329de4e0ba2a278229a2372c840d5a8382737939301669bb4729d35f0",
+      "lines": 130
+    },
+    {
+      "path": "apps/web/src/pages/UsersAdminPage.tsx",
+      "category": "frontend",
+      "bytes": 20379,
+      "sha256": "de70ca8bbc57d2c4fb2e9c584f1de41c8de6e4dabc5b7c10b505407dbc3c4a24",
+      "lines": 287
+    },
+    {
+      "path": "apps/web/src/pages/access-pages.css",
+      "category": "frontend",
+      "bytes": 4421,
+      "sha256": "ba7914e19c6f2bedb0223981ad382aeb0305e8b63954d70d4664bd8b98f30842",
+      "lines": 39
+    },
+    {
+      "path": "apps/web/src/pages/access-permission-groups.test.ts",
+      "category": "frontend",
+      "bytes": 1510,
+      "sha256": "0aed3243e0d39274f4d5a4319d50f4d416118a9e253717fae63db8a12ecd032b",
+      "lines": 23
+    },
+    {
+      "path": "apps/web/src/pages/access-permission-groups.ts",
+      "category": "frontend",
+      "bytes": 1080,
+      "sha256": "b0792b6567555f64e172e214bd0be2c8d13848465692a9045f334b73a3cc683e",
+      "lines": 20
+    },
+    {
+      "path": "apps/web/src/pages/auto-gt.css",
+      "category": "frontend",
+      "bytes": 5839,
+      "sha256": "bf94b4149e9adea89a51d8c19dca0e3d19d71c4b67d29518fd6056f00c61e62d",
+      "lines": 54
+    },
+    {
+      "path": "apps/web/src/pages/console-management.css",
+      "category": "frontend",
+      "bytes": 8227,
+      "sha256": "bc882d06ee0f2f8c5553149c0ebad7ddaf47e803689136575c57955960332475",
+      "lines": 72
+    },
+    {
+      "path": "apps/web/src/pages/dashboard.css",
+      "category": "frontend",
+      "bytes": 8236,
+      "sha256": "586097b48ce9fe338b77b944bb556f9d9f1c1ae97db13fd4952f40b9317b0136",
+      "lines": 79
+    },
+    {
+      "path": "apps/web/src/pages/events.css",
+      "category": "frontend",
+      "bytes": 463,
+      "sha256": "44aac2cacfb3d2e622179050fc05824453f728a99ec079e059ad499a09df590c",
+      "lines": 3
+    },
+    {
+      "path": "apps/web/src/pages/media.css",
+      "category": "frontend",
+      "bytes": 42149,
+      "sha256": "3a5dafc4191a0da26b642ab348683f647546bb127b6dcc1d3acb1dab3785e42a",
+      "lines": 283
+    },
+    {
+      "path": "apps/web/src/pages/notifications.css",
+      "category": "frontend",
+      "bytes": 758,
+      "sha256": "c0ff5237f11a64ab966bec1c9cdce41022fdc782f4cc5b9159a4fe03f76d5d07",
+      "lines": 8
+    },
+    {
+      "path": "apps/web/src/pages/pipelines.css",
+      "category": "frontend",
+      "bytes": 49999,
+      "sha256": "e715c6df15637a695bd419b6ee0a32c49f7e41577b5705d70f5a790bbce9ef52",
+      "lines": 472
+    },
+    {
+      "path": "apps/web/src/pages/platform/ActionFeedback.test.tsx",
+      "category": "frontend",
+      "bytes": 6318,
+      "sha256": "0414d317770513d4bfcab629508ea8d1fbc299be5ef01f1cdac1223d024a82e4",
+      "lines": 77
+    },
+    {
+      "path": "apps/web/src/pages/platform/AnnotationBatch.tsx",
+      "category": "frontend",
+      "bytes": 2176,
+      "sha256": "e2d68f0a779a2cdbd2d098b601b9a33a615c3de64723efab6fe84481508c7f06",
+      "lines": 9
+    },
+    {
+      "path": "apps/web/src/pages/platform/AnnotationFailureEvidence.test.tsx",
+      "category": "frontend",
+      "bytes": 7473,
+      "sha256": "2fe7162155e7539750e10c8ccab5da4a7d0501c57dfb63b95c1af3bd6e2f9fdb",
+      "lines": 33
+    },
+    {
+      "path": "apps/web/src/pages/platform/AnnotationPages.tsx",
+      "category": "frontend",
+      "bytes": 24714,
+      "sha256": "0d86505700ba5e2d0a4ab29244e2a5a402bf093726e95cedf55f5e83f7a07976",
+      "lines": 113
+    },
+    {
+      "path": "apps/web/src/pages/platform/AutoGtGeometryEditor.test.tsx",
+      "category": "frontend",
+      "bytes": 3356,
+      "sha256": "f93fd30a740e0ef3658fe91aec214465a71dc040f8bc5fc07e3c0917ae1bfd6e",
+      "lines": 18
+    },
+    {
+      "path": "apps/web/src/pages/platform/AutoGtGeometryEditor.tsx",
+      "category": "frontend",
+      "bytes": 8610,
+      "sha256": "666675d79f358cf5aa547b548b63c2091d15f33dd1a68cffc6f526889b6acd5c",
+      "lines": 35
+    },
+    {
+      "path": "apps/web/src/pages/platform/DatasetPages.tsx",
+      "category": "frontend",
+      "bytes": 21332,
+      "sha256": "a05976ae80c99b5a646d97c7e8e5edb71ab8f128555c656fa36070c695f0c893",
+      "lines": 99
+    },
+    {
+      "path": "apps/web/src/pages/platform/DatasetReflow.test.tsx",
+      "category": "frontend",
+      "bytes": 4269,
+      "sha256": "1811c4fd78c6cc23f60e47774e01c1bf2a7b3ac01c0ef265e7e9c579b4cde94c",
+      "lines": 36
+    },
+    {
+      "path": "apps/web/src/pages/platform/EvaluationPages.tsx",
+      "category": "frontend",
+      "bytes": 24980,
+      "sha256": "5db20347a31f2d9a7f36b3b067cb429f58a718bd50fa9e7655c70faad426bffd",
+      "lines": 109
+    },
+    {
+      "path": "apps/web/src/pages/platform/ExecutionPanels.tsx",
+      "category": "frontend",
+      "bytes": 22486,
+      "sha256": "1fdf1d00f2a3623b82f9031d9943a473fa6f857f618dd6682368996298515403",
+      "lines": 59
+    },
+    {
+      "path": "apps/web/src/pages/platform/FeedbackPages.tsx",
+      "category": "frontend",
+      "bytes": 9863,
+      "sha256": "f58f2183793f5a4fe80387de5855a54a549120aa0a58ded14bc183a3ec882e88",
+      "lines": 44
+    },
+    {
+      "path": "apps/web/src/pages/platform/GeometryEditor.tsx",
+      "category": "frontend",
+      "bytes": 8995,
+      "sha256": "d82162fc6c2ba7150d74cbd1d84677052bc2a2b393ce5ecfa2024c12f16203cd",
+      "lines": 38
+    },
+    {
+      "path": "apps/web/src/pages/platform/ResourceLists.test.tsx",
+      "category": "frontend",
+      "bytes": 4941,
+      "sha256": "5f4dd2ed24037ae8242e8b9286369cac553efc7f4a45fd6391471d59bfafaeb5",
+      "lines": 74
+    },
+    {
+      "path": "apps/web/src/pages/platform/TrainingRecords.tsx",
+      "category": "frontend",
+      "bytes": 4811,
+      "sha256": "7c4f5101b399f55d8c179dba76d2615296e02f492b50d7ea62479c791d528ea6",
+      "lines": 21
+    },
+    {
+      "path": "apps/web/src/pages/platform/auto-gt-display.test.ts",
+      "category": "frontend",
+      "bytes": 2259,
+      "sha256": "ff839a1f5e9722391da48ef4ef5ba07fa30af59644dbb88b7cfa90c64ca5ed44",
+      "lines": 16
+    },
+    {
+      "path": "apps/web/src/pages/platform/auto-gt-display.ts",
+      "category": "frontend",
+      "bytes": 6937,
+      "sha256": "5da0f8e205dfb9df2f35c237cb64b99ba53ca4b1acbe6c092cf9c8ad92a62360",
+      "lines": 44
+    },
+    {
+      "path": "apps/web/src/pages/platform/auto-gt-geometry.css",
+      "category": "frontend",
+      "bytes": 582,
+      "sha256": "02a31a6ba2303793e66d3fa9a2f4e6729d56b8dcd0d367cd6f5496cad19d1998",
+      "lines": 5
+    },
+    {
+      "path": "apps/web/src/pages/platform/media-reflow-display.test.ts",
+      "category": "frontend",
+      "bytes": 2010,
+      "sha256": "fe81e8ad8f72e614cd33244413beb1d88f1a1b11be5e1543db350569480bca73",
+      "lines": 28
+    },
+    {
+      "path": "apps/web/src/pages/platform/media-reflow-display.ts",
+      "category": "frontend",
+      "bytes": 3346,
+      "sha256": "807ddbe58e0758c838f38e344e52ac0ba8545b07f5b3b47c8a4c6e575595727a",
+      "lines": 37
+    },
+    {
+      "path": "apps/web/src/pages/platform/platform-store.test.tsx",
+      "category": "frontend",
+      "bytes": 6304,
+      "sha256": "f5b4fec34cd0f88a8df4f70e4180baba922570ee71c120388c6e5b2186fd9b22",
+      "lines": 103
+    },
+    {
+      "path": "apps/web/src/pages/platform/platform-store.ts",
+      "category": "frontend",
+      "bytes": 7392,
+      "sha256": "b95ebfe722ef7c96dba172c17efda5265c1f1e9897dee1e454b8949386a536f1",
+      "lines": 74
+    },
+    {
+      "path": "apps/web/src/pages/platform/shared.test.tsx",
+      "category": "frontend",
+      "bytes": 13711,
+      "sha256": "35799c9655c3fe6db8293a29d16d9e747572b74338faf7a344227c2d7911343b",
+      "lines": 208
+    },
+    {
+      "path": "apps/web/src/pages/platform/shared.tsx",
+      "category": "frontend",
+      "bytes": 17447,
+      "sha256": "c26916974ad77a825f89375091ebc8e5926682fb0d6ac1ec320572d3dc0af805",
+      "lines": 124
+    },
+    {
+      "path": "apps/web/src/pages/platform-mock.css",
+      "category": "frontend",
+      "bytes": 32064,
+      "sha256": "5cf4d7755103754c23c28e76fbea1786b610a9d0d29e85dca4b9f3da3411378c",
+      "lines": 301
+    },
+    {
+      "path": "apps/web/src/pages/plugins.css",
+      "category": "frontend",
+      "bytes": 21192,
+      "sha256": "c47c114ed2cb9d980c20ae9b6029f75b06bbde6d5c1fdaa31930c38d7d89c8de",
+      "lines": 171
+    },
+    {
+      "path": "apps/web/src/pages/requirement-detail.css",
+      "category": "frontend",
+      "bytes": 9433,
+      "sha256": "288427142cdb993276bd26e5f5e8ce639d8b94cc3a337eb8f80029cad4c85b03",
+      "lines": 75
+    },
+    {
+      "path": "apps/web/src/pages/requirements.css",
+      "category": "frontend",
+      "bytes": 12164,
+      "sha256": "bb852720ae045499d50a5c072ab43f58005fb94e250c70a28d1bd99f1d9f814d",
+      "lines": 104
+    },
+    {
+      "path": "apps/web/src/pages/training-platform.css",
+      "category": "frontend",
+      "bytes": 4845,
+      "sha256": "d123febe9726ef23de3267648654e51a3b9d51afef31ba0b6aff1b70183c377f",
+      "lines": 57
+    },
+    {
+      "path": "apps/web/src/pages/users-admin.css",
+      "category": "frontend",
+      "bytes": 9422,
+      "sha256": "5527f1205c2294bc4fdf555652d35541eee1fdf866fdfe54a225184e2ad9e659",
+      "lines": 91
+    },
+    {
+      "path": "apps/web/src/pipeline-graph.ts",
+      "category": "frontend",
+      "bytes": 3226,
+      "sha256": "9dca9de8d2c0bb8add77d7e1704e3cdcd424920aa1ef83b676dae400fb09d2d3",
+      "lines": 50
+    },
+    {
+      "path": "apps/web/src/pipeline-schema.test.ts",
+      "category": "frontend",
+      "bytes": 1902,
+      "sha256": "b36c139716c3ffc71d12f436c7b516b3fc9fe3cbe39491f209c274654b3d0d69",
+      "lines": 28
+    },
+    {
+      "path": "apps/web/src/pipeline-schema.ts",
+      "category": "frontend",
+      "bytes": 2656,
+      "sha256": "8a3322cd18155b28f5bb684187aab29bd8a34831335fd3fc5c89f2e3067af600",
+      "lines": 46
+    },
+    {
+      "path": "apps/web/src/pipelines-api.ts",
+      "category": "frontend",
+      "bytes": 12444,
+      "sha256": "8694d300080906e365ee282b26b09ca7d7b8926591aa4feca44ec1f88c98b825",
+      "lines": 152
+    },
+    {
+      "path": "apps/web/src/platform-api.ts",
+      "category": "frontend",
+      "bytes": 5542,
+      "sha256": "f072cc876af24474777de62e7b70ae2670ac5158fe01c9f8a3552270e8e69869",
+      "lines": 142
+    },
+    {
+      "path": "apps/web/src/plugin-releases-api.ts",
+      "category": "frontend",
+      "bytes": 6091,
+      "sha256": "19e2031d3dad855cf3be7b7449d23d416df1a9c41cb1faa07ecc774a8c072b4d",
+      "lines": 79
+    },
+    {
+      "path": "apps/web/src/requirements.ts",
+      "category": "frontend",
+      "bytes": 3506,
+      "sha256": "fd047c310f953b822fc51ee9caee7d345008393afeceb03bdd346282cae98b8f",
+      "lines": 67
+    },
+    {
+      "path": "apps/web/src/router.tsx",
+      "category": "frontend",
+      "bytes": 17131,
+      "sha256": "c2c084c8ff00ed22958825660b790905a6fc0545dc2e34438a4253446a4f6681",
+      "lines": 364
+    },
+    {
+      "path": "apps/web/src/runtime-api.ts",
+      "category": "frontend",
+      "bytes": 2208,
+      "sha256": "7a4cc07898d325dfb6d3cab26616bd2bf1bf254fd5725612616d2d99622d0cc8",
+      "lines": 15
+    },
+    {
+      "path": "apps/web/src/styles.css",
+      "category": "frontend",
+      "bytes": 1260,
+      "sha256": "ec9e6197a28854de6896185078e105d39ed7e7bc93f6a925418f197fb5d8305d",
+      "lines": 11
+    },
+    {
+      "path": "apps/web/src/telemetry.test.ts",
+      "category": "frontend",
+      "bytes": 11789,
+      "sha256": "f7713578bf4e0537eb385b64b042cae4d3b7b4cafec828a436597c9038742e5b",
+      "lines": 173
+    },
+    {
+      "path": "apps/web/src/telemetry.ts",
+      "category": "frontend",
+      "bytes": 15754,
+      "sha256": "8e08e8888f94609656ef2b3cedc25d1d3a0181aef97e168d97005cf0f8af9471",
+      "lines": 282
+    },
+    {
+      "path": "apps/web/src/test/server.ts",
+      "category": "frontend",
+      "bytes": 135,
+      "sha256": "e458fa2ba3b1dcf376e1873218448b632bf234c911107908cf105668146d7d7d",
+      "lines": 4
+    },
+    {
+      "path": "apps/web/src/test/setup.ts",
+      "category": "frontend",
+      "bytes": 274,
+      "sha256": "a23b27d49907afb8c403b51ebe13bc21ebe6455e2f143a29cf4bac2d88c1d6f5",
+      "lines": 7
+    },
+    {
+      "path": "apps/web/src/training-platform-api.ts",
+      "category": "frontend",
+      "bytes": 1880,
+      "sha256": "1b2238e8e47aadf813017972544681f9c45899d323ff414d9bac466f972e3ac6",
+      "lines": 11
+    },
+    {
+      "path": "apps/web/src/types.ts",
+      "category": "frontend",
+      "bytes": 4683,
+      "sha256": "3e1c3fc4031b2619503439488b972a8a6fd099bc7c18807f5f0a72fb7f5ea04d",
+      "lines": 155
+    },
+    {
+      "path": "apps/web/src/vite-env.d.ts",
+      "category": "frontend",
+      "bytes": 38,
+      "sha256": "65996936fbb042915f7b74a200fcdde7e410f32a669b1ab9597cfaa4b0faddb5",
+      "lines": 1
+    },
+    {
+      "path": "apps/web/public/fonts/GoogleSansCode-OFL.txt",
+      "category": "frontend",
+      "bytes": 4396,
+      "sha256": "ff8f4fbc4f1a71c7d4c6481c48dc2b21c43f8dc15872536667fee45c15d20928",
+      "lines": 92
+    },
+    {
+      "path": "apps/web/public/fonts/GoogleSansFlex-OFL.txt",
+      "category": "frontend",
+      "bytes": 4397,
+      "sha256": "831b6e041705873c3e6efb18c4c96202bc41c8be42a456d3d26c47abf14816d0",
+      "lines": 93
+    },
+    {
+      "path": "apps/web/public/fonts/GoogleSansFlex-SOURCE.md",
+      "category": "frontend",
+      "bytes": 1476,
+      "sha256": "e3767927a87acb3ef6d02731873134e4b0603ae22e52f73623daba8bf4164435",
+      "lines": 12
+    },
+    {
+      "path": "apps/web/public/fonts/google-sans-code-latin-ext.woff2",
+      "category": "frontend",
+      "bytes": 27732,
+      "sha256": "b1b1ede14819c2ef31ff9841fb7515bcec1bd7d9ab17972987926bfc21174fc8",
+      "lines": null
+    },
+    {
+      "path": "apps/web/public/fonts/google-sans-code-latin.woff2",
+      "category": "frontend",
+      "bytes": 34948,
+      "sha256": "98eee6fe6dc8f6341f80caf9c7e72a5241dd78188d403a12bc6aeb23a3e8c1a3",
+      "lines": null
+    },
+    {
+      "path": "apps/web/public/fonts/google-sans-flex-latin-ext.woff2",
+      "category": "frontend",
+      "bytes": 58716,
+      "sha256": "196d97b4fa50fa3223862de588b7c3ba095275428058ad6f0841727128f815eb",
+      "lines": null
+    },
+    {
+      "path": "apps/web/public/fonts/google-sans-flex-latin.woff2",
+      "category": "frontend",
+      "bytes": 119904,
+      "sha256": "5dd2c8c51dee0eb9f66814d89af270f545a270149990c68dba524395e6f893fb",
+      "lines": null
+    },
+    {
+      "path": "apps/web/public/fonts/google-sans-flex-vietnamese.woff2",
+      "category": "frontend",
+      "bytes": 23320,
+      "sha256": "b9caa0a373c2735f242c033324676c45157f3d2bb3970e0c3914712aff81333a",
+      "lines": null
+    },
+    {
+      "path": "apps/web/public/fonts/noto-sans-sc-001.woff2",
+      "category": "frontend",
+      "bytes": 3752,
+      "sha256": "3045d947c7d78678a5ae0c4b356ec0bda8c8d8513599b9702ecdc1190e90136f",
+      "lines": null
+    },
+    {
+      "path": "apps/web/public/fonts/noto-sans-sc-002.woff2",
+      "category": "frontend",
+      "bytes": 19996,
+      "sha256": "62e9d990f68bf1921eec30b7a19a9bd64af5dc5af0964246a1673920589cbb92",
+      "lines": null
+    },
+    {
+      "path": "apps/web/public/fonts/noto-sans-sc-003.woff2",
+      "category": "frontend",
+      "bytes": 11388,
+      "sha256": "1b09d45bc4fa14fd7164723c52b997fb0db464630adad7baeef05fabd02a1155",
+      "lines": null
+    },
+    {
+      "path": "apps/web/public/fonts/noto-sans-sc-004.woff2",
+      "category": "frontend",
+      "bytes": 11324,
+      "sha256": "6689c10783e90ce2e3ad11bce8b33a05deecde83ad6561a63f50dcc120c92dc4",
+      "lines": null
+    },
+    {
+      "path": "apps/web/public/fonts/noto-sans-sc-005.woff2",
+      "category": "frontend",
+      "bytes": 65184,
+      "sha256": "de53fb4fed079a6270971a5a4f20e8501191ffd8846a3cbfbc19c3f1d3fd6925",
+      "lines": null
+    },
+    {
+      "path": "apps/web/public/fonts/noto-sans-sc-006.woff2",
+      "category": "frontend",
+      "bytes": 56636,
+      "sha256": "ce48c8f42ed1659df11fa8c9d3d57596afb5383d3537e1a70c836b2cc699db1a",
+      "lines": null
+    },
+    {
+      "path": "apps/web/public/fonts/noto-sans-sc-007.woff2",
+      "category": "frontend",
+      "bytes": 62552,
+      "sha256": "5b91a58010929377e94cd5c64c26c57b10a417687371138ef77627b907370bb8",
+      "lines": null
+    },
+    {
+      "path": "apps/web/public/fonts/noto-sans-sc-008.woff2",
+      "category": "frontend",
+      "bytes": 58096,
+      "sha256": "ce6a9f5fc5666236b9481e5d93aba8fac485a933a2f024c9345d031cbca40c4a",
+      "lines": null
+    },
+    {
+      "path": "apps/web/public/fonts/noto-sans-sc-009.woff2",
+      "category": "frontend",
+      "bytes": 50752,
+      "sha256": "4b74cab2d8e2b3c07b050fcbde8adc41a6193bbdb78c32001491d2950b5e6956",
+      "lines": null
+    },
+    {
+      "path": "apps/web/public/fonts/noto-sans-sc-010.woff2",
+      "category": "frontend",
+      "bytes": 47404,
+      "sha256": "f62b9ab15b8bef2bcb3529008cefd25c12ef804e0cf88d01d33be1441bb43d0c",
+      "lines": null
+    },
+    {
+      "path": "apps/web/public/fonts/noto-sans-sc-011.woff2",
+      "category": "frontend",
+      "bytes": 50028,
+      "sha256": "d81380d9dd8d05680d3d2ba7fa9a831473f7d340b6ce32af11063b4d73118ca3",
+      "lines": null
+    },
+    {
+      "path": "apps/web/public/fonts/noto-sans-sc-012.woff2",
+      "category": "frontend",
+      "bytes": 53836,
+      "sha256": "96d17ca1177682c2073ac7f905d1cc529ba43495275f93391e45f663039cb43d",
+      "lines": null
+    },
+    {
+      "path": "apps/web/public/fonts/noto-sans-sc-013.woff2",
+      "category": "frontend",
+      "bytes": 54432,
+      "sha256": "72d3f5812086c592a09fca4584779f59ad6349c43208922efe84347c915c0957",
+      "lines": null
+    },
+    {
+      "path": "apps/web/public/fonts/noto-sans-sc-014.woff2",
+      "category": "frontend",
+      "bytes": 47068,
+      "sha256": "dfa871e4db4e5582d077c6be55222da33ac6e8f39cd33e6ed8f7fdd058b796e4",
+      "lines": null
+    },
+    {
+      "path": "apps/web/public/fonts/noto-sans-sc-015.woff2",
+      "category": "frontend",
+      "bytes": 52368,
+      "sha256": "5fc65f704d01095033e6c459682bdc993714bd4ee0734d3d1e49286648173987",
+      "lines": null
+    },
+    {
+      "path": "apps/web/public/fonts/noto-sans-sc-016.woff2",
+      "category": "frontend",
+      "bytes": 47320,
+      "sha256": "4136c39ad0909016b4eb11c6705ba6ff75e0af6eeddf9cc0908120b2897f95ab",
+      "lines": null
+    },
+    {
+      "path": "apps/web/public/fonts/noto-sans-sc-017.woff2",
+      "category": "frontend",
+      "bytes": 46736,
+      "sha256": "e459c174c5fd1d360072fab540c2d833f8d3350a927b01cca3f88148aaec3cf7",
+      "lines": null
+    },
+    {
+      "path": "apps/web/public/fonts/noto-sans-sc-018.woff2",
+      "category": "frontend",
+      "bytes": 50508,
+      "sha256": "b6baabe9aaac2371672ce830f078a90e0fb57dae37ef0926c61a11bc41fbafd3",
+      "lines": null
+    },
+    {
+      "path": "apps/web/public/fonts/noto-sans-sc-019.woff2",
+      "category": "frontend",
+      "bytes": 41704,
+      "sha256": "0af4fd643eb6e631776dd62b433c259ba73c36f93c7e3f358b8106a8761f1e7f",
+      "lines": null
+    },
+    {
+      "path": "apps/web/public/fonts/noto-sans-sc-020.woff2",
+      "category": "frontend",
+      "bytes": 53352,
+      "sha256": "c044d116dc8f655dd794a7d87eaa7dfe9a9371ddf1eef99af0e37b72f47475ee",
+      "lines": null
+    },
+    {
+      "path": "apps/web/public/fonts/noto-sans-sc-021.woff2",
+      "category": "frontend",
+      "bytes": 54408,
+      "sha256": "9bab402ba033334906b2478832ca6622fb382e97bbbe51a12df9065625e9497e",
+      "lines": null
+    },
+    {
+      "path": "apps/web/public/fonts/noto-sans-sc-022.woff2",
+      "category": "frontend",
+      "bytes": 51668,
+      "sha256": "c19eb125aee260696faefab99bea783f62279d9d763d45a316a62770644bfe31",
+      "lines": null
+    },
+    {
+      "path": "apps/web/public/fonts/noto-sans-sc-023.woff2",
+      "category": "frontend",
+      "bytes": 46420,
+      "sha256": "cb019c3783d8da86144e2cc42b718dbe592ececafe2640ca77ebb6c9082c60e2",
+      "lines": null
+    },
+    {
+      "path": "apps/web/public/fonts/noto-sans-sc-024.woff2",
+      "category": "frontend",
+      "bytes": 36216,
+      "sha256": "b7d51765c99c0ecb44ba17ac44d35f231e6662afcb5f773064cac2ae67bbe8bb",
+      "lines": null
+    },
+    {
+      "path": "apps/web/public/fonts/noto-sans-sc-025.woff2",
+      "category": "frontend",
+      "bytes": 45460,
+      "sha256": "f2099ad4a19de114d46b3c4d32353240f885ec76c09b95e65d15e36090d56add",
+      "lines": null
+    },
+    {
+      "path": "apps/web/public/fonts/noto-sans-sc-026.woff2",
+      "category": "frontend",
+      "bytes": 46456,
+      "sha256": "356fe3740509fe66b6265db7b0f60e7a4485e1b7719c004f8abf3d642d52d747",
+      "lines": null
+    },
+    {
+      "path": "apps/web/public/fonts/noto-sans-sc-027.woff2",
+      "category": "frontend",
+      "bytes": 54028,
+      "sha256": "2d43f90aef16dde8420af269b952483ec67474f7b729a8d689f6b2bf77bca558",
+      "lines": null
+    },
+    {
+      "path": "apps/web/public/fonts/noto-sans-sc-028.woff2",
+      "category": "frontend",
+      "bytes": 67416,
+      "sha256": "6434ae9a8b511ac4661ae9edc7b1848c15cb13c65d4e1ec48e8b69a4c80174e3",
+      "lines": null
+    },
+    {
+      "path": "apps/web/public/fonts/noto-sans-sc-029.woff2",
+      "category": "frontend",
+      "bytes": 57560,
+      "sha256": "ffc12c1cfc6d27bf9c76e32d31f04cbc6db87a0eb502e4ccecbbee6f3b011ff6",
+      "lines": null
+    },
+    {
+      "path": "apps/web/public/fonts/noto-sans-sc-030.woff2",
+      "category": "frontend",
+      "bytes": 55964,
+      "sha256": "c1fc78539235f6468a2be89b59fba2a2316afad88dc2e1f602aeab5afebda98f",
+      "lines": null
+    },
+    {
+      "path": "apps/web/public/fonts/noto-sans-sc-031.woff2",
+      "category": "frontend",
+      "bytes": 50644,
+      "sha256": "d5683769e4748479ff987ec25234b997e75d67795279c8740625801ec3f84dc3",
+      "lines": null
+    },
+    {
+      "path": "apps/web/public/fonts/noto-sans-sc-032.woff2",
+      "category": "frontend",
+      "bytes": 52744,
+      "sha256": "9b749147b8cb1aafb56c2515cfd804ff5022b13e29d1803640a12361899b0174",
+      "lines": null
+    },
+    {
+      "path": "apps/web/public/fonts/noto-sans-sc-033.woff2",
+      "category": "frontend",
+      "bytes": 45672,
+      "sha256": "03aa9df5058c995bb5805907cc35bd159b00f77e4aea30e7df68f7b39acbd69d",
+      "lines": null
+    },
+    {
+      "path": "apps/web/public/fonts/noto-sans-sc-034.woff2",
+      "category": "frontend",
+      "bytes": 41448,
+      "sha256": "640eba7a58c43bc7642f1bb1a402e831daad1b9e57d1a86f3169f36c212be619",
+      "lines": null
+    },
+    {
+      "path": "apps/web/public/fonts/noto-sans-sc-035.woff2",
+      "category": "frontend",
+      "bytes": 51692,
+      "sha256": "add8a0bfe4ac000894bc5bc115f7bc6aa26d4a8b52c1835c15c880c503ae2ec2",
+      "lines": null
+    },
+    {
+      "path": "apps/web/public/fonts/noto-sans-sc-036.woff2",
+      "category": "frontend",
+      "bytes": 43256,
+      "sha256": "7c23510d150928c1d41605a433f47923a6763a2c98675b02c71c16f3fa876a22",
+      "lines": null
+    },
+    {
+      "path": "apps/web/public/fonts/noto-sans-sc-037.woff2",
+      "category": "frontend",
+      "bytes": 51788,
+      "sha256": "1e0821cd2e0bbd587e4e7417109ec3656f2480d0e961a7ddfa60e0dcdb3b4520",
+      "lines": null
+    },
+    {
+      "path": "apps/web/public/fonts/noto-sans-sc-038.woff2",
+      "category": "frontend",
+      "bytes": 47964,
+      "sha256": "531d6a5dc22f7b69084100c07a9caa07724910703f7234e8e36603b47adb25b8",
+      "lines": null
+    },
+    {
+      "path": "apps/web/public/fonts/noto-sans-sc-039.woff2",
+      "category": "frontend",
+      "bytes": 53400,
+      "sha256": "3562cf3416a92cb9f2831407857ff1b70f0f14e66671f55fc818fa2a8411d192",
+      "lines": null
+    },
+    {
+      "path": "apps/web/public/fonts/noto-sans-sc-040.woff2",
+      "category": "frontend",
+      "bytes": 55612,
+      "sha256": "dbbdc3ebf4296eacf3e96da6872d4eb1985a7e2040211a8112e76e98968bce04",
+      "lines": null
+    },
+    {
+      "path": "apps/web/public/fonts/noto-sans-sc-041.woff2",
+      "category": "frontend",
+      "bytes": 57432,
+      "sha256": "32555d5143d763f175af8fc718faf83d39db9fe0c108c41c1bb5abc8331c0e58",
+      "lines": null
+    },
+    {
+      "path": "apps/web/public/fonts/noto-sans-sc-042.woff2",
+      "category": "frontend",
+      "bytes": 47480,
+      "sha256": "b287c69afa5039a593ac30765c362fb3cf4b8e397de66d5e11b931df8a4ca4e8",
+      "lines": null
+    },
+    {
+      "path": "apps/web/public/fonts/noto-sans-sc-043.woff2",
+      "category": "frontend",
+      "bytes": 41304,
+      "sha256": "f5bc6961ea42aee6c8c7669c52485c7e4682c3e189eb478dc9295f9c2965ea94",
+      "lines": null
+    },
+    {
+      "path": "apps/web/public/fonts/noto-sans-sc-044.woff2",
+      "category": "frontend",
+      "bytes": 45076,
+      "sha256": "a0cf1ee49edfa5e58bac8b599e0005f2a98945eee65205166c8849fa3a41e699",
+      "lines": null
+    },
+    {
+      "path": "apps/web/public/fonts/noto-sans-sc-045.woff2",
+      "category": "frontend",
+      "bytes": 58920,
+      "sha256": "9f92796490e4baf1c7a3e431351def75097a4ef211d0903ef081932a95235046",
+      "lines": null
+    },
+    {
+      "path": "apps/web/public/fonts/noto-sans-sc-046.woff2",
+      "category": "frontend",
+      "bytes": 49008,
+      "sha256": "ee44006cb7c5a9dd0786f97a246a07717511483090c7cbd4354795dddb157a15",
+      "lines": null
+    },
+    {
+      "path": "apps/web/public/fonts/noto-sans-sc-047.woff2",
+      "category": "frontend",
+      "bytes": 41408,
+      "sha256": "8c2c0472d514eabb192f3c2c47fcb8c7e33895a3a96a0e1b021239cca115e453",
+      "lines": null
+    },
+    {
+      "path": "apps/web/public/fonts/noto-sans-sc-048.woff2",
+      "category": "frontend",
+      "bytes": 41360,
+      "sha256": "5e7eeacc84fb0e14511ba8b5ac81cf4d3203127e554d90999edd8087f56698b2",
+      "lines": null
+    },
+    {
+      "path": "apps/web/public/fonts/noto-sans-sc-049.woff2",
+      "category": "frontend",
+      "bytes": 52588,
+      "sha256": "f566efbed79d24085d19f7b6eac7adff4ab01a5dd66db0c53d4a847c8816c531",
+      "lines": null
+    },
+    {
+      "path": "apps/web/public/fonts/noto-sans-sc-050.woff2",
+      "category": "frontend",
+      "bytes": 52432,
+      "sha256": "52d01e2db91fdaabb65c1c1f931b53a141fab818ec1e7ecca29742fef6c61d3c",
+      "lines": null
+    },
+    {
+      "path": "apps/web/public/fonts/noto-sans-sc-051.woff2",
+      "category": "frontend",
+      "bytes": 41320,
+      "sha256": "e7fccadb948a87765794c78194d86704802d91b61d4da04614a948eb2e0ecb41",
+      "lines": null
+    },
+    {
+      "path": "apps/web/public/fonts/noto-sans-sc-052.woff2",
+      "category": "frontend",
+      "bytes": 55500,
+      "sha256": "cea85861c06f2116541c421f5ddef5e2fff1b91f004e48fac8af204b8bac8486",
+      "lines": null
+    },
+    {
+      "path": "apps/web/public/fonts/noto-sans-sc-053.woff2",
+      "category": "frontend",
+      "bytes": 42028,
+      "sha256": "75978a089957153f0714dcff4594f6469893395a343a360c0bf86a96e17d7c8a",
+      "lines": null
+    },
+    {
+      "path": "apps/web/public/fonts/noto-sans-sc-054.woff2",
+      "category": "frontend",
+      "bytes": 47748,
+      "sha256": "7bb430b6f7a4cb6a6f3d946c2bc0571150b4601dd12a8792a140f2845d88bd70",
+      "lines": null
+    },
+    {
+      "path": "apps/web/public/fonts/noto-sans-sc-055.woff2",
+      "category": "frontend",
+      "bytes": 46820,
+      "sha256": "ee2c85ff2b5207630bf4cb863ec5ef3992d28f2bbbea0a905a861cbd63dde4b5",
+      "lines": null
+    },
+    {
+      "path": "apps/web/public/fonts/noto-sans-sc-056.woff2",
+      "category": "frontend",
+      "bytes": 39096,
+      "sha256": "4f9a99a8d9e893c18580b6a48fe1ba08d33eaa610e62b0075cebcde4d8b6d7eb",
+      "lines": null
+    },
+    {
+      "path": "apps/web/public/fonts/noto-sans-sc-057.woff2",
+      "category": "frontend",
+      "bytes": 56224,
+      "sha256": "a4b3be19a7a70889fd7a334d1b1573bdef8b20189f99b1c05a5f1aa044cd7cf3",
+      "lines": null
+    },
+    {
+      "path": "apps/web/public/fonts/noto-sans-sc-058.woff2",
+      "category": "frontend",
+      "bytes": 43776,
+      "sha256": "9692ba2d33aa4c795956987e14366575ecbc352981ae6a7114bd457727cddd93",
+      "lines": null
+    },
+    {
+      "path": "apps/web/public/fonts/noto-sans-sc-059.woff2",
+      "category": "frontend",
+      "bytes": 48256,
+      "sha256": "a7f1e42cbf1209626de1ebea6241482aae14f50bf60020a3b969104c226bbadb",
+      "lines": null
+    },
+    {
+      "path": "apps/web/public/fonts/noto-sans-sc-060.woff2",
+      "category": "frontend",
+      "bytes": 36656,
+      "sha256": "59b1d13bedcf5c12a08ab972040bbc1d8eab7e40cf582b088997f5d08eca068d",
+      "lines": null
+    },
+    {
+      "path": "apps/web/public/fonts/noto-sans-sc-061.woff2",
+      "category": "frontend",
+      "bytes": 48968,
+      "sha256": "5dd5e84947322ad943769aa36d9134b8233fa4221e542babe98b64f824d79c6f",
+      "lines": null
+    },
+    {
+      "path": "apps/web/public/fonts/noto-sans-sc-062.woff2",
+      "category": "frontend",
+      "bytes": 41140,
+      "sha256": "1195229dca099d5129fac3f4a4a8abbd6e60a454980bf1ae1897543a2284475a",
+      "lines": null
+    },
+    {
+      "path": "apps/web/public/fonts/noto-sans-sc-063.woff2",
+      "category": "frontend",
+      "bytes": 32440,
+      "sha256": "475a845fd23f4cbedac5c89189133462ac3e4f76adae2ba5f464c49b9f27c929",
+      "lines": null
+    },
+    {
+      "path": "apps/web/public/fonts/noto-sans-sc-064.woff2",
+      "category": "frontend",
+      "bytes": 47364,
+      "sha256": "5a35370c68dbb4ce5b263b4a8326513f4ab94337f66197dca1b2810f3de9a7a9",
+      "lines": null
+    },
+    {
+      "path": "apps/web/public/fonts/noto-sans-sc-065.woff2",
+      "category": "frontend",
+      "bytes": 45988,
+      "sha256": "2db38a16cd11d3d80c8186afd70f57aa833f341721aa487fc23c0accda01ef7d",
+      "lines": null
+    },
+    {
+      "path": "apps/web/public/fonts/noto-sans-sc-066.woff2",
+      "category": "frontend",
+      "bytes": 43324,
+      "sha256": "e90d33efb8e09c9a4d4c061f59c035fa8ebd6d8fe3824c29eb1abfc0d7e9d9c1",
+      "lines": null
+    },
+    {
+      "path": "apps/web/public/fonts/noto-sans-sc-067.woff2",
+      "category": "frontend",
+      "bytes": 32440,
+      "sha256": "adcf9fc8f639e955c89082a77f818c98f7b909f05a6fdf875dd0174613801123",
+      "lines": null
+    },
+    {
+      "path": "apps/web/public/fonts/noto-sans-sc-068.woff2",
+      "category": "frontend",
+      "bytes": 26732,
+      "sha256": "d7b2b43c6cf022f319e90b568557f60f0b7058ab9a1b60cce599df090922cec3",
+      "lines": null
+    },
+    {
+      "path": "apps/web/public/fonts/noto-sans-sc-069.woff2",
+      "category": "frontend",
+      "bytes": 33400,
+      "sha256": "2760361e7fd0e0ca8a5c671f684a1e908afbf8be519da247fc5e0926711e960b",
+      "lines": null
+    },
+    {
+      "path": "apps/web/public/fonts/noto-sans-sc-070.woff2",
+      "category": "frontend",
+      "bytes": 7908,
+      "sha256": "113ed2e5fe033476c8da28cf8608dd374d29e144871749489d9a6b4731f85a62",
+      "lines": null
+    },
+    {
+      "path": "apps/web/public/fonts/noto-sans-sc-071.woff2",
+      "category": "frontend",
+      "bytes": 7196,
+      "sha256": "c973e4713ca031d7f2d154bfdeb111add88df7ae88dcdab98e8ba70228636362",
+      "lines": null
+    },
+    {
+      "path": "apps/web/public/fonts/noto-sans-sc-072.woff2",
+      "category": "frontend",
+      "bytes": 10800,
+      "sha256": "9e1f1f766eb3b9e4f5b6f0bfa525789a43bb83f636a93a034ed66c93dac2f0ea",
+      "lines": null
+    },
+    {
+      "path": "apps/web/public/fonts/noto-sans-sc-073.woff2",
+      "category": "frontend",
+      "bytes": 9272,
+      "sha256": "3d0d06b73960ab03119d5502142dae3a408ad815d8efbc7d9a016735fd654d80",
+      "lines": null
+    },
+    {
+      "path": "apps/web/public/fonts/noto-sans-sc-074.woff2",
+      "category": "frontend",
+      "bytes": 8592,
+      "sha256": "f8f2f31e0d4c161b826c4f3622a44913934b0dd050151b51bc4580879e23216e",
+      "lines": null
+    },
+    {
+      "path": "apps/web/public/fonts/noto-sans-sc-075.woff2",
+      "category": "frontend",
+      "bytes": 2056,
+      "sha256": "adbe40605d1781449c8eb55df80bb53f52f331e97ea0d35fe1c2d53a6034d881",
+      "lines": null
+    },
+    {
+      "path": "apps/web/public/fonts/noto-sans-sc-076.woff2",
+      "category": "frontend",
+      "bytes": 3408,
+      "sha256": "57a0369c4b77675ba1a1fb082ddbe1e7295734774420d5327b83a79af7edae75",
+      "lines": null
+    },
+    {
+      "path": "apps/web/public/fonts/noto-sans-sc-077.woff2",
+      "category": "frontend",
+      "bytes": 9664,
+      "sha256": "3d483f5a29464e66102be7eccbecc5789cc413aefcdbd2b411fff907c54012f6",
+      "lines": null
+    },
+    {
+      "path": "apps/web/public/fonts/noto-sans-sc-078.woff2",
+      "category": "frontend",
+      "bytes": 64332,
+      "sha256": "43196b8058bd55a6ac484704118b5e6196d0ed6ec3265b2bdbda7bf888f120fc",
+      "lines": null
+    },
+    {
+      "path": "apps/web/public/fonts/noto-sans-sc-079.woff2",
+      "category": "frontend",
+      "bytes": 57940,
+      "sha256": "81643939573a897901647110fcd7dbc0315beb87979a2c0ba56fb50da012755c",
+      "lines": null
+    },
+    {
+      "path": "apps/web/public/fonts/noto-sans-sc-080.woff2",
+      "category": "frontend",
+      "bytes": 60508,
+      "sha256": "f81693a776e30ff9a45567eaa15d9a0bed038649007a61e75ecd0e780ab257c7",
+      "lines": null
+    },
+    {
+      "path": "apps/web/public/fonts/noto-sans-sc-081.woff2",
+      "category": "frontend",
+      "bytes": 63684,
+      "sha256": "b21735210b7eee7a48d74426275c0c6ba8f81cc9049b147a8222e25529feef00",
+      "lines": null
+    },
+    {
+      "path": "apps/web/public/fonts/noto-sans-sc-082.woff2",
+      "category": "frontend",
+      "bytes": 61324,
+      "sha256": "fbed7260234ad0056ecd2c729e3896d00678322d9db9d177f41ccc120264d3e6",
+      "lines": null
+    },
+    {
+      "path": "apps/web/public/fonts/noto-sans-sc-083.woff2",
+      "category": "frontend",
+      "bytes": 61592,
+      "sha256": "dbe0b5a015af24b6708bf24fdb477f68b7085ece81f2e333c00b24815a90b68c",
+      "lines": null
+    },
+    {
+      "path": "apps/web/public/fonts/noto-sans-sc-084.woff2",
+      "category": "frontend",
+      "bytes": 62472,
+      "sha256": "369278225da93c7bda480f501d7ca9f004acaff1bdd3d60df874eddaae27f69b",
+      "lines": null
+    },
+    {
+      "path": "apps/web/public/fonts/noto-sans-sc-085.woff2",
+      "category": "frontend",
+      "bytes": 60852,
+      "sha256": "220acde2a122a7608737ce22da353b6788aa79af2bed9ded842cbbe446694540",
+      "lines": null
+    },
+    {
+      "path": "apps/web/public/fonts/noto-sans-sc-086.woff2",
+      "category": "frontend",
+      "bytes": 64264,
+      "sha256": "8fd5870c4b22c2015c5a54a02ea9fec7c0102abff26599cf4b03cd2aaf3f58c5",
+      "lines": null
+    },
+    {
+      "path": "apps/web/public/fonts/noto-sans-sc-087.woff2",
+      "category": "frontend",
+      "bytes": 60196,
+      "sha256": "35dddbc7b5c78f1dfaee0c9eb8852432a46fee2e9b05ede476b9c47890fa1ed4",
+      "lines": null
+    },
+    {
+      "path": "apps/web/public/fonts/noto-sans-sc-088.woff2",
+      "category": "frontend",
+      "bytes": 61192,
+      "sha256": "d32e7ca8037160ed0dabff758b75da2a39722fbc49567bb1dc11436da39d61f7",
+      "lines": null
+    },
+    {
+      "path": "apps/web/public/fonts/noto-sans-sc-089.woff2",
+      "category": "frontend",
+      "bytes": 62464,
+      "sha256": "fbd62ca155ea7a785493b418c7076493d3ed73acc581f0e4dfbb7cf675f98043",
+      "lines": null
+    },
+    {
+      "path": "apps/web/public/fonts/noto-sans-sc-090.woff2",
+      "category": "frontend",
+      "bytes": 57436,
+      "sha256": "9efef22fce6ed4d723ce957f7616e6c280689406b54f3c89bfd8833e3a0312e7",
+      "lines": null
+    },
+    {
+      "path": "apps/web/public/fonts/noto-sans-sc-091.woff2",
+      "category": "frontend",
+      "bytes": 58440,
+      "sha256": "2a169d8dc2ebf18d4ba3a646b7926e2ea8f03371daa8a33aa5aa4e222a30fcb4",
+      "lines": null
+    },
+    {
+      "path": "apps/web/public/fonts/noto-sans-sc-092.woff2",
+      "category": "frontend",
+      "bytes": 57696,
+      "sha256": "58f780a2d2b3f293d50b1a3b7026a812273d1923af861a5046ff0f94d5335032",
+      "lines": null
+    },
+    {
+      "path": "apps/web/public/fonts/noto-sans-sc-093.woff2",
+      "category": "frontend",
+      "bytes": 56212,
+      "sha256": "2938d56727e9fe32bd83c6410aef59ed9af9528f23fa224a3413538d8231a842",
+      "lines": null
+    },
+    {
+      "path": "apps/web/public/fonts/noto-sans-sc-094.woff2",
+      "category": "frontend",
+      "bytes": 52800,
+      "sha256": "98f590f9f68914d4e439e6151a85a4f1cba30a66e904305a74f81a3f470dd044",
+      "lines": null
+    },
+    {
+      "path": "apps/web/public/fonts/noto-sans-sc-095.woff2",
+      "category": "frontend",
+      "bytes": 52252,
+      "sha256": "3a2247284b74fa6a2ccd10107365f259a00744041551363476b92318f434339e",
+      "lines": null
+    },
+    {
+      "path": "apps/web/public/fonts/noto-sans-sc-096.woff2",
+      "category": "frontend",
+      "bytes": 45884,
+      "sha256": "4b594f04215780f690da15990ef2a1e5ac82f2f3a4d9cb91713d83d379c983f6",
+      "lines": null
+    },
+    {
+      "path": "apps/web/public/fonts/noto-sans-sc-097.woff2",
+      "category": "frontend",
+      "bytes": 76236,
+      "sha256": "6d088e37bdc27339bb4c82d4bfe0966849df0cef5872fc99b81025f2488f42d8",
+      "lines": null
+    },
+    {
+      "path": "apps/web/public/fonts/noto-sans-sc-098.woff2",
+      "category": "frontend",
+      "bytes": 9916,
+      "sha256": "6a1a698b9a7fe536169d8f69c6d1c2d23c975816db7cec2345ae41a81cc544ca",
+      "lines": null
+    },
+    {
+      "path": "apps/web/public/fonts/noto-sans-sc-099.woff2",
+      "category": "frontend",
+      "bytes": 8948,
+      "sha256": "0911100b53608b380eab7bf0f879a5418e6a0839968e75424055e3c0cb3189b9",
+      "lines": null
+    },
+    {
+      "path": "apps/web/public/fonts/noto-sans-sc-100.woff2",
+      "category": "frontend",
+      "bytes": 8108,
+      "sha256": "c3d4250403511b3fae48d031c22ecfe15696209abc9576f86a810e844d32bdc3",
+      "lines": null
+    },
+    {
+      "path": "apps/web/public/fonts/noto-sans-sc-101.woff2",
+      "category": "frontend",
+      "bytes": 24936,
+      "sha256": "71b55199d1490a0c4ba7795ee1adb6460c2235454809d24b17a93d61c2d131ff",
+      "lines": null
+    },
+    {
+      "path": "apps/web/public/fonts/notosanssc-OFL.txt",
+      "category": "frontend",
+      "bytes": 4388,
+      "sha256": "1c05c68c34f9708415aada51f17e1b0092d2cea709bf4a94cd38114f9e73d7d9",
+      "lines": 93
+    },
+    {
+      "path": "apps/web/public/fonts/roboto-102.woff2",
+      "category": "frontend",
+      "bytes": 31472,
+      "sha256": "e44224eb71a96cb33bd046ded16a4e22bb441b170bdfbcba0268a754141b97c8",
+      "lines": null
+    },
+    {
+      "path": "apps/web/public/fonts/roboto-103.woff2",
+      "category": "frontend",
+      "bytes": 19624,
+      "sha256": "32886c5ec61a0d06e5677a98c5ed78a5f1c788c18c5e8d7dcd931c4b6dc19830",
+      "lines": null
+    },
+    {
+      "path": "apps/web/public/fonts/roboto-104.woff2",
+      "category": "frontend",
+      "bytes": 1632,
+      "sha256": "5fdfeaf926cac990770dfa66011bdb87d6b69f43c42aa759dcdcf0a7a197c19a",
+      "lines": null
+    },
+    {
+      "path": "apps/web/public/fonts/roboto-105.woff2",
+      "category": "frontend",
+      "bytes": 13984,
+      "sha256": "4813e3dfbbb23708c817ef7fd3fd9c82cd0d33c778def0897f0447f1c364ce64",
+      "lines": null
+    },
+    {
+      "path": "apps/web/public/fonts/roboto-106.woff2",
+      "category": "frontend",
+      "bytes": 36292,
+      "sha256": "297193369eea600161f4b5219bd7b08850180fcfe0752f1a2eaa436575cd03b7",
+      "lines": null
+    },
+    {
+      "path": "apps/web/public/fonts/roboto-107.woff2",
+      "category": "frontend",
+      "bytes": 16692,
+      "sha256": "fab8a0056d92fdd8d64fed4b049744144e1d24d08762c513bff78265299ed7a3",
+      "lines": null
+    },
+    {
+      "path": "apps/web/public/fonts/roboto-108.woff2",
+      "category": "frontend",
+      "bytes": 10572,
+      "sha256": "2071148c26bd0430cad316373c26db399e0cf8f6275b9e1a2c1b831f05ee7dc3",
+      "lines": null
+    },
+    {
+      "path": "apps/web/public/fonts/roboto-109.woff2",
+      "category": "frontend",
+      "bytes": 24444,
+      "sha256": "cdd53dc5576a79f35cf280dfbd9c1cb2a5dd2f0ede30afba9b9ccdc7fe12e7d0",
+      "lines": null
+    },
+    {
+      "path": "apps/web/public/fonts/roboto-110.woff2",
+      "category": "frontend",
+      "bytes": 37520,
+      "sha256": "0a44e0bb6ba5c8537e8814c148ef7755f1bce12112361231f595ecc584a18d7a",
+      "lines": null
+    },
+    {
+      "path": "apps/web/public/fonts/roboto-OFL.txt",
+      "category": "frontend",
+      "bytes": 4394,
+      "sha256": "061402327a96aadb0bfb694a960ed289ecd38d383e396243831ab81feb109c41",
+      "lines": 93
+    },
+    {
+      "path": "apps/web/public/mockServiceWorker.js",
+      "category": "frontend",
+      "bytes": 9666,
+      "sha256": "26171599d94d5445297303f3a1f1cedec26835ea3d0057dcfa92ec520cb35cca",
+      "lines": 361
+    },
+    {
+      "path": "apps/web/package.json",
+      "category": "build",
+      "bytes": 1685,
+      "sha256": "a19dc74a65445ed3b73820fc8d9d2eb17d451b12ae13e16abe29cc515850df54",
+      "lines": 56
+    },
+    {
+      "path": "apps/web/pnpm-lock.yaml",
+      "category": "build",
+      "bytes": 165054,
+      "sha256": "1ad5edc47bfd6ea24922c3fa08f1f0a0b428aa6d8e0ea46e500fd0ec5fe4d203",
+      "lines": 4877
+    },
+    {
+      "path": "apps/web/index.html",
+      "category": "build",
+      "bytes": 353,
+      "sha256": "d8331e26b5ef9ad6aacd0a58e53d1cfb77ef85d4e30d0166bb8b34962844c5d7",
+      "lines": 13
+    },
+    {
+      "path": "apps/web/vite.config.ts",
+      "category": "build",
+      "bytes": 370,
+      "sha256": "9ce40b0a04b980a44d0c0d21f47c14021d42f7bd2475b91ee1f62e7fd7a91cd5",
+      "lines": 15
+    },
+    {
+      "path": "apps/web/vitest.config.ts",
+      "category": "build",
+      "bytes": 374,
+      "sha256": "e13e1df660320f3536f37cec81ffa9113ae79c77bd3bbec3d65a6ec7e21b130a",
+      "lines": 15
+    },
+    {
+      "path": "apps/web/tsconfig.json",
+      "category": "build",
+      "bytes": 119,
+      "sha256": "770b4140bbb581e2dfd9ea9946ffc9c75a1d86ba7d2db5f77c83e37cbdf9d808",
+      "lines": 7
+    },
+    {
+      "path": "apps/web/tsconfig.app.json",
+      "category": "build",
+      "bytes": 507,
+      "sha256": "a7266d1c85fa6947c70073256d9a73e4c459e97b0b4ef24b5c48dcab498ef4c5",
+      "lines": 20
+    },
+    {
+      "path": "apps/web/tsconfig.node.json",
+      "category": "build",
+      "bytes": 191,
+      "sha256": "8ab7a8ec4baa8f532ce09e32c444e620977bb6f04eb191b3812d553d9489201c",
+      "lines": 10
+    },
+    {
+      "path": "apps/web/playwright.config.ts",
+      "category": "build",
+      "bytes": 2267,
+      "sha256": "a960301275613b93835290121a63bb34b5e19cf732b3917196f4b2fd82c220eb",
+      "lines": 61
+    },
+    {
+      "path": "apps/web/e2e/architecture.spec.ts",
+      "category": "tests",
+      "bytes": 12095,
+      "sha256": "279444756d01c31e987d286bbcb4782fd6ebb33365a8d572f4771f640c773408",
+      "lines": 129
+    },
+    {
+      "path": "apps/web/e2e/console-workflows.spec.ts",
+      "category": "tests",
+      "bytes": 6490,
+      "sha256": "4e08b73ab85e52af8c3830840fc53c7f426776b253ea7f31afa689bea43202a0",
+      "lines": 110
+    },
+    {
+      "path": "apps/web/e2e/dashboard.spec.ts",
+      "category": "tests",
+      "bytes": 9327,
+      "sha256": "4a009da6aeb1af92ed002fd4dab763f23c261a352575158692569d3bf49badd6",
+      "lines": 163
+    },
+    {
+      "path": "apps/web/e2e/data-platform.spec.ts",
+      "category": "tests",
+      "bytes": 16412,
+      "sha256": "d6159f158e194f9352ea43207c4244ff984c46fc4f1d2e8fd529ff05fe82cd46",
+      "lines": 165
+    },
+    {
+      "path": "apps/web/e2e/fixtures/gm3-core.html",
+      "category": "tests",
+      "bytes": 291,
+      "sha256": "0c91caea0ce88267e5f6dde4db016e9b4c3fe1799e5314920c12afdd3a6d0e1c",
+      "lines": 1
+    },
+    {
+      "path": "apps/web/e2e/fixtures/gm3-core.tsx",
+      "category": "tests",
+      "bytes": 6195,
+      "sha256": "1d2fe00edfcd8fc6fd4fa952eeaa4f283987aed11ddd922e18c1a210d443544a",
+      "lines": 55
+    },
+    {
+      "path": "apps/web/e2e/gm3-core-components.spec.ts",
+      "category": "tests",
+      "bytes": 9628,
+      "sha256": "f83456075df61cc069ea12f32aa738f6226029b8cb815fe15d5944b5e0c61475",
+      "lines": 166
+    },
+    {
+      "path": "apps/web/e2e/gm3-interactive-states.spec.ts",
+      "category": "tests",
+      "bytes": 3267,
+      "sha256": "a9faa16201cd498d463f5326fd7f99ef96b48fff5aff668ffea4abb4444f574f",
+      "lines": 58
+    },
+    {
+      "path": "apps/web/e2e/insights.spec.ts",
+      "category": "tests",
+      "bytes": 12288,
+      "sha256": "7200153264583b03e2934b2d09d9d66e6b3cc2f255fd07f2de6aa6505716d1e6",
+      "lines": 197
+    },
+    {
+      "path": "apps/web/e2e/interaction-accessibility.spec.ts",
+      "category": "tests",
+      "bytes": 11615,
+      "sha256": "2b74b56a1353240f4792c96eebc829528902635eb23ed23fe6fff85b0cb8c5d7",
+      "lines": 213
+    },
+    {
+      "path": "apps/web/e2e/list-filter-menus.spec.ts",
+      "category": "tests",
+      "bytes": 1949,
+      "sha256": "daaae4853df6840e7f943e2b2ca8a075cab581e74673b023f7610c380186249e",
+      "lines": 37
+    },
+    {
+      "path": "apps/web/e2e/material-layout.spec.ts",
+      "category": "tests",
+      "bytes": 5483,
+      "sha256": "ffb36fc5ecad5586f786850d2067fd108132cb34b112b2ac778506c0ca6b07f8",
+      "lines": 97
+    },
+    {
+      "path": "apps/web/e2e/media-density.spec.ts",
+      "category": "tests",
+      "bytes": 2184,
+      "sha256": "0073e9179bdc092142c82b7b651747ab7aa13dc6b53c099c3a9bad249d9f5e9c",
+      "lines": 35
+    },
+    {
+      "path": "apps/web/e2e/model-execution.spec.ts",
+      "category": "tests",
+      "bytes": 5565,
+      "sha256": "364dd19b3dca0d52df05d599bcb265b8d540af7a6b330c5d09705cbbed6aeec6",
+      "lines": 35
+    },
+    {
+      "path": "apps/web/e2e/permissions.spec.ts",
+      "category": "tests",
+      "bytes": 8204,
+      "sha256": "7ec1d0dda4dd303d8e0c324abb9133baf21fa351e2f404c30cea4783790a1ff3",
+      "lines": 131
+    },
+    {
+      "path": "apps/web/e2e/pipeline-debug.spec.ts",
+      "category": "tests",
+      "bytes": 5490,
+      "sha256": "a0871bd1681191d5b9e789bc80596d9fec382e7d21cc24d486e196ce0ebdcbf4",
+      "lines": 77
+    },
+    {
+      "path": "apps/web/e2e/pipelines.spec.ts",
+      "category": "tests",
+      "bytes": 9852,
+      "sha256": "17131f8b10e291c0e43a03dd5d48f824ee722ed794c46ab2067c233203930387",
+      "lines": 154
+    },
+    {
+      "path": "apps/web/e2e/requirements.spec.ts",
+      "category": "tests",
+      "bytes": 24682,
+      "sha256": "4de649e91bc7bda8300203cbd58838ef9473898a3734b28f8829e30da9c48fe2",
+      "lines": 350
+    },
+    {
+      "path": "apps/web/e2e/shell-gm3-boundaries.spec.ts",
+      "category": "tests",
+      "bytes": 9277,
+      "sha256": "d534d7fb3a8526f02da4d47e9f265af830737fe5fce32c02fa7946e80ac173c4",
+      "lines": 152
+    },
+    {
+      "path": "apps/web/e2e/training-platform.spec.ts",
+      "category": "tests",
+      "bytes": 6123,
+      "sha256": "ab6d3fbf753baaab2ba5f5d02d1963add24b9ef87ff8d686df261c3c623b9831",
+      "lines": 30
+    },
+    {
+      "path": "apps/api/app/pipeline_api.py",
+      "category": "backend-reference",
+      "bytes": 32617,
+      "sha256": "e6163c8247609d2ca9d807b9fd9f45baa0a79b78fe69699c2569c378507f0e19",
+      "lines": 631
+    },
+    {
+      "path": "apps/api/app/pipeline_runtime.py",
+      "category": "backend-reference",
+      "bytes": 17547,
+      "sha256": "e6fc599520491a881decb2c7fdab80ee6104e8c1ddd19c568b212f2a88e562e1",
+      "lines": 312
+    },
+    {
+      "path": "apps/api/app/pipeline_models.py",
+      "category": "backend-reference",
+      "bytes": 5427,
+      "sha256": "ef2597c29e36aba93a784549816bc41e02431f800de4315cdb87b7a39741a5d4",
+      "lines": 111
+    },
+    {
+      "path": "apps/api/app/pipeline_sdk.py",
+      "category": "backend-reference",
+      "bytes": 6695,
+      "sha256": "13f07bbd992fce080154e90f98df2ae4e726e6fa58276f9d258793a6965998d4",
+      "lines": 146
+    },
+    {
+      "path": "apps/api/app/pipeline_worker.py",
+      "category": "backend-reference",
+      "bytes": 1327,
+      "sha256": "cae8104b3573c08b050b2a8738b1c2a9dda851849b3e2f43a0503327c4df0a8a",
+      "lines": 35
+    },
+    {
+      "path": "apps/api/app/pipeline_plans.py",
+      "category": "backend-reference",
+      "bytes": 7700,
+      "sha256": "84515b008222d9dc7009c014d14215d4d1f16afd1844a58b035f16b78b7e6b46",
+      "lines": 139
+    },
+    {
+      "path": "apps/api/app/pipeline_dataset_api.py",
+      "category": "backend-reference",
+      "bytes": 2728,
+      "sha256": "3ab357880ff19ac4bfc7b8db72e451fb4c9fe6a7789b5b49987dc2ff292111b3",
+      "lines": 57
+    },
+    {
+      "path": "apps/api/app/pipeline_dataset_service.py",
+      "category": "backend-reference",
+      "bytes": 9801,
+      "sha256": "ab442124864b2be66d454aac596c505db7c785ecfdac907a7d49f66e124674a0",
+      "lines": 182
+    },
+    {
+      "path": "apps/api/app/pipeline_dataset_models.py",
+      "category": "backend-reference",
+      "bytes": 2089,
+      "sha256": "c66ca56406fe04eecd8997ee0cdb815ee35c7d908f85a3a36f2755469e15a5b1",
+      "lines": 40
+    },
+    {
+      "path": "apps/api/app/pipeline_deployments_api.py",
+      "category": "backend-reference",
+      "bytes": 10104,
+      "sha256": "bd77200f57ee9c085d0699ce1b2b78d4b982825739beeba3fbc5b567a5bd51b6",
+      "lines": 210
+    },
+    {
+      "path": "apps/api/app/pipeline_deployments_service.py",
+      "category": "backend-reference",
+      "bytes": 8963,
+      "sha256": "6f4e8fe144e6a1e086245e0905ed609d8b308225fd6672203d1791f0cd71ff34",
+      "lines": 153
+    },
+    {
+      "path": "apps/api/app/pipeline_deployments_models.py",
+      "category": "backend-reference",
+      "bytes": 2481,
+      "sha256": "77209c0add139db0d5d853f4643b9f7720a1ef507024382ef24b9faefff62b12",
+      "lines": 41
+    },
+    {
+      "path": "apps/api/app/pipeline_deployments_worker.py",
+      "category": "backend-reference",
+      "bytes": 623,
+      "sha256": "66392420f45400235243cc775dfd32ce88315078394354e3b7fc9a3dd49c648c",
+      "lines": 23
+    },
+    {
+      "path": "apps/api/app/plugin_release_api.py",
+      "category": "backend-reference",
+      "bytes": 10429,
+      "sha256": "d330d9ae00013ac9837dc84db25d4ca54a2c2aea4f42d495f612f9c271e7f103",
+      "lines": 199
+    },
+    {
+      "path": "apps/api/app/plugin_release_service.py",
+      "category": "backend-reference",
+      "bytes": 27087,
+      "sha256": "9ff3d3d4d8a9b09a2b879d943d902f071796b4c14c0e20692c99177711e564d5",
+      "lines": 500
+    },
+    {
+      "path": "apps/api/app/plugin_release_models.py",
+      "category": "backend-reference",
+      "bytes": 7542,
+      "sha256": "91f4391dbba4070ef7566374d309c034016ba9850f92eb4f348dd186c3bab2c6",
+      "lines": 116
+    },
+    {
+      "path": "apps/api/app/plugin_release_adapter.py",
+      "category": "backend-reference",
+      "bytes": 2887,
+      "sha256": "41e0737af0fc30f59907b317ae384d86530faa432fcf05c514a07b283a5ec5d9",
+      "lines": 54
+    },
+    {
+      "path": "apps/api/app/plugin_release_runner.py",
+      "category": "backend-reference",
+      "bytes": 10120,
+      "sha256": "e593a1c41145d80a090c7ae81d06519c554667a9e527695cadbbd7c615ee6374",
+      "lines": 200
+    },
+    {
+      "path": "apps/api/app/documents_plugin.py",
+      "category": "backend-reference",
+      "bytes": 2412,
+      "sha256": "7ac1247a55c654836cf8e6d4243a3feb52dc032b5acb09cf18e4b9a41ee7194f",
+      "lines": 47
+    },
+    {
+      "path": "apps/api/app/connection_plugin.py",
+      "category": "backend-reference",
+      "bytes": 3424,
+      "sha256": "f15c63f94d5c93b3cfc7aaac5a34fded57a712e3e0790da2365f40497f9ec863",
+      "lines": 52
+    },
+    {
+      "path": "apps/api/app/media_plugin.py",
+      "category": "backend-reference",
+      "bytes": 21973,
+      "sha256": "4b9e89df1a0c25a72a59c5cc49437b2635fd70417d6a8cb2a63a8d696fc0fbae",
+      "lines": 406
+    },
+    {
+      "path": "apps/api/app/media_api.py",
+      "category": "backend-reference",
+      "bytes": 33581,
+      "sha256": "15895ad3d37b16f9fbba035760cf23ba63999e255412efff9f6bfee13b621320",
+      "lines": 574
+    },
+    {
+      "path": "apps/api/app/media_models.py",
+      "category": "backend-reference",
+      "bytes": 4811,
+      "sha256": "e7bfa3f7b67ba32837245c33178c671f0eaad62f0cbed8a1c2b422d1c48352fa",
+      "lines": 96
+    },
+    {
+      "path": "apps/api/app/media_dagster.py",
+      "category": "backend-reference",
+      "bytes": 21231,
+      "sha256": "fbd875567ff53bf4b97b15d6edf3d2333f642df92936500b1ec77f0054e858f9",
+      "lines": 339
+    },
+    {
+      "path": "apps/api/app/dagster_definitions.py",
+      "category": "backend-reference",
+      "bytes": 142,
+      "sha256": "cf67c7b4400dcbfb9c81cd6321372e5c58e6733174f5c5e3ad320b0bbdcb7c0b",
+      "lines": 5
+    },
+    {
+      "path": "apps/api/app/dispatch_worker.py",
+      "category": "backend-reference",
+      "bytes": 9321,
+      "sha256": "e9b0f939791521f97aa1ee146326b4b3687152a0e3795c180fb554bdf5fa8ccf",
+      "lines": 192
+    },
+    {
+      "path": "apps/api/app/dispatch_models.py",
+      "category": "backend-reference",
+      "bytes": 3240,
+      "sha256": "edc380ff38e926c669743ec20fcc6ea45aca027d776801aa3936ba12bfc24534",
+      "lines": 60
+    },
+    {
+      "path": "apps/api/app/execution_resources.py",
+      "category": "backend-reference",
+      "bytes": 7110,
+      "sha256": "8eed5e3ee55ebebb15916ac31c939b156ed928a18d5383ef799d2c70a8dd12a4",
+      "lines": 116
+    },
+    {
+      "path": "apps/api/app/execution_worker_agent.py",
+      "category": "backend-reference",
+      "bytes": 2101,
+      "sha256": "49fde2071644bc62b1173cc44ecc7bce43addb3bdd8a71402ae2e087fce946a7",
+      "lines": 41
+    },
+    {
+      "path": "apps/api/app/artifact_store.py",
+      "category": "backend-reference",
+      "bytes": 12738,
+      "sha256": "f09f4ddaa8acede98bb9be0c3691e8f33c0468ae6d5f792f37997034bdd479e8",
+      "lines": 290
+    },
+    {
+      "path": "packages/flywheel-sdk/build/lib/flywheel_sdk/__init__.py",
+      "category": "sdk",
+      "bytes": 4781,
+      "sha256": "f445eb546a68eff3f2ceb9457cec6c738397ae72627298ed266830843d3b5fac",
+      "lines": 112
+    },
+    {
+      "path": "packages/flywheel-sdk/pyproject.toml",
+      "category": "sdk",
+      "bytes": 325,
+      "sha256": "c072387c7bfdccbca60a11a0112e719aa8e536b3b797b0b4956417244dc5264f",
+      "lines": 13
+    },
+    {
+      "path": "packages/flywheel-sdk/src/flywheel_sdk/__init__.py",
+      "category": "sdk",
+      "bytes": 5246,
+      "sha256": "639daab452a23797b377967b29d903e2b371ab444f37fae79567cb60fe82972b",
+      "lines": 122
+    },
+    {
+      "path": "examples/shot-duration-plugin/README.md",
+      "category": "example",
+      "bytes": 4721,
+      "sha256": "b7298d343f2009ad5051f98e12616e58799c0475619f78ac4a9e190343f7ff29",
+      "lines": 52
+    },
+    {
+      "path": "examples/shot-duration-plugin/manifest.json",
+      "category": "example",
+      "bytes": 1417,
+      "sha256": "642331af84b4687a0732ee690b31795618517f0638790019505022f44dcc708b",
+      "lines": 45
+    },
+    {
+      "path": "examples/shot-duration-plugin/pyproject.toml",
+      "category": "example",
+      "bytes": 560,
+      "sha256": "f4c1c2d3a230ee80a6a13d0b0ba94007cb4c35b9f9ee5dc0e9d500fda40ab2d9",
+      "lines": 21
+    },
+    {
+      "path": "examples/shot-duration-plugin/src/shot_duration_plugin/__init__.py",
+      "category": "example",
+      "bytes": 3223,
+      "sha256": "eed93b793d1c760fdd37fe96a362e0a9f306d87cd3b23592d3d58052f6c24d9c",
+      "lines": 68
+    },
+    {
+      "path": "examples/shot-duration-plugin/test_cases.json",
+      "category": "example",
+      "bytes": 25544,
+      "sha256": "5cdff3e835448665f885f8fe2e581923a10323b106197413b04fed132b0261c5",
+      "lines": 783
+    },
+    {
+      "path": "examples/shot-duration-plugin/tests/test_plugin.py",
+      "category": "example",
+      "bytes": 3821,
+      "sha256": "1ccc0f4f8df864fc0694d34da4fb89253b193cf0d3aad363872294b115805536",
+      "lines": 75
+    }
+  ]
+}

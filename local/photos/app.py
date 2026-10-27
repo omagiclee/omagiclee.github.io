@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Read-only photo indexing and a loopback-only viewer. No cloud/export APIs."""
+"""Loopback-only photo indexing and viewing, with explicit native deletion."""
 from __future__ import annotations
 
 import argparse
@@ -25,6 +25,8 @@ from journeys import coordinates, folder_location, journey_detail, journey_lists
 from amap import load_amap_config
 from footprints import build_footprints
 from organizer import Organizer
+from content_review import ContentReviews
+from deletion import Deletion
 from taxonomy import TYPES, CATEGORIES
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -110,6 +112,8 @@ class Library:
                 self.status['message'] = (f"发现 {duplicates} 组完全重复照片，已检查 {previous.get('duplicate_coverage', 0):,} 张本地原图；云端原图未参与比较。"
                                           if previous.get('duplicates_checked') else f"已收录 {total:,} 张照片。")
         self.organizer = Organizer(self)
+        self.content_reviews = ContentReviews(self)
+        self.deletion = Deletion(self)
 
     @contextmanager
     def connect(self):
@@ -141,6 +145,8 @@ class Library:
 
     def snapshot(self):
         with self.snapshot_lock:
+            if self.content_reviews.changed():
+                self.snapshot_cache = None
             if self.snapshot_cache is None:
                 with self.connect() as connection:
                     annotations = {row[0]: json.loads(row[1]) for row in connection.execute("SELECT id,data FROM annotations")}
@@ -195,6 +201,7 @@ class Library:
                 pass
             yield {
                 "id": identity(self.source_key, photo.uuid), "filename": photo.original_filename or photo.filename,
+                "photos_uuid": photo.uuid,
                 "title": photo.title or "", "description": photo.description or "", "date": date,
                 "date_source": "capture", "width": photo.width or 0, "height": photo.height or 0,
                 "albums": list(photo.albums or []), "tags": list(photo.keywords or []),
@@ -380,7 +387,7 @@ class Library:
 
     def public(self, record, annotation):
         photo = {key: value for key, value in record.items() if key not in {
-            "original_path", "preview_source", "sha256", "signature", "source_favorite"}}
+            "original_path", "preview_source", "sha256", "signature", "source_favorite", "photos_uuid"}}
         photo["favorite"] = annotation.get("favorite", record["source_favorite"])
         photo["tags"] = sorted(set(record["tags"] + annotation.get("tags", [])))
         photo["custom_tags"] = annotation.get("tags", [])
@@ -394,6 +401,17 @@ class Library:
         photo["has_original"] = bool(record.get("original_path"))
         photo["availability"] = "local" if photo["has_original"] else ("preview" if photo["has_preview"] else "unavailable")
         photo.update(self.organizer.public(record, annotation))
+        photo['content_review'] = self.content_reviews.public(record)
+        photo['deletion_version'] = self.deletion.version(record)
+        review = photo['content_review']
+        if review and review.get('review_standard') == 'grounded-v2':
+            if review.get('category') and not annotation.get('category'):
+                photo['category'] = review['category']
+                photo['category_label'] = CATEGORIES[review['category']][0]
+                photo['analysis_method'] = '对话看图复核'
+                photo['analysis_uncertain'] = review['category'] == 'other'
+                photo['analysis_tags'] = [value for value in [photo['media_type_label'], photo['category_label']] if value]
+            photo['analysis_tags'] = sorted(set(photo['analysis_tags'] + review.get('tags', [])))
         photo['tags'] = sorted(set(photo['tags'] + photo['analysis_tags']))
         return photo
 
@@ -430,9 +448,14 @@ class Library:
                 continue
             if params.get('unprocessed') == '1' and photo.get('analyzed'):
                 continue
+            if params.get('ai_review'):
+                review = photo.get('content_review')
+                if not review or (params['ai_review'] != 'all' and review['recommendation'] != params['ai_review']):
+                    continue
             eligible.append(photo)
             searchable = " ".join([photo["filename"], photo["title"], photo["description"], photo["date"], photo["note"],
-                                    photo.get('ocr_text', ''), *photo["tags"], *photo["albums"]]).casefold()
+                                    photo.get('ocr_text', ''), (photo.get('content_review') or {}).get('description', ''),
+                                    *(photo.get('content_review') or {}).get('tags', []), *photo["tags"], *photo["albums"]]).casefold()
             if query and query not in searchable:
                 continue
             filtered.append(photo)
@@ -592,8 +615,19 @@ class Handler(BaseHTTPRequestHandler):
             self.respond(403, {"error": "请使用服务启动时显示的本机地址。"})
             return False
         if self.headers.get("Sec-Fetch-Site") in {"cross-site", "same-site"}:
-            self.respond(403, {"error": "本地照片服务不允许跨站访问。"})
-            return False
+            # Links from chat or another website are cross-site navigations.
+            # Admit only the entry document; APIs, embeds and mutations stay private.
+            entry_navigation = (
+                self.command == "GET"
+                and self.headers.get("Sec-Fetch-Mode") == "navigate"
+                and self.headers.get("Sec-Fetch-Dest") == "document"
+                and unquote(urlsplit(self.path).path) in {
+                    "/", "/local-photos", "/local-photos/", "/local-photos/index.html"
+                }
+            )
+            if not entry_navigation:
+                self.respond(403, {"error": "本地照片服务不允许跨站访问。"})
+                return False
         return True
 
     def file(self, path, content_type=None, download=None):
@@ -622,7 +656,7 @@ class Handler(BaseHTTPRequestHandler):
                 self.respond(200, self.server.library.catalog(params))
             elif path == "/api/status":
                 self.respond(200, {"status": self.server.library.status, "source": self.server.library.source,
-                                   "token": self.server.token})
+                                   "token": self.server.token, "review_revision": self.server.library.setting('content_reviews_revision', '')})
             elif path == "/api/map-config":
                 self.respond(200, self.server.map_config)
             elif path == '/api/footprints':
@@ -663,7 +697,7 @@ class Handler(BaseHTTPRequestHandler):
                 if name == 'travel-map-platform.js':
                     self.file(ROOT / 'static/js/travel-map-platform.js')
                     return
-                if name not in {"index.html", "app.js", "journeys.js", "organize.js", "amap-map.js", "footprints.js", "boundary-cache.js", "coordtransform.js", "style.css", "favicon.svg", "land.geojson"}:
+                if name not in {"index.html", "app.js", "journeys.js", "organize.js", "cleanup.js", "amap-map.js", "footprints.js", "boundary-cache.js", "coordtransform.js", "style.css", "maps.css", "favicon.svg", "land.geojson"}:
                     raise FileNotFoundError()
                 self.file(UI / name)
             elif self.server.site:
@@ -697,13 +731,13 @@ class Handler(BaseHTTPRequestHandler):
             self.respond(403, {"error": "请在本地照片页面中修改整理信息。"})
             return
         try:
+            path = urlsplit(self.path).path
             length = int(self.headers.get("Content-Length", 0))
-            if not 0 < length <= 16384:
+            if not 0 < length <= (131072 if path == '/api/delete-batch' else 16384):
                 raise ValueError("请求大小无效。")
             data = json.loads(self.rfile.read(length))
             if not isinstance(data, dict):
                 raise ValueError("请求无效。")
-            path = urlsplit(self.path).path
             if path == "/api/scan":
                 self.server.library.start(source=data.get("source"))
                 self.respond(202, {"status": self.server.library.status})
@@ -728,6 +762,14 @@ class Handler(BaseHTTPRequestHandler):
                 for identifier in ids:
                     self.server.library.annotation(identifier, {'review': review})
                 self.respond(200, {'updated': len(ids)})
+            elif path == '/api/delete':
+                if set(data) != {'id', 'version'} or not isinstance(data['id'], str):
+                    raise ValueError('每次只能删除一张明确选择的照片。')
+                self.respond(200, self.server.library.deletion.delete(data['id'], data['version']))
+            elif path == '/api/delete-batch':
+                if set(data) != {'items'}:
+                    raise ValueError('请提供明确选择的照片列表。')
+                self.respond(200, self.server.library.deletion.delete_batch(data['items']))
             elif path == "/api/journeys":
                 self.respond(201, self.server.library.save_journey(data))
             elif path == "/api/story":
@@ -743,6 +785,8 @@ class Handler(BaseHTTPRequestHandler):
                 raise FileNotFoundError()
         except FileNotFoundError:
             self.respond(404, {"error": "未找到这张照片。"})
+        except PermissionError as error:
+            self.respond(403, {"error": str(error)})
         except (ValueError, TypeError, json.JSONDecodeError) as error:
             self.respond(400, {"error": str(error)})
         except Exception:
@@ -767,7 +811,7 @@ def main():
     if not args.no_scan:
         library.start()
     print(f"本地相册: {server.origin}/local-photos/", flush=True)
-    print("Only listening on 127.0.0.1. Original photos are read-only. Ctrl+C to stop.", flush=True)
+    print("Only listening on 127.0.0.1. Deletion requires an explicit click. Ctrl+C to stop.", flush=True)
     try:
         server.serve_forever()
     except KeyboardInterrupt:

@@ -1,0 +1,383 @@
+{
+  "release": {
+    "id": "fixture-release",
+    "project_id": "demo",
+    "plugin_id": "example.documents",
+    "version": "1.0.0",
+    "manifest": {
+      "id": "example.documents",
+      "name": "文档筛选插件",
+      "version": "1.0.0",
+      "description": "用于复刻截图的合成夹具",
+      "sdk_version": "1",
+      "operators": [
+        {
+          "id": "example.filter",
+          "key": "documents.filter@1.0.0",
+          "name": "文档过滤",
+          "version": "1.0.0",
+          "description": "按文本长度与包含内容过滤，保留记录身份及元数据。",
+          "kind": "transform",
+          "input_type": "documents",
+          "output_type": "documents",
+          "config_schema": {
+            "additionalProperties": false,
+            "properties": {
+              "min_length": {
+                "default": 0,
+                "maximum": 50000,
+                "minimum": 0,
+                "title": "Min Length",
+                "type": "integer"
+              },
+              "contains": {
+                "default": "",
+                "maxLength": 1000,
+                "title": "Contains",
+                "type": "string"
+              }
+            },
+            "title": "FilterDocumentsConfig",
+            "type": "object"
+          },
+          "default_config": {
+            "min_length": 0,
+            "contains": ""
+          },
+          "deterministic": true,
+          "execution_scope": "dataset",
+          "side_effects": false,
+          "retry_safe": true,
+          "cacheable": true
+        }
+      ]
+    },
+    "test_cases": [
+      {
+        "name": "保留符合条件的文档",
+        "operator_id": "example.filter",
+        "config": {},
+        "input": {
+          "type": "documents",
+          "records": []
+        },
+        "expected": {
+          "type": "documents",
+          "records": [
+            {
+              "id": "sample-1",
+              "text": "符合条件的文档"
+            }
+          ]
+        }
+      }
+    ],
+    "wheel_filename": "example_documents-1.0.0-py3-none-any.whl",
+    "wheel_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "runtime_digest": "sha256:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+    "sdk_bundle_digest": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+    "status": "published",
+    "validation_id": "fixture-validation",
+    "validation_status": "passed",
+    "deployment_state": "ready",
+    "active": true,
+    "created_at": "2026-10-28T01:00:00Z",
+    "published_at": "2026-10-28T01:02:00Z"
+  },
+  "validation": {
+    "id": "fixture-validation",
+    "release_id": "fixture-release",
+    "status": "passed",
+    "created_at": "2026-10-28T01:01:00Z",
+    "started_at": "2026-10-28T01:01:01Z",
+    "finished_at": "2026-10-28T01:01:03Z",
+    "error": null,
+    "report": {
+      "checks": [
+        {
+          "name": "wheel_contract",
+          "passed": true
+        },
+        {
+          "name": "保留符合条件的文档",
+          "operator_id": "example.filter",
+          "passed": true,
+          "message": "Output matches the expected artifact",
+          "output": {
+            "type": "documents",
+            "records": [
+              {
+                "id": "sample-1",
+                "text": "符合条件的文档"
+              }
+            ]
+          }
+        }
+      ],
+      "logs": "Screenshot fixture only. No wheel was executed."
+    }
+  },
+  "run": {
+    "id": "fixture-run",
+    "pipeline_id": "4a53326e-dc10-4496-87c4-fc562398da0c",
+    "pipeline_name": "文本小样本流水线",
+    "pipeline_version": 1,
+    "status": "succeeded",
+    "created_at": "2026-10-28T01:00:00Z",
+    "finished_at": "2026-10-28T01:00:03Z",
+    "error": null,
+    "mode": "production",
+    "tasks": [
+      {
+        "id": "fixture-task-0",
+        "node_id": "documents",
+        "operator": "documents.inline",
+        "status": "succeeded",
+        "input_count": 0,
+        "output_count": 2,
+        "duration_ms": 1200,
+        "error": null,
+        "artifact_id": null
+      },
+      {
+        "id": "fixture-task-1",
+        "node_id": "filter",
+        "operator": "documents.filter",
+        "status": "succeeded",
+        "input_count": 2,
+        "output_count": 1,
+        "duration_ms": 1200,
+        "error": null,
+        "artifact_id": "fixture-artifact"
+      }
+    ],
+    "artifacts": [
+      {
+        "id": "fixture-artifact",
+        "run_id": "fixture-run",
+        "node_id": "filter",
+        "type": "documents",
+        "record_count": 1,
+        "content_hash": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd",
+        "metadata": {
+          "execution_mode": "production"
+        },
+        "records": [
+          {
+            "id": "sample-1",
+            "text": "用于流程复刻验收的文档"
+          }
+        ],
+        "parent_artifact_ids": [],
+        "cache_origin_id": null,
+        "created_at": "2026-10-28T01:00:03Z"
+      }
+    ],
+    "operator_snapshot": [
+      {
+        "id": "documents.inline",
+        "key": "documents.inline@1.0.0",
+        "name": "固定文档输入",
+        "version": "1.0.0",
+        "plugin_id": "documents.core",
+        "description": "使用保存版本中的固定文档记录，按记录顺序采样。",
+        "kind": "source",
+        "input_type": null,
+        "output_type": "documents",
+        "config_schema": {
+          "$defs": {
+            "DocumentRecord": {
+              "additionalProperties": false,
+              "properties": {
+                "id": {
+                  "maxLength": 200,
+                  "minLength": 1,
+                  "title": "Id",
+                  "type": "string"
+                },
+                "text": {
+                  "maxLength": 50000,
+                  "title": "Text",
+                  "type": "string"
+                },
+                "metadata": {
+                  "additionalProperties": true,
+                  "title": "Metadata",
+                  "type": "object"
+                }
+              },
+              "required": [
+                "id",
+                "text"
+              ],
+              "title": "DocumentRecord",
+              "type": "object"
+            }
+          },
+          "additionalProperties": false,
+          "properties": {
+            "records": {
+              "items": {
+                "$ref": "#/$defs/DocumentRecord"
+              },
+              "maxItems": 5000,
+              "minItems": 1,
+              "title": "Records",
+              "type": "array"
+            }
+          },
+          "required": [
+            "records"
+          ],
+          "title": "InlineDocumentsConfig",
+          "type": "object"
+        },
+        "default_config": {
+          "records": [
+            {
+              "id": "sample-1",
+              "text": "用于流水线调试的第一条固定文档",
+              "metadata": {}
+            },
+            {
+              "id": "sample-2",
+              "text": "第二条固定文档",
+              "metadata": {}
+            }
+          ]
+        },
+        "deterministic": true,
+        "implementation_digest": "8c5155c3b0a987fc41bcaf4d2cce3ebba1f57a8219475da5a24f3b1892680a72",
+        "execution_scope": "dataset",
+        "side_effects": false,
+        "retry_safe": true,
+        "cacheable": true
+      },
+      {
+        "id": "documents.filter",
+        "key": "documents.filter@1.0.0",
+        "name": "文档过滤",
+        "version": "1.0.0",
+        "plugin_id": "documents.core",
+        "description": "按文本长度与包含内容过滤，保留记录身份及元数据。",
+        "kind": "transform",
+        "input_type": "documents",
+        "output_type": "documents",
+        "config_schema": {
+          "additionalProperties": false,
+          "properties": {
+            "min_length": {
+              "default": 0,
+              "maximum": 50000,
+              "minimum": 0,
+              "title": "Min Length",
+              "type": "integer"
+            },
+            "contains": {
+              "default": "",
+              "maxLength": 1000,
+              "title": "Contains",
+              "type": "string"
+            }
+          },
+          "title": "FilterDocumentsConfig",
+          "type": "object"
+        },
+        "default_config": {
+          "min_length": 0,
+          "contains": ""
+        },
+        "deterministic": true,
+        "implementation_digest": "034f1f1891b583dea7c26a228a9a11c4cbda618cd6f8bd5044f671d3f22874b1",
+        "execution_scope": "dataset",
+        "side_effects": false,
+        "retry_safe": true,
+        "cacheable": true
+      }
+    ],
+    "execution_plan": {
+      "mode": "production",
+      "version": 1,
+      "targets": [],
+      "node_ids": [
+        "documents",
+        "filter"
+      ],
+      "graph": {
+        "nodes": [
+          {
+            "id": "documents",
+            "operator": "documents.inline",
+            "version": "1.0.0",
+            "inputs": {},
+            "config": {
+              "records": [
+                {
+                  "id": "sample-1",
+                  "text": "用于流程复刻验收的文档",
+                  "metadata": {}
+                },
+                {
+                  "id": "sample-2",
+                  "text": "第二条固定文档",
+                  "metadata": {}
+                }
+              ]
+            }
+          },
+          {
+            "id": "filter",
+            "operator": "documents.filter",
+            "version": "1.0.0",
+            "inputs": {
+              "data": "documents"
+            },
+            "config": {
+              "min_length": 0,
+              "contains": ""
+            }
+          }
+        ]
+      },
+      "semantic_digest": "eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
+      "plan_digest": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+      "sample": {
+        "limit": null,
+        "fixed": true,
+        "sources": [
+          {
+            "node_id": "documents",
+            "record_ids": [
+              "sample-1",
+              "sample-2"
+            ],
+            "record_count": 2,
+            "content_hash": "1111111111111111111111111111111111111111111111111111111111111111"
+          }
+        ]
+      },
+      "warnings": [],
+      "blocked": []
+    }
+  },
+  "artifact": {
+    "id": "fixture-artifact",
+    "run_id": "fixture-run",
+    "node_id": "filter",
+    "type": "documents",
+    "record_count": 1,
+    "content_hash": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd",
+    "metadata": {
+      "execution_mode": "production"
+    },
+    "records": [
+      {
+        "id": "sample-1",
+        "text": "用于流程复刻验收的文档"
+      }
+    ],
+    "parent_artifact_ids": [],
+    "cache_origin_id": null,
+    "created_at": "2026-10-28T01:00:03Z"
+  }
+}

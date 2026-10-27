@@ -1,0 +1,45 @@
+{
+  "id": "project.shot_duration",
+  "name": "视频镜头时长筛选",
+  "description": "按毫秒范围筛选镜头，保留原始视频、时间边界和所有来源引用。",
+  "version": "1.0.0",
+  "sdk_version": "1",
+  "operators": [
+    {
+      "id": "project.shot_duration_filter",
+      "name": "镜头时长筛选",
+      "version": "1.0.0",
+      "description": "保留时长位于闭区间内的镜头；不读取视频、不执行模型、不修改数据目录。",
+      "kind": "transform",
+      "input_type": "shot_assets",
+      "output_type": "shot_assets",
+      "config_schema": {
+        "additionalProperties": false,
+        "properties": {
+          "min_duration_ms": {
+            "default": 1000,
+            "description": "最短镜头时长（毫秒），包含此边界",
+            "minimum": 0,
+            "title": "Min Duration Ms",
+            "type": "integer"
+          },
+          "max_duration_ms": {
+            "default": 30000,
+            "description": "最长镜头时长（毫秒），包含此边界",
+            "minimum": 1,
+            "title": "Max Duration Ms",
+            "type": "integer"
+          }
+        },
+        "title": "ShotDurationConfig",
+        "type": "object"
+      },
+      "default_config": {
+        "min_duration_ms": 1000,
+        "max_duration_ms": 30000
+      },
+      "deterministic": true,
+      "side_effects": false
+    }
+  ]
+}

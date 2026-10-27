@@ -1,0 +1,5 @@
+.auto-gt-image-canvas { position: relative; width: 100%; }
+.auto-gt-image-canvas > img { display: block; width: 100%; height: auto; max-height: none; }
+.auto-gt-image-canvas > svg { position: absolute; inset: 0; width: 100%; height: 100%; touch-action: none; }
+.auto-gt-annotation-box { fill: color-mix(in srgb, var(--md-sys-color-primary) 15%, transparent); stroke: var(--md-sys-color-primary); stroke-width: 2; vector-effect: non-scaling-stroke; }
+.auto-gt-annotation-draft { fill: none; stroke: var(--md-sys-color-tertiary); stroke-width: 2; vector-effect: non-scaling-stroke; }

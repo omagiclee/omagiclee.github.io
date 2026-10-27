@@ -1,0 +1,29 @@
+{{- with .Page.Resources.GetMatch "guide.css" -}}
+<link rel="stylesheet" href="{{ .RelPermalink }}">
+{{- end -}}
+<section class="qdh-plan" aria-label="千岛湖两天行程示意">
+  <ul class="qdh-plan__facts" aria-label="旅行概况">
+    <li><strong>2 大 2 小</strong><span>两个 4 岁娃</span></li>
+    <li><strong>住 1 晚</strong><span>普通周末</span></li>
+    <li><strong>¥2500–4000</strong><span>四人规划预算</span></li>
+  </ul>
+  <div class="qdh-plan__day">
+    <div class="qdh-plan__day-heading"><span>DAY 1 · 周六</span><strong>到湖边，慢下来</strong></div>
+    <ol class="qdh-plan__route">
+      <li><span class="qdh-plan__time">11–12 点</span><strong>苏州南出发</strong><span>高铁上简单午餐</span></li>
+      <li><span class="qdh-plan__time">13–14 点</span><strong>千岛湖站 → 酒店</strong><span>接驳、入住留 60–75 分钟</span></li>
+      <li><span class="qdh-plan__time">15–17 点</span><strong>湖滨散步</strong><span>走 30–60 分钟，困了先睡</span></li>
+      <li><span class="qdh-plan__time">17:30</span><strong>鱼头晚饭</strong><span>早些吃，饭后按体力安排</span></li>
+    </ol>
+  </div>
+  <div class="qdh-plan__day qdh-plan__day--sunday">
+    <div class="qdh-plan__day-heading"><span>DAY 2 · 周日</span><strong>看群岛，从容回家</strong></div>
+    <ol class="qdh-plan__route">
+      <li><span class="qdh-plan__time">早餐后</span><strong>退房寄存</strong><span>轻装去已确认的集合点</span></li>
+      <li><span class="qdh-plan__time">9 点左右</span><strong>黄山尖</strong><span>单岛＋缆车，短线需确认<br>整个上午留至 12:30</span></li>
+      <li><span class="qdh-plan__time">午饭后</span><strong>取行李、休息</strong><span>给两个孩子留恢复时间</span></li>
+      <li><span class="qdh-plan__time">15 点左右</span><strong>去车站</strong><span>目标 17 点发车<br>提前 2 小时离酒店</span></li>
+    </ol>
+  </div>
+  <p class="qdh-plan__note">时间为选票目标；短线未确认或天气差，改酒店／博物馆。</p>
+</section>

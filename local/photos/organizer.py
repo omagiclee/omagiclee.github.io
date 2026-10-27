@@ -246,7 +246,20 @@ class Organizer:
         if status['phase'] == 'idle' and analyzed:
             status.update(phase='ready' if analyzed == len(photos) else 'idle', processed=analyzed, total=len(photos),
                           message=f'本地已有 {analyzed:,} 张照片的内容整理记录，可继续复核或查询。')
+        content_reviews = {'all': 0, 'candidate': 0, 'keep': 0, 'uncertain': 0}
+        pending_reviews = {'candidate': 0, 'keep': 0, 'uncertain': 0}
+        content_decisions = {'keep': 0, 'delete': 0, 'unreviewed': 0}
+        for photo in photos:
+            if photo.get('content_review'):
+                content_reviews['all'] += 1
+                content_reviews[photo['content_review']['recommendation']] += 1
+                content_decisions[photo['review']] += 1
+                if photo['review'] == 'unreviewed':
+                    pending_reviews[photo['content_review']['recommendation']] += 1
         return {'status': status, 'categories': categories, 'types': types, 'hierarchy': hierarchy, 'reviews': reviews,
+                'content_reviews': content_reviews,
+                'deleted_count': self.library.deletion.count(),
+                'content_review_pending': pending_reviews, 'content_review_decisions': content_decisions,
                 'taxonomy': {key: value[0] for key, value in CATEGORIES.items()}, 'type_labels': TYPES,
                 'analyzed': analyzed,
                 'embeddings': sum(photo.get('has_embedding', False) for photo in photos), 'total': len(photos),

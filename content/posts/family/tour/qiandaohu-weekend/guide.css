@@ -1,0 +1,61 @@
+.qdh-plan {
+  --qdh-accent: #137c83;
+  --qdh-ink: #17464a;
+  --qdh-muted: #53666a;
+  --qdh-tint: #eef8f7;
+  --qdh-line: #b4d9d5;
+  --qdh-rule: #dae5e6;
+  margin: 1.3rem 0 1.8rem;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+.single .content .qdh-plan ul,
+.single .content .qdh-plan ol { list-style: none; padding: 0; margin: 0; }
+.single .content .qdh-plan li { margin: 0; }
+.qdh-plan__facts { display: grid; grid-template-columns: minmax(0,1fr) minmax(0,.8fr) minmax(0,1.3fr); gap: .75rem; border-bottom: 1px solid var(--qdh-rule); padding-bottom: 1.1rem !important; }
+.qdh-plan__facts li { display: flex; flex-direction: column; min-width: 0; overflow-wrap: anywhere; }
+.qdh-plan__facts strong { color: var(--qdh-ink); font-size: 1.1rem; }
+.qdh-plan__facts span { color: var(--qdh-muted); font-size: .875rem; }
+.qdh-plan__day { margin-top: 1.3rem; }
+.qdh-plan__day-heading { display: flex; align-items: baseline; flex-wrap: wrap; gap: .4rem 1rem; margin-bottom: 1rem; color: var(--qdh-ink); }
+.qdh-plan__day-heading > span { font-size: .875rem; font-weight: 700; letter-spacing: .04em; color: var(--qdh-accent); }
+.qdh-plan__day-heading > strong { font-size: 1.125rem; }
+.qdh-plan__route { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); gap: .8rem; }
+.qdh-plan__route li { position: relative; display: flex; flex-direction: column; padding-top: 1.1rem; min-width: 0; }
+.qdh-plan__route li::before { content: ""; position: absolute; top: 0; left: 0; width: .6rem; height: .6rem; border-radius: 50%; background: var(--qdh-accent); }
+.qdh-plan__route li:not(:last-child)::after { content: ""; position: absolute; top: .25rem; left: .7rem; width: calc(100% + .1rem); border-top: 2px solid var(--qdh-line); }
+.qdh-plan__time { color: var(--qdh-accent); font-size: .875rem; font-weight: 700; }
+.qdh-plan__route strong { color: var(--qdh-ink); margin: .15rem 0 .3rem; font-size: 1rem; }
+.qdh-plan__route li > span:last-child { color: var(--qdh-muted); font-size: .875rem; overflow-wrap: anywhere; }
+.qdh-plan__day--sunday { --qdh-accent: #a65a30; --qdh-ink: #704029; --qdh-line: #e4c6ad; }
+.single .content .qdh-plan__note { font-size: .875rem; margin: 1.2rem 0 0; padding: .65rem .85rem; color: var(--qdh-muted); background: var(--qdh-tint); border-radius: .4rem; }
+.single .content:has(.qdh-plan) { --qdh-table-line: #dce7e7; }
+.single .content:has(.qdh-plan) table { display: table; width: 100%; table-layout: auto; font-size: .9375rem; line-height: 1.65; margin: 1rem 0 1.6rem; }
+.single .content:has(.qdh-plan) table th { background: #eef7f6; color: #285c60; }
+.single .content:has(.qdh-plan) table th,
+.single .content:has(.qdh-plan) table td { padding: .65rem .7rem; border-color: var(--qdh-table-line); overflow-wrap: anywhere; }
+.single .content:has(.qdh-plan) table td:first-child { font-weight: 600; }
+.single .content:has(.qdh-plan) details { margin: 1rem 0; padding: .7rem 0; border-top: 1px solid var(--qdh-table-line); border-bottom: 1px solid var(--qdh-table-line); }
+.single .content:has(.qdh-plan) summary { cursor: pointer; font-weight: 600; line-height: 1.6; }
+.single .content:has(.qdh-plan) details[open] summary { margin-bottom: .8rem; }
+[theme=dark] .qdh-plan { --qdh-accent: #73d2cf; --qdh-ink: #d1eceb; --qdh-muted: #b4c6c9; --qdh-tint: #233638; --qdh-line: #41686a; --qdh-rule: #3a4b4d; }
+[theme=dark] .qdh-plan__day--sunday { --qdh-accent: #edb48e; --qdh-ink: #f1d9c9; --qdh-line: #765b48; }
+[theme=dark] .single .content:has(.qdh-plan) { --qdh-table-line: #405052; }
+[theme=dark] .single .content:has(.qdh-plan) table th { background: #263c3e; color: #c0e1df; }
+@media (max-width: 600px) {
+  .qdh-plan__facts { gap: .5rem; }
+  .qdh-plan__facts strong { font-size: 1rem; }
+  .qdh-plan__facts span { font-size: .875rem; }
+  .qdh-plan__route { grid-template-columns: 1fr; gap: 0; }
+  .qdh-plan__route li { padding: 0 0 1.1rem 1.5rem; }
+  .qdh-plan__route li::before { top: .4rem; }
+  .qdh-plan__route li:not(:last-child)::after { top: 1.1rem; left: .25rem; height: calc(100% - .8rem); width: 0; border-top: 0; border-left: 2px solid var(--qdh-line); }
+  .qdh-plan__route li:last-child { padding-bottom: 0; }
+  .qdh-plan__route strong { margin: 0 0 .15rem; }
+  .qdh-plan__day { margin-top: 1.2rem; }
+  .single .content:has(.qdh-plan) table { font-size: .875rem; }
+  .single .content:has(.qdh-plan) table th,
+  .single .content:has(.qdh-plan) table td { padding: .55rem .4rem; }
+  .single .content:has(.qdh-plan) table th:first-child,
+  .single .content:has(.qdh-plan) table td:first-child { min-width: 4.5rem; }
+}

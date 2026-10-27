@@ -1,0 +1,15 @@
+/* Formal metric fields must retain usable value space alongside 48px icon targets. */
+.req-form .req-check-editor { grid-template-columns:minmax(8rem,1fr) 5.5rem 7rem 6rem 3rem; }
+.req-similar-records ul { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:.25rem .75rem; margin-top:.25rem; }
+.req-similar-link { display:flex; align-items:center; min-width:48px; min-height:48px; padding:8px; border-radius:4px; color:var(--primary); text-decoration:underline; text-underline-offset:3px; overflow-wrap:anywhere; }
+.req-similar-link:focus-visible { outline:2px solid var(--primary); outline-offset:2px; }
+@media(max-width:1199px) {
+  .req-form .req-check-editor { grid-template-columns:repeat(3,minmax(0,1fr)) 3rem; }
+  .req-form .req-check-editor > label:first-child { grid-column:1 / -1; }
+}
+@media(max-width:640px) {
+  .req-form .req-check-editor { grid-template-columns:repeat(2,minmax(0,1fr)); }
+  .req-form .req-check-editor > label:first-child { grid-column:1 / -1; }
+  .req-form .req-check-editor > button { justify-self:end; }
+  .req-similar-records ul { grid-template-columns:minmax(0,1fr); }
+}

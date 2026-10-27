@@ -7,7 +7,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from app import Library
-from organizer import Organizer
+from organizer import Organizer, image_signature
 from taxonomy import suggestion
 from test_photos import fixture
 
@@ -89,6 +89,79 @@ class OrganizerTests(unittest.TestCase):
         self.assertEqual(self.library.organizer.status['errors'], 0)
         self.assertEqual(self.library.organizer.summary()['embeddings'], 7)
         self.assertEqual(self.library.catalog({'mode': 'semantic', 'q': '蓝色背包'})['count'], 7)
+
+    def test_conversation_review_is_not_a_human_decision_and_detects_changed_images(self):
+        photo = self.library.raw_photos()[0]
+        before = Path(photo['preview_source']).read_bytes()
+        entry = {'id': photo['id'], 'source': self.library.source_key, 'signature': image_signature(photo),
+                 'label': 'SCR001', 'description': '蓝色背包商品详情截图', 'recommendation': 'candidate',
+                 'reason': '可能是临时购物参考', 'caution': '无法确认是否仍有购买用途', 'tags': ['背包', '购物参考']}
+        self.library.annotation(photo['id'], {'review': 'keep', 'note': '人工保留'})
+        live_reader = Library(self.root / 'state', self.library.source)
+        self.assertEqual(live_reader.catalog({'ai_review': 'all'})['count'], 0)
+        self.library.content_reviews.save([entry])
+        self.assertEqual(live_reader.catalog({'ai_review': 'all'})['count'], 1)
+        live_reader.preview_pool.shutdown(wait=True)
+        result = self.library.catalog({'ai_review': 'candidate', 'q': '背包'})
+        self.assertEqual(result['count'], 1)
+        reviewed = result['photos'][0]
+        self.assertEqual(reviewed['review'], 'keep')
+        self.assertEqual(reviewed['note'], '人工保留')
+        self.assertFalse(reviewed['classification_confirmed'])
+        self.assertEqual(self.library.organizer.summary()['content_reviews']['candidate'], 1)
+        self.assertEqual(self.library.organizer.summary()['content_review_pending']['candidate'], 0)
+        self.assertEqual(self.library.organizer.summary()['content_review_decisions']['keep'], 1)
+        self.assertNotIn('signature', reviewed['content_review'])
+        self.assertNotIn('source', reviewed['content_review'])
+        self.assertEqual(Path(photo['preview_source']).read_bytes(), before)
+        restarted = Library(self.root / 'state', self.library.source)
+        self.assertEqual(restarted.catalog({'ai_review': 'all'})['count'], 1)
+        restarted.preview_pool.shutdown(wait=True)
+        with self.assertRaises(ValueError):
+            self.library.content_reviews.save([{**entry, 'source': 'wrong-source'}])
+        Path(photo['preview_source']).write_bytes(before + b'changed')
+        self.library.invalidate()
+        self.assertEqual(self.library.catalog({'ai_review': 'all'})['count'], 0)
+
+    def test_precise_review_requires_inspection_and_can_skip_deleted_items(self):
+        photo = self.library.raw_photos()[0]
+        entry = {'id': photo['id'], 'source': self.library.source_key, 'signature': image_signature(photo),
+                 'label': 'SCR001', 'description': '商品详情页显示蓝色背包和尺寸选项。', 'recommendation': 'uncertain',
+                 'reason': '是否仍需选购由用户判断', 'caution': '品牌文字不清', 'tags': ['背包', '商品详情', '尺寸'],
+                 'review_standard': 'grounded-v2', 'category': 'product'}
+        with self.assertRaises(ValueError): self.library.content_reviews.save([entry])
+        entry['inspection'] = {'full_image': True, 'zoomed': True, 'unclear_fields': ['品牌']}
+        self.assertEqual(self.library.content_reviews.save([entry]), 1)
+        saved = self.library.catalog({'ai_review': 'all'})['photos'][0]['content_review']
+        self.assertEqual(saved['review_standard'], 'grounded-v2')
+        self.assertEqual(saved['inspection']['unclear_fields'], ['品牌'])
+        displayed = self.library.catalog({'ai_review': 'all'})['photos'][0]
+        self.assertEqual(displayed['category'], 'product')
+        self.assertIn('背包', displayed['tags'])
+        corrected = self.library.annotation(photo['id'], {'category': 'invoice'})
+        self.assertEqual(corrected['category'], 'invoice')
+        with self.library.connect() as connection:
+            connection.execute('DELETE FROM photos WHERE id=?', (photo['id'],))
+        self.assertEqual(self.library.content_reviews.save([entry], skip_stale=True), 0)
+
+    def test_cleanup_presentation_is_versioned_and_does_not_replace_human_category(self):
+        photo = self.library.raw_photos()[0]
+        entry = {'id': photo['id'], 'source': self.library.source_key, 'signature': image_signature(photo),
+                 'label': 'SCR001', 'description': '背包商品页。', 'recommendation': 'candidate',
+                 'reason': '购物参考', 'caution': '', 'tags': ['背包', '商品', '规格'],
+                 'category': 'product', 'short_description': '蓝色背包', 'cleanup_group': 'A'}
+        self.library.content_reviews.save([entry])
+        self.library.annotation(photo['id'], {'category': 'invoice', 'review': 'keep'})
+        without_display = {k: v for k, v in entry.items() if k not in ('short_description', 'cleanup_group')}
+        self.library.content_reviews.save([without_display])
+        public = self.library.catalog({'ai_review': 'all'})['photos'][0]
+        self.assertEqual(public['content_review']['short_description'], '蓝色背包')
+        self.assertEqual(public['category'], 'invoice')
+        self.assertEqual(public['review'], 'keep')
+        self.library.content_reviews.save([{**without_display, 'description': '修正后的商品内容。'}])
+        self.assertNotIn('short_description', self.library.content_reviews.public(photo))
+        with self.assertRaises(ValueError):
+            self.library.content_reviews.save([{**entry, 'cleanup_group': 'unknown'}])
 
 
 if __name__ == '__main__': unittest.main()

@@ -1,0 +1,26 @@
+.md-linear-progress { position: relative; width: 100%; height: 4px; overflow: hidden; border-radius: 2px; }
+.md-linear-progress-track { position: absolute; inset-block: 0; inset-inline: min(100%, calc(var(--md-progress-value) + var(--md-progress-gap))) 0; border-radius: inherit; background: var(--md-sys-color-surface-container-highest); transition: inset-inline-start var(--md-sys-motion-duration-medium-2) var(--md-sys-motion-standard); }
+.md-linear-progress-track-leading { display: none; }
+.md-linear-progress-indicator { position: absolute; inset-block: 0; height: 100%; border-radius: inherit; background: var(--primary); transition: width var(--md-sys-motion-duration-medium-2) var(--md-sys-motion-standard); }
+.md-linear-progress-stop { position: absolute; inset-inline-end: 0; top: 0; width: 4px; height: 4px; border-radius: 50%; background: var(--primary); }
+.md-linear-progress[data-complete] .md-linear-progress-stop { display: none; }
+.md-linear-progress[data-indeterminate] .md-linear-progress-track { inset-inline: calc(40% + 4px) auto; width: 100%; animation: md-linear-progress-track 1.8s linear infinite; }
+.md-linear-progress[data-indeterminate] .md-linear-progress-track-leading { display: block; position: absolute; inset-block: 0; inset-inline: auto calc(100% + 4px); width: 100%; border-radius: inherit; background: var(--md-sys-color-surface-container-highest); animation: md-linear-progress-track 1.8s linear infinite; }
+.md-linear-progress[data-indeterminate] .md-linear-progress-stop { display: none; }
+.md-linear-progress[data-indeterminate] .md-linear-progress-indicator { width: 40%; animation: md-linear-progress-indeterminate 1.8s linear infinite; }
+@keyframes md-linear-progress-indeterminate { from { transform: translateX(-100%); } to { transform: translateX(350%); } }
+@keyframes md-linear-progress-track { from { transform: translateX(-40%); } to { transform: translateX(140%); } }
+@keyframes md-linear-progress-indeterminate-rtl { from { transform: translateX(100%); } to { transform: translateX(-350%); } }
+@keyframes md-linear-progress-track-rtl { from { transform: translateX(40%); } to { transform: translateX(-140%); } }
+.md-linear-progress:dir(rtl)[data-indeterminate] .md-linear-progress-indicator { animation-name: md-linear-progress-indeterminate-rtl; }
+.md-linear-progress:dir(rtl)[data-indeterminate] :is(.md-linear-progress-track, .md-linear-progress-track-leading) { animation-name: md-linear-progress-track-rtl; }
+@media (prefers-reduced-motion: reduce) {
+  .md-linear-progress[data-indeterminate] .md-linear-progress-indicator { inset-inline-start: 30%; animation: none !important; transform: none; }
+  .md-linear-progress[data-indeterminate] .md-linear-progress-track { inset-inline: calc(70% + 4px) 0; width: auto; animation: none !important; transform: none; }
+  .md-linear-progress[data-indeterminate] .md-linear-progress-track-leading { inset-inline: 0 calc(70% + 4px); width: auto; animation: none !important; transform: none; }
+}
+@media (forced-colors: active) {
+  .md-linear-progress { forced-color-adjust: none; }
+  .md-linear-progress-track, .md-linear-progress-track-leading { background: GrayText; }
+  .md-linear-progress-indicator, .md-linear-progress-stop { background: Highlight; }
+}

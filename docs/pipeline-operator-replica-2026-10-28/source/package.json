@@ -1,0 +1,24 @@
+{
+  "name": "data-flywheel",
+  "version": "0.1.0",
+  "private": true,
+  "workspaces": [
+    "apps/web"
+  ],
+  "scripts": {
+    "dev:web": "npm --workspace @data-flywheel/web run dev",
+    "build:web": "npm --workspace @data-flywheel/web run build",
+    "preview:web": "npm --workspace @data-flywheel/web run preview",
+    "test:web": "npm --workspace @data-flywheel/web run test",
+    "install:browser": "npm --workspace @data-flywheel/web run install:browser",
+    "test:e2e": "npm --workspace @data-flywheel/web run test:e2e",
+    "storybook": "npm --workspace @data-flywheel/web run storybook",
+    "build:storybook": "npm --workspace @data-flywheel/web run build-storybook",
+    "dev:api": "uvicorn app.main:app --app-dir apps/api --reload --host 0.0.0.0 --port 8000"
+  },
+  "msw": {
+    "workerDirectory": [
+      "apps/web/public"
+    ]
+  }
+}

@@ -21,7 +21,6 @@
     $('#footprint-city-count').textContent = formatNumber(result.stats.cities);
     $('#footprint-country-count').textContent = formatNumber(result.stats.countries);
     $('#footprint-photo-count').textContent = formatNumber(result.stats.photos);
-    $('#footprint-count-nav').textContent = formatNumber(result.stats.cities);
     const years = $('#footprint-year'); years.replaceChildren(node('option', '', '全部年份')); years.firstChild.value = '';
     result.years.forEach(year => { const option = node('option', '', `${year} 年`); option.value = year; years.append(option); }); years.value = s.year;
     const countries = new Map(result.cities.map(city => [countryKey(city), city.country || city.country_code || '国家不详']));

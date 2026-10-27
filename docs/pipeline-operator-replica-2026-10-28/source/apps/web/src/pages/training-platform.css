@@ -1,0 +1,57 @@
+.training-overview {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+.training-overview section {
+  display: grid;
+  min-width: 0;
+  gap: 6px;
+  padding: 16px 20px;
+  border: 0;
+  border-radius: var(--console-radius-panel);
+  background: var(--md-sys-color-surface-container-low);
+}
+.training-overview strong { font-size: 24px; font-weight: 500; line-height: 32px; }
+.training-overview span { color: var(--muted-foreground); font-size: 14px; line-height: 20px; }
+.training-catalog { display: grid; gap: 8px; margin: 12px 0; }
+.training-parameters { min-width: 0; margin: 16px 0; padding: 16px; border: 0; border-radius: var(--console-radius-panel); background: var(--md-sys-color-surface-container-low); }
+.training-parameters legend { padding: 0 8px; font-size: 14px; font-weight: 500; }
+.training-loss-chart { display: block; width: 100%; max-width: 850px; margin: 20px 0; font-family: var(--font-sans); font-size: 12px; }
+.training-json, .training-log { min-width: 0; max-width: 100%; white-space: pre-wrap; overflow-wrap: anywhere; font-size: 12px; line-height: 16px; }
+.training-json { padding: 16px; border-radius: var(--console-radius-control); background: var(--muted); }
+.training-log { max-height: 240px; overflow-y: auto; }
+.training-detail { min-width: 0; }
+.training-detail code { overflow-wrap: anywhere; }
+.training-detail h3 { margin: 12px 0 8px; font-size: 16px; line-height: 24px; font-weight: 500; }
+.training-detail .platform-tabs { margin-bottom: 0; }
+.training-detail .platform-actions { align-items: center; }
+.training-jobs { min-width: 0; }
+.training-directory-heading { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 8px; }
+.training-directory-heading h2 { display: flex; align-items: center; gap: 8px; font-size: 16px; font-weight: 500; }
+.training-directory-heading h2 span { padding: 2px 7px; background: var(--muted); border-radius: 4px; color: var(--muted-foreground); font-size: 12px; }
+.training-loading { padding: 32px 16px; color: var(--muted-foreground); }
+.training-environments { margin-top: 8px; padding: 0 16px 16px; border-radius: var(--console-radius-panel); background: var(--md-sys-color-surface-container-low); color: var(--muted-foreground); font-size: 14px; }
+.training-environments summary { width: fit-content; min-height: 48px; padding-block: 14px; cursor: pointer; color: var(--foreground); font-weight: 500; }
+.training-environments summary:focus-visible { outline: 2px solid var(--primary); outline-offset: 3px; }
+.training-environments dl { display: grid; gap: 8px; padding-block: 16px 8px; }
+.training-environments dl > div { display: flex; flex-wrap: wrap; gap: 4px 16px; }
+.training-environments dt { width: 120px; color: var(--foreground); }
+.training-environments p { margin-top: 8px; line-height: 20px; }
+@media (max-width: 640px) {
+  .training-overview { grid-template-columns: 1fr; gap: 8px; }
+  .training-overview section { grid-template-columns: 1fr 1fr; align-items: center; padding: 12px 16px; }
+  .training-detail .platform-actions { flex-wrap: wrap; }
+  .training-detail .platform-detail-list { overflow-wrap: anywhere; }
+}
+
+.training-directory-heading h2 { font-size: 22px; line-height: 28px; font-weight: 400; }
+
+.training-log:focus-visible { outline: 2px solid var(--md-sys-color-primary); outline-offset: 2px; }
+
+/* Complete typography roles prevent body metrics from leaking into titles and controls. */
+.training-detail h3 { font-size: var(--md-sys-typescale-title-medium-size); line-height: var(--md-sys-typescale-title-medium-line-height); font-weight: var(--md-sys-typescale-title-medium-weight); letter-spacing: var(--md-sys-typescale-title-medium-tracking); }
+.training-directory-heading h2 { font-size: var(--md-sys-typescale-title-large-size); line-height: var(--md-sys-typescale-title-large-line-height); font-weight: var(--md-sys-typescale-title-large-weight); letter-spacing: var(--md-sys-typescale-title-large-tracking); }
+.training-parameters legend, .training-environments summary { font-size: var(--md-sys-typescale-label-large-size); line-height: var(--md-sys-typescale-label-large-line-height); font-weight: var(--md-sys-typescale-label-large-weight); letter-spacing: var(--md-sys-typescale-label-large-tracking); }
+.training-directory-heading h2 span { font-size: var(--md-sys-typescale-body-small-size); line-height: var(--md-sys-typescale-body-small-line-height); font-weight: var(--md-sys-typescale-body-small-weight); letter-spacing: var(--md-sys-typescale-body-small-tracking); }
+.training-overview span, .training-environments { font-size: var(--md-sys-typescale-body-medium-size); line-height: var(--md-sys-typescale-body-medium-line-height); font-weight: var(--md-sys-typescale-body-medium-weight); letter-spacing: var(--md-sys-typescale-body-medium-tracking); }

@@ -1,0 +1,9 @@
+.task-progress { min-width: 0; margin-top: .5rem; }
+.task-progress-count { display: flex; align-items: baseline; justify-content: space-between; flex-wrap: wrap; gap: .25rem .75rem; font-size: .75rem; color: var(--muted-foreground); }
+.task-progress-count strong { color: var(--foreground); font-weight: 500; font-variant-numeric: tabular-nums; }
+.task-progress-track { margin: 8px 0; }
+.task-progress-time { margin: 0; color: var(--muted-foreground); font-size: .75rem; line-height: 16px; overflow-wrap: anywhere; font-variant-numeric: tabular-nums; }
+
+/* The compact business progress caption still uses complete typography roles. */
+.task-progress-count, .task-progress-time { font-size: var(--md-sys-typescale-body-small-size); line-height: var(--md-sys-typescale-body-small-line-height); font-weight: var(--md-sys-typescale-body-small-weight); letter-spacing: var(--md-sys-typescale-body-small-tracking); }
+.task-progress-count strong { font-size: var(--md-sys-typescale-label-medium-size); line-height: var(--md-sys-typescale-label-medium-line-height); font-weight: var(--md-sys-typescale-label-medium-weight); letter-spacing: var(--md-sys-typescale-label-medium-tracking); }

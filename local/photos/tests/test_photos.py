@@ -255,6 +255,64 @@ class HttpTests(unittest.TestCase):
         self.assertEqual(self.request('/api/map-config', headers={'Sec-Fetch-Site': 'cross-site'})[0], 403)
         self.assertNotIn(b'fixture-code', self.request('/api/export')[2])
 
+    def test_cross_site_entry_navigation_keeps_api_and_writes_private(self):
+        for site in ('cross-site', 'same-site'):
+            headers = {'Sec-Fetch-Site': site, 'Sec-Fetch-Mode': 'navigate', 'Sec-Fetch-Dest': 'document'}
+            for entry in ('/local-photos/', '/local-photos/index.html?map=amap'):
+                code, response_headers, body = self.request(entry, headers=headers)
+                self.assertEqual(code, 200)
+                self.assertEqual(response_headers['X-Frame-Options'], 'DENY')
+            self.assertEqual(self.request('/local-photos', headers=headers)[0], 302)
+            for endpoint in ('/api/photos', '/api/status', '/api/map-config', '/api/export', '/%61pi/photos'):
+                self.assertEqual(self.request(endpoint, headers=headers)[0], 403)
+            self.assertEqual(self.request('/local-photos/', headers={**headers, 'Sec-Fetch-Dest': 'iframe'})[0], 403)
+            self.assertEqual(self.request('/local-photos/', headers={**headers, 'Sec-Fetch-Mode': 'cors'})[0], 403)
+            write_headers = {**headers, 'Origin': self.server.origin, 'X-Photo-Token': self.server.token,
+                             'Content-Type': 'application/json'}
+            self.assertEqual(self.request('/api/scan', 'POST', {}, write_headers)[0], 403)
+
+    def test_delete_requires_same_origin_token_and_current_version(self):
+        photo = self.library.snapshot()[0]
+        payload = {'id': photo['id'], 'version': photo['deletion_version']}
+        headers = {'Origin': self.server.origin, 'X-Photo-Token': self.server.token, 'Content-Type': 'application/json'}
+        with patch.object(self.library.deletion, 'native', return_value={'deleted': True, 'destination': 'trash'}) as native:
+            self.assertEqual(self.request('/api/delete', 'POST', payload)[0], 403)
+            self.assertEqual(self.request('/api/delete', 'POST', payload, {**headers, 'Origin': 'https://evil.example'})[0], 403)
+            self.assertEqual(self.request('/api/delete', 'POST', {**payload, 'version': 'stale'}, headers)[0], 400)
+            native.assert_not_called()
+            self.assertEqual(self.request('/api/delete', 'POST', payload, headers)[0], 200)
+            native.assert_called_once()
+            self.assertEqual(len(self.library.snapshot()), 6)
+
+    def test_delete_batch_auth_validation_and_body_limits(self):
+        photos = self.library.snapshot()[:2]
+        payload = {'items': [{'id': photo['id'], 'version': photo['deletion_version']} for photo in photos]}
+        headers = {'Origin': self.server.origin, 'X-Photo-Token': self.server.token, 'Content-Type': 'application/json'}
+        result = {'deleted_ids': [photo['id'] for photo in photos], 'destination': 'trash', 'failed': []}
+        with patch.object(self.library.deletion, 'native', return_value=result) as native:
+            for auth in [{}, {**headers, 'Host': 'evil.example'}, {**headers, 'Origin': 'https://evil.example'},
+                         {**headers, 'X-Photo-Token': 'wrong'}, {**headers, 'Sec-Fetch-Site': 'cross-site'}]:
+                self.assertEqual(self.request('/api/delete-batch', 'POST', payload, auth)[0], 403)
+            for invalid in [{'items': []}, {'items': payload['items'] * 2},
+                            {'items': [payload['items'][0], {**payload['items'][1], 'version': 'stale'}]},
+                            {**payload, 'extra': True}]:
+                self.assertEqual(self.request('/api/delete-batch', 'POST', invalid, headers)[0], 400)
+            # Padding is valid JSON whitespace; only the batch route accepts >16 KiB.
+            body = json.dumps(payload) + ' ' * 17000
+            def raw_request(path, raw):
+                connection = http.client.HTTPConnection('127.0.0.1', self.server.server_port)
+                connection.request('POST', path, raw, headers)
+                response = connection.getresponse()
+                status = response.status
+                response.read(); connection.close()
+                return status
+            self.assertEqual(raw_request('/api/delete', body), 400)
+            self.assertEqual(raw_request('/api/delete-batch', json.dumps(payload) + ' ' * 131072), 400)
+            native.assert_not_called()
+            self.assertEqual(raw_request('/api/delete-batch', body), 200)
+            native.assert_called_once()
+            self.assertEqual(len(self.library.snapshot()), 5)
+
 
 if __name__ == '__main__':
     unittest.main()

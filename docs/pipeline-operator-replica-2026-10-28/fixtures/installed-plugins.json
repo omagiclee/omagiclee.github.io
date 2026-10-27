@@ -1,0 +1,514 @@
+[
+  {
+    "id": "media.video",
+    "name": "视频理解与镜头检索",
+    "description": "YouTube、AutoShot、关键帧人物分割、SigLIP2、豆包视频向量与 Milvus，由 Dagster 编排执行。",
+    "version": "1.0.0",
+    "sdk_version": "1",
+    "operator_count": 8,
+    "operators": [
+      {
+        "id": "media.object_ingest",
+        "key": "media.object_ingest@1.0.0",
+        "name": "对象存储视频入库",
+        "version": "1.0.0",
+        "plugin_id": "media.video",
+        "description": "读取项目已上传视频，校验内容摘要和真实视频时间线。",
+        "kind": "source",
+        "input_type": null,
+        "output_type": "video_assets",
+        "config_schema": {
+          "additionalProperties": false,
+          "properties": {
+            "object_uris": {
+              "items": {
+                "type": "string"
+              },
+              "maxItems": 20,
+              "minItems": 1,
+              "title": "Object Uris",
+              "type": "array"
+            },
+            "expected_sha256": {
+              "additionalProperties": {
+                "type": "string"
+              },
+              "title": "Expected Sha256",
+              "type": "object"
+            },
+            "titles": {
+              "additionalProperties": {
+                "type": "string"
+              },
+              "title": "Titles",
+              "type": "object"
+            }
+          },
+          "required": [
+            "object_uris"
+          ],
+          "title": "ObjectVideoConfig",
+          "type": "object"
+        },
+        "default_config": {
+          "object_uris": [
+            "object://0000000000000000/uploads/replace-with-project-file/source.mp4"
+          ]
+        },
+        "deterministic": false,
+        "implementation_digest": "49e7064271ae24186f538dee381812ba5ff25d71297cd2854af3a060af09c6d0",
+        "execution_scope": "dataset",
+        "side_effects": true,
+        "retry_safe": true,
+        "cacheable": false
+      },
+      {
+        "id": "media.youtube_ingest",
+        "key": "media.youtube_ingest@1.0.0",
+        "name": "YouTube 视频入库",
+        "version": "1.0.0",
+        "plugin_id": "media.video",
+        "description": "下载两条以内、每条最多 30 分钟的视频；以内容摘要去重。",
+        "kind": "source",
+        "input_type": null,
+        "output_type": "video_assets",
+        "config_schema": {
+          "additionalProperties": false,
+          "properties": {
+            "urls": {
+              "items": {
+                "type": "string"
+              },
+              "maxItems": 2,
+              "minItems": 1,
+              "title": "Urls",
+              "type": "array"
+            },
+            "max_height": {
+              "default": 480,
+              "maximum": 1080,
+              "minimum": 240,
+              "title": "Max Height",
+              "type": "integer"
+            }
+          },
+          "title": "YouTubeConfig",
+          "type": "object"
+        },
+        "default_config": {
+          "urls": [
+            "https://www.youtube.com/watch?v=aqz-KE-bpKQ",
+            "https://www.youtube.com/watch?v=R6MlUcmOul8"
+          ],
+          "max_height": 480
+        },
+        "deterministic": false,
+        "implementation_digest": "17ec98d60d82882ebee556813a54291e7cf72648529154d25544ed41faa7e0d7",
+        "execution_scope": "dataset",
+        "side_effects": true,
+        "retry_safe": false,
+        "cacheable": false
+      },
+      {
+        "id": "media.autoshot",
+        "key": "media.autoshot@1.0.0",
+        "name": "AutoShot 镜头切分",
+        "version": "1.0.0",
+        "plugin_id": "media.video",
+        "description": "真实模型滑窗推理，保存镜头边界与原视频时间关系。",
+        "kind": "transform",
+        "input_type": "video_assets",
+        "output_type": "shot_assets",
+        "config_schema": {
+          "additionalProperties": false,
+          "properties": {
+            "threshold": {
+              "default": 0.5,
+              "exclusiveMaximum": 1,
+              "exclusiveMinimum": 0,
+              "title": "Threshold",
+              "type": "number"
+            }
+          },
+          "title": "AutoShotConfig",
+          "type": "object"
+        },
+        "default_config": {
+          "threshold": 0.5
+        },
+        "deterministic": false,
+        "implementation_digest": "7a8d2e0e89c4a80a45785d3ce978e345b63fca3c563d22c4a11fd20f9b6ca0bf",
+        "execution_scope": "dataset",
+        "side_effects": true,
+        "retry_safe": true,
+        "cacheable": true
+      },
+      {
+        "id": "media.keyframes",
+        "key": "media.keyframes@1.0.0",
+        "name": "抽取关键帧",
+        "version": "1.0.0",
+        "plugin_id": "media.video",
+        "description": "在每个 shot 内均匀采样；默认中间一帧，可配置 1–5 帧。",
+        "kind": "transform",
+        "input_type": "shot_assets",
+        "output_type": "frame_assets",
+        "config_schema": {
+          "additionalProperties": false,
+          "properties": {
+            "frames_per_shot": {
+              "default": 1,
+              "maximum": 5,
+              "minimum": 1,
+              "title": "Frames Per Shot",
+              "type": "integer"
+            },
+            "max_width": {
+              "default": 640,
+              "maximum": 1280,
+              "minimum": 224,
+              "title": "Max Width",
+              "type": "integer"
+            }
+          },
+          "title": "KeyframeConfig",
+          "type": "object"
+        },
+        "default_config": {
+          "frames_per_shot": 1,
+          "max_width": 640
+        },
+        "deterministic": false,
+        "implementation_digest": "7520a59a9b869662972fd9e977f2e1baa1832ba7b0c9f907d357e40abf6939cb",
+        "execution_scope": "dataset",
+        "side_effects": true,
+        "retry_safe": true,
+        "cacheable": true
+      },
+      {
+        "id": "media.person_segment",
+        "key": "media.person_segment@1.0.0",
+        "name": "人物检测与分割",
+        "version": "1.0.0",
+        "plugin_id": "media.video",
+        "description": "本机使用 Mask R-CNN，保存人物框、置信度和掩码；标签仅代表抽样帧。",
+        "kind": "transform",
+        "input_type": "frame_assets",
+        "output_type": "annotated_frames",
+        "config_schema": {
+          "additionalProperties": false,
+          "properties": {
+            "score_threshold": {
+              "default": 0.7,
+              "exclusiveMaximum": 1,
+              "exclusiveMinimum": 0,
+              "title": "Score Threshold",
+              "type": "number"
+            },
+            "backend": {
+              "default": "maskrcnn",
+              "title": "Backend",
+              "type": "string"
+            }
+          },
+          "title": "PersonConfig",
+          "type": "object"
+        },
+        "default_config": {
+          "score_threshold": 0.7,
+          "backend": "maskrcnn"
+        },
+        "deterministic": false,
+        "implementation_digest": "dea13fa3b0499be4765f153fdd2b2f977f4ecefb2cdb2fd4ab36d64fdace720f",
+        "execution_scope": "dataset",
+        "side_effects": true,
+        "retry_safe": true,
+        "cacheable": true
+      },
+      {
+        "id": "media.siglip2_embed",
+        "key": "media.siglip2_embed@1.0.0",
+        "name": "SigLIP2 图像向量",
+        "version": "1.0.0",
+        "plugin_id": "media.video",
+        "description": "关键帧图文共同空间；真实模型特征，L2 归一化。",
+        "kind": "transform",
+        "input_type": "annotated_frames",
+        "output_type": "frame_embeddings",
+        "config_schema": {
+          "additionalProperties": false,
+          "properties": {},
+          "title": "EmptyConfig",
+          "type": "object"
+        },
+        "default_config": {},
+        "deterministic": false,
+        "implementation_digest": "39c6e8922806f0a7ee4151b9662b2514f6ecce509787fdacfb664e89e51e9faf",
+        "execution_scope": "dataset",
+        "side_effects": true,
+        "retry_safe": true,
+        "cacheable": true
+      },
+      {
+        "id": "media.doubao_video_embed",
+        "key": "media.doubao_video_embed@1.0.0",
+        "name": "豆包 Shot 视频向量",
+        "version": "1.0.0",
+        "plugin_id": "media.video",
+        "description": "调用 Coding Plan doubao-embedding-vision；凭据只从后端读取。",
+        "kind": "transform",
+        "input_type": "frame_embeddings",
+        "output_type": "frame_embeddings",
+        "config_schema": {
+          "additionalProperties": false,
+          "properties": {
+            "fps": {
+              "default": 1.0,
+              "exclusiveMinimum": 0,
+              "maximum": 5,
+              "title": "Fps",
+              "type": "number"
+            },
+            "max_frames": {
+              "default": 32,
+              "maximum": 64,
+              "minimum": 4,
+              "title": "Max Frames",
+              "type": "integer"
+            }
+          },
+          "title": "DoubaoConfig",
+          "type": "object"
+        },
+        "default_config": {
+          "fps": 1.0,
+          "max_frames": 32
+        },
+        "deterministic": false,
+        "implementation_digest": "fbe5688c18ee2b9a97c070e4612b4349c3c0a18fa3b63e19518f863425401d63",
+        "execution_scope": "dataset",
+        "side_effects": true,
+        "retry_safe": true,
+        "cacheable": false
+      },
+      {
+        "id": "media.milvus_publish",
+        "key": "media.milvus_publish@1.0.0",
+        "name": "发布 Milvus 检索索引",
+        "version": "1.0.0",
+        "plugin_id": "media.video",
+        "description": "图像和视频分开建索引，全部写入成功后发布 shot。",
+        "kind": "sink",
+        "input_type": "frame_embeddings",
+        "output_type": "shot_index",
+        "config_schema": {
+          "additionalProperties": false,
+          "properties": {},
+          "title": "EmptyConfig",
+          "type": "object"
+        },
+        "default_config": {},
+        "deterministic": false,
+        "implementation_digest": "c95a96422eb1978cfe872a460b37939f99bbf212f876a12ec104ce4f8b31d4c7",
+        "execution_scope": "dataset",
+        "side_effects": true,
+        "retry_safe": true,
+        "cacheable": false
+      }
+    ],
+    "trust": "administrator-installed",
+    "execution": "subprocess",
+    "registered": true
+  },
+  {
+    "id": "object.storage",
+    "name": "对象存储接入",
+    "description": "读取已提交目录的 UTF-8 文档，按项目执行环境解析服务器凭据。",
+    "version": "1.0.0",
+    "sdk_version": "1",
+    "operator_count": 1,
+    "operators": [
+      {
+        "id": "object_documents_source",
+        "key": "object_documents_source@1.0.0",
+        "name": "对象存储文档源",
+        "version": "1.0.0",
+        "plugin_id": "object.storage",
+        "description": "按已完成目录轮次有界读取 UTF-8 文档；源变更会拒绝读取。",
+        "kind": "source",
+        "input_type": null,
+        "output_type": "documents",
+        "config_schema": {
+          "additionalProperties": false,
+          "properties": {
+            "connection_id": {
+              "maxLength": 36,
+              "minLength": 1,
+              "title": "Connection Id",
+              "type": "string"
+            },
+            "inventory_generation": {
+              "minimum": 1,
+              "title": "Inventory Generation",
+              "type": "integer"
+            }
+          },
+          "required": [
+            "connection_id",
+            "inventory_generation"
+          ],
+          "title": "ObjectDocumentsConfig",
+          "type": "object"
+        },
+        "default_config": {
+          "connection_id": "choose-connection",
+          "inventory_generation": 1
+        },
+        "deterministic": false,
+        "implementation_digest": "e5245e2c26d8b1fda16df08e5979451be7e74b78d236fb1dfdb2afd86543ce1f",
+        "execution_scope": "batch",
+        "side_effects": false,
+        "retry_safe": true,
+        "cacheable": false,
+        "execution_protocol": "batch-v1",
+        "batch_size": 64
+      }
+    ],
+    "trust": "administrator-installed",
+    "execution": "dagster-batch",
+    "registered": false
+  },
+  {
+    "id": "documents.core",
+    "name": "内置文档处理",
+    "description": "固定内联文档输入与纯文本过滤，支持小样本调试。",
+    "version": "1.0.0",
+    "sdk_version": "1",
+    "operator_count": 2,
+    "operators": [
+      {
+        "id": "documents.inline",
+        "key": "documents.inline@1.0.0",
+        "name": "固定文档输入",
+        "version": "1.0.0",
+        "plugin_id": "documents.core",
+        "description": "使用保存版本中的固定文档记录，按记录顺序采样。",
+        "kind": "source",
+        "input_type": null,
+        "output_type": "documents",
+        "config_schema": {
+          "$defs": {
+            "DocumentRecord": {
+              "additionalProperties": false,
+              "properties": {
+                "id": {
+                  "maxLength": 200,
+                  "minLength": 1,
+                  "title": "Id",
+                  "type": "string"
+                },
+                "text": {
+                  "maxLength": 50000,
+                  "title": "Text",
+                  "type": "string"
+                },
+                "metadata": {
+                  "additionalProperties": true,
+                  "title": "Metadata",
+                  "type": "object"
+                }
+              },
+              "required": [
+                "id",
+                "text"
+              ],
+              "title": "DocumentRecord",
+              "type": "object"
+            }
+          },
+          "additionalProperties": false,
+          "properties": {
+            "records": {
+              "items": {
+                "$ref": "#/$defs/DocumentRecord"
+              },
+              "maxItems": 5000,
+              "minItems": 1,
+              "title": "Records",
+              "type": "array"
+            }
+          },
+          "required": [
+            "records"
+          ],
+          "title": "InlineDocumentsConfig",
+          "type": "object"
+        },
+        "default_config": {
+          "records": [
+            {
+              "id": "sample-1",
+              "text": "用于流水线调试的第一条固定文档",
+              "metadata": {}
+            },
+            {
+              "id": "sample-2",
+              "text": "第二条固定文档",
+              "metadata": {}
+            }
+          ]
+        },
+        "deterministic": true,
+        "implementation_digest": "8c5155c3b0a987fc41bcaf4d2cce3ebba1f57a8219475da5a24f3b1892680a72",
+        "execution_scope": "dataset",
+        "side_effects": false,
+        "retry_safe": true,
+        "cacheable": true
+      },
+      {
+        "id": "documents.filter",
+        "key": "documents.filter@1.0.0",
+        "name": "文档过滤",
+        "version": "1.0.0",
+        "plugin_id": "documents.core",
+        "description": "按文本长度与包含内容过滤，保留记录身份及元数据。",
+        "kind": "transform",
+        "input_type": "documents",
+        "output_type": "documents",
+        "config_schema": {
+          "additionalProperties": false,
+          "properties": {
+            "min_length": {
+              "default": 0,
+              "maximum": 50000,
+              "minimum": 0,
+              "title": "Min Length",
+              "type": "integer"
+            },
+            "contains": {
+              "default": "",
+              "maxLength": 1000,
+              "title": "Contains",
+              "type": "string"
+            }
+          },
+          "title": "FilterDocumentsConfig",
+          "type": "object"
+        },
+        "default_config": {
+          "min_length": 0,
+          "contains": ""
+        },
+        "deterministic": true,
+        "implementation_digest": "034f1f1891b583dea7c26a228a9a11c4cbda618cd6f8bd5044f671d3f22874b1",
+        "execution_scope": "dataset",
+        "side_effects": false,
+        "retry_safe": true,
+        "cacheable": true
+      }
+    ],
+    "trust": "administrator-installed",
+    "execution": "subprocess",
+    "registered": true
+  }
+]

@@ -1,16 +1,11 @@
 'use strict';
 const $ = selector => document.querySelector(selector);
-const state = { view: location.hash === '#organize' ? 'organize' : ['#time-map', '#footprints'].includes(location.hash) ? 'footprints' : 'all', month: '', album: '', q: '', category: '', mediaType: '', review: '', mode: 'keyword', unprocessed: false, photos: [], count: 0, token: '', source: null, phase: '', current: -1, generation: 0, busy: false };
-const titles = { all: '全部照片', favorites: '收藏', duplicates: '完全重复', journeys: '旅行相册', local: 'On this Mac', preview: '本地预览', unavailable: '尚未下载' };
-const descriptions = { all: '把值得留下的瞬间，整理在这里。', favorites: '那些想再看一遍的瞬间。', duplicates: '按文件内容检查本地原图，仅做分组，不删除照片。云端原图未参与比较。', journeys: '按旅行整理照片，重温当时的地点与回忆。', local: '这些照片的原图已经保存在本机。', preview: '可以查看本机预览，原图仍在 iCloud 中，需要时可先在系统照片中下载。', unavailable: '这些项目在本机没有原图或预览，请先在系统照片中下载，再刷新相册。' };
-const availability = { local: '原图在本机', preview: '仅有本地预览', unavailable: '尚未下载' };
-titles.footprints = '旅游足迹';
-descriptions.footprints = '照片拍在哪里，就点亮哪里。看看这些年，你留下了哪些回忆。';
-titles.organize = '内容整理'; descriptions.organize = '按类型、内容和标签找回照片，把清理决定留给自己。';
+const state = { view: location.hash === '#journeys' ? 'journeys' : location.hash === '#cleanup' ? 'cleanup' : location.hash === '#organize' ? 'all' : ['#time-map', '#footprints'].includes(location.hash) ? 'footprints' : 'all', month: '', album: '', q: '', category: '', mediaType: '', cleanupTab: 'pending', mode: 'keyword', photos: [], count: 0, token: '', source: null, phase: '', current: -1, generation: 0, busy: false };
+const titles = {all:'照片', favorites:'收藏', duplicates:'重复照片', cleanup:'清理', footprints:'足迹', journeys:'旅行相册', local:'本地原图', preview:'本地预览', unavailable:'尚未下载'};
+const availability = {local:'原图在本机', preview:'本地预览', unavailable:'尚未下载'};
 const formatNumber = value => Number(value || 0).toLocaleString('zh-CN');
 const node = (tag, className, text) => { const result = document.createElement(tag); if (className) result.className = className; if (text !== undefined) result.textContent = text; return result; };
 const displayDate = value => { if (!value) return '日期不明'; const date = new Date(value); return Number.isNaN(date.valueOf()) ? value : date.toLocaleDateString('zh-CN', { year: 'numeric', month: 'short', day: 'numeric' }); };
-const monthName = value => value === '不详' ? value : new Date(`${value}-01T12:00:00`).toLocaleDateString('zh-CN', { month: 'long' });
 let toastTimer, searchTimer;
 function toast(message) { $('#toast').textContent = message; $('#toast').hidden = false; clearTimeout(toastTimer); toastTimer = setTimeout(() => { $('#toast').hidden = true; }, 4000); }
 async function api(path, data) {
@@ -49,13 +44,12 @@ function card(photo, index) {
   result.append(open, favorite); return result;
 }
 function renderGallery() {
-  if (['journeys', 'footprints'].includes(state.view)) { $('#gallery').hidden = $('#empty').hidden = true; $('#load-more').hidden = true; return; }
+  if (['journeys', 'footprints', 'cleanup'].includes(state.view)) { $('#gallery').hidden = $('#empty').hidden = true; $('#load-more').hidden = true; return; }
   $('#gallery').hidden = false;
   const gallery = $('#gallery'); gallery.replaceChildren(); let group = '', groupNumber = 0;
   state.photos.forEach((photo, index) => {
     if (state.view === 'duplicates' && photo.duplicate !== group) { group = photo.duplicate; groupNumber += 1; const heading = node('div', 'duplicate-heading', `第 ${groupNumber} 组重复照片`); heading.append(node('span', '', '文件内容完全相同')); gallery.append(heading); }
     const element = card(photo, index);
-    if (state.view === 'organize') window.PhotoOrganizer.decorate(element, photo);
     gallery.append(element);
   });
   const count = state.count;
@@ -63,7 +57,7 @@ function renderGallery() {
   $('#load-more').hidden = state.photos.length >= count;
   $('#empty').hidden = count > 0;
   const hasFilters = state.view !== 'all' || state.month || state.album || state.q;
-  $('#clear-filters').hidden = !hasFilters;
+  $('#clear-filters').hidden = !(state.month || state.album || state.q || state.category || state.mediaType || ['local','preview','unavailable'].includes(state.view));
   $('#empty-source').hidden = Boolean(hasFilters) || state.busy;
   if (!count) {
     const error = state.phase === 'error';
@@ -72,59 +66,62 @@ function renderGallery() {
   }
 }
 function renderNavigation(result) {
-  const journeyView = state.view === 'journeys';
-  $('#journey-workbench').hidden = !journeyView;
-  document.querySelectorAll('.photo-only').forEach(element => { element.hidden = journeyView; });
-  document.body.classList.toggle('journey-view', journeyView);
-  const footprintView = state.view === 'footprints';
-  $('#footprint-workbench').hidden = !footprintView;
-  document.body.classList.toggle('footprint-view', footprintView);
-  if (footprintView) document.querySelectorAll('.photo-only').forEach(element => { element.hidden = true; });
-  if (!journeyView) window.PhotoAmap?.deactivate();
-  if (!footprintView) window.PhotoFootprints?.deactivate();
-  $('#organize-workbench').hidden = state.view !== 'organize';
-  document.body.classList.toggle('organize-view', state.view === 'organize');
-  $('#count-all').textContent = formatNumber(result.stats.total); $('#count-favorites').textContent = formatNumber(result.stats.favorites); $('#count-duplicates').textContent = formatNumber(result.stats.duplicates);
-  ['local', 'preview', 'unavailable'].forEach(key => { $(`#stat-${key}`).textContent = formatNumber(result.stats[key]); });
-  $('#view-title').textContent = titles[state.view];
-  $('#view-description').textContent = descriptions[state.view];
-  document.querySelectorAll('[data-view]').forEach(button => { button.classList.toggle('active', button.dataset.view === state.view); });
-  document.querySelectorAll('[data-availability]').forEach(button => { button.classList.toggle('active', button.dataset.availability === state.view); });
-  $('#clear-month').hidden = !state.month;
-  const months = $('#months'); months.replaceChildren(); let year = '';
-  Object.entries(result.months).forEach(([month, count]) => {
-    if (month.slice(0, 4) !== year) { year = month.slice(0, 4); months.append(node('div', 'year-label', year)); }
-    const button = node('button', `month-button${state.month === month ? ' active' : ''}`); button.append(node('span', '', monthName(month)), node('span', '', formatNumber(count)));
-    button.addEventListener('click', () => { state.month = state.month === month ? '' : month; load().catch(showError); }); months.append(button);
+  const libraryView = !['cleanup','footprints','journeys'].includes(state.view);
+  document.body.classList.toggle('cleanup-view', state.view === 'cleanup');
+  document.body.classList.toggle('footprint-view', state.view === 'footprints');
+  document.body.classList.toggle('journey-view', state.view === 'journeys');
+  document.querySelectorAll('.photo-only').forEach(element => { element.hidden = !libraryView; });
+  $('#cleanup-workbench').hidden = state.view !== 'cleanup';
+  $('#footprint-workbench').hidden = state.view !== 'footprints';
+  $('#journey-workbench').hidden = state.view !== 'journeys';
+  $('#travel-tabs').hidden = !['footprints','journeys'].includes(state.view);
+  if (state.view !== 'journeys') window.PhotoAmap?.deactivate();
+  if (state.view !== 'footprints') window.PhotoFootprints?.deactivate();
+  $('#view-title').textContent = titles[state.view] || '照片';
+  $('#count-all').textContent = formatNumber(result.stats.total);
+  $('#count-favorites').textContent = formatNumber(result.stats.favorites);
+  $('#count-duplicates').textContent = formatNumber(result.stats.duplicates);
+  document.querySelectorAll('[data-view],[data-library-view],[data-travel-view]').forEach(button => {
+    const view = button.dataset.view || button.dataset.libraryView || button.dataset.travelView;
+    const active = button.closest('.primary-nav') ? view === 'all' ? libraryView : view === 'footprints' ? ['footprints','journeys'].includes(state.view) : state.view === view : state.view === view;
+    button.classList.toggle('active', active); button.setAttribute('aria-pressed', String(active));
   });
-  const albums = $('#album-filter'), datalist = $('#album-names'); albums.replaceChildren(node('option', '', '全部相册')); albums.firstChild.value = ''; datalist.replaceChildren();
-  Object.entries(result.albums).forEach(([album, count]) => { const option = node('option', '', `${album} (${count})`); option.value = album; albums.append(option); const suggestion = node('option'); suggestion.value = album; datalist.append(suggestion); });
+  const months = $('#month-filter'); months.replaceChildren(node('option','','全部月份')); months.firstChild.value = '';
+  Object.entries(result.months).forEach(([month,count]) => { const option = node('option','',`${month} · ${formatNumber(count)}`); option.value = month; months.append(option); });
+  months.value = state.month;
+  const albums = $('#album-filter'), datalist = $('#album-names'); albums.replaceChildren(node('option','','全部相册')); albums.firstChild.value = ''; datalist.replaceChildren();
+  Object.entries(result.albums).forEach(([album,count]) => { const option = node('option','',`${album} (${count})`); option.value = album; albums.append(option); const hint = node('option'); hint.value = album; datalist.append(hint); });
   albums.value = state.album;
-  state.source = result.source; $('#source-name').textContent = state.source.kind === 'photos' ? '系统照片图库' : '本地文件夹';
+  $('#availability-filter').value = ['local','preview','unavailable'].includes(state.view) ? state.view : 'all';
+  $('#check-duplicates').hidden = state.view !== 'duplicates';
+  state.source = result.source; $('#source-name').textContent = '图库设置';
 }
 function showStatus(status) {
-  state.phase = status.phase; state.busy = ['scanning', 'duplicates'].includes(status.phase);
-  const box = $('#status'); box.className = `status-message${status.phase === 'error' ? ' error' : state.busy ? ' busy' : ' quiet'}`;
-  box.textContent = status.message + (state.busy && status.processed ? ` 已处理 ${formatNumber(status.processed)} 项。` : '');
-  $('#refresh').disabled = state.busy; $('#check-duplicates').disabled = state.busy || !state.photos.length; $('#source-button').disabled = state.busy;
-  $('#updated').textContent = status.updated_at ? `更新于 ${new Date(status.updated_at).toLocaleString('zh-CN')}` : '本地相册';
+  state.phase = status.phase; state.busy = ['scanning','duplicates'].includes(status.phase);
+  const box = $('#status'); box.hidden = !state.busy && status.phase !== 'error' && !(state.view === 'duplicates' && status.duplicates_checked);
+  box.className = `status-message${status.phase === 'error' ? ' error' : ''}`;
+  box.textContent = status.message || '';
+  $('#refresh').disabled = $('#source-button').disabled = state.busy;
+  $('#check-duplicates').disabled = state.busy;
+  $('#updated').textContent = status.updated_at ? `更新于 ${new Date(status.updated_at).toLocaleDateString('zh-CN')}` : '';
 }
-function showError(error) { $('#status').className = 'status-message error'; $('#status').textContent = error.message; }
+function showError(error) { $('#status').hidden = false; $('#status').className = 'status-message error'; $('#status').textContent = error.message; }
 async function load(append = false) {
   const generation = ++state.generation;
-  const params = new URLSearchParams({ view: state.view, month: state.month, album: state.album, q: state.q, limit: '80', offset: String(append ? state.photos.length : 0), ...(state.view === 'organize' ? { category: state.category, media_type: state.mediaType, review: state.review, mode: state.mode, unprocessed: state.unprocessed ? '1' : '' } : {}) });
-  const result = await api(`/api/photos?${params}`);
+  const params = new URLSearchParams({ view: state.view, month: state.month, album: state.album, q: state.q, limit: '80', offset: String(append ? state.photos.length : 0), category: state.category, media_type: state.mediaType, mode: state.mode });
+  const result = state.view === 'cleanup' ? await window.PhotoCleanup.fetchPage(append) : await api(`/api/photos?${params}`);
   if (generation !== state.generation) return;
-  state.photos = append ? [...state.photos, ...result.photos] : result.photos; state.count = result.count;
+  state.photos = append ? [...new Map([...state.photos, ...result.photos].map(photo => [photo.id, photo])).values()] : result.photos; state.count = result.count;
   renderNavigation(result); showStatus(result.status); renderGallery();
   if (state.view === 'journeys' && typeof loadJourneys === 'function') await loadJourneys();
   if (state.view === 'footprints') await window.PhotoFootprints.load();
-  if (state.view === 'organize') await window.PhotoOrganizer.refresh();
+  if (!['cleanup','footprints','journeys'].includes(state.view)) await window.PhotoOrganizer.refresh();
+  if (state.view === 'cleanup') await window.PhotoCleanup.render();
 }
 function renderPhoto() {
   const photo = state.photos[state.current]; if (!photo) return;
   $('#photo-title').textContent = photo.title || photo.filename; $('#photo-date').textContent = displayDate(photo.date);
-  $('#photo-frame').replaceChildren(photoImage(photo, true)); $('#photo-position').textContent = `${state.current + 1} / ${state.photos.length}${state.photos.length < state.count ? '（已载入）' : ''}`;
+  $('#photo-frame').replaceChildren(photoImage(photo, true)); window.PhotoZoom?.reset(); $('#photo-position').textContent = `${state.current + 1} / ${state.photos.length}${state.photos.length < state.count ? '（已载入）' : ''}`;
   $('#previous-photo').disabled = state.current <= 0; $('#next-photo').disabled = state.current >= state.photos.length - 1 && state.photos.length >= state.count;
   $('#photo-availability').textContent = availability[photo.availability];
   const metadata = $('#photo-metadata'); metadata.replaceChildren();
@@ -133,6 +130,8 @@ function renderPhoto() {
   $('#favorite-photo').textContent = photo.favorite ? '★ 已收藏' : '☆ 加入收藏'; $('#favorite-photo').setAttribute('aria-pressed', String(photo.favorite));
   $('#custom-album').value = photo.custom_album; $('#tags').value = photo.custom_tags.join(', '); $('#note').value = photo.note; $('#save-status').textContent = '';
   window.PhotoOrganizer.renderPhoto(photo);
+  $('#cleanup-preview-caption').hidden = state.view !== 'cleanup';
+  $('#cleanup-preview-caption').textContent = `${photo.content_review?.label || photo.filename} · ${photo.content_review?.short_description || photo.content_review?.description || ''}`;
   $('#download-original').hidden = !photo.has_original; $('#download-original').href = `/api/original/${photo.id}`;
   $('#original-help').textContent = photo.has_original ? '保存的是原图副本，源文件保持原样。' : '原图尚未保存在本机，请先在系统照片中下载，再刷新相册。';
 }
@@ -144,12 +143,12 @@ async function nextPhoto(direction) {
 }
 function openSource() { if (!state.source) return; $('#source-kind').value = state.source.kind; $('#source-path').value = state.source.path; $('#source-error').textContent = ''; $('#source-dialog').showModal(); }
 async function refresh(source) { await api('/api/scan', source ? { source } : {}); await load(); }
-document.querySelectorAll('[data-view]').forEach(button => button.addEventListener('click', () => { state.view = button.dataset.view; state.mode = 'keyword'; load().catch(showError); }));
-document.querySelectorAll('[data-availability]').forEach(button => button.addEventListener('click', () => { state.view = state.view === button.dataset.availability ? 'all' : button.dataset.availability; load().catch(showError); }));
+document.querySelectorAll('[data-view],[data-library-view],[data-travel-view]').forEach(button => button.addEventListener('click', () => { state.view = button.dataset.view || button.dataset.libraryView || button.dataset.travelView; state.mode = 'keyword'; load().catch(showError); }));
 $('#search').addEventListener('input', event => { clearTimeout(searchTimer); searchTimer = setTimeout(() => { state.q = event.target.value.trim(); load().catch(showError); }, state.mode === 'semantic' ? 800 : 250); });
 $('#album-filter').addEventListener('change', event => { state.album = event.target.value; load().catch(showError); });
-$('#clear-month').addEventListener('click', () => { state.month = ''; load().catch(showError); });
-$('#clear-filters').addEventListener('click', () => { state.view = 'all'; state.month = state.album = state.q = ''; $('#search').value = ''; load().catch(showError); });
+$('#month-filter').addEventListener('change', event => { state.month = event.target.value; load().catch(showError); });
+$('#availability-filter').addEventListener('change', event => { state.view = event.target.value; load().catch(showError); });
+$('#clear-filters').addEventListener('click', () => { state.view = 'all'; state.month = state.album = state.q = state.category = state.mediaType = ''; $('#search').value = ''; load().catch(showError); });
 $('#load-more').addEventListener('click', async () => { $('#load-more').disabled = true; try { await load(true); } catch (error) { showError(error); } finally { $('#load-more').disabled = false; } });
 $('#refresh').addEventListener('click', () => refresh().catch(showError));
 $('#check-duplicates').addEventListener('click', async () => { try { await api('/api/duplicates', {}); await load(); } catch (error) { showError(error); } });
@@ -162,5 +161,30 @@ $('#photo-dialog').addEventListener('close', () => { state.current = -1; if (sta
 document.addEventListener('keydown', event => { const editing = ['INPUT', 'TEXTAREA', 'SELECT'].includes(document.activeElement.tagName); if ($('#photo-dialog').open && !editing && ['ArrowLeft', 'ArrowRight'].includes(event.key)) { event.preventDefault(); nextPhoto(event.key === 'ArrowLeft' ? -1 : 1).catch(showError); } else if (event.key === '/' && !editing && !$('#source-dialog').open && !$('#photo-dialog').open) { event.preventDefault(); $('#search').focus(); } });
 try { if (localStorage.getItem('local-photo-theme') === 'dark' || (!localStorage.getItem('local-photo-theme') && matchMedia('(prefers-color-scheme: dark)').matches)) document.body.classList.add('dark'); } catch {}
 $('#theme').addEventListener('click', () => { document.body.classList.toggle('dark'); try { localStorage.setItem('local-photo-theme', document.body.classList.contains('dark') ? 'dark' : 'light'); } catch {} });
-async function poll() { try { const result = await api('/api/status'); const changed = result.status.phase !== state.phase || result.status.updated_at !== poll.updated; poll.updated = result.status.updated_at; state.token = result.token; showStatus(result.status); if (changed && !$('#photo-dialog').open) await load(); } catch (error) { showError(error); } finally { setTimeout(poll, state.busy ? 1800 : 10000); } }
-(async () => { try { const status = await api('/api/status'); state.token = status.token; poll.updated = status.status.updated_at; await load(); } catch (error) { showError(error); } poll(); })();
+async function poll() { try { if (window.PhotoCleanup?.isBusy()) return; const result = await api('/api/status'); const changed = result.status.phase !== state.phase || result.status.updated_at !== poll.updated || result.review_revision !== poll.reviewRevision; poll.updated = result.status.updated_at; poll.reviewRevision = result.review_revision; state.token = result.token; showStatus(result.status); if (changed && !$('#photo-dialog').open) await load(); } catch (error) { showError(error); } finally { setTimeout(poll, state.busy ? 1800 : 10000); } }
+(async () => { try { const status = await api('/api/status'); state.token = status.token; poll.updated = status.status.updated_at; poll.reviewRevision = status.review_revision; await load(); } catch (error) { showError(error); } poll(); })();
+
+window.addEventListener('hashchange', () => { const view = {'#journeys':'journeys', '#cleanup':'cleanup', '#organize':'all', '#footprints':'footprints', '#time-map':'footprints'}[location.hash]; if (view && view !== state.view) { state.view = view; load().catch(showError); } });
+
+(() => {
+  let zoom=1;
+  function apply(){
+    const frame=$('#photo-frame'),wrapper=frame.querySelector('.large-image'),image=frame.querySelector('img');
+    $('#photo-zoom-value').textContent=zoom===1?'适应':`${zoom}×`;$('#photo-zoom-out').disabled=zoom<=1;$('#photo-zoom-in').disabled=zoom>=4;
+    if(!wrapper||!image)return;
+    if(zoom===1){wrapper.removeAttribute('style');image.removeAttribute('style');frame.scrollTop=frame.scrollLeft=0;return;}
+    if(!image.naturalWidth||!frame.clientWidth)return;
+    const rect=frame.getBoundingClientRect(),fit=Math.min(rect.width/image.naturalWidth,rect.height/image.naturalHeight);
+    const width=Math.round(image.naturalWidth*fit*zoom),height=Math.round(image.naturalHeight*fit*zoom);
+    const cx=(frame.scrollLeft+frame.clientWidth/2)/Math.max(wrapper.scrollWidth,frame.clientWidth),cy=(frame.scrollTop+frame.clientHeight/2)/Math.max(wrapper.scrollHeight,frame.clientHeight);
+    wrapper.style.cssText=`width:${Math.max(width,frame.clientWidth)}px;height:${Math.max(height,frame.clientHeight)}px;display:flex;align-items:center;justify-content:center;`;
+    image.style.cssText=`width:${width}px;height:${height}px;max-width:none;max-height:none;flex:none;`;
+    frame.scrollLeft=cx*wrapper.scrollWidth-frame.clientWidth/2;frame.scrollTop=cy*wrapper.scrollHeight-frame.clientHeight/2;
+  }
+  function change(amount){zoom=Math.min(4,Math.max(1,zoom+amount));apply();}
+  function reset(){zoom=1;apply();const image=$('#photo-frame img');if(image&&!image.complete)image.addEventListener('load',apply,{once:true});}
+  $('#photo-zoom-in').addEventListener('click',()=>change(.5));$('#photo-zoom-out').addEventListener('click',()=>change(-.5));$('#photo-zoom-fit').addEventListener('click',reset);
+  $('#photo-frame').addEventListener('dblclick',()=>{zoom=zoom===1?2:1;apply();});
+  document.addEventListener('keydown',event=>{if(!$('#photo-dialog').open||['INPUT','TEXTAREA','SELECT'].includes(document.activeElement.tagName))return;if(['+','='].includes(event.key)){event.preventDefault();change(.5);}else if(event.key==='-'){event.preventDefault();change(-.5);}});
+  window.PhotoZoom={reset};
+})();

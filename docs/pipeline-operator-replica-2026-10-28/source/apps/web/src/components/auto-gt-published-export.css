@@ -1,0 +1,7 @@
+.auto-gt-published-export { display: grid; gap: 16px; margin-block: 16px; overflow-wrap: anywhere; }
+.auto-gt-published-export > button { justify-self: start; }
+.auto-gt-export-table { overflow-x: auto; }
+.auto-gt-export-table table { width: 100%; min-width: 420px; border-collapse: collapse; }
+.auto-gt-export-table th, .auto-gt-export-table td, .auto-gt-export-table caption { text-align: start; padding: 12px; border-bottom: 1px solid var(--md-sys-color-outline-variant); }
+.auto-gt-export-table th { white-space: nowrap; }
+.auto-gt-published-export summary { min-height: 48px; display: flex; align-items: center; }

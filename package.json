@@ -10,7 +10,8 @@
     "test:comments": "node scripts/comments-smoke.cjs",
     "photos": "node scripts/local-photos.mjs",
     "photos:setup": "node scripts/local-photos.mjs --setup",
-    "photos:test": "node scripts/local-photos.mjs --test"
+    "photos:test": "node scripts/local-photos.mjs --test",
+    "photos:build-delete": ".local-photos/venv/bin/python local/photos/native/build.py"
   },
   "devDependencies": {
     "artalk": "2.10.0",

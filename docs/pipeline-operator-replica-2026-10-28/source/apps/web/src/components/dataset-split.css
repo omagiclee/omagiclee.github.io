@@ -1,0 +1,9 @@
+.autogt-split { display: grid; gap: 16px; margin-block: 16px; }
+.autogt-split .autogt-table { overflow-x: auto; }
+.autogt-split table { width: 100%; min-width: 480px; border-collapse: collapse; }
+.autogt-split caption, .autogt-split th, .autogt-split td { text-align: start; padding: 12px; border-bottom: 1px solid var(--md-sys-color-outline-variant); }
+.autogt-split details { overflow-wrap: anywhere; }
+.autogt-split summary { min-height: 48px; display: flex; align-items: center; cursor: pointer; }
+.autogt-split > button { justify-self: start; }
+
+.autogt-split th { white-space: nowrap; }

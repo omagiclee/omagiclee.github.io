@@ -38,7 +38,7 @@ async function main() {
   await page.goto(base + '/local-photos/#footprints', { waitUntil: 'domcontentloaded' });
   await page.waitForFunction(() => document.querySelector('#footprint-city-count').textContent === '2');
   assert.equal(await page.locator('html').getAttribute('lang'), 'zh-CN');
-  assert.equal(await page.locator('#view-title').textContent(), '旅游足迹');
+  assert.equal(await page.locator('#view-title').textContent(), '足迹');
   await page.waitForFunction(() => document.querySelector('#footprint-map-status').textContent.includes('已点亮 2 处行政区域'), {}, { timeout: 35000 });
   await page.waitForTimeout(100);
   await page.reload({ waitUntil: 'domcontentloaded' });

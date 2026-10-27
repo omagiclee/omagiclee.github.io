@@ -1,0 +1,8 @@
+.notifications-workspace > header { margin-bottom:.75rem; align-items:center; gap:.5rem; }
+.notifications-workspace > header > div { flex:1; min-width:min-content; max-width:100%; }
+.notifications-workspace > header .md-label-large { position:absolute; width:1px; height:1px; padding:0; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; }
+.notifications-workspace > header h1 { margin-top:0; white-space:nowrap; }
+.notifications-workspace > header .md-body-medium { margin-top:0; font-size:12px; line-height:16px; letter-spacing:var(--md-sys-typescale-body-small-tracking); }
+.notifications-workspace section { min-width:0; }
+.notifications-workspace section h2 { overflow-wrap:anywhere; }
+.notifications-workspace article { overflow-wrap:anywhere; }

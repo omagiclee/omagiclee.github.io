@@ -1,0 +1,9 @@
+import { useState } from "react";
+import { Button } from "../../components/ui/button";
+import { Input } from "../../components/ui/input";
+import { usePlatform, type Task } from "./platform-store";
+import { Field, FormDialog, Message } from "./shared";
+export function AnnotationBatch({task}: {task:Task}) {
+ const {write}=usePlatform();const [open,setOpen]=useState(false);const [mode,setMode]=useState("draft");const [message,setMessage]=useState("");
+ return <><Button className="platform-batch-trigger" aria-label="导入预标注 / 批量修订" variant="outline" onClick={()=>setOpen(true)}>批量导入与修订</Button><Message>{message}</Message><FormDialog open={open} onOpenChange={setOpen} title="导入预标注与批量修订" description="每个样本提供 expectedRevision，最多 100 条。预标注保存为草稿；批量修订提交独立审核。任一条无效时整批不写入。" submitLabel="提交导入" onSubmit={async event=>{const values=new FormData(event.currentTarget);let items:unknown[];try{items=JSON.parse(String(values.get("items")));if(!Array.isArray(items)||!items.length||items.length>100)throw new Error();}catch{return "请输入 1–100 条标注组成的 JSON 数组。";}await write(mode==="draft"?`/tasks/${task.id}/preannotations`:`/tasks/${task.id}/samples/batch-annotation`,{items,...(mode==="draft"?{expectedTaskRevision:task.revision,source:String(values.get("source"))}: {})});setMessage(mode==="draft"?"预标注草稿已导入；请逐条核验后提交审核。":"整批修订已提交审核。");setOpen(false);}}><Field label="导入方式"><select value={mode} onChange={event=>setMode(event.target.value)}><option value="draft">预标注草稿</option><option value="submit">批量修订并提交审核</option></select></Field><Field label="预标注来源"><Input name="source" required={mode==="draft"} maxLength={160} placeholder="模型版本或标注来源"/></Field><Field label="批量标注 JSON"><textarea name="items" required rows={8} maxLength={1000000} placeholder={'[{"sampleId":"实际ID","expectedRevision":1,"output":"描述","label":"规范标签","geometry":{}}]'}/></Field></FormDialog></>;
+}

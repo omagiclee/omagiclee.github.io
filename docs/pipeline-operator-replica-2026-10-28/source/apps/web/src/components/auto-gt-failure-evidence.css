@@ -1,0 +1,11 @@
+.autogt-frozen-evidence { display: grid; gap: 12px; padding-block: 16px; overflow-wrap: anywhere; }
+.autogt-frozen-pair { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+.autogt-frozen-pair figure { min-width: 0; }
+.autogt-frozen-pair figcaption { margin-bottom: 8px; font-size: var(--md-sys-typescale-body-small-size); }
+.autogt-frozen-image { position: relative; width: 100%; }
+.autogt-frozen-image > img { display: block; width: 100%; height: auto; max-height: none; object-fit: contain; }
+.autogt-frozen-roi { position: absolute; pointer-events: none; border: 2px solid var(--md-sys-color-error); background: color-mix(in srgb, var(--md-sys-color-error) 12%, transparent); }
+.autogt-frozen-evidence ol { padding-inline-start: 24px; }
+@media (max-width: 600px) { .autogt-frozen-pair { gap: 8px; } }
+
+.platform-evidence > .autogt-frozen-evidence { grid-column: 1 / -1; }

@@ -48,8 +48,7 @@ async function main() {
     }
     return route.continue();
   });
-  await page.goto(base+'/local-photos/',{waitUntil:'domcontentloaded'});
-  await page.locator('[data-view=journeys]').click();
+  await page.goto(base+'/local-photos/#journeys',{waitUntil:'domcontentloaded'});
   await page.waitForFunction(()=>window.PhotoAmap && document.querySelectorAll('.timeline-moment').length===7);
   await page.waitForFunction(()=>!document.querySelector('#amap-canvas').hidden && document.querySelector('#route-map').hasAttribute('hidden') || document.querySelector('#map-provider-status').textContent.includes('暂时无法加载'),{},{timeout:35000});
   if(await page.locator('#amap-canvas').isHidden())throw new Error('AMap failed to initialize; offline fallback is active.');
@@ -85,9 +84,8 @@ async function main() {
   if(!live){
     const fallback=await browser.newContext(); const page=await fallback.newPage();
     await page.route('https://webapi.amap.com/**',route=>route.abort());
-    await page.goto(base+'/local-photos/',{waitUntil:'domcontentloaded'});
-    await page.locator('[data-view=journeys]').click();
-    await page.waitForFunction(()=>document.querySelector('#map-provider-status').textContent.includes('暂时无法加载'));
+    await page.goto(base+'/local-photos/#journeys',{waitUntil:'domcontentloaded'});
+      await page.waitForFunction(()=>document.querySelector('#map-provider-status').textContent.includes('暂时无法加载'));
     assert.equal(await page.locator('#map-provider').inputValue(),'offline');
     assert(await page.locator('#route-map').isVisible());
     await fallback.close(); console.log('AMap unavailable: offline fallback verified.');
