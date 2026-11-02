@@ -1,7 +1,7 @@
 {{- $id := printf "data-loop-workbench-%d" .Ordinal -}}
 {{- if not (.Page.Scratch.Get "dataLoopWorkbenchAssets") -}}
   {{- .Page.Scratch.Set "dataLoopWorkbenchAssets" true -}}
-  {{- $css := resources.Get "css/data-loop-workbench.scss" | toCSS | minify | fingerprint "sha256" -}}
+  {{- $css := resources.Get "css/data-loop-workbench.scss" | css.Sass (dict "transpiler" "dartsass") | minify | fingerprint "sha256" -}}
   {{- $js := resources.Get "js/data-loop-workbench.js" | minify | fingerprint "sha256" -}}
 <link rel="stylesheet" href="{{ $css.RelPermalink }}" integrity="{{ $css.Data.Integrity }}">
 <script defer src="{{ $js.RelPermalink }}" integrity="{{ $js.Data.Integrity }}"></script>

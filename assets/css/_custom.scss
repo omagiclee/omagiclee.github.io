@@ -1,10 +1,2 @@
-// Project styles; keep theme files unchanged.
-@import "site/base";
-@import "site/article";
-@import "site/taxonomy";
-@import "site/home";
-@import "site/pseudocode";
-
-@import "site/mermaid";
-@import "site/topics";
-@import "site/comments";
+// Keep the theme hook empty: project styles are compiled separately from
+// assets/css/site.scss and appended after the unmodified theme stylesheet.

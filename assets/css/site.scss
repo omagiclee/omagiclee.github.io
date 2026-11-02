@@ -1,0 +1,10 @@
+// Project-owned styles are compiled separately with full Sass diagnostics.
+@use "site/base";
+@use "site/article";
+@use "site/taxonomy";
+@use "site/home";
+@use "site/pseudocode";
+
+@use "site/mermaid";
+@use "site/topics";
+@use "site/comments";

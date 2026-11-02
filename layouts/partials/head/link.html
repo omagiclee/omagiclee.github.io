@@ -29,11 +29,19 @@
     <link rel="feed" href="{{ .RelPermalink }}" type="application/rss+xml" title="{{ $.Site.Title }}">
 {{- end -}}
 
-{{- /* style.min.css */ -}}
-{{- $options := dict "Source" "css/style.scss" "Fingerprint" $fingerprint -}}
-{{- $toCSS := dict "targetPath" "css/style.min.css" "enableSourceMap" (ne hugo.Environment "production") -}}
-{{- $options = dict "Context" . "ToCSS" $toCSS | merge $options -}}
-{{- partial "plugin/style.html" $options -}}
+{{- /* Compile theme and project styles separately so only upstream theme
+      dependency deprecations are quieted. Project diagnostics stay enabled. */ -}}
+{{- $sassOptions := dict "transpiler" "dartsass" "outputStyle" "compressed" "enableSourceMap" (ne hugo.Environment "production") -}}
+{{- $themeOptions := merge (dict "silenceDependencyDeprecations" true) $sassOptions -}}
+{{- $themeCSS := resources.Get "css/theme.scss" | css.Sass $themeOptions -}}
+{{- $siteCSS := resources.Get "css/site.scss" | css.Sass $sassOptions -}}
+{{- $stylesheet := slice $themeCSS $siteCSS | resources.Concat "css/style.min.css" -}}
+{{- $integrity := "" -}}
+{{- with $fingerprint -}}
+    {{- $stylesheet = $stylesheet | fingerprint . -}}
+    {{- $integrity = $stylesheet.Data.Integrity -}}
+{{- end -}}
+<link rel="stylesheet" href="{{ $stylesheet.RelPermalink }}"{{ with $integrity }} integrity="{{ . }}"{{ end }}>
 
 {{- /* Font Awesome */ -}}
 {{- $source := $cdn.fontawesomeFreeCSS | default "lib/fontawesome-free/all.min.css" -}}

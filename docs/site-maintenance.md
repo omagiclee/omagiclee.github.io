@@ -6,6 +6,32 @@
 - Homepage column definitions live in `data/home.toml`. Shared homepage rendering belongs in project partials rather than repeated template markup.
 - Site Sass is split under `assets/css/site/` and assembled by the project asset pipeline.
 
+## Development setup
+
+Use Hugo **0.169.0** with Extended support, **Dart Sass 1.107.1**, Node.js 22.12 or later, and Python 3.11 or later. CI pins Hugo in `.github/workflows/hugo.yaml`; when upgrading Hugo, update that version and run the checks below. The LoveIt theme is already included in the repository.
+
+On macOS, install missing tools with Homebrew and install the locked project packages:
+
+```sh
+brew install hugo python@3.13
+npm ci
+hugo version
+```
+
+Install the [official standalone Dart Sass 1.107.1 binary](https://github.com/sass/dart-sass/releases/tag/1.107.1) outside the checkout and put its executable on PATH. On Mini it is installed under `~/.local/share/dart-sass/1.107.1` and exposed as `~/.local/bin/sass`; `~/.local/bin` is added to the login shell PATH. Verify with `sass --version`. CI downloads the same version and checks its SHA256 before building. The standalone compiler requires no separately installed Dart SDK.
+
+The main stylesheet combines two separately compiled Dart Sass resources: `assets/css/theme.scss` loads the unchanged LoveIt stylesheet as a third-party dependency, and `assets/css/site.scss` loads project styles with `@use`. The theme custom hook is empty so project styles are included once, after the theme. Dependency deprecation diagnostics are quieted only for the theme resource; the project resource and data-loop workbench keep all Sass diagnostics enabled.
+
+An existing supported Node.js installation can be reused. On Mini, Python checks use `python3.13` explicitly because Apple's `/usr/bin/python3` is Python 3.9 and does not include `tomllib`. Where `python3` already resolves to Python 3.11 or later, it can be used instead.
+
+Start the local preview:
+
+```sh
+hugo server --bind 127.0.0.1 --port 1313
+```
+
+Open `http://localhost:1313` on the machine running Hugo.
+
 ## Content conventions
 
 - Use `_index.md` for a branch that contains child pages. Use `index.md` for a leaf page bundle; nested pages below a leaf bundle are treated as resources and will not be published as pages.
@@ -20,13 +46,21 @@ Build with a clean destination so removed drafts and resources cannot survive fr
 
 ```sh
 npm ci
-npm run install:browser
 hugo --environment production --gc --minify --cleanDestinationDir
-python3 scripts/check-site.py public
-npm run test:site -- public
+python3.13 scripts/check-site.py public
+python3.13 scripts/check-local-photos-publication.py public
 ```
 
-The browser smoke tests start their own temporary localhost servers and use Playwright-managed Chrome for Testing in its new headless mode (`channel: 'chromium'`). Playwright is pinned to 1.63.0, matching the local data-flywheel project, so both projects can share the same browser download. Local and CI installation use `--no-shell` to avoid downloading a separate Headless Shell. Tests use isolated browser contexts, without a personal browser profile. A custom isolated browser executable can still be selected with `PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH`; screenshots can be written for visual debugging by setting `SITE_SMOKE_SCREENSHOT_DIR`.
+On macOS with Google Chrome installed, reuse its executable for the browser smoke tests:
+
+```sh
+PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH="/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" \
+  npm run test:site -- public
+```
+
+The tests launch Chrome in headless mode with a temporary user directory and isolated browser contexts. They do not use an existing Chrome profile or session. The smoke tests start their own temporary localhost server. Screenshots can be written for visual debugging by setting `SITE_SMOKE_SCREENSHOT_DIR`.
+
+CI uses Playwright-managed Chrome for Testing with `channel: 'chromium'`. To use that option locally, run `npm run install:browser`, then run `npm run test:site -- public` without the executable override. This download is optional when reusing installed Chrome. Playwright is pinned to 1.63.0; projects needing the same browser revision share the user-level browser cache. The install command uses `--no-shell` to avoid downloading a separate Headless Shell.
 
 ## Private local photo viewer
 
@@ -34,6 +68,6 @@ Run `npm run photos:setup` once, then `npm run photos` to build a separate local
 
 ## Mermaid diagrams
 
-Mermaid is pinned in `package.json` and `package-lock.json` (currently 12.0.0). Run `npm ci` before building or previewing with Hugo. Hugo bundles `assets/js/mermaid.js` locally; the theme's legacy Mermaid CDN and vendored library are not used. The renderer uses the Promise-based API and redraws diagrams when the theme changes. Diagram styles live in `assets/css/site/_mermaid.scss`; wide diagrams scroll within their frame on mobile.
+Mermaid is pinned in `package.json` and `package-lock.json` (currently 12.2.0). Run `npm ci` before building or previewing with Hugo. Hugo bundles `assets/js/mermaid.js` locally; the theme's legacy Mermaid CDN and vendored library are not used. The renderer uses the Promise-based API and redraws diagrams when the theme changes. Diagram styles live in `assets/css/site/_mermaid.scss`; wide diagrams scroll within their frame on mobile.
 
 The `lodash-es` override uses 4.18.1 because Mermaid's parser dependencies pin an older release affected by GHSA-r5fr-rjxr-66jc and GHSA-f23m-r3pf-42rh. Recheck `npm audit` when updating Mermaid, and remove the override once upstream dependencies resolve to a fixed version.
