@@ -5,6 +5,7 @@ const fs = require('node:fs');
 const fsp = require('node:fs/promises');
 const http = require('node:http');
 const path = require('node:path');
+const { spawnSync } = require('node:child_process');
 const { chromium } = require('playwright');
 
 const buildDirectory = path.resolve(process.argv[2] || 'public');
@@ -96,6 +97,13 @@ function assertDescending(dates, label) {
 
 async function main() {
   assert(fs.existsSync(path.join(buildDirectory, 'index.html')), `No static site found at ${buildDirectory}`);
+  const ordering = spawnSync('python3', [path.join(__dirname, 'check-updated-order.py')], {
+    cwd: path.resolve(__dirname, '..'),
+    encoding: 'utf8',
+  });
+  if (ordering.error) throw ordering.error;
+  assert.equal(ordering.status, 0, `Updated-order fixtures failed:\n${ordering.stdout}${ordering.stderr}`);
+  process.stdout.write(ordering.stdout);
   if (screenshotDirectory) await fsp.mkdir(screenshotDirectory, { recursive: true });
 
   const server = await startServer();
@@ -183,12 +191,12 @@ async function main() {
       ]),
     ));
     assert.equal(homeSections['Recommended Posts']?.length, 6, 'Home must show exactly six recommended posts');
-    assert.equal(homeSections['Recent Posts']?.length, 8, 'Home must show eight recent posts');
+    assert.equal(homeSections['Recently Updated']?.length, 8, 'Home must show eight recently updated posts');
     assertDescending(homeSections['Recommended Posts'].map(post => post.date), 'Recommended posts');
-    assertDescending(homeSections['Recent Posts'].map(post => post.date), 'Recent posts');
+    assertDescending(homeSections['Recently Updated'].map(post => post.date), 'Recently updated posts');
     const sectionTitles = await page.locator('.posts-section-title').allTextContents();
-    assert.equal(sectionTitles[0]?.trim(), 'Recommended Posts', 'Recommended posts must be the first home section');
-    assert.equal(sectionTitles[1]?.trim(), 'Recent Posts', 'Recent posts must appear before the topic series');
+    assert.equal(sectionTitles[0]?.trim(), 'Recently Updated', 'Recently updated posts must be the first home section');
+    assert.equal(sectionTitles[1]?.trim(), 'Recommended Posts', 'Recommended posts must follow the recent updates');
     const expectedTagCount = Number(await page.locator('.stat-item[href="/tags/"] .stat-number').textContent());
     assert(Number.isInteger(expectedTagCount) && expectedTagCount > 0, 'Home tag count is invalid');
     const title = page.locator('.posts-section-title').first();

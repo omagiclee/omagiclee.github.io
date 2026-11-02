@@ -1,3 +1,4 @@
+{{- $pages := .RegularPagesRecursive.ByLastmod.Reverse -}}
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
         <title>
@@ -28,15 +29,15 @@
                 {{- . -}}
             </copyright>
         {{- end -}}
-        {{- if not .Date.IsZero -}}
+        {{- range first 1 $pages -}}
             <lastBuildDate>
-                {{- .Date.Format "Mon, 02 Jan 2006 15:04:05 -0700" -}}
+                {{- .Lastmod.Format "Mon, 02 Jan 2006 15:04:05 -0700" -}}
             </lastBuildDate>
         {{- end -}}
         {{- with .OutputFormats.Get "RSS" -}}
         <atom:link href="{{ .Permalink }}" rel="self" type="application/rss+xml" />
         {{- end -}}
-        {{- range .RegularPagesRecursive.ByDate.Reverse | first (.Site.Params.section.rss | default 10) -}}
+        {{- range first (.Site.Params.section.rss | default 10) $pages -}}
             {{- dict "Page" . "Site" .Site | partial "rss/item.html" -}}
         {{- end -}}
     </channel>

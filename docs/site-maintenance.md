@@ -39,6 +39,8 @@ Open `http://localhost:1313` on the machine running Hugo.
 - Keep private interview notes at `draft = true`. Backup files are excluded through Hugo `ignoreFiles`; do not rely on Git ignore rules to stop files under `content/` from being published.
 - Math assets are detected from source content. Set `math = true` or `math = false` in front matter only when an explicit override is needed.
 - The interface language remains English. Set `contentLanguage` in page metadata when a page needs a different content-language declaration.
+- Article discovery uses `Lastmod` descending: the first home section is Recently Updated, followed by recommendations and series; archives, category/tag article lists, related posts and RSS also use modification time. Archive year groups and list dates use that same time. The original publication date and RSS GUID remain unchanged; RSS adds `atom:updated`.
+- Modification time follows the existing Git-first `frontmatter.lastmod` configuration. CI must retain full Git history (`fetch-depth: 0`) so updating an old article places it ahead of older updates. Hand-curated topic navigation keeps its configured weights.
 
 ## Production checks
 
@@ -49,6 +51,7 @@ npm ci
 hugo --environment production --gc --minify --cleanDestinationDir
 python3.13 scripts/check-site.py public
 python3.13 scripts/check-local-photos-publication.py public
+python3.13 scripts/check-updated-order.py
 ```
 
 On macOS with Google Chrome installed, reuse its executable for the browser smoke tests:
@@ -59,6 +62,8 @@ PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH="/Applications/Google Chrome.app/Contents/Ma
 ```
 
 The tests launch Chrome in headless mode with a temporary user directory and isolated browser contexts. They do not use an existing Chrome profile or session. The smoke tests start their own temporary localhost server. Screenshots can be written for visual debugging by setting `SITE_SMOKE_SCREENSHOT_DIR`.
+
+`check-updated-order.py` builds temporary content with deliberately different publication and modification dates. It checks older articles resurfacing, within-day order, nested sections, update-year groups, taxonomy pagination, homepage exclusions, related posts and feed dates without adding fixture articles to the real site. `npm run test:site` also runs it automatically, including in the existing CI workflow.
 
 CI uses Playwright-managed Chrome for Testing with `channel: 'chromium'`. To use that option locally, run `npm run install:browser`, then run `npm run test:site -- public` without the executable override. This download is optional when reusing installed Chrome. Playwright is pinned to 1.63.0; projects needing the same browser revision share the user-level browser cache. The install command uses `--no-shell` to avoid downloading a separate Headless Shell.
 

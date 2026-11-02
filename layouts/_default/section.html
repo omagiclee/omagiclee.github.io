@@ -10,21 +10,19 @@
         {{- else -}}
             <h1 class="visually-hidden">{{ .Title | default (T .Section) | default .Section }}</h1>
         {{- end -}}
-        {{- /* Archives Page - 参考 categories 页面样式，每年只显示部分文章，全部年份显示在同一页，按年份倒序显示 */ -}}
-        {{- if .Pages -}}
-            {{- $pagesByYear := .Pages.GroupByDate "2006" -}}
-            {{- /* GroupByDate 默认已经按最新年份在前排序，这里不再 Reverse */ -}}
+        <p class="archive-sort-note">Sorted by last updated.</p>
+        {{- /* Include articles in nested sections and group them by their update year. */ -}}
+        {{- if .RegularPagesRecursive -}}
+            {{- $pagesByYear := .RegularPagesRecursive.GroupByLastmod "2006" -}}
             {{- range $pagesByYear -}}
                 <h3 class="group-title">{{ .Key }}</h3>
-                {{- $yearPages := .Pages.ByDate.Reverse -}}
+                {{- $yearPages := .Pages.ByLastmod.Reverse -}}
                 {{- range first 5 $yearPages -}}
                     <article class="archive-item">
                         <a href="{{ .RelPermalink }}" class="archive-item-link">
                             {{- .Title | emojify -}}
                         </a>
-                        <span class="archive-item-date">
-                            {{- .Date.Format "01-02" -}}
-                        </span>
+                        <time class="archive-item-date" datetime="{{ .Lastmod.Format "2006-01-02T15:04:05Z07:00" }}" title="Updated on {{ .Lastmod.Format "Jan 2, 2006" }}; published on {{ .PublishDate.Format "Jan 2, 2006" }}">{{ .Lastmod.Format "01-02" }}</time>
                     </article>
                 {{- end -}}
                 {{- if gt (len $yearPages) 5 -}}
@@ -34,9 +32,7 @@
                                 <a href="{{ .RelPermalink }}" class="archive-item-link">
                                     {{- .Title | emojify -}}
                                 </a>
-                                <span class="archive-item-date">
-                                    {{- .Date.Format "01-02" -}}
-                                </span>
+                                <time class="archive-item-date" datetime="{{ .Lastmod.Format "2006-01-02T15:04:05Z07:00" }}" title="Updated on {{ .Lastmod.Format "Jan 2, 2006" }}; published on {{ .PublishDate.Format "Jan 2, 2006" }}">{{ .Lastmod.Format "01-02" }}</time>
                             </article>
                         {{- end -}}
                     </div>

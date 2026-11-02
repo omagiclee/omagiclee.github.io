@@ -6,6 +6,7 @@
         {{- /* 准备数据 */ -}}
         {{- $allPosts := where .Site.RegularPages "Type" "posts" -}}
         {{- $allPosts = where $allPosts "Params.hiddenfromhomepage" "!=" true -}}
+        {{- $allPosts = $allPosts.ByLastmod.Reverse -}}
         {{- $avatar := $profile.avatarURL -}}
 
         {{- /* ===== 两栏布局 ===== */ -}}
@@ -86,14 +87,14 @@
             </div>
 
             <div class="home-col-right">
-                {{- $featured := sort (where $allPosts "Params.featured" true) "Date" "desc" -}}
+                {{- partial "home/posts-section.html" (dict "Title" "Recently Updated" "Pages" $allPosts "Limit" 8 "URL" "/posts/" "LinkLabel" "All Posts") -}}
+                {{- $featured := where $allPosts "Params.featured" true -}}
                 {{- partial "home/posts-section.html" (dict "Title" "Recommended Posts" "Pages" $featured "Limit" 6) -}}
-                {{- partial "home/posts-section.html" (dict "Title" "Recent Posts" "Pages" (sort $allPosts "Date" "desc") "Limit" 8 "URL" "/posts/" "LinkLabel" "All Posts") -}}
                 {{- with .Site.GetPage "/posts/topics" -}}
                     {{- partial "home/topics-section.html" . -}}
                 {{- end -}}
                 {{- range hugo.Data.home.series -}}
-                    {{- $posts := sort (where $allPosts (printf "Params.%s" .taxonomy) "intersect" .terms) "Date" "desc" -}}
+                    {{- $posts := where $allPosts (printf "Params.%s" .taxonomy) "intersect" .terms -}}
                     {{- partial "home/posts-section.html" (dict "Title" .title "Pages" $posts "Limit" 5 "URL" .url) -}}
                 {{- end -}}
             </div>
