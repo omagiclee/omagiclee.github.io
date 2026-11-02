@@ -1,0 +1,267 @@
+{
+  "checked_at": "2026-11-02",
+  "timezone": "Asia/Shanghai",
+  "scope": "中国大陆个人与家庭保险；仅记录公开产品事实，不含个人健康或身份资料。",
+  "policyholder_contracts_reviewed": false,
+  "sources": [
+    {
+      "id": "js26",
+      "title": "江苏医惠保1号2026基础版保障计划",
+      "url": "https://cx-hmb.zkydib.com/js26/#/agreement",
+      "kind": "正式产品保障计划",
+      "verification": "独立浏览器打开基础版保障计划并读取正文",
+      "facts": {
+        "policy_period": [
+          "2026-01-01",
+          "2026-12-31"
+        ],
+        "responsibility_1": {
+          "annual_deductible_cny": 14600,
+          "segmented_rates": [
+            0.5,
+            0.77
+          ],
+          "annual_limit_cny": 1000000
+        },
+        "responsibility_2": {
+          "annual_deductible_cny": 20000,
+          "segmented_rates": [
+            0.55,
+            0.67
+          ],
+          "annual_limit_cny": 1000000
+        },
+        "specified_preexisting_group_rate_reduction_percentage_points": 15,
+        "cross_city_reduced_benefit_multiplier": 0.5
+      },
+      "limitations": [
+        "分项费用范围及限额另核。",
+        "异地长期居住等人员在备案地区就医有例外。",
+        "既往病史分组按计划所列医保待遇记录和连续参保规则认定。"
+      ]
+    },
+    {
+      "id": "js27",
+      "title": "江苏医惠保1号2027基础版及升级版保障计划",
+      "url": "https://cx-hmb.zkydib.com/js27/#/agreement",
+      "kind": "正式产品保障计划",
+      "verification": "独立浏览器逐项读取；未用2026规则推定2027",
+      "facts": {
+        "policy_period": [
+          "2027-01-01",
+          "2027-12-31"
+        ],
+        "adult_annual_premium_cny": {
+          "basic": 158,
+          "upgrade": 258
+        },
+        "upgrade_additions": {
+          "proton_heavy_ion_annual_limit_cny": 600000,
+          "car_t_annual_limit_cny": 200000
+        },
+        "cross_city_reduced_benefit_multiplier": 0.5,
+        "selected_upgrade_responsibilities_loyalty_bonus_percentage_points": 5
+      },
+      "limitations": [
+        "连续参保优惠有参保、未获赔付及非既往病史等条件。",
+        "新增肿瘤治疗责任有独立既往患病及机构、适应症规则。",
+        "产品新增保障不能追溯替代此前年度保单。"
+      ]
+    },
+    {
+      "id": "yancheng_cross_city",
+      "title": "盐医保发〔2025〕2号",
+      "url": "https://www.yancheng.gov.cn/art/2025/3/14/art_13184_4301743.html",
+      "kind": "参保地有效政策",
+      "facts": {
+        "temporary_non_emergency_without_referral_reduction_percentage_points": 20,
+        "promise_filing_supplement_days_in_principle": 15
+      }
+    },
+    {
+      "id": "suzhou_filing",
+      "title": "苏州市异地就医备案指南",
+      "url": "https://ybj.suzhou.gov.cn/szybj/zgylbxdy/202507/c6a409bbeb0a4e0da21a28c27d33841e.shtml",
+      "kind": "医保部门办事指南",
+      "facts": [
+        "异地参保人员在参保地办理至苏州备案。",
+        "江苏医保云支持省内备案；核查审批结果和有效期。"
+      ]
+    },
+    {
+      "id": "yancheng_two_diseases",
+      "title": "盐城医保2026年群众热点诉求回应",
+      "url": "https://ylbzj.yancheng.gov.cn/art/2026/4/2/art_21580_4414525.html",
+      "kind": "医保部门答疑",
+      "facts": [
+        "城乡居民医保有高血压、糖尿病两病门诊用药待遇。",
+        "待遇资格、定点和异地结算须按参保地规则核对。"
+      ]
+    },
+    {
+      "id": "yancheng_care",
+      "title": "2026年度盐城居民医保及长护险参保缴费通告",
+      "url": "https://ylbzj.yancheng.gov.cn/art/2025/10/13/art_32878_4372142.html",
+      "kind": "医保部门通告",
+      "facts": [
+        "列明市区居民医保参保人员同步参加长护险。",
+        "不能以市区安排推定所有县市或个人长护险状态。"
+      ]
+    },
+    {
+      "id": "health_rules",
+      "title": "健康保险管理办法",
+      "url": "https://jrj.beijing.gov.cn/zcfg/gjzcfgn/202204/t20220414_2677434.html",
+      "kind": "政府公开规章文本",
+      "sections": [
+        4,
+        5,
+        20,
+        25,
+        39,
+        41
+      ],
+      "facts": [
+        "长期健康保险可包括含保证续保条款的一年期合同。",
+        "费用补偿型医疗保险适用费用补偿规则。",
+        "保证续保与费率永久固定不是同一个概念。",
+        "组合产品的保险期间及续保须分别说明。"
+      ]
+    },
+    {
+      "id": "cpic_long",
+      "title": "蓝医保两类产品的保险公司介绍",
+      "url": "https://mcdn.cpiccdn.com/c/2026-06-17/1883958.shtml",
+      "kind": "保险公司产品介绍，非个人合同",
+      "facts": [
+        "好医好药长期医疗主险介绍20年保证续保。",
+        "中高端2026与长期医疗是不同产品。"
+      ],
+      "limitations": [
+        "未取得个人核保结论。",
+        "没有把旧公开费率当作当前个人报价。"
+      ]
+    },
+    {
+      "id": "cpic_middle",
+      "title": "蓝医保中高端2026投保细则介绍",
+      "url": "https://m.cpic.com.cn/c/2026-09-04/1894058.shtml",
+      "kind": "保险公司产品介绍，非个人合同",
+      "facts": [
+        "介绍保险期间一年、不保证续保。",
+        "简易健康告知仍需核对全部问询。",
+        "医院、免赔和附加责任按所选方案核实。"
+      ]
+    },
+    {
+      "id": "za_special",
+      "title": "众民保中高端2026特别约定",
+      "url": "https://caerus.zacdn.cn/static/goods/2058988/PTbd1ef8253a704ec0a8019cfc569ac8e9.pdf",
+      "kind": "当前渠道正式附件",
+      "verification": "从当期投保页打开，经保险公司PDF阅读器读取8页特别约定",
+      "facts": {
+        "general_preexisting_waiting_days": 90,
+        "general_medical_first_tier_cny": 20000,
+        "general_medical_first_tier_rate": 0.6,
+        "general_medical_upper_tier_rate": 1,
+        "drug_approval_cutoff_for_general_preexisting": "2026-04-30"
+      },
+      "limitations": [
+        "未按医保身份结算会降低相关赔付比例。",
+        "部分列明疾病有新保折减。",
+        "一般既往症不包括列明严重既往疾病及相关并发症。"
+      ]
+    },
+    {
+      "id": "za_preexisting",
+      "title": "众民保中高端2026严重既往疾病说明",
+      "url": "https://caerus.zacdn.cn/static/goods/2058989/PT2d50f1ddb31c4c17a8680be7f07cdd7c.pdf",
+      "kind": "当前渠道正式附件",
+      "verification": "由投保页打开，在PDF阅读器读取1页说明",
+      "facts": [
+        "列有冠心病、房颤房扑、心功能不全达到约定等级等心血管排除。",
+        "高血压伴指定并发症有专门定义。"
+      ],
+      "limitations": [
+        "某个病名未逐字出现，不能单独作为个人可赔结论。"
+      ]
+    },
+    {
+      "id": "za_terms",
+      "title": "众安个人医疗保险条款互联网2026版A款",
+      "url": "https://caerus.zacdn.cn/static/goods/2059040/PTca504e1c886041839fb233755a8bc8ff.pdf",
+      "kind": "当前渠道正式主条款",
+      "verification": "经投保页打开60页PDF，定向读取第12、14页等相关条款",
+      "registration_number": "C00017932512026012952923",
+      "facts": [
+        "第九条相关人工器官免责项列心脏起搏器等为该项排除的例外。",
+        "第十条明确不保证续保，停售后不再接受投保申请。"
+      ],
+      "limitations": [
+        "器官材料费免责的例外，不等于既往疾病及所有相关治疗均被承保。"
+      ]
+    },
+    {
+      "id": "pa_cancer",
+      "title": "平安终身防癌医疗官网",
+      "url": "https://m.pingan.com/new/product-seo/bbf8e9441698428d81370c6a98bfff05",
+      "kind": "保险公司当期产品介绍",
+      "facts": {
+        "entry_age_max": 70,
+        "waiting_days": 90,
+        "annual_deductible_cny": 0,
+        "main_cancer_medical_renewal": "终身保证续保"
+      },
+      "limitations": [
+        "仍需满足健康及其他投保条件。",
+        "组合中的不同责任不自动具有同一续保承诺。"
+      ]
+    },
+    {
+      "id": "pa_accident",
+      "title": "平安行中老年人意外险官网",
+      "url": "https://www.pingan.com/official/productSeo/b6ad5a21f6dd4fdab6a3308f8fbec952",
+      "kind": "保险公司产品说明",
+      "facts": [
+        "意外医疗、自费医疗、骨折、津贴为不同分项责任。"
+      ],
+      "limitations": [
+        "没有将起售价或某档保额当作个人报价及保证承保。"
+      ]
+    },
+    {
+      "id": "nhsa_care",
+      "title": "2026年国家医保局长期护理保险新闻发布会",
+      "url": "https://www.nhsa.gov.cn/art/2026/3/26/art_14_20034.html",
+      "kind": "国家医保局公开说明",
+      "facts": [
+        "社会长护险用于符合条件的基本生活照护和医疗护理。",
+        "个人待遇仍需参保及评估、服务等条件。"
+      ]
+    }
+  ],
+  "illustrative_calculations": [
+    {
+      "label": "2026基础版责任一的简化算例，非实际个人理赔",
+      "eligible_annual_personal_expense_cny": 20000,
+      "deductible_cny": 14600,
+      "rate": 0.5,
+      "benefit_cny": 2700,
+      "assumptions": [
+        "非既往病史分组",
+        "正常医保结算且符合异地要求",
+        "没有其他补偿和其他责任费用",
+        "未触及其他限制"
+      ],
+      "formula": "(20000-14600)*0.5"
+    }
+  ],
+  "unverified": [
+    "个人医惠保年度和版本",
+    "个人连续投保与既往病史分组",
+    "个人当前病情和完整核保资料",
+    "个人已生效的其他商业保单",
+    "个人正式核保结论和报价"
+  ],
+  "privacy": "无姓名、精确年龄、诊断原文、身份证件、病历、账号、凭据或地址。"
+}
