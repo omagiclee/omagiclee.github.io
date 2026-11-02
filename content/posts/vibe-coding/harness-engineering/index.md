@@ -409,6 +409,6 @@ Anthropic 在 2026 年 3 月的案例中，随着模型能力提升，移除了�
 - [Anthropic — Harness design for long-running application development](https://www.anthropic.com/research/harness-design-long-running-apps)（2026-03-24）。
 - [Anthropic — Beyond permission prompts](https://www.anthropic.com/research/claude-code-sandboxing)（2025-10-20）。
 
-站内可继续阅读：[Codex 配置实战与 Memory 分层]({{< relref "/posts/vibe-coding/codex-subagents-memory/" >}})。
+站内可继续阅读：[生产级数据平台的 AI 开发工作流]({{< relref "/posts/vibe-coding/production-data-platform-ai-workflow/" >}})，了解需求、并行开发、发布与用户验收如何衔接；[Codex 配置实战与 Memory 分层]({{< relref "/posts/vibe-coding/codex-subagents-memory/" >}})提供配置示例。
 
 </details>
