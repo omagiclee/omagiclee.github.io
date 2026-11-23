@@ -8,7 +8,7 @@ url = "/tags/chain-of-thought/"
 title = "Instruction Tuning"
 taxonomy = "tags"
 terms = ["Instruction Tuning", "Instruct Tuning"]
-url = "/posts/"
+url = "/tags/instruction-tuning/"
 
 [[series]]
 title = "GPTs 系列"

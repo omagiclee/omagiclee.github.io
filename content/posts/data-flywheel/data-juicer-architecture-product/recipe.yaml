@@ -1,0 +1,15 @@
+project_name: dj-blog-example
+dataset_path: ./input.jsonl
+export_path: ./outputs/result.jsonl
+executor_type: default
+np: 1
+open_tracer: true
+trace_num: 10
+trace_keys: [sample_id]
+keep_stats_in_res_ds: true
+process:
+  - whitespace_normalization_mapper: {}
+  - text_length_filter:
+      min_len: 10
+      max_len: 1000
+  - document_deduplicator: {}

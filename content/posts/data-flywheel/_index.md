@@ -10,7 +10,11 @@ tags = []
 
 这个专题研究数据如何产生、流转和进入模型，又如何依据评测与真实反馈继续迭代。文章区分公开研究、现有代码和设计建议，保留每项结论的依据与适用范围。
 
+单个系统的架构与产品拆解可阅读 [Data-Juicer 架构与产品设计]({{< relref "/posts/data-flywheel/data-juicer-architecture-product/index.md" >}})，了解数据配方、算子与执行器如何协作，以及 Playground、Agents 和 Sandbox 的真实交互与能力边界。
+
 建议先读[数据闭环平台深度研究：数据算法、GT、检索挖掘与多轮迭代]({{< relref "/posts/data-flywheel/closed-loop-platform-research/index.md" >}})。它按模块拆解 LLM、VLM、具身、智驾、世界模型与空间智能中的代表方案，再汇总架构、产品工作台和第一轮到后续迭代的流程。
+
+平台产品的专项研究见[视觉数据平台专题：FiftyOne、Voxel51 与 Encord]({{< relref "/posts/data-flywheel/fiftyone-voxel51-encord/_index.md" >}})。专题入口提供产品关系与横向比较，三篇独立文章分别研究开源底座、商业团队平台与策展标注系统。
 
 工程实践从**流水线编排与算子插件**开始：开发者交付可复用的处理能力，使用者将能力组合成流程，运行人员核对版本、执行状态和数据产物。
 

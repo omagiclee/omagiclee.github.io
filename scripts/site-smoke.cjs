@@ -173,6 +173,17 @@ async function main() {
       dimensions.scrollWidth <= dimensions.clientWidth + 1,
       `${pathname} overflows at ${width}px (${dimensions.scrollWidth}px > ${dimensions.clientWidth}px): ${JSON.stringify(dimensions.offenders)}`,
     );
+    if (pathname === '/') {
+      const layout = await page.evaluate(() => ({
+        articleWidth: document.querySelector('.home-col-right').getBoundingClientRect().width,
+        firstTitleTop: document.querySelector('.post-row-title').getBoundingClientRect().top,
+        articleBottom: document.querySelector('.home-col-right').getBoundingClientRect().bottom,
+        tagsTop: document.querySelector('.profile-tags-section').getBoundingClientRect().top,
+      }));
+      if (width >= 961) assert(layout.articleWidth >= 600, `Home article column is too narrow at ${width}px: ${layout.articleWidth}px`);
+      else assert(layout.tagsTop >= layout.articleBottom, `Home tags appear before the articles at ${width}px`);
+      if (width === 390) assert(layout.firstTitleTop <= 360, `Home articles start too low on mobile: ${layout.firstTitleTop}px`);
+    }
     if (screenshotDirectory && pathname === '/') {
       await page.screenshot({ path: path.join(screenshotDirectory, `home-${width}.png`), fullPage: true });
     }
@@ -190,13 +201,29 @@ async function main() {
         })),
       ]),
     ));
-    assert.equal(homeSections['Recommended Posts']?.length, 6, 'Home must show exactly six recommended posts');
+    assert.equal(homeSections['Recommended Posts']?.length, 3, 'Home must show exactly three recommended posts');
     assert.equal(homeSections['Recently Updated']?.length, 8, 'Home must show eight recently updated posts');
     assertDescending(homeSections['Recommended Posts'].map(post => post.date), 'Recommended posts');
     assertDescending(homeSections['Recently Updated'].map(post => post.date), 'Recently updated posts');
     const sectionTitles = await page.locator('.posts-section-title').allTextContents();
     assert.equal(sectionTitles[0]?.trim(), 'Recently Updated', 'Recently updated posts must be the first home section');
     assert.equal(sectionTitles[1]?.trim(), 'Recommended Posts', 'Recommended posts must follow the recent updates');
+    assert.deepEqual(sectionTitles.map(title => title.trim()), ['Recently Updated', 'Recommended Posts', 'Topics', 'Series'],
+      'Home topics and compact series navigation must follow the article sections');
+    const summaries = page.locator('.posts-section-featured .post-row-summary');
+    assert.equal(await summaries.count(), 3, 'Every recommended post must include an introduction');
+    for (const summary of await summaries.allTextContents()) assert(summary.trim(), 'A recommended post has an empty introduction');
+    assert.equal(await page.locator('.posts-section:first-child .post-row-summary').count(), 0,
+      'Recently updated posts must keep their compact layout');
+    assert.equal(await page.locator('.dashboard-tag').count(), 8, 'Home must show eight popular tags');
+    const seriesLinks = page.locator('.series-link');
+    assert.equal(await seriesLinks.count(), 8, 'Home must retain all eight series links');
+    assert.equal(await seriesLinks.filter({ hasText: 'Instruction Tuning' }).getAttribute('href'), '/tags/instruction-tuning/',
+      'Instruction Tuning must open its own tag archive');
+    for (const href of await seriesLinks.evaluateAll(links => links.map(link => link.getAttribute('href')))) {
+      const response = await page.request.get(`${server.baseURL}${href}`);
+      assert(response.ok(), `Home series link is broken: ${href}`);
+    }
     const expectedTagCount = Number(await page.locator('.stat-item[href="/tags/"] .stat-number').textContent());
     assert(Number.isInteger(expectedTagCount) && expectedTagCount > 0, 'Home tag count is invalid');
     const title = page.locator('.posts-section-title').first();
@@ -206,6 +233,9 @@ async function main() {
     await page.waitForTimeout(500);
     const darkTitleColor = await title.evaluate(element => getComputedStyle(element).color);
     assert.notEqual(darkTitleColor, lightTitleColor, 'Homepage title color did not change in dark mode');
+    if (screenshotDirectory) {
+      await page.screenshot({ path: path.join(screenshotDirectory, 'home-1440-dark.png'), fullPage: true });
+    }
     await page.locator('#header-desktop .theme-switch').click();
     await page.locator('body[theme="light"]').waitFor({ state: 'attached' });
     await assertNoRuntimeErrors('home sections');
@@ -221,7 +251,25 @@ async function main() {
     for (const width of [390, 768, 1440]) {
       for (const pathname of responsivePages) await assertNoOverflow(pathname, width);
     }
+    for (const width of [600, 601, 960, 961, 1024]) await assertNoOverflow('/', width);
     console.log('✓ responsive overflow checks');
+
+    await visit('/', { width: 1440, height: 900 });
+    const firstPost = page.locator('.post-row').first();
+    const firstPostURL = await firstPost.getAttribute('href');
+    await firstPost.focus();
+    const focusStyle = await firstPost.evaluate(element => {
+      const style = getComputedStyle(element);
+      return { width: parseFloat(style.outlineWidth), style: style.outlineStyle };
+    });
+    assert(focusStyle.width > 0 && focusStyle.style !== 'none', 'A focused homepage article has no visible outline');
+    await Promise.all([
+      page.waitForURL(`${server.baseURL}${firstPostURL}`),
+      page.keyboard.press('Enter'),
+    ]);
+    assert(await page.locator('h1').first().isVisible(), 'Opening a home article with the keyboard did not show the article');
+    await assertNoRuntimeErrors('home keyboard navigation');
+    console.log('✓ homepage keyboard navigation');
 
     await visit('/tags/', { width: 1440, height: 900 });
     const tags = page.locator('.taxonomy-tag-list .taxonomy-tag');

@@ -3,8 +3,16 @@
 ## Source boundaries
 
 - Project-level `layouts/` and `assets/` are the authoritative templates and frontend sources. Do not edit `themes/LoveIt/` or run the theme compile task to change site JavaScript; theme updates can overwrite those files.
-- Homepage column definitions live in `data/home.toml`. Shared homepage rendering belongs in project partials rather than repeated template markup.
+- Homepage series navigation is configured in `data/home.toml`. Shared homepage rendering belongs in project partials rather than repeated template markup.
 - Site Sass is split under `assets/css/site/` and assembled by the project asset pipeline.
+
+## Homepage layout
+
+The homepage has an independent 1100px maximum width with a 240px profile column and a 40px column gap. At 960px and below it becomes one column: compact profile, articles, then the eight most-used post tags. Article-page widths are defined separately by the theme.
+
+The article column shows eight Recently Updated posts, three Recommended Posts, weighted Topics, and compact Series navigation. Recommendations use the shared posts partial with `ShowDescription = true`; the introduction uses the page description or a plain-text summary, limited visually to two lines. Other article lists keep descriptions off by default. Series links remain configured in `data/home.toml`.
+
+The browser smoke tests check the mobile article entry position, desktop reading width, layout breakpoints, series destinations, dark mode and keyboard navigation. Set `SITE_SMOKE_SCREENSHOT_DIR` to retain homepage screenshots.
 
 ## Development setup
 

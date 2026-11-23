@@ -1,103 +1,86 @@
 {{- define "content" -}}
     {{- $profile := .Site.Params.home.profile -}}
+    {{- $allPosts := where .Site.RegularPages "Type" "posts" -}}
+    {{- $allPosts = where $allPosts "Params.hiddenfromhomepage" "!=" true -}}
+    {{- $allPosts = $allPosts.ByLastmod.Reverse -}}
 
     <div class="page home">
         <h1 class="visually-hidden">{{ .Site.Title }}</h1>
-        {{- /* 准备数据 */ -}}
-        {{- $allPosts := where .Site.RegularPages "Type" "posts" -}}
-        {{- $allPosts = where $allPosts "Params.hiddenfromhomepage" "!=" true -}}
-        {{- $allPosts = $allPosts.ByLastmod.Reverse -}}
-        {{- $avatar := $profile.avatarURL -}}
-
-        {{- /* ===== 两栏布局 ===== */ -}}
         <div class="home-two-columns">
-            {{- /* ===== 左栏：Profile + Tags ===== */ -}}
-            <div class="home-col-left">
-                {{- /* 头像 + 名字 + 签名 + 个人信息（一体化） */ -}}
-                <div class="profile-card">
-                    {{- if $avatar -}}
+            <aside class="profile-card" aria-label="About the author">
+                <div class="profile-intro">
+                    {{- with $profile.avatarURL -}}
                         <a href="/about/" class="profile-avatar-link" title="About Me">
-                            <img src="{{ $avatar }}" alt="Naifan Li" class="profile-avatar-img" width="88" height="88" />
+                            <img src="{{ . }}" alt="Naifan Li" class="profile-avatar-img" width="88" height="88" />
                         </a>
                     {{- end -}}
-                    {{- with $profile.subtitle -}}
-                        <div class="profile-subtitle">
-                            {{- if $profile.typeit -}}
-                                {{- $id := dict "Content" . "Scratch" $.Scratch | partial "function/id.html" -}}
-                                <span id="{{ $id }}" class="typeit"></span>
-                                {{- dict $id (slice $id) | dict "typeitMap" | merge ($.Scratch.Get "this") | $.Scratch.Set "this" -}}
-                            {{- else -}}
-                                {{- . | safeHTML -}}
-                            {{- end -}}
-                        </div>
-                    {{- end -}}
-
-                    {{- with $profile.bio -}}
-                        <div class="profile-bio">
-                            <div class="profile-bio-text">
-                                {{- . | safeHTML -}}
+                    <div class="profile-identity">
+                        {{- with $profile.bio -}}
+                            <div class="profile-bio-text">{{ . | safeHTML }}</div>
+                        {{- end -}}
+                        {{- with $profile.subtitle -}}
+                            <div class="profile-subtitle">
+                                {{- if $profile.typeit -}}
+                                    {{- $id := dict "Content" . "Scratch" $.Scratch | partial "function/id.html" -}}
+                                    <span id="{{ $id }}" class="typeit"></span>
+                                    {{- dict $id (slice $id) | dict "typeitMap" | merge ($.Scratch.Get "this") | $.Scratch.Set "this" -}}
+                                {{- else -}}
+                                    {{- . | safeHTML -}}
+                                {{- end -}}
                             </div>
-                            {{- with $profile.techTags -}}
-                                <div class="profile-tech-tags">
-                                    {{- range . -}}
-                                        <span class="tech-tag">{{ . }}</span>
-                                    {{- end -}}
-                                </div>
-                            {{- end -}}
-                        </div>
-                    {{- end -}}
-
-                    <div class="profile-icons">
-                        <button type="button" class="profile-icon profile-icon-wechat" aria-label="Copy WeChat ID: omagiclee" onclick="navigator.clipboard.writeText('omagiclee').then(function(){var t=document.getElementById('wechat-toast');t.classList.add('show');setTimeout(function(){t.classList.remove('show')},2000)})"><i class="fab fa-weixin" aria-hidden="true"></i><span id="wechat-toast" class="wechat-copied-toast" aria-live="polite">omagiclee<br><small>copied!</small></span></button>
-                        <a href="mailto:omagiclee@gmail.com" class="profile-icon" title="omagiclee@gmail.com"><i class="far fa-envelope"></i></a>
-                        <a href="https://github.com/omagiclee" class="profile-icon" title="GitHub: omagiclee" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
-                        <a href="/index.xml" class="profile-icon" title="RSS Feed" target="_blank" rel="noopener noreferrer"><i class="fas fa-rss"></i></a>
-                    </div>
-
-                    <div class="landing-stats">
-                        <a href="/posts/" class="stat-item">
-                            <span class="stat-number">{{ len $allPosts }}</span>
-                            <span class="stat-label">Posts</span>
-                        </a>
-                        <a href="/tags/" class="stat-item">
-                            <span class="stat-number">{{ len .Site.Taxonomies.tags }}</span>
-                            <span class="stat-label">Tags</span>
-                        </a>
-                        <a href="/categories/" class="stat-item">
-                            <span class="stat-number">{{ len .Site.Taxonomies.categories }}</span>
-                            <span class="stat-label">Categories</span>
-                        </a>
-                    </div>
-                </div>
-
-                {{- /* Post Tags -- 与上方个人 focus tags 区分 */ -}}
-                <div class="profile-tags-section">
-                    <h3 class="section-title">Post Tags</h3>
-                    <div class="dashboard-tags">
-                        {{- range first 12 .Site.Taxonomies.tags.ByCount -}}
-                            <a href="{{ .Page.RelPermalink }}" class="dashboard-tag">
-                                {{ .Page.Title }} <sup>{{ .Count }}</sup>
-                            </a>
                         {{- end -}}
                     </div>
-                    <div class="section-footer">
-                        <a href="/tags/">All Tags &rarr;</a>
-                    </div>
                 </div>
-            </div>
+                {{- with $profile.techTags -}}
+                    <div class="profile-tech-tags">
+                        {{- range . -}}
+                            <span class="tech-tag">{{ . }}</span>
+                        {{- end -}}
+                    </div>
+                {{- end -}}
+                <div class="profile-icons">
+                    <button type="button" class="profile-icon profile-icon-wechat" aria-label="Copy WeChat ID: omagiclee" onclick="navigator.clipboard.writeText('omagiclee').then(function(){var t=document.getElementById('wechat-toast');t.classList.add('show');setTimeout(function(){t.classList.remove('show')},2000)})"><i class="fab fa-weixin" aria-hidden="true"></i><span id="wechat-toast" class="wechat-copied-toast" aria-live="polite">omagiclee<br><small>copied!</small></span></button>
+                    <a href="mailto:omagiclee@gmail.com" class="profile-icon" title="omagiclee@gmail.com" aria-label="Email"><i class="far fa-envelope" aria-hidden="true"></i></a>
+                    <a href="https://github.com/omagiclee" class="profile-icon" title="GitHub: omagiclee" aria-label="GitHub" target="_blank" rel="noopener noreferrer"><i class="fab fa-github" aria-hidden="true"></i></a>
+                    <a href="/index.xml" class="profile-icon" title="RSS Feed" aria-label="RSS Feed" target="_blank" rel="noopener noreferrer"><i class="fas fa-rss" aria-hidden="true"></i></a>
+                </div>
+                <div class="landing-stats">
+                    <a href="/posts/" class="stat-item">
+                        <span class="stat-number">{{ len $allPosts }}</span>
+                        <span class="stat-label">Posts</span>
+                    </a>
+                    <a href="/tags/" class="stat-item">
+                        <span class="stat-number">{{ len .Site.Taxonomies.tags }}</span>
+                        <span class="stat-label">Tags</span>
+                    </a>
+                    <a href="/categories/" class="stat-item">
+                        <span class="stat-number">{{ len .Site.Taxonomies.categories }}</span>
+                        <span class="stat-label">Categories</span>
+                    </a>
+                </div>
+            </aside>
 
             <div class="home-col-right">
                 {{- partial "home/posts-section.html" (dict "Title" "Recently Updated" "Pages" $allPosts "Limit" 8 "URL" "/posts/" "LinkLabel" "All Posts") -}}
                 {{- $featured := where $allPosts "Params.featured" true -}}
-                {{- partial "home/posts-section.html" (dict "Title" "Recommended Posts" "Pages" $featured "Limit" 6) -}}
+                {{- partial "home/posts-section.html" (dict "Title" "Recommended Posts" "Pages" $featured "Limit" 3 "ShowDescription" true) -}}
                 {{- with .Site.GetPage "/posts/topics" -}}
                     {{- partial "home/topics-section.html" . -}}
                 {{- end -}}
-                {{- range hugo.Data.home.series -}}
-                    {{- $posts := where $allPosts (printf "Params.%s" .taxonomy) "intersect" .terms -}}
-                    {{- partial "home/posts-section.html" (dict "Title" .title "Pages" $posts "Limit" 5 "URL" .url) -}}
-                {{- end -}}
+                {{- partial "home/series-section.html" hugo.Data.home.series -}}
             </div>
+
+            <nav class="profile-tags-section" aria-labelledby="home-tags-title">
+                <h2 class="section-title" id="home-tags-title">Post Tags</h2>
+                <div class="dashboard-tags">
+                    {{- range first 8 .Site.Taxonomies.tags.ByCount -}}
+                        <a href="{{ .Page.RelPermalink }}" class="dashboard-tag">
+                            {{ .Page.Title }} <sup>{{ .Count }}</sup>
+                        </a>
+                    {{- end -}}
+                </div>
+                <div class="section-footer"><a href="/tags/">All Tags &rarr;</a></div>
+            </nav>
         </div>
     </div>
 {{- end -}}

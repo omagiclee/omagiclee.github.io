@@ -1,0 +1,12 @@
+{{- if . -}}
+<section class="posts-section home-series">
+    <h2 class="posts-section-title" id="home-series-title">Series</h2>
+    <nav class="series-links" aria-labelledby="home-series-title">
+        {{- range . -}}
+        <a class="series-link" href="{{ .url | relURL }}">
+            <span>{{ .title }}</span><span aria-hidden="true">&rarr;</span>
+        </a>
+        {{- end -}}
+    </nav>
+</section>
+{{- end -}}

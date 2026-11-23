@@ -1,6 +1,6 @@
 {{- if .Sections -}}
 <section class="posts-section home-topics">
-    <h2 class="posts-section-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+    <h2 class="posts-section-title"><a href="{{ .RelPermalink }}">Topics</a></h2>
     <div class="topic-cards">
         {{- range .Sections.ByWeight -}}
         <a class="topic-card" href="{{ .RelPermalink }}">

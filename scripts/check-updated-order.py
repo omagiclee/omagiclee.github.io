@@ -102,7 +102,7 @@ def check():
         home = read("/")
         assert home.section_titles[:2] == ["Recently Updated", "Recommended Posts"], home.section_titles
         assert home.sections["Recently Updated"] == HOME_ORDER, home.sections
-        assert home.sections["Recommended Posts"] == HOME_ORDER, home.sections
+        assert home.sections["Recommended Posts"] == HOME_ORDER[:3], home.sections
         for href in HOME_ORDER:
             modified = FIXTURES[href.removeprefix("/posts/").rstrip("/")][1]
             assert dt.datetime.fromisoformat(home.times[href]) == dt.datetime.fromisoformat(modified), home.times
