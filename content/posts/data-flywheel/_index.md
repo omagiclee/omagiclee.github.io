@@ -18,7 +18,7 @@ tags = []
 
 工程实践从**流水线编排与算子插件**开始：开发者交付可复用的处理能力，使用者将能力组合成流程，运行人员核对版本、执行状态和数据产物。
 
-多人使用 AI 开发时，可参考[多人用 AI 开发数据飞轮平台，项目文档怎么写？]({{< relref "/posts/data-flywheel/ai-native-docs/index.md" >}})，看一次流水线改动怎样从需求走到验收，又怎样交给下一位同事。
+多人使用 AI 开发时，可参考[多人用 AI 开发数据飞轮平台，项目文档怎么写？]({{< relref "/posts/data-flywheel/ai-native-docs/index.md" >}})，看一次日期筛选改动怎样从需求走到验收，又怎样交给下一位同事。
 
 第一份文档是[流水线编排与算子插件需求文档草案]({{< relref "/posts/data-flywheel/pipeline-operator-requirements/index.md" >}})，供产品与工程共同确认范围。后续设计和交付记录应引用其中的需求与验收编号。
 
