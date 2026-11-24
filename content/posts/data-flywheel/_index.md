@@ -18,6 +18,8 @@ tags = []
 
 工程实践从**流水线编排与算子插件**开始：开发者交付可复用的处理能力，使用者将能力组合成流程，运行人员核对版本、执行状态和数据产物。
 
+多人使用 AI 开发时，可参考[AI 全流程开发的数据飞轮平台，docs 应该怎么组织？]({{< relref "/posts/data-flywheel/ai-native-docs/index.md" >}})，了解需求到 Review 的变更包、长期项目知识与跨会话交接怎样分层。
+
 第一份文档是[流水线编排与算子插件需求文档草案]({{< relref "/posts/data-flywheel/pipeline-operator-requirements/index.md" >}})，供产品与工程共同确认范围。后续设计和交付记录应引用其中的需求与验收编号。
 
 进一步的[流水线与算子插件设计评审]({{< relref "/posts/data-flywheel/pipeline-plugin-design-review/index.md" >}})结合 DeepSeek Harness、ComfyUI 和数据闭环平台，讨论前后端改进、执行契约与分阶段验收。
