@@ -267,7 +267,7 @@ async function main() {
       page.waitForURL(`${server.baseURL}${firstPostURL}`),
       page.keyboard.press('Enter'),
     ]);
-    assert(await page.locator('h1').first().isVisible(), 'Opening a home article with the keyboard did not show the article');
+    await page.getByRole('heading', { level: 1 }).first().waitFor({ state: 'visible' });
     await assertNoRuntimeErrors('home keyboard navigation');
     console.log('✓ homepage keyboard navigation');
 
