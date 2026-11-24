@@ -20,8 +20,6 @@ tags = []
 
 多人使用 AI 开发时，可参考[多人用 AI 开发数据飞轮平台，项目文档怎么写？]({{< relref "/posts/data-flywheel/ai-native-docs/index.md" >}})，看一次流水线改动怎样从需求走到验收，又怎样交给下一位同事。
 
-从协作问题出发，则可以读[换一个人、开一个新会话，项目还能接着做吗？]({{< relref "/posts/data-flywheel/ai-dev-team-handoff/index.md" >}})：为什么会反复对齐、哪些信息值得进仓库，以及怎样判断文档有没有减少返工。
-
 第一份文档是[流水线编排与算子插件需求文档草案]({{< relref "/posts/data-flywheel/pipeline-operator-requirements/index.md" >}})，供产品与工程共同确认范围。后续设计和交付记录应引用其中的需求与验收编号。
 
 进一步的[流水线与算子插件设计评审]({{< relref "/posts/data-flywheel/pipeline-plugin-design-review/index.md" >}})结合 DeepSeek Harness、ComfyUI 和数据闭环平台，讨论前后端改进、执行契约与分阶段验收。
