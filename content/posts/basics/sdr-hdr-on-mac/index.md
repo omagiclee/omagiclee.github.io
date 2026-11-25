@@ -119,7 +119,11 @@ flowchart TB
 
 </details>
 
-验证修复的最短路径是让 WebKit 在创建底图缓冲区时传入原有 `colorSpace`，在自编译的 MiniBrowser 里用同一组合成色块做前后对照。**补标签能修好独立探针，不等于已验证改过的浏览器**。该问题也不同于 WebKit 修过的增益图输出意外降到 8-bit，本次探针目标实际为 `RGhA`。结果不外推到其他 Safari 版本、Chrome、sRGB 基图、单通道增益图和其他载体。 [WebKit 运行开发构建](https://webkit.org/running-webkit/) · [WebKit 的 8-bit 输出修复](https://github.com/WebKit/WebKit/commit/dfcca6f9900ac6564be76443848bf518bf8c4bf2)
+### 把一行补丁编进 WebCore 再复测
+
+在对应发行标签上，只改了创建底图缓冲区的调用，把已有的 `colorSpace` 传进去。用同一测试程序分别加载**系统原版 WebCore**和**实际编译出的修复版 WebCore**，调用两边同一个 `ShareableGainMap::applyGainMapToBaseImage`，而不是再次模拟这条路径。系统版的红块 G/R 和绿块 R/G 是 `0.2378`、`0.3235`，修复版是 `0.1756`、`0.1669`，两边最亮灰块都为 `3.9947`。这验证了实际引擎的重建输出；它不是修复版窗口的 HDR 截图，也没有替换系统 Safari。 [WebKit 运行开发构建](https://webkit.org/running-webkit/)
+
+这与 WebKit 已修过的增益图输出意外降到 8-bit 不同，本次探针目标实际为 `RGhA`。结果不外推到其他 Safari 版本、Chrome、sRGB 基图、单通道增益图和其他载体。 [WebKit 的 8-bit 输出修复](https://github.com/WebKit/WebKit/commit/dfcca6f9900ac6564be76443848bf518bf8c4bf2)
 
 ## 3. 拿这个案例理解文件到屏幕的五层 {#hdr-display-pipeline}
 
