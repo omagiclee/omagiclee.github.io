@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 772 459" width="772" height="459" role="img" aria-labelledby="title note">
+<title id="title">SDR 照片真机前台窗口的色差</title><desc id="note">在两份各有 24 格的 SDR PNG 色板中比较实际应用窗口的最大线性 P3 单通道绝对差。以左侧应用配对和颜色区分 sRGB 的统一 ICC SDR PNG 读数与 Display P3 原始 Float16 读数。</desc>
+<rect width="772" height="459" rx="18" fill="#f8fafc"/>
+<g font-family="system-ui,-apple-system,sans-serif">
+<text x="27" y="45" fill="#103452" font-size="23" font-weight="650">SDR 照片：真机前台应用有小色差，灰阶接近</text>
+<text x="27" y="75" fill="#365570" font-size="16">每组固定源文件 · 24 色块 · 线性 Display P3 最大单通道差</text>
+<rect x="28" y="100" width="13" height="13" rx="2" fill="#326ca0"/><text x="48" y="112" fill="#234463" font-size="15">sRGB · 同 ICC SDR PNG</text>
+<rect x="279" y="100" width="13" height="13" rx="2" fill="#bf601d"/><text x="299" y="112" fill="#234463" font-size="15">Display P3 · 原始 Float16</text>
+<path d="M260.0,130 V330" stroke="#d6e1ee" stroke-width="1"/>
+<text x="260.0" y="352" font-size="14" fill="#365570" text-anchor="middle">0.000</text>
+<path d="M366.25,130 V330" stroke="#d6e1ee" stroke-width="1"/>
+<text x="366.25" y="352" font-size="14" fill="#365570" text-anchor="middle">0.003</text>
+<path d="M472.5,130 V330" stroke="#d6e1ee" stroke-width="1"/>
+<text x="472.5" y="352" font-size="14" fill="#365570" text-anchor="middle">0.006</text>
+<path d="M578.75,130 V330" stroke="#d6e1ee" stroke-width="1"/>
+<text x="578.75" y="352" font-size="14" fill="#365570" text-anchor="middle">0.009</text>
+<path d="M685.0,130 V330" stroke="#d6e1ee" stroke-width="1"/>
+<text x="685.0" y="352" font-size="14" fill="#365570" text-anchor="middle">0.012</text>
+<text x="28" y="164" font-size="17" fill="#234463">Chrome ↔ Safari</text>
+<rect x="260" y="145" width="351.00750000000005" height="14" rx="3" fill="#326ca0"/>
+<text x="618.0" y="157" font-size="15" font-weight="600" fill="#326ca0">0.0099</text>
+<rect x="260" y="166" width="190.25833333333335" height="14" rx="3" fill="#bf601d"/>
+<text x="457.3" y="178" font-size="15" font-weight="600" fill="#bf601d">0.0054</text>
+<text x="28" y="228" font-size="17" fill="#234463">Chrome ↔ 预览</text>
+<rect x="260" y="209" width="23.102291666666666" height="14" rx="3" fill="#326ca0"/>
+<text x="290.1" y="221" font-size="15" font-weight="600" fill="#326ca0">0.0007</text>
+<rect x="260" y="230" width="34.56666666666666" height="14" rx="3" fill="#bf601d"/>
+<text x="301.6" y="242" font-size="15" font-weight="600" fill="#bf601d">0.0010</text>
+<text x="28" y="292" font-size="17" fill="#234463">Safari ↔ 预览</text>
+<rect x="260" y="273" width="351.00750000000005" height="14" rx="3" fill="#326ca0"/>
+<text x="618.0" y="285" font-size="15" font-weight="600" fill="#326ca0">0.0099</text>
+<rect x="260" y="294" width="190.25833333333335" height="14" rx="3" fill="#bf601d"/>
+<text x="457.3" y="306" font-size="15" font-weight="600" fill="#bf601d">0.0054</text>
+<text x="27" y="400" fill="#284767" font-size="16">灰阶亮度 Y 最大差 0.00011。同一 App 只改 ICC，最大色差约 0.18。</text>
+<text x="27" y="430" fill="#365570" font-size="14">Safari 和预览重复一致。系统合成取样，不是光度计出光测量。</text>
+</g></svg>

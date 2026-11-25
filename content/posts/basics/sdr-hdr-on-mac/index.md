@@ -1,24 +1,117 @@
 +++
 date = '2026-11-24T21:10:00+08:00'
 draft = false
-title = 'Mac 上的 SDR 与 HDR 显示差距：Chrome、Safari、照片、预览和 QuickTime'
-description = '从 Safari 和预览的真实 HDR 截图出发，追查增益图色差，再用样片区分 Mac 上 SDR、PQ、HLG 的文件、解码、合成和屏幕输出。'
-summary = '同一张 JPEG 在 Safari 和预览里都能保留约 4× 的灰阶高光，亮绿色却深浅不同。看真实截图，再顺着反汇编和单变量实验追到丢失的 Display P3 标签。'
+title = '同一份素材在 Mac 上会不会显示不一样？四组 SDR／HDR 前台实测'
+description = '同一台 Mac 和 HDR 显示器，前台取样 Chrome、Safari、QuickTime 和预览。分 SDR 照片、SDR 视频、HDR 照片、HDR 视频，单列 PQ、HLG 和增益图。'
+summary = '播放兼容性不是显示一致性。相同文件送入实际应用并测前台合成像素，再用单变量对照和逆向工程追根因。'
 categories = ['影像画质']
 tags = ['SDR', 'HDR', 'macOS', '色彩管理', 'PQ', 'HLG', '增益图']
 isCJKLanguage = true
 contentLanguage = 'zh-CN'
 +++
 
-同一个 HDR JPEG，Safari 和「预览」都把最亮的灰块画到了约 **4× SDR 白**。但在 Safari 里，旁边的亮绿色变淡了。把图片换成直接编码的 PQ PNG，在同一扇 Safari 窗口里，颜色又回到了接近「预览」的位置。
-
-**灰阶有 HDR，不等于彩色高光正确。** 这次我们顺着两款应用的调用链，把差异定位到了 WebKit 在 GPU 重建时没有传下去的一处颜色标签。也正因为画面没有整体变暗，只用灰阶做验收很容易漏掉它。
+**同一文件换个 App，会看起来不一样吗？本轮实测发现，视频的差别比预想的小，最容易误判的反而是截图。** 同一个 Safari 中灰，SDR 输出读到 0.2595，HDR 截图输出读到 0.1916。不统一取样方式，足以凭空制造一个像模像样的播放器 gamma 差。
 
 <!--more-->
 
-[先看截图](#safari-hdr-gain-map-gap) · [追到色差发生的位置](#hdr-root-cause) · [查五款应用的结果](#mac-media-matrix) · [拿样片复验](#hdr-reproduction)
+<div id="mac-media-matrix"></div>
 
-## 1. 同一张图，Safari 到底画得哪里不同？ {#safari-hdr-gain-map-gap}
+{{< codex-table label="四组前台实测速查" >}}
+| 素材 | 实际显示有没有差别 | 验证范围 |
+| --- | --- | --- |
+| SDR 照片 | 灰阶一致，Safari 个别色块存在小幅、稳定的差异 | Chrome / Safari / 预览 |
+| SDR 视频 | 同口径取样接近，中灰最大差约 0.00004 | Chrome / Safari / QuickTime |
+| HDR 照片 | PQ／HLG 有高光；旧增益图大色差本轮未复现 | 见第 3 节逐格式数据 |
+| HDR 视频 | 同格式三端读数一致。PQ／HLG 有不到 1% 的峰值差 | Chrome / Safari / QuickTime |
+{{< /codex-table >}}
+**「照片」App 待测。** 本轮没有独立图库的前台数据，不用「预览」、QuickTime 或框架结果代测。
+
+**测试条件**为 2026 年 11 月 26 日，同一台 Apple Silicon Mac、同一台 LG ULTRAGEAR+ 外接屏、macOS 27.2（26B123）开启 HDR，配 Chrome for Testing 158.0.8127.88、Safari 27.2、QuickTime Player 10.5 和「预览」11.0。浏览器用本机 HTTP 提供同一份文件，不加滤镜，HDR 元素的 CSS 动态范围设为 no-limit。用 ScreenCaptureKit 取实际前台窗口，不用无头截图代测。HDR 实测的即时 EDR 约 6.30×，潜在 12.61×。表里是系统合成像素，不是光度计测量的屏幕亮度。 [Chrome 桌面稳定公告](https://chromereleases.googleblog.com/2026/11/stable-channel-update-for-desktop_01734282054.html) · [Safari 27.2](https://webkit.org/blog/18515/webkit-features-for-safari-27-2/) · [Apple HDR 截图](https://developer.apple.com/videos/play/wwdc2024/10088/)
+
+## 1. SDR 照片 · 灰阶一致，Safari 个别颜色可重复地偏一点
+
+**有小色差，未见系统性明暗差。** 两份 PNG 只换 ICC，不改 RGB 字节。单份文件在 Chrome、Safari、「预览」各前台打开，抽取 24 格中心。普通灰阶在统一 SDR PNG 读数中完全一致。Safari 与「预览」重复两轮仍有小色差，最大是 sRGB 红块。**QuickTime 不适用。「照片」尚缺独立测试图库数据。**
+
+<figure style="max-width:100%;margin:1.2rem 0;overflow-x:auto" role="region" tabindex="0" aria-label="前台 app 之间的线性 P3 通道最大差。Chrome 对预览接近零，Safari 对另两端的 sRGB 最大差约 0.0099，P3 约 0.0054。"><img src="sdr-photo-foreground.svg" alt="前台 app 之间的线性 P3 通道最大差。Chrome 对预览接近零，Safari 对另两端的 sRGB 最大差约 0.0099，P3 约 0.0054。" loading="lazy" style="display:block;width:100%;min-width:650px;max-width:none;height:auto"></figure>
+
+{{< codex-table compact="true" label="SDR 照片差异与可归因程度" >}}
+| 对照 | 画面证据 | 归因 |
+| --- | --- | --- |
+| 同一 sRGB PNG，Safari 对「预览」 | 红色 R 最大差 0.0099，暖灰 Y 最大差 0.0027。24 格通道差中位数为 0 | 两边各重复完全一致，Safari 的 EDR 从 1.20× 到 6.30× 仍复现。不是 EDR、随机截图波动或 Float16 单步舍入；未孤立到具体解码、颜色转换或合成步骤 |
+| 同一 P3 PNG，Safari 对「预览」 | Float16 读数浅肤色 G 约 0.0054、Y 约 0.0034。中位数为 0 | 与统一 ICC 的 SDR PNG 中浅肤色差同方向；不过饱和绿青在诊断 PNG 中可能被改变，宽色域以 Float16 为准 |
+| 不改像素，只把 sRGB ICC 改为 Display P3 | 三个应用各自最大差 0.176–0.182；灰阶完全不变 | **标签造成的差异。** 亮度控制相同，线性 RGB 基色矩阵不同。这是单变量对照，不是 Safari 小残差的起因 |
+{{< /codex-table >}}
+
+<details>
+<summary>反汇编和可复现的 ICC 对照</summary>
+
+「预览」11.0 的 PVImageElement 在本机 arm64e.x1 上，以 CIImage 读取 ImageIO 源索引、获取源 colorSpace。RGB 的色彩空间能作为输出且兼容 ICC 时被保留。然后图像被转为 CGImage，进入 CALayer。Chromium JPEG 路径会从 APP2 读 ICC、通过 Skia 创建颜色描述，Safari 相关 WebKit 解码器则调用 ImageIO。不同链路与测到的小残差一致，但本轮未动态追踪出第一处分叉。
+
+离屏单变量只用于证明标签机制：Chrome 158 和系统 WKWebView 的固定 sRGB 输出中，去 ICC 与嵌 sRGB 全部一致；相同 RGB 改标 P3，深橙差达到 0.1189；先做正确换算再标为 P3，最大差为 0.0066。该实验并非 Safari.app 前台屏幕结果。规范要求有效嵌入标签按其颜色空间处理，网页无标签静态图默认 sRGB。[W3C CSS Color 4](https://www.w3.org/TR/css-color-4/#tagged-images) · [Chromium JPEG ICC 解析](https://chromium.googlesource.com/chromium/src/+/062a002cca0bbf39d296fa6b2d1e6840eb4611fb/third_party/blink/renderer/platform/image-decoders/jpeg/jpeg_image_decoder.cc) · [WebKit ImageDecoderCG](https://github.com/WebKit/WebKit/blob/main/Source/WebCore/platform/graphics/cg/ImageDecoderCG.cpp) · [Apple ColorSync](https://developer.apple.com/documentation/colorsync/color-profiles)
+
+</details>
+
+[SDR 照片色卡、原始读数与装机逆向锚点](sdr-photo-icc-evidence.zip)
+
+## 2. SDR 视频 · 默认路径三端接近，切换 Chrome 解码路径才有明显中灰差
+
+**前台同片结论：本次样片在 Chrome、Safari 和 QuickTime 的 SDR 合成读数非常接近。** Mac 上每个前台播放器打开同一份 BT.709 1-1-1、有限范围 H.264 MP4。ScreenCaptureKit 同时输出 SDR/HDR，我们只用 ICC 和 cICP 相同的 16-bit Display P3 SDR PNG 做这一章的跨 app 主对照。每格取中心 11×11 中位数。
+
+<figure style="max-width:100%;margin:1.2rem 0;overflow-x:auto" role="region" tabindex="0" aria-label="三个前台播放器的 BT.709 灰阶曲线，共用同一 SDR 输出口"><img src="sdr-video-foreground.svg" alt="三个前台播放器的 BT.709 灰阶曲线，共用同一 SDR 输出口" loading="lazy" style="display:block;width:100%;min-width:650px;max-width:none;height:auto"></figure>
+
+{{< codex-table label="SDR 视频统一取样" >}}
+| 应用 | 近暗灰 Y′64 | 中灰 Y′126 | 亮灰 Y′176 | 白 Y′235 | 32 格 max \|ΔRGB\| vs Chrome |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| Chrome | .050975 | .259508 | .540182 | 1.000000 | — |
+| Safari | .051058 | .259468 | .540897 | .998034 | .002220 |
+| QuickTime | .051058 | .259468 | .540897 | .998034 | .002220 |
+| 照片 | 未取样 | — | — | — | — |
+| 预览.app | 不适用 | — | — | — | — |
+{{< /codex-table >}}
+
+Safari 与 QuickTime 的最大线性通道差只有 .000117。模型用黑白归一化灰阶拟合，三者约为 1.961、1.959、1.959。单位是线性 Display P3 Y，以 SDR 白约 1.0，不是显示器实测 nit。这样小的剩余差没有被进一步归因。
+
+**为什么不写 Safari 更暗？** 同一次 Safari 窗口同时取得两份结果，同一中灰的 SDR PNG 为 .259468，HDR 表示为 .191621。QuickTime 重复同样的现象。Apple 区分输出：sdrImage 使用本机捕获显示器色彩空间，hdrImage 使用扩展 sRGB。把 Chrome 的 HDR stream fallback 和 Safari 的 HDR local screenshot 混比，差了 26%，但改用同类型 SDR 输出后只差 .000040。这是一个捕获口径造成的假 gap，不能归咎于播放应用。 [Apple SDR 输出](https://developer.apple.com/documentation/screencapturekit/scscreenshotoutput/sdrimage) · [Apple HDR 输出](https://developer.apple.com/documentation/screencapturekit/scscreenshotoutput/hdrimage)
+
+<details>
+<summary>展开同一窗口的 SDR／HDR 截图输出对照</summary>
+
+<figure style="max-width:100%;margin:1.2rem 0;overflow-x:auto" role="region" tabindex="0" aria-label="同一窗口的两种截图输出比较"><img src="sdr-capture-output-control.svg" alt="同一 SDR 中灰在同一次 Safari 窗口捕获的 SDR 与 HDR 输出里读数不同" loading="lazy" style="display:block;width:100%;min-width:650px;max-width:none;height:auto"></figure>
+
+</details>
+
+**真正存在的条件差异是换 Chrome 的解码路径。** 独立的离屏 A/B 使用同一个文件，Chrome 默认经 VideoToolbox；禁用加速时媒体记录确认切到 FFmpeg。Y′126 在 sRGB8 截图从 139 变为 128，黑/白仍是 0/255。固定全部 YUV 码值、只把 transfer 改成 sRGB 时，默认路径的 32 个色块逐值复现了软件分支。对应版本 Chromium 将 CoreVideo 709 附件优先映射到 BT709_APPLE（约 1.961），普通 709 transfer 则走 sRGB。Safari WebCore 可创建 AVPlayerLayer，QuickTime 的实际 MGPlayerView 是 AVPlayerView 子类；这些静态锚点和实际曲线吻合，但不等于已追踪每个前台帧。 [Chromium 同版本 CoreVideo 映射](https://chromium.googlesource.com/chromium/src/+/refs/tags/158.0.8127.88/ui/gfx/mac/color_space_util.mm#99) · [Chromium 同版本 transfer 路径](https://chromium.googlesource.com/chromium/src/+/refs/tags/158.0.8127.88/ui/gfx/color_space.cc#990) · [WebKit AVFoundation 视频层](https://chromium.googlesource.com/external/github.com/WebKit/webkit/+/c9fafbca320e01bcba90a1914b2cea04afb92966/Source/WebCore/platform/graphics/avfoundation/objc/MediaPlayerPrivateAVFoundationObjC.mm) · [Apple BT.709 光度与显示模式](https://developer.apple.com/documentation/avfoundation/evaluating-an-app-s-video-color-using-light-measurement-instruments.md)
+
+[SDR 视频前台证据](sdr-video-foreground-evidence.zip) · [Chrome 解码器单变量复验](sdr-video-lab.zip)
+
+## 3. HDR 照片 · PQ、HLG 都保留高光，增益图大色差有复现条件
+
+**测试素材**为同一组 BT.2020 色块分别正确编码成 PQ PNG 和 HLG PNG，另加上一会话的 Display P3 SDR 底图 + ISO RGB 增益图 JPEG。亮度用同图白块归一。QuickTime 不参加静态图比较。
+
+{{< codex-table label="HDR 照片的同图峰值及色块通道比" >}}
+| 应用 | 直接 PQ 峰／白 | 直接 HLG 峰／白 | 增益图峰／白 | 增益图红 G/R · 绿 R/G |
+| --- | --- | --- | --- | --- |
+| Chrome | 3.997× | 4.000× | 3.999× | 0.177 / 0.166 |
+| Safari | 4.002× | 4.000× | 4.002× | 0.175 / 0.162 |
+| 预览 | 3.973× | 4.000× | 3.996× | 0.176 / 0.166 |
+| 照片 | 未完成取样 | 未完成取样 | 未完成取样 | — |
+{{< /codex-table >}}
+三款应用各测三份样片，九组峰值都接近片内参考白的 4×，没有一组回退到 SDR 白。直接 PQ 样片的三端差值也不到 0.03×，现有数据不足以把这点差异定位到某个函数。
+
+### 为什么上一轮 Safari 的绿色偏淡？ {#safari-hdr-gain-map-gap}
+
+<figure style="max-width:100%;margin:1.2rem 0;overflow-x:auto" role="region" tabindex="0" aria-label="同一增益图的绿色高光，在两轮前台测量和独立缓冲区重建中的 R/G"><img src="hdr-photo-gain-color.svg" alt="同一增益图的绿色高光，在两轮前台测量和独立缓冲区重建中的 R/G" loading="lazy" style="display:block;width:100%;min-width:650px;max-width:none;height:auto"></figure>
+
+{{< codex-table compact="true" label="同一增益图两次真机实验" >}}
+| 对照 | 预览 绿块 R/G | Safari 绿块 R/G | Safari 红块 G/R | 结果 |
+| --- | ---: | ---: | ---: | --- |
+| 上一会话，macOS 原生 HDR HEIC 手动取样，原增益图 JPEG | 0.176 | 0.322 | 0.239 | 灰阶仍约 4×，但 Safari 绿块明显向中性偏 |
+| 同一会话，Safari 同窗直接 P3 PQ PNG | — | 0.173 | 0.175 | 对照回到接近预览的比例 |
+| 本轮，ScreenCaptureKit 单窗，原增益图 JPEG | 0.166 | 0.162 | 0.175 | 高光约 4×，**没有复现旧的大色差** |
+{{< /codex-table >}}
+
+<details>
+<summary>看上一轮的真实 HDR 截图裁片</summary>
 
 <figure id="safari-preview-captures">
   <img src="images/safari-jpeg.png" width="768" height="124" alt="Safari 的 HDR 截图裁片。六格灰阶后是变淡的红和绿。">
@@ -32,212 +125,58 @@ contentLanguage = 'zh-CN'
   <figcaption><strong>图 2 · 同一扇 Safari 窗口，同一次 HDR 截屏。</strong> 上排是增益图 JPEG，下排是用同一组色值制作的直编码 Display P3 PQ PNG。尺寸、背景和 CSS 一样。</figcaption>
 </figure>
 
-**这四条是真实 HDR HEIC 截图的裁片，不是重绘的色卡。** 为了让普通 SDR 屏也能看见差异，四条图统一做 HDR 解码、在线性 Display P3 中使用相同倍率缩放，再导出为带 P3 色彩描述的 SDR PNG。所有裁片都只有合成色条，没有桌面和其他内容。下表取自原始 HDR 截图，不从网页展示图反推。 [下载 16-bit PQ 裁片和取样说明](safari-hdr-capture-crops.zip)
-
-{{< codex-table compact="true" label="三张 HDR 截图的线性红绿通道比" >}}
-| 截图里的测试条 | 红块 G/R | 绿块 R/G |
-| --- | ---: | ---: |
-| 图 1 上 · Safari / 增益图 JPEG | 0.239 | 0.322 |
-| 图 1 下 · 预览 / 同一张 JPEG | 0.176 | 0.176 |
-| 图 2 上 · Safari / 增益图 JPEG | 0.240 | 0.321 |
-| 图 2 下 · Safari / 直接 PQ PNG | 0.175 | 0.173 |
-{{< /codex-table >}}
-
-**图 1 换应用。** 最亮灰块两边都是 `4.003`，但 Safari 的亮绿混入了更多红通道。**图 2 不换应用、不换屏幕，只换交付方式。** 增益图 JPEG 的偏移重现，直接 PQ PNG 则接近「预览」。通道比只描述这两个色块，不是通用的感知饱和度或色差指标。
-
-<details>
-<summary>截图条件、EDR 余量与亮度边界</summary>
-
-- macOS **27.2（26B123）**，Safari **27.2**，预览 **11.0**。外接屏开启 HDR 后，系统报告的即时 EDR 由 `1.20×` 升到测试时的 `6.30×`，潜在值是 `12.61×`。这些倍数以当时的 SDR 白为参考，不是实测 nit。 [Apple 即时与潜在 EDR](https://developer.apple.com/documentation/metal/determining-support-for-edr-values)
-- 输入为 512 × 256 的合成图。ISO RGB 增益图 JPEG 的 ImageIO 默认解码最亮灰块 `1.000`，显式展开 HDR 后 `4.003`。Safari 用普通 `<img>` 和 `dynamic-range-limit: no-limit`。两款应用轮流在前台分别截一次，再在 Safari 做同窗对照；预览失焦时可能不再以 HDR 显示。 [Apple HDR 截屏](https://support.apple.com/zh-cn/102646) · [预览前台 HDR 行为](https://support.apple.com/en-mide/guide/preview/prvw11470/mac) · [WebKit 焦点行为](https://bugs.webkit.org/show_bug.cgi?id=289152#c3)
-- 两张单图的最亮灰块都是参考白的约 `4.00×`。同窗对照中，两个格式分别是各自第三灰块的 `2.05×`、`2.01×`。这个共同变化尚未定位，可能涉及布局、窗口状态或系统截图／合成。这里用同帧通道比判断色差，不把跨截图的亮度当成物理出光测量。
+**这四条是较早一轮的前台 HDR HEIC 截图裁片。** 为了让普通 SDR 屏也能看见差异，四条图统一做 HDR 解码、在线性 Display P3 中使用相同倍率缩放，再导出为带 P3 色彩描述的 SDR PNG。所有裁片都只有合成色条，没有桌面和其他内容。前面的表格来自原始 HDR 截图，不从这里的 SDR 展示图反推。 [下载 16-bit PQ 裁片和取样说明](safari-hdr-capture-crops.zip)
 
 </details>
 
-## 2. 色差在网页绘制之前已经出现 {#hdr-root-cause}
+### 旧色差的根因与补丁验证 {#hdr-root-cause}
 
-### P3 的像素值，被按 sRGB 解释了
+对应 Safari 27.2 的 WebKit 源码和装机二进制都显示，加速重建把 P3 底图画进 BGRA，却没把源 CGColorSpace 附给缓冲区。装机 ImageIO 在不能推导颜色空间时回退到 sRGB。只改独立探针这一个附件，绿块 R/G 从正确的 0.167 变成 0.324，接近旧 Safari 截图的 0.322，灰阶峰值不变。**这是一条已验证会产生色差的路径，并不是 Safari 每次都会走的分支。** 两轮实验也用了不同截图方式，尚不能区分本轮没复现是因为实际绘制分支还是取样方式变化。 [WebKit GPU 增益图发布说明](https://webkit.org/blog/18325/webkit-features-for-safari-27-0/) · [底图缓冲区源码](https://github.com/WebKit/WebKit/blob/5e62f67e97ebccc9da92e1ab166cfe640767dea4/Source/WebCore/platform/graphics/cocoa/CVPixelBufferUtilities.cpp#L43-L114) · [原始取样、装机逆向锚点与单变量代码](safari-hdr-lab.zip)
 
-WebKit 先按原来的 Display P3 把 SDR 基图画进 32BGRA 缓冲区。**字节写对了，承载它们的缓冲区却没带 `kCVImageBufferCGColorSpaceKey`。** WebKit 写给输出格式探测的另一份参数字典里还有 P3，但那个字典不会给输入缓冲区补标签。追到本机 ImageIO，合并时先查附件，再试着由其他附件推导，都拿不到才回退到 **sRGB**。两种色域都保留中性轴，却会用不同基色解释同一个 RGB 三元组。这样灰阶高光可以不掉，红绿却向中性偏移。 [WebKit 的底图缓冲区创建](https://github.com/WebKit/WebKit/blob/5e62f67e97ebccc9da92e1ab166cfe640767dea4/Source/WebCore/platform/graphics/cocoa/CVPixelBufferUtilities.cpp#L43-L114) · [输出参数与合并](https://github.com/WebKit/WebKit/blob/5e62f67e97ebccc9da92e1ab166cfe640767dea4/Source/WebCore/platform/graphics/cocoa/ShareableGainMap.cpp#L104-L159) · [标准色彩空间转换](https://www.w3.org/TR/css-color-4/#color-conversion-code)
+另一次实验在对应发行标签上把这一行补丁编进 WebCore。测试程序分别加载系统版和补丁版 WebCore，调用实际的增益图重建函数，固定其余输入。结果验证的是**引擎重建输出**，不是补丁版 Safari 窗口的实测，也没有替换系统 Safari。 [WebKit 开发构建](https://webkit.org/running-webkit/)
 
-独立探针把相同的 BGRA 字节、增益图和元数据交给 macOS 的 `CGImageApplyHDRGainMap`，直接读取合并后的 IOSurface。它不运行 Safari，也不绘制网页。唯一变量是底图颜色附件。
-
-{{< codex-table compact="true" label="独立重建探针：只改变基图缓冲区的颜色附件" >}}
-| 基图附件 | 最亮灰块 | 红块 G/R | 绿块 R/G |
+{{< codex-table compact="true" label="实际 WebCore 二进制重建 A/B" >}}
+| 引擎 | 最亮灰块 | 红块 G/R | 绿块 R/G |
 | --- | ---: | ---: | ---: |
-| 正确的 Display P3 | 3.995 | 0.176 | 0.167 |
-| 无附件 | 3.995 | 0.238 | 0.324 |
-| 显式写 sRGB，字节不变 | 3.995 | 0.238 | 0.324 |
+| 本机原版 WebCore | 3.9947 | 0.2378 | 0.3235 |
+| 只补底图色彩空间的 WebCore | 3.9947 | 0.1756 | 0.1669 |
 {{< /codex-table >}}
 
-无附件和显式 sRGB 的八格读数在四位小数内一致，色比接近 Safari 截图。补回 P3，色比回到原件的 HDR 解码值附近，最亮灰块不动。复制增益图、剥掉它自己的标签或让 XMP 往返，也不会改变分组。**只缺底图标签就足以重现色差。** 这不是两张图片用了不同的屏幕余量，也不必等到 CSS 或系统合成才出现。
+## 4. HDR 视频 · 同格式前台一致，PQ 与 HLG 的轻微差别来自格式和映射
 
-### 两款应用从哪里分开？
+**测试素材**为 HEVC Main10／hvc1 MP4，PQ HDR10 带静态元数据，HLG 使用 1000 nit、gamma 1.2 的参考条件编码同一组目标色块。两份的 10-bit 解码码值都和设计值吻合。结果除以片内按 203 nit 设计的参考白块，网页另有独立 CSS SDR 白。「预览」不参加影片比较。
 
-{{< mermaid >}}
-flowchart TB
-    accTitle: Safari 与预览重建同一张 HDR 增益图的分叉
-    accDescr: 两边读同一张 JPEG。Safari 条件满足时分别解码底图与增益图，经 GPU 图像缓存重建和网页绘制；预览用 Core Image 展开 HDR 并交给独立 EDR 图层。Safari 在基图转成 BGRA 缓冲区时没有传递色彩空间附件。
-    A["同一张 JPEG<br/>P3 SDR 基图 + ISO 增益图"]:::client
-    B["Safari / WebKit<br/>基图与增益图分开解码"]:::service
-    C["GPU 图像缓存<br/>基图转 BGRA，未带上色彩空间附件"]:::engine
-    D["ImageIO 合并增益图<br/>P3 PQ → IOSurface → CGImage"]:::service
-    E["网页绘制<br/>图层、CSS、EDR 目标值"]:::storage
-    P["预览 / Core Image<br/>直接展开 HDR"]:::service
-    Q["独立原生图层<br/>EDR 强度、目标和窗口焦点"]:::storage
-    A --> B --> C --> D --> E
-    A --> P --> Q
-{{< /mermaid >}}
+<figure style="max-width:100%;margin:1.2rem 0;overflow-x:auto" role="region" tabindex="0" aria-label="同样片在 AVPlayer 离屏与应用前台的 PQ、HLG 亮度曲线"><img src="hdr-video-stage-compare.svg" alt="同样片在 AVPlayer 离屏与应用前台的 PQ、HLG 亮度曲线" loading="lazy" style="display:block;width:100%;min-width:650px;max-width:none;height:auto"></figure>
 
-<details>
-<summary>展开 WebContent、GPU、ImageIO 和预览的完整调用链</summary>
+{{< codex-table label="三端 HDR 视频前台合成取样" >}}
+| 格式 | 203 参考白 | 1000 灰块 | 峰／白 | 应用对照 |
+| --- | --- | --- | --- | --- |
+| PQ HDR10 | 1.017578 | 5.031250 | 4.944× | Chrome、Safari、QuickTime 的 16 格 RGB 取样一致 |
+| HLG | 1.012695 | 4.984375 | 4.922× | Chrome、Safari、QuickTime 的 16 格 RGB 取样一致 |
+| 照片 | — | — | — | 此轮尚未从独立图库取样 |
+{{< /codex-table >}}
+同一应用切换这两份分别编码的样片，部分彩色块有小幅变化。原始峰值差约 **0.94%**，各自除以片内白后约 **0.46%**。同格式跨三个应用的 16 色块没有测到差别。这个结论只覆盖本次同一台 Mac 和显示器、同一份本地文件。 [前台 16 色块数值](front-video-measurements.zip)
 
-1. **Safari 决定这次怎么解码。** `RenderImage` 把是否绘制 HDR、是否允许加速和 CSS 限幅传入。`BitmapImageSource` 可只取基图、请 ImageIO 直接解成 HDR，或保留 `BaseAndGainMap` 交给远程绘图路径。分开取增益图时，`ImageDecoderCG` 先找 ISO，找不到再查 Apple 类型。 [绘制入口](https://github.com/WebKit/WebKit/blob/5e62f67e97ebccc9da92e1ab166cfe640767dea4/Source/WebCore/rendering/RenderImage.cpp#L786-L808) · [解码分支](https://github.com/WebKit/WebKit/blob/5e62f67e97ebccc9da92e1ab166cfe640767dea4/Source/WebCore/platform/graphics/BitmapImageSource.cpp#L338-L347) · [辅助图读取](https://github.com/WebKit/WebKit/blob/5e62f67e97ebccc9da92e1ab166cfe640767dea4/Source/WebCore/platform/graphics/cg/ImageDecoderCG.cpp#L641-L668)
-2. **Safari 在 GPU 进程建立图像缓存时合并。** `RemoteRenderingBackend::cacheNativeImage` 用共享位图恢复仍带色彩空间的基图，再经 `ShareableBitmap` 调到 `ShareableGainMap::applyGainMapToBaseImage`。它申请 Display P3 PQ 目标和默认 half-float 输出，经 `CGImageApplyHDRGainMap` 合并，再从 IOSurface 建 `CGImage`。远程绘制随后按资源 ID 取缓存里的 `NativeImage`，交给 `GraphicsContext`。EDR 限幅是后面的绘制环节；这个版本里显式的 `standard` 参考白映射分支不能用来解释测试页设为 `no-limit` 的色差。 [Safari 27 发布说明](https://webkit.org/blog/18325/webkit-features-for-safari-27-0/) · [共享位图恢复](https://github.com/WebKit/WebKit/blob/5e62f67e97ebccc9da92e1ab166cfe640767dea4/Source/WebCore/platform/graphics/cg/ShareableBitmapCG.mm#L235-L258) · [增益图合并](https://github.com/WebKit/WebKit/blob/5e62f67e97ebccc9da92e1ab166cfe640767dea4/Source/WebCore/platform/graphics/cocoa/ShareableGainMap.cpp#L83-L183) · [绘制侧 EDR](https://github.com/WebKit/WebKit/blob/5e62f67e97ebccc9da92e1ab166cfe640767dea4/Source/WebCore/platform/graphics/cg/GraphicsContextCG.cpp#L397-L433)
-3. **「预览」不走这段桥接。** 本机反汇编看到 `PVImageElement` 为显示用的 `CIImage` 选择 `kCIImageExpandToHDR` 或 `kCIImageToneMapHDRtoSDR`，识别 ISO 和 Apple 两种辅助图，并把首选 `high`、EDR 强度和目标交给自己的图层。`PVIKImageView2` 另有 HDR 焦点策略。WebKit 也有窗口失焦时抑制静态 HDR 的路径，不能拿一个前台窗口和另一个背景窗口做峰值对比。 [WebKit 焦点行为](https://bugs.webkit.org/show_bug.cgi?id=289152#c3)
+**为什么离屏 HLG 只有 3.77×，前台却是 4.92×？** AVPlayerItemVideoOutput 取的扩展线性浮点帧已经做了 HLG 逆 OETF，但还在场景线性域。用该帧与前台同一灰阶拟合，HLG 指数是 **1.201**、PQ 是 **1.001**。这符合 Apple 文档的阶段分工：HLG 的最终显示还要应用 OOTF，而 PQ 的显示域关系基本保留。该实验解释了为什么离屏不能代替屏幕合成，不能证明各应用的私有调用栈相同。PQ 对 HLG 的细小剩余差也不能全归给 10-bit 量化或 AMVE。 [ITU-R BT.2100](https://www.itu.int/rec/R-REC-BT.2100-3-202502-I/en) · [Apple HLG OOTF 说明](https://developer.apple.com/documentation/quartzcore/caedrmetadata/hlg) · [HDR 视频实验素材和探针](hdr-video-lab.zip)
+
+---
+
+<details id="hdr-display-pipeline">
+<summary>遇到自己的素材有差异，先查哪一层？</summary>
+
+同一条显示路径依次涉及 **交付 → 解码 → 信号解释或增益图重建 → 应用合成 → 屏幕出光**。打不开先查交付和解码。能播但没有高光，查合成余量和屏幕模式。灰阶相近但彩色高光不对，先查输入色彩标记和中间缓冲区。截图方式前后不一致时，先校验取样。
+
+PQ 把码值对应到绝对亮度，HLG 的显示映射还依赖目标屏幕和系统 gamma。带 SDR 基图的增益图文件则是另一路径，能解码 JPEG 并不等于已应用增益图。格式和播放基线的详细结果不计入本篇前台对照。 [ITU-R BT.2100](https://www.itu.int/rec/R-REC-BT.2100-3-202502-I/en) · [Apple Adaptive HDR](https://developer.apple.com/videos/play/wwdc2024/10177/)
 
 </details>
 
 <details>
-<summary>查看本机二进制锚点和证据边界</summary>
+<summary id="hdr-reproduction">如何复验这些结果</summary>
 
-本机为 macOS `27.2 (26B123)`，Safari / WebKit `22625.2.8.11.9`、预览 `11.0 (1147.1.10)`。用 `dyld_info` 读取 `arm64e.x1` 共享缓存里的实际指令，解析跨库 stub 的指向，并与 [WebKit-7625.2.8.11.9](https://github.com/WebKit/WebKit/releases/tag/WebKit-7625.2.8.11.9) 对照。以下是未加 ASLR slide 的虚拟地址，不是文件偏移或某次运行中的程序计数器。
+- 在同一屏幕和显示模式，逐个应用切到前台。SDR 使用相同类型的 SDR 截图，核对 ICC；HDR 取扩展线性 Display P3，在同一次截图里同时采白与高光。没有光度计的读数不要写成屏幕实测 nit。
+- 同一文件以 SHA-256 识别。视频用每一帧色块相同的合成片，实际播放状态另记。色块中心 11×11 取中位数，避免文字、缩放边缘、控件和色块交界污染。
+- 这里只覆盖同机同屏、无 DRM 的本地交付。网站转码、HLS 选轨、Dolby Vision、HDR10+、不同 GPU 合成分支都可能改变结果。用「照片」时还要分开单张查看、实际播放与网格缩略图。
 
-{{< codex-table label="本机 arm64e.x1 静态锚点" >}}
-| 环节 | 实机静态证据 |
-| --- | --- |
-| WebKit GPU 缓存 | `RemoteRenderingBackend::cacheNativeImage` `0x1A495E64C`，`0x1A495E6A4` 的跨库调用解析到下行 |
-| WebCore 重建 | `ShareableBitmap::createPlatformImage` `0x1B89BA1B4`，`0x1B89BA244` 直调 `ShareableGainMap::applyGainMapToBaseImage` `0x1BB585590` |
-| 基图变成 BGRA | `createMetalCompatibleCVPixelBufferFromImage` `0x1BB577BBC`；`0x1BB577C28` 将创建缓冲区的色彩空间参数置空，`0x1BB577C80` 却把原色彩空间传给位图绘制；`0x1BB577958` 跳过空参数的附件设置 |
-| ImageIO 合并和交接 | `0x1BB585AB0` 经 stub 调 `CGImageApplyHDRGainMap`，`0x1BB585BF0` 调 `CGImageCreateFromIOSurface` |
-| ImageIO 基图色彩回退 | `-[HDRImage colorSpace]` `0x18D66A358` 经 `xdr_CVPixelBufferCopyColorSpace` 检查附件；若读不到也推不出色彩空间，`0x18D66A3E4` 用 `kCGColorSpaceSRGB` 创建回退值 |
-| 网页绘制 | GPU `RemoteGraphicsContext::drawNativeImage` `0x1A49379B4` 查缓存，经虚表调用。对 `GraphicsContextCG`，该槽指向 `0x1BB56373C`，其后调用 `CGContextDrawImage` |
-| 「预览」原生显示 | `_imageOptions` `0x10004ACB4`，采样显示路径 `_sourceCIImageWithSubsample…` `0x10004B77C`，`_createLayerForView` `0x10004CD08`，HDR 焦点入口 `0x100152148` |
-{{< /codex-table >}}
-
-静态调用链证明本机**有**这条实现，不等同于挂钩记录了每一帧。单图和同屏是实际 Safari/预览画面的取样，独立重建探针则在独立进程调用同一系统入口。三类证据不要混用。
+[本轮前台量化复验包](display-window-lab.zip) · [早期格式兼容性基线](mac-media-gap-lab.zip)
 
 </details>
-
-### 把一行补丁编进 WebCore 再复测
-
-在对应发行标签上，只改了创建底图缓冲区的调用，把已有的 `colorSpace` 传进去。用同一测试程序分别加载**系统原版 WebCore**和**实际编译出的修复版 WebCore**，调用两边同一个 `ShareableGainMap::applyGainMapToBaseImage`，而不是再次模拟这条路径。系统版的红块 G/R 和绿块 R/G 是 `0.2378`、`0.3235`，修复版是 `0.1756`、`0.1669`，两边最亮灰块都为 `3.9947`。这验证了实际引擎的重建输出；它不是修复版窗口的 HDR 截图，也没有替换系统 Safari。 [WebKit 运行开发构建](https://webkit.org/running-webkit/)
-
-这与 WebKit 已修过的增益图输出意外降到 8-bit 不同，本次探针目标实际为 `RGhA`。结果不外推到其他 Safari 版本、Chrome、sRGB 基图、单通道增益图和其他载体。 [WebKit 的 8-bit 输出修复](https://github.com/WebKit/WebKit/commit/dfcca6f9900ac6564be76443848bf518bf8c4bf2)
-
-## 3. 拿这个案例理解文件到屏幕的五层 {#hdr-display-pipeline}
-
-{{< mermaid >}}
-flowchart TB
-    accTitle: 同一张图或同一段视频，从交付到屏幕的五道关口
-    accDescr: 交付层选文件或选轨；解码层读像素和标记；恢复层解释颜色与动态范围；合成层按应用策略提交；显示层用当下的 EDR 余量输出。任一关的差异都可能改变画面。
-    A["① 交付<br/>网页派生图、图库版本、HLS 轨道或本地原件"]:::client
-    B["② 解码<br/>容器、编码、位深、ICC、cICP、视频颜色标签"]:::service
-    C["③ 恢复<br/>解释 PQ/HLG、应用增益图、转换色域与范围"]:::engine
-    D["④ 合成<br/>网页绘制或视频层、窗口焦点、HDR 限幅"]:::service
-    E["⑤ 出光<br/>系统色彩管理、即时 EDR、显示器映射"]:::storage
-    A --> B --> C --> D --> E
-{{< /mermaid >}}
-
-**打不开**，先查它拿到的文件、容器和编码。**高光封在参考白**，查信号恢复、合成或屏幕余量。**灰阶相似但亮彩色不同**，优先查 ICC、cICP、RGB／YCbCr 的解释和中间缓冲的色彩空间。**全屏或切到前台才变**，再查应用合成和系统状态。
-
-{{< codex-table compact="true" label="SDR 照片、SDR 视频、HDR 照片和 HDR 视频" >}}
-| 类别 | 文件通常如何表达 | 最容易误判的地方 |
-| --- | --- | --- |
-| **SDR 照片** | sRGB 或 Display P3，通过 ICC、cICP 等描述颜色 | 同一组 RGB 数字在 sRGB 和 P3 中可以表示不同颜色。16-bit、P3 或多帧合成不等于 HDR |
-| **SDR 视频** | 常见 H.264／MP4，BT.709 primaries、transfer、matrix，8 bit、有限范围 | 不能把视频帧当 sRGB JPEG；错把有限范围当全范围会抬黑、压白，反过来则可能压黑、裁白 |
-| **HDR 照片** | 直接 PQ／HLG（例如 PNG、AVIF、HEIC），或 SDR 基图加增益图和参数 | 直接 HDR 开得了未必正确映射。增益图开得了，甚至不代表辅助图被读到 |
-| **HDR 视频** | PQ／HLG，常见 10-bit HEVC、AV1 或 VP9；叠加 HDR10、HDR10+、Dolby Vision 等交付规范 | 编码、容器、传递函数和动态元数据是不同层，不能从扩展名、10-bit 或能播放推断 HDR 输出 |
-{{< /codex-table >}}
-
-- **色域、动态范围和位深是独立的。** Display P3 或 16-bit 照片完全可以是 SDR。SDR 视频还要解释 YCbCr 矩阵、传递函数和有限／全范围。典型 8-bit BT.709 有限范围的黑白码值是 16 和 235，按 0–255 解会抬黑、压白，和 HDR 映射无关。 [ITU-R BT.709](https://www.itu.int/rec/R-REC-BT.709/en) · [BT.1886](https://www.itu.int/rec/R-REC-BT.1886/en)
-- **PQ 和 HLG 都能直接编码 HDR，但含义不同。** PQ 对应绝对亮度，数学上限不是屏幕实际峰值。HLG 是相对系统，最终取决于目标显示和系统 gamma。HEVC、AV1、VP9 是编码，MP4、MOV、WebM 是容器，HLS 是分发。能播放、带 PQ 或是 10-bit，都不能证明播放端真的用了 Dolby Vision 或 HDR10+ 元数据。 [ITU-R BT.2100](https://www.itu.int/rec/R-REC-BT.2100-3-202502-I/en) · [Apple HDR 视频元数据](https://developer.apple.com/av-foundation/High-Dynamic-Range-Metadata-for-Apple-Devices.pdf) · [Apple HLS 规格](https://developer.apple.com/streaming/hls-authoring-specification-for-apple-devices.html)
-- **增益图靠原有数据重建。** 常见文件是 SDR 基图加灰阶或 RGB 辅助图。ISO 也允许 HDR 基图，旧 Apple 增益图、Adaptive HDR、Ultra HDR JPEG 则不是同一种信令。图片服务只保留主 JPEG，仍能交付正常的 SDR 图。 [ISO 21496-1](https://www.iso.org/standard/86775.html) · [Apple Adaptive HDR](https://developer.apple.com/videos/play/wwdc2024/10177/) · [Ultra HDR 规格](https://developer.android.com/media/platform/hdr-image-format)
-
-**EDR 不是文件位深，也不是峰值 nit。** macOS 用 1.0 表示参考白，2.0 是多一档。若此刻 SDR 白实际为 200 nit，小面积高光可到 600 nit，余量就是 3×。文件内容余量、应用的合成目标、屏幕可用余量要分记。外接屏还可能接到系统转换后的 HDR10 输出，不能只看 OSD 推断源文件是 PQ 还是 HLG。 [Apple EDR 文档](https://developer.apple.com/documentation/metal/determining-support-for-edr-values) · [Mac 的 HDR 外接显示](https://support.apple.com/en-us/102205)
-
-## 4. 五款应用，哪些项目真的测到了？ {#mac-media-matrix}
-
-数据来自 **2026 年 11 月 24–26 日**。Chrome 用独立 **Chrome for Testing 158.0.8127.88**，不使用个人配置。前面的截图来自实际 Safari.app 和预览.app。下方兼容性表的 WebKit 列是同机系统 **WKWebView**。ImageIO／AVFoundation 的结果只是框架证据，不能写成「照片」或 QuickTime 已完成窗口验收。 [Chrome 发布公告](https://chromereleases.googleblog.com/2026/11/stable-channel-update-for-desktop_01734282054.html) · [Safari 27.2](https://webkit.org/blog/18515/webkit-features-for-safari-27-2/)
-
-{{< codex-table label="五款 Mac 应用的实测与文档边界" >}}
-| 应用 | 这次已经验证或有文档支持 | 不能从这里推出 |
-| --- | --- | --- |
-| **Chrome 158** | SDR、PQ／HLG 图片解码，短片播放路径；PQ HEIC 样片不能打开 | 这份增益图的最终色彩、视频峰值 |
-| **Safari 27.2** | 真实窗口证实 JPEG 和直接 PQ 的差异；系统 WKWebView 另测格式与播放 | WKWebView 视频通过不等于 Safari 窗口的 HDR 输出通过 |
-| **预览 11.0** | 前台打开本地原片并取样，验证了这份 JPEG 的灰阶和颜色 | 不代测 Quick Look、视频或其他 HDR 文件 |
-| **照片 12.0** | Apple 文档说明完整 HDR、Adaptive HDR 和 10-bit HLG 视频 | 未把所有样片导入图库做窗口取样；原片、编辑、导出要分开 |
-| **QuickTime 10.5** | 指向本地 MP4／MOV 检查，系统框架读到测试轨道的 BT.709、PQ、HLG 标签 | 轨可读不等于 QuickTime 窗口亮度或动态元数据验收 |
-{{< /codex-table >}}
-
-### 静态图：同为 PQ，换个容器就可能不能开
-
-PQ PNG／AVIF 在两个浏览器环境都能解码，换这批 HEIC 后 Chrome 的结果不同，不能写成「Chrome 不支持 PQ」。旧 Apple 增益图 JPEG 能打开，也不能证明辅助图用了。网页先验普通 `<img>`，再试缩略图、CDN、滤镜和 Canvas。Chromium 和 WebKit 也不必共享同一增益图绘制路径。 [Chrome JPEG XL](https://developer.chrome.com/blog/jpeg-xl-in-chrome) · [Chromium 增益图绘制](https://chromium.googlesource.com/chromium/src/+/HEAD/cc/paint/paint_op.cc) · [WebKit HDR 图片](https://webkit.org/blog/17333/webkit-features-in-safari-26-0/#hdr-images)
-
-<details>
-<summary>静态样片的逐项结果</summary>
-
-{{< codex-table label="SDR、PQ、HLG 与增益图静态样片" >}}
-| 样片 | Chrome 158 **浏览** | 系统 WKWebView **浏览** | ImageIO **框架** |
-| --- | --- | --- | --- |
-| SDR JPEG；16-bit sRGB／Display P3 PNG | 都能解码 | 都能解码 | JPEG 与两种 PNG 的内容余量都为 1.00×；两份 PNG 色彩空间不同 |
-| 直接 PQ PNG／AVIF | 都能解码 | 都能解码 | BT.2020 灰阶样片的内容余量为 4.93× |
-| 直接 PQ HEIC | 两组样片均解码失败 | 都能解码 | 两组内容余量分别约 4.93×、4.00× |
-| 直接 HLG PNG／AVIF | 都能解码 | 都能解码 | 两份都报告 ITU-R 2100 HLG，内容余量 4.93× |
-| ISO 增益图 JPEG／AVIF | 都能解码 | 都能解码 | 基线两份识别 ISO 辅助图，约 2.46×；另制 RGB JPEG 默认 1.00×，请求 HDR 后 4.00× |
-| 合成增益图 HEIC | 该样片解码失败 | 能解码 | 默认 1.00×，请求 HDR 后 4.00× |
-| 旧 Apple 增益图 JPEG（两份） | 都能解码 | 都能解码 | 识别 Apple 辅助图，约 4.53×、8.00× |
-{{< /codex-table >}}
-
-这里的倍数是 ImageIO 报告的内容余量。重验的 HLG PNG 和 AVIF 含真实 HLG 码值，不是重贴 PQ 标签。基线还测了一张 PQ JPEG XL，两种浏览器都能解码，ImageIO 报告 1.00×，不能外推到整个格式。样本出处见 [libavif](https://github.com/AOMediaCodec/libavif/tree/main/tests/data)、[libultrahdr](https://github.com/google/libultrahdr/tree/main/tests/data) 和 [libjxl](https://github.com/libjxl/testdata/blob/main/jxl/pq_gradient.jxl)。
-
-</details>
-
-### 视频：可播和以 HDR 合成，不是一件事
-
-PQ HEVC、AV1 的 MP4 在两种浏览器和系统框架基线都走通。PQ VP9／WebM 是浏览器能播、AVFoundation 基线接口却打不开。网页还可能为 Safari 和 Chrome 选不同 HLS 变体。Chromium 曾有「能解码，但某些尺寸不能进平台视频层，损失 HDR 余量」的已修复回归。**先用两端同一个本地 MP4 排除选流，再比浏览器、原生播放器和全屏。** [Chromium 的平台视频层回归](https://issues.chromium.org/issues/572225701) · [Safari 节能策略](https://webkit.org/blog/14445/webkit-features-in-safari-17-0/) · [Apple HLS 2026 更新](https://developer.apple.com/streaming/Whats-new-HLS.pdf)
-
-<details>
-<summary>视频样片结果与原生应用的证据边界</summary>
-
-{{< codex-table label="视频样片的播放和框架识别" >}}
-| 样片 | Chrome 158 **浏览** | 系统 WKWebView **浏览** | AVFoundation **框架** |
-| --- | --- | --- | --- |
-| H.264／MP4 · BT.709 SDR | 可播 | 可播 | 可播，非 HDR 轨；首帧 BT.709 |
-| HEVC Main10／MP4 · PQ HDR10 | 可播 | 可播 | 可播，有 HDR 轨；首帧 PQ、BT.2020 |
-| HEVC Main10／MP4 · HLG | 可播 | 可播 | 可播，有 HDR 轨；首帧 HLG、BT.2020 |
-| AV1 10-bit／MP4 · PQ | 可播（基线） | 可播（基线） | 基线可播，有 HDR 轨 |
-| VP9 Profile 2／WebM · PQ | 可播（基线） | 可播（基线） | 基线接口打不开该文件 |
-{{< /codex-table >}}
-
-11 月 26 日用 640 × 360、2 秒的 BT.709、PQ、HLG 三个 MP4 复验。Chrome 的 totalVideoFrames 均为 4，含显示和丢弃帧。WKWebView 放进独立后台测试窗口后有尺寸、缓冲就绪和播放时钟，但 totalVideoFrames 为 0，只记兼容性通过。AVAssetReader 实际取帧并核对了缓冲区颜色附件，PQ 轨也查到了母版与内容亮度信息。 [播放质量计数定义](https://w3c.github.io/media-playback-quality/#videoplaybackquality)
-
-同机静态导入显示，QuickTime 和「照片」都链接 AVFoundation／AVKit，并导入 AVPlayer 和 AVPlayerItem。「照片」额外带图库请求入口，如 PHImageManager。静态依赖不能证明两个 App 用相同映射。本次也没测两款原生应用的窗口亮度、Dolby Vision 动态元数据、HDR10+、付费流媒体或全屏。 [QuickTime 影片检查器](https://support.apple.com/guide/quicktime-player/view-information-about-a-movie-file-qtp65619118c/mac) · [照片的 HLG 视频说明](https://support.apple.com/en-ie/guide/photos/phte8a1fcd79/mac) · [AVKit 动态范围设置](https://developer.apple.com/documentation/avkit/avplayerview/preferreddisplaydynamicrange)
-
-</details>
-
-## 5. 遇到自己的素材有差距，先做这四步 {#hdr-reproduction}
-
-1. **锁住实际字节。** 比本地原件与网页的 `img.currentSrc`、响应 MIME 和哈希。视频记实际 HLS／MSE 变体。图库请导出「未修改的原片」，不拿缩略图或共享副本当对照。 [Apple 照片导出说明](https://support.apple.com/guide/photos/export-photos-videos-slideshows-and-memories-pht6e157c5f/mac)
-2. **固定屏幕、页面和窗口。** 同一显示模式、亮度、背景和缩放，先让两个窗口分别在前台。图像先用普通 `<img>`，再叠 CDN、Canvas 或组件。视频先放同一个本地文件，再切全屏和流媒体。媒体查询只报告能力，不证明当前帧在 HDR 显示。
-3. **同时放灰阶和彩色高光。** 留一块 SDR 白、几个高光灰阶和亮红绿。灰阶回答是否封顶，颜色回答色彩解释是否正确。系统 HDR 截图能测合成信号，要量物理 nit 还需要仪器。
-4. **按实测选交付。** 图文先保住颜色正确的 SDR。需要一份文件兼容两种屏，再验证增益图有没有穿过 CDN，重要素材可加直接 PQ 对照。视频留一份经检查的 BT.709 SDR，HDR 变体另验选轨、解码与输出。
-
-<details>
-<summary>复验命令与完整素材</summary>
-
-~~~bash
-shasum -a 256 example.mp4
-ffprobe -v error -select_streams v:0 -show_streams -of json example.mp4
-ffprobe -v error -select_streams v:0 -read_intervals '%+1' -show_frames -of json example.mp4
-~~~
-
-视频里分别看 primaries、transfer、matrix、range 和帧级 side data。网页则查看 `currentSrc`、`matchMedia('(dynamic-range: high)')` 和计算后的 `dynamic-range-limit`，再做画面取样。
-
-- [格式与播放复验包](mac-media-gap-lab.zip)，含 SDR／HLG／PQ 样片、视频及生成和探测脚本。
-- [Safari／预览逆向实验包](safari-hdr-lab.zip)，含增益图、直接 PQ、同窗对照页、静态锚点和七组重建记录。
-- [HDR 截图裁片](safari-hdr-capture-crops.zip)，含四条 16-bit PQ 裁片、导出规则与重复取样数据。没有桌面原截图。
-
-</details>
-
-同样的像素可以因为丢一处标签，变成屏幕上不同的颜色。这次能定位，不是因为把五个 App 从亮到暗排了一遍，而是每轮都知道**哪份字节没变、哪一个条件被换了**。

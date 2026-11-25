@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 970 480"><title>HDR 视频离屏与前台显示取样</title><desc>HLG 在离屏的场景线性缓冲里相对峰值 3.77 倍，实际前台 HDR 合成约 4.92 倍。PQ 两阶段均约 4.94 倍。不是亮度计读数。</desc>
+<rect width="100%" height="100%" rx="14" fill="#f9fbfe"/><g font-family="system-ui,PingFang SC,sans-serif" fill="#253345" font-size="14">
+<text x="44" y="38" font-size="23" font-weight="650">HDR 视频：为什么离屏 HLG 不等于屏上 HLG</text>
+<text x="44" y="64" fill="#536276">相同 HEVC 样片，对同一视频的 203 nit 测试白归一。右图来自实际前台 HDR 捕获。</text>
+<text x="81" y="113" font-size="17" font-weight="650">离屏：AVPlayerItemVideoOutput</text>
+<line x1="81" y1="363" x2="434" y2="363" stroke="#dbe3ef"/><text x="74" y="367" text-anchor="end">0.002×</text>
+<line x1="81" y1="319.18" x2="434" y2="319.18" stroke="#dbe3ef"/><text x="74" y="323.18" text-anchor="end">0.01×</text>
+<line x1="81" y1="256.48" x2="434" y2="256.48" stroke="#dbe3ef"/><text x="74" y="260.48" text-anchor="end">0.1×</text>
+<line x1="81" y1="193.79" x2="434" y2="193.79" stroke="#9cadc4"/><text x="74" y="197.79" text-anchor="end">1×</text>
+<line x1="81" y1="149.96" x2="434" y2="149.96" stroke="#dbe3ef"/><text x="74" y="153.96" text-anchor="end">5×</text>
+<line x1="81" y1="145" x2="81" y2="363" stroke="#e4eaf2"/><text x="81" y="383" text-anchor="middle">0.5</text>
+<line x1="187.94" y1="145" x2="187.94" y2="363" stroke="#e4eaf2"/><text x="187.94" y="383" text-anchor="middle">5</text>
+<line x1="262.68" y1="145" x2="262.68" y2="363" stroke="#e4eaf2"/><text x="262.68" y="383" text-anchor="middle">25</text>
+<line x1="327.06" y1="145" x2="327.06" y2="363" stroke="#e4eaf2"/><text x="327.06" y="383" text-anchor="middle">100</text>
+<line x1="359.95" y1="145" x2="359.95" y2="363" stroke="#e4eaf2"/><text x="359.95" y="383" text-anchor="middle">203</text>
+<line x1="391.45" y1="145" x2="391.45" y2="363" stroke="#e4eaf2"/><text x="391.45" y="383" text-anchor="middle">400</text>
+<line x1="434" y1="145" x2="434" y2="363" stroke="#e4eaf2"/><text x="434" y="383" text-anchor="middle">1000</text>
+<text x="257.5" y="402" text-anchor="middle">母版目标 / nit</text>
+<path d="M81,357.399L187.936,294.757L262.682,250.826L327.064,213.079L359.946,193.787L391.446,175.333L423.637,156.645L434,150.294" fill="none" stroke="#006a9d" stroke-width="2.2" />
+<circle cx="81" cy="357.4" r="2.7" fill="#006a9d"><title>PQ 0.5 nit → 0.0024568×</title></circle>
+<circle cx="187.94" cy="294.76" r="2.7" fill="#006a9d"><title>PQ 5 nit → 0.024519×</title></circle>
+<circle cx="262.68" cy="250.83" r="2.7" fill="#006a9d"><title>PQ 25 nit → 0.12309×</title></circle>
+<circle cx="327.06" cy="213.08" r="2.7" fill="#006a9d"><title>PQ 100 nit → 0.49236×</title></circle>
+<circle cx="359.95" cy="193.79" r="2.7" fill="#006a9d"><title>PQ 203 nit → 1.0000×</title></circle>
+<circle cx="391.45" cy="175.33" r="2.7" fill="#006a9d"><title>PQ 400 nit → 1.9694×</title></circle>
+<circle cx="423.64" cy="156.64" r="2.7" fill="#006a9d"><title>PQ 800 nit → 3.9121×</title></circle>
+<circle cx="434" cy="150.29" r="2.7" fill="#006a9d"><title>PQ 1000 nit → 4.9398×</title></circle>
+<text x="441" y="148.29" fill="#006a9d" font-size="14" font-weight="650">4.94×</text>
+<path d="M81,330.038L187.936,277.772L262.682,241.333L327.064,209.764L359.946,193.787L391.446,178.343L423.637,162.617L434,157.674" fill="none" stroke="#a34b13" stroke-width="2.2" stroke-dasharray="5 3"/>
+<circle cx="81" cy="330.04" r="2.7" fill="#a34b13"><title>HLG 0.5 nit → 0.0067108×</title></circle>
+<circle cx="187.94" cy="277.77" r="2.7" fill="#a34b13"><title>HLG 5 nit → 0.045754×</title></circle>
+<circle cx="262.68" cy="241.33" r="2.7" fill="#a34b13"><title>HLG 25 nit → 0.17443×</title></circle>
+<circle cx="327.06" cy="209.76" r="2.7" fill="#a34b13"><title>HLG 100 nit → 0.55610×</title></circle>
+<circle cx="359.95" cy="193.79" r="2.7" fill="#a34b13"><title>HLG 203 nit → 1.0000×</title></circle>
+<circle cx="391.45" cy="178.34" r="2.7" fill="#a34b13"><title>HLG 400 nit → 1.7633×</title></circle>
+<circle cx="423.64" cy="162.62" r="2.7" fill="#a34b13"><title>HLG 800 nit → 3.1416×</title></circle>
+<circle cx="434" cy="157.67" r="2.7" fill="#a34b13"><title>HLG 1000 nit → 3.7670×</title></circle>
+<text x="441" y="172.67" fill="#a34b13" font-size="14" font-weight="650">3.77×</text>
+<text x="544" y="113" font-size="17" font-weight="650">前台：真实应用窗口 HDR 合成</text>
+<text x="544" y="133" fill="#536276" font-size="12">Chrome、Safari、QuickTime · 同格式曲线重合</text>
+<line x1="544" y1="363" x2="897" y2="363" stroke="#dbe3ef"/><text x="537" y="367" text-anchor="end">0.002×</text>
+<line x1="544" y1="319.18" x2="897" y2="319.18" stroke="#dbe3ef"/><text x="537" y="323.18" text-anchor="end">0.01×</text>
+<line x1="544" y1="256.48" x2="897" y2="256.48" stroke="#dbe3ef"/><text x="537" y="260.48" text-anchor="end">0.1×</text>
+<line x1="544" y1="193.79" x2="897" y2="193.79" stroke="#9cadc4"/><text x="537" y="197.79" text-anchor="end">1×</text>
+<line x1="544" y1="149.96" x2="897" y2="149.96" stroke="#dbe3ef"/><text x="537" y="153.96" text-anchor="end">5×</text>
+<line x1="544" y1="145" x2="544" y2="363" stroke="#e4eaf2"/><text x="544" y="383" text-anchor="middle">0.5</text>
+<line x1="650.94" y1="145" x2="650.94" y2="363" stroke="#e4eaf2"/><text x="650.94" y="383" text-anchor="middle">5</text>
+<line x1="725.68" y1="145" x2="725.68" y2="363" stroke="#e4eaf2"/><text x="725.68" y="383" text-anchor="middle">25</text>
+<line x1="790.06" y1="145" x2="790.06" y2="363" stroke="#e4eaf2"/><text x="790.06" y="383" text-anchor="middle">100</text>
+<line x1="822.95" y1="145" x2="822.95" y2="363" stroke="#e4eaf2"/><text x="822.95" y="383" text-anchor="middle">203</text>
+<line x1="854.45" y1="145" x2="854.45" y2="363" stroke="#e4eaf2"/><text x="854.45" y="383" text-anchor="middle">400</text>
+<line x1="897" y1="145" x2="897" y2="363" stroke="#e4eaf2"/><text x="897" y="383" text-anchor="middle">1000</text>
+<text x="720.5" y="402" text-anchor="middle">母版目标 / nit</text>
+<path d="M544,357.541L650.936,294.91L725.682,250.881L790.064,213.228L822.946,193.787L854.446,175.308L886.637,156.648L897,150.269" fill="none" stroke="#006a9d" stroke-width="2.2" />
+<circle cx="544" cy="357.54" r="2.7" fill="#006a9d"><title>PQ 0.5 nit → 0.0024440×</title></circle>
+<circle cx="650.94" cy="294.91" r="2.7" fill="#006a9d"><title>PQ 5 nit → 0.024382×</title></circle>
+<circle cx="725.68" cy="250.88" r="2.7" fill="#006a9d"><title>PQ 25 nit → 0.12284×</title></circle>
+<circle cx="790.06" cy="213.23" r="2.7" fill="#006a9d"><title>PQ 100 nit → 0.48968×</title></circle>
+<circle cx="822.95" cy="193.79" r="2.7" fill="#006a9d"><title>PQ 203 nit → 1.0000×</title></circle>
+<circle cx="854.45" cy="175.31" r="2.7" fill="#006a9d"><title>PQ 400 nit → 1.9712×</title></circle>
+<circle cx="886.64" cy="156.65" r="2.7" fill="#006a9d"><title>PQ 800 nit → 3.9117×</title></circle>
+<circle cx="897" cy="150.27" r="2.7" fill="#006a9d"><title>PQ 1000 nit → 4.9443×</title></circle>
+<text x="904" y="148.27" fill="#006a9d" font-size="14" font-weight="650">4.94×</text>
+<path d="M544,357.475L650.936,294.746L725.682,250.856L790.064,213.097L822.946,193.787L854.446,175.297L886.637,156.517L897,150.393" fill="none" stroke="#a34b13" stroke-width="2.2" stroke-dasharray="5 3"/>
+<circle cx="544" cy="357.48" r="2.7" fill="#a34b13"><title>HLG 0.5 nit → 0.0024499×</title></circle>
+<circle cx="650.94" cy="294.75" r="2.7" fill="#a34b13"><title>HLG 5 nit → 0.024530×</title></circle>
+<circle cx="725.68" cy="250.86" r="2.7" fill="#a34b13"><title>HLG 25 nit → 0.12295×</title></circle>
+<circle cx="790.06" cy="213.1" r="2.7" fill="#a34b13"><title>HLG 100 nit → 0.49204×</title></circle>
+<circle cx="822.95" cy="193.79" r="2.7" fill="#a34b13"><title>HLG 203 nit → 1.0000×</title></circle>
+<circle cx="854.45" cy="175.3" r="2.7" fill="#a34b13"><title>HLG 400 nit → 1.9720×</title></circle>
+<circle cx="886.64" cy="156.52" r="2.7" fill="#a34b13"><title>HLG 800 nit → 3.9306×</title></circle>
+<circle cx="897" cy="150.39" r="2.7" fill="#a34b13"><title>HLG 1000 nit → 4.9219×</title></circle>
+<text x="904" y="165.39" fill="#a34b13" font-size="14" font-weight="650">4.92×</text>
+<text transform="translate(24 252) rotate(-90)" text-anchor="middle">合成或缓冲的 Y / 203 nit 测试块 Y</text>
+<path d="M 84 437 h 30" stroke="#006a9d" stroke-width="2.3"/><text x="122" y="442">PQ</text>
+<path d="M 201 437 h 30" stroke="#a34b13" stroke-width="2.3" stroke-dasharray="5 3"/><text x="239" y="442">HLG</text>
+<text x="369" y="442" fill="#536276">窗口灰阶 / 离屏灰阶拟合：PQ γ=1.001，HLG γ=1.201</text>
+<text x="369" y="463" fill="#536276" font-size="12">拟合于六个中高灰阶，说明 HLG 显示端约 1.2 的 OOTF。不是光度计数据。</text>
+</g></svg>
