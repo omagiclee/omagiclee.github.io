@@ -2,8 +2,8 @@
 date = '2026-11-24T21:10:00+08:00'
 draft = false
 title = '从文件到屏幕：SDR、HDR，以及同一张图为什么在 Mac 上看起来不同'
-description = '从 PQ、HLG、增益图到 macOS EDR，比较 Chrome 158、Safari 27.2、照片、预览和 QuickTime Player 的图片与视频显示路径。'
-summary = '一张 HDR 照片能打开、能恢复高光、能在屏幕上显示高光，是三件不同的事。本文用同一批样片，区分文件、解码、应用合成和屏幕输出。'
+description = '从 PQ、HLG、增益图到 macOS EDR，比较常见应用的显示路径，并用 HDR 截图、WebKit 逆向和缓冲区对照实验定位 Safari 27.2 的增益图色差。'
+summary = '一张 HDR 照片能打开、能恢复高光、能还原颜色，是不同的事。本文用样片测试、应用逆向和单变量实验解释同一张图为何在 Safari 和预览里看起来不同。'
 categories = ['影像画质']
 tags = ['SDR', 'HDR', 'macOS', '色彩管理', 'PQ', 'HLG']
 isCJKLanguage = true
@@ -14,7 +14,9 @@ contentLanguage = 'zh-CN'
 
 判断 HDR，先问三次：**交付的文件有没有 HDR？应用有没有把 HDR 信号留到合成阶段？这块屏此刻有没有亮度余量？** 任意一步不成立，屏幕上就不一定有高于 SDR 白的高光。
 
-> **核验日期：2026 年 11 月 24 日。** Google 公告的 Mac Chrome 最新常规稳定分支为 **158.0.8127.88/.89**；实测用官方 **Chrome for Testing 158.0.8127.88**。Apple 当时的公开稳定版是 **Safari 27.2**；本机 macOS 27.2，用同机系统 **WKWebView** 隔离验证 WebKit 的样片解码，不把它当作 Safari.app 的完整实测。照片 12.0、预览 11.0、QuickTime Player 10.5 的应用行为以 Apple 文档为依据，另测底层 ImageIO 和 AVFoundation。**本机显示器没有 EDR 余量，没有做物理 HDR 亮度对比。** [Chrome 公告](https://chromereleases.googleblog.com/2026/11/stable-channel-update-for-desktop_01734282054.html) · [Safari 27.2](https://webkit.org/blog/18515/webkit-features-for-safari-27-2/)
+> **2026 年 11 月 24 日 · 兼容性基线。** Chrome 用官方 **Chrome for Testing 158.0.8127.88**，对应当时的 Mac 稳定分支。WebKit 用 macOS 27.2 的系统 **WKWebView** 隔离验证解码，没有把它当作 Safari.app 的完整实测。照片、预览和 QuickTime 的行为以 Apple 文档为依据，另测了 ImageIO 和 AVFoundation。当时外接屏的 HDR 模式未开。 [Chrome 公告](https://chromereleases.googleblog.com/2026/11/stable-channel-update-for-desktop_01734282054.html) · [Safari 27.2](https://webkit.org/blog/18515/webkit-features-for-safari-27-2/)
+>
+> **2026 年 11 月 26 日 · 开启 HDR 后复测。** 用实际 **Safari 27.2** 和 **预览 11.0** 逐个前台显示，经系统 HDR HEIC 截图取样。两边都能保留这张合成样本的 4× 灰阶高光。复现的差异是 Safari 把增益图 JPEG 的彩色高光画得更淡。后续逆向和单变量实验把最有力的原因缩小到 **GPU 重建时，基图缓冲区没有携带源色彩空间**。见[第 6 节的逆向和实测](#safari-hdr-gain-map-gap)。
 
 <!--more-->
 
@@ -102,7 +104,7 @@ flowchart TB
 
 ## 5. 同一批样片的实测：能开、认得 HDR、能发光，分别记
 
-图片以同一台本机 HTTP 服务送入两边；加载成功要求 `img.decode()` 完成且有实际像素尺寸。视频用带对应 MIME 类型的文件，播放成功要求有画面尺寸、媒体缓冲就绪且播放时间前进。原生系统另测 ImageIO 的 HDR 解码和 AVFoundation 的可播放、HDR 轨标记。浏览器测试不经过任何网站转码、DRM 或选流，也没测 Finder 双击、浏览器顶层导航或全屏。
+这组是 11 月 24 日的基线。图片以同一台本机 HTTP 服务送入两边；加载成功要求 `img.decode()` 完成且有实际像素尺寸。视频用带对应 MIME 类型的文件，播放成功要求有画面尺寸、媒体缓冲就绪且播放时间前进。原生系统另测 ImageIO 的 HDR 解码和 AVFoundation 的可播放、HDR 轨标记。浏览器测试不经过任何网站转码、DRM 或选流，也没测 Finder 双击、浏览器顶层导航或全屏。
 
 {{< codex-table compact="true" label="静态图片样片的解码结果" >}}
 | 样片 | Chrome 158 | WebKit | ImageIO 请求 HDR |
@@ -129,9 +131,92 @@ flowchart TB
 
 这组短片是本地合成的，不代表高码率、杜比视界、HDR10+ 或付费平台的表现。VP9 的结果说明，即使同一台 Mac 的两种浏览器都能播某个 WebM，原生文件 API 也可能打不开；它不是对 QuickTime Player 所有 WebM 行为的断言。
 
-> **显示验收的边界：** 当前测试屏的 EDR 实时值和最大潜在值都为 `1.0`。两个浏览器环境的 `(dynamic-range: high)` 和 `(video-dynamic-range: high)` 也都不匹配。这里验证的是文件能否走通解码/播放、底层能否识别 HDR；**没有给五个应用的实际峰值亮度、色调映射质量或显示一致性排名。**
+> **这组兼容性测试的边界。** 当时测试屏的 EDR 实时值和最大潜在值都为 `1.0`，两个浏览器环境的 `(dynamic-range: high)` 和 `(video-dynamic-range: high)` 都不匹配。这组只验证解码、播放与 HDR 识别，不是应用峰值亮度或显示一致性排名。
 
-## 6. 自己遇到「同一张看起来不一样」，怎么排查？
+## 6. 逆向实测：为什么 Safari 的 HDR 高光有亮度，颜色却更淡？ {#safari-hdr-gain-map-gap}
+
+开启外接屏 HDR 后，macOS 报告的即时 EDR 从最初的 `1.20×` 升到测试时的 `6.30×`，潜在值是 `12.61×`。这次屏幕有余量，Safari 的 `(dynamic-range: high)` 也为真。接下来用六格中性灰和两个高亮红绿色块做对照，避免把「高光不够亮」和「高光颜色不够纯」混为一谈。 [Apple 对即时与潜在 EDR 的定义](https://developer.apple.com/documentation/metal/determining-support-for-edr-values)
+
+### 先在真实窗口里把差异复现出来
+
+同一张 **512 × 256 的 ISO RGB 增益图 JPEG**，默认 ImageIO 解码只用 SDR 基图，最亮灰块为 `1.000`；显式请求 HDR 后升到 `4.003`。同机 Core Image 显式展开也得到约 `4.00`。把原文件在 Safari 用普通 `<img>`、`dynamic-range-limit: no-limit` 显示，在「预览」直接打开。两边轮流到前台，用 macOS 原生 HDR HEIC 截图，在扩展线性 Display P3 中采样。**单独显示时，最亮灰块在两边都是 `4.003`，但 Safari 的红绿高光更接近中性。** 例如，绿块的 RGB 从「预览」的 `(0.263, 1.497, 0.450)` 变成 Safari 的 `(0.472, 1.464, 0.527)`。这不是 JPEG 只显示了 SDR 基图。 [Apple HDR 截屏说明](https://support.apple.com/zh-cn/102646) · [为什么要让「预览」在前台](https://support.apple.com/en-my/guide/preview/prvw11470/11.0/mac/27)
+
+再把这张 JPEG 和由**同一组色值**制作的直编码 Display P3 PQ PNG 放在 Safari 同一页、同一尺寸、同一背景，两排一起截。用次通道除以主通道看色纯度，数值越大，说明该次通道混入越多。这样比拿不同截图的整图亮度直接相减更可靠。
+
+{{< codex-table compact="true" label="系统 HDR 截图的线性颜色取样" >}}
+| 色块通道比 | 预览 JPEG | Safari JPEG 单图 | Safari 同窗 JPEG | Safari 同窗 PQ PNG |
+| --- | ---: | ---: | ---: | ---: |
+| 红块 G/R | 0.176 | 0.239 | 0.240 | 0.175 |
+| 绿块 R/G | 0.176 | 0.322 | 0.321 | 0.173 |
+{{< /codex-table >}}
+
+**同一帧里，直接 PQ 的色比回到接近「预览」的位置，增益图 JPEG 的差异则重复出现。** 这把范围缩到 Safari 处理这类增益图的分支。两排图在这次截图里的最亮灰块分别约是各自参考白块的 `2.05×`、`2.01×`，和单图的 `4.00×` 不同。这个共同变化尚未归因，可能涉及布局、应用状态或系统截图/合成，不能把不同截图的数值当物理亮度比较。下面对色差的归因用的是同帧对照和独立缓冲区实验。
+
+### 两条链路在哪里分叉？
+
+{{< mermaid >}}
+flowchart TB
+    accTitle: Safari 与预览重建同一张 HDR 增益图的分叉
+    accDescr: 两边读同一张 JPEG。Safari 条件满足时分别解码底图与增益图，经 GPU 图像缓存重建和网页绘制；预览用 Core Image 展开 HDR 并交给独立 EDR 图层。Safari 在基图转成 BGRA 缓冲区时没有传递色彩空间附件。
+    A["同一张 JPEG<br/>P3 SDR 基图 + ISO 增益图"]:::client
+    B["Safari / WebKit<br/>基图与增益图分开解码"]:::service
+    C["GPU 图像缓存<br/>基图转 BGRA，未带上色彩空间附件"]:::engine
+    D["ImageIO 合并增益图<br/>P3 PQ → IOSurface → CGImage"]:::service
+    E["网页绘制<br/>图层、CSS、EDR 目标值"]:::storage
+    P["预览 / Core Image<br/>直接展开 HDR"]:::service
+    Q["独立原生图层<br/>EDR 强度、目标和窗口焦点"]:::storage
+    A --> B --> C --> D --> E
+    A --> P --> Q
+{{< /mermaid >}}
+
+1. **Safari 决定这次怎么解码。** `RenderImage` 把是否绘制 HDR、是否允许加速和 CSS 限幅传入。`BitmapImageSource` 可只取基图、请 ImageIO 直接解成 HDR，或保留 `BaseAndGainMap` 交给远程绘图路径。分开取增益图时，`ImageDecoderCG` 先找 ISO，找不到再查 Apple 类型。 [绘制入口](https://github.com/WebKit/WebKit/blob/5e62f67e97ebccc9da92e1ab166cfe640767dea4/Source/WebCore/rendering/RenderImage.cpp#L786-L808) · [解码分支](https://github.com/WebKit/WebKit/blob/5e62f67e97ebccc9da92e1ab166cfe640767dea4/Source/WebCore/platform/graphics/BitmapImageSource.cpp#L338-L347) · [辅助图读取](https://github.com/WebKit/WebKit/blob/5e62f67e97ebccc9da92e1ab166cfe640767dea4/Source/WebCore/platform/graphics/cg/ImageDecoderCG.cpp#L641-L668)
+2. **Safari 在 GPU 进程建立图像缓存时合并。** `RemoteRenderingBackend::cacheNativeImage` 用共享位图恢复仍带色彩空间的基图，再经 `ShareableBitmap` 调到 `ShareableGainMap::applyGainMapToBaseImage`。它申请 Display P3 PQ 目标和默认 half-float 输出，经 `CGImageApplyHDRGainMap` 合并，再从 IOSurface 建 `CGImage`。远程绘制随后按资源 ID 取缓存里的 `NativeImage`，交给 `GraphicsContext`。EDR 限幅是后面的绘制环节；这个版本里显式的 `standard` 参考白映射分支不能用来解释测试页设为 `no-limit` 的色差。 [Safari 27 发布说明](https://webkit.org/blog/18325/webkit-features-for-safari-27-0/) · [共享位图恢复](https://github.com/WebKit/WebKit/blob/5e62f67e97ebccc9da92e1ab166cfe640767dea4/Source/WebCore/platform/graphics/cg/ShareableBitmapCG.mm#L235-L258) · [增益图合并](https://github.com/WebKit/WebKit/blob/5e62f67e97ebccc9da92e1ab166cfe640767dea4/Source/WebCore/platform/graphics/cocoa/ShareableGainMap.cpp#L83-L183) · [绘制侧 EDR](https://github.com/WebKit/WebKit/blob/5e62f67e97ebccc9da92e1ab166cfe640767dea4/Source/WebCore/platform/graphics/cg/GraphicsContextCG.cpp#L397-L433)
+3. **「预览」不走这段桥接。** 本机反汇编看到 `PVImageElement` 为显示用的 `CIImage` 选择 `kCIImageExpandToHDR` 或 `kCIImageToneMapHDRtoSDR`，识别 ISO 和 Apple 两种辅助图，并把首选 `high`、EDR 强度和目标交给自己的图层。`PVIKImageView2` 另有 HDR 焦点策略。WebKit 也有窗口失焦时抑制静态 HDR 的路径，不能拿一个前台窗口和另一个背景窗口做峰值对比。 [WebKit 焦点行为](https://bugs.webkit.org/show_bug.cgi?id=289152#c3)
+
+<details>
+<summary>查看本机二进制锚点和证据边界</summary>
+
+本机为 macOS `27.2 (26B123)`，Safari / WebKit `22625.2.8.11.9`、预览 `11.0 (1147.1.10)`。用 `dyld_info` 读取 `arm64e.x1` 共享缓存里的实际指令，解析跨库 stub 的指向，并与 [WebKit-7625.2.8.11.9](https://github.com/WebKit/WebKit/releases/tag/WebKit-7625.2.8.11.9) 对照。以下是未加 ASLR slide 的虚拟地址，不是文件偏移或某次运行中的程序计数器。
+
+{{< codex-table compact="true" label="本机 arm64e.x1 静态锚点" >}}
+| 环节 | 实机静态证据 |
+| --- | --- |
+| WebKit GPU 缓存 | `RemoteRenderingBackend::cacheNativeImage` `0x1A495E64C`，`0x1A495E6A4` 的跨库调用解析到下行 |
+| WebCore 重建 | `ShareableBitmap::createPlatformImage` `0x1B89BA1B4`，`0x1B89BA244` 直调 `ShareableGainMap::applyGainMapToBaseImage` `0x1BB585590` |
+| 基图变成 BGRA | `createMetalCompatibleCVPixelBufferFromImage` `0x1BB577BBC`；`0x1BB577C28` 将创建缓冲区的色彩空间参数置空，`0x1BB577C80` 却把原色彩空间传给位图绘制；`0x1BB577958` 跳过空参数的附件设置 |
+| ImageIO 合并和交接 | `0x1BB585AB0` 经 stub 调 `CGImageApplyHDRGainMap`，`0x1BB585BF0` 调 `CGImageCreateFromIOSurface` |
+| ImageIO 基图色彩回退 | `-[HDRImage colorSpace]` `0x18D66A358` 经 `xdr_CVPixelBufferCopyColorSpace` 检查附件；若读不到也推不出色彩空间，`0x18D66A3E4` 用 `kCGColorSpaceSRGB` 创建回退值 |
+| 网页绘制 | GPU `RemoteGraphicsContext::drawNativeImage` `0x1A49379B4` 查缓存，经虚表调用。对 `GraphicsContextCG`，该槽指向 `0x1BB56373C`，其后调用 `CGContextDrawImage` |
+| 「预览」原生显示 | `_imageOptions` `0x10004ACB4`，采样显示路径 `_sourceCIImageWithSubsample…` `0x10004B77C`，`_createLayerForView` `0x10004CD08`，HDR 焦点入口 `0x100152148` |
+{{< /codex-table >}}
+
+静态调用链证明本机**有**这条实现，不等同于挂钩记录了每一帧。单图和同屏是实际 Safari/预览画面的取样，下一组探针则在独立进程调用同一系统入口。三类证据不要混用。
+
+</details>
+
+### 真正的缺口在基图被装进像素缓冲区时
+
+`createMetalCompatibleCVPixelBufferFromImage` 读出基图的 `CGColorSpace`，**绘制 BGRA 像素时确实使用了 Display P3，但创建 `CVPixelBuffer` 时没有把色彩空间传下去**。于是字节是按 P3 的含义写入，承载这些字节的缓冲区却没有 `kCVImageBufferCGColorSpaceKey`。WebKit 另外把基图色彩空间写进一份用来询问**目标输出属性**的字典，但这不是给基图缓冲区补标签。传入合并操作的增益图色彩空间也属于另一份数据。 [创建和绘制基图缓冲区](https://github.com/WebKit/WebKit/blob/5e62f67e97ebccc9da92e1ab166cfe640767dea4/Source/WebCore/platform/graphics/cocoa/CVPixelBufferUtilities.cpp#L43-L114) · [目标属性与合并选项](https://github.com/WebKit/WebKit/blob/5e62f67e97ebccc9da92e1ab166cfe640767dea4/Source/WebCore/platform/graphics/cocoa/ShareableGainMap.cpp#L104-L159)
+
+继续追到本机 ImageIO，合并函数把基图缓冲封装为 `HDRImage`。它的 `colorSpace` 先查缓冲区有没有色彩空间附件，再尝试从其他附件推导。两步都取不到时，会明确回退到 **sRGB**。这里的问题不只是少了一份描述，而是下游会用另一个色域来解释同一份像素字节。
+
+我在独立进程用同一份 JPEG、同一套 BGRA 字节、原增益图和元数据，调用本机同一个 `CGImageApplyHDRGainMap`。不进入 Safari、不画页面，直接在合并完成的 IOSurface 输出上采样。**只改变基图缓冲区的色彩空间附件**，结果就从接近「预览」切换为接近 Safari。
+
+{{< codex-table compact="true" label="独立重建探针：只改变基图缓冲区的颜色附件" >}}
+| 基图附件 | 最亮灰块 | 红块 G/R | 绿块 R/G |
+| --- | ---: | ---: | ---: |
+| 正确的 Display P3 | 3.995 | 0.176 | 0.167 |
+| 无附件 | 3.995 | 0.238 | 0.324 |
+| 显式写 sRGB，字节不变 | 3.995 | 0.238 | 0.324 |
+{{< /codex-table >}}
+
+无附件与显式 sRGB 两组的八个色块读数在探针输出的四位小数内一致。换用复制后的增益图缓冲区、只剥掉它的附带颜色标签，或让增益图元数据经 XMP 序列化往返，都没有改变这个分组。**因此最有力的解释是，这组实验里无附件的 P3 基图字节按 sRGB 解释了。** 对中性的 `R = G = B`，两种色域之间的转换仍会保留中性；对高亮纯色却会改变通道比例。这正好解释了灰阶高光没掉、颜色却变淡。差异在独立合并输出上已经出现，不需要等到网页 CSS 或屏幕合成才出现。 [标准色彩转换矩阵](https://www.w3.org/TR/css-color-4/#color-conversion-code)
+
+这不是对 Safari 做过修补后再运行的验证，也不是所有 HDR 图片都会偏色的结论。它也不同于 WebKit 曾修过的 RGB 增益图合并输出意外降到 8 位的问题。这里的目标缓冲区实测为 `RGhA`，只补基图附件即可在探针里恢复色彩。浏览器侧值得验证的修复是把原色彩空间传给基图缓冲区的创建函数，再用高亮 RGB 色块做回归，而不是只测灰阶。 [WebKit 的 8 位输出修复](https://github.com/WebKit/WebKit/commit/dfcca6f9900ac6564be76443848bf518bf8c4bf2)
+
+[下载合成样本、同屏对照页、探针与原始取样数据](safari-hdr-lab.zip)。压缩包只含合成文件、代码和数值，没有桌面原截图。
+
+## 7. 自己遇到「同一张看起来不一样」，怎么排查？
 
 1. **锁住源文件。** 对照本地原片与网页实际请求（图片看 `currentSrc`，视频看网络面板和实际 HLS/选流记录）。如果是同一静态文件，比较哈希；不要拿照片缩略图、聊天压缩图或视频封面来比。
 2. **先验文件。** 视频在 QuickTime Player 用 `⌘I` 看编码、HDR 格式与位深；也可用下面的 `ffprobe` 检查信号。照片查 ICC/cICP 与辅助增益图，不能只凭分辨率、后缀和位深。没有读到 HDR10+／Dolby Vision 元数据也不要只靠 PQ 标签给它定 Profile。
