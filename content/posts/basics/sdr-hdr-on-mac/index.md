@@ -1,5 +1,6 @@
 +++
 date = '2026-11-24T21:10:00+08:00'
+lastmod = '2026-11-26T05:39:00+08:00'
 draft = false
 title = '同一份素材在 Mac 上会不会显示不一样？四组 SDR／HDR 前台实测'
 description = '同一台 Mac 和 HDR 显示器，前台取样 Chrome、Safari、QuickTime 和预览。分 SDR 照片、SDR 视频、HDR 照片、HDR 视频，单列 PQ、HLG 和增益图。'
@@ -19,8 +20,8 @@ contentLanguage = 'zh-CN'
 {{< codex-table label="素材类型、格式与五款 Mac 应用的实测组合矩阵" >}}
 | 素材组合 | Chrome | Safari | QuickTime | 「预览」 | 「照片」 |
 | --- | --- | --- | --- | --- | --- |
-| **普通照片（SDR）** · sRGB | 对照 | 灰阶相同，个别颜色略有差别 | 不适用 | 接近 Chrome | 待测 |
-| **普通照片（SDR）** · Display P3 | 对照 | 灰阶相同，个别颜色略有差别 | 不适用 | 接近 Chrome | 待测 |
+| **普通照片（SDR）** · sRGB | 对照 | 灰阶相同，红等 4 格相差 1 档 | 不适用 | 接近 Chrome | 待测 |
+| **普通照片（SDR）** · Display P3 | 对照 | 灰阶相同，浅肤色等 3 格相差 1 档 | 不适用 | 接近 Chrome | 待测 |
 | **普通视频（SDR）** · BT.709 | 对照 | 明暗接近 | 明暗接近 | 不适用 | 待测 |
 | **HDR 照片** · PQ | 高光约 4× | 高光约 4× | 不适用 | 高光约 4× | 待测 |
 | **HDR 照片** · HLG | 高光约 4× | 高光约 4× | 不适用 | 高光约 4× | 待测 |
@@ -44,30 +45,44 @@ contentLanguage = 'zh-CN'
 
 **换 App 会怎样？** 这次同一张普通照片，Chrome 和「预览」的读数几乎一样。Safari 没让照片整体变暗，黑、白和中性灰也一样，差别集中在个别颜色。比如同一张 sRGB 色卡的红块，两轮对比都量到了小差别。
 
-我们验证了一个常见原因。照片里的颜色标签就像给数字配的色卡，同一组数字换一张色卡，红和橙可以差很多。我们只换标签就重现了这一点。但三个 App 看**同一份正确标记的文件**时发生的微小差别，不是这个换标签实验能解释的，具体步骤还没定位。
+**为什么 Safari 不完全一样？** 不是 PNG 解错了，也不是 Safari 忽略了 ICC。逆向定位到**图片画进浏览器图层时的颜色转换**。浏览器得先把照片的 RGB 换算成这台显示器的 RGB，写进每个通道只有 256 档的图层。几格颜色落在相邻两档，Safari 走到其中一档，Chrome 和「预览」的前台结果对应另一档。用同一台显示器的色彩转换重放，仅改这一档，就能重现大部分原始差异。
 
-两份 PNG 只换颜色标签（ICC），不改像素数字。对同一文件分别比较 Chrome、Safari 和「预览」各自前台显示的 24 格中心。
+两份合成 PNG 只换颜色标签（ICC），不改像素数字。每个 App 分别打开同一份文件，取 24 格中心。表中 1 档是**显示器设备 RGB 的一个码值**，不是说原图像素变了，也不是截屏文件少了一个 16 位码值。
 
 <figure style="max-width:100%;margin:1.2rem 0;overflow-x:auto" role="region" tabindex="0" aria-label="前台 app 之间的线性 P3 通道最大差。Chrome 对预览接近零，Safari 对另两端的 sRGB 最大差约 0.0099，P3 约 0.0054。"><img src="sdr-photo-foreground.svg" alt="前台 app 之间的线性 P3 通道最大差。Chrome 对预览接近零，Safari 对另两端的 sRGB 最大差约 0.0099，P3 约 0.0054。" loading="lazy" style="display:block;width:100%;min-width:650px;max-width:none;height:auto"></figure>
 
-{{< codex-table compact="true" label="SDR 照片差异与可归因程度" >}}
-| 对照 | 画面证据 | 归因 |
+{{< codex-table compact="true" label="在哪一步看到了 SDR 照片色差" >}}
+| 阶段 | 怎么验证 | 结果 |
 | --- | --- | --- |
-| 同一 sRGB PNG，Safari 对「预览」 | 红色 R 最大差 0.0099，暖灰 Y 最大差 0.0027。24 格通道差中位数为 0 | 两边各重复完全一致，Safari 的 EDR 从 1.20× 到 6.30× 仍复现。不是 EDR、随机截图波动或 Float16 单步舍入；未孤立到具体解码、颜色转换或合成步骤 |
-| 同一 P3 PNG，Safari 对「预览」 | Float16 读数浅肤色 G 约 0.0054、Y 约 0.0034。中位数为 0 | 与统一 ICC 的 SDR PNG 中浅肤色差同方向；不过饱和绿青在诊断 PNG 中可能被改变，宽色域以 Float16 为准 |
-| 不改像素，只把 sRGB ICC 改为 Display P3 | 三个应用各自最大差 0.176–0.182；灰阶完全不变 | **标签造成的差异。** 亮度控制相同，线性 RGB 基色矩阵不同。这是单变量对照，不是 Safari 小残差的起因 |
+| PNG 解码 | 原尺寸 ImageIO、按 WebKit 参数解码、同尺寸缩略图入口 | 两张色卡各 24 格 RGB 和 ICC 全同 |
+| 写到浏览器图层 | 独立 WKWebView 读取自己的 `CAIOSurface` | 图层是 8 位 BGRA，使用本机显示器 ICC。普通网页、单独合成图层、改变显示尺寸三种走法，24 格读数一致 |
+| 前台输出 | 把 Safari、Chrome、「预览」的 HDR 浮点截图反算回同一设备 RGB | 两张卡各 24 格，Safari 全部与实取 WebKit 图层一致。sRGB 有 4 格、P3 有 3 格与另两端差 1 档。不饱和的中性灰阶一致 |
+| 反事实复验 | 固定显示器 ICC 和转换代码，只改表中的 1 个码值 | 复现偏差位置、方向和主要量级。P3 浅肤色几乎逐值复现，sRGB 纯红仍有少量幅度残差 |
+{{< /codex-table >}}
+
+{{< codex-table compact="true" label="图层实取与窗口反算的设备 RGB 对照" >}}
+| 样片色块 | WKWebView 实取 = Safari 前台反算 | Chrome =「预览」前台反算 | 哪一档不一样 |
+| --- | --- | --- | --- |
+| sRGB 中性灰 | 128, 128, 128 | 128, 128, 128 | 无 |
+| sRGB 纯红 | 207, 74, 34 | 208, 74, 34 | 红 207 ↔ 208 |
+| sRGB 深橙 | 198, 124, 56 | 199, 124, 56 | 红 198 ↔ 199 |
+| Display P3 浅肤色 | 209, 170, 138 | 209, 171, 138 | 绿 170 ↔ 171 |
 {{< /codex-table >}}
 
 <details>
-<summary>反汇编和可复现的 ICC 对照</summary>
+<summary>查看反汇编、代码定位和归因边界</summary>
 
-「预览」11.0 的 PVImageElement 在本机 arm64e.x1 上，以 CIImage 读取 ImageIO 源索引、获取源 colorSpace。RGB 的色彩空间能作为输出且兼容 ICC 时被保留。然后图像被转为 CGImage，进入 CALayer。Chromium JPEG 路径会从 APP2 读 ICC、通过 Skia 创建颜色描述，Safari 相关 WebKit 解码器则调用 ImageIO。不同链路与测到的小残差一致，但本轮未动态追踪出第一处分叉。
+WebKit 的 `ImageDecoderCG::createFrameImageAtIndex` 调 ImageIO。装机 WebCore 的 `GraphicsContextCG::drawNativeImage`（arm64e.x1 未滑移地址 `0x1BB56373C`）在 `0x1BB5639F8` 调 `CGContextDrawImage`。远程图层的 backing store 把常规 RGBA8 映射为 BGRA8／BGRX8，把目的 ICC 交给 `CGIOSurfaceContextCreate`。探针通过 `CAIOSurfaceGetIOSurface` 读出颜色空间，再把图层读回为像素值。图层 ICC 和这块 LG 屏当前 ICC 的 SHA-256 完全相同，不能把它当成截图文件附带的标准 Display P3 ICC。 [对应版本 WebKit 绘制代码](https://github.com/WebKit/WebKit/blob/5e62f67e97ebccc9da92e1ab166cfe640767dea4/Source/WebCore/platform/graphics/cg/GraphicsContextCG.cpp#L283) · [图层像素格式](https://github.com/WebKit/WebKit/blob/5e62f67e97ebccc9da92e1ab166cfe640767dea4/Source/WebKit/Shared/RemoteLayerTree/RemoteLayerBackingStore.mm#L271) · [IOSurface 色彩空间与绘制](https://github.com/WebKit/WebKit/blob/5e62f67e97ebccc9da92e1ab166cfe640767dea4/Source/WebCore/platform/graphics/cocoa/IOSurface.mm#L690)
 
-离屏单变量只用于证明标签机制：Chrome 158 和系统 WKWebView 的固定 sRGB 输出中，去 ICC 与嵌 sRGB 全部一致；相同 RGB 改标 P3，深橙差达到 0.1189；先做正确换算再标为 P3，最大差为 0.0066。该实验并非 Safari.app 前台屏幕结果。规范要求有效嵌入标签按其颜色空间处理，网页无标签静态图默认 sRGB。[W3C CSS Color 4](https://www.w3.org/TR/css-color-4/#tagged-images) · [Chromium JPEG ICC 解析](https://chromium.googlesource.com/chromium/src/+/062a002cca0bbf39d296fa6b2d1e6840eb4611fb/third_party/blink/renderer/platform/image-decoders/jpeg/jpeg_image_decoder.cc) · [WebKit ImageDecoderCG](https://github.com/WebKit/WebKit/blob/main/Source/WebCore/platform/graphics/cg/ImageDecoderCG.cpp) · [Apple ColorSync](https://developer.apple.com/documentation/colorsync/color-profiles)
+「预览」装机二进制的 `PVImageElement._sourceImage` 将 ImageIO 源交给 CIImage 并读取 ICC，`_createLayerForView` 得到 CGImage 后将它交给 CALayer。用同源 ICC 重放 Core Image 输出，没有得到 Safari 的提前落码模式。固定 8 位位深和 ICC，仅比较普通位图、不压缩 IOSurface、无损压缩 IOSurface，后两者在本对照的色块中心一致。因此不能把观察到的一档差说成图层压缩掉色。这里定位到的是**分叉的位置和一档差足以造成什么**，尚未定位到 Apple 私有色彩转换里的某条取整指令。Chrome 和「预览」一栏是从窗口反算，不是读取它们的私有图层。 [Apple ColorSync](https://developer.apple.com/documentation/colorsync) · [Apple Core Image 工作色彩空间](https://developer.apple.com/documentation/coreimage/cicontextoption/workingcolorspace)
+
+在统一线性 Display P3 下，P3 浅肤色 G 的前台差为 −0.005372，正向重放为 −0.005371。sRGB 纯红 R 的前台 HDR 浮点差为 −0.010254，重放为 −0.008301。sRGB 另用同 ICC 的 SDR PNG 复核，纯红 R 差约 −0.0099，同样反算到 207 对 208。改变 EDR 没改变这些色块的重复结果。宽色域的诊断 PNG 在极饱和色有额外转换，P3 结论用 HDR 浮点数据。
+
+另一个容易混淆的实验是只换 ICC 不换像素数字。那会让三个 App 的彩色格最大差达到 0.176–0.182，而且灰阶不变。它证明**色彩标签本身**能造成更大的颜色变化，但不是 Safari 的小差异。 [W3C CSS Color 4 的图像标签规则](https://www.w3.org/TR/css-color-4/#tagged-images)
 
 </details>
 
-[SDR 照片色卡、原始读数与装机逆向锚点](sdr-photo-icc-evidence.zip)
+[SDR 照片色卡与前台证据](sdr-photo-icc-evidence.zip) · [WebKit 图层读数、反算、单档复验代码](sdr-photo-render-trace.zip)
 
 ## 2. SDR 视频｜同一段普通视频，三个播放器的明暗很接近 {#2-sdr-视频--默认路径三端接近切换-chrome-解码路径才有明显中灰差}
 
