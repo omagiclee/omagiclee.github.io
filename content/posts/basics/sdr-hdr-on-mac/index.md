@@ -117,6 +117,21 @@ Safari 与 QuickTime 的最大线性通道差只有 .000117。模型用黑白归
 
 **另一个问题是主动关闭 Chrome 的硬件解码。** 那次测到中等灰色变暗，但这和默认设置下换播放器不是一回事。 独立的离屏 A/B 使用同一个文件，Chrome 默认经 VideoToolbox；禁用加速时媒体记录确认切到 FFmpeg。Y′126 在 sRGB8 截图从 139 变为 128，黑/白仍是 0/255。固定全部 YUV 码值、只把 transfer 改成 sRGB 时，默认路径的 32 个色块逐值复现了软件分支。对应版本 Chromium 将 CoreVideo 709 附件优先映射到 BT709_APPLE（约 1.961），普通 709 transfer 则走 sRGB。Safari WebCore 可创建 AVPlayerLayer，QuickTime 的实际 MGPlayerView 是 AVPlayerView 子类；这些静态锚点和实际曲线吻合，但不等于已追踪每个前台帧。 [Chromium 同版本 CoreVideo 映射](https://chromium.googlesource.com/chromium/src/+/refs/tags/158.0.8127.88/ui/gfx/mac/color_space_util.mm#99) · [Chromium 同版本 transfer 路径](https://chromium.googlesource.com/chromium/src/+/refs/tags/158.0.8127.88/ui/gfx/color_space.cc#990) · [WebKit AVFoundation 视频层](https://chromium.googlesource.com/external/github.com/WebKit/webkit/+/c9fafbca320e01bcba90a1914b2cea04afb92966/Source/WebCore/platform/graphics/avfoundation/objc/MediaPlayerPrivateAVFoundationObjC.mm) · [Apple BT.709 光度与显示模式](https://developer.apple.com/documentation/avfoundation/evaluating-an-app-s-video-color-using-light-measurement-instruments.md)
 
+<details>
+<summary>逆向定位：普通视频的差别究竟在哪一层？</summary>
+
+{{< codex-table compact="true" label="SDR 视频的三个不同问题和归因" >}}
+| 问题 | 可核的路径或单变量证据 | 能下什么结论 |
+| --- | --- | --- |
+| Chrome 关闭硬解后，中灰明显变暗 | Media Internals 显示 VideoToolbox → FFmpeg。硬解一侧把 CoreVideo 的 709 transfer 附件映射到 `BT709_APPLE`，软件路径的普通 709 在这个版本用 sRGB 曲线路径。硬解素材只改 transfer 标签后，32 格与软件路径逐值相同 | **传递曲线解释不同**。不是 H.264 解出来的 YUV 码值或黑白范围变化 |
+| 用两种截屏比，像是 Safari 更暗 | 同一个 Safari 或 QuickTime 窗口，`sdrImage` 和 `hdrImage` 两套输出读数不同 | **捕获口径不一致**。同类型截图里，Safari 与 Chrome 的中灰只差 0.000040 |
+| 默认播放三端仍有极小差 | WebCore 有 `createAVPlayerLayer`，本机 QuickTime 的 `MGPlayerView` 继承 AVKit 的 `AVPlayerView`。AVFoundation 独立探针把本片判为 CoreMedia 709，和前台约 1.96 的曲线吻合 | 同一基准足以解释为什么三端很接近。私有图层取样还不足以解释每一个剩余末位，不能说三端是同一个渲染器 |
+{{< /codex-table >}}
+
+换标签也可快速排查。实验里只改范围标签，黑白端点都动。只改 601 矩阵，灰阶不动而红色动。只改 transfer，最明显的是中灰变化。这里三组都是刻意做的对照，不是交付规范。 [同版本 Chromium CoreVideo 取值](https://chromium.googlesource.com/chromium/src/+/refs/tags/158.0.8127.88/ui/gfx/mac/color_space_util.mm#99) · [Safari 同版 WebKit 视频层](https://github.com/WebKit/WebKit/blob/5e62f67e97ebccc9da92e1ab166cfe640767dea4/Source/WebCore/platform/graphics/avfoundation/objc/MediaPlayerPrivateAVFoundationObjC.mm#L628-L682)
+
+</details>
+
 [SDR 视频前台证据](sdr-video-foreground-evidence.zip) · [Chrome 解码器单变量复验](sdr-video-lab.zip)
 
 ## 3. HDR 照片｜高光都亮，不代表颜色一定相同 {#3-hdr-照片--pqhlg-都保留高光增益图大色差有复现条件}
@@ -136,6 +151,21 @@ PQ 和 HLG 是两种写入 HDR 亮度的方式。增益图 JPEG 则像一张普�
 | 照片 | 未完成取样 | 未完成取样 | 未完成取样 | — |
 {{< /codex-table >}}
 三款应用各测三份样片，九组峰值都接近片内参考白的 4×，没有一组回退到 SDR 白。直接 PQ 样片的三端差值也不到 0.03×，现有数据不足以把这点差异定位到某个函数。
+
+<details>
+<summary>逆向定位：直接 PQ／HLG 与增益图不是一条路径</summary>
+
+{{< codex-table compact="true" label="HDR 照片的信号入口、功能和结论" >}}
+| 类型 | 解码／图层证据 | 尚不能归因的部分 |
+| --- | --- | --- |
+| 直接 PQ PNG | ImageIO 默认解码已输出 16 位 BT.2100 PQ，识别到扩展高光。Safari 有按图像 headroom 绘制的路径。「预览」装机代码能通过 CIImage 展开 HDR，再交给高动态范围 CALayer。前台 Safari 和「预览」的片内白均为 .998535，但峰分别为 3.996094、3.966797 | 这一点峰值差**不是片内白归一化造成的**。还没有同口径的中间浮点输出，不能归给 Preview 的某个色调映射函数 |
+| 直接 HLG PNG | ImageIO 默认就识别 16 位 BT.2100 HLG。前台三端相对片内白约 4× | 峰／白接近，不等于任意 HLG 图像、逐像素或其他屏幕都一致 |
+| ISO 增益图 JPEG | ImageIO 默认得到 8 位 Display P3 SDR 主图。请求 HDR 得到 10 位 Display P3 PQ。「预览」可识别 ISO 与 Apple 辅助图。旧版 Safari 的特定重建分支丢了 P3 基图附件 | 丢标签已用实际 WebCore 二进制 A/B 复验。它只解释曾复现的大色差，不解释本轮几毫量级的剩余差 |
+{{< /codex-table >}}
+
+「预览」11.0 的装机 arm64e.x1 锚点 `PVImageElement._imageOptions`（`0x10004ACB4`）可选择 `kCIImageExpandToHDR` 或 `kCIImageToneMapHDRtoSDR`，`_gainImageType`（`0x10004A07C`）识别 ISO 与 Apple 增益图，`_createLayerForView`（`0x10004CD08`）将 CGImage 与 EDR 参数交给 CALayer。以上是证实存在的功能分支，不代表本轮每张图都执行了相同的私有函数。 [Apple Adaptive HDR](https://developer.apple.com/videos/play/wwdc2024/10177/) · [同版本 WebKit ImageIO 选项](https://github.com/WebKit/WebKit/blob/5e62f67e97ebccc9da92e1ab166cfe640767dea4/Source/WebCore/platform/graphics/cg/ImageDecoderCG.cpp)
+
+</details>
 
 ### 为什么上一轮 Safari 的绿色偏淡？ {#safari-hdr-gain-map-gap}
 
@@ -207,6 +237,21 @@ PQ 和 HLG 是两种写入 HDR 亮度的方式。增益图 JPEG 则像一张普�
 同一应用切换这两份分别编码的样片，部分彩色块有小幅变化。原始峰值差约 **0.94%**，各自除以片内白后约 **0.46%**。同格式跨三个应用的 16 色块没有测到差别。这个结论只覆盖本次同一台 Mac 和显示器、同一份本地文件。 [前台 16 色块数值](front-video-measurements.zip)
 
 **为什么离屏 HLG 只有 3.77×，前台却是 4.92×？** AVPlayerItemVideoOutput 取的扩展线性浮点帧已经做了 HLG 逆 OETF，但还在场景线性域。用该帧与前台同一灰阶拟合，HLG 指数是 **1.201**、PQ 是 **1.001**。这符合 Apple 文档的阶段分工：HLG 的最终显示还要应用 OOTF，而 PQ 的显示域关系基本保留。该实验解释了为什么离屏不能代替屏幕合成，不能证明各应用的私有调用栈相同。PQ 对 HLG 的细小剩余差也不能全归给 10-bit 量化或 AMVE。 [ITU-R BT.2100](https://www.itu.int/rec/R-REC-BT.2100-3-202502-I/en) · [Apple HLG OOTF 说明](https://developer.apple.com/documentation/quartzcore/caedrmetadata/hlg) · [HDR 视频实验素材和探针](hdr-video-lab.zip)
+
+<details>
+<summary>逆向定位：哪些差异从源文件开始，哪些在显示时产生？</summary>
+
+{{< codex-table compact="true" label="HDR 视频分阶段定位" >}}
+| 阶段 | 同口径证据 | 结论 |
+| --- | --- | --- |
+| 编码和解码后的 10 位码值 | 两个 HEVC 样片的解码码值分别与各自设计吻合。回算到共同参考显示条件，PQ 峰／白为 4.9297×，HLG 为 4.9224× | 仅不同的 10 位编码落码，就带来约 **0.15%** 的峰／白差。不能单独解释前台约 **0.46%** 的全差 |
+| AVPlayer 离屏帧 → 前台窗口 | 相同 HLG 灰阶拟合指数 1.201，PQ 为 1.001。只给 HLG 加 AMVE 的对照，离屏这一阶段逐格相同 | **HLG 在显示阶段另做亮度映射**。这个 AMVE 对照没有前台测量，不能把余差归给 AMVE，也不能据此认定 AMVE 对显示没影响 |
+| App 如何交付 HDR 帧 | Safari 源码有 `AVPlayerLayer` 与动态范围限制，QuickTime 装机是 AVKit 路径。Chrome 158 可把帧交给 `AVSampleBufferDisplayLayer`，也有备用合成分支。其 IOSurface 转样本缓冲分支分别写入 PQ／HLG 的 transfer 附件 | **入口可以不同，同格式的合成取样仍能相同**。没有逐帧跟踪到 Chrome 本次走的是哪个分支，不能反推三个 App 的调用栈相同 |
+{{< /codex-table >}}
+
+网页换一个 CSS 动态范围限制、改变视频合成方式，或站点换成另一条流，都可能改变进入显示层的条件。本轮没有做这些变量的 A/B，因此只对表里的同源文件和前台条件下结论。 [Chrome 158 合成层及颜色附件](https://chromium.googlesource.com/chromium/src/+/refs/tags/158.0.8127.88/ui/accelerated_widget_mac/ca_renderer_layer_tree.mm#225) · [Safari 27.2 视频层](https://github.com/WebKit/WebKit/blob/5e62f67e97ebccc9da92e1ab166cfe640767dea4/Source/WebCore/platform/graphics/avfoundation/objc/MediaPlayerPrivateAVFoundationObjC.mm#L628-L682) · [Apple HDR 视频元数据](https://developer.apple.com/documentation/technotes/tn3145-hdr-video-metadata)
+
+</details>
 
 **自己碰到画面不一样，先做两件事。** 先确认网页和播放器打开的是同一个文件，而不是网页换了片源或改过照片。再分清是「亮处不够亮」，还是「亮度够，颜色却发白」。对照截图时也用同一种截屏方式。
 
