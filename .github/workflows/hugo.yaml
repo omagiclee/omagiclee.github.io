@@ -22,7 +22,7 @@ defaults:
 jobs:
   build:
     name: Hugo build
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-26.04
     env:
       HUGO_VERSION: 0.169.0
       DART_SASS_VERSION: 1.107.1
@@ -56,24 +56,42 @@ jobs:
       - name: Install Node.js dependencies
         run: npm ci
 
-      - name: Install Chrome for Testing
-        run: ./node_modules/.bin/playwright install --with-deps chromium --no-shell
-        
-      - name: Build with Hugo
+      - name: Build and check site while preparing Chrome
         env:
           HUGO_CACHEDIR: ${{ runner.temp }}/hugo_cache
           HUGO_ENVIRONMENT: production
           TZ: Asia/Shanghai
         run: |
-          hugo \
-            --gc \
-            --minify \
-            --cleanDestinationDir
+          browser_log="$RUNNER_TEMP/chromium-setup.log"
+          site_log="$RUNNER_TEMP/hugo-build.log"
 
-      - name: Check generated site
-        run: |
-          python3 scripts/check-site.py public
-          python3 scripts/check-local-photos-publication.py public
+          bash scripts/prepare-ci-chromium.sh > "$browser_log" 2>&1 &
+          browser_pid=$!
+          (
+            SECONDS=0
+            hugo --gc --minify --cleanDestinationDir
+            python3 scripts/check-site.py public
+            python3 scripts/check-local-photos-publication.py public
+            echo "Hugo build and static checks took ${SECONDS}s"
+          ) > "$site_log" 2>&1 &
+          site_pid=$!
+
+          site_status=0
+          browser_status=0
+          wait "$site_pid" || site_status=$?
+          wait "$browser_pid" || browser_status=$?
+
+          echo '::group::Hugo build and static checks'
+          cat "$site_log"
+          echo '::endgroup::'
+          echo '::group::Chrome preparation'
+          cat "$browser_log"
+          echo '::endgroup::'
+
+          if (( site_status != 0 || browser_status != 0 )); then
+            echo "::error::Hugo build or static checks exited $site_status. Chrome preparation exited $browser_status."
+            exit 1
+          fi
 
       - name: Run browser smoke tests
         run: npm run test:site -- public

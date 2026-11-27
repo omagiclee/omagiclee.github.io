@@ -138,7 +138,8 @@ async function main() {
   async function visit(pathname, viewport) {
     runtimeErrors.length = 0;
     if (viewport) await page.setViewportSize(viewport);
-    const response = await page.goto(`${server.baseURL}${pathname}`, { waitUntil: 'networkidle' });
+    // Check feature readiness in each test instead of waiting for the network to go idle.
+    const response = await page.goto(`${server.baseURL}${pathname}`, { waitUntil: 'load' });
     assert(response && response.ok(), `${pathname} returned ${response ? response.status() : 'no response'}`);
   }
 
