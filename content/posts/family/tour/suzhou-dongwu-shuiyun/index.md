@@ -1,35 +1,35 @@
 +++
 date = '2026-11-26T02:56:00+08:00'
-lastmod = '2026-11-26T03:38:58+08:00'
+lastmod = '2026-11-27T19:34:00+08:00'
 draft = false
-title = '苏州东吴水韵两店调研｜吴中还是金鸡湖？'
-description = '一天怎么玩、两店差在哪、门票怎么买：吴中与园区金鸡湖店的亲子、餐饮、口碑和周六半日路线。'
-summary = '周六上午带娃或只玩半天，选吴中店；专程吃海鲜、看湖景，再选园区金鸡湖店。'
+title = '苏州东吴水韵三店对比｜吴中、园区、新区怎么选？'
+description = '吴中、园区金鸡湖和新区枫桥三店对照：亲子戏水、泡汤、餐饮、票价和周六半日怎么安排。'
+summary = '带娃玩半天选吴中；吃海鲜看湖选园区；在高新区顺路泡汤、吃果饮，可考虑新区店。'
 categories = ['Family']
 tags = ['Travel', '苏州', '东吴水韵']
 isCJKLanguage = true
 contentLanguage = 'zh-CN'
 +++
 
-**📅 11 月 28 日周六上午：选吴中店。** 戏水滑梯、海洋球和游戏区都有，上午玩完就走，不必买含餐券。**🌊 园区金鸡湖店**更适合专程吃海鲜、看湖景；先确认含餐券和午餐时段。
+**👧 11 月 28 日周六上午带娃：首选吴中店。** 戏水滑梯、海洋球和游戏区有实拍，上午玩完就走，不必买含餐券。**🌊 园区金鸡湖店**适合专程吃海鲜、看湖景；**♨️ 新区枫桥店**适合在高新区顺路泡汤、汗蒸、吃果饮。如果孩子主要想玩水，先别把新区店当成吴中店的替代。
 
 <!--more-->
 
-## 🔍 两店一眼看懂 {#official}
+## 🔍 三店一眼看懂 {#official}
 
-{{< codex-table compact="true" label="吴中店与园区金鸡湖店对比" >}}
-| 维度 | 吴中店 | 园区金鸡湖店 |
-| --- | --- | --- |
-| ⭐ 评分 · 人均 | [**4.7** · 13,129 条](https://www.dianping.com/shop/k1GYy1wMtym2LMIz)；¥430 | [**3.8** · 404 条](https://www.dianping.com/shop/G13xFZXCKZ3h1Zaa)；¥526 |
-| 👧 亲子 | [戏水滑梯、球池、蹦床](https://www.xiaohongshu.com/explore/6ac0681d0000000018011744)；带泳衣 | 有儿童票；未核实同等戏水设施 |
-| ♨️ 洗浴 | 男女浴、汗蒸、休息区 | 泡池、汗蒸、水吧；有顾客觉得吹风位少 |
-| 🎮 玩乐 | [台球、VR、PS5、影音、K 歌](https://www.xiaohongshu.com/explore/68d222d70000000012020b52)；保龄球现状未核实 | [电竞、PS5、台球、棋牌、影院](https://www.xiaohongshu.com/explore/6aed719a000000002b00cb91)；热门项目有人等位 |
-| 🍽️ 吃什么 | 果饮、小食；另有含自助正餐的券 | 主打现蒸海鲜、湖景露台；午餐与蟹类限量待核 |
-| 📍 怎么去 | **迎春路 38 号**；3 号线迎春路站 1 西南口，约 140–180 米 | **李公堤三期 1 号 19 幢**；5 号线李公堤南站 3 西北口，约 190 米 |
-| 🚗 停车 | 券规写有免费停车场；车位未核 | 停车减免待核 |
+{{< codex-table compact="true" label="吴中、园区金鸡湖、新区枫桥三店对比" >}}
+| 维度 | 吴中店 | 园区金鸡湖店 | 新区枫桥店 |
+| --- | --- | --- | --- |
+| ⭐ 评分 · 人均 | [**4.7** · 13,129 条](https://www.dianping.com/shop/k1GYy1wMtym2LMIz)；¥430 | [**3.8** · 404 条](https://www.dianping.com/shop/G13xFZXCKZ3h1Zaa)；¥526 | [高德 **4.8**](https://ditu.amap.com/search?city=320500&query=%E4%BC%91%E9%97%B2%E5%A8%B1%E4%B9%90&query_type=TQUERY)；[第三方人均约 ¥291](https://chinamaxxing.io/places/suzhou/spas/dongwu-shuiyun-new-district-store-b0j1u75sby)，非同口径 |
+| 👧 亲子 | [戏水滑梯、球池、蹦床](https://www.xiaohongshu.com/explore/6ac0681d0000000018011744)；带泳衣 | 有儿童票；未核实同等戏水设施 | 未核实公共戏水、儿童设施及票规 |
+| ♨️ 洗浴 | 男女浴、汗蒸、休息区 | 泡池、汗蒸、水吧；有顾客觉得吹风位少 | [泡澡、汗蒸、休息](https://www.fjccsz.com/nd.jsp?groupId=-1&id=870)；携程标全天营业 |
+| 🎮 玩乐 | [台球、VR、PS5、影音、K 歌](https://www.xiaohongshu.com/explore/68d222d70000000012020b52)；保龄球现状未核实 | [电竞、PS5、台球、棋牌、影院](https://www.xiaohongshu.com/explore/6aed719a000000002b00cb91)；热门项目有人等位 | [旧实拍](https://www.bilibili.com/video/BV1kTRfYyE7Y/)有游戏机、休息区；现开项目待核 |
+| 🍽️ 吃什么 | 果饮、小食；另有含自助正餐的券 | 主打现蒸海鲜、湖景露台；午餐与蟹类限量待核 | 有果饮；旧实拍中自助正餐另加购，现行规则待核 |
+| 📍 怎么去 | **迎春路 38 号**；3 号线迎春路站 1 西南口，约 140–180 米 | **李公堤三期 1 号 19 幢**；5 号线李公堤南站 3 西北口，约 190 米 | [**枫津大街 6 号**](https://www.amap.com/place/B0J1U75SBY)枫津商业广场南楼；1 号线滨河路站步行约 19 分钟（地图估算） |
+| 🚗 停车 | 券规写有免费停车场；车位未核 | 停车减免待核 | 停车入口及减免待核 |
 {{< /codex-table >}}
 
-*11 月 26 日核对。两店均标全天营业，不代表每个项目全天开放；人均消费不是门票价。*
+*吴中、园区数据为 11 月 26 日大众点评快照，新区为 11 月 27 日公开资料。评分不可直接排名，人均不是门票价。三店均标全天营业，各项目不一定全天开放。*
 
 ## 💳 买哪张券 {#tickets}
 
@@ -40,6 +40,7 @@ contentLanguage = 'zh-CN'
 | 吴中 · 想吃正餐 | [**¥389／8 小时**](https://t.dianping.com/deal/1568455265) | 午餐、晚餐二选一；午餐 **11:30–13:30**，大闸蟹每人每餐 **2 只**；确认适用门店 |
 | 园区 · 浴资 | **¥299／12 小时** | 搜索卡标门票＋果饮，**不能当含餐券**；周六核销条款待核 |
 | 园区 · 儿童 | **¥189** | 门店页展示价，身高及陪同规则待核 |
+| 新区 · 浴资／正餐／儿童 | **未核实在售价格** | 2025 年探店提到浴资 ¥235／8 小时、自助餐加 ¥40；**不是现价**，周六能否用、含餐及儿童分档都要重问 |
 {{< /codex-table >}}
 
 - 👪 **吴中儿童分档：** 低于 80 cm 免票；80 至不足 140 cm 为儿童票；140 cm 起成人票。男女浴分开，带娃先问异性陪同及[共用储物柜规则](https://t.dianping.com/deal/1461622140)；公共戏水区和浴区是两回事。
@@ -48,11 +49,12 @@ contentLanguage = 'zh-CN'
 
 ## 🗣️ 实际体验的加分项和短板 {#xiaohongshu}
 
-{{< codex-table compact="true" label="两店体验优缺点" >}}
+{{< codex-table compact="true" label="三店体验优缺点" >}}
 | 门店 | 👍 加分项 | ⚠️ 可能踩坑 |
 | --- | --- | --- |
 | **吴中店** | 亲子戏水和游戏选择多；有人夸水果、服务及 PS5 小隔间 | [淘气堡清洁有个案反馈](https://www.xiaohongshu.com/explore/6ac0681d0000000018011744)；[正餐评价分歧](https://www.xiaohongshu.com/explore/6af97d92000000002b01ae5f)，早、夜餐选择不多 |
 | **园区金鸡湖店** | [湖景、海鲜和洗护](https://www.xiaohongshu.com/explore/6af8a47900000000180251c5)有好评 | 电竞、吹风位或餐位有人等过；一位顾客觉得入口偏暗。[开业期长等位](https://www.xiaohongshu.com/explore/6aeb2ae4000000000402f9d7)不是本周六预测 |
+| **新区枫桥店** | [2025 年实拍](https://www.bilibili.com/video/BV1kTRfYyE7Y/)认可水果和晚餐生蚝，也提到三楼休息区较安静 | 同一位作者遇到下午游戏机等位，觉得免费夜宵一般；这是旧个案，不代表现在的餐品和客流 |
 {{< /codex-table >}}
 
 **不用为了海鲜专程去吴中。** [近期周末到店反馈](https://www.xiaohongshu.com/explore/6b03eb1b00000000180261c9)也提到两只蟹，认可水果和羊排，但觉得海鲜种类有限。园区更适合把**一顿正餐＋看湖**当主线，别把多个热门项目排得太紧。
@@ -68,17 +70,20 @@ contentLanguage = 'zh-CN'
 
 **园区备选：** 核对**李公堤门店 → 早场能进 → 午餐几点开、是否含蟹**，再买券。查不到含餐规则，就把午饭另安排。
 
-## 🎬 3 条探店视频 {#videos}
+**新区备选：** 确认是**枫津大街店**，打 **0512-65282888** 先问**周六浴资及正餐差价 → 公共戏水区是否开放、儿童怎么算 → 停车怎么减免**。只泡汤顺路可去；带娃主要为戏水，问不清就选吴中。
+
+## 🎬 4 条探店视频 {#videos}
 
 1. [吴中店｜亲子和游戏区](https://www.douyin.com/video/7553685635924888875)：**0:29** 看戏水、台球、VR、PS5；**0:07** 看餐台。旧视频，只看项目。
 2. [园区店｜海鲜、玩乐、湖景](https://www.douyin.com/video/7704507920407362792)：**0:06** 自助 · **0:36** 洗浴娱乐 · **1:48** 露台。
 3. [园区店｜51 秒看开业海鲜](https://www.douyin.com/video/7704656773219507385)：看蟹类和自助形式，不参考开业价。
+4. [新区店｜果饮、自助和游戏机](https://www.bilibili.com/video/BV1kTRfYyE7Y/)：2025 年到店记录，适合看环境，不拿旧价下单。
 
 <details>
 <summary>核对备注：同名门店、评分口径与信息日期</summary>
 
-- 园区店[预告](https://www.xiaohongshu.com/explore/6ae97d1f000000001a032c04)指向 **11 月 4 日**启幕，[施工公示](https://wsdc.sipac.gov.cn/gjw/sgxkgsDetailView?id=320594202510280201)可核对地址。**枫津大街 6 号是高新区店**，不是园区店；[旧市监通报](https://m.bjnews.com.cn/detail/1703930949129473.html)也指高新区店。
+- 园区店[预告](https://www.xiaohongshu.com/explore/6ae97d1f000000001a032c04)指向 **11 月 4 日**启幕，[施工公示](https://wsdc.sipac.gov.cn/gjw/sgxkgsDetailView?id=320594202510280201)可核对地址。**枫津大街 6 号是高新区店**，不是园区店。[2023 年市监通报](https://m.bjnews.com.cn/detail/1703930949129473.html)及[2024 年行政处罚报道](https://www.sohu.com/a/756420182_120991886)均指高新区店的同一历史事件，不推断现状。
 - 服务／环境／划算：吴中 **4.7／4.8／4.6**，园区 **3.9／3.9／3.7**。上表是门店聚合评分；网页实读两店共 **6 条**近期文字摘要，另交叉看了近期到店笔记，未将相似文案重复计入。
-- [吴中洗浴页](https://you.ctrip.com/sight/suzhou11/3225003.html)共 7 条点评，可读最新是 **2023-07-15**；同址的[希尔顿欢朋酒店](https://www.hilton.com/zh-hans/hotels/szvwuhx-hampton-suzhou-wuzhong/)住客点评不计入。本文未到店实测或电话确认。
+- [吴中洗浴页](https://you.ctrip.com/sight/suzhou11/3225003.html)共 7 条点评，可读最新是 **2023-07-15**；同址的[希尔顿欢朋酒店](https://www.hilton.com/zh-hans/hotels/szvwuhx-hampton-suzhou-wuzhong/)住客点评不计入。[携程新区洗浴页](https://gs.ctrip.com/html5/you/sight/suzhou11/144879536.html)暂无点评，页面数字是热度，不是评分；[Trip.com 门店页](https://tw.trip.com/travel-guide/attraction/suzhou/dongwu-water-charm-144879536)可核对电话。本文未到店实测或电话确认。
 
 </details>
